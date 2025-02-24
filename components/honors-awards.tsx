@@ -50,7 +50,7 @@ const honorsAwards = [
 export default function HonorsAwards() {
   return (
     <section id="honors-awards" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-      <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Honors & Awards</h2>
+      <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" style={{ fontFamily: "Bangers, cursive" }}>Honors & Awards</h2>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {honorsAwards.map((award, index) => (
           <Card key={index}>

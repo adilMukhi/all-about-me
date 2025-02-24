@@ -31,6 +31,7 @@ export default function SocialLinks() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${social.color} hover:text-primary`}
+                style={{ fontFamily: "'Kirang Haerang', cursive" }}
               >
                 <social.icon className="h-6 w-6" />
                 <span>{social.name}</span>
