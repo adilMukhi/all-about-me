@@ -109,7 +109,7 @@ export default function WorkExperience() {
         {experiences.map((exp, index) => (
           <Card key={index}>
             <CardHeader>
-              <CardTitle>{exp.title}</CardTitle>
+              <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{exp.title}</CardTitle>
               <CardDescription>
                 {exp.company} | {exp.period}
               </CardDescription>

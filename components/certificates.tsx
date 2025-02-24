@@ -66,7 +66,7 @@ export default function Certificates() {
         {certificates.map((cert, index) => (
           <Card key={index}>
             <CardHeader>
-              <CardTitle>{cert.name}</CardTitle>
+              <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{cert.name}</CardTitle>
               <CardDescription>
                 {cert.issuer} | {cert.date}
               </CardDescription>

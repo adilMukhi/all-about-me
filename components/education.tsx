@@ -30,7 +30,7 @@ export default function Education() {
         {educationData.map((edu, index) => (
           <Card key={index}>
             <CardHeader>
-              <CardTitle>{edu.degree}</CardTitle>
+              <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{edu.degree}</CardTitle>
               <CardDescription>
                 {edu.institution} | {edu.period}
               </CardDescription>

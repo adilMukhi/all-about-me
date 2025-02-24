@@ -61,7 +61,7 @@ export default function VolunteerWork() {
         {volunteerWork.map((work, index) => (
           <Card key={index}>
             <CardHeader>
-              <CardTitle>{work.role}</CardTitle>
+              <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{work.role}</CardTitle>
               <CardDescription>
                 {work.organization} | {work.period}
               </CardDescription>

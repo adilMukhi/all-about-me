@@ -17,7 +17,7 @@ export default function Header() {
         <div className="mr-4 hidden md:flex" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Image src="/pixtin.jpg" alt="Profile picture" width={40} height={40} className="rounded-full" />
-            <span className="hidden font-bold sm:inline-block" style={{ fontFamily: "Sour Gummy, latin"}}>Adil Mukhi</span>
+            <span className="hidden font-bold sm:inline-block" style={{ fontFamily: "Sour Gummy, latin", fontSize: "18px"}}>Adil Mukhi</span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium" style={{ fontSize: "16px" }}>
             <Link href="#about">About</Link>

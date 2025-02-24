@@ -55,7 +55,7 @@ export default function HonorsAwards() {
         {honorsAwards.map((award, index) => (
           <Card key={index}>
             <CardHeader>
-              <CardTitle>{award.title}</CardTitle>
+              <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{award.title}</CardTitle>
               <CardDescription>
                 {award.issuer} | {award.year}
               </CardDescription>

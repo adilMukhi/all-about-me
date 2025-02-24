@@ -38,7 +38,7 @@ export default function Projects() {
         {projects.map((project, index) => (
           <Card key={index}>
             <CardHeader>
-              <CardTitle>{project.title}</CardTitle>
+              <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{project.title}</CardTitle>
               <CardDescription>{project.description}</CardDescription>
             </CardHeader>
             <CardContent>
