@@ -1,5 +1,24 @@
 import { Github, Linkedin, Link } from "lucide-react"
 
+import { Bangers, KirangHaerang, BubblegumSans } from 'next/font/google';
+
+const bangers = Bangers({
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
+const kirangHaerang = KirangHaerang({
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
+const bubblegumSans = BubblegumSans({
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
+export { bangers, kirangHaerang, bubblegumSans };
+
 export default function Footer() {
   return (
     <footer className="bg-primary/5 border-t border-primary/10">

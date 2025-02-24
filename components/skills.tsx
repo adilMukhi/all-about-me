@@ -26,6 +26,25 @@ const softSkills = [
   "Creativity",
 ];
 
+import { Bangers, KirangHaerang, BubblegumSans } from 'next/font/google';
+
+const bangers = Bangers({
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
+const kirangHaerang = KirangHaerang({
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
+const bubblegumSans = BubblegumSans({
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
+export { bangers, kirangHaerang, bubblegumSans };
+
 export default function Skills() {
   return (
     <section id="skills" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
