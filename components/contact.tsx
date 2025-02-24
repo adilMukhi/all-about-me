@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 export default function Contact() {
   return (
     <section id="contact" className="container py-16">
-      <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl normal-case" style={{ fontFamily: "Bangers, latin", letterSpacing: '0.1em'}}>Contact Me</h2>
+      <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl normal-case" style={{ fontFamily: "Sour Gummy, latin"}}>Contact Me</h2>
       <Card>
         <CardHeader>
           <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>Get in Touch</CardTitle>
