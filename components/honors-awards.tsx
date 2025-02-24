@@ -3,21 +3,49 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 const honorsAwards = [
   {
-    title: "Employee of the Year",
-    issuer: "Tech Innovators Inc.",
-    year: "2022",
-    description: "Recognized for outstanding performance and contributions to the company.",
+    title: "SemiFinalist, (p + q = 1) exam",
+    issuer: "Mitosisphere",
+    year: "Feb 2025",
+    description: "Awarded for placing among the top 22 out of 180+ competitors worldwide in the highly competitive 1/25 (p + q = 1) exam. This achievement recognizes excellence in problem-solving and analytical skills in a rigorous academic competition.",
     image: "/placeholder.svg",
   },
   {
-    title: "Best Paper Award",
-    issuer: "International Conference on AI and Machine Learning",
-    year: "2020",
-    description: "Awarded for the research paper on 'Innovative Approaches in Natural Language Processing'.",
+    title: "Distinction, Beaver Competition",
+    issuer: "University of Waterloo, Centre for Education in Mathematics and Computing (CEMC)",
+    year: "Nov 2024",
+    description: "Achieved a perfect score of 90/90 in the Beaver Computing Challenge, a rare accomplishment shared by only four students at Glenforest Secondary School.",
+    image: "/placeholder.svg",
+  },
+  {
+    title: "Honors, Academic Distinction (Science, IB Design, Gym)",
+    issuer: "Glenforest Secondary School",
+    year: "Oct 2024",
+    description: "Earned honors in Science, IB Design, and Physical Education during the grade 9 (2023-2024) academic year.",
+    image: "/placeholder.svg",
+  },
+  {
+    title: "Quarter-Finalist at ROPSSAA Tennis",
+    issuer: "Glenforest Secondary School",
+    year: "Oct 2024",
+    description: "Quarter-Finalist in the ROPSSAA Boys Doubles Junior Tennis South East Qualifier 2024.",
+    image: "/placeholder.svg",
+  },
+  {
+    title: "Valedictorian, Middle School Graduation",
+    issuer: "The Valleys",
+    year: "2023",
+    description: "Delivered a graduation speech to the 2023 graduating grade 8 class, their parents, and school staff.",
+    image: "/placeholder.svg",
+  },
+  {
+    title: "2nd Place, Biopage Writing Competition",
+    issuer: "Biopage",
+    year: "2025",
+    description: "Placed 2nd in the Biopage Writing Competition, competing against talented writers from around the world.",
     image: "/placeholder.svg",
   },
   // Add more honors and awards as needed
-]
+];
 
 export default function HonorsAwards() {
   return (

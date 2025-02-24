@@ -2,30 +2,29 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 const hardSkills = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Express",
-  "HTML",
-  "CSS",
-  "Tailwind CSS",
-  "Git",
-  "SQL",
-  "MongoDB",
-]
+  "Professional Writing",
+  "Research",
+  "Menotring",
+  "Public Speaking",
+  "Data Analysis",
+  "Project Management",
+  "First Aid & CPR/AED",
+  "Research Collaboration",
+  "Coding (JavaScript, HTML, CSS)",
+  "Graphic Design"
+];
 
 const softSkills = [
-  "Problem Solving",
-  "Team Collaboration",
+  "Leadership",
   "Communication",
   "Time Management",
+  "Problem-Solving",
+  "Teamwork",
   "Adaptability",
   "Critical Thinking",
   "Leadership",
   "Creativity",
-]
+];
 
 export default function Skills() {
   return (

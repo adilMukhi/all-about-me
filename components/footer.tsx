@@ -23,11 +23,11 @@ export default function Footer() {
             <Github className="h-7 w-7" />
             <span className="sr-only">GitHub</span>
           </a>
-          <a href="https://linktr.ee/adilm.0" target="_blank" rel="noreferrer" className="text-blue-500 hover:text-blue-700">
+          <a href="https://linktr.ee/adilm.0" target="_blank" rel="noreferrer" className="text-green-600 hover:text-green-800">
             <Link className="h-7 w-7" />
             <span className="sr-only">LinkTree</span>
           </a>
-          <a href="https://linkedin.com/in/adil-mukhi-6aba27246" target="_blank" rel="noreferrer" className="text-green-600 hover:text-green-800">
+          <a href="https://linkedin.com/in/adil-mukhi-6aba27246" target="_blank" rel="noreferrer" className="text-blue-500 hover:text-blue-700">
             <Linkedin className="h-7 w-7" />
             <span className="sr-only">LinkedIn</span>
           </a>
