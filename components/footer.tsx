@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react"
+import { Github, Linkedin, Link } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -28,15 +28,15 @@ export default function Footer() {
           </p>
         </div>
         <div className="flex gap-4">
-          <a href="https://github.com" target="_blank" rel="noreferrer">
+          <a href="https://github.com/adilMukhi" target="_blank" rel="noreferrer">
             <Github className="h-5 w-5" />
             <span className="sr-only">GitHub</span>
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noreferrer">
-            <Twitter className="h-5 w-5" />
-            <span className="sr-only">Twitter</span>
+          <a href="https://linktr.ee/adilm.0" target="_blank" rel="noreferrer">
+            <Link className="h-5 w-5" />
+            <span className="sr-only">LinkTree</span>
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+          <a href="https://linkedin.com/in/adil-mukhi-6aba27246" target="_blank" rel="noreferrer">
             <Linkedin className="h-5 w-5" />
             <span className="sr-only">LinkedIn</span>
           </a>
