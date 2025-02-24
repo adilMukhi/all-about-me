@@ -33,10 +33,10 @@ export default function Skills() {
       <div className="grid gap-6 md:grid-cols-2">
         <Card className="bg-gradient-to-br from-card to-background shadow-md">
           <CardHeader>
-            <CardTitle>Hard Skills</CardTitle>
+            <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>Hard Skills</CardTitle>
             <CardDescription>Technical proficiencies</CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent style={{ fontFamily: "'Kirang Haerang', cursive" }}>
             <div className="flex flex-wrap gap-2">
               {hardSkills.map((skill) => (
                 <Badge key={skill} variant="secondary">
@@ -48,7 +48,7 @@ export default function Skills() {
         </Card>
         <Card className="bg-gradient-to-br from-card to-background shadow-md">
           <CardHeader>
-            <CardTitle>Soft Skills</CardTitle>
+            <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>Soft Skills</CardTitle>
             <CardDescription>Interpersonal and professional skills</CardDescription>
           </CardHeader>
           <CardContent>

@@ -16,7 +16,7 @@ export default function SocialLinks() {
       <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" style={{ fontFamily: "Bangers, cursive" }}>Connect With Me</h2>
       <Card className="bg-gradient-to-br from-card to-background shadow-md">
         <CardHeader>
-          <CardTitle>Let's Stay in Touch</CardTitle>
+          <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>Let's Stay in Touch</CardTitle>
         </CardHeader>
         <CardContent className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {socialLinks.map((social) => (
