@@ -1,25 +1,6 @@
 import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
-import { Bangers, KirangHaerang, BubblegumSans } from 'next/font/google';
-
-const bangers = Bangers({
-  subsets: ['latin'],
-  weight: ['400'],
-});
-
-const kirangHaerang = KirangHaerang({
-  subsets: ['latin'],
-  weight: ['400'],
-});
-
-const bubblegumSans = BubblegumSans({
-  subsets: ['latin'],
-  weight: ['400'],
-});
-
-export { bangers, kirangHaerang, bubblegumSans };
-
 const volunteerWork = [
   {
     role: "Junior Team Lead at Ismaili Volunteers",

@@ -3,25 +3,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
-import { Bangers, KirangHaerang, BubblegumSans } from 'next/font/google';
-
-const bangers = Bangers({
-  subsets: ['latin'],
-  weight: ['400'],
-});
-
-const kirangHaerang = KirangHaerang({
-  subsets: ['latin'],
-  weight: ['400'],
-});
-
-const bubblegumSans = BubblegumSans({
-  subsets: ['latin'],
-  weight: ['400'],
-});
-
-export { bangers, kirangHaerang, bubblegumSans };
-
 const projects = [
   {
     title: "Project 1",

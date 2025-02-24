@@ -3,25 +3,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 
-import { Bangers, KirangHaerang, BubblegumSans } from 'next/font/google';
-
-const bangers = Bangers({
-  subsets: ['latin'],
-  weight: ['400'],
-});
-
-const kirangHaerang = KirangHaerang({
-  subsets: ['latin'],
-  weight: ['400'],
-});
-
-const bubblegumSans = BubblegumSans({
-  subsets: ['latin'],
-  weight: ['400'],
-});
-
-export { bangers, kirangHaerang, bubblegumSans };
-
 export default function Contact() {
   return (
     <section id="contact" className="container py-16">

@@ -1,24 +1,5 @@
 import { Button } from "@/components/ui/button"
 
-import { Bangers, KirangHaerang, BubblegumSans } from 'next/font/google';
-
-const bangers = Bangers({
-  subsets: ['latin'],
-  weight: ['400'],
-});
-
-const kirangHaerang = KirangHaerang({
-  subsets: ['latin'],
-  weight: ['400'],
-});
-
-const bubblegumSans = BubblegumSans({
-  subsets: ['latin'],
-  weight: ['400'],
-});
-
-export { bangers, kirangHaerang, bubblegumSans };
-
 export default function Hero() {
   return (
     <section className="bg-primary/10 py-16">
