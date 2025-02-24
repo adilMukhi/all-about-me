@@ -23,11 +23,11 @@ export default function Home() {
         <Hero />
       </AnimatedSection>
       <Separator />
-      <AnimatedSection delay={75}>
+      <AnimatedSection delay={100}>
         <About />
       </AnimatedSection>
       <Separator />
-      <AnimatedSection delay={150}>
+      <AnimatedSection delay={175}>
         <SocialLinks />
       </AnimatedSection>
       <Separator />
@@ -59,11 +59,11 @@ export default function Home() {
         <HonorsAwards />
       </AnimatedSection>
       <Separator />
-      <AnimatedSection delay={750}>
+      <AnimatedSection delay={710}>
         <Interests />
       </AnimatedSection>
       <Separator />
-      <AnimatedSection delay={825}>
+      <AnimatedSection delay={750}>
         <Contact />
       </AnimatedSection>
       <Footer />
