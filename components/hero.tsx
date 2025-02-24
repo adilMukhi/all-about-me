@@ -8,14 +8,14 @@ export default function Hero() {
           Hi, I'm Adil Mukhi!
         </h1>
         <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-          I'm a passionate developer specializing in web development and creating beautiful, functional applications.
+          I'm a passionate student and aspiring researcher with a strong interest in science, medicine, and digital security. I enjoy exploring complex topics, conducting research, and creating engaging content.
         </p>
         <div className="flex gap-4">
           <Button asChild>
-            <a href="#contact">Contact Me</a>
+            <a href="#contact">Contact Me!</a>
           </Button>
           <Button variant="outline" asChild>
-            <a href="#projects">View Projects</a>
+            <a href="#social-links">See More!</a>
           </Button>
         </div>
       </div>

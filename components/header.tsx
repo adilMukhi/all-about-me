@@ -16,13 +16,13 @@ export default function Header() {
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Image src="/profile-pic.jpg" alt="Profile picture" width={32} height={32} className="rounded-full" />
-            <span className="hidden font-bold sm:inline-block">Your Name</span>
+            <Image src="public/profile-pic.jpg" alt="Profile picture" width={32} height={32} className="rounded-full" />
+            <span className="hidden font-bold sm:inline-block">Adil Mukhi</span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             <Link href="#about">About</Link>
             <Link href="#skills">Skills</Link>
-            <Link href="#projects">Projects</Link>
+            <Link href="#work-expirence">Expirence</Link>
             <Link href="#contact">Contact</Link>
           </nav>
         </div>
@@ -44,8 +44,8 @@ export default function Header() {
             <Link href="#skills" className="block py-2" onClick={toggleMenu}>
               Skills
             </Link>
-            <Link href="#projects" className="block py-2" onClick={toggleMenu}>
-              Projects
+            <Link href="#work-expirence" className="block py-2" onClick={toggleMenu}>
+              Expirence
             </Link>
             <Link href="#contact" className="block py-2" onClick={toggleMenu}>
               Contact
