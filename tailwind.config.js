@@ -8,6 +8,11 @@ module.exports = {
     "*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    extend: {
+      fontFamily: {
+        times: ["Times New Roman", "Times", "serif"],
+      },
+    },
     container: {
       center: true,
       padding: "2rem",
