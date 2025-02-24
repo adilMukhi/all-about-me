@@ -23,47 +23,47 @@ export default function Home() {
         <Hero />
       </AnimatedSection>
       <Separator />
-      <AnimatedSection delay={100}>
+      <AnimatedSection delay={75}>
         <About />
       </AnimatedSection>
       <Separator />
-      <AnimatedSection delay={200}>
+      <AnimatedSection delay={150}>
         <SocialLinks />
       </AnimatedSection>
       <Separator />
-      <AnimatedSection delay={300}>
+      <AnimatedSection delay={225}>
         <Skills />
       </AnimatedSection>
       <Separator />
-      <AnimatedSection delay={400}>
+      <AnimatedSection delay={300}>
         <WorkExperience />
       </AnimatedSection>
       <Separator />
-      <AnimatedSection delay={500}>
+      <AnimatedSection delay={375}>
         <Education />
       </AnimatedSection>
       <Separator />
-      <AnimatedSection delay={600}>
+      <AnimatedSection delay={450}>
         <Projects />
       </AnimatedSection>
       <Separator />
-      <AnimatedSection delay={700}>
+      <AnimatedSection delay={525}>
         <Certificates />
       </AnimatedSection>
       <Separator />
-      <AnimatedSection delay={800}>
+      <AnimatedSection delay={600}>
         <VolunteerWork />
       </AnimatedSection>
       <Separator />
-      <AnimatedSection delay={900}>
+      <AnimatedSection delay={675}>
         <HonorsAwards />
       </AnimatedSection>
       <Separator />
-      <AnimatedSection delay={1000}>
+      <AnimatedSection delay={750}>
         <Interests />
       </AnimatedSection>
       <Separator />
-      <AnimatedSection delay={1100}>
+      <AnimatedSection delay={825}>
         <Contact />
       </AnimatedSection>
       <Footer />
