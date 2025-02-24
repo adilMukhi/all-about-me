@@ -1,14 +1,22 @@
-import Image from "next/image"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import Image from "next/image";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Bangers, BubblegumSans, TimesNewRoman } from 'next/font/google';
+
+// Import fonts
+const bangers = Bangers({ subsets: ['latin'], weight: ['400'] });
+const bubblegumSans = BubblegumSans({ subsets: ['latin'], weight: ['400'] });
+const timesNewRoman = TimesNewRoman({ subsets: ['latin'], weight: ['400'] });
 
 export default function About() {
   return (
-    <section id="about" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-      <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" style={{ fontFamily: "Bangers, cursive" }}>About Me</h2>
+    <section id="about" className="container py-16" style={{ fontFamily: timesNewRoman.className }}>
+      <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" style={{ fontFamily: bangers.className }}>
+        About Me
+      </h2>
       <div className="grid gap-12 lg:grid-cols-2">
         <Card className="bg-card shadow-md">
           <CardHeader>
-            <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>A Bit About Myself</CardTitle>
+            <CardTitle style={{ fontFamily: bubblegumSans.className }}>A Bit About Myself</CardTitle>
             <CardDescription>Get to know me better</CardDescription>
           </CardHeader>
           <CardContent>
@@ -33,6 +41,5 @@ export default function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
