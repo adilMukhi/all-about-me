@@ -2,19 +2,61 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 const certificates = [
   {
-    name: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
-    date: "2022",
-    description: "Professional level certification for designing distributed systems on AWS.",
+    name: "First Aid & CPR/AED Level C",
+    issuer: "Canadian Red Cross",
+    date: "Mar 2024 · Expires Mar 2027",
+    description: "Credential ID 104841756. Skills: AED · First Aid · CPR · Healthcare · Medical Communications.",
   },
   {
-    name: "Certified Scrum Master",
-    issuer: "Scrum Alliance",
-    date: "2021",
-    description: "Certification in Agile project management and Scrum methodologies.",
+    name: "Food Handler Certification",
+    issuer: "Food Safety Training Canada",
+    date: "Feb 2024 · Expires Feb 2029",
+    description: "Credential ID 65bfe7f5-ebec-4b7a-a3f2-61a57f000001. Skills: Health & Safety · Healthcare · Food Safety.",
+  },
+  {
+    name: "High-Five Training (PCHD)",
+    issuer: "HIGH FIVE® Global",
+    date: "Jun 2024",
+    description: "Credential ID 779313. Skills: Health & Safety · Reading Comprehension · Soft Skills · Youth Development · Child Development · Counselor Training · Leadership.",
+  },
+  {
+    name: "Be There Certificate",
+    issuer: "Born This Way Foundation",
+    date: "Oct 2024",
+    description: "Skills: Youth Development · Child Development · Healthcare · Health & Safety",
+  },
+  {
+    name: "Leaders In Training",
+    issuer: "Dixie Bloor Neighbourhood Centre",
+    date: "Jun 2024",
+    description: "Skills: AED · First Aid · Health & Safety · Leadership · Event Planning · Time Management.",
+  },
+  {
+    name: "Youth On The Rise",
+    issuer: "Dixie Bloor Neighbourhood Centre",
+    date: "Mar 2024",
+    description: "Skills: AED · First Aid · Youth Development · Project Management · Event Planning · Leadership.",
+  },
+  {
+    name: "Ministry of Labour, Training and Skills Development - Worker Health and Safety Awareness",
+    issuer: "Labour, Immigration, Training and Skills Development",
+    date: "Jun 2024",
+    description: "Skills: Health & Safety · Accessibility.",
+  },
+  {
+    name: "AODA & Ontario Human Rights Code",
+    issuer: "Ontario Human Rights Commission",
+    date: "Feb 2024",
+    description: "Skills: Critical Thinking · Accessibility · Healthcare · Human Rights.",
+  },
+  {
+    name: "NHCPS – Save a Life PALS Certification 2024",
+    issuer: "The Postgraduate Institute for Medicine",
+    date: "Feb 2024",
+    description: "Skills: AED · Science · Critical Thinking · Health & Safety · First Aid · Medical Communications · Accessibility · Healthcare · Pediatric Advanced Life Support (PALS) · Cardiopulmonary Resuscitation (CPR).",
   },
   // Add more certificates as needed
-]
+];
 
 export default function Certificates() {
   return (
