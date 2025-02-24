@@ -53,7 +53,6 @@ export default function Header() {
           </div>
         </nav>
       )}
-      <link rel="icon" type="/profile-pic/jpg" href="favicon.jpg">
     </header>
   )
 }
