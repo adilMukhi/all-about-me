@@ -8,7 +8,7 @@ const experiences = [
     period: "Dec 2024 - Present (3 months)",
     description:
       "Dr. Interested is a student-led initiative aiming to inspire future medical professionals through research, mentorship, and outreach. The organization has 30+ executives, 300+ Instagram followers, 120+ Discord members, and 100+ LinkedIn followers, with significant reach and collaboration with organizations like Aid4Need to support healthcare workers.",
-    image: "/placeholder.svg",
+    image: "/drinterested.jpg",
   },
   {
     title: "Youth Advisor",

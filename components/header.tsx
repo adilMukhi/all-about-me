@@ -16,7 +16,7 @@ export default function Header() {
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Image src="/profile-pic.jpg" alt="Profile picture" width={32} height={32} className="rounded-full" />
+            <Image src="/pixtin.jpg" alt="Profile picture" width={32} height={32} className="rounded-full" />
             <span className="hidden font-bold sm:inline-block">Adil Mukhi</span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
