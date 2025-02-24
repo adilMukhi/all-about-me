@@ -3,18 +3,51 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 const volunteerWork = [
   {
-    role: "Tech Mentor",
-    organization: "Local Coding Club",
-    period: "2019 - Present",
-    description: "Teach programming basics to underprivileged youth, organize coding workshops and hackathons.",
+    title: "Junior Team Lead at Ismaili Volunteers",
+    company: "Ismaili Volunteers",
+    period: "Jan 2024 - Present (1 year 2 months)",
+    description:
+      "Appointed as Junior Team Lead to train junior volunteers and take on additional responsibilities. Focuses on event planning, youth development, and fostering inclusivity and accessibility.",
     image: "/placeholder.svg",
   },
   {
-    role: "Web Developer",
-    organization: "Environmental Non-Profit",
-    period: "2018",
+    title: "Activist (Volunteer)",
+    company: "Results Canada",
+    period: "Feb 2024 - Present",
     description:
-      "Developed and maintained the organization's website, improving their online presence and donation system.",
+      "Raising awareness of poverty and its causes through monthly focus topics and engaging in impactful campaigns.",
+    image: "/placeholder.svg",
+  },
+  {
+    title: "General Member",
+    company: "HOSA Canada",
+    period: "Sep 2023 - Present",
+    description:
+      "Developing leadership and technical skills in healthcare through workshops, competitions, and collaborative projects.",
+    image: "/placeholder.svg",
+  },
+  {
+    title: "Auditory Research",
+    company: "The Hospital for Sick Children",
+    period: "Sep 2023 - Present (1 yr 6 mos)",
+    description:
+      "Helping in auditory research for the cochlear implant program.",
+    image: "/placeholder.svg",
+  },
+  {
+    title: "Job Fair Volunteer",
+    company: "Dixie Bloor Neighbourhood Centre",
+    period: "Mar 2024 (1 month)",
+    description:
+      "Setup, helping people connect with different booths that match what they want, and packing up.",
+    image: "/placeholder.svg",
+  },
+  {
+    title: "Care Packages Maker",
+    company: "The Flourish Foundation",
+    period: "Dec 2023 (1 month)",
+    description:
+      "Helped make care packages for children in need at the University of Toronto (Mississauga Campus), raising awareness and supporting children in need with care packages containing lollipops, pens, stickers, fidget toys, and chains.",
     image: "/placeholder.svg",
   },
   // Add more volunteer work as needed
