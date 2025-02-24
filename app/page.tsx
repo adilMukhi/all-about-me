@@ -1,3 +1,4 @@
+import '/global.css';  // Make sure the path is correct
 import Header from "@/components/header"
 import Hero from "@/components/hero"
 import About from "@/components/about"
@@ -14,6 +15,30 @@ import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import AnimatedSection from "@/components/animated-section"
 import { Separator } from "@/components/ui/separator"
+
+import { Bangers, Bubblegum_Sans, Kirang_Haerang, Times_New_Roman } from 'next/font/google';
+import './global.css';  // Import your global styles
+
+// Define fonts using the next/font module
+const bangers = Bangers({
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
+const bubblegumSans = Bubblegum_Sans({
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
+const kirangHaerang = Kirang_Haerang({
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
+const timesNewRoman = Times_New_Roman({
+  subsets: ['latin'],
+  weight: ['400'],
+});
 
 export default function Home() {
   return (

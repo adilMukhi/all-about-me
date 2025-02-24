@@ -7,8 +7,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap'); /* Not necessary, but just in case */
 
+/* Apply Times New Roman as fallback */
 body {
   font-family: 'Times New Roman', Times, serif !important;
+}
+
+/* Apply imported fonts */
+h1, h2, h3, h4 {
+  font-family: 'Bangers', cursive;
+}
+
+.card-title {
+  font-family: 'Bubblegum Sans', cursive;
 }
 
 @layer base {
