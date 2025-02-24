@@ -25,7 +25,7 @@ export default function About() {
           </CardContent>
         </Card>
         <div className="flex items-center justify-center">
-          <Image src="/placeholder.svg" alt="Your Name" width={300} height={300} className="rounded-full" />
+          <Image src="/profile-pic - Copy.jpg" alt="Your Name" width={300} height={300} className="rounded-full" />
         </div>
       </div>
     </section>
