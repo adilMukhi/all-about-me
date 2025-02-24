@@ -1,4 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Bangers, BubblegumSans, TimesNewRoman } from 'next/font/google';
+
+// Import fonts
+const bangers = Bangers({ subsets: ['latin'], weight: ['400'] });
+const bubblegumSans = BubblegumSans({ subsets: ['latin'], weight: ['400'] });
+const timesNewRoman = TimesNewRoman({ subsets: ['latin'], weight: ['400'] });
 
 const certificates = [
   {
@@ -60,8 +66,8 @@ const certificates = [
 
 export default function Certificates() {
   return (
-    <section id="certificates" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-      <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" style={{ fontFamily: "Bangers, cursive" }}>Certificates</h2>
+    <section id="certificates" className="container py-16" style={{ fontFamily: timesNewRoman.className }}>
+      <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" style={{ fontFamily: bangers.className }}>Certificates</h2>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {certificates.map((cert, index) => (
           <Card key={index}>

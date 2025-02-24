@@ -2,14 +2,20 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
+import { Bangers, BubblegumSans, TimesNewRoman } from 'next/font/google';
+
+// Import fonts
+const bangers = Bangers({ subsets: ['latin'], weight: ['400'] });
+const bubblegumSans = BubblegumSans({ subsets: ['latin'], weight: ['400'] });
+const timesNewRoman = TimesNewRoman({ subsets: ['latin'], weight: ['400'] });
 
 export default function Contact() {
   return (
     <section id="contact" className="container py-16">
-      <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" style={{ fontFamily: "Bangers, cursive" }}>Contact Me</h2>
+      <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" style={{ fontFamily: bangers.className }}>Contact Me</h2>
       <Card>
         <CardHeader>
-          <CardTitle>Get in Touch</CardTitle>
+          <CardTitle style={{ fontFamily: bubblegumSans.className}}>Get in Touch</CardTitle>
           <CardDescription>Fill out the form below to send me a message</CardDescription>
         </CardHeader>
         <CardContent>
