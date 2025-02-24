@@ -4,6 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
+body {
+  font-family: 'Times New Roman', Times, serif;
+}
+
 @layer base {
   :root {
     --background: 210 50% 95%;

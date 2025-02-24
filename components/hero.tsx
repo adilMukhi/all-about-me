@@ -8,7 +8,7 @@ export default function Hero() {
           Hi, I'm Adil Mukhi!
         </h1>
         <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-          I'm a passionate student and aspiring researcher with a strong interest in science, medicine, and digital security. I enjoy exploring complex topics, conducting research, and creating engaging content.
+          I'm a passionate student and aspiring researcher with a strong interest in science, medicine, and research. I enjoy exploring complex topics, conducting research, and creating engaging content.
         </p>
         <div className="flex gap-4">
           <Button asChild>
