@@ -16,7 +16,7 @@ export default function Header() {
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Image src="/pixtin.jpg" alt="Profile picture" width={32} height={32} className="rounded-full" />
+            <Image src="/pixtin.jpg" alt="Profile picture" width={50} height={50} className="rounded-full" />
             <span className="hidden font-bold sm:inline-block" style={{ fontFamily: "Bangers, cursive" }}>Adil Mukhi</span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
@@ -37,7 +37,7 @@ export default function Header() {
       </div>
       {isMenuOpen && (
         <nav className="md:hidden">
-          <div className="container py-4" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+          <div className="container py-8" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
             <Link href="#about" className="block py-2" onClick={toggleMenu}>
               About
             </Link>
