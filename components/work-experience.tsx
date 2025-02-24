@@ -103,7 +103,7 @@ const experiences = [
 
 export default function WorkExperience() {
   return (
-    <section id="work-experience" className="container py-16">
+    <section id="work-experience" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Work Experience</h2>
       <div className="grid gap-6 md:grid-cols-2">
         {experiences.map((exp, index) => (

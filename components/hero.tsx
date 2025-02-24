@@ -7,7 +7,7 @@ export default function Hero() {
         <h1 className="text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl" style={{ fontFamily: "Bangers, cursive" }}>
           Hi, I'm Adil Mukhi!
         </h1>
-        <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+        <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
           I'm a passionate student and aspiring researcher with a strong interest in science, medicine, and research. I enjoy exploring complex topics, conducting research, and creating engaging content.
         </p>
         <div className="flex gap-4">

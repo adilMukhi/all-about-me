@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap'); /* Not necessary, but just in case */
 
 body {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Times New Roman', Times, serif !important;
 }
 
 @layer base {

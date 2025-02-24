@@ -60,7 +60,7 @@ const certificates = [
 
 export default function Certificates() {
   return (
-    <section id="certificates" className="container py-16">
+    <section id="certificates" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Certificates</h2>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {certificates.map((cert, index) => (

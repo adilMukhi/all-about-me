@@ -32,7 +32,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="container py-16">
+    <section id="projects" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Projects</h2>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
