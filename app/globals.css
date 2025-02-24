@@ -7,8 +7,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* main.css */
 body {
-  font-family: 'Times New Roman', Times, serif !important;
+  font-family: 'Times New Roman', serif; /* Default font */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bangers', serif; /* Apply to all heading elements */
+}
+
+p {
+  font-family: 'Kirang Haerang', serif; /* Apply to all paragraphs */
+}
+
+button {
+  font-family: 'Bubblegum Sans', sans-serif; /* Apply to all buttons */
 }
 
 @layer base {
