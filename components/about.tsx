@@ -13,14 +13,18 @@ export default function About() {
           </CardHeader>
           <CardContent>
             <p className="leading-7 [&:not(:first-child)]:mt-6">
-              I'm a passionate developer with a keen interest in creating innovative solutions. With a background in
-              computer science and years of experience in web development, I strive to build applications that are not
-              only functional but also user-friendly and visually appealing.
+              I'm a Grade 10 IB MYP student at Glenforest Secondary School who is dedicated to both academic success and 
+              effective leadership. I am a curious student with a passion for improvement, knowledge and trying new things. 
+              "With curiosity as my guide, I will never go wrong." Read the specifics below: 👇🏼
             </p>
             <p className="leading-7 [&:not(:first-child)]:mt-6">
-              When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or
-              enjoying outdoor activities. I believe in continuous learning and always push myself to stay updated with
-              the latest trends in the tech world.
+              I am a driven student leader, researcher, and advocate passionate about medicine and education. As the 
+              President and Founder of Dr. Interested, I lead a global team to inspire future medical professionals 
+              through mentorship and research. In the IB I maintain a 98% average while holding leadership roles 
+              in French Club and STEM Fellowship, and actively helping in Peer Helpers. My research experience 
+              includes studies on stress hormones and astrocytomas, and I serve as a Youth Advisor at the University of 
+              Toronto Faculty of Kinesiology and Physical Education. I have earned Distinction in the Beaver Computing Challenge
+               and am currently enrolled in UofT’s MedLinx Program, furthering my passion for healthcare and advocacy.
             </p>
           </CardContent>
         </Card>
