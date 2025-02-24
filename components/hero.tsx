@@ -4,10 +4,10 @@ export default function Hero() {
   return (
     <section className="bg-primary/10 py-16">
       <div className="container flex flex-col items-center justify-center gap-4 text-center">
-        <h1 className="text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl" style={{ fontFamily: "Bangers, latin", letterSpacing: '0.1em'}}>
           Hi, I'm Adil Mukhi!
         </h1>
-        <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+        <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8" style={{ fontFamily: "'Times New Roman', Times, latin" }}>
           I'm a passionate student and aspiring researcher with a strong interest in science, medicine, and research. I enjoy exploring complex topics, conducting research, and creating engaging content.
         </p>
         <div className="flex gap-4">
