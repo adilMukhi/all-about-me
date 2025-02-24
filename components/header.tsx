@@ -16,10 +16,10 @@ export default function Header() {
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Image src="/pixtin.jpg" alt="Profile picture" width={50} height={50} className="rounded-full" />
+            <Image src="/pixtin.jpg" alt="Profile picture" width={40} height={40} className="rounded-full" />
             <span className="hidden font-bold sm:inline-block" style={{ fontFamily: "Bangers, cursive" }}>Adil Mukhi</span>
           </Link>
-          <nav className="flex items-center space-x-6 text-sm font-medium">
+          <nav className="flex items-center space-x-6 text-sm font-medium" style={{ fontSize: "18px" }}>
             <Link href="#about">About</Link>
             <Link href="#skills">Skills</Link>
             <Link href="#projects">Projects</Link>
@@ -37,17 +37,17 @@ export default function Header() {
       </div>
       {isMenuOpen && (
         <nav className="md:hidden">
-          <div className="container py-8" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
-            <Link href="#about" className="block py-2" onClick={toggleMenu}>
+          <div className="container py-4" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+            <Link href="#about" className="block py-2" onClick={toggleMenu} style={{ fontSize: "18px" }}>
               About
             </Link>
-            <Link href="#skills" className="block py-2" onClick={toggleMenu}>
+            <Link href="#skills" className="block py-2" onClick={toggleMenu} style={{ fontSize: "18px" }}>
               Skills
             </Link>
-            <Link href="#projects" className="block py-2" onClick={toggleMenu}>
+            <Link href="#projects" className="block py-2" onClick={toggleMenu} style={{ fontSize: "18px" }}>
               Projects
             </Link>
-            <Link href="#contact" className="block py-2" onClick={toggleMenu}>
+            <Link href="#contact" className="block py-2" onClick={toggleMenu} style={{ fontSize: "18px" }}>
               Contact
             </Link>
           </div>
