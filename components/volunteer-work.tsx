@@ -8,7 +8,7 @@ const volunteerWork = [
     period: "Jan 2024 - Present (1 year 2 months)",
     description:
       "Appointed as Junior Team Lead to train junior volunteers and take on additional responsibilities. Focuses on event planning, youth development, and fostering inclusivity and accessibility.",
-    image: "/placeholder.svg",
+    image: "/ismalivolunteers.jpg",
   },
   {
     role: "Activist (Volunteer)",
@@ -16,15 +16,15 @@ const volunteerWork = [
     period: "Feb 2024 - Present",
     description:
       "Raising awareness of poverty and its causes through monthly focus topics and engaging in impactful campaigns.",
-    image: "/placeholder.svg",
+    image: "/results.jpg",
   },
   {
-    role: "General Member",
-    organization: "HOSA Canada",
-    period: "Sep 2023 - Present",
+    role: "Medical Writer",
+    organization: "HEAL for Health",
+    period: "Jan 2024 - Oct 2024",
     description:
-      "Developing leadership and technical skills in healthcare through workshops, competitions, and collaborative projects.",
-    image: "/placeholder.svg",
+      "Contributing to a booklet on Respiratory Syncytial Virus (RSV) to inform underprivileged communities.",
+    image: "/healforhealth.jpg",
   },
   {
     role: "Auditory Research",
@@ -32,7 +32,7 @@ const volunteerWork = [
     period: "Sep 2023 - Present (1 yr 6 mos)",
     description:
       "Helping in auditory research for the cochlear implant program.",
-    image: "/placeholder.svg",
+    image: "/sickkids.jpg",
   },
   {
     role: "Job Fair Volunteer",
@@ -40,7 +40,7 @@ const volunteerWork = [
     period: "Mar 2024 (1 month)",
     description:
       "Setup, helping people connect with different booths that match what they want, and packing up.",
-    image: "/placeholder.svg",
+    image: "/dbnc.jpg",
   },
   {
     role: "Care Packages Maker",
@@ -48,7 +48,7 @@ const volunteerWork = [
     period: "Dec 2023 (1 month)",
     description:
       "Helped make care packages for children in need at the University of Toronto (Mississauga Campus), raising awareness and supporting children in need with care packages containing lollipops, pens, stickers, fidget toys, and chains.",
-    image: "/placeholder.svg",
+    image: "/floursihfoundation.jpg",
   },
   // Add more volunteer work as needed
 ]

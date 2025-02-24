@@ -16,7 +16,7 @@ const experiences = [
     period: "Nov 2024 - Present (4 months)",
     description:
       "Collaborates on the KPE Rethink Sports research project, providing insights on inclusivity in sports initiatives. Recognized with an honorarium for contributions.",
-    image: "/placeholder.svg",
+    image: "/uoftkpe_logo.jpg",
   },
   {
     title: "General Member",
@@ -24,7 +24,7 @@ const experiences = [
     period: "Jul 2024 - Present (8 months)",
     description:
       "Collaborates with youth to address critical health issues affecting Canadians, advocating for improved youth health and well-being.",
-    image: "/placeholder.svg",
+    image: "/ycrh.jpg",
   },
   {
     title: "Director of Research & Development",
@@ -32,7 +32,7 @@ const experiences = [
     period: "Oct 2024 - Present (5 months)",
     description:
       "Oversees research for educational content and helps develop new ideas for posts and events focused on healthcare education.",
-    image: "/placeholder.svg",
+    image: "/neurogensis.jpg",
   },
   {
     title: "Assistant Director of Publications",
@@ -40,7 +40,7 @@ const experiences = [
     period: "Oct 2024 - Present",
     description:
       "As Assistant Director, I oversee the publications department, contributing to magazine and newsletter content with a focus on health and wellness.",
-    image: "/placeholder.svg",
+    image: "/HHI.jpg",
   },
   {
     title: "Summer Camp Counselor",
@@ -48,7 +48,7 @@ const experiences = [
     period: "Jun 2024 - Aug 2024",
     description:
       "Led activities and provided mentorship for youth, creating a positive environment for over 35 students.",
-    image: "/placeholder.svg",
+    image: "/dbnc.jpg",
   },
   {
     title: "Vice President for STEM Fellowship Chapter",
@@ -56,7 +56,7 @@ const experiences = [
     period: "Oct 2024 - Present (5 months)",
     description:
       "Leads projects to inspire students to pursue careers in STEM fields, including planning workshops, contests, and outreach programs. Manages collaborations, organizes events, and ensures initiatives assist future scholars and innovators.",
-    image: "/placeholder.svg",
+    image: "/stemfellowship.jpg",
   },
   {
     title: "Vice President at French Club",
@@ -64,7 +64,7 @@ const experiences = [
     period: "Sep 2024 - Present (6 months)",
     description:
       "Leads initiatives to promote French language and culture, organizing events and fostering student engagement. Collaborates with the team to create a dynamic and inclusive environment for language learning.",
-    image: "/placeholder.svg",
+    image: "/frenchclub.jpg",
   },
   {
     title: "Event Coordinator at Newcomers Club",
@@ -72,15 +72,15 @@ const experiences = [
     period: "Sep 2024 - Present (6 months)",
     description:
       "Organizes events to help new students integrate into the school community, planning and promoting social and cultural activities while managing event logistics to ensure a welcoming atmosphere.",
-    image: "/placeholder.svg",
+    image: "/newcomersclub.jpg",
   },
   {
-    title: "Medical Writer",
-    company: "HEAL for Health",
-    period: "Jan 2024 - Oct 2024",
+    title: "General Member",
+    company: "HOSA Canada",
+    period: "Sep 2023 - Present",
     description:
-      "Contributing to a booklet on Respiratory Syncytial Virus (RSV) to inform underprivileged communities.",
-    image: "/placeholder.svg",
+      "Developing leadership and technical skills in healthcare through workshops, competitions, and collaborative projects.",
+    image: "/hosa.jpg",
   },
   {
     title: "Pediatrics Cancer Research Writer",
@@ -88,7 +88,7 @@ const experiences = [
     period: "Jul 2024 - Aug 2024",
     description:
       "Contributed to research and presentation on Astrocytomas in the context of brain and spinal cord tumors.",
-    image: "/placeholder.svg",
+    image: "/sun4cancer.jpg",
   },
   {
     title: "Youth Advisor",
@@ -96,7 +96,7 @@ const experiences = [
     period: "Jul 2024",
     description:
       "Provided input for the Raising Canada Report, representing the youth perspective on critical issues affecting children in Canada.",
-    image: "/placeholder.svg",
+    image: "/childernfirstcanada.jpg",
   },
   // Add more experiences as needed
 ];

@@ -8,7 +8,7 @@ export default function About() {
       <div className="grid gap-12 lg:grid-cols-2">
         <Card className="bg-card shadow-md">
           <CardHeader>
-            <CardTitle>A Bit About Myself</CardTitle>
+            <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>A Bit About Myself</CardTitle>
             <CardDescription>Get to know me better</CardDescription>
           </CardHeader>
           <CardContent>
