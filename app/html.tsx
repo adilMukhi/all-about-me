@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/ico" href="/public/favicon.ico">
+    <link rel="icon" type="image/ico" href="/public/icon.ico">
     <meta charset="UTF-8">
     <!-- Link to main.css -->
     <link href="main.css" rel="stylesheet">
