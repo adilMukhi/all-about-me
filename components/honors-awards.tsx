@@ -20,7 +20,7 @@ const honorsAwards = [
     title: "Honors, Academic Distinction (Science, IB Design, Gym)",
     issuer: "Glenforest Secondary School",
     year: "Oct 2024",
-    description: "Earned honors in Science, IB Design, and Physical Education during the grade 9 (2023-2024) academic year.",
+    description: "Earned the highest mark in Science, IB Design, and Physical Education during the grade 9 (2023-2024) academic year.",
     image: "/placeholder.svg",
   },
   {
