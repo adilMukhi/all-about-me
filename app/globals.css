@@ -87,7 +87,7 @@ body {
 }
 
 .text-hover-effect:hover {
-  transform: scale(1.1);
+  transform: scale(1.5);
   color: var(--primary);
 }
 
