@@ -1,4 +1,9 @@
+"use client"
+
+import { useState } from "react"
+import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 
 const certificates = [
   {
@@ -59,12 +64,31 @@ const certificates = [
 ];
 
 export default function Certificates() {
+  const [expandedCard, setExpandedCard] = useState<number | null>(null)
+  const [showAll, setShowAll] = useState(false)
+
+  const toggleExpand = (index: number) => {
+    setExpandedCard(expandedCard === index ? null : index)
+  }
+
+  const visibleCertificates = showAll ? certificates : certificates.slice(0, 6)
+
   return (
     <section id="certificates" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-      <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl normal-case" style={{ fontFamily: "Sour Gummy, latin"}}>Certificates</h2>
+      <h2
+        className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl normal-case"
+        style={{ fontFamily: "Sour Gummy, latin" }}
+      >
+        Certificates
+      </h2>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {certificates.map((cert, index) => (
-          <Card key={index}>
+        {visibleCertificates.map((cert, index) => (
+          <Card
+            key={index}
+            className="transition-all duration-300 hover:shadow-xl hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-800"
+            onMouseEnter={() => toggleExpand(index)}
+            onMouseLeave={() => toggleExpand(null)}
+          >
             <CardHeader>
               <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{cert.name}</CardTitle>
               <CardDescription>
@@ -73,10 +97,33 @@ export default function Certificates() {
             </CardHeader>
             <CardContent>
               <p>{cert.description}</p>
+              {expandedCard === index && (
+                <div className="mt-4">
+                  <Image
+                    src={`/certificate-${index + 1}.jpg`}
+                    alt={cert.name}
+                    width={300}
+                    height={200}
+                    className="rounded-lg object-cover mb-4"
+                  />
+                  <h4 className="font-semibold">Skills Learned:</h4>
+                  <ul className="list-disc list-inside">
+                    <li>Skill 1</li>
+                    <li>Skill 2</li>
+                    <li>Skill 3</li>
+                  </ul>
+                  <Button className="mt-4">See More</Button>
+                </div>
+              )}
             </CardContent>
           </Card>
         ))}
       </div>
+      {!showAll && certificates.length > 6 && (
+        <div className="mt-8 text-center">
+          <Button onClick={() => setShowAll(true)}>Show More</Button>
+        </div>
+      )}
     </section>
   )
 }

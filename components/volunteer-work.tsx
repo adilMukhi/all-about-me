@@ -1,5 +1,9 @@
+"use client"
+
+import { useState } from "react"
 import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 
 const volunteerWork = [
   {
@@ -50,16 +54,35 @@ const volunteerWork = [
       "Helped make care packages for children in need at the University of Toronto (Mississauga Campus), raising awareness and supporting children in need with care packages containing lollipops, pens, stickers, fidget toys, and chains.",
     image: "/floursihfoundation.jpg",
   },
-  // Add more volunteer work as needed
 ]
 
 export default function VolunteerWork() {
+  const [expandedCard, setExpandedCard] = useState<number | null>(null)
+  const [showAll, setShowAll] = useState(false)
+
+  const toggleExpand = (index: number) => {
+    setExpandedCard(expandedCard === index ? null : index)
+  }
+
+  const visibleVolunteerWork = showAll ? volunteerWork : volunteerWork.slice(0, 4)
+
   return (
     <section id="volunteer-work" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-      <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" style={{ fontFamily: "Sour Gummy, latin"}}>Volunteer Work</h2>
+      <h2
+        className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+        style={{ fontFamily: "Sour Gummy, latin" }}
+      >
+        Volunteer Work
+      </h2>
       <div className="grid gap-6 md:grid-cols-2">
-        {volunteerWork.map((work, index) => (
-          <Card key={index}>
+        {visibleVolunteerWork.map((work, index) => (
+          <Card
+            key={index}
+            className="transition-all duration-300 hover:shadow-xl hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-800"
+            onMouseEnter={() => toggleExpand(index)}
+            onMouseLeave={() => toggleExpand(null)}
+          >
+            =>toggleExpand(index)} onMouseLeave={() => toggleExpand(null)}>
             <CardHeader>
               <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{work.role}</CardTitle>
               <CardDescription>
@@ -74,11 +97,29 @@ export default function VolunteerWork() {
                 height={150}
                 className="rounded-lg object-cover"
               />
-              <p>{work.description}</p>
+              <div>
+                <p>{work.description}</p>
+                {expandedCard === index && (
+                  <div className="mt-4">
+                    <h4 className="font-semibold">Skills Learned:</h4>
+                    <ul className="list-disc list-inside">
+                      <li>Skill 1</li>
+                      <li>Skill 2</li>
+                      <li>Skill 3</li>
+                    </ul>
+                    <Button className="mt-4">See More</Button>
+                  </div>
+                )}
+              </div>
             </CardContent>
           </Card>
         ))}
       </div>
+      {!showAll && volunteerWork.length > 4 && (
+        <div className="mt-8 text-center">
+          <Button onClick={() => setShowAll(true)}>Show More</Button>
+        </div>
+      )}
     </section>
   )
 }

@@ -1,5 +1,9 @@
+"use client"
+
+import { useState } from "react"
 import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 
 const experiences = [
   {
@@ -99,15 +103,36 @@ const experiences = [
     image: "/childernfirstcanada.jpg",
   },
   // Add more experiences as needed
-];
+]
 
 export default function WorkExperience() {
+  const [expandedCard, setExpandedCard] = useState<number | null>(null)
+  const [showAll, setShowAll] = useState(false)
+
+  const toggleExpand = (index: number) => {
+    setExpandedCard(expandedCard === index ? null : index)
+  }
+
+  const visibleExperiences = showAll ? experiences : experiences.slice(0, 4)
+
   return (
     <section id="work-experience" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-      <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" style={{ fontFamily: "Sour Gummy, latin"}}>Work Experience</h2>
+      <h2
+        className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+        style={{ fontFamily: "Sour Gummy, latin" }}
+      >
+        Work Experience
+      </h2>
       <div className="grid gap-6 md:grid-cols-2">
-        {experiences.map((exp, index) => (
-          <Card key={index}>
+        {visibleExperiences.map((exp, index) => (
+          <Card
+            key={index}
+            className={`transition-all duration-300 hover:shadow-xl hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-800 ${
+              expandedCard === index ? "md:col-span-2" : ""
+            }`}
+            onMouseEnter={() => toggleExpand(index)}
+            onMouseLeave={() => toggleExpand(null)}
+          >
             <CardHeader>
               <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{exp.title}</CardTitle>
               <CardDescription>
@@ -122,12 +147,29 @@ export default function WorkExperience() {
                 height={150}
                 className="rounded-lg object-cover"
               />
-              <p>{exp.description}</p>
+              <div>
+                <p>{exp.description}</p>
+                {expandedCard === index && (
+                  <div className="mt-4">
+                    <h4 className="font-semibold">Skills Learned:</h4>
+                    <ul className="list-disc list-inside">
+                      <li>Skill 1</li>
+                      <li>Skill 2</li>
+                      <li>Skill 3</li>
+                    </ul>
+                    <Button className="mt-4">See More</Button>
+                  </div>
+                )}
+              </div>
             </CardContent>
           </Card>
         ))}
       </div>
+      {!showAll && experiences.length > 4 && (
+        <div className="mt-8 text-center">
+          <Button onClick={() => setShowAll(true)}>Show More</Button>
+        </div>
+      )}
     </section>
   )
 }
-
