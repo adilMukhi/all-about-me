@@ -73,3 +73,40 @@ body {
 .animate-fade-in-up {
   animation: fade-in-up 0.5s ease-out;
 }
+
+.hover-effect {
+  transition: all 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: scale(1.05);
+}
+
+.text-hover-effect {
+  transition: all 0.3s ease;
+}
+
+.text-hover-effect:hover {
+  transform: scale(1.1);
+  color: var(--primary);
+}
+
+.button-hover-effect {
+  transition: all 0.3s ease;
+}
+
+.button-hover-effect:hover {
+  transform: scale(1.1);
+  background-color: var(--primary);
+  color: var(--background);
+}
+
+.card-hover-effect {
+  transition: all 0.3s ease;
+}
+
+.card-hover-effect:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  background-color: #f0f9ff;
+}

@@ -13,6 +13,7 @@ const experiences = [
     description:
       "Dr. Interested is a student-led initiative aiming to inspire future medical professionals through research, mentorship, and outreach. The organization has 30+ executives, 300+ Instagram followers, 120+ Discord members, and 100+ LinkedIn followers, with significant reach and collaboration with organizations like Aid4Need to support healthcare workers.",
     image: "/drinterested.jpg",
+    skills: ["Leadership", "Project Management", "Community Building", "Medical Education", "Networking"],
   },
   {
     title: "Youth Advisor",
@@ -21,6 +22,7 @@ const experiences = [
     description:
       "Collaborates on the KPE Rethink Sports research project, providing insights on inclusivity in sports initiatives. Recognized with an honorarium for contributions.",
     image: "/uoftkpe_logo.jpg",
+    skills: ["Research", "Sports Inclusivity", "Advisory Skills", "Data Analysis", "Presentation Skills"],
   },
   {
     title: "General Member",
@@ -29,6 +31,7 @@ const experiences = [
     description:
       "Collaborates with youth to address critical health issues affecting Canadians, advocating for improved youth health and well-being.",
     image: "/ycrh.jpg",
+    skills: ["Health Advocacy", "Policy Analysis", "Teamwork", "Public Speaking", "Problem-Solving"],
   },
   {
     title: "Director of Research & Development",
@@ -37,6 +40,13 @@ const experiences = [
     description:
       "Oversees research for educational content and helps develop new ideas for posts and events focused on healthcare education.",
     image: "/neurogensis.jpg",
+    skills: [
+      "Research Management",
+      "Content Development",
+      "Neuroscience Knowledge",
+      "Event Planning",
+      "Cross-Cultural Communication",
+    ],
   },
   {
     title: "Assistant Director of Publications",
@@ -45,6 +55,7 @@ const experiences = [
     description:
       "As Assistant Director, I oversee the publications department, contributing to magazine and newsletter content with a focus on health and wellness.",
     image: "/HHI.jpg",
+    skills: ["Editorial Skills", "Content Creation", "Team Management", "Health Writing", "Publication Process"],
   },
   {
     title: "Summer Camp Counselor",
@@ -53,6 +64,7 @@ const experiences = [
     description:
       "Led activities and provided mentorship for youth, creating a positive environment for over 35 students.",
     image: "/dbnc.jpg",
+    skills: ["Youth Mentorship", "Activity Planning", "Leadership", "Conflict Resolution", "Child Safety"],
   },
   {
     title: "Vice President for STEM Fellowship Chapter",
@@ -61,6 +73,7 @@ const experiences = [
     description:
       "Leads projects to inspire students to pursue careers in STEM fields, including planning workshops, contests, and outreach programs. Manages collaborations, organizes events, and ensures initiatives assist future scholars and innovators.",
     image: "/stemfellowship.jpg",
+    skills: ["STEM Education", "Event Organization", "Project Management", "Public Speaking", "Peer Leadership"],
   },
   {
     title: "Vice President at French Club",
@@ -69,6 +82,7 @@ const experiences = [
     description:
       "Leads initiatives to promote French language and culture, organizing events and fostering student engagement. Collaborates with the team to create a dynamic and inclusive environment for language learning.",
     image: "/frenchclub.jpg",
+    skills: ["French Language", "Cultural Awareness", "Event Planning", "Team Collaboration", "Language Education"],
   },
   {
     title: "Event Coordinator at Newcomers Club",
@@ -77,6 +91,7 @@ const experiences = [
     description:
       "Organizes events to help new students integrate into the school community, planning and promoting social and cultural activities while managing event logistics to ensure a welcoming atmosphere.",
     image: "/newcomersclub.jpg",
+    skills: ["Event Coordination", "Cultural Sensitivity", "Social Integration", "Time Management", "Communication"],
   },
   {
     title: "General Member",
@@ -85,6 +100,7 @@ const experiences = [
     description:
       "Developing leadership and technical skills in healthcare through workshops, competitions, and collaborative projects.",
     image: "/hosa.jpg",
+    skills: ["Healthcare Knowledge", "Competitive Skills", "Teamwork", "Medical Ethics", "Problem-Solving"],
   },
   {
     title: "Pediatrics Cancer Research Writer",
@@ -93,6 +109,7 @@ const experiences = [
     description:
       "Contributed to research and presentation on Astrocytomas in the context of brain and spinal cord tumors.",
     image: "/sun4cancer.jpg",
+    skills: ["Medical Writing", "Cancer Research", "Data Analysis", "Scientific Communication", "Pediatric Oncology"],
   },
   {
     title: "Youth Advisor",
@@ -101,8 +118,8 @@ const experiences = [
     description:
       "Provided input for the Raising Canada Report, representing the youth perspective on critical issues affecting children in Canada.",
     image: "/childernfirstcanada.jpg",
+    skills: ["Policy Analysis", "Youth Advocacy", "Report Writing", "Critical Thinking", "Child Welfare"],
   },
-  // Add more experiences as needed
 ]
 
 export default function WorkExperience() {
@@ -118,7 +135,7 @@ export default function WorkExperience() {
   return (
     <section id="work-experience" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <h2
-        className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+        className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-hover-effect"
         style={{ fontFamily: "Sour Gummy, latin" }}
       >
         Work Experience
@@ -127,9 +144,7 @@ export default function WorkExperience() {
         {visibleExperiences.map((exp, index) => (
           <Card
             key={index}
-            className={`transition-all duration-300 hover:shadow-xl hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-800 ${
-              expandedCard === index ? "md:col-span-2" : ""
-            }`}
+            className={`card-hover-effect ${expandedCard === index ? "md:col-span-2" : ""}`}
             onMouseEnter={() => toggleExpand(index)}
             onMouseLeave={() => toggleExpand(null)}
           >
@@ -147,17 +162,17 @@ export default function WorkExperience() {
                 height={150}
                 className="rounded-lg object-cover"
               />
-              <div>
+              <div className="flex-1">
                 <p>{exp.description}</p>
                 {expandedCard === index && (
                   <div className="mt-4">
                     <h4 className="font-semibold">Skills Learned:</h4>
                     <ul className="list-disc list-inside">
-                      <li>Skill 1</li>
-                      <li>Skill 2</li>
-                      <li>Skill 3</li>
+                      {exp.skills.map((skill, skillIndex) => (
+                        <li key={skillIndex}>{skill}</li>
+                      ))}
                     </ul>
-                    <Button className="mt-4">See More</Button>
+                    <Button className="mt-4 button-hover-effect">See More</Button>
                   </div>
                 )}
               </div>
@@ -167,7 +182,9 @@ export default function WorkExperience() {
       </div>
       {!showAll && experiences.length > 4 && (
         <div className="mt-8 text-center">
-          <Button onClick={() => setShowAll(true)}>Show More</Button>
+          <Button onClick={() => setShowAll(true)} className="button-hover-effect">
+            Show More
+          </Button>
         </div>
       )}
     </section>

@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="bg-primary/10 py-16">
       <div className="container flex flex-col items-center justify-center gap-4 text-center">
         <h1
-          className="text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl normal-case"
+          className="text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl normal-case text-hover-effect"
           style={{ fontFamily: "DynaPuff, serif", letterSpacing: "0.1em" }}
         >
           Hi, I'm Adil Mukhi!
@@ -18,20 +18,20 @@ export default function Hero() {
           enjoy exploring complex topics, conducting research, and creating engaging content.
         </p>
         <div className="flex gap-4 flex-wrap justify-center">
-          <Button asChild>
+          <Button asChild className="button-hover-effect">
             <a href="#contact">Contact Me!</a>
           </Button>
-          <Button variant="outline" asChild>
+          <Button variant="outline" asChild className="button-hover-effect">
             <a href="#social-links">See More!</a>
           </Button>
-          <Button variant="secondary" asChild>
+          <Button variant="secondary" asChild className="button-hover-effect">
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
               View Resume
             </a>
           </Button>
-          <Button variant="secondary" asChild>
+          <Button variant="secondary" asChild className="button-hover-effect">
             <a href="/visual-resume.pdf" target="_blank" rel="noopener noreferrer">
-              View Visual Resume
+              Visual Resume
             </a>
           </Button>
         </div>

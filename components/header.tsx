@@ -18,7 +18,7 @@ export default function Header() {
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Image src="/pixtin.jpg" alt="Profile picture" width={40} height={40} className="rounded-full" />
             <span
-              className="hidden font-bold sm:inline-block text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400"
+              className="hidden font-bold sm:inline-block text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 text-hover-effect"
               style={{ fontFamily: "Sour Gummy, latin" }}
             >
               Adil Mukhi
@@ -26,21 +26,18 @@ export default function Header() {
           </Link>
         </div>
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium flex-1 justify-center">
-          <Link href="#about" className="hover:text-primary transition-colors">
-            About
-          </Link>
-          <Link href="#skills" className="hover:text-primary transition-colors">
-            Skills
-          </Link>
-          <Link href="#projects" className="hover:text-primary transition-colors">
-            Projects
-          </Link>
-          <Link href="#contact" className="hover:text-primary transition-colors">
-            Contact
-          </Link>
+          {["About", "Skills", "Projects", "Contact"].map((item) => (
+            <Link
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="hover:text-primary transition-colors text-hover-effect"
+            >
+              {item}
+            </Link>
+          ))}
         </nav>
         <div className="flex-1 flex justify-end">
-          <Button variant="outline" className="hidden md:inline-flex">
+          <Button variant="outline" className="hidden md:inline-flex button-hover-effect">
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
               Resume
             </a>
@@ -55,19 +52,17 @@ export default function Header() {
       {isMenuOpen && (
         <nav className="md:hidden">
           <div className="container py-4" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
-            <Link href="#about" className="block py-2" onClick={toggleMenu}>
-              About
-            </Link>
-            <Link href="#skills" className="block py-2" onClick={toggleMenu}>
-              Skills
-            </Link>
-            <Link href="#projects" className="block py-2" onClick={toggleMenu}>
-              Projects
-            </Link>
-            <Link href="#contact" className="block py-2" onClick={toggleMenu}>
-              Contact
-            </Link>
-            <Link href="/resume.pdf" className="block py-2" onClick={toggleMenu}>
+            {["About", "Skills", "Projects", "Contact"].map((item) => (
+              <Link
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="block py-2 text-hover-effect"
+                onClick={toggleMenu}
+              >
+                {item}
+              </Link>
+            ))}
+            <Link href="/resume.pdf" className="block py-2 text-hover-effect" onClick={toggleMenu}>
               Resume
             </Link>
           </div>
@@ -76,4 +71,3 @@ export default function Header() {
     </header>
   )
 }
-
