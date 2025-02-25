@@ -29,9 +29,9 @@ export default function Contact() {
             <Image
               src="/profile-pic.jpg"
               alt="Adil Mukhi"
-              width={400}
-              height={400}
-              className="rounded-lg object-cover"
+              width={450}
+              height={450}
+              className="rounded-full"
             />
           </div>
           <div className="w-full md:w-1/2 space-y-6">
