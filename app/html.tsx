@@ -5,8 +5,6 @@
     <!-- Link to main.css -->
     <link href="main.css" rel="stylesheet">
 
-    <meta name="google-site-verification" content="jJ1sqZTuO6URke1wDUtNLepi4rkyAWN7HmpjbNXN5pU" />
-
     <!-- Font imports -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap">
