@@ -17,7 +17,7 @@ export default function About() {
         About Me
       </h2>
       <div className="grid gap-12 lg:grid-cols-2">
-        <Card className="bg-card shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-800">
+        <Card className="bg-card shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 hover:bg-blue-100 dark:hover:bg-blue-600">
           <CardHeader>
             <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>A Bit About Myself</CardTitle>
             <CardDescription>Get to know me better</CardDescription>
