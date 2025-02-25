@@ -42,6 +42,7 @@ export default function Contact() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className={`flex items-center gap-2 ${social.color} hover:text-primary transition-colors`}
                 >
                   <social.icon className="h-6 w-6" />
                   <span style={{ fontFamily: "'Kirang Haerang', cursive", fontSize: "18px" }}>{social.name}</span>
