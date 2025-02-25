@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KHTXF8N5');</script>
-    <!-- End Google Tag Manager -->
-
     <meta charset="UTF-8">
     <!-- Link to main.css -->
     <link href="main.css" rel="stylesheet">
+
+    <meta name="google-site-verification" content="jJ1sqZTuO6URke1wDUtNLepi4rkyAWN7HmpjbNXN5pU" />
 
     <!-- Font imports -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap">
@@ -26,10 +20,4 @@
     <!-- Footer/links = Kirang Haerang -->
 
 </head>
-<body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHTXF8N5"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-</body>
 </html>
