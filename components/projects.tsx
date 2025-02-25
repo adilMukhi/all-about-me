@@ -22,6 +22,7 @@ const projects = [
     demoLink: "#",
     codeLink: "#",
   },
+  {
     title: "Project 3",
     description: "Key points about Project 3 and the technologies used.",
     image: "/placeholder.svg?height=200&width=300",
