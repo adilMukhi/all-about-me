@@ -50,9 +50,7 @@ export default function Education() {
         {educationData.map((edu, index) => (
           <Card
             key={index}
-            className={`transition-all duration-300 hover:shadow-xl hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-800 ${
-              index === 2 ? "md:col-span-2" : ""
-            }`}
+            className={`card-hover-effect`}
             onMouseEnter={() => toggleExpand(index)}
             onMouseLeave={() => toggleExpand(null)}
           >

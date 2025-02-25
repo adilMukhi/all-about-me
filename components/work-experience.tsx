@@ -135,7 +135,7 @@ export default function WorkExperience() {
   return (
     <section id="work-experience" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <h2
-        className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-hover-effect"
+        className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
         style={{ fontFamily: "Sour Gummy, latin" }}
       >
         Work Experience

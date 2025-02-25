@@ -87,7 +87,7 @@ body {
 }
 
 .text-hover-effect:hover {
-  transform: scale(1.5);
+  transform: scale(1.15);
   color: var(--primary);
 }
 
@@ -102,7 +102,7 @@ body {
 }
 
 .card-hover-effect {
-  transition: all 0.3s ease;
+  transition: all 0.7s ease;
 }
 
 .card-hover-effect:hover {

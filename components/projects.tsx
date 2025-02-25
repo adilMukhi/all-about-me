@@ -36,7 +36,7 @@ export default function Projects() {
       <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" style={{ fontFamily: "Sour Gummy, latin"}}>Projects</h2>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
-          <Card key={index}>
+          <Card key={index} className={`card-hover-effect`}>
             <CardHeader>
               <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{project.title}</CardTitle>
               <CardDescription>{project.description}</CardDescription>
