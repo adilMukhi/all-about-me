@@ -186,7 +186,7 @@ export default function WorkExperience() {
                     </ul>
                     <Button className="mt-4 button-hover-effect">
                       <a href= {exp.link} target="_blank" rel="noopener noreferrer">
-                      Learn More
+                      Learn More </a>
                     </Button>
                   </div>
                 )}

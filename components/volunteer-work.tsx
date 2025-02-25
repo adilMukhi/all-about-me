@@ -120,7 +120,7 @@ export default function VolunteerWork() {
                     </ul>
                     <Button className="mt-4 button-hover-effect">
                       <a href= {work.link} target="_blank" rel="noopener noreferrer">
-                      Learn More
+                      Learn More </a>
                     </Button>
                   </div>
                 )}

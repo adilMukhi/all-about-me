@@ -67,7 +67,7 @@ export default function Education() {
                   <div className="mt-4">
                     <Button className="mt-4 button-hover-effect">
                       <a href= {edu.link} target="_blank" rel="noopener noreferrer">
-                      Learn More
+                      Learn More  </a>
                     </Button>
                   </div>
                 )}

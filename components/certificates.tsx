@@ -131,7 +131,7 @@ export default function Certificates() {
                   </ul>
                     <Button className="mt-4 button-hover-effect">
                       <a href= {cert.link} target="_blank" rel="noopener noreferrer">
-                      Learn More
+                      Learn More </a>
                     </Button>
                 </div>
               )}
