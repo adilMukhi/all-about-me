@@ -27,7 +27,7 @@ export default function Contact() {
         <CardContent className="flex flex-col md:flex-row items-center gap-8">
           <div className="w-full md:w-1/2">
             <Image
-              src="/profile-pic.jpg"
+              src="/secondpic.jpg"
               alt="Adil Mukhi"
               width={450}
               height={450}
