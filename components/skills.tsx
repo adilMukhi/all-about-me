@@ -51,7 +51,7 @@ export default function Skills() {
             <CardTitle style={{ fontFamily: "'Bubblegum Sans', 'Times New Roman', serif" }}>Soft Skills</CardTitle>
             <CardDescription>Interpersonal and professional skills</CardDescription>
           </CardHeader>
-          <CardContent style={{ fontFamily: "'Times New Roman', serif", fontSize: "20px" }}>
+          <CardContent style={{ fontFamily: "'Times New Roman', serif"}}>
             <div className="flex flex-wrap gap-2">
               {softSkills.map((skill) => (
                 <Badge key={skill} variant="secondary">
