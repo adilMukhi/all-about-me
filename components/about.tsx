@@ -24,7 +24,7 @@ export default function About() {
               in French Club and STEM Fellowship, and actively helping in Peer Helpers. My research experience 
               includes studies on stress hormones and astrocytomas, and I serve as a Youth Advisor at the University of 
               Toronto Faculty of Kinesiology and Physical Education. I have earned Distinction in the Beaver Computing Challenge
-               and am currently enrolled in UofT’s MedLinx Program, furthering my passion for healthcare and advocacy.
+              and am currently enrolled in UofT’s MedLinx Program, furthering my passion for healthcare and advocacy.
             </p>
           </CardContent>
         </Card>
