@@ -92,7 +92,7 @@ body {
 }
 
 .button-hover-effect {
-  transition: all 0.5s ease;
+  transition: all 0.4s ease;
 }
 
 .button-hover-effect:hover {

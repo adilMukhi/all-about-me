@@ -42,7 +42,6 @@ export default function Contact() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block py-2 text-hover-effect"
                 >
                   <social.icon className="h-6 w-6" />
                   <span style={{ fontFamily: "'Kirang Haerang', cursive", fontSize: "18px" }}>{social.name}</span>
@@ -50,10 +49,10 @@ export default function Contact() {
               ))}
             </div>
             <div className="flex flex-col gap-4 mt-6">
-              <Button asChild>
+              <Button asChild className="button-hover-effect">
                 <a href="mailto:mukhiadil2009@gmail.com">Email Me</a>
               </Button>
-              <Button variant="outline" asChild>
+              <Button variant="outline" asChild className="button-hover-effect">
                 <a href="https://calendly.com/yourusername" target="_blank" rel="noopener noreferrer">
                   Book a Meeting
                 </a>
