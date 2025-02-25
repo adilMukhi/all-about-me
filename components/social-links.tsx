@@ -19,7 +19,7 @@ export default function SocialLinks() {
       >
         Connect With Me
       </h2>
-      <Card className="bg-gradient-to-br from-card to-background shadow-md card-hover-effect">
+      <Card className="card-hover-effect">
         <CardHeader>
           <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>Let's Stay in Touch</CardTitle>
         </CardHeader>
