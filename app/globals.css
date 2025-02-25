@@ -1,20 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap'); /* Not necessary, but just in case */
+@import url("https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: 'Times New Roman', Times, serif !important;
+  font-family: "Times New Roman", Times, serif !important;
+  background: linear-gradient(-45deg, #e6f7ff, #e6fffa, #e6f7ff, #e6fffa);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @layer base {
   :root {
-    --background: 210 50% 95%;
+    --background: 210 50% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 210 40% 98%;
@@ -23,23 +38,23 @@ body {
     --popover: 210 40% 98%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 221.2 83.2% 53.3%;
+    --primary: 199 89% 48%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 90%;
+    --secondary: 187 100% 42%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 90%;
+    --muted: 210 40% 96%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 85%;
+    --accent: 210 40% 90%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 80%;
-    --input: 214.3 31.8% 80%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
     --ring: 221.2 83.2% 53.3%;
 
     --radius: 0.5rem;
