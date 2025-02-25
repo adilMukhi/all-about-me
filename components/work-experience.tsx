@@ -144,7 +144,7 @@ export default function WorkExperience() {
         {visibleExperiences.map((exp, index) => (
           <Card
             key={index}
-            className={`card-hover-effect ${expandedCard === index ? "md:col-span-2" : ""}`}
+            className={`card-hover-effect`}
             onMouseEnter={() => toggleExpand(index)}
             onMouseLeave={() => toggleExpand(null)}
           >

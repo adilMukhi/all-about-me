@@ -13,6 +13,7 @@ const volunteerWork = [
     description:
       "Appointed as Junior Team Lead to train junior volunteers and take on additional responsibilities. Focuses on event planning, youth development, and fostering inclusivity and accessibility.",
     image: "/ismalivolunteers.jpg",
+    skills: ["Patient Care", "Hospital Protocols", "Empathy", "Time Management", "Teamwork in Healthcare"],
   },
   {
     role: "Activist (Volunteer)",
@@ -21,6 +22,7 @@ const volunteerWork = [
     description:
       "Raising awareness of poverty and its causes through monthly focus topics and engaging in impactful campaigns.",
     image: "/results.jpg",
+    skills: ["Patient Care", "Hospital Protocols", "Empathy", "Time Management", "Teamwork in Healthcare"],
   },
   {
     role: "Medical Writer",
@@ -29,6 +31,7 @@ const volunteerWork = [
     description:
       "Contributing to a booklet on Respiratory Syncytial Virus (RSV) to inform underprivileged communities.",
     image: "/healforhealth.jpg",
+    skills: ["Patient Care", "Hospital Protocols", "Empathy", "Time Management", "Teamwork in Healthcare"],
   },
   {
     role: "Auditory Research",
@@ -37,6 +40,7 @@ const volunteerWork = [
     description:
       "Helping in auditory research for the cochlear implant program.",
     image: "/sickkids.jpg",
+    skills: ["Patient Care", "Hospital Protocols", "Empathy", "Time Management", "Teamwork in Healthcare"],
   },
   {
     role: "Job Fair Volunteer",
@@ -45,6 +49,7 @@ const volunteerWork = [
     description:
       "Setup, helping people connect with different booths that match what they want, and packing up.",
     image: "/dbnc.jpg",
+    skills: ["Patient Care", "Hospital Protocols", "Empathy", "Time Management", "Teamwork in Healthcare"],
   },
   {
     role: "Care Packages Maker",
@@ -53,6 +58,7 @@ const volunteerWork = [
     description:
       "Helped make care packages for children in need at the University of Toronto (Mississauga Campus), raising awareness and supporting children in need with care packages containing lollipops, pens, stickers, fidget toys, and chains.",
     image: "/floursihfoundation.jpg",
+    skills: ["Patient Care", "Hospital Protocols", "Empathy", "Time Management", "Teamwork in Healthcare"],
   },
 ]
 
@@ -69,7 +75,7 @@ export default function VolunteerWork() {
   return (
     <section id="volunteer-work" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <h2
-        className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+        className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-hover-effect"
         style={{ fontFamily: "Sour Gummy, latin" }}
       >
         Volunteer Work
@@ -78,11 +84,10 @@ export default function VolunteerWork() {
         {visibleVolunteerWork.map((work, index) => (
           <Card
             key={index}
-            className="transition-all duration-300 hover:shadow-xl hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="card-hover-effect"
             onMouseEnter={() => toggleExpand(index)}
             onMouseLeave={() => toggleExpand(null)}
           >
-            =>toggleExpand(index)} onMouseLeave={() => toggleExpand(null)}>
             <CardHeader>
               <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{work.role}</CardTitle>
               <CardDescription>
@@ -97,17 +102,17 @@ export default function VolunteerWork() {
                 height={150}
                 className="rounded-lg object-cover"
               />
-              <div>
+              <div className="flex-1">
                 <p>{work.description}</p>
                 {expandedCard === index && (
                   <div className="mt-4">
                     <h4 className="font-semibold">Skills Learned:</h4>
                     <ul className="list-disc list-inside">
-                      <li>Skill 1</li>
-                      <li>Skill 2</li>
-                      <li>Skill 3</li>
+                      {work.skills.map((skill, skillIndex) => (
+                        <li key={skillIndex}>{skill}</li>
+                      ))}
                     </ul>
-                    <Button className="mt-4">See More</Button>
+                    <Button className="mt-4 button-hover-effect">See More</Button>
                   </div>
                 )}
               </div>
@@ -117,10 +122,11 @@ export default function VolunteerWork() {
       </div>
       {!showAll && volunteerWork.length > 4 && (
         <div className="mt-8 text-center">
-          <Button onClick={() => setShowAll(true)}>Show More</Button>
+          <Button onClick={() => setShowAll(true)} className="button-hover-effect">
+            Show More
+          </Button>
         </div>
       )}
     </section>
   )
 }
-
