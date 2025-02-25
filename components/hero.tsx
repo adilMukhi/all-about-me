@@ -21,9 +21,6 @@ export default function Hero() {
           <Button asChild className="button-hover-effect">
             <a href="#contact">Contact Me!</a>
           </Button>
-          <Button variant="outline" asChild className="button-hover-effect">
-            <a href="#social-links">See More!</a>
-          </Button>
           <Button variant="secondary" asChild className="button-hover-effect">
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
               View Resume
@@ -33,6 +30,9 @@ export default function Hero() {
             <a href="/visual-resume.pdf" target="_blank" rel="noopener noreferrer">
               Visual Resume
             </a>
+          </Button>
+          <Button variant="outline" asChild className="button-hover-effect">
+            <a href="#social-links">See More!</a>
           </Button>
         </div>
       </div>
