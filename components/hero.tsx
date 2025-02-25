@@ -22,17 +22,17 @@ export default function Hero() {
             <a href="#contact">Contact Me!</a>
           </Button>
           <Button variant="secondary" asChild className="button-hover-effect">
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="https://drive.google.com/file/d/1pcggPR8oLREeZlc2H5wCt1O_DxVH2fQ7/view" target="_blank" rel="noopener noreferrer">
               View Resume
             </a>
           </Button>
           <Button variant="secondary" asChild className="button-hover-effect">
-            <a href="/visual-resume.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="https://drive.google.com/file/d/1xIuHrE6H3Lf-Oj3S-PrXI15dIHi9XtDi/view" target="_blank" rel="noopener noreferrer">
               Visual Resume
             </a>
           </Button>
-          <Button variant="outline" asChild className="button-hover-effect">
-            <a href="#social-links">See More!</a>
+          <Button asChild className="button-hover-effect">
+            <a href="#about">See More!</a>
           </Button>
         </div>
       </div>

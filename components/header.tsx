@@ -15,7 +15,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
       <div className="container flex h-16 items-center">
         <div className="mr-4 hidden md:flex flex-1" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
-          <Link href="/" className="mr-6 flex items-center space-x-2" className="button-hover-effect">
+          <Link href="/" className="mr-6 flex items-center space-x-2">
             <Image src="/pixtin.jpg" alt="Profile picture" width={40} height={40} className="rounded-full" />
             <span
               className="hidden font-bold sm:inline-block text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 text-hover-effect"
