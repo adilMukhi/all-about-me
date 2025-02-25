@@ -61,13 +61,6 @@ export default function Education() {
               </CardDescription>
             </CardHeader>
             <CardContent className={`flex ${index === 2 ? "flex-row" : "flex-col"} gap-4`}>
-              <Image
-                src={edu.image || "/placeholder.svg"}
-                alt={edu.institution}
-                width={index === 2 ? 500 : 150}
-                height={index === 2 ? 350 : 150}
-                className="rounded-lg object-cover"
-              />
               <div>
                 <p>{edu.description}</p>
                 {expandedCard === index && (
