@@ -50,10 +50,10 @@ export default function Contact() {
               ))}
             </div>
             <div className="flex flex-col gap-4 mt-6">
-              <Button asChild className="button-hover-effect">
+              <Button asChild>
                 <a href="mailto:mukhiadil2009@gmail.com">Email Me</a>
               </Button>
-              <Button variant="outline" asChild className="button-hover-effect">
+              <Button variant="outline" asChild>
                 <a href="https://calendly.com/yourusername" target="_blank" rel="noopener noreferrer">
                   Book a Meeting
                 </a>
