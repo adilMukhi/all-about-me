@@ -58,7 +58,7 @@ const certificates = [
     description: "A youth-focused leadership program that fosters project management skills, community engagement, and innovative problem-solving through real-world initiatives.",
     skills: ["Entrepreneurial Thinking", "Strategic Planning", "Fundraising Strategies", "Community Engagement", "Project Execution"],
     link: "https://www.linkedin.com/in/adil-mukhi-6aba27246/details/certifications/#:~:text=all%204%20media-,Youth%20On%20The%20Rise,-Youth%20On%20The",
-    image: "/youthonrise.jpg",
+    image: "/youthontherise.jpg",
   },
   {
     name: "Ministry of Labour, Training and Skills Development - Worker Health and Safety Awareness",

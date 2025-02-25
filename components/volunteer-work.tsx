@@ -14,7 +14,7 @@ const volunteerWork = [
       "Appointed as Junior Team Lead to train junior volunteers and take on additional responsibilities. Focuses on event planning, youth development, and fostering inclusivity and accessibility.",
     image: "/ismalivolunteers.jpg",
     skills: ["Leadership", "Event Coordination", "Youth Mentorship", "Team Management", "Community Engagement"],
-    link: "https://link.com",
+    link: "https://www.linkedin.com/in/adil-mukhi-6aba27246/details/experience/#:~:text=Management%20%C2%B7%20Reading%20Comprehension-,Ismaili%20Volunteers%20(IV),-Ismaili%20Volunteers%20(IV",
   },
   {
     role: "Activist (Volunteer)",
@@ -24,7 +24,7 @@ const volunteerWork = [
       "Raising awareness of poverty and its causes through monthly focus topics and engaging in impactful campaigns.",
     image: "/results.jpg",
     skills: ["Advocacy", "Public Speaking", "Policy Research", "Writing & Communication", "Campaign Management"],
-    link: "https://link.com",
+    link: "https://resultscanada.ca/youth-skills-day-celebrating-our-rising-stars-in-advocacy/",
   },
   {
     role: "Medical Writer",
@@ -34,7 +34,7 @@ const volunteerWork = [
       "Contributing to a booklet on Respiratory Syncytial Virus (RSV) to inform underprivileged communities.",
     image: "/healforhealth.jpg",
     skills: ["Medical Writing", "Health Communication", "Scientific Research", "Technical Writing", "Community Education"],
-    link: "https://link.com",
+    link: "https://www.instagram.com/heal.ontario/p/C9U2GeiRj8i/?img_index=2",
   },
   {
     role: "Auditory Research",
@@ -44,7 +44,7 @@ const volunteerWork = [
       "Helping in auditory research for the cochlear implant program.",
     image: "/sickkids.jpg",
     skills: ["Research Assistance", "Data Collection", "Medical Research", "Analytical Thinking", "Collaboration"],
-    link: "https://link.com",
+    link: "https://lab.research.sickkids.ca/harrison/",
   },
   {
     role: "Job Fair Volunteer",
@@ -54,7 +54,7 @@ const volunteerWork = [
       "Setup, helping people connect with different booths that match what they want, and packing up.",
     image: "/dbnc.jpg",
     skills: ["Event Setup", "Public Relations", "Communication", "Networking", "Organization"],
-    link: "https://link.com",
+    link: "https://www.dixiebloor.ca/",
   },
   {
     role: "Care Packages Maker",
@@ -64,7 +64,7 @@ const volunteerWork = [
       "Helped make care packages for children in need at the University of Toronto (Mississauga Campus), raising awareness and supporting children in need with care packages containing lollipops, pens, stickers, fidget toys, and chains.",
     image: "/floursihfoundation.jpg",
     skills: ["Community Service", "Teamwork", "Logistics", "Philanthropy", "Organization"],
-    link: "https://link.com",
+    link: "https://www.flourishfoundation.org/",
   },
 ];
 
