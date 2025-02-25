@@ -12,7 +12,7 @@ export default function Interests() {
     <section id="interests" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" style={{ fontFamily: "Sour Gummy, latin"}}>Interests</h2>
       <div className="grid gap-6 md:grid-cols-3">
-        <Card>
+        <Card className="card-hover-effect">
           <CardHeader>
             <CardTitle>Sports</CardTitle>
           </CardHeader>
@@ -26,7 +26,7 @@ export default function Interests() {
             </div>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="card-hover-effect">
           <CardHeader>
             <CardTitle>Hobbies</CardTitle>
           </CardHeader>
@@ -40,7 +40,7 @@ export default function Interests() {
             </div>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="card-hover-effect">
           <CardHeader>
             <CardTitle>Teams</CardTitle>
           </CardHeader>

@@ -75,7 +75,7 @@ body {
 }
 
 .hover-effect {
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .hover-effect:hover {
@@ -83,7 +83,7 @@ body {
 }
 
 .text-hover-effect {
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .text-hover-effect:hover {
@@ -92,7 +92,7 @@ body {
 }
 
 .button-hover-effect {
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .button-hover-effect:hover {
@@ -102,7 +102,7 @@ body {
 }
 
 .card-hover-effect {
-  transition: all 0.7s ease;
+  transition: all 0.8s ease;
 }
 
 .card-hover-effect:hover {

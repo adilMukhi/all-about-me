@@ -64,20 +64,14 @@ export default function Education() {
               <Image
                 src={edu.image || "/placeholder.svg"}
                 alt={edu.institution}
-                width={index === 2 ? 300 : 150}
-                height={index === 2 ? 200 : 150}
+                width={index === 2 ? 500 : 150}
+                height={index === 2 ? 350 : 150}
                 className="rounded-lg object-cover"
               />
               <div>
                 <p>{edu.description}</p>
                 {expandedCard === index && (
                   <div className="mt-4">
-                    <h4 className="font-semibold">Skills Learned:</h4>
-                    <ul className="list-disc list-inside">
-                      <li>Skill 1</li>
-                      <li>Skill 2</li>
-                      <li>Skill 3</li>
-                    </ul>
                     <Button className="mt-4">See More</Button>
                   </div>
                 )}
