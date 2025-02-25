@@ -13,7 +13,8 @@ const volunteerWork = [
     description:
       "Appointed as Junior Team Lead to train junior volunteers and take on additional responsibilities. Focuses on event planning, youth development, and fostering inclusivity and accessibility.",
     image: "/ismalivolunteers.jpg",
-    skills: ["Patient Care", "Hospital Protocols", "Empathy", "Time Management", "Teamwork in Healthcare"],
+    skills: ["Leadership", "Event Coordination", "Youth Mentorship", "Team Management", "Community Engagement"],
+    link: "https://link.com",
   },
   {
     role: "Activist (Volunteer)",
@@ -22,7 +23,8 @@ const volunteerWork = [
     description:
       "Raising awareness of poverty and its causes through monthly focus topics and engaging in impactful campaigns.",
     image: "/results.jpg",
-    skills: ["Patient Care", "Hospital Protocols", "Empathy", "Time Management", "Teamwork in Healthcare"],
+    skills: ["Advocacy", "Public Speaking", "Policy Research", "Writing & Communication", "Campaign Management"],
+    link: "https://link.com",
   },
   {
     role: "Medical Writer",
@@ -31,7 +33,8 @@ const volunteerWork = [
     description:
       "Contributing to a booklet on Respiratory Syncytial Virus (RSV) to inform underprivileged communities.",
     image: "/healforhealth.jpg",
-    skills: ["Patient Care", "Hospital Protocols", "Empathy", "Time Management", "Teamwork in Healthcare"],
+    skills: ["Medical Writing", "Health Communication", "Scientific Research", "Technical Writing", "Community Education"],
+    link: "https://link.com",
   },
   {
     role: "Auditory Research",
@@ -40,7 +43,8 @@ const volunteerWork = [
     description:
       "Helping in auditory research for the cochlear implant program.",
     image: "/sickkids.jpg",
-    skills: ["Patient Care", "Hospital Protocols", "Empathy", "Time Management", "Teamwork in Healthcare"],
+    skills: ["Research Assistance", "Data Collection", "Medical Research", "Analytical Thinking", "Collaboration"],
+    link: "https://link.com",
   },
   {
     role: "Job Fair Volunteer",
@@ -49,7 +53,8 @@ const volunteerWork = [
     description:
       "Setup, helping people connect with different booths that match what they want, and packing up.",
     image: "/dbnc.jpg",
-    skills: ["Patient Care", "Hospital Protocols", "Empathy", "Time Management", "Teamwork in Healthcare"],
+    skills: ["Event Setup", "Public Relations", "Communication", "Networking", "Organization"],
+    link: "https://link.com",
   },
   {
     role: "Care Packages Maker",
@@ -58,9 +63,10 @@ const volunteerWork = [
     description:
       "Helped make care packages for children in need at the University of Toronto (Mississauga Campus), raising awareness and supporting children in need with care packages containing lollipops, pens, stickers, fidget toys, and chains.",
     image: "/floursihfoundation.jpg",
-    skills: ["Patient Care", "Hospital Protocols", "Empathy", "Time Management", "Teamwork in Healthcare"],
+    skills: ["Community Service", "Teamwork", "Logistics", "Philanthropy", "Organization"],
+    link: "https://link.com",
   },
-]
+];
 
 export default function VolunteerWork() {
   const [expandedCard, setExpandedCard] = useState<number | null>(null)
@@ -112,7 +118,10 @@ export default function VolunteerWork() {
                         <li key={skillIndex}>{skill}</li>
                       ))}
                     </ul>
-                    <Button className="mt-4 button-hover-effect">See More</Button>
+                    <Button className="mt-4 button-hover-effect">
+                      <a href= {work.link} target="_blank" rel="noopener noreferrer">
+                      Learn More
+                    </Button>
                   </div>
                 )}
               </div>

@@ -10,66 +10,74 @@ const certificates = [
     name: "First Aid & CPR/AED Level C",
     issuer: "Canadian Red Cross",
     date: "Mar 2024 · Expires Mar 2027",
-    description: "Credential ID 104841756. Skills: AED · First Aid · CPR · Healthcare · Medical Communications.",
+    description: "Comprehensive training in CPR, AED operation, and first aid techniques for adults, children, and infants. Covers emergency response strategies, injury assessment, and life-saving interventions.",
     skills: ["Emergency Response", "CPR Techniques", "AED Operation", "Wound Management", "Patient Assessment"],
+    link: "https://link.com",
   },
   {
     name: "Food Handler Certification",
     issuer: "Food Safety Training Canada",
     date: "Feb 2024 · Expires Feb 2029",
-    description: "Credential ID 65bfe7f5-ebec-4b7a-a3f2-61a57f000001. Skills: Health & Safety · Healthcare · Food Safety.",
-    skills: ["Emergency Response", "CPR Techniques", "AED Operation", "Wound Management", "Patient Assessment"],
+    description: "Provides knowledge on food safety practices, cross-contamination prevention, proper food storage, and sanitation protocols to ensure compliance with health regulations.",
+    skills: ["Foodborne Illness Prevention", "Cross-Contamination Control", "Sanitation Standards", "Allergen Awareness", "Safe Food Storage"],
+    link: "https://link.com",
   },
   {
     name: "High-Five Training (PCHD)",
     issuer: "HIGH FIVE® Global",
     date: "Jun 2024",
-    description: "Credential ID 779313. Skills: Health & Safety · Reading Comprehension · Soft Skills · Youth Development · Child Development · Counselor Training · Leadership.",
-    skills: ["Emergency Response", "CPR Techniques", "AED Operation", "Wound Management", "Patient Assessment"],
+    description: "Focuses on child and youth development principles, effective recreation program design, and creating inclusive and engaging environments for young participants.",
+    skills: ["Child Engagement Strategies", "Positive Coaching", "Recreational Program Development", "Behavioral Guidance", "Youth Leadership"],
+    link: "https://link.com",
   },
   {
     name: "Be There Certificate",
     issuer: "Born This Way Foundation",
     date: "Oct 2024",
-    description: "Skills: Youth Development · Child Development · Healthcare · Health & Safety",
-    skills: ["Emergency Response", "CPR Techniques", "AED Operation", "Wound Management", "Patient Assessment"],
+    description: "Equips individuals with the tools to recognize and support someone struggling with mental health challenges, emphasizing active listening, empathy, and crisis intervention strategies.",
+    skills: ["Mental Health Support", "Active Listening", "Empathy Building", "Suicide Prevention Awareness", "Crisis Communication"],
+    link: "https://link.com",
   },
   {
     name: "Leaders In Training",
     issuer: "Dixie Bloor Neighbourhood Centre",
     date: "Jun 2024",
-    description: "Skills: AED · First Aid · Health & Safety · Leadership · Event Planning · Time Management.",
-    skills: ["Emergency Response", "CPR Techniques", "AED Operation", "Wound Management", "Patient Assessment"],
+    description: "Develops leadership and teamwork skills through hands-on experience in event planning, conflict resolution, and time management in community-based settings.",
+    skills: ["Team Leadership", "Conflict Resolution", "Public Speaking", "Volunteer Coordination", "Project Planning"],
+    link: "https://link.com",
   },
   {
     name: "Youth On The Rise",
     issuer: "Dixie Bloor Neighbourhood Centre",
     date: "Mar 2024",
-    description: "Skills: AED · First Aid · Youth Development · Project Management · Event Planning · Leadership.",
-    skills: ["Emergency Response", "CPR Techniques", "AED Operation", "Wound Management", "Patient Assessment"],
+    description: "A youth-focused leadership program that fosters project management skills, community engagement, and innovative problem-solving through real-world initiatives.",
+    skills: ["Entrepreneurial Thinking", "Strategic Planning", "Fundraising Strategies", "Community Engagement", "Project Execution"],
+    link: "https://link.com",
   },
   {
     name: "Ministry of Labour, Training and Skills Development - Worker Health and Safety Awareness",
     issuer: "Labour, Immigration, Training and Skills Development",
     date: "Jun 2024",
-    description: "Skills: Health & Safety · Accessibility.",
-    skills: ["Emergency Response", "CPR Techniques", "AED Operation", "Wound Management", "Patient Assessment"],
+    description: "Covers fundamental workplace safety principles, employee rights, hazard identification, and strategies for maintaining a safe and inclusive work environment.",
+    skills: ["Workplace Hazard Identification", "Occupational Safety Standards", "Workplace Rights & Responsibilities", "Accident Prevention", "Risk Assessment"],
+    link: "https://link.com",
   },
   {
     name: "AODA & Ontario Human Rights Code",
     issuer: "Ontario Human Rights Commission",
     date: "Feb 2024",
-    description: "Skills: Critical Thinking · Accessibility · Healthcare · Human Rights.",
-    skills: ["Emergency Response", "CPR Techniques", "AED Operation", "Wound Management", "Patient Assessment"],
+    description: "Explores accessibility laws and human rights principles, focusing on inclusive practices, anti-discrimination policies, and advocating for equitable opportunities.",
+    skills: ["Disability Accommodation", "Anti-Discrimination Advocacy", "Legal Compliance", "Policy Analysis", "Inclusive Communication"],
+    link: "https://link.com",
   },
   {
     name: "NHCPS – Save a Life PALS Certification 2024",
     issuer: "The Postgraduate Institute for Medicine",
     date: "Feb 2024",
-    description: "Skills: AED · Science · Critical Thinking · Health & Safety · First Aid · Medical Communications · Accessibility · Healthcare · Pediatric Advanced Life Support (PALS) · Cardiopulmonary Resuscitation (CPR).",
-    skills: ["Emergency Response", "CPR Techniques", "AED Operation", "Wound Management", "Patient Assessment"],
+    description: "Advanced certification in pediatric emergency care, emphasizing resuscitation techniques, airway management, and rapid assessment of critically ill or injured children.",
+    skills: ["Pediatric Emergency Care", "Advanced Airway Management", "Resuscitation Techniques", "Medication Administration", "Cardiac Arrest Response"],
+    link: "https://link.com",
   },
-  // Add more certificates as needed
 ];
 
 export default function Certificates() {
@@ -121,7 +129,10 @@ export default function Certificates() {
                       <li key={skillIndex}>{skill}</li>
                     ))}
                   </ul>
-                  <Button className="mt-4 w-full button-hover-effect">See More</Button>
+                    <Button className="mt-4 button-hover-effect">
+                      <a href= {cert.link} target="_blank" rel="noopener noreferrer">
+                      Learn More
+                    </Button>
                 </div>
               )}
             </CardContent>

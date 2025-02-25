@@ -37,8 +37,8 @@ export default function Header() {
           ))}
         </nav>
         <div className="flex-1 flex justify-end">
-          <Button variant="outline" className="hidden md:inline-flex button-hover-effect">
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+          <Button className="hidden md:inline-flex button-hover-effect">
+            <a href="https://drive.google.com/file/d/1xIuHrE6H3Lf-Oj3S-PrXI15dIHi9XtDi/view" target="_blank" rel="noopener noreferrer">
               Resume
             </a>
           </Button>

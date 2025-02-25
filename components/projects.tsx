@@ -5,22 +5,23 @@ import { Button } from "@/components/ui/button"
 
 const projects = [
   {
-    title: "Project 1",
-    description: "A brief description of Project 1 and its key features.",
+    title: "Viruses Unveiled: A Blog on the West Nile Virus",
+    description:
+      "A research-driven blog featuring 12 posts analyzing the West Nile virus, referencing 35+ peer-reviewed sources. Reached 3,000+ readers and was featured by three organizations.",
     image: "/placeholder.svg?height=200&width=300",
-    tags: ["React", "Node.js", "MongoDB"],
+    tags: ["Professional Writing", "Medical Communications", "Public Health Awareness"],
+    demoLink: "https://virusesunveiled.substack.com/",
+    codeLink: "https://www.linkedin.com/in/adil-mukhi-6aba27246/overlay/projects/716508831/multiple-media-viewer/?profileId=ACoAAD0FLSMB3_L4EKnCnx8-DLU46vGQ6JbfCiE&treasuryMediaId=1740178264464",
+  },
+  {
+    title: "Astrocytoma: From Diagnosis to Management – A Comprehensive Overview",
+    description:
+      "A peer-reviewed research paper analyzing astrocytoma diagnosis, treatment, and management. Published by Sunshine 4 Cancer Kids and awarded a Certificate of Achievement.",
+    image: "/placeholder.svg?height=200&width=300",
+    tags: ["Research Collaboration", "Professional Writing", "Medical Research"],
     demoLink: "#",
     codeLink: "#",
   },
-  {
-    title: "Project 2",
-    description: "An overview of Project 2 highlighting its main functionalities.",
-    image: "/placeholder.svg?height=200&width=300",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-    demoLink: "#",
-    codeLink: "#",
-  },
-  {
     title: "Project 3",
     description: "Key points about Project 3 and the technologies used.",
     image: "/placeholder.svg?height=200&width=300",
@@ -60,12 +61,12 @@ export default function Projects() {
             <CardFooter className="flex justify-between">
               <Button asChild>
                 <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                  Demo
+                  Veiw
                 </a>
               </Button>
               <Button variant="outline" asChild>
                 <a href={project.codeLink} target="_blank" rel="noopener noreferrer">
-                  Code
+                  Learn More
                 </a>
               </Button>
             </CardFooter>

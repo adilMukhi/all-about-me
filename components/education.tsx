@@ -12,22 +12,22 @@ const educationData = [
     period: "Sep 2023 - Jun 2027",
     description:
       "Grade 9-12. Active in leadership roles such as Vice President of the French Club and STEM Fellowship Chapter. Participates in DECA, HOSA, Peer Helper Tutor.",
-    image: "/glenforest.jpg",
+    link: "https://link.com",
   },
   {
     degree: "IB MYP and IB DP Diploma, Core",
     institution: "International Baccalaureate",
     period: "Sep 2023 - May 2027",
     description: "Global education framework focusing on research, communication, and global understanding skills.",
-    image: "/ib.jpg",
+    link: "https://link.com",
   },
   {
     degree: "MedLinx Program",
     institution: "The University of Toronto, Temerty Faculty of Medicine, Office of Access and Outreach",
     period: "Dec 2024 - Apr 2025",
     description:
-      "Real-world experience in healthcare through hands-on activities, mentorship, and academic workshops. I took the UfT course Introduction to the Role of the Human Development Index and Social Determinants of Health on the Global Burden of Disease - Taught by Dr. Andrea K. Boggild, BSc, MSc, MD",
-    image: "/uoft.jpg",
+      "Real-world experience in healthcare through hands-on activities, mentorship, and academic workshops. I took the U of T course Introduction to the Role of the Human Development Index and Social Determinants of Health on the Global Burden of Disease - Taught by Dr. Andrea K. Boggild, BSc, MSc, MD",
+    link: "https://link.com",
   },
 ]
 
@@ -65,7 +65,10 @@ export default function Education() {
                 <p>{edu.description}</p>
                 {expandedCard === index && (
                   <div className="mt-4">
-                    <Button className="mt-4">See More</Button>
+                    <Button className="mt-4 button-hover-effect">
+                      <a href= {edu.link} target="_blank" rel="noopener noreferrer">
+                      Learn More
+                    </Button>
                   </div>
                 )}
               </div>
