@@ -35,8 +35,8 @@ const honorsAwards = [
       "Pattern Recognition",
       "Algorithm Design",
       "Attention to Detail",
-      link: "https://cemc.uwaterloo.ca/sites/default/files/documents/2024/2024BCCResults.pdf",
     ],
+    link: "https://cemc.uwaterloo.ca/sites/default/files/documents/2024/2024BCCResults.pdf",
   },
   {
     title: "Honors, Academic Distinction (Science, IB Design, Gym)",
