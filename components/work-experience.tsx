@@ -154,51 +154,46 @@ export default function WorkExperience() {
       </h2>
       <div className="grid gap-6 md:grid-cols-2">
         {visibleExperiences.map((exp, index) => (
-          <div key={index} className="animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
-            <Card
-              className={`card-hover-effect`}
-              onMouseEnter={() => toggleExpand(index)}
-              onMouseLeave={() => toggleExpand(null)}
-            >
-              <CardHeader>
-                <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{exp.title}</CardTitle>
-                <CardDescription>
-                  {exp.company} | {exp.period}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex flex-col md:flex-row gap-4">
-                <Image
-                  src={exp.image || "/placeholder.svg"}
-                  alt={exp.company}
-                  width={150}
-                  height={150}
-                  className="rounded-lg object-cover"
-                />
-                <div className="flex-1">
-                  <p>{exp.description}</p>
-                  <div
-                    className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                      expandedCard === index ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <div className="mt-4">
-                      <h4 className="font-semibold">Skills Learned:</h4>
-                      <ul className="list-disc list-inside">
-                        {exp.skills.map((skill, skillIndex) => (
-                          <li key={skillIndex}>{skill}</li>
-                        ))}
-                      </ul>
-                      <Button className="mt-4 button-hover-effect">
-                        <a href={exp.link} target="_blank" rel="noopener noreferrer">
-                          Learn More
-                        </a>
-                      </Button>
-                    </div>
+          <Card
+            key={index}
+            className={`card-hover-effect`}
+            onMouseEnter={() => toggleExpand(index)}
+            onMouseLeave={() => toggleExpand(null)}
+          >
+            <CardHeader>
+              <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{exp.title}</CardTitle>
+              <CardDescription>
+                {exp.company} | {exp.period}
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="flex flex-col md:flex-row gap-4">
+              <Image
+                src={exp.image || "/placeholder.svg"}
+                alt={exp.company}
+                width={150}
+                height={150}
+                className="rounded-lg object-cover"
+              />
+              <div className="flex-1">
+                <p>{exp.description}</p>
+                {expandedCard === index && (
+                  <div className="mt-4">
+                    <h4 className="font-semibold">Skills Learned:</h4>
+                    <ul className="list-disc list-inside">
+                      {exp.skills.map((skill, skillIndex) => (
+                        <li key={skillIndex}>{skill}</li>
+                      ))}
+                    </ul>
+                    <Button className="mt-4 button-hover-effect">
+                      <a href={exp.link} target="_blank" rel="noopener noreferrer">
+                        Learn More{" "}
+                      </a>
+                    </Button>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+                )}
+              </div>
+            </CardContent>
+          </Card>
         ))}
       </div>
       {!showAll && experiences.length > 4 && (

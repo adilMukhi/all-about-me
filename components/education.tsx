@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
@@ -66,8 +65,9 @@ export default function Education() {
                 {expandedCard === index && (
                   <div className="mt-4">
                     <Button className="mt-4 button-hover-effect">
-                      <a href= {edu.link} target="_blank" rel="noopener noreferrer">
-                      Learn More  </a>
+                      <a href={edu.link} target="_blank" rel="noopener noreferrer">
+                        Learn More{" "}
+                      </a>
                     </Button>
                   </div>
                 )}
