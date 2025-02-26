@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { motion, AnimatePresence } from "framer-motion"
 
 const experiences = [
   {
@@ -153,47 +154,65 @@ export default function WorkExperience() {
         Work Experience
       </h2>
       <div className="grid gap-6 md:grid-cols-2">
-        {visibleExperiences.map((exp, index) => (
-          <Card
-            key={index}
-            className={`card-hover-effect`}
-            onMouseEnter={() => toggleExpand(index)}
-            onMouseLeave={() => toggleExpand(null)}
-          >
-            <CardHeader>
-              <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{exp.title}</CardTitle>
-              <CardDescription>
-                {exp.company} | {exp.period}
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="flex flex-col md:flex-row gap-4">
-              <Image
-                src={exp.image || "/placeholder.svg"}
-                alt={exp.company}
-                width={150}
-                height={150}
-                className="rounded-lg object-cover"
-              />
-              <div className="flex-1">
-                <p>{exp.description}</p>
-                {expandedCard === index && (
-                  <div className="mt-4">
-                    <h4 className="font-semibold">Skills Learned:</h4>
-                    <ul className="list-disc list-inside">
-                      {exp.skills.map((skill, skillIndex) => (
-                        <li key={skillIndex}>{skill}</li>
-                      ))}
-                    </ul>
-                    <Button className="mt-4 button-hover-effect">
-                      <a href= {exp.link} target="_blank" rel="noopener noreferrer">
-                      Learn More </a>
-                    </Button>
+        <AnimatePresence>
+          {visibleExperiences.map((exp, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Card
+                className={`card-hover-effect`}
+                onMouseEnter={() => toggleExpand(index)}
+                onMouseLeave={() => toggleExpand(null)}
+              >
+                <CardHeader>
+                  <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{exp.title}</CardTitle>
+                  <CardDescription>
+                    {exp.company} | {exp.period}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex flex-col md:flex-row gap-4">
+                  <Image
+                    src={exp.image || "/placeholder.svg"}
+                    alt={exp.company}
+                    width={150}
+                    height={150}
+                    className="rounded-lg object-cover"
+                  />
+                  <div className="flex-1">
+                    <p>{exp.description}</p>
+                    <AnimatePresence>
+                      {expandedCard === index && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="mt-4"
+                        >
+                          <h4 className="font-semibold">Skills Learned:</h4>
+                          <ul className="list-disc list-inside">
+                            {exp.skills.map((skill, skillIndex) => (
+                              <li key={skillIndex}>{skill}</li>
+                            ))}
+                          </ul>
+                          <Button className="mt-4 button-hover-effect">
+                            <a href={exp.link} target="_blank" rel="noopener noreferrer">
+                              Learn More
+                            </a>
+                          </Button>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
-                )}
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
       {!showAll && experiences.length > 4 && (
         <div className="mt-8 text-center">
