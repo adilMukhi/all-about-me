@@ -102,7 +102,7 @@ body {
 }
 
 .card-hover-effect {
-  transition: all 0.8s ease;
+  transition: all 0.9s ease;
 }
 
 .card-hover-effect:hover {
@@ -115,7 +115,7 @@ body {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+  transition: max-height 0.6s ease-out, opacity 0.5s ease-out;
 }
 
 .expanded-content.show {
