@@ -176,7 +176,7 @@ export default function WorkExperience() {
               />
               <div className="flex-1">
                 <p>{exp.description}</p>
-                {expandedCard === index && (
+                <div className={`expanded-content ${expandedCard === index ? "show" : ""}`}>
                   <div className="mt-4">
                     <h4 className="font-semibold">Skills Learned:</h4>
                     <ul className="list-disc list-inside">
@@ -186,11 +186,11 @@ export default function WorkExperience() {
                     </ul>
                     <Button className="mt-4 button-hover-effect">
                       <a href={exp.link} target="_blank" rel="noopener noreferrer">
-                        Learn More{" "}
+                        Learn More
                       </a>
                     </Button>
                   </div>
-                )}
+                </div>
               </div>
             </CardContent>
           </Card>

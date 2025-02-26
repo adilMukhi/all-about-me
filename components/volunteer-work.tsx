@@ -33,15 +33,20 @@ const volunteerWork = [
     description:
       "Contributing to a booklet on Respiratory Syncytial Virus (RSV) to inform underprivileged communities.",
     image: "/healforhealth.jpg",
-    skills: ["Medical Writing", "Health Communication", "Scientific Research", "Technical Writing", "Community Education"],
+    skills: [
+      "Medical Writing",
+      "Health Communication",
+      "Scientific Research",
+      "Technical Writing",
+      "Community Education",
+    ],
     link: "https://www.instagram.com/heal.ontario/p/C9U2GeiRj8i/?img_index=2",
   },
   {
     role: "Auditory Research",
     organization: "The Hospital for Sick Children",
     period: "Sep 2023 - Present (1 yr 6 mos)",
-    description:
-      "Helping in auditory research for the cochlear implant program.",
+    description: "Helping in auditory research for the cochlear implant program.",
     image: "/sickkids.jpg",
     skills: ["Research Assistance", "Data Collection", "Medical Research", "Analytical Thinking", "Collaboration"],
     link: "https://lab.research.sickkids.ca/harrison/",
@@ -50,8 +55,7 @@ const volunteerWork = [
     role: "Job Fair Volunteer",
     organization: "Dixie Bloor Neighbourhood Centre",
     period: "Mar 2024 (1 month)",
-    description:
-      "Setup, helping people connect with different booths that match what they want, and packing up.",
+    description: "Setup, helping people connect with different booths that match what they want, and packing up.",
     image: "/dbnc.jpg",
     skills: ["Event Setup", "Public Relations", "Communication", "Networking", "Organization"],
     link: "https://www.dixiebloor.ca/",
@@ -66,7 +70,7 @@ const volunteerWork = [
     skills: ["Community Service", "Teamwork", "Logistics", "Philanthropy", "Organization"],
     link: "https://www.flourishfoundation.org/",
   },
-];
+]
 
 export default function VolunteerWork() {
   const [expandedCard, setExpandedCard] = useState<number | null>(null)
@@ -110,7 +114,7 @@ export default function VolunteerWork() {
               />
               <div className="flex-1">
                 <p>{work.description}</p>
-                {expandedCard === index && (
+                <div className={`expanded-content ${expandedCard === index ? "show" : ""}`}>
                   <div className="mt-4">
                     <h4 className="font-semibold">Skills Learned:</h4>
                     <ul className="list-disc list-inside">
@@ -119,11 +123,12 @@ export default function VolunteerWork() {
                       ))}
                     </ul>
                     <Button className="mt-4 button-hover-effect">
-                      <a href= {work.link} target="_blank" rel="noopener noreferrer">
-                      Learn More </a>
+                      <a href={work.link} target="_blank" rel="noopener noreferrer">
+                        Learn More
+                      </a>
                     </Button>
                   </div>
-                )}
+                </div>
               </div>
             </CardContent>
           </Card>

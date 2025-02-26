@@ -110,3 +110,15 @@ body {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   background-color: #c2dfec;
 }
+
+.expanded-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.expanded-content.show {
+  max-height: 500px;
+  opacity: 1;
+}

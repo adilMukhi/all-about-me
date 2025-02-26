@@ -119,20 +119,19 @@ export default function HonorsAwards() {
                 className="rounded-lg object-cover"
               />
               <p>{award.description}</p>
-              {expandedCard === index && (
-                <div className="mt-4 w-full">
-                  <h4 className="font-semibold">Skills Gained:</h4>
-                  <ul className="list-disc list-inside">
-                    {award.skills.map((skill, skillIndex) => (
-                      <li key={skillIndex}>{skill}</li>
-                    ))}
-                  </ul>
-                    <Button className="mt-4 button-hover-effect">
-                      <a href= {award.link} target="_blank" rel="noopener noreferrer">
-                      Learn More </a>
-                    </Button>
-                </div>
-              )}
+              <div className={`expanded-content w-full ${expandedCard === index ? "show" : ""}`}>
+                <h4 className="font-semibold">Skills Gained:</h4>
+                <ul className="list-disc list-inside">
+                  {award.skills.map((skill, skillIndex) => (
+                    <li key={skillIndex}>{skill}</li>
+                  ))}
+                </ul>
+                <Button className="mt-4 button-hover-effect">
+                  <a href={award.link} target="_blank" rel="noopener noreferrer">
+                    Learn More
+                  </a>
+                </Button>
+              </div>
             </CardContent>
           </Card>
         ))}
