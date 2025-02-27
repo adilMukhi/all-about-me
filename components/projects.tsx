@@ -31,8 +31,8 @@ const projects = [
       "This study explores the relationship between stress and cognitive functions, focusing on how stress hormones affect memory retention and recall. The research analyzes both physiological and psychological aspects, utilizing various experimental methodologies.",
     image: "/project3.jpg?height=200&width=300", // Image related to the research, e.g., stress levels chart
     tags: ["Stress", "Memory", "Cognition", "Neuroscience", "Psychology"],
-    demoLink: "https://docs.google.com/document/d/1Le6CWF08R3pjZGzhB0sJqtBFhw_JkmvMWYHJdu3wSzY/edit?usp=sharing", // You can add a link to any demo or research presentation
-    codeLink: "https://docs.google.com/document/d/1Le6CWF08R3pjZGzhB0sJqtBFhw_JkmvMWYHJdu3wSzY/edit?usp=sharing", // Add a link to any code or further research materials
+    demoLink: "https://drive.google.com/file/d/1hsuDwq_5UjnS9a4G984gqhuAkOkmabe8/view?usp=sharing", // You can add a link to any demo or research presentation
+    codeLink: "https://drive.google.com/file/d/1hsuDwq_5UjnS9a4G984gqhuAkOkmabe8/view?usp=sharing", // Add a link to any code or further research materials
   },
 ]
 
