@@ -23,48 +23,50 @@ export default function Contact() {
       </h2>
       <Card className="bg-gradient-to-br from-blue-100 to-teal-100">
         <CardHeader>
-          <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>Get in Touch</CardTitle>
+          <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }} className="text-3xl">
+            Get in Touch
+          </CardTitle>
         </CardHeader>
-        <CardContent className="flex flex-col md:flex-row items-start gap-8">
-          <div className="w-full md:w-1/2 flex flex-col items-center space-y-8">
-            <div className="w-64 h-64 relative">
+        <CardContent className="flex flex-col md:flex-row items-start gap-12">
+          <div className="w-full md:w-1/2 flex flex-col items-center space-y-12">
+            <div className="w-96 h-96 relative">
               <Image
                 src="/secondpic.jpg"
                 alt="Adil Mukhi"
-                width={256}
-                height={256}
+                width={384}
+                height={384}
                 className="rounded-full object-cover"
               />
             </div>
-            <div className="grid grid-cols-2 gap-6 w-full max-w-md">
+            <div className="grid grid-cols-2 gap-x-12 gap-y-8 w-full max-w-xl px-8">
               {socialLinks.slice(0, 4).map((social, index) => (
                 <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center gap-3 ${social.color} hover:text-primary transition-colors justify-center`}
+                  className={`flex items-center gap-4 ${social.color} hover:text-primary transition-colors justify-center text-hover-effect`}
                 >
-                  <social.icon className="h-5 w-5" />
-                  <span style={{ fontFamily: "'Kirang Haerang', cursive", fontSize: "16px" }}>{social.name}</span>
+                  <social.icon className="h-8 w-8" />
+                  <span style={{ fontFamily: "'Kirang Haerang', cursive", fontSize: "24px" }}>{social.name}</span>
                 </a>
               ))}
             </div>
-            <div className="flex justify-center w-full">
+            <div className="flex justify-center w-full px-8">
               {socialLinks.slice(4).map((social) => (
                 <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center gap-3 ${social.color} hover:text-primary transition-colors`}
+                  className={`flex items-center gap-4 ${social.color} hover:text-primary transition-colors text-hover-effect`}
                 >
-                  <social.icon className="h-5 w-5" />
-                  <span style={{ fontFamily: "'Kirang Haerang', cursive", fontSize: "16px" }}>{social.name}</span>
+                  <social.icon className="h-8 w-8" />
+                  <span style={{ fontFamily: "'Kirang Haerang', cursive", fontSize: "24px" }}>{social.name}</span>
                 </a>
               ))}
             </div>
-            <Button asChild className="button-hover-effect w-full max-w-md">
+            <Button asChild className="button-hover-effect w-full max-w-xl text-lg h-14 mt-8">
               <a href="mailto:mukhiadil2009@gmail.com">Email Me</a>
             </Button>
           </div>
