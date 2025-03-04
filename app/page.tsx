@@ -19,6 +19,8 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Header />
+      <h1 className="sr-only">Adil Mukhi - Student Researcher and Aspiring Medical Professional</h1>
+      <h1 className="sr-only">Adil Mukhi</h1>
       <AnimatedSection>
         <Hero />
       </AnimatedSection>
