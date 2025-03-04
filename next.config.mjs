@@ -21,6 +21,15 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  reactStrictMode: true,
+  async rewrites() {
+    return [
+      {
+        source: '/.well-known/discord',
+        destination: '/api/discord-verification',
+      },
+    ]
+  },
 }
 
 mergeConfig(nextConfig, userConfig)
