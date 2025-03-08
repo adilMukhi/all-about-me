@@ -98,7 +98,19 @@ export default function BackgroundPage() {
 
             {/* Mobile dropdown */}
             <div className="md:hidden mb-8">
-              <Select value={activeSection} onValueChange={setActiveSection}>
+              <Select
+                value={activeSection}
+                onValueChange={(value) => {
+                  setActiveSection(value)
+                  // Scroll to the section
+                  setTimeout(() => {
+                    const element = document.getElementById(value)
+                    if (element) {
+                      element.scrollIntoView({ behavior: "smooth" })
+                    }
+                  }, 100)
+                }}
+              >
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select section" />
                 </SelectTrigger>
@@ -121,7 +133,14 @@ export default function BackgroundPage() {
                 {sections.map((section) => (
                   <button
                     key={section.id}
-                    onClick={() => setActiveSection(section.id)}
+                    onClick={() => {
+                      setActiveSection(section.id)
+                      // Scroll to the section
+                      const element = document.getElementById(section.id)
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth" })
+                      }
+                    }}
                     className={cn(
                       "flex items-center gap-2 px-6 py-3 rounded-lg transition-all relative",
                       section.color,
@@ -137,7 +156,7 @@ export default function BackgroundPage() {
               </div>
             </div>
 
-            <div className="mt-8">
+            <div className="mt-8" id={activeSection}>
               <ActiveComponent />
             </div>
           </div>

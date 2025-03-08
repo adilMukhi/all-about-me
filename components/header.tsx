@@ -3,18 +3,80 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronDown, ChevronUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { MainNav } from "@/components/main-nav"
 import { navConfig } from "@/config/nav"
+import { blogPosts } from "@/data/blog-posts"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  // Add this component inside the Header component
+  const MobileNavItem = ({ item }: { item: any }) => {
+    const [isOpen, setIsOpen] = useState(false)
+
+    return (
+      <>
+        <div className="flex items-center justify-between py-2 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+          <Link
+            href={item.href}
+            className="hover:text-blue-500 transition-colors"
+            onClick={(e) => {
+              e.stopPropagation()
+              setIsMenuOpen(false)
+            }}
+          >
+            {item.title}
+          </Link>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={(e) => {
+              e.stopPropagation()
+              setIsOpen(!isOpen)
+            }}
+          >
+            {isOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+          </Button>
+        </div>
+
+        {isOpen && item.items && (
+          <div className="pl-4">
+            {item.title === "Experiences"
+              ? // Show only the latest 3 blog posts
+                blogPosts
+                  .slice(0, 3)
+                  .map((post) => (
+                    <Link
+                      key={post.slug}
+                      href={`/experiences/${post.slug}`}
+                      className="block py-2 hover:text-blue-500 transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {post.title}
+                    </Link>
+                  ))
+              : item.items.map((subItem: any) => (
+                  <Link
+                    key={subItem.title}
+                    href={subItem.href}
+                    className="block py-2 hover:text-blue-500 transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {subItem.title}
+                  </Link>
+                ))}
+          </div>
+        )}
+      </>
+    )
+  }
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
       <div className="container flex h-16 items-center">
-        <div className="mr-4 hidden md:flex" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+        <div className="mr-4 flex items-center" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
           <Link href="/" className="mr-6 flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <Image src="/pixtin.jpg" alt="Profile picture" width={40} height={40} className="rounded-full" />
             <span
@@ -46,35 +108,38 @@ export default function Header() {
         </div>
       </div>
       {isMenuOpen && (
-        <nav className="md:hidden">
-          <div className="container py-4" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
-            {navConfig.mainNav.map((item) => (
-              <div key={item.title}>
-                <Link
-                  href={item.href}
-                  className="block py-2 hover:text-blue-500 transition-colors"
+        <div className="fixed inset-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+          <div className="fixed top-16 left-0 right-0 bottom-0 z-50 overflow-y-auto">
+            <nav className="md:hidden">
+              <div className="container py-4 relative" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+                <Button
+                  variant="ghost"
+                  size="icon"
                   onClick={() => setIsMenuOpen(false)}
+                  className="absolute right-4 top-4"
                 >
-                  {item.title}
-                </Link>
-                {item.items && (
-                  <div className="pl-4">
-                    {item.items.map((subItem) => (
+                  <X />
+                </Button>
+
+                {navConfig.mainNav.map((item) => (
+                  <div key={item.title} className="mb-2">
+                    {item.items ? (
+                      <MobileNavItem item={item} />
+                    ) : (
                       <Link
-                        key={subItem.title}
-                        href={subItem.href}
+                        href={item.href}
                         className="block py-2 hover:text-blue-500 transition-colors"
                         onClick={() => setIsMenuOpen(false)}
                       >
-                        {subItem.title}
+                        {item.title}
                       </Link>
-                    ))}
+                    )}
                   </div>
-                )}
+                ))}
               </div>
-            ))}
+            </nav>
           </div>
-        </nav>
+        </div>
       )}
     </header>
   )
