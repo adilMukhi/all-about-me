@@ -51,7 +51,7 @@ export default function PortfolioPage() {
               className="text-4xl font-bold tracking-tighter text-center mb-8 sm:text-5xl md:text-6xl"
               style={{ fontFamily: "Sour Gummy, latin" }}
             >
-              Portfolio
+              My Portfolios
             </h1>
             <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-16">
               Explore my diverse collection of work across different disciplines and interests.

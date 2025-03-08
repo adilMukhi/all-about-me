@@ -17,7 +17,7 @@ export default function WritingPortfolioPage() {
               <Button variant="ghost" size="sm" asChild>
                 <Link href="/portfolio">
                   <ArrowLeft className="mr-2 h-4 w-4" />
-                  Back to Portfolio
+                  Back to My Portfolios
                 </Link>
               </Button>
             </div>

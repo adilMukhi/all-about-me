@@ -7,7 +7,6 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { MainNav } from "@/components/main-nav"
 import { navConfig } from "@/config/nav"
-import { profileImages } from "@/data/image-paths"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -17,13 +16,7 @@ export default function Header() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 hidden md:flex" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
           <Link href="/" className="mr-6 flex items-center space-x-2 hover:opacity-80 transition-opacity">
-            <Image
-              src={profileImages.main || "/pixtin.jpg"}
-              alt="Profile picture"
-              width={40}
-              height={40}
-              className="rounded-full"
-            />
+            <Image src="/pixtin.jpg" alt="Profile picture" width={40} height={40} className="rounded-full" />
             <span
               className="hidden font-bold sm:inline-block text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 text-hover-effect"
               style={{ fontFamily: "Sour Gummy, latin" }}

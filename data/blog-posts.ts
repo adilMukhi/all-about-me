@@ -1,5 +1,3 @@
-import { blogImages } from "./image-paths"
-
 // Example data structure for blog posts
 export type BlogPost = {
   title: string
@@ -18,7 +16,7 @@ export const blogPosts: BlogPost[] = [
     title: "My Journey in Medical Research",
     subtitle: "Exploring the intersection of technology and healthcare",
     date: "March 8, 2025",
-    image: blogImages.medicalResearch,
+    image: "/blog/medical-research.jpg",
     slug: "journey-in-medical-research",
     excerpt: "Join me as I share my experiences in medical research and healthcare innovation...",
     content: `
@@ -30,13 +28,13 @@ export const blogPosts: BlogPost[] = [
       
       <p>As I continue my academic journey, I'm excited to further explore the potential of technology in healthcare and contribute to advancements that can make a real difference in patients' lives.</p>
     `,
-    images: [blogImages.medicalResearch1, blogImages.medicalResearch2, blogImages.medicalResearch3],
+    images: ["/blog/medical-research-1.jpg", "/blog/medical-research-2.jpg", "/blog/medical-research-3.jpg"],
   },
   {
     title: "Volunteering at the Hospital",
     subtitle: "Lessons learned from working with patients",
     date: "February 15, 2025",
-    image: blogImages.hospitalVolunteer,
+    image: "/blog/hospital-volunteer.jpg",
     slug: "volunteering-at-hospital",
     excerpt: "My time volunteering at the local hospital taught me valuable lessons about patient care...",
     content: `

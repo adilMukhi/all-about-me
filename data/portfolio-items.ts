@@ -1,5 +1,4 @@
-import { portfolioImages } from "./image-paths"
-
+// Update portfolio items to use direct image paths
 // Writing portfolio
 export type Publication = {
   title: string
@@ -42,7 +41,7 @@ export const codingProjects: CodingProject[] = [
   {
     title: "Personal Portfolio Website",
     description: "A responsive portfolio website built with Next.js and Tailwind CSS.",
-    image: portfolioImages.portfolioWebsite,
+    image: "/portfolio/coding/portfolio.jpg",
     tags: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
     demoLink: "#",
     codeLink: "https://github.com/adilMukhi/all-about-me",
@@ -50,7 +49,7 @@ export const codingProjects: CodingProject[] = [
   {
     title: "Medical Data Visualization",
     description: "Interactive data visualization tool for medical research data using D3.js and React.",
-    image: portfolioImages.dataViz,
+    image: "/portfolio/coding/data-viz.jpg",
     tags: ["React", "D3.js", "Data Visualization", "JavaScript"],
     demoLink: "#",
     codeLink: "#",
@@ -73,7 +72,7 @@ export const researchProjects: ResearchProject[] = [
   {
     title: "Astrocytoma: From Diagnosis to Management",
     description: "A comprehensive overview of astrocytoma diagnosis, treatment options, and management strategies.",
-    image: portfolioImages.astrocytoma,
+    image: "/portfolio/research/astrocytoma.jpg",
     tags: ["Oncology", "Neuroscience", "Medical Research"],
     link: "https://sunshine4cancerkid.wixsite.com/sunshine-4-cancer-ki/post/astrocytoma-from-diagnosis-to-management-a-comprehensive-overview",
     institution: "Sunshine 4 Cancer Kids",
@@ -95,7 +94,7 @@ export const artProjects: ArtProject[] = [
   {
     title: "Photography Collection",
     description: "A series of nature and urban landscape photographs taken during my travels.",
-    image: portfolioImages.photography,
+    image: "/portfolio/art/photography.jpg",
     tags: ["Photography", "Nature", "Urban"],
     type: "art",
   },
@@ -115,7 +114,7 @@ export const sportsAchievements: SportsAchievement[] = [
   {
     title: "ROPSSAA Tennis Quarter-Finalist",
     description: "Quarter-Finalist in the ROPSSAA Boys Doubles Junior Tennis South East Qualifier 2024.",
-    image: portfolioImages.tennisPhoto,
+    image: "/portfolio/sports/tennis.jpg",
     tags: ["Tennis", "Competition", "Team Sports"],
     type: "sports",
   },
