@@ -18,7 +18,7 @@ export default function Header() {
         <div className="mr-4 hidden md:flex" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
           <Link href="/" className="mr-6 flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <Image
-              src={profileImages.main || "/placeholder.svg"}
+              src={profileImages.main || "/pixtin.jpg"}
               alt="Profile picture"
               width={40}
               height={40}

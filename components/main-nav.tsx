@@ -1,5 +1,4 @@
 "use client"
-
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import type { MainNavItem } from "@/types/nav"
@@ -28,7 +27,7 @@ export function MainNav({ items }: MainNavProps) {
           <NavigationMenuItem key={item.title}>
             {item.items ? (
               <>
-                <NavigationMenuTrigger>
+                <NavigationMenuTrigger className="hover:text-blue-500">
                   <Link href={item.href} className="hover:text-blue-500 transition-colors">
                     {item.title}
                   </Link>

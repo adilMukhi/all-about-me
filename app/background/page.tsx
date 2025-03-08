@@ -12,7 +12,7 @@ import Projects from "@/components/projects"
 import Certificates from "@/components/certificates"
 import VolunteerWork from "@/components/volunteer-work"
 import HonorsAwards from "@/components/honors-awards"
-import { Briefcase, GraduationCap, Award, BadgeCheck, Heart, Trophy, Lightbulb } from "lucide-react"
+import { Lightbulb, Briefcase, GraduationCap, Award, BadgeCheck, Heart, Trophy } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 type Section = {
