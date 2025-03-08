@@ -14,6 +14,7 @@ import VolunteerWork from "@/components/volunteer-work"
 import HonorsAwards from "@/components/honors-awards"
 import { Lightbulb, Briefcase, GraduationCap, Award, BadgeCheck, Heart, Trophy } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 type Section = {
   id: string
@@ -95,16 +96,38 @@ export default function BackgroundPage() {
               Explore my professional journey, skills, education, and achievements that have shaped my career path.
             </p>
 
-            <div className="flex justify-center mb-12 overflow-x-auto pb-4">
+            {/* Mobile dropdown */}
+            <div className="md:hidden mb-8">
+              <Select value={activeSection} onValueChange={setActiveSection}>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Select section" />
+                </SelectTrigger>
+                <SelectContent>
+                  {sections.map((section) => (
+                    <SelectItem key={section.id} value={section.id}>
+                      <div className="flex items-center gap-2">
+                        <section.icon className="h-4 w-4" />
+                        <span>{section.title}</span>
+                      </div>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Desktop buttons */}
+            <div className="hidden md:flex justify-center mb-12">
               <div className="flex space-x-4">
                 {sections.map((section) => (
                   <button
                     key={section.id}
                     onClick={() => setActiveSection(section.id)}
                     className={cn(
-                      "flex items-center gap-2 px-6 py-3 rounded-lg transition-all",
+                      "flex items-center gap-2 px-6 py-3 rounded-lg transition-all relative",
                       section.color,
                       activeSection === section.id ? "ring-2 ring-blue-500 shadow-lg scale-105" : "hover:scale-105",
+                      // Add overflow-hidden to contain the pseudo-element
+                      "overflow-hidden",
                     )}
                   >
                     <section.icon className="h-5 w-5" />
