@@ -3,43 +3,9 @@ import PageLayout from "@/components/page-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
 import Image from "next/image"
+import { blogPosts } from "@/data/blog-posts"
 
 export default function ExperiencesPage() {
-  const blogPosts = [
-    {
-      title: "My Journey in Medical Research",
-      subtitle: "Exploring the intersection of technology and healthcare",
-      date: "March 8, 2025",
-      image: "/blog/medical-research.jpg",
-      slug: "journey-in-medical-research",
-      excerpt: "Join me as I share my experiences in medical research and healthcare innovation...",
-    },
-    {
-      title: "Volunteering at the Hospital",
-      subtitle: "Lessons learned from working with patients",
-      date: "February 15, 2025",
-      image: "/blog/hospital-volunteer.jpg",
-      slug: "volunteering-at-hospital",
-      excerpt: "My time volunteering at the local hospital taught me valuable lessons about patient care...",
-    },
-    {
-      title: "Leading the STEM Fellowship",
-      subtitle: "Building a community of future scientists",
-      date: "January 22, 2025",
-      image: "/blog/stem-fellowship.jpg",
-      slug: "leading-stem-fellowship",
-      excerpt: "As Vice President of the STEM Fellowship, I've had the opportunity to inspire students...",
-    },
-    {
-      title: "My First Research Publication",
-      subtitle: "The challenges and rewards of academic writing",
-      date: "December 10, 2024",
-      image: "/blog/research-publication.jpg",
-      slug: "first-research-publication",
-      excerpt: "Publishing my first research paper was a journey filled with challenges and learning...",
-    },
-  ]
-
   return (
     <>
       <Header />

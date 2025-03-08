@@ -1,30 +1,6 @@
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-
-const hardSkills = [
-  "Professional Writing",
-  "Research",
-  "Menotring",
-  "Public Speaking",
-  "Data Analysis",
-  "Project Management",
-  "First Aid & CPR/AED",
-  "Research Collaboration",
-  "Coding (JavaScript, HTML, CSS)",
-  "Graphic Design",
-]
-
-const softSkills = [
-  "Leadership",
-  "Communication",
-  "Time Management",
-  "Problem-Solving",
-  "Teamwork",
-  "Adaptability",
-  "Critical Thinking",
-  "Leadership",
-  "Creativity",
-]
+import { hardSkills, softSkills } from "@/data/skills"
 
 export default function Skills() {
   return (

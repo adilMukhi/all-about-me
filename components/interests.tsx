@@ -1,11 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-
-const interests = {
-  sports: ["Badminton", "Tennis", "Volleyball"],
-  hobbies: ["Photography", "Writing", "Chess"],
-  teams: ["GFSS Tennis Team - ROPSSAA Quarter Finalist"],
-}
+import { interests } from "@/data/interests"
 
 export default function Interests() {
   return (
