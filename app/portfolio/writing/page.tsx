@@ -2,48 +2,11 @@ import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, ExternalLink } from "lucide-react"
 import Link from "next/link"
+import { publications } from "@/data/portfolio-items"
 
 export default function WritingPortfolioPage() {
-  const publications = [
-    {
-      title: "Viruses Unveiled: A Blog on the West Nile Virus",
-      publisher: "Substack",
-      date: "January 2025",
-      description:
-        "A research-driven blog featuring 12 posts analyzing the West Nile virus, referencing 35+ peer-reviewed sources.",
-      link: "https://virusesunveiled.substack.com/",
-      tags: ["Medical Communications", "Public Health", "Research"],
-    },
-    {
-      title: "Astrocytoma: From Diagnosis to Management",
-      publisher: "Sunshine 4 Cancer Kids",
-      date: "November 2024",
-      description: "A peer-reviewed research paper analyzing astrocytoma diagnosis, treatment, and management.",
-      link: "https://sunshine4cancerkid.wixsite.com/sunshine-4-cancer-ki/post/astrocytoma-from-diagnosis-to-management-a-comprehensive-overview",
-      tags: ["Medical Research", "Oncology", "Peer-Reviewed"],
-    },
-    {
-      title: "Stress and Its Impact on Memory",
-      publisher: "Academic Journal",
-      date: "October 2024",
-      description:
-        "This study explores the relationship between stress and cognitive functions, focusing on how stress hormones affect memory retention and recall.",
-      link: "https://drive.google.com/file/d/1hsuDwq_5UjnS9a4G984gqhuAkOkmabe8/view?usp=sharing",
-      tags: ["Psychology", "Neuroscience", "Cognitive Science"],
-    },
-    {
-      title: "The Future of Healthcare Technology",
-      publisher: "Medium",
-      date: "August 2024",
-      description: "An exploration of emerging technologies in healthcare and their potential impact on patient care.",
-      link: "#",
-      tags: ["Healthcare", "Technology", "Innovation"],
-    },
-  ]
-
   return (
     <>
       <Header />
@@ -69,7 +32,7 @@ export default function WritingPortfolioPage() {
               A collection of my published works, research papers, and articles across various platforms and topics.
             </p>
 
-            <div className="space-y-6">
+            <div className="space-y-4 max-w-3xl mx-auto">
               {publications.map((pub, index) => (
                 <Card key={index} className="transition-all duration-300 hover:shadow-md">
                   <CardHeader>
@@ -78,18 +41,11 @@ export default function WritingPortfolioPage() {
                       {pub.publisher} • {pub.date}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <p className="mb-4">{pub.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {pub.tags.map((tag) => (
-                        <Badge key={tag} variant="secondary">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                    <Button asChild>
+                  <CardContent className="flex justify-between items-center">
+                    <p className="text-sm text-muted-foreground">{pub.description}</p>
+                    <Button size="sm" asChild className="ml-4 flex-shrink-0">
                       <a href={pub.link} target="_blank" rel="noopener noreferrer">
-                        Read Publication
+                        Read
                         <ExternalLink className="ml-2 h-4 w-4" />
                       </a>
                     </Button>

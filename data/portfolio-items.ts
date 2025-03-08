@@ -7,7 +7,6 @@ export type Publication = {
   date: string
   description: string
   link: string
-  tags: string[]
 }
 
 export const publications: Publication[] = [
@@ -18,7 +17,6 @@ export const publications: Publication[] = [
     description:
       "A research-driven blog featuring 12 posts analyzing the West Nile virus, referencing 35+ peer-reviewed sources.",
     link: "https://virusesunveiled.substack.com/",
-    tags: ["Medical Communications", "Public Health", "Research"],
   },
   {
     title: "Astrocytoma: From Diagnosis to Management",
@@ -26,7 +24,6 @@ export const publications: Publication[] = [
     date: "November 2024",
     description: "A peer-reviewed research paper analyzing astrocytoma diagnosis, treatment, and management.",
     link: "https://sunshine4cancerkid.wixsite.com/sunshine-4-cancer-ki/post/astrocytoma-from-diagnosis-to-management-a-comprehensive-overview",
-    tags: ["Medical Research", "Oncology", "Peer-Reviewed"],
   },
   // Add more publications here...
 ]

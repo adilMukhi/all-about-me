@@ -42,7 +42,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Resume
+              My Resume
             </a>
           </Button>
         </div>

@@ -24,7 +24,7 @@ export function LatestBlogPost() {
         className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
         style={{ fontFamily: "Sour Gummy, latin" }}
       >
-        Latest Experience
+        My Latest Experience
       </h2>
       <Card className="card-hover-effect">
         <CardHeader>

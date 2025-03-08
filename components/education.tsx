@@ -1,42 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-
-const educationData = [
-  {
-    degree: "High School Diploma, International Baccalaureate",
-    institution: "Glenforest Secondary School",
-    period: "Sep 2023 - Jun 2027",
-    description:
-      "Grade 9-12. Active in leadership roles such as Vice President of the French Club and STEM Fellowship Chapter. Participates in DECA, HOSA, Peer Helper Tutor.",
-    link: "https://glenforest.peelschools.org/",
-  },
-  {
-    degree: "IB MYP and IB DP Diploma, Core",
-    institution: "International Baccalaureate",
-    period: "Sep 2023 - May 2027",
-    description: "Global education framework focusing on research, communication, and global understanding skills.",
-    link: "https://www.ibo.org/benefits/",
-  },
-  {
-    degree: "MedLinx Program",
-    institution: "The University of Toronto, Temerty Faculty of Medicine, Office of Access and Outreach",
-    period: "Dec 2024 - Apr 2025",
-    description:
-      "Real-world experience in healthcare through hands-on activities, mentorship, and academic workshops. I took the U of T course Introduction to the Role of the Human Development Index and Social Determinants of Health on the Global Burden of Disease - Taught by Dr. Andrea K. Boggild, BSc, MSc, MD",
-    link: "https://www.linkedin.com/in/adil-mukhi-6aba27246/#:~:text=and%20%2B15%20skills-,University%20of%20Toronto,-University%20of%20Toronto",
-  },
-]
+import { educationData } from "@/data/education"
 
 export default function Education() {
-  const [expandedCard, setExpandedCard] = useState<number | null>(null)
-
-  const toggleExpand = (index: number) => {
-    setExpandedCard(expandedCard === index ? null : index)
-  }
-
   return (
     <section id="education" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <h2
@@ -47,30 +16,30 @@ export default function Education() {
       </h2>
       <div className="grid gap-6 md:grid-cols-2">
         {educationData.map((edu, index) => (
-          <Card
-            key={index}
-            className={`card-hover-effect`}
-            onMouseEnter={() => toggleExpand(index)}
-            onMouseLeave={() => toggleExpand(null)}
-          >
+          <Card key={index} className="card-hover-effect">
             <CardHeader>
               <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{edu.degree}</CardTitle>
               <CardDescription>
                 {edu.institution} | {edu.period}
               </CardDescription>
             </CardHeader>
-            <CardContent className={`flex ${index === 2 ? "flex-row" : "flex-col"} gap-4`}>
-              <div>
+            <CardContent className="flex flex-col md:flex-row gap-4">
+              <div className="md:w-1/3">
+                <Image
+                  src={edu.image || "/placeholder.svg"}
+                  alt={edu.institution}
+                  width={150}
+                  height={150}
+                  className="rounded-lg object-cover w-full"
+                />
+              </div>
+              <div className="md:w-2/3">
                 <p>{edu.description}</p>
-                {expandedCard === index && (
-                  <div className="mt-4">
-                    <Button className="mt-4 button-hover-effect">
-                      <a href={edu.link} target="_blank" rel="noopener noreferrer">
-                        Learn More{" "}
-                      </a>
-                    </Button>
-                  </div>
-                )}
+                <Button className="mt-4 button-hover-effect">
+                  <a href={edu.link} target="_blank" rel="noopener noreferrer">
+                    Learn More
+                  </a>
+                </Button>
               </div>
             </CardContent>
           </Card>

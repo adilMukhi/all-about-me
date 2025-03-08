@@ -27,7 +27,7 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              View Resume
+              My Resume
             </a>
           </Button>
           <Button variant="secondary" asChild className="button-hover-effect">
@@ -40,7 +40,7 @@ export default function Hero() {
             </a>
           </Button>
           <Button asChild className="button-hover-effect">
-            <a href="#about">See More!</a>
+            <a href="/experiences">See More!</a>
           </Button>
         </div>
       </div>
