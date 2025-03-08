@@ -11,13 +11,12 @@ const experiences = workExperiences
 
 export default function WorkExperience() {
   const [expandedCard, setExpandedCard] = useState<number | null>(null)
-  const [showAll, setShowAll] = useState(false)
 
   const toggleExpand = (index: number) => {
     setExpandedCard(expandedCard === index ? null : index)
   }
 
-  const visibleExperiences = showAll ? experiences : experiences.slice(0, 4)
+  const visibleExperiences = experiences
 
   return (
     <section id="work-experience" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
@@ -71,13 +70,6 @@ export default function WorkExperience() {
           </Card>
         ))}
       </div>
-      {!showAll && experiences.length > 4 && (
-        <div className="mt-8 text-center">
-          <Button onClick={() => setShowAll(true)} className="button-hover-effect">
-            Show More
-          </Button>
-        </div>
-      )}
     </section>
   )
 }
