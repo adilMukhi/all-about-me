@@ -1,8 +1,7 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import type React from "react"
-
-import { useState } from "react"
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
 import Skills from "@/components/skills"
@@ -77,8 +76,39 @@ const sections: Section[] = [
 ]
 
 export default function BackgroundPage() {
-  const [activeSection, setActiveSection] = useState(sections[0].id)
+  const getInitialSection = () => {
+    if (typeof window !== "undefined") {
+      const sectionFromUrl = window.location.hash.replace("#", "")
+      return sections.some((s) => s.id === sectionFromUrl) ? sectionFromUrl : "skills"
+    }
+    return "skills"
+  }
+
+  const [activeSection, setActiveSection] = useState(getInitialSection)
   const ActiveComponent = sections.find((s) => s.id === activeSection)?.component || sections[0].component
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const sectionFromUrl = window.location.hash.replace("#", "")
+      if (sections.some((s) => s.id === sectionFromUrl)) {
+        setActiveSection(sectionFromUrl)
+      }
+    }
+
+    window.addEventListener("hashchange", handleHashChange)
+    return () => window.removeEventListener("hashchange", handleHashChange)
+  }, [])
+
+  const handleSectionChange = (id: string) => {
+    setActiveSection(id)
+    window.location.hash = id // Update the URL without refreshing
+    setTimeout(() => {
+      const element = document.getElementById(id)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" })
+      }
+    }, 100)
+  }
 
   return (
     <>
@@ -98,19 +128,7 @@ export default function BackgroundPage() {
 
             {/* Mobile dropdown */}
             <div className="md:hidden mb-8">
-              <Select
-                value={activeSection}
-                onValueChange={(value) => {
-                  setActiveSection(value)
-                  // Scroll to the section
-                  setTimeout(() => {
-                    const element = document.getElementById(value)
-                    if (element) {
-                      element.scrollIntoView({ behavior: "smooth" })
-                    }
-                  }, 100)
-                }}
-              >
+              <Select value={activeSection} onValueChange={handleSectionChange}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select section" />
                 </SelectTrigger>
@@ -133,19 +151,11 @@ export default function BackgroundPage() {
                 {sections.map((section) => (
                   <button
                     key={section.id}
-                    onClick={() => {
-                      setActiveSection(section.id)
-                      // Scroll to the section
-                      const element = document.getElementById(section.id)
-                      if (element) {
-                        element.scrollIntoView({ behavior: "smooth" })
-                      }
-                    }}
+                    onClick={() => handleSectionChange(section.id)}
                     className={cn(
                       "flex items-center gap-2 px-6 py-3 rounded-lg transition-all relative",
                       section.color,
                       activeSection === section.id ? "ring-2 ring-blue-500 shadow-lg scale-105" : "hover:scale-105",
-                      // Add overflow-hidden to contain the pseudo-element
                       "overflow-hidden",
                     )}
                   >
@@ -166,4 +176,3 @@ export default function BackgroundPage() {
     </>
   )
 }
-
