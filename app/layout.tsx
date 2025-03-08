@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Adil Mukhi - Personal Portfolio",
-  description: "A showcase of my skills and projects",
+  description: "A showcase of my skills, projects, and experiences",
   generator: "v0.dev",
 }
 
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="p:domain_verify" content="10e6074a03407f2fd24aed7425a2acd9" />
@@ -45,6 +45,15 @@ export default function RootLayout({
             gtag('config', 'AW-16895913653');
           `}
         </Script>
+        {/* Font imports */}
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap" />
       </head>
       <body className={inter.className}>
         <noscript>
@@ -62,5 +71,7 @@ export default function RootLayout({
     </html>
   )
 }
+
+
 
 import './globals.css'

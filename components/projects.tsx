@@ -34,6 +34,7 @@ const projects = [
     demoLink: "https://drive.google.com/file/d/1hsuDwq_5UjnS9a4G984gqhuAkOkmabe8/view?usp=sharing", // You can add a link to any demo or research presentation
     codeLink: "https://drive.google.com/file/d/1hsuDwq_5UjnS9a4G984gqhuAkOkmabe8/view?usp=sharing", // Add a link to any code or further research materials
   },
+  },
 ]
 
 export default function Projects() {
