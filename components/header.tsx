@@ -16,7 +16,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
       <div className="container flex h-16 items-center">
         <div className="mr-4 hidden md:flex" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
-          <Link href="/" className="mr-6 flex items-center space-x-2">
+          <Link href="/" className="mr-6 flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <Image
               src={profileImages.main || "/placeholder.svg"}
               alt="Profile picture"
@@ -57,7 +57,11 @@ export default function Header() {
           <div className="container py-4" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
             {navConfig.mainNav.map((item) => (
               <div key={item.title}>
-                <Link href={item.href} className="block py-2 text-hover-effect" onClick={() => setIsMenuOpen(false)}>
+                <Link
+                  href={item.href}
+                  className="block py-2 hover:text-blue-500 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   {item.title}
                 </Link>
                 {item.items && (
@@ -66,7 +70,7 @@ export default function Header() {
                       <Link
                         key={subItem.title}
                         href={subItem.href}
-                        className="block py-2 text-hover-effect"
+                        className="block py-2 hover:text-blue-500 transition-colors"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {subItem.title}

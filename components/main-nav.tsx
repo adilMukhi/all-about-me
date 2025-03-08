@@ -1,4 +1,5 @@
 "use client"
+
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import type { MainNavItem } from "@/types/nav"
@@ -27,17 +28,22 @@ export function MainNav({ items }: MainNavProps) {
           <NavigationMenuItem key={item.title}>
             {item.items ? (
               <>
-                <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
+                <NavigationMenuTrigger>
+                  <Link href={item.href} className="hover:text-blue-500 transition-colors">
+                    {item.title}
+                  </Link>
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                    {item.items.map((subItem) => (
-                      <li key={subItem.title}>
-                        <NavigationMenuLink asChild>
+                  <div className="w-[850px] p-4">
+                    {item.title === "Experiences" ? (
+                      <div className="grid grid-cols-3 gap-4 max-h-[400px] overflow-y-auto">
+                        {item.items.map((subItem) => (
                           <Link
+                            key={subItem.title}
                             href={subItem.href}
                             className={cn(
-                              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-                              pathname === subItem.href && "bg-accent text-accent-foreground",
+                              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blue-50 hover:text-blue-500",
+                              pathname === subItem.href && "bg-blue-50 text-blue-500",
                             )}
                           >
                             <div className="text-sm font-medium leading-none">{subItem.title}</div>
@@ -47,10 +53,33 @@ export function MainNav({ items }: MainNavProps) {
                               </p>
                             )}
                           </Link>
-                        </NavigationMenuLink>
-                      </li>
-                    ))}
-                  </ul>
+                        ))}
+                      </div>
+                    ) : (
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                        {item.items.map((subItem) => (
+                          <li key={subItem.title}>
+                            <NavigationMenuLink asChild>
+                              <Link
+                                href={subItem.href}
+                                className={cn(
+                                  "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blue-50 hover:text-blue-500",
+                                  pathname === subItem.href && "bg-blue-50 text-blue-500",
+                                )}
+                              >
+                                <div className="text-sm font-medium leading-none">{subItem.title}</div>
+                                {subItem.description && (
+                                  <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                    {subItem.description}
+                                  </p>
+                                )}
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 </NavigationMenuContent>
               </>
             ) : (
@@ -58,7 +87,8 @@ export function MainNav({ items }: MainNavProps) {
                 <NavigationMenuLink
                   className={cn(
                     navigationMenuTriggerStyle(),
-                    pathname === item.href && "bg-accent text-accent-foreground",
+                    "hover:text-blue-500 transition-colors",
+                    pathname === item.href && "bg-blue-50 text-blue-500",
                   )}
                 >
                   {item.title}
