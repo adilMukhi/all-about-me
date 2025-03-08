@@ -1,3 +1,5 @@
+import { blogImages } from "./image-paths"
+
 // Example data structure for blog posts
 export type BlogPost = {
   title: string
@@ -16,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     title: "My Journey in Medical Research",
     subtitle: "Exploring the intersection of technology and healthcare",
     date: "March 8, 2025",
-    image: "/blog/medical-research.jpg",
+    image: blogImages.medicalResearch,
     slug: "journey-in-medical-research",
     excerpt: "Join me as I share my experiences in medical research and healthcare innovation...",
     content: `
@@ -28,7 +30,25 @@ export const blogPosts: BlogPost[] = [
       
       <p>As I continue my academic journey, I'm excited to further explore the potential of technology in healthcare and contribute to advancements that can make a real difference in patients' lives.</p>
     `,
-    images: ["/blog/medical-research-1.jpg", "/blog/medical-research-2.jpg", "/blog/medical-research-3.jpg"],
+    images: [blogImages.medicalResearch1, blogImages.medicalResearch2, blogImages.medicalResearch3],
+  },
+  {
+    title: "Volunteering at the Hospital",
+    subtitle: "Lessons learned from working with patients",
+    date: "February 15, 2025",
+    image: blogImages.hospitalVolunteer,
+    slug: "volunteering-at-hospital",
+    excerpt: "My time volunteering at the local hospital taught me valuable lessons about patient care...",
+    content: `
+      <p>Volunteering at the local hospital has been one of the most rewarding experiences of my academic journey. Working directly with patients and healthcare professionals has provided me with invaluable insights into the medical field.</p>
+      
+      <p>From assisting nurses with basic patient care to helping visitors navigate the complex hospital environment, each task taught me something new about healthcare delivery and the importance of compassion in medical settings.</p>
+      
+      <p>I was particularly struck by the resilience of patients facing challenging diagnoses and the dedication of the healthcare team working tirelessly to provide the best possible care. These observations have strengthened my resolve to pursue a career in medicine.</p>
+      
+      <p>The experience has also highlighted the importance of clear communication in healthcare settings. Whether explaining procedures to patients or coordinating with staff, effective communication is essential for quality care.</p>
+    `,
+    images: [],
   },
   // Add more blog posts here...
 ]

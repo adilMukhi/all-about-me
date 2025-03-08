@@ -2,16 +2,21 @@ import Link from "next/link"
 import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { blogPosts } from "@/data/blog-posts"
+import { blogImages, placeholder } from "@/data/image-paths"
 
 export function LatestBlogPost() {
-  // This would typically fetch from your CMS or database
-  const latestPost = {
-    title: "My Journey in Medical Research",
-    subtitle: "Exploring the intersection of technology and healthcare",
-    date: "March 8, 2025",
-    image: "/blog/latest-post.jpg",
-    slug: "journey-in-medical-research",
-  }
+  // Get the most recent blog post from the data file
+  const latestPost =
+    blogPosts.length > 0
+      ? blogPosts[0]
+      : {
+          title: "My Journey in Medical Research",
+          subtitle: "Exploring the intersection of technology and healthcare",
+          date: "March 8, 2025",
+          image: blogImages.medicalResearch,
+          slug: "journey-in-medical-research",
+        }
 
   return (
     <section className="container py-16">
@@ -31,7 +36,7 @@ export function LatestBlogPost() {
         <CardContent className="flex flex-col md:flex-row gap-6">
           <div className="md:w-1/3">
             <Image
-              src={latestPost.image || "/placeholder.svg"}
+              src={latestPost.image || placeholder(400, 300)}
               alt={latestPost.title}
               width={400}
               height={300}

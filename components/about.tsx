@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { profileImages } from "@/data/image-paths"
 
 export default function About() {
   const [showMore, setShowMore] = useState(false)
@@ -49,7 +50,13 @@ export default function About() {
           </CardContent>
         </Card>
         <div className="flex items-center justify-center">
-          <Image src="/profile-pic.jpg" alt="Your Name" width={600} height={400} className="rounded-full" />
+          <Image
+            src={profileImages.about || "/placeholder.svg"}
+            alt="Your Name"
+            width={600}
+            height={400}
+            className="rounded-full"
+          />
         </div>
       </div>
     </section>

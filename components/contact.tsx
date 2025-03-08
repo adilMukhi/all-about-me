@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Instagram, Linkedin, Github, Link, Building } from "lucide-react"
 import Script from "next/script"
+import { profileImages } from "@/data/image-paths"
 
 const socialLinks = [
   { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com/in/adil-mukhi-6aba27246", color: "text-blue-500" },
@@ -31,7 +32,7 @@ export default function Contact() {
           <div className="w-full md:w-1/2 flex flex-col items-center space-y-8">
             <div className="w-72 h-72 relative">
               <Image
-                src="/secondpic.jpg"
+                src={profileImages.secondary || "/placeholder.svg"}
                 alt="Adil Mukhi"
                 width={288}
                 height={288}
