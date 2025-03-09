@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Building, BookOpen, Mail, Linkedin, Instagram, Github, Twitter, Cloud, Code } from "lucide-react"
+import { Building, BookOpen, Mail, Linkedin, Instagram, Github, Twitter, Cloud, Code, Hash, Ghost } from "lucide-react"
 
 export default function Hero() {
   const socialLinks = [
@@ -57,7 +57,27 @@ export default function Hero() {
       label: "DevPost",
       color: "text-indigo-600 hover:text-indigo-800",
     },
+    {
+      icon: Hash,
+      url: "https://www.threads.net/@adilm.0",
+      label: "Threads",
+      color: "text-black hover:text-gray-800",
+    },
+    {
+      icon: Ghost,
+      url: "https://www.snapchat.com/add/adilm.0",
+      label: "Snapchat",
+      color: "text-yellow-500 hover:text-yellow-600",
+    },
   ]
+
+  // Calculate how many icons per row for mobile
+  const totalIcons = socialLinks.length
+  const iconsPerRow = Math.ceil(totalIcons / 2)
+
+  // Split icons into two rows for mobile
+  const firstRowIcons = socialLinks.slice(0, iconsPerRow)
+  const secondRowIcons = socialLinks.slice(iconsPerRow)
 
   return (
     <section className="bg-primary/10 py-16">
@@ -69,8 +89,8 @@ export default function Hero() {
           Hi, I'm Adil Mukhi!
         </h2>
 
-        {/* Social Media Icons */}
-        <div className="flex flex-wrap justify-center gap-4 my-4">
+        {/* Social Media Icons - Desktop */}
+        <div className="hidden md:flex flex-wrap justify-center gap-4 my-4">
           {socialLinks.map((social, index) => (
             <a
               key={index}
@@ -85,6 +105,42 @@ export default function Hero() {
               <span className="sr-only">{social.label}</span>
             </a>
           ))}
+        </div>
+
+        {/* Social Media Icons - Mobile (two rows) */}
+        <div className="flex flex-col gap-3 md:hidden my-4">
+          <div className="flex justify-center gap-3">
+            {firstRowIcons.map((social, index) => (
+              <a
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${social.color} transition-all duration-300 hover:scale-125`}
+                aria-label={social.label}
+                title={social.label}
+              >
+                <social.icon className="h-5 w-5" />
+                <span className="sr-only">{social.label}</span>
+              </a>
+            ))}
+          </div>
+          <div className="flex justify-center gap-3">
+            {secondRowIcons.map((social, index) => (
+              <a
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${social.color} transition-all duration-300 hover:scale-125`}
+                aria-label={social.label}
+                title={social.label}
+              >
+                <social.icon className="h-5 w-5" />
+                <span className="sr-only">{social.label}</span>
+              </a>
+            ))}
+          </div>
         </div>
 
         <p
