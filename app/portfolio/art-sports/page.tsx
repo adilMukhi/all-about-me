@@ -47,28 +47,36 @@ export default function ArtSportsPortfolioPage() {
               </h2>
               {sportsAchievements.map((achievement, index) => (
                 <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg mb-6">
-                  <div className="relative aspect-video w-full">
-                    <iframe
-                      src={`https://www.youtube.com/embed/${achievement.videoId || "dQw4w9WgXcQ"}?autoplay=1&mute=1&loop=1&controls=0&playlist=${achievement.videoId || "dQw4w9WgXcQ"}`}
-                      title={achievement.title}
-                      className="absolute inset-0 w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      frameBorder="0"
-                    />
-                  </div>
-                  <CardHeader>
-                    <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{achievement.title}</CardTitle>
-                    <CardDescription>{achievement.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2">
-                      {achievement.tags.map((tag) => (
-                        <Badge key={tag} variant="secondary">
-                          {tag}
-                        </Badge>
-                      ))}
+                  <div className="flex flex-col md:flex-row">
+                    <div className="md:w-1/2">
+                      <div className="relative aspect-video w-full">
+                        <iframe
+                          src={`https://www.youtube.com/embed/${achievement.videoId || "dQw4w9WgXcQ"}?si=sAgHr_qsrjbKXWyJ&controls=0&autoplay=1&mute=1&loop=1&playlist=${achievement.videoId || "dQw4w9WgXcQ"}`}
+                          title={achievement.title}
+                          className="absolute inset-0 w-full h-full"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          frameBorder="0"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      </div>
                     </div>
-                  </CardContent>
+                    <div className="md:w-1/2">
+                      <CardHeader>
+                        <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{achievement.title}</CardTitle>
+                        <CardDescription>{achievement.description}</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="flex flex-wrap gap-2">
+                          {achievement.tags.map((tag) => (
+                            <Badge key={tag} variant="secondary">
+                              {tag}
+                            </Badge>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </div>
+                  </div>
                 </Card>
               ))}
             </div>

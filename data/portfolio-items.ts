@@ -238,7 +238,7 @@ export const sportsAchievements: SportsAchievement[] = [
     title: "ROPSSAA Tennis Quarter-Finalist",
     description: "Quarter-Finalist in the ROPSSAA Boys Doubles Junior Tennis South East Qualifier 2024.",
     image: "/portfolio/sports/tennis.jpg",
-    videoId: "YOUR_VIDEO_ID", // Replace with your actual YouTube video ID
+    videoId: "ztSkKMdQpE0", // Updated with the correct YouTube video ID
     tags: ["Tennis", "Competition", "Team Sports"],
     type: "sports",
   },
