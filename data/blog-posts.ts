@@ -38,7 +38,7 @@ export const blogPosts: BlogPost[] = [
     title: "Capturing STEM Excellence: Photography at the Glenforest STEM Symposium",
     subtitle: "Through my lens: The future of innovation in action!",
     date: "March 2, 2025",
-    image: "/blog/stem-symposium (5).JPG",
+    image: "/blog/stem-symposium (5).jpg",
     slug: "photography-stem-symposium",
     excerpt: "A visual journey through the Glenforest STEM Symposium, capturing the excitement of science and innovation...",
     content: `
@@ -50,7 +50,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>This experience reaffirmed my belief in the power of STEM education and how essential it is to nurture young minds interested in science and technology.</p>
     `,
-    images: ["/blog/stem-symposium (5).JPG", "/blog/stem-symposium (2).JPG", "/blog/stem-symposium (3).JPG", "/blog/stem-symposium (4).JPG", "/blog/stem-symposium (1).JPG"]
+    images: ["/blog/stem-symposium (5).jpg", "/blog/stem-symposium (2).jpg", "/blog/stem-symposium (3).jpg", "/blog/stem-symposium (4).jpg", "/blog/stem-symposium (1).jpg"]
   },
   {
     title: "Astrocytoma: From Diagnosis to Management – A Comprehensive Overview",
