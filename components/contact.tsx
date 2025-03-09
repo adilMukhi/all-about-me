@@ -27,7 +27,7 @@ export default function Contact() {
             Get in Touch
           </CardTitle>
         </CardHeader>
-        <CardContent className="flex flex-col md:flex-row items-start gap-8">
+        <CardContent className="flex flex-col md:flex-row items-start gap-4 md:gap-8">
           <div className="w-full md:w-1/2 flex flex-col items-center space-y-8">
             <div className="w-72 h-72 relative">
               <Image
@@ -38,31 +38,31 @@ export default function Contact() {
                 className="rounded-full object-cover"
               />
             </div>
-            <div className="grid grid-cols-2 gap-x-8 gap-y-6 w-full max-w-lg px-6">
+            <div className="grid grid-cols-2 gap-x-4 gap-y-4 w-full max-w-lg px-4 sm:px-6 sm:gap-x-8 sm:gap-y-6">
               {socialLinks.slice(0, 4).map((social, index) => (
                 <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center gap-3 ${social.color} hover:text-primary transition-colors justify-center text-hover-effect`}
+                  className={`flex items-center gap-2 ${social.color} hover:text-primary transition-colors justify-center text-hover-effect`}
                 >
-                  <social.icon className="h-6 w-6" />
-                  <span style={{ fontFamily: "'Kirang Haerang', cursive", fontSize: "20px" }}>{social.name}</span>
+                  <social.icon className="h-5 w-5 sm:h-6 sm:w-6" />
+                  <span style={{ fontFamily: "'Kirang Haerang', cursive", fontSize: "18px" }}>{social.name}</span>
                 </a>
               ))}
             </div>
-            <div className="flex justify-center w-full px-6">
+            <div className="flex justify-center w-full px-4 sm:px-6">
               {socialLinks.slice(4).map((social) => (
                 <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center gap-3 ${social.color} hover:text-primary transition-colors text-hover-effect`}
+                  className={`flex items-center gap-2 ${social.color} hover:text-primary transition-colors text-hover-effect`}
                 >
-                  <social.icon className="h-6 w-6" />
-                  <span style={{ fontFamily: "'Kirang Haerang', cursive", fontSize: "20px" }}>{social.name}</span>
+                  <social.icon className="h-5 w-5 sm:h-6 sm:w-6" />
+                  <span style={{ fontFamily: "'Kirang Haerang', cursive", fontSize: "18px" }}>{social.name}</span>
                 </a>
               ))}
             </div>
@@ -74,7 +74,7 @@ export default function Contact() {
             <div
               className="calendly-inline-widget"
               data-url="https://calendly.com/adilm0/15-minute-meeting?hide_gdpr_banner=1"
-              style={{ minWidth: "320px", height: "550px" }}
+              style={{ minWidth: "280px", height: "450px", width: "100%" }}
             />
           </div>
         </CardContent>
@@ -83,4 +83,3 @@ export default function Contact() {
     </section>
   )
 }
-
