@@ -5,9 +5,11 @@ export type NavItem = {
   items?: NavItem[]
 }
 
-export type MainNavItem = NavItem
-
-export type NavConfig = {
-  mainNav: MainNavItem[]
+export type MainNavItem = {
+  title: string
+  href: string
+  description?: string
+  disabled?: boolean
+  items?: MainNavItem[]
 }
 

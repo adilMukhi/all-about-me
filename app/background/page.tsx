@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
 import Skills from "@/components/skills"
@@ -80,6 +80,25 @@ export default function BackgroundPage() {
   const [activeSection, setActiveSection] = useState(sections[0].id)
   const ActiveComponent = sections.find((s) => s.id === activeSection)?.component || sections[0].component
 
+  // Handle URL hash for direct navigation
+  useEffect(() => {
+    // Get the hash from the URL (remove the # character)
+    const hash = window.location.hash.replace("#", "")
+
+    // If there's a hash and it matches one of our sections, set it as active
+    if (hash && sections.some((section) => section.id === hash)) {
+      setActiveSection(hash)
+
+      // Scroll to the section with a slight delay to ensure rendering
+      setTimeout(() => {
+        const element = document.getElementById(hash)
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" })
+        }
+      }, 100)
+    }
+  }, [])
+
   return (
     <>
       <Header />
@@ -102,6 +121,8 @@ export default function BackgroundPage() {
                 value={activeSection}
                 onValueChange={(value) => {
                   setActiveSection(value)
+                  // Update URL hash
+                  window.location.hash = value
                   // Scroll to the section
                   setTimeout(() => {
                     const element = document.getElementById(value)
@@ -135,6 +156,8 @@ export default function BackgroundPage() {
                     key={section.id}
                     onClick={() => {
                       setActiveSection(section.id)
+                      // Update URL hash
+                      window.location.hash = section.id
                       // Scroll to the section
                       const element = document.getElementById(section.id)
                       if (element) {
@@ -156,9 +179,16 @@ export default function BackgroundPage() {
               </div>
             </div>
 
-            <div className="mt-8" id={activeSection}>
-              <ActiveComponent />
-            </div>
+            {/* Render all sections but only show the active one */}
+            {sections.map((section) => (
+              <div
+                key={section.id}
+                id={section.id}
+                className={`mt-8 ${activeSection === section.id ? "block" : "hidden"}`}
+              >
+                <section.component />
+              </div>
+            ))}
           </div>
         </section>
       </main>
@@ -166,3 +196,4 @@ export default function BackgroundPage() {
     </>
   )
 }
+
