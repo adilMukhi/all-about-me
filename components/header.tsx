@@ -62,27 +62,27 @@ export default function Header() {
           </Button>
         </div>
       </div>
+
+      {/* Mobile menu overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-background">
-          <div className="fixed top-16 left-0 right-0 bottom-0 overflow-y-auto">
-            <nav className="md:hidden">
-              <div className="container py-4 relative" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
-                {navConfig.mainNav.map((item) => (
-                  <div key={item.title} className="mb-2">
-                    <MobileNavItem item={item} />
-                  </div>
-                ))}
-                <div className="mt-6">
-                  <Button className="w-full button-hover-effect">
-                    <a
-                      href="https://drive.google.com/file/d/1xIuHrE6H3Lf-Oj3S-PrXI15dIHi9XtDi/view"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      My Resume
-                    </a>
-                  </Button>
+        <div className="fixed inset-0 z-40 bg-background/95 pt-16">
+          <div className="container py-6">
+            <nav className="flex flex-col space-y-4" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+              {navConfig.mainNav.map((item) => (
+                <div key={item.title} className="mb-2">
+                  <MobileNavItem item={item} />
                 </div>
+              ))}
+              <div className="pt-4 mt-4 border-t">
+                <Button className="w-full button-hover-effect">
+                  <a
+                    href="https://drive.google.com/file/d/1xIuHrE6H3Lf-Oj3S-PrXI15dIHi9XtDi/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    My Resume
+                  </a>
+                </Button>
               </div>
             </nav>
           </div>
