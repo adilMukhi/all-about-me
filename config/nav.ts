@@ -14,8 +14,8 @@ export const navConfig: NavConfig = {
       href: "/",
     },
     {
-      title: "Experiences",
-      href: "/experiences",
+      title: "Background",
+      href: "/background",
       items: [],
     },
     {

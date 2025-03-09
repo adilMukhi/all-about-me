@@ -14,6 +14,9 @@ export default function ClubFeature() {
       </h2>
       <Card className="bg-gradient-to-br from-blue-50 to-teal-50 overflow-hidden">
         <div className="flex flex-col md:flex-row">
+          <div className="md:w-1/2 relative min-h-[300px]">
+            <Image src="/drinterested.jpg" alt="Dr. Interested Club" fill className="object-cover" />
+          </div>
           <div className="md:w-1/2 p-6 md:p-8">
             <CardHeader className="p-0 mb-4">
               <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }} className="text-2xl md:text-3xl">
@@ -52,9 +55,6 @@ export default function ClubFeature() {
                 </a>
               </Button>
             </CardContent>
-          </div>
-          <div className="md:w-1/2 relative min-h-[300px]">
-            <Image src="/drinterested.jpg" alt="Dr. Interested Club" fill className="object-cover" />
           </div>
         </div>
       </Card>

@@ -9,8 +9,8 @@ export default function AnnouncementBanner() {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    // Check if the banner has been dismissed before
-    const bannerDismissed = localStorage.getItem("clubBannerDismissed")
+    // Check if the banner has been dismissed in this session
+    const bannerDismissed = sessionStorage.getItem("clubBannerDismissed")
     if (!bannerDismissed) {
       setIsVisible(true)
     }
@@ -18,8 +18,8 @@ export default function AnnouncementBanner() {
 
   const dismissBanner = () => {
     setIsVisible(false)
-    // Save the dismissal in localStorage
-    localStorage.setItem("clubBannerDismissed", "true")
+    // Save the dismissal in sessionStorage instead of localStorage
+    sessionStorage.setItem("clubBannerDismissed", "true")
   }
 
   if (!isVisible) return null
