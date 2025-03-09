@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
@@ -13,25 +13,7 @@ import { cn } from "@/lib/utils"
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [expandedItem, setExpandedItem] = useState<string | null>(null)
-  const [bannerVisible, setBannerVisible] = useState(false)
   const pathname = usePathname()
-
-  // Listen for banner visibility changes
-  useEffect(() => {
-    const handleBannerVisibility = (event: CustomEvent) => {
-      setBannerVisible(event.detail)
-    }
-
-    // Check initial banner state from sessionStorage
-    const bannerDismissed = sessionStorage.getItem("clubBannerDismissed")
-    setBannerVisible(!bannerDismissed)
-
-    // Add event listener for banner visibility changes
-    window.addEventListener("bannerVisibilityChange", handleBannerVisibility as EventListener)
-    return () => {
-      window.removeEventListener("bannerVisibilityChange", handleBannerVisibility as EventListener)
-    }
-  }, [])
 
   const toggleExpanded = (title: string) => {
     setExpandedItem(expandedItem === title ? null : title)
@@ -100,19 +82,12 @@ export default function Header() {
     )
   }
 
-  const bannerHeight = bannerVisible ? "4rem" : "0"
-
   return (
     <>
-      {/* Spacer div with dynamic height based on banner visibility */}
-      <div className={`h-[calc(${bannerHeight}+4rem)] transition-all duration-300`} />
+      {/* Spacer div for fixed header */}
+      <div className="h-16" />
 
-      <header
-        className={cn(
-          "fixed left-0 right-0 z-40 bg-background border-b transition-all duration-300",
-          bannerVisible ? "top-16" : "top-0",
-        )}
-      >
+      <header className="fixed top-0 left-0 right-0 z-40 bg-background border-b shadow-sm">
         <div className="container flex h-16 items-center">
           <div className="mr-4 flex items-center" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
             <Link href="/" className="mr-6 flex items-center space-x-2 hover:opacity-80 transition-opacity">
@@ -148,13 +123,8 @@ export default function Header() {
 
         {/* Mobile menu overlay */}
         {isMenuOpen && (
-          <div className={cn("fixed inset-0 z-40 bg-background", bannerVisible ? "top-[7rem]" : "top-16")}>
-            <div
-              className={cn(
-                "h-[calc(100vh-4rem)] overflow-y-auto",
-                bannerVisible ? "h-[calc(100vh-7rem)]" : "h-[calc(100vh-4rem)]",
-              )}
-            >
+          <div className="fixed inset-0 top-16 z-40 bg-background">
+            <div className="h-[calc(100vh-4rem)] overflow-y-auto">
               <div className="container py-6">
                 <nav className="flex flex-col space-y-4" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
                   {navConfig.mainNav.map((item) => (
