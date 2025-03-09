@@ -34,7 +34,7 @@ export default function ClubFeature() {
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center gap-2">
                   <Users className="h-5 w-5 text-blue-500" />
-                  <span>30+ Executive Team</span>
+                  <span>30+ Executive Members</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Building className="h-5 w-5 text-blue-500" />
@@ -46,7 +46,7 @@ export default function ClubFeature() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Globe className="h-5 w-5 text-blue-500" />
-                  <span>Healthcare Network</span>
+                  <span>375+ Cards Distributed</span>
                 </div>
               </div>
               <Button size="lg" className="button-hover-effect">

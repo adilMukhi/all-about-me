@@ -15,7 +15,7 @@ export const educationData: Education[] = [
     description:
       "Grade 9-12. Active in leadership roles such as Vice President of the French Club and STEM Fellowship Chapter. Participates in DECA, HOSA, Peer Helper Tutor.",
     link: "https://glenforest.peelschools.org/",
-    image: "/glenforest.jpg",
+    image: "/gfss-logo.jpg",
   },
   {
     degree: "IB MYP and IB DP Diploma, Core",

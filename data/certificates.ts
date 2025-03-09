@@ -17,7 +17,7 @@ export type Certificate = {
         "Comprehensive training in CPR, AED operation, and first aid techniques for adults, children, and infants. Covers emergency response strategies, injury assessment, and life-saving interventions.",
       skills: ["Emergency Response", "CPR Techniques", "AED Operation", "Wound Management", "Patient Assessment"],
       link: "https://www.redcross.ca/training-and-certification",
-      image: "/certificates/redcross.jpg",
+      image: "/redcross.jpg",
     },
     {
       name: "Food Handler Certification",

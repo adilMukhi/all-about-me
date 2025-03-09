@@ -6,7 +6,7 @@ export type Interests = {
   
   export const interests: Interests = {
     sports: ["Badminton", "Tennis", "Volleyball"],
-    hobbies: ["Photography", "Writing", "Chess"],
+    hobbies: ["Photography", "Writing", "Chess", "Reading"],
     teams: ["GFSS Tennis Team - ROPSSAA Quarter Finalist"],
   }
   

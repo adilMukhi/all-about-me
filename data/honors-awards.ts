@@ -15,7 +15,7 @@ export type Award = {
       year: "Feb 2025",
       description:
         "Awarded for placing among the top 22 out of 180+ competitors worldwide in the highly competitive 1/25 (p + q = 1) exam. This achievement recognizes excellence in problem-solving and analytical skills in a rigorous academic competition.",
-      image: "/awards/pq1.jpg",
+      image: "/pq1.jpg",
       skills: [
         "Problem-Solving",
         "Analytical Thinking",
