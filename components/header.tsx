@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
@@ -13,7 +13,25 @@ import { cn } from "@/lib/utils"
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [expandedItem, setExpandedItem] = useState<string | null>(null)
+  const [bannerVisible, setBannerVisible] = useState(false)
   const pathname = usePathname()
+
+  // Listen for banner visibility changes
+  useEffect(() => {
+    const handleBannerVisibility = (event: CustomEvent) => {
+      setBannerVisible(event.detail)
+    }
+
+    // Check initial banner state from sessionStorage
+    const bannerDismissed = sessionStorage.getItem("clubBannerDismissed")
+    setBannerVisible(!bannerDismissed)
+
+    // Add event listener for banner visibility changes
+    window.addEventListener("bannerVisibilityChange", handleBannerVisibility as EventListener)
+    return () => {
+      window.removeEventListener("bannerVisibilityChange", handleBannerVisibility as EventListener)
+    }
+  }, [])
 
   const toggleExpanded = (title: string) => {
     setExpandedItem(expandedItem === title ? null : title)
@@ -82,11 +100,19 @@ export default function Header() {
     )
   }
 
+  const bannerHeight = bannerVisible ? "4rem" : "0"
+
   return (
     <>
-      {/* Spacer div to prevent content from going under the banner + header */}
-      <div className="h-[calc(3rem+4rem)]" /> {/* 3rem for banner, 4rem for header */}
-      <header className="fixed top-[3rem] left-0 right-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
+      {/* Spacer div with dynamic height based on banner visibility */}
+      <div className={`h-[calc(${bannerHeight}+4rem)] transition-all duration-300`} />
+
+      <header
+        className={cn(
+          "fixed left-0 right-0 z-40 bg-background border-b transition-all duration-300",
+          bannerVisible ? "top-16" : "top-0",
+        )}
+      >
         <div className="container flex h-16 items-center">
           <div className="mr-4 flex items-center" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
             <Link href="/" className="mr-6 flex items-center space-x-2 hover:opacity-80 transition-opacity">
@@ -122,26 +148,33 @@ export default function Header() {
 
         {/* Mobile menu overlay */}
         {isMenuOpen && (
-          <div className="fixed inset-0 top-[7rem] z-40 bg-background">
-            <div className="container py-6 h-[calc(100vh-7rem)] overflow-y-auto">
-              <nav className="flex flex-col space-y-4" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
-                {navConfig.mainNav.map((item) => (
-                  <div key={item.title} className="border-b border-gray-100 last:border-0 pb-4 last:pb-0">
-                    <MobileNavItem item={item} />
+          <div className={cn("fixed inset-0 z-40 bg-background", bannerVisible ? "top-[7rem]" : "top-16")}>
+            <div
+              className={cn(
+                "h-[calc(100vh-4rem)] overflow-y-auto",
+                bannerVisible ? "h-[calc(100vh-7rem)]" : "h-[calc(100vh-4rem)]",
+              )}
+            >
+              <div className="container py-6">
+                <nav className="flex flex-col space-y-4" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+                  {navConfig.mainNav.map((item) => (
+                    <div key={item.title} className="border-b border-gray-100 last:border-0 pb-4 last:pb-0">
+                      <MobileNavItem item={item} />
+                    </div>
+                  ))}
+                  <div className="pt-4 mt-4 border-t">
+                    <Button className="w-full button-hover-effect">
+                      <a
+                        href="https://drive.google.com/file/d/1xIuHrE6H3Lf-Oj3S-PrXI15dIHi9XtDi/view"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        My Resume
+                      </a>
+                    </Button>
                   </div>
-                ))}
-                <div className="pt-4 mt-4 border-t">
-                  <Button className="w-full button-hover-effect">
-                    <a
-                      href="https://drive.google.com/file/d/1xIuHrE6H3Lf-Oj3S-PrXI15dIHi9XtDi/view"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      My Resume
-                    </a>
-                  </Button>
-                </div>
-              </nav>
+                </nav>
+              </div>
             </div>
           </div>
         )}

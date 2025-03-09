@@ -5,6 +5,9 @@ import { X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
+// Create a custom event for banner visibility changes
+const BANNER_VISIBILITY_CHANGE = "bannerVisibilityChange"
+
 export default function AnnouncementBanner() {
   const [isVisible, setIsVisible] = useState(false)
 
@@ -18,14 +21,21 @@ export default function AnnouncementBanner() {
 
   const dismissBanner = () => {
     setIsVisible(false)
-    // Save the dismissal in sessionStorage instead of localStorage
+    // Save the dismissal in sessionStorage
     sessionStorage.setItem("clubBannerDismissed", "true")
+    // Dispatch custom event when banner visibility changes
+    window.dispatchEvent(new CustomEvent(BANNER_VISIBILITY_CHANGE, { detail: false }))
   }
+
+  // Dispatch event on mount to set initial banner state
+  useEffect(() => {
+    window.dispatchEvent(new CustomEvent(BANNER_VISIBILITY_CHANGE, { detail: isVisible }))
+  }, [isVisible])
 
   if (!isVisible) return null
 
   return (
-    <div className="bg-gradient-to-r from-blue-500 to-teal-400 text-white py-3 px-4 relative">
+    <div className="bg-gradient-to-r from-blue-500 to-teal-400 text-white py-4 px-4 relative">
       <div className="container flex items-center justify-between">
         <div className="flex-1 text-center">
           <p className="font-medium">
