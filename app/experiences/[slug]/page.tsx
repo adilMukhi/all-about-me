@@ -1,14 +1,13 @@
 "use client"
 
+import { useEffect, useState, useCallback } from "react"
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, ChevronLeft, ChevronRight, Calendar } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { blogPosts } from "@/data/blog-posts"
-import { useEffect, useState } from "react"
 
 // This would typically come from your CMS or database
 const getBlogPost = (slug: string) => {
@@ -17,6 +16,29 @@ const getBlogPost = (slug: string) => {
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = getBlogPost(params.slug)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
+
+  const goToNext = useCallback(() => {
+    if (post?.images && post.images.length > 0) {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % post.images.length)
+    }
+  }, [post?.images])
+
+  const goToPrev = useCallback(() => {
+    if (post?.images && post.images.length > 0) {
+      setCurrentIndex((prevIndex) => (prevIndex - 1 + post.images.length) % post.images.length)
+    }
+  }, [post?.images])
+
+  // Auto-advance images
+  useEffect(() => {
+    if (!isPaused && post?.images && post.images.length > 1) {
+      const interval = setInterval(goToNext, 5000)
+      return () => clearInterval(interval)
+    }
+    return undefined
+  }, [isPaused, post?.images, goToNext])
 
   if (!post) {
     return (
@@ -38,7 +60,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       <Header />
       <main className="min-h-screen bg-background">
         <article className="py-16">
-          <div className="container">
+          <div className="container max-w-4xl mx-auto px-4">
             <div className="flex items-center gap-2 mb-8">
               <Button variant="ghost" size="sm" asChild>
                 <Link href="/experiences">
@@ -48,28 +70,92 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               </Button>
             </div>
 
-            <h1
-              className="text-4xl font-bold tracking-tighter mb-4 sm:text-5xl"
-              style={{ fontFamily: "Sour Gummy, latin" }}
-            >
-              {post.title}
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8">
-              {post.subtitle} • {post.date}
-            </p>
-
-            {post.images && post.images.length > 0 && (
-              <div className="mb-12">
-                <BlogPostCarousel images={post.images} title={post.title} />
+            <div className="bg-gradient-to-r from-blue-50 to-transparent p-8 rounded-lg mb-12">
+              <h1
+                className="text-4xl font-bold tracking-tighter mb-4 sm:text-5xl"
+                style={{ fontFamily: "Sour Gummy, latin" }}
+              >
+                {post.title}
+              </h1>
+              <div className="flex items-center text-muted-foreground mb-6">
+                <Calendar className="h-4 w-4 mr-2" />
+                <span className="text-lg">
+                  {post.subtitle} • {post.date}
+                </span>
               </div>
-            )}
 
-            <div className="prose prose-lg max-w-3xl mx-auto" dangerouslySetInnerHTML={{ __html: post.content }} />
+              {post.images && post.images.length > 0 && (
+                <div className="mb-12 relative">
+                  <div
+                    className="relative h-[400px] w-full rounded-lg overflow-hidden shadow-lg"
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                  >
+                    {post.images.map((image, index) => (
+                      <div
+                        key={index}
+                        className={`absolute inset-0 w-full h-full transition-opacity duration-500 ${
+                          index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+                        }`}
+                      >
+                        <Image
+                          src={image || "/placeholder.svg?height=400&width=800"}
+                          alt={`${post.title} - Image ${index + 1}`}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                    ))}
+
+                    {/* Navigation arrows */}
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault()
+                        goToPrev()
+                      }}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 text-white rounded-full p-3 hover:bg-black/50 transition-colors"
+                      aria-label="Previous image"
+                    >
+                      <ChevronLeft className="h-6 w-6" />
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault()
+                        goToNext()
+                      }}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 text-white rounded-full p-3 hover:bg-black/50 transition-colors"
+                      aria-label="Next image"
+                    >
+                      <ChevronRight className="h-6 w-6" />
+                    </button>
+                  </div>
+
+                  {/* Pagination dots */}
+                  <div className="flex justify-center gap-1.5 mt-4">
+                    {post.images.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentIndex(index)}
+                        className={`w-2 h-2 rounded-full transition-all ${
+                          index === currentIndex ? "bg-primary w-4" : "bg-gray-300 hover:bg-gray-400"
+                        }`}
+                        aria-label={`Go to image ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div
+              className="prose prose-lg max-w-none mx-auto text-lg leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
 
             <div className="mt-12 flex justify-center">
-              <Button asChild>
+              <Button asChild size="lg" className="rounded-full px-8">
                 <Link href="/experiences">
-                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  <ArrowLeft className="mr-2 h-5 w-5" />
                   Back to All Experiences
                 </Link>
               </Button>
@@ -79,59 +165,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       </main>
       <PageLayout />
     </>
-  )
-}
-
-// New component for blog post carousel with auto-advancing
-function BlogPostCarousel({ images, title }: { images: string[]; title: string }) {
-  const [currentIndex, setCurrentIndex] = useState(0)
-
-  // Auto-advance images
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-    }, 5000)
-
-    return () => clearInterval(interval)
-  }, [images.length])
-
-  return (
-    <div className="relative w-full max-w-3xl mx-auto">
-      <Carousel className="w-full">
-        <CarouselContent>
-          {images.map((image, index) => (
-            <CarouselItem key={index} className={index === currentIndex ? "block" : "hidden"}>
-              <div className="relative h-[400px] w-full">
-                <Image
-                  src={image || "/placeholder.svg?height=400&width=800"}
-                  alt={`${title} - Image ${index + 1}`}
-                  fill
-                  className="object-contain rounded-lg"
-                />
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious
-          onClick={() => setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)}
-        />
-        <CarouselNext onClick={() => setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)} />
-      </Carousel>
-
-      {/* Pagination dots */}
-      <div className="flex justify-center gap-1.5 mt-4">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 rounded-full transition-all ${
-              index === currentIndex ? "bg-primary w-4" : "bg-gray-300 hover:bg-gray-400"
-            }`}
-            aria-label={`Go to image ${index + 1}`}
-          />
-        ))}
-      </div>
-    </div>
   )
 }
 

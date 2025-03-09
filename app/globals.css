@@ -123,3 +123,55 @@ body {
   opacity: 1;
 }
 
+/* Enhanced blog post styling */
+.prose {
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.prose p {
+  margin-bottom: 1.5rem;
+}
+
+.prose strong {
+  color: #1e88e5;
+  font-weight: 700;
+}
+
+.prose h3 {
+  color: #0d47a1;
+  font-family: "Bubblegum Sans", cursive;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.prose ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.prose li::before {
+  content: "•";
+  color: #1e88e5;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.prose blockquote {
+  border-left: 4px solid #1e88e5;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #555;
+  background-color: #f0f7ff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
