@@ -4,7 +4,7 @@ import { useEffect, useState, useCallback } from "react"
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, ChevronLeft, ChevronRight, Calendar } from "lucide-react"
+import { ArrowLeft, ChevronLeft, ChevronRight, Calendar, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { blogPosts } from "@/data/blog-posts"
@@ -151,6 +151,27 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               className="prose prose-lg max-w-none mx-auto text-lg leading-relaxed"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
+
+            {post.learnMoreUrl && (
+              <div className="mt-12 flex justify-center">
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full px-8 hover:bg-primary hover:text-white transition-colors"
+                >
+                  <a
+                    href={post.learnMoreUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    Learn More
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+            )}
 
             <div className="mt-12 flex justify-center">
               <Button asChild size="lg" className="rounded-full px-8">

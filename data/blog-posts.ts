@@ -8,6 +8,7 @@ export type BlogPost = {
   excerpt: string
   content: string
   images?: string[]
+  learnMoreUrl?: string // New field for external "Learn More" links
 }
 
 export const blogPosts: BlogPost[] = [
@@ -17,7 +18,8 @@ export const blogPosts: BlogPost[] = [
     date: "February 16, 2025",
     image: "/blog/er-training (1).JPG",
     slug: "inside-er-training-sunnybrook",
-    excerpt: "A firsthand look at ER training at Sunnybrook, practicing life-saving skills in a high-stakes environment...",
+    excerpt:
+      "A firsthand look at ER training at Sunnybrook, practicing life-saving skills in a high-stakes environment...",
     content: `
       <p>This week, I had the incredible opportunity to attend the inaugural ER training day at Sunnybrook Health Sciences Centre, the world’s first-ever Level 1 trauma center outside the U.S., hosted by the Temerty Faculty of Medicine, University of Toronto.</p>
       
@@ -32,7 +34,20 @@ export const blogPosts: BlogPost[] = [
       
       <p>This hands-on training solidified my passion for medicine, reinforcing the importance of rapid decision-making and teamwork in life-or-death situations. Emergency medicine is both science and art, and I left the experience more motivated than ever to pursue a career in healthcare.</p>
     `,
-    images: ["/blog/er-training (1).JPG", "/blog/er-training (2).JPG", "/blog/er-training (3).JPG", "/blog/er-training (4).JPG", "/blog/er-training (5).JPG", "/blog/er-training (6).JPG", "/blog/er-training (7).JPG", "/blog/er-training (8).JPG", "/blog/er-training (9).JPG", "/blog/er-training (10).JPG", "/blog/er-training (11).JPG"]
+    images: [
+      "/blog/er-training (1).JPG",
+      "/blog/er-training (2).JPG",
+      "/blog/er-training (3).JPG",
+      "/blog/er-training (4).JPG",
+      "/blog/er-training (5).JPG",
+      "/blog/er-training (6).JPG",
+      "/blog/er-training (7).JPG",
+      "/blog/er-training (8).JPG",
+      "/blog/er-training (9).JPG",
+      "/blog/er-training (10).JPG",
+      "/blog/er-training (11).JPG",
+    ],
+    learnMoreUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7296572961094844416/",
   },
   {
     title: "Capturing STEM Excellence: Photography at the Glenforest STEM Symposium",
@@ -40,7 +55,8 @@ export const blogPosts: BlogPost[] = [
     date: "March 2, 2025",
     image: "/blog/stem-symposiumOne.jpg",
     slug: "photography-stem-symposium",
-    excerpt: "A visual journey through the Glenforest STEM Symposium, capturing the excitement of science and innovation...",
+    excerpt:
+      "A visual journey through the Glenforest STEM Symposium, capturing the excitement of science and innovation...",
     content: `
       <p>At the Glenforest STEM Symposium, I had the chance to witness firsthand the creativity and ingenuity of students and professionals pushing the boundaries of science and technology. My role? Capturing their passion through photography.</p>
       
@@ -50,7 +66,13 @@ export const blogPosts: BlogPost[] = [
       
       <p>This experience reaffirmed my belief in the power of STEM education and how essential it is to nurture young minds interested in science and technology.</p>
     `,
-    images: ["/blog/stem-symposiumOne.jpg", "/blog/stem-symposiumTwo.jpg", "/blog/stem-symposiumThree.jpg", "/blog/stem-symposiumFour.jpg", "/blog/stem-symposiumFive.jpg"]
+    images: [
+      "/blog/stem-symposiumOne.jpg",
+      "/blog/stem-symposiumTwo.jpg",
+      "/blog/stem-symposiumThree.jpg",
+      "/blog/stem-symposiumFour.jpg",
+      "/blog/stem-symposiumFive.jpg",
+    ],
   },
   {
     title: "Astrocytoma: From Diagnosis to Management – A Comprehensive Overview",
@@ -66,7 +88,8 @@ export const blogPosts: BlogPost[] = [
       
       <p>Our research won a Certificate of Achievement in the Gen Writers & Sunshine 4 Cancer Kids competition, an acknowledgment that strengthened my resolve to contribute to medical research in the future.</p>
     `,
-    images: ["/blog/research (1).jpg", "/blog/research (2).jpg", "/blog/research (3).jpg"]
+    images: ["/blog/research (1).jpg", "/blog/research (2).jpg", "/blog/research (3).jpg"],
+    learnMoreUrl: "https://sunshine4cancerkid.wixsite.com/sunshine-4-cancer-ki/post/astrocytoma-from-diagnosis-to-management-a-comprehensive-overview",
   },
   {
     title: "Featured as a Rising Phenom in Rising Phenom Magazine!",
@@ -74,7 +97,8 @@ export const blogPosts: BlogPost[] = [
     date: "November 9, 2024",
     image: "/blog/feature (1).jpg",
     slug: "rising-phenom-feature",
-    excerpt: "Honored to be featured in Rising Phenom Magazine, recognizing my contributions to healthcare and community service...",
+    excerpt:
+      "Honored to be featured in Rising Phenom Magazine, recognizing my contributions to healthcare and community service...",
     content: `
       <p>Exciting news! I’ve been featured as a Rising Phenom in <strong>Rising Phenom Magazine</strong>, a recognition that highlights my contributions to medicine, healthcare, and activism.</p>
       
@@ -84,6 +108,8 @@ export const blogPosts: BlogPost[] = [
       
       <p>If you're interested in making an impact in healthcare, I’d love to connect and exchange ideas on how we can collectively drive change.</p>
     `,
-    images: ["/blog/feature (1).jpg", "/blog/feature (2).jpg", "/blog/feature (3).jpg", "/blog/feature (4).jpg"]
-  }
-];
+    images: ["/blog/feature (1).jpg", "/blog/feature (2).jpg", "/blog/feature (3).jpg", "/blog/feature (4).jpg"],
+    learnMoreUrl: "https://www.instagram.com/p/DB0a2wmo49U/?img_index=1",
+  },
+]
+

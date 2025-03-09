@@ -22,7 +22,7 @@ export function MainNav({ items }: MainNavProps) {
   const pathname = usePathname()
 
   return (
-    <NavigationMenu>
+    <NavigationMenu className="relative">
       <NavigationMenuList>
         {items?.map((item) => {
           const isActive = pathname === item.href || pathname.startsWith(item.href + "/")
@@ -56,7 +56,7 @@ export function MainNav({ items }: MainNavProps) {
                     </Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-[600px] p-4">
+                    <div className="fixed left-1/2 transform -translate-x-1/2 w-[600px] p-4 bg-white rounded-lg shadow-lg">
                       <div className="grid grid-cols-2 gap-4">
                         {/* Show only the latest 4 blog posts */}
                         {blogPosts.slice(0, 4).map((post) => (
@@ -86,7 +86,7 @@ export function MainNav({ items }: MainNavProps) {
                     </Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-[600px] p-4">
+                    <div className="fixed left-1/2 transform -translate-x-1/2 w-[600px] p-4 bg-white rounded-lg shadow-lg">
                       <div className="grid grid-cols-2 gap-4">
                         {item.items.map((subItem) => (
                           <Link
