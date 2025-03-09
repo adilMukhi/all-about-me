@@ -56,10 +56,10 @@ export function MainNav({ items }: MainNavProps) {
                     </Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-[850px] p-4">
-                      <div className="grid grid-cols-3 gap-4 max-h-[400px] overflow-y-auto">
-                        {/* Show only the latest 3 blog posts */}
-                        {blogPosts.slice(0, 3).map((post) => (
+                    <div className="w-[600px] p-4">
+                      <div className="grid grid-cols-2 gap-4">
+                        {/* Show only the latest 4 blog posts */}
+                        {blogPosts.slice(0, 4).map((post) => (
                           <Link
                             key={post.slug}
                             href={`/experiences/${post.slug}`}
@@ -86,29 +86,26 @@ export function MainNav({ items }: MainNavProps) {
                     </Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-[850px] p-4">
-                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                    <div className="w-[600px] p-4">
+                      <div className="grid grid-cols-2 gap-4">
                         {item.items.map((subItem) => (
-                          <li key={subItem.title}>
-                            <NavigationMenuLink asChild>
-                              <Link
-                                href={subItem.href}
-                                className={cn(
-                                  "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blue-50 hover:text-blue-500",
-                                  pathname === subItem.href && "bg-blue-50 text-blue-500",
-                                )}
-                              >
-                                <div className="text-sm font-medium leading-none">{subItem.title}</div>
-                                {subItem.description && (
-                                  <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                    {subItem.description}
-                                  </p>
-                                )}
-                              </Link>
-                            </NavigationMenuLink>
-                          </li>
+                          <Link
+                            key={subItem.href}
+                            href={subItem.href}
+                            className={cn(
+                              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blue-50 hover:text-blue-500",
+                              pathname === subItem.href && "bg-blue-50 text-blue-500",
+                            )}
+                          >
+                            <div className="text-sm font-medium leading-none">{subItem.title}</div>
+                            {subItem.description && (
+                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                {subItem.description}
+                              </p>
+                            )}
+                          </Link>
                         ))}
-                      </ul>
+                      </div>
                     </div>
                   </NavigationMenuContent>
                 </>

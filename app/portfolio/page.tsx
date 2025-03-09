@@ -1,6 +1,6 @@
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
 import { FileText, Code, Palette, Microscope } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -61,26 +61,24 @@ export default function PortfolioPage() {
               {portfolioCategories.map((category) => (
                 <Link href={category.href} key={category.title} className="block">
                   <Card className="overflow-hidden h-full transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                    <div className="relative h-48">
+                    <div className="relative h-64">
                       <Image
                         src={category.image || "/placeholder.svg?height=200&width=400"}
                         alt={category.title}
                         fill
                         className="object-cover"
                       />
-                      <div className={`absolute inset-0 bg-gradient-to-r ${category.color} opacity-70`}></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
+                      <div className={`absolute inset-0 bg-gradient-to-r ${category.color} opacity-80`}></div>
+                      <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-6">
                         <h2
-                          className="text-3xl font-bold text-white"
+                          className="text-4xl md:text-5xl font-bold mb-4"
                           style={{ fontFamily: "'Bubblegum Sans', cursive" }}
                         >
                           {category.title}
                         </h2>
+                        <p className="text-lg md:text-xl text-white/90">{category.description}</p>
                       </div>
                     </div>
-                    <CardContent className="p-6">
-                      <p className="text-muted-foreground">{category.description}</p>
-                    </CardContent>
                   </Card>
                 </Link>
               ))}

@@ -6,43 +6,9 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, Github, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { codingProjects } from "@/data/portfolio-items"
 
 export default function CodingPortfolioPage() {
-  const projects = [
-    {
-      title: "Personal Portfolio Website",
-      description: "A responsive portfolio website built with Next.js and Tailwind CSS.",
-      image: "/portfolio/coding/portfolio.jpg",
-      tags: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
-      demoLink: "#",
-      codeLink: "https://github.com/adilMukhi/all-about-me",
-    },
-    {
-      title: "Medical Data Visualization",
-      description: "Interactive data visualization tool for medical research data using D3.js and React.",
-      image: "/portfolio/coding/data-viz.jpg",
-      tags: ["React", "D3.js", "Data Visualization", "JavaScript"],
-      demoLink: "#",
-      codeLink: "#",
-    },
-    {
-      title: "Study Timer App",
-      description: "A Pomodoro timer application with task tracking and statistics.",
-      image: "/portfolio/coding/timer-app.jpg",
-      tags: ["React Native", "Mobile App", "Productivity"],
-      demoLink: "#",
-      codeLink: "#",
-    },
-    {
-      title: "Healthcare Chatbot",
-      description: "An AI-powered chatbot that provides basic medical information and guidance.",
-      image: "/portfolio/coding/chatbot.jpg",
-      tags: ["Python", "Natural Language Processing", "Healthcare"],
-      demoLink: "#",
-      codeLink: "#",
-    },
-  ]
-
   return (
     <>
       <Header />
@@ -69,7 +35,7 @@ export default function CodingPortfolioPage() {
             </p>
 
             <div className="grid gap-6 md:grid-cols-2">
-              {projects.map((project, index) => (
+              {codingProjects.map((project, index) => (
                 <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg">
                   <div className="relative h-48">
                     <Image

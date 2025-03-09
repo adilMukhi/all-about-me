@@ -42,7 +42,8 @@ export const publications: Publication[] = [
     title: "Astrocytoma: From Diagnosis to Management – A Comprehensive Overview",
     publisher: "Sunshine 4 Cancer Kids",
     date: "August 13, 2024",
-    description: "A peer-reviewed research paper analyzing astrocytoma diagnosis, treatment, and management. Contributed to Treatments and Impacts sections.",
+    description:
+      "A peer-reviewed research paper analyzing astrocytoma diagnosis, treatment, and management. Contributed to Treatments and Impacts sections.",
     link: "https://sunshine4cancerkid.wixsite.com/sunshine-4-cancer-ki/post/astrocytoma-from-diagnosis-to-management-a-comprehensive-overview",
   },
   {
@@ -128,8 +129,8 @@ export const publications: Publication[] = [
     date: "February 6, 2024",
     description: "A French-language opinion piece advocating for children's rights and future.",
     link: "https://www.lanouvelle.net/lettres-dopinion/un-appel-a-laction-unissons-nous-pour-lavenir-des-enfants/",
-  }
-];
+  },
+]
 
 // Coding portfolio
 export type CodingProject = {
@@ -144,7 +145,8 @@ export type CodingProject = {
 export const codingProjects: CodingProject[] = [
   {
     title: "StemHiss Website",
-    description: "A website developed for the non-profit organization StemHiss, designed to provide educational STEM resources.",
+    description:
+      "A website developed for the non-profit organization StemHiss, designed to provide educational STEM resources.",
     image: "/portfolio/coding/stemhiss.jpg",
     tags: ["HTML", "CSS", "JavaScript", "React"],
     demoLink: "https://stemhiss.vercel.app/",
@@ -152,7 +154,8 @@ export const codingProjects: CodingProject[] = [
   },
   {
     title: "Dr. Interested Website (In Progress)",
-    description: "A website for the Dr. Interested club, featuring webinar schedules, research proposal competitions, and resources for aspiring medical professionals.",
+    description:
+      "A website for the Dr. Interested club, featuring webinar schedules, research proposal competitions, and resources for aspiring medical professionals.",
     image: "/portfolio/coding/drinterested.jpg",
     tags: ["Next.js", "React", "Tailwind CSS"],
     demoLink: "https://drinterested.vercel.app/",
@@ -225,6 +228,7 @@ export type SportsAchievement = {
   title: string
   description: string
   image: string
+  videoId?: string // Add optional videoId field
   tags: string[]
   type: "sports"
 }
@@ -234,6 +238,7 @@ export const sportsAchievements: SportsAchievement[] = [
     title: "ROPSSAA Tennis Quarter-Finalist",
     description: "Quarter-Finalist in the ROPSSAA Boys Doubles Junior Tennis South East Qualifier 2024.",
     image: "/portfolio/sports/tennis.jpg",
+    videoId: "YOUR_VIDEO_ID", // Replace with your actual YouTube video ID
     tags: ["Tennis", "Competition", "Team Sports"],
     type: "sports",
   },

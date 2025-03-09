@@ -6,48 +6,9 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, FileText } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { researchProjects } from "@/data/portfolio-items"
 
 export default function ResearchPortfolioPage() {
-  const researchProjects = [
-    {
-      title: "Astrocytoma: From Diagnosis to Management",
-      description: "A comprehensive overview of astrocytoma diagnosis, treatment options, and management strategies.",
-      image: "/portfolio/research/astrocytoma.jpg",
-      tags: ["Oncology", "Neuroscience", "Medical Research"],
-      link: "https://sunshine4cancerkid.wixsite.com/sunshine-4-cancer-ki/post/astrocytoma-from-diagnosis-to-management-a-comprehensive-overview",
-      institution: "Sunshine 4 Cancer Kids",
-      year: "2024",
-    },
-    {
-      title: "Stress and Its Impact on Memory",
-      description: "Research exploring the relationship between stress hormones and memory retention in adolescents.",
-      image: "/portfolio/research/stress-memory.jpg",
-      tags: ["Psychology", "Neuroscience", "Cognitive Science"],
-      link: "https://drive.google.com/file/d/1hsuDwq_5UjnS9a4G984gqhuAkOkmabe8/view?usp=sharing",
-      institution: "Independent Research",
-      year: "2024",
-    },
-    {
-      title: "West Nile Virus: Epidemiology and Public Health Impact",
-      description: "Analysis of West Nile Virus transmission patterns and public health implications.",
-      image: "/portfolio/research/west-nile.jpg",
-      tags: ["Virology", "Epidemiology", "Public Health"],
-      link: "https://virusesunveiled.substack.com/",
-      institution: "Viruses Unveiled Blog",
-      year: "2025",
-    },
-    {
-      title: "The Role of Technology in Modern Healthcare",
-      description:
-        "Exploration of how emerging technologies are transforming healthcare delivery and patient outcomes.",
-      image: "/portfolio/research/healthcare-tech.jpg",
-      tags: ["Healthcare", "Technology", "Innovation"],
-      link: "#",
-      institution: "University of Toronto MedLinx Program",
-      year: "2025",
-    },
-  ]
-
   return (
     <>
       <Header />
