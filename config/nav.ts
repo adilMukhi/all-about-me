@@ -14,45 +14,9 @@ export const navConfig: NavConfig = {
       href: "/",
     },
     {
-      title: "Background",
-      href: "/background",
-      items: [
-        {
-          title: "Skills",
-          href: "/background#skills",
-          description: "Professional and technical capabilities",
-        },
-        {
-          title: "Work Experience",
-          href: "/background#work",
-          description: "Professional journey and achievements",
-        },
-        {
-          title: "Education",
-          href: "/background#education",
-          description: "Academic qualifications and training",
-        },
-        {
-          title: "Projects",
-          href: "/background#projects",
-          description: "Key projects and initiatives",
-        },
-        {
-          title: "Certificates",
-          href: "/background#certificates",
-          description: "Professional certifications",
-        },
-        {
-          title: "Volunteer Work",
-          href: "/background#volunteer",
-          description: "Community involvement",
-        },
-        {
-          title: "Honors & Awards",
-          href: "/background#honors",
-          description: "Achievements and recognition",
-        },
-      ],
+      title: "Experiences",
+      href: "/experiences",
+      items: [],
     },
     {
       title: "Portfolio",

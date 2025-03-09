@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { ArrowRight } from "lucide-react"
 import { blogPosts } from "@/data/blog-posts"
 
 export function LatestBlogPost() {
@@ -46,9 +47,17 @@ export function LatestBlogPost() {
             <p className="mb-4">
               Join me as I share my latest experiences in medical research and healthcare innovation...
             </p>
-            <Button asChild>
-              <Link href={`/experiences/${latestPost.slug}`}>Read More</Link>
-            </Button>
+            <div className="flex flex-wrap gap-4">
+              <Button asChild>
+                <Link href={`/experiences/${latestPost.slug}`}>Read More</Link>
+              </Button>
+              <Button variant="outline" asChild className="flex items-center gap-2">
+                <Link href="/experiences">
+                  View All Posts
+                  <ArrowRight className="h-4 w-4 ml-1" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </CardContent>
       </Card>

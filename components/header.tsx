@@ -1,8 +1,9 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 import { Menu, X, ChevronDown, ChevronUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { MainNav } from "@/components/main-nav"
@@ -11,37 +12,62 @@ import { blogPosts } from "@/data/blog-posts"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false)
+  }, [pathname])
 
   // Add this component inside the Header component
   const MobileNavItem = ({ item }: { item: any }) => {
     const [isOpen, setIsOpen] = useState(false)
+    const isActive = pathname === item.href || pathname.startsWith(item.href + "/")
+
+    // Don't show dropdown for Background
+    if (item.title === "Background") {
+      return (
+        <Link
+          href={item.href}
+          className={`block py-2 transition-colors ${isActive ? "text-blue-500 font-medium" : "hover:text-blue-500"}`}
+          onClick={() => setIsMenuOpen(false)}
+        >
+          {item.title}
+        </Link>
+      )
+    }
 
     return (
       <>
-        <div className="flex items-center justify-between py-2 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+        <div className="flex items-center justify-between py-2">
           <Link
             href={item.href}
-            className="hover:text-blue-500 transition-colors"
+            className={`hover:text-blue-500 transition-colors ${isActive ? "text-blue-500 font-medium" : ""}`}
             onClick={(e) => {
-              e.stopPropagation()
-              setIsMenuOpen(false)
+              if (item.items && item.items.length > 0) {
+                e.preventDefault()
+              } else {
+                setIsMenuOpen(false)
+              }
             }}
           >
             {item.title}
           </Link>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={(e) => {
-              e.stopPropagation()
-              setIsOpen(!isOpen)
-            }}
-          >
-            {isOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-          </Button>
+          {item.items && item.items.length > 0 && (
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={(e) => {
+                e.stopPropagation()
+                setIsOpen(!isOpen)
+              }}
+            >
+              {isOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+            </Button>
+          )}
         </div>
 
-        {isOpen && item.items && (
+        {isOpen && item.items && item.items.length > 0 && (
           <div className="pl-4">
             {item.title === "Experiences"
               ? // Show only the latest 3 blog posts
@@ -51,7 +77,9 @@ export default function Header() {
                     <Link
                       key={post.slug}
                       href={`/experiences/${post.slug}`}
-                      className="block py-2 hover:text-blue-500 transition-colors"
+                      className={`block py-2 transition-colors ${
+                        pathname === `/experiences/${post.slug}` ? "text-blue-500 font-medium" : "hover:text-blue-500"
+                      }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {post.title}
@@ -61,7 +89,9 @@ export default function Header() {
                   <Link
                     key={subItem.title}
                     href={subItem.href}
-                    className="block py-2 hover:text-blue-500 transition-colors"
+                    className={`block py-2 transition-colors ${
+                      pathname === subItem.href ? "text-blue-500 font-medium" : "hover:text-blue-500"
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {subItem.title}
@@ -123,19 +153,21 @@ export default function Header() {
 
                 {navConfig.mainNav.map((item) => (
                   <div key={item.title} className="mb-2">
-                    {item.items ? (
-                      <MobileNavItem item={item} />
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className="block py-2 hover:text-blue-500 transition-colors"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {item.title}
-                      </Link>
-                    )}
+                    <MobileNavItem item={item} />
                   </div>
                 ))}
+
+                <div className="mt-6">
+                  <Button className="w-full button-hover-effect">
+                    <a
+                      href="https://drive.google.com/file/d/1xIuHrE6H3Lf-Oj3S-PrXI15dIHi9XtDi/view"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      My Resume
+                    </a>
+                  </Button>
+                </div>
               </div>
             </nav>
           </div>

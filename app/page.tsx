@@ -7,10 +7,13 @@ import Footer from "@/components/footer"
 import { LatestBlogPost } from "@/components/latest-blog-post"
 import AnimatedSection from "@/components/animated-section"
 import { Separator } from "@/components/ui/separator"
+import ClubFeature from "@/components/club-feature"
+import AnnouncementBanner from "@/components/announcement-banner"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
+      <AnnouncementBanner />
       <Header />
       <h1 className="sr-only">Adil Mukhi - Student Researcher and Aspiring Medical Professional</h1>
       <AnimatedSection>
@@ -22,14 +25,18 @@ export default function Home() {
       </AnimatedSection>
       <Separator />
       <AnimatedSection delay={200}>
-        <LatestBlogPost />
+        <ClubFeature />
       </AnimatedSection>
       <Separator />
       <AnimatedSection delay={300}>
-        <Interests />
+        <LatestBlogPost />
       </AnimatedSection>
       <Separator />
       <AnimatedSection delay={400}>
+        <Interests />
+      </AnimatedSection>
+      <Separator />
+      <AnimatedSection delay={500}>
         <Contact />
       </AnimatedSection>
       <Footer />
