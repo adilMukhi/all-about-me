@@ -1,6 +1,64 @@
 import { Button } from "@/components/ui/button"
+import { Building, BookOpen, Mail, Linkedin, Instagram, Github, Twitter, Cloud, Code } from "lucide-react"
 
 export default function Hero() {
+  const socialLinks = [
+    {
+      icon: Building,
+      url: "https://linktr.ee/dr.interested",
+      label: "My Club",
+      color: "text-blue-500 hover:text-blue-700",
+    },
+    {
+      icon: BookOpen,
+      url: "https://virusesunveiled.substack.com/?r=48c132&utm_campaign=pub-share-checklist",
+      label: "My Blog",
+      color: "text-green-600 hover:text-green-800",
+    },
+    {
+      icon: Mail,
+      url: "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=mukhiadil2009@gmail.com",
+      label: "Email Me",
+      color: "text-red-500 hover:text-red-700",
+    },
+    {
+      icon: Linkedin,
+      url: "https://www.linkedin.com/in/adil-mukhi",
+      label: "LinkedIn",
+      color: "text-blue-600 hover:text-blue-800",
+    },
+    {
+      icon: Instagram,
+      url: "https://www.instagram.com/adilm.0",
+      label: "Instagram",
+      color: "text-pink-600 hover:text-pink-800",
+    },
+    {
+      icon: Github,
+      url: "https://github.com/adilMukhi",
+      label: "GitHub",
+      color: "text-gray-800 hover:text-black",
+    },
+    {
+      icon: Twitter,
+      url: "https://x.com/adilm_0",
+      label: "X",
+      color: "text-gray-700 hover:text-gray-900",
+    },
+    {
+      icon: Cloud,
+      url: "https://bsky.app/profile/adilm0.bsky.social",
+      label: "BlueSky",
+      color: "text-sky-500 hover:text-sky-700",
+    },
+    {
+      icon: Code,
+      url: "https://devpost.com/AdilM",
+      label: "DevPost",
+      color: "text-indigo-600 hover:text-indigo-800",
+    },
+  ]
+
   return (
     <section className="bg-primary/10 py-16">
       <div className="container flex flex-col items-center justify-center gap-4 text-center">
@@ -10,6 +68,25 @@ export default function Hero() {
         >
           Hi, I'm Adil Mukhi!
         </h2>
+
+        {/* Social Media Icons */}
+        <div className="flex flex-wrap justify-center gap-4 my-4">
+          {socialLinks.map((social, index) => (
+            <a
+              key={index}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${social.color} transition-all duration-300 hover:scale-125`}
+              aria-label={social.label}
+              title={social.label}
+            >
+              <social.icon className="h-6 w-6" />
+              <span className="sr-only">{social.label}</span>
+            </a>
+          ))}
+        </div>
+
         <p
           className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8"
           style={{ fontFamily: "'Times New Roman', Times, latin" }}

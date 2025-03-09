@@ -205,7 +205,7 @@ export const researchProjects: ResearchProject[] = [
     description: "An in-depth 6741 word exploration of how stress hormones affect memory, from short-term impacts to long-term neurological changes.",
     image: "/project3.jpg",
     tags: ["Neuroscience", "Psychology", "Medical Research"],
-    link: "https://drive.google.com/file/d/17nAfJSKQjbBA5mNme4fTODOxydKA3G1/view?usp=sharing",
+    link: "https://drive.google.com/file/d/17nAfJSKQjbB-A5mNme4fTODOxydKA3G1/view?usp=drive_link",
     institution: "NOSM and GFSS",
     year: "2023-2025",
   },
