@@ -194,14 +194,59 @@ export const researchProjects: ResearchProject[] = [
   {
     title: "Astrocytoma: From Diagnosis to Management",
     description: "A comprehensive overview of astrocytoma diagnosis, treatment options, and management strategies.",
-    image: "/portfolio/research/astrocytoma.jpg",
+    image: "/project2.jpg",
     tags: ["Oncology", "Neuroscience", "Medical Research"],
     link: "https://sunshine4cancerkid.wixsite.com/sunshine-4-cancer-ki/post/astrocytoma-from-diagnosis-to-management-a-comprehensive-overview",
     institution: "Sunshine 4 Cancer Kids",
     year: "2024",
   },
-  // Add more research projects here...
-]
+  {
+    title: "From Stress to Forgetfulness: Understanding How Stress Hormones Shape Your Memory",
+    description: "An in-depth 6741 word exploration of how stress hormones affect memory, from short-term impacts to long-term neurological changes.",
+    image: "/project3.jpg",
+    tags: ["Neuroscience", "Psychology", "Medical Research"],
+    link: "https://drive.google.com/file/d/17nAfJSKQjbBA5mNme4fTODOxydKA3G1/view?usp=sharing",
+    institution: "NOSM and GFSS",
+    year: "2023-2025",
+  },
+  {
+    title: "Mini-Medical Booklet - Heal for Health",
+    description: "A concise medical booklet providing essential health information for various conditions and treatments.",
+    image: "/portfolio/research/booklet.jpg",
+    tags: ["Health Education", "Medical Research", "Public Health"],
+    link: "https://drive.google.com/file/d/18PFkzwb5aEaP7VK-Eg3y1ZntnttjTALH/view?usp=sharing",
+    institution: "Heal for Health",
+    year: "2024",
+  },
+  {
+    title: "Research Dump - School Supplies and Education",
+    description: "A research initiative focused on improving access to school supplies and education for underprivileged students.",
+    image: "/portfolio/research/rrs.jpg",
+    tags: ["Education", "Social Impact", "Community Research"],
+    link: "https://drive.google.com/file/d/1K7tkkKjVaTmcyP2uJK3fU1BEA758G2aj/view?usp=sharing",
+    institution: "Restoring Rainbows SouthLake",
+    year: "2024",
+  },
+  {
+    title: "Immunology's Next Frontier: From Classic Vaccines to Cutting-Edge Targeted Therapies",
+    description: "A deep dive into the evolution of immunology, from traditional vaccines to advanced targeted therapies.",
+    image: "/portfolio/research/biomedizone.jpg",
+    tags: ["Immunology", "Medical Research", "Biotechnology"],
+    link: "https://drive.google.com/file/d/1CuMHv3eoGpjlWz2uoueTL3eIoxOFi0qK/view?usp=sharing",
+    institution: "BioMedizone",
+    year: "2024",
+  },
+  {
+    title: "Precision Medicine Unveiled: Nanoparticles in Targeted Drug Delivery Systems",
+    description: "An exploration of how nanoparticles are revolutionizing precision medicine and targeted drug delivery systems.",
+    image: "/portfolio/research/targeted.jpg",
+    tags: ["Nanotechnology", "Pharmacology", "Medical Research"],
+    link: "https://drive.google.com/file/d/11Sw8EDXzCxuaV6vbrX26YrM6E53-9mVP/view?usp=sharing",
+    institution: "CosmicUs",
+    year: "2023",
+  },
+];
+
 
 // Art projects
 export type ArtProject = {
