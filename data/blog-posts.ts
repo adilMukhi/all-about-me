@@ -15,7 +15,7 @@ export const blogPosts: BlogPost[] = [
   {
     title: "Inside the ER: A Day of Hands-On Training at Sunnybrook Health Sciences Centre",
     subtitle: "What does it take to save a life in the ER? I found out firsthand!",
-    date: "February 16, 2025",
+    date: "February 14, 2025",
     image: "/blog/er-training (1).JPG",
     slug: "inside-er-training-sunnybrook",
     excerpt:
