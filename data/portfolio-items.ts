@@ -217,8 +217,8 @@ export const artProjects: ArtProject[] = [
   {
     title: "Cosmos: From Olympus To The Moon",
     description: "Story 'Illumination' art - An artistic representation of the story 'Illumination,' exploring themes of mythology and space.",
-    image: "/portfolio/art/illumination8.jpg",
-    images: ["/portfolio/art/illumination1.jpg", "/portfolio/art/illumination2.jpg", "/portfolio/art/illumination3.jpg", "/portfolio/art/illumination4.jpg", "/portfolio/art/illumination5.jpg", "/portfolio/art/illumination6.jpg", "/portfolio/art/illumination7.jpg", "/portfolio/art/illumination8.jpg"],
+    image: "/portfolio/art/moon (1).jpg",
+    images: ["/portfolio/art/moon (1).jpg", "/portfolio/art/moon (2).jpg", "/portfolio/art/moon (3).jpg", "/portfolio/art/moon (4).jpg", "/portfolio/art/moon (5).jpg", "/portfolio/art/moon (6).jpg", "/portfolio/art/moon (7).jpg", "/portfolio/art/moon (8).jpg"],
     tags: ["Mythology", "Space", "Story Art"],
     type: "art",
   },
