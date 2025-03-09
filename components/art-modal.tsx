@@ -30,7 +30,7 @@ export function ArtModal({ isOpen, onClose, title, images }: ArtModalProps) {
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="max-w-4xl w-[90vw] max-h-[90vh] p-0 overflow-hidden">
         <div className="relative h-[80vh]">
-          <DialogTitle className="absolute top-0 left-0 right-0 z-49 bg-black/50 text-white p-4 m-0">
+          <DialogTitle className="absolute top-0 left-0 right-0 z-50 bg-black/70 text-white p-4 m-0 font-semibold">
             {title}
           </DialogTitle>
           <DialogClose className="absolute top-2 right-2 z-50 rounded-full bg-black/70 p-2 text-white hover:bg-black/90 shadow-md">

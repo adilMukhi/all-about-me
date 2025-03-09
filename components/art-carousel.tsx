@@ -63,14 +63,14 @@ export function ArtCarousel({
   }
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full bg-black">
       {/* Images */}
       <div className="relative w-full h-full overflow-hidden">
         {images.map((image, index) => (
           <div
             key={index}
             className={cn(
-              "absolute inset-0 w-full h-full transition-opacity duration-500",
+              "absolute inset-0 w-full h-full transition-opacity duration-500 flex items-center justify-center",
               index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0",
             )}
           >
@@ -78,7 +78,7 @@ export function ArtCarousel({
               src={image || "/placeholder.svg?height=200&width=400"}
               alt={`${title} - Image ${index + 1}`}
               fill
-              className="object-cover"
+              className="object-contain"
             />
           </div>
         ))}
