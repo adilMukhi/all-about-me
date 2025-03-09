@@ -268,6 +268,13 @@ export const artProjects: ArtProject[] = [
     tags: ["Mixed Media", "Perception", "Color"],
     type: "art",
   },
+  {
+    title: "Earth’s Demise: The Metamorphosis Of Plastic Litter",
+    description: "transformation project - a transformation art project that visualizes the devastating impact of plastic pollution on the planet.",
+    image: "/portfolio/art/transformation.jpg",
+    tags: ["Environmental Art", "Plastic Pollution", "Transformation"],
+    type: "art",
+  }
 ]
 
 // Sports achievements

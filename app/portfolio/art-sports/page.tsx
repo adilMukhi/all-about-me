@@ -10,7 +10,6 @@ import { ArrowLeft, Camera, Palette, Eye } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { artProjects, sportsAchievements } from "@/data/portfolio-items"
-import { ArtCarousel } from "@/components/art-carousel"
 import { ArtModal } from "@/components/art-modal"
 
 // Declare YouTube Player API type
@@ -87,7 +86,7 @@ export default function ArtSportsPortfolioPage() {
             events: {
               onReady: (event) => {
                 // Set playback rate to 25% when player is ready
-                event.target.setPlaybackRate(0.25)
+                event.target.setPlaybackRate(0.75)
                 event.target.playVideo()
               },
             },
@@ -185,16 +184,12 @@ export default function ArtSportsPortfolioPage() {
                 {artProjectsWithIcons.map((project, index) => (
                   <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg">
                     <div className="relative h-48">
-                      {project.images && project.images.length > 0 ? (
-                        <ArtCarousel images={project.images} title={project.title} autoAdvance={true} interval={3000} />
-                      ) : (
-                        <Image
-                          src={project.image || "/placeholder.svg?height=200&width=400"}
-                          alt={project.title}
-                          fill
-                          className="object-cover"
-                        />
-                      )}
+                      <Image
+                        src={project.image || "/placeholder.svg?height=200&width=400"}
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
                     <CardHeader className="flex flex-row items-center gap-4">
                       <project.icon className="h-8 w-8" />
@@ -211,16 +206,14 @@ export default function ArtSportsPortfolioPage() {
                           </Badge>
                         ))}
                       </div>
-                      {project.images && project.images.length > 0 && (
-                        <Button
-                          variant="outline"
-                          className="w-full flex items-center justify-center gap-2"
-                          onClick={() => openArtModal(project.title, project.images || [project.image])}
-                        >
-                          <Eye className="h-4 w-4" />
-                          See Final Piece
-                        </Button>
-                      )}
+                      <Button
+                        variant="outline"
+                        className="w-full flex items-center justify-center gap-2"
+                        onClick={() => openArtModal(project.title, project.images || [project.image])}
+                      >
+                        <Eye className="h-4 w-4" />
+                        See Final Piece
+                      </Button>
                     </CardContent>
                   </Card>
                 ))}
