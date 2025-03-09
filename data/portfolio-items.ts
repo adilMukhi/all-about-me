@@ -208,19 +208,66 @@ export type ArtProject = {
   title: string
   description: string
   image: string
+  images?: string[] // Add support for multiple images
   tags: string[]
   type: "art"
 }
 
 export const artProjects: ArtProject[] = [
   {
-    title: "Photography Collection",
-    description: "A series of nature and urban landscape photographs taken during my travels.",
-    image: "/portfolio/art/photography.jpg",
-    tags: ["Photography", "Nature", "Urban"],
+    title: "Cosmos: From Olympus To The Moon",
+    description: "Story 'Illumination' art - An artistic representation of the story 'Illumination,' exploring themes of mythology and space.",
+    image: "/portfolio/art/illumination8.jpg",
+    images: ["/portfolio/art/illumination1.jpg", "/portfolio/art/illumination2.jpg", "/portfolio/art/illumination3.jpg", "/portfolio/art/illumination4.jpg", "/portfolio/art/illumination5.jpg", "/portfolio/art/illumination6.jpg", "/portfolio/art/illumination7.jpg", "/portfolio/art/illumination8.jpg"],
+    tags: ["Mythology", "Space", "Story Art"],
     type: "art",
   },
-  // Add more art projects here...
+  {
+    title: "Hello It's Me",
+    description: "Gif design - A dynamic and expressive GIF design that visually represents self-reflection and identity.",
+    image: "/portfolio/art/gifdesign.gif",
+    tags: ["GIF", "Digital Art", "Identity"],
+    type: "art",
+  },
+  {
+    title: "Buildings Of Pakistan & The UAE",
+    description: "Sensory lantern - A sensory lantern inspired by the architectural heritage of Pakistan and the UAE.",
+    image: "/portfolio/art/lantern1.jpg",
+    images: ["/portfolio/art/lantern1.jpg", "/portfolio/art/lantern2.jpg", "/portfolio/art/lantern3.jpg", "/portfolio/art/lantern4.jpg"],
+    tags: ["Architecture", "Cultural Art", "Lantern"],
+    type: "art",
+  },
+  {
+    title: "A Train Ride Away",
+    description: "Zine design - A visually captivating zine design depicting the emotions and experiences of a train journey.",
+    image: "/portfolio/art/zine_design1.jpg",
+    images: ["/portfolio/art/zine_design1.jpg", "/portfolio/art/zine_design2.jpg", "/portfolio/art/zine_design3.jpg", "/portfolio/art/zine_design4.jpg", "/portfolio/art/zine_design5.jpg", "/portfolio/art/zine_design6.jpg", "/portfolio/art/zine_design7.jpg", "/portfolio/art/zine_design8.jpg", "/portfolio/art/zine_design9.jpg", "/portfolio/art/zine_design10.jpg", "/portfolio/art/zine_design11.jpg"],
+    tags: ["Zine", "Travel", "Illustration"],
+    type: "art",
+  },
+  {
+    title: "Easter/Navroz: The Blending Of Tradition",
+    description: "Clay tic-tac-toe design - A handcrafted clay tic-tac-toe board symbolizing the fusion of Easter and Navroz traditions.",
+    image: "/portfolio/art/clay_tictactoe1.jpg",
+    images: ["/portfolio/art/clay_tictactoe1.jpg", "/portfolio/art/clay_tictactoe2.jpg", "/portfolio/art/clay_tictactoe3.jpg", "/portfolio/art/clay_tictactoe4.jpg"],
+    tags: ["Cultural Art", "Tradition", "Clay"],
+    type: "art",
+  },
+  {
+    title: "Contour Drawings",
+    description: "A collection of contour drawings emphasizing form and structure through minimalistic lines.",
+    image: "/portfolio/art/contour_drawing (6).jpg",
+    images: ["/portfolio/art/contour_drawing (1).jpg", "/portfolio/art/contour_drawing (2).jpg", "/portfolio/art/contour_drawing (3).jpg", "/portfolio/art/contour_drawing (4).jpg", "/portfolio/art/contour_drawing (5).jpg", "/portfolio/art/contour_drawing (6).jpg", "/portfolio/art/contour_drawing (7).jpg"],
+    tags: ["Drawing", "Minimalism", "Line Art"],
+    type: "art",
+  },
+  {
+    title: "Layers Of Perception",
+    description: "A mixed media artwork exploring how layers of color and texture influence perception.",
+    image: "/portfolio/art/layers_of_perception.jpg",
+    tags: ["Mixed Media", "Perception", "Color"],
+    type: "art",
+  },
 ]
 
 // Sports achievements
@@ -236,7 +283,7 @@ export type SportsAchievement = {
 export const sportsAchievements: SportsAchievement[] = [
   {
     title: "ROPSSAA Tennis Quarter-Finalist",
-    description: "Quarter-Finalist in the ROPSSAA Boys Doubles Junior Tennis South East Qualifier 2024.",
+    description: "Achieved Quarter-Finalist placement in the ROPSSAA (Region of Peel Secondary Schools Athletic Association) Boys Doubles Junior Tennis South East Qualifier 2024. Demonstrated strong teamwork, strategic play, and resilience against competitive opponents, showcasing significant improvement from previous seasons. Trained extensively in the off-season to refine technical skills, endurance, and match tactics, contributing to a successful performance in the tournament",
     image: "/portfolio/sports/tennis.jpg",
     videoId: "ztSkKMdQpE0", // Updated with the correct YouTube video ID
     tags: ["Tennis", "Competition", "Team Sports"],

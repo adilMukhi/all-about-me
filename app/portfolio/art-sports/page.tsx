@@ -1,12 +1,48 @@
+"use client"
+
+import { useEffect, useRef, useState } from "react"
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Camera, Palette } from "lucide-react"
+import { ArrowLeft, Camera, Palette, Eye } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { artProjects, sportsAchievements } from "@/data/portfolio-items"
+import { ArtCarousel } from "@/components/art-carousel"
+import { ArtModal } from "@/components/art-modal"
+
+// Declare YouTube Player API type
+declare global {
+  interface Window {
+    YT: {
+      Player: new (
+        elementId: string,
+        options: {
+          videoId: string
+          playerVars?: {
+            autoplay?: 1 | 0
+            controls?: 1 | 0
+            loop?: 1 | 0
+            mute?: 1 | 0
+            modestbranding?: 1 | 0
+            playsinline?: 1 | 0
+            rel?: 1 | 0
+            showinfo?: 0
+            fs?: 0 | 1
+            iv_load_policy?: 3
+            playlist?: string
+          }
+          events?: {
+            onReady?: (event: any) => void
+          }
+        },
+      ) => void
+    }
+    onYouTubeIframeAPIReady: () => void
+  }
+}
 
 export default function ArtSportsPortfolioPage() {
   // Map icons to art projects
@@ -14,6 +50,72 @@ export default function ArtSportsPortfolioPage() {
     ...project,
     icon: project.title.includes("Photography") ? Camera : Palette,
   }))
+
+  const playerRefs = useRef<{ [key: string]: any }>({})
+  const [selectedArtProject, setSelectedArtProject] = useState<{
+    title: string
+    images: string[]
+  } | null>(null)
+
+  useEffect(() => {
+    // Load YouTube API
+    const tag = document.createElement("script")
+    tag.src = "https://www.youtube.com/iframe_api"
+    const firstScriptTag = document.getElementsByTagName("script")[0]
+    firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag)
+
+    // Initialize players when API is ready
+    window.onYouTubeIframeAPIReady = () => {
+      sportsAchievements.forEach((achievement, index) => {
+        if (achievement.videoId) {
+          const playerId = `youtube-player-${index}`
+          playerRefs.current[playerId] = new window.YT.Player(playerId, {
+            videoId: achievement.videoId,
+            playerVars: {
+              autoplay: 1,
+              controls: 0,
+              loop: 1,
+              mute: 1,
+              modestbranding: 1,
+              playsinline: 1,
+              rel: 0,
+              showinfo: 0,
+              fs: 0,
+              iv_load_policy: 3,
+              playlist: achievement.videoId,
+            },
+            events: {
+              onReady: (event) => {
+                // Set playback rate to 25% when player is ready
+                event.target.setPlaybackRate(0.25)
+                event.target.playVideo()
+              },
+            },
+          })
+        }
+      })
+    }
+
+    // Cleanup
+    return () => {
+      // Clean up players
+      Object.values(playerRefs.current).forEach((player: any) => {
+        if (player && typeof player.destroy === "function") {
+          player.destroy()
+        }
+      })
+      // Remove the global callback
+      delete window.onYouTubeIframeAPIReady
+    }
+  }, [])
+
+  const openArtModal = (title: string, images: string[]) => {
+    setSelectedArtProject({ title, images })
+  }
+
+  const closeArtModal = () => {
+    setSelectedArtProject(null)
+  }
 
   return (
     <>
@@ -50,15 +152,8 @@ export default function ArtSportsPortfolioPage() {
                   <div className="flex flex-col md:flex-row">
                     <div className="md:w-1/2">
                       <div className="relative aspect-video w-full">
-                        <iframe
-                          src={`https://www.youtube.com/embed/${achievement.videoId || "dQw4w9WgXcQ"}?si=sAgHr_qsrjbKXWyJ&controls=0&autoplay=1&mute=1&loop=1&playlist=${achievement.videoId || "dQw4w9WgXcQ"}`}
-                          title={achievement.title}
-                          className="absolute inset-0 w-full h-full"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          frameBorder="0"
-                          referrerPolicy="strict-origin-when-cross-origin"
-                          allowFullScreen
-                        />
+                        {/* Replace iframe with div for YouTube API */}
+                        <div id={`youtube-player-${index}`} className="absolute inset-0 w-full h-full"></div>
                       </div>
                     </div>
                     <div className="md:w-1/2">
@@ -90,12 +185,16 @@ export default function ArtSportsPortfolioPage() {
                 {artProjectsWithIcons.map((project, index) => (
                   <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg">
                     <div className="relative h-48">
-                      <Image
-                        src={project.image || "/placeholder.svg?height=200&width=400"}
-                        alt={project.title}
-                        fill
-                        className="object-cover"
-                      />
+                      {project.images && project.images.length > 0 ? (
+                        <ArtCarousel images={project.images} title={project.title} autoAdvance={true} interval={3000} />
+                      ) : (
+                        <Image
+                          src={project.image || "/placeholder.svg?height=200&width=400"}
+                          alt={project.title}
+                          fill
+                          className="object-cover"
+                        />
+                      )}
                     </div>
                     <CardHeader className="flex flex-row items-center gap-4">
                       <project.icon className="h-8 w-8" />
@@ -105,13 +204,23 @@ export default function ArtSportsPortfolioPage() {
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 mb-4">
                         {project.tags.map((tag) => (
                           <Badge key={tag} variant="secondary">
                             {tag}
                           </Badge>
                         ))}
                       </div>
+                      {project.images && project.images.length > 0 && (
+                        <Button
+                          variant="outline"
+                          className="w-full flex items-center justify-center gap-2"
+                          onClick={() => openArtModal(project.title, project.images || [project.image])}
+                        >
+                          <Eye className="h-4 w-4" />
+                          See Final Piece
+                        </Button>
+                      )}
                     </CardContent>
                   </Card>
                 ))}
@@ -129,6 +238,17 @@ export default function ArtSportsPortfolioPage() {
           </div>
         </section>
       </main>
+
+      {/* Art Modal */}
+      {selectedArtProject && (
+        <ArtModal
+          isOpen={!!selectedArtProject}
+          onClose={closeArtModal}
+          title={selectedArtProject.title}
+          images={selectedArtProject.images}
+        />
+      )}
+
       <PageLayout />
     </>
   )
