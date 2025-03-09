@@ -10,44 +10,80 @@ export type BlogPost = {
   images?: string[]
 }
 
-// Add or modify entries in this array
 export const blogPosts: BlogPost[] = [
   {
-    title: "My Journey in Medical Research",
-    subtitle: "Exploring the intersection of technology and healthcare",
-    date: "March 8, 2025",
-    image: "/blog/medical-research.jpg",
-    slug: "journey-in-medical-research",
-    excerpt: "Join me as I share my experiences in medical research and healthcare innovation...",
+    title: "Inside the ER: A Day of Hands-On Training at Sunnybrook Health Sciences Centre",
+    subtitle: "What does it take to save a life in the ER? I found out firsthand!",
+    date: "February 16, 2025",
+    image: "/blog/er-training (1).JPG",
+    slug: "inside-er-training-sunnybrook",
+    excerpt: "A firsthand look at ER training at Sunnybrook, practicing life-saving skills in a high-stakes environment...",
     content: `
-      <p>My journey into medical research began with a simple curiosity about how technology could improve healthcare outcomes. As a student with interests spanning both medicine and technology, I found myself drawn to the innovative ways these fields intersect.</p>
+      <p>This week, I had the incredible opportunity to attend the inaugural ER training day at Sunnybrook Health Sciences Centre, the world’s first-ever Level 1 trauma center outside the U.S., hosted by the Temerty Faculty of Medicine, University of Toronto.</p>
       
-      <p>During my time at the University of Toronto's MedLinx Program, I was exposed to cutting-edge research in healthcare technology. The experience opened my eyes to the possibilities of using data analysis and artificial intelligence to enhance diagnostic accuracy and treatment planning.</p>
+      <p>From touring the trauma bay to hearing from a panel of ER professionals, every moment was eye-opening. But the real highlight? Stepping into their shoes and practicing the very skills that save lives every day:</p>
       
-      <p>One of the most valuable lessons I learned was the importance of interdisciplinary collaboration. Medical research isn't just about understanding biology and chemistry—it's about bringing together experts from various fields to solve complex problems.</p>
+      <ul>
+        <li><strong>Suturing wounds:</strong> Learning the delicate art of suturing required precision and patience. It was fascinating to see how different stitching techniques are used based on the severity and location of the wound.</li>
+        <li><strong>Intubation:</strong> Securing airways is one of the most crucial skills in emergency medicine. I practiced using an endotracheal tube and realized just how critical proper technique is when seconds determine survival.</li>
+        <li><strong>Ultrasound diagnostics:</strong> I was amazed at how quickly trained hands can locate internal injuries or guide medical procedures with real-time imaging.</li>
+        <li><strong>CPR & Stop the Bleed:</strong> Timing and technique are everything when responding to a cardiac arrest or massive hemorrhage. Practicing chest compressions and tourniquet applications emphasized just how intense real-life emergencies can be.</li>
+      </ul>
       
-      <p>As I continue my academic journey, I'm excited to further explore the potential of technology in healthcare and contribute to advancements that can make a real difference in patients' lives.</p>
+      <p>This hands-on training solidified my passion for medicine, reinforcing the importance of rapid decision-making and teamwork in life-or-death situations. Emergency medicine is both science and art, and I left the experience more motivated than ever to pursue a career in healthcare.</p>
     `,
-    images: ["/blog/medical-research-1.jpg", "/blog/medical-research-2.jpg", "/blog/medical-research-3.jpg"],
+    images: ["/blog/er-training (1).JPG", "/blog/er-training (2).JPG", "/blog/er-training (3).JPG", "/blog/er-training (4).JPG", "/blog/er-training (5).JPG", "/blog/er-training (6).JPG", "/blog/er-training (7).JPG", "/blog/er-training (8).JPG", "/blog/er-training (9).JPG", "/blog/er-training (10).JPG", "/blog/er-training (11).JPG"]
   },
   {
-    title: "Volunteering at the Hospital",
-    subtitle: "Lessons learned from working with patients",
-    date: "February 15, 2025",
-    image: "/blog/hospital-volunteer.jpg",
-    slug: "volunteering-at-hospital",
-    excerpt: "My time volunteering at the local hospital taught me valuable lessons about patient care...",
+    title: "Capturing STEM Excellence: Photography at the Glenforest STEM Symposium",
+    subtitle: "Through my lens: The future of innovation in action!",
+    date: "March 2, 2025",
+    image: "/blog/stem-symposium (5).JPG",
+    slug: "photography-stem-symposium",
+    excerpt: "A visual journey through the Glenforest STEM Symposium, capturing the excitement of science and innovation...",
     content: `
-      <p>Volunteering at the local hospital has been one of the most rewarding experiences of my academic journey. Working directly with patients and healthcare professionals has provided me with invaluable insights into the medical field.</p>
+      <p>At the Glenforest STEM Symposium, I had the chance to witness firsthand the creativity and ingenuity of students and professionals pushing the boundaries of science and technology. My role? Capturing their passion through photography.</p>
       
-      <p>From assisting nurses with basic patient care to helping visitors navigate the complex hospital environment, each task taught me something new about healthcare delivery and the importance of compassion in medical settings.</p>
+      <p>Walking through the symposium, I saw projects ranging from ranging from enginering to chemical experiments. The energy in the room was palpable, and I knew that each snapshot I took would help tell the stories of future innovators.</p>
       
-      <p>I was particularly struck by the resilience of patients facing challenging diagnoses and the dedication of the healthcare team working tirelessly to provide the best possible care. These observations have strengthened my resolve to pursue a career in medicine.</p>
+      <p>One of the most exciting aspects was engaging with presenters, learning the inspiration behind their work, and seeing their excitement as they explained complex ideas. Through photography, I was able to freeze those moments of discovery and passion, sharing them with a wider audience.</p>
       
-      <p>The experience has also highlighted the importance of clear communication in healthcare settings. Whether explaining procedures to patients or coordinating with staff, effective communication is essential for quality care.</p>
+      <p>This experience reaffirmed my belief in the power of STEM education and how essential it is to nurture young minds interested in science and technology.</p>
     `,
-    images: [],
+    images: ["/blog/stem-symposium (5).JPG", "/blog/stem-symposium (2).JPG", "/blog/stem-symposium (3).JPG", "/blog/stem-symposium (4).JPG", "/blog/stem-symposium (1).JPG"]
   },
-  // Add more blog posts here...
-]
-
+  {
+    title: "Astrocytoma: From Diagnosis to Management – A Comprehensive Overview",
+    subtitle: "Unraveling the mysteries of brain tumors—what we know and where we're headed",
+    date: "October 4, 2024",
+    image: "/blog/research (1).jpg",
+    slug: "astrocytoma-diagnosis-management",
+    excerpt: "Co-authoring a published paper on astrocytomas and receiving recognition for research excellence...",
+    content: `
+      <p>Brain tumors are one of the most complex and challenging areas of medical research, and my team and I had the privilege of co-authoring a paper on astrocytomas, a type of brain tumor that affects thousands of patients worldwide.</p>
+      
+      <p>We explored how advancements in imaging technology and molecular research are improving early diagnosis and treatment strategies. By analyzing case studies and consulting with data, we gained a deep understanding of how personalized medicine is changing the way astrocytomas are managed.</p>
+      
+      <p>Our research won a Certificate of Achievement in the Gen Writers & Sunshine 4 Cancer Kids competition, an acknowledgment that strengthened my resolve to contribute to medical research in the future.</p>
+    `,
+    images: ["/blog/research (1).jpg", "/blog/research (2).jpg", "/blog/research (3).jpg"]
+  },
+  {
+    title: "Featured as a Rising Phenom in Rising Phenom Magazine!",
+    subtitle: "From volunteering to research—my journey to making an impact in healthcare",
+    date: "November 9, 2024",
+    image: "/blog/feature (1).jpg",
+    slug: "rising-phenom-feature",
+    excerpt: "Honored to be featured in Rising Phenom Magazine, recognizing my contributions to healthcare and community service...",
+    content: `
+      <p>Exciting news! I’ve been featured as a Rising Phenom in <strong>Rising Phenom Magazine</strong>, a recognition that highlights my contributions to medicine, healthcare, and activism.</p>
+      
+      <p>This journey has been anything but linear. From volunteering at my school to conducting research reveiws and advocating for healthcare accessibility, every step has reinforced my belief in the power of medicine to change lives.</p>
+      
+      <p>I owe this achievement to the mentors, peers, and communities that have supported me along the way. The feature in Rising Phenom Magazine is not just a milestone but a reminder of the responsibility I hold to continue pushing for positive change in the healthcare industry.</p>
+      
+      <p>If you're interested in making an impact in healthcare, I’d love to connect and exchange ideas on how we can collectively drive change.</p>
+    `,
+    images: ["/blog/feature (1).jpg", "/blog/feature (2).jpg", "/blog/feature (3).jpg", "/blog/feature (4).jpg"]
+  }
+];
