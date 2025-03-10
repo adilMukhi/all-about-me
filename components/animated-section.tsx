@@ -14,11 +14,16 @@ export default function AnimatedSection({ children, delay = 0 }: AnimatedSection
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    const currentRef = sectionRef.current
+    if (!currentRef) return
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setTimeout(() => {
             setIsVisible(true)
+            // Unobserve after animation to save resources
+            observer.unobserve(currentRef)
           }, delay)
         }
       },
@@ -29,13 +34,11 @@ export default function AnimatedSection({ children, delay = 0 }: AnimatedSection
       },
     )
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
+    observer.observe(currentRef)
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
+      if (currentRef) {
+        observer.unobserve(currentRef)
       }
     }
   }, [delay])

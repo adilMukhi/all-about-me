@@ -6,7 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], display: "swap" })
 
 export const metadata: Metadata = {
   title: "Adil Mukhi - Personal Portfolio",
@@ -46,6 +46,30 @@ export default function RootLayout({
           `}
         </Script>
         {/* Font imports */}
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap"
+          as="style"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+          as="style"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"
+          as="style"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap"
+          as="style"
+          crossOrigin="anonymous"
+        />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" />
         <link
           rel="stylesheet"
@@ -72,4 +96,3 @@ export default function RootLayout({
   )
 }
 
-import './globals.css'

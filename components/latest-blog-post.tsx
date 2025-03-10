@@ -26,13 +26,14 @@ export function LatestBlogPost() {
         My Latest Experience
       </h2>
 
-      <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-blue-50 to-transparent">
+      <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-blue-50 to-transparent glass-card">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/3 relative h-[250px] md:h-auto">
             <Image
               src={latestPost.image || "/placeholder.svg?height=400&width=300"}
               alt={latestPost.title}
               fill
+              priority
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent pointer-events-none" />

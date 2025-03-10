@@ -26,7 +26,7 @@ export default function Header() {
     const isExpanded = expandedItem === item.title
 
     return (
-      <div className="w-full">
+      <div className="w-full py-1.5">
         <div className="flex items-center justify-between">
           <Link
             href={item.href}
@@ -115,7 +115,15 @@ export default function Header() {
             </Button>
           </div>
           <div className="md:hidden">
-            <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)} className="relative z-50">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="relative z-50"
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+            >
+              <span className="sr-only">{isMenuOpen ? "Close menu" : "Open menu"}</span>
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
@@ -123,7 +131,7 @@ export default function Header() {
 
         {/* Mobile menu overlay */}
         {isMenuOpen && (
-          <div className="fixed inset-0 top-16 z-40 bg-background">
+          <div id="mobile-menu" className="fixed inset-0 top-16 z-40 bg-background">
             <div className="h-[calc(100vh-4rem)] overflow-y-auto">
               <div className="container py-6">
                 <nav className="flex flex-col space-y-4" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>

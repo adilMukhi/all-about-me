@@ -12,9 +12,9 @@ export default function ClubFeature() {
       >
         My Club: Dr. Interested
       </h2>
-      <Card className="bg-gradient-to-br from-blue-50 to-teal-50 overflow-hidden">
+      <Card className="bg-gradient-to-br from-blue-50 to-teal-50 overflow-hidden glass-card">
         <div className="flex flex-col md:flex-row">
-          <div className="md:w-1/2 relative min-h-[300px]">
+          <div className="md:w-1/2 relative min-h-[250px] md:min-h-[300px]">
             <Image src="/drinterested.jpg" alt="Dr. Interested Club" fill className="object-cover" />
           </div>
           <div className="md:w-1/2 p-6 md:p-8">

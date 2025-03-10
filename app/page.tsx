@@ -11,7 +11,7 @@ import ClubFeature from "@/components/club-feature"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background page-transition">
       <Header />
       <h1 className="sr-only">Adil Mukhi - Student Researcher and Aspiring Medical Professional</h1>
       <AnimatedSection>

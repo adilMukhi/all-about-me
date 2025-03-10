@@ -49,7 +49,15 @@ export default function About() {
           </CardContent>
         </Card>
         <div className="flex items-center justify-center">
-          <Image src="/profile-pic.jpg" alt="Your Name" width={600} height={400} className="rounded-full" />
+          <div className="relative w-full max-w-md aspect-square">
+            <Image
+              src="/profile-pic.jpg"
+              alt="Adil Mukhi"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="rounded-full object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>

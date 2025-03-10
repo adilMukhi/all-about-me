@@ -83,21 +83,21 @@ export default function Hero() {
     <section className="bg-primary/10 py-16">
       <div className="container flex flex-col items-center justify-center gap-4 text-center">
         <h2
-          className="text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl normal-case text-hover-effect"
+          className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl normal-case text-hover-effect bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-primary to-teal-500"
           style={{ fontFamily: "DynaPuff, serif", letterSpacing: "0.1em" }}
         >
           Hi, I'm Adil Mukhi!
         </h2>
 
         {/* Social Media Icons - Desktop */}
-        <div className="hidden md:flex flex-wrap justify-center gap-4 my-4">
+        <div className="hidden md:grid grid-cols-6 gap-4 my-4 max-w-2xl mx-auto">
           {socialLinks.map((social, index) => (
             <a
               key={index}
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`${social.color} transition-all duration-300 hover:scale-125`}
+              className={`${social.color} transition-all duration-300 hover:scale-125 flex justify-center`}
               aria-label={social.label}
               title={social.label}
             >
@@ -107,40 +107,22 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* Social Media Icons - Mobile (two rows) */}
-        <div className="flex flex-col gap-3 md:hidden my-4">
-          <div className="flex justify-center gap-3">
-            {firstRowIcons.map((social, index) => (
-              <a
-                key={index}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${social.color} transition-all duration-300 hover:scale-125`}
-                aria-label={social.label}
-                title={social.label}
-              >
-                <social.icon className="h-5 w-5" />
-                <span className="sr-only">{social.label}</span>
-              </a>
-            ))}
-          </div>
-          <div className="flex justify-center gap-3">
-            {secondRowIcons.map((social, index) => (
-              <a
-                key={index}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${social.color} transition-all duration-300 hover:scale-125`}
-                aria-label={social.label}
-                title={social.label}
-              >
-                <social.icon className="h-5 w-5" />
-                <span className="sr-only">{social.label}</span>
-              </a>
-            ))}
-          </div>
+        {/* Mobile social links - more compact grid */}
+        <div className="grid grid-cols-6 gap-2 md:hidden my-4 max-w-xs mx-auto">
+          {socialLinks.map((social, index) => (
+            <a
+              key={index}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${social.color} transition-all duration-300 hover:scale-125 flex justify-center`}
+              aria-label={social.label}
+              title={social.label}
+            >
+              <social.icon className="h-5 w-5" />
+              <span className="sr-only">{social.label}</span>
+            </a>
+          ))}
         </div>
 
         <p

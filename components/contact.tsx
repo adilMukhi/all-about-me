@@ -28,13 +28,13 @@ export default function Contact() {
           </CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col md:flex-row items-start gap-4 md:gap-8">
-          <div className="w-full md:w-1/2 flex flex-col items-center space-y-8">
-            <div className="w-72 h-72 relative">
+          <div className="w-full md:w-1/2 flex flex-col items-center space-y-6">
+            <div className="relative w-64 h-64 md:w-72 md:h-72">
               <Image
                 src="/secondpic.jpg"
                 alt="Adil Mukhi"
-                width={288}
-                height={288}
+                fill
+                sizes="(max-width: 768px) 256px, 288px"
                 className="rounded-full object-cover"
               />
             </div>
@@ -83,3 +83,4 @@ export default function Contact() {
     </section>
   )
 }
+
