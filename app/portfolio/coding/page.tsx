@@ -1,3 +1,5 @@
+import type { Metadata } from "next"
+import { codingPortfolioMetadata } from "../../page-metadata"
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
 import { Button } from "@/components/ui/button"
@@ -7,6 +9,8 @@ import { ArrowLeft, Github, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { codingProjects } from "@/data/portfolio-items"
+
+export const metadata: Metadata = codingPortfolioMetadata
 
 export default function CodingPortfolioPage() {
   return (

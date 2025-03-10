@@ -1,3 +1,6 @@
+import type { Metadata } from "next"
+import { writingPortfolioMetadata } from "../../page-metadata"
+
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
 import { Button } from "@/components/ui/button"
@@ -5,6 +8,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ArrowLeft, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import { publications } from "@/data/portfolio-items"
+
+export const metadata: Metadata = writingPortfolioMetadata
 
 export default function WritingPortfolioPage() {
   return (

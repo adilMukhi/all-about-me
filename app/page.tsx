@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Header from "@/components/header"
 import Hero from "@/components/hero"
 import About from "@/components/about"
@@ -8,6 +9,9 @@ import { LatestBlogPost } from "@/components/latest-blog-post"
 import AnimatedSection from "@/components/animated-section"
 import { Separator } from "@/components/ui/separator"
 import ClubFeature from "@/components/club-feature"
+import { homeMetadata } from "./page-metadata"
+
+export const metadata: Metadata = homeMetadata
 
 export default function Home() {
   return (

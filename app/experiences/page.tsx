@@ -1,3 +1,5 @@
+import type { Metadata } from "next"
+import { experiencesMetadata } from "../page-metadata"
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -5,6 +7,8 @@ import Link from "next/link"
 import Image from "next/image"
 import { blogPosts } from "@/data/blog-posts"
 import { Calendar, ArrowRight } from "lucide-react"
+
+export const metadata: Metadata = experiencesMetadata
 
 export default function ExperiencesPage() {
   return (

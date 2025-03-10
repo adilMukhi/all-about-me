@@ -9,32 +9,89 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
 export const metadata: Metadata = {
-  title: "Adil Mukhi - Personal Website",
+  title: {
+    default: "Adil Mukhi - Student Researcher & Aspiring Medical Professional",
+    template: "%s | Adil Mukhi",
+  },
   description:
-    "A showcase of my skills, projects, and experiences as a student and aspiring researcher in science, medicine, and research.",
-  keywords: "Adil Mukhi, student researcher, science, medicine, research, portfolio, projects, skills",
-  authors: [{ name: "Adil Mukhi" }],
+    "Adil Mukhi is a student researcher and aspiring medical professional with experience in healthcare, research, and leadership. Explore his projects, publications, and achievements.",
+  keywords: [
+    "Adil Mukhi",
+    "student researcher",
+    "medical research",
+    "healthcare",
+    "Dr. Interested",
+    "science",
+    "medicine",
+    "research",
+    "portfolio",
+    "projects",
+    "skills",
+    "IB student",
+    "youth researcher",
+  ],
+  authors: [{ name: "Adil Mukhi", url: "https://adilmukhi.vercel.app" }],
   creator: "Adil Mukhi",
   publisher: "Adil Mukhi",
+  metadataBase: new URL("https://adilmukhi.vercel.app"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://adilmukhi.com",
-    title: "Adil Mukhi - Personal Website",
-    description: "A showcase of my skills, projects, and experiences as a student and aspiring researcher.",
+    url: "https://adilmukhi.vercel.app",
+    title: "Adil Mukhi - Student Researcher & Aspiring Medical Professional",
+    description:
+      "Adil Mukhi is a student researcher and aspiring medical professional with experience in healthcare, research, and leadership. Explore his projects, publications, and achievements.",
     siteName: "Adil Mukhi",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Adil Mukhi - Student Researcher & Aspiring Medical Professional",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adil Mukhi - Personal Website",
-    description: "A showcase of my skills, projects, and experiences as a student and aspiring researcher.",
+    title: "Adil Mukhi - Student Researcher & Aspiring Medical Professional",
+    description:
+      "Adil Mukhi is a student researcher and aspiring medical professional with experience in healthcare, research, and leadership.",
     creator: "@adilm_0",
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
-  generator: "v0.dev",
+  verification: {
+    google: "your-google-verification-code", // Replace with your actual verification code
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png" }],
+    other: [
+      {
+        rel: "mask-icon",
+        url: "/safari-pinned-tab.svg",
+      },
+    ],
+  },
+  manifest: "/site.webmanifest",
+  category: "portfolio",
 }
 
 export default function RootLayout({
@@ -45,10 +102,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="p:domain_verify" content="10e6074a03407f2fd24aed7425a2acd9" />
         <meta name="theme-color" content="#0ea5e9" />
-        <link rel="canonical" href="https://adilmukhi.com" />
 
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -112,22 +167,53 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap" />
 
-        {/* Structured data for better SEO */}
-        <Script id="structured-data" type="application/ld+json">
+        {/* Structured data for Person */}
+        <Script id="structured-data-person" type="application/ld+json">
           {`
             {
               "@context": "https://schema.org",
               "@type": "Person",
+              "@id": "https://adilmukhi.vercel.app/#person",
               "name": "Adil Mukhi",
               "url": "https://adilmukhi.vercel.app",
+              "image": "https://adilmukhi.vercel.app/profile-pic.jpg",
               "sameAs": [
                 "https://www.linkedin.com/in/adil-mukhi",
                 "https://github.com/adilMukhi",
                 "https://x.com/adilm_0",
-                "https://www.instagram.com/adilm.0"
+                "https://www.instagram.com/adilm.0",
+                "https://linktr.ee/adilm.0"
               ],
               "jobTitle": "Student Researcher",
-              "knowsAbout": ["Science", "Medicine", "Research", "Content Creation", "Adil Mukhi", "Adil M"]
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Dr. Interested",
+                "url": "https://linktr.ee/dr.interested"
+              },
+              "knowsAbout": ["Medical Research", "Healthcare", "Science", "Leadership", "Content Creation"],
+              "alumniOf": {
+                "@type": "EducationalOrganization",
+                "name": "Glenforest Secondary School",
+                "url": "https://glenforest.peelschools.org/"
+              }
+            }
+          `}
+        </Script>
+
+        {/* Structured data for WebSite */}
+        <Script id="structured-data-website" type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://adilmukhi.vercel.app/#website",
+              "url": "https://adilmukhi.vercel.app",
+              "name": "Adil Mukhi - Student Researcher & Aspiring Medical Professional",
+              "description": "Adil Mukhi is a student researcher and aspiring medical professional with experience in healthcare, research, and leadership.",
+              "publisher": {
+                "@id": "https://adilmukhi.vercel.app/#person"
+              },
+              "inLanguage": "en-US"
             }
           `}
         </Script>

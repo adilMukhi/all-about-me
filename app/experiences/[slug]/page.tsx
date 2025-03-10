@@ -1,219 +1,233 @@
-import { notFound } from "next/navigation"
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
-import { blogPosts } from "@/data/blog-posts"
+"use client"
+
+import type { Metadata } from "next"
+import { useEffect, useState, useCallback } from "react"
+import Header from "@/components/header"
+import PageLayout from "@/components/page-layout"
 import { Button } from "@/components/ui/button"
-import { Breadcrumb } from "@/components/breadcrumb"
+import { ArrowLeft, ChevronLeft, ChevronRight, Calendar, ExternalLink } from "lucide-react"
+import Link from "next/link"
+import Image from "next/image"
+import { blogPosts } from "@/data/blog-posts"
 
-interface BlogPostPageProps {
-  params: {
-    slug: string
-  }
-}
-
-export function generateMetadata({ params }: BlogPostPageProps) {
+// Generate metadata for each blog post dynamically
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const post = blogPosts.find((post) => post.slug === params.slug)
 
   if (!post) {
     return {
-      title: "Post Not Found",
+      title: "Blog Post Not Found",
       description: "The requested blog post could not be found.",
     }
   }
 
   return {
-    title: `${post.title} | Adil Mukhi`,
-    description: post.subtitle,
+    title: post.title,
+    description: post.subtitle || post.excerpt,
+    alternates: {
+      canonical: `/experiences/${post.slug}`,
+    },
     openGraph: {
       title: post.title,
-      description: post.subtitle,
+      description: post.subtitle || post.excerpt,
       type: "article",
+      url: `/experiences/${post.slug}`,
+      images: [
+        {
+          url: post.image || "/og-blog-default.jpg",
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
       publishedTime: post.date,
-      authors: ["Adil Mukhi"],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
-      description: post.subtitle,
+      description: post.subtitle || post.excerpt,
+      images: [post.image || "/og-blog-default.jpg"],
     },
   }
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = blogPosts.find((post) => post.slug === params.slug)
+// This would typically come from your CMS or database
+const getBlogPost = (slug: string) => {
+  return blogPosts.find((post) => post.slug === slug)
+}
+
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+  const post = getBlogPost(params.slug)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
+
+  const goToNext = useCallback(() => {
+    if (post?.images && post.images.length > 0) {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % post.images.length)
+    }
+  }, [post?.images])
+
+  const goToPrev = useCallback(() => {
+    if (post?.images && post.images.length > 0) {
+      setCurrentIndex((prevIndex) => (prevIndex - 1 + post.images.length) % post.images.length)
+    }
+  }, [post?.images])
+
+  // Auto-advance images
+  useEffect(() => {
+    if (!isPaused && post?.images && post.images.length > 1) {
+      const interval = setInterval(goToNext, 5000)
+      return () => clearInterval(interval)
+    }
+    return undefined
+  }, [isPaused, post?.images, goToNext])
 
   if (!post) {
-    notFound()
+    return (
+      <>
+        <Header />
+        <main className="min-h-screen container py-16">
+          <h1>Post not found</h1>
+          <Button asChild className="mt-4">
+            <Link href="/experiences">Back to Experiences</Link>
+          </Button>
+        </main>
+        <PageLayout />
+      </>
+    )
   }
 
   return (
-    <div className="container max-w-4xl py-12 page-transition">
-      <div className="mb-8">
-        <Breadcrumb
-          items={[
-            { label: "Experiences", href: "/experiences" },
-            { label: post.title, href: `/experiences/${post.slug}`, active: true },
-          ]}
-        />
-      </div>
+    <>
+      <Header />
+      <main className="min-h-screen bg-background">
+        <article className="py-16">
+          <div className="container max-w-4xl mx-auto px-4">
+            <div className="flex items-center gap-2 mb-8">
+              <Button variant="ghost" size="sm" asChild>
+                <Link href="/experiences">
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  Back to Experiences
+                </Link>
+              </Button>
+            </div>
 
-      <div className="relative h-[300px] md:h-[400px] mb-8 rounded-lg overflow-hidden">
-        <Image
-          src={post.image || "/placeholder.svg?height=800&width=1200"}
-          alt={post.title}
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 p-6 text-white">
-          <h1 className="text-3xl md:text-4xl font-bold mb-2" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
-            {post.title}
-          </h1>
-          <p className="text-lg text-gray-200">{post.date}</p>
-        </div>
-      </div>
-
-      <div className="mb-8">
-        <h2 className="text-xl md:text-2xl font-semibold mb-4 text-gray-700">{post.subtitle}</h2>
-      </div>
-
-      <article className="prose max-w-none">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nisl nisl
-          aliquam nisl, eu aliquam nisl nisl eu nisl. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl,
-          eu aliquam nisl nisl eu nisl.
-        </p>
-
-        <h3>The Beginning of My Journey</h3>
-        <p>
-          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque,
-          auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur aliquet quam id dui posuere blandit.
-          Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
-        </p>
-
-        <p>
-          <strong>Key insights I've gained:</strong>
-        </p>
-        <ul>
-          <li>Nulla quis lorem ut libero malesuada feugiat</li>
-          <li>Curabitur non nulla sit amet nisl tempus convallis</li>
-          <li>Pellentesque in ipsum id orci porta dapibus</li>
-          <li>Vivamus magna justo, lacinia eget consectetur sed</li>
-        </ul>
-
-        <blockquote>
-          "The most important thing is to never stop questioning. Curiosity has its own reason for existing." - Albert
-          Einstein
-        </blockquote>
-
-        <h3>Challenges and Opportunities</h3>
-        <p>
-          Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor
-          volutpat. Curabitur aliquet quam id dui posuere blandit. Curabitur non nulla sit amet nisl tempus convallis
-          quis ac lectus.
-        </p>
-      </article>
-
-      <div className="mt-12 flex justify-between items-center">
-        <Button variant="outline" asChild>
-          <Link href="/experiences" className="flex items-center">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to All Experiences
-          </Link>
-        </Button>
-
-        <div className="flex items-center space-x-4">
-          <span className="text-sm text-gray-500">Share this post:</span>
-          <div className="flex space-x-2">
-            <Link
-              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://adilmukhi.com/experiences/${post.slug}`)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-blue-500"
-              aria-label="Share on Twitter"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+            <div className="bg-gradient-to-r from-blue-50 to-transparent p-8 rounded-lg mb-12">
+              <h1
+                className="text-4xl font-bold tracking-tighter mb-4 sm:text-5xl"
+                style={{ fontFamily: "Sour Gummy, latin" }}
               >
-                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-              </svg>
-            </Link>
-            <Link
-              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://adilmukhi.com/experiences/${post.slug}`)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-blue-500"
-              aria-label="Share on Facebook"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-              </svg>
-            </Link>
-            <Link
-              href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(`https://adilmukhi.com/experiences/${post.slug}`)}&title=${encodeURIComponent(post.title)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-blue-500"
-              aria-label="Share on LinkedIn"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </Link>
+                {post.title}
+              </h1>
+              <div className="flex items-center text-muted-foreground mb-6">
+                <Calendar className="h-4 w-4 mr-2" />
+                <span className="text-lg">
+                  {post.subtitle} • {post.date}
+                </span>
+              </div>
+
+              {post.images && post.images.length > 0 && (
+                <div className="mb-12 relative">
+                  <div
+                    className="relative h-[400px] w-full rounded-lg overflow-hidden shadow-lg"
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                  >
+                    {post.images.map((image, index) => (
+                      <div
+                        key={index}
+                        className={`absolute inset-0 w-full h-full transition-opacity duration-500 ${
+                          index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+                        }`}
+                      >
+                        <Image
+                          src={image || "/placeholder.svg?height=400&width=800"}
+                          alt={`${post.title} - Image ${index + 1}`}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                    ))}
+
+                    {/* Navigation arrows */}
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault()
+                        goToPrev()
+                      }}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 text-white rounded-full p-3 hover:bg-black/50 transition-colors"
+                      aria-label="Previous image"
+                    >
+                      <ChevronLeft className="h-6 w-6" />
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault()
+                        goToNext()
+                      }}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/30 text-white rounded-full p-3 hover:bg-black/50 transition-colors"
+                      aria-label="Next image"
+                    >
+                      <ChevronRight className="h-6 w-6" />
+                    </button>
+                  </div>
+
+                  {/* Pagination dots */}
+                  <div className="flex justify-center gap-1.5 mt-4">
+                    {post.images.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentIndex(index)}
+                        className={`w-2 h-2 rounded-full transition-all ${
+                          index === currentIndex ? "bg-primary w-4" : "bg-gray-300 hover:bg-gray-400"
+                        }`}
+                        aria-label={`Go to image ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div
+              className="prose prose-lg max-w-none mx-auto text-lg leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
+
+            {post.learnMoreUrl && (
+              <div className="mt-12 flex justify-center">
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full px-8 hover:bg-primary hover:text-white transition-colors"
+                >
+                  <a
+                    href={post.learnMoreUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    Learn More
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+            )}
+
+            <div className="mt-12 flex justify-center">
+              <Button asChild size="lg" className="rounded-full px-8">
+                <Link href="/experiences">
+                  <ArrowLeft className="mr-2 h-5 w-5" />
+                  Back to All Experiences
+                </Link>
+              </Button>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            headline: post.title,
-            description: post.subtitle,
-            image: post.image,
-            datePublished: post.date,
-            author: {
-              "@type": "Person",
-              name: "Adil Mukhi",
-            },
-          }),
-        }}
-      />
-    </div>
+        </article>
+      </main>
+      <PageLayout />
+    </>
   )
 }
 

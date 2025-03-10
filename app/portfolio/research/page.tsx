@@ -1,12 +1,17 @@
+import { CardFooter } from "@/components/ui/card"
+import type { Metadata } from "next"
+import { researchPortfolioMetadata } from "../../page-metadata"
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, FileText } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { researchProjects } from "@/data/portfolio-items"
+
+export const metadata: Metadata = researchPortfolioMetadata
 
 export default function ResearchPortfolioPage() {
   return (

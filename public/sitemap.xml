@@ -2,50 +2,75 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://adilmukhi.vercel.app/</loc>
-    <lastmod>2023-06-01</lastmod>
+    <lastmod>2024-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://adilmukhi.vercel.app/experiences</loc>
-    <lastmod>2023-06-01</lastmod>
+    <lastmod>2024-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://adilmukhi.vercel.app/background</loc>
-    <lastmod>2023-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://adilmukhi.vercel.app/portfolio</loc>
-    <lastmod>2023-06-01</lastmod>
+    <lastmod>2024-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://adilmukhi.vercel.app/portfolio</loc>
+    <lastmod>2024-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://adilmukhi.vercel.app/portfolio/writing</loc>
-    <lastmod>2023-06-01</lastmod>
+    <lastmod>2024-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://adilmukhi.vercel.app/portfolio/coding</loc>
-    <lastmod>2023-06-01</lastmod>
+    <lastmod>2024-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://adilmukhi.vercel.app/portfolio/research</loc>
-    <lastmod>2023-06-01</lastmod>
+    <lastmod>2024-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://adilmukhi.vercel.app/portfolio/art-sports</loc>
-    <lastmod>2023-06-01</lastmod>
+    <lastmod>2024-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://adilmukhi.vercel.app/experiences/inside-er-training-sunnybrook</loc>
+    <lastmod>2024-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://adilmukhi.vercel.app/experiences/photography-stem-symposium</loc>
+    <lastmod>2024-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://adilmukhi.vercel.app/experiences/astrocytoma-diagnosis-management</loc>
+    <lastmod>2024-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://adilmukhi.vercel.app/experiences/rising-phenom-feature</loc>
+    <lastmod>2024-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
+

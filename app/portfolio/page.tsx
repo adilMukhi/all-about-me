@@ -1,9 +1,13 @@
+import type { Metadata } from "next"
+import { portfolioMetadata } from "../page-metadata"
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
 import { Card } from "@/components/ui/card"
 import { FileText, Code, Palette, Microscope } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+
+export const metadata: Metadata = portfolioMetadata
 
 export default function PortfolioPage() {
   const portfolioCategories = [
