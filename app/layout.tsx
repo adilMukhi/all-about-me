@@ -9,6 +9,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://adilmukhi.vercel.app"),
   title: "Adil Mukhi - Personal Website",
   description:
     "A showcase of my skills, projects, and experiences as a student and aspiring researcher in science, medicine, and research.",
@@ -23,16 +24,35 @@ export const metadata: Metadata = {
     title: "Adil Mukhi - Personal Website",
     description: "A showcase of my skills, projects, and experiences as a student and aspiring researcher.",
     siteName: "Adil Mukhi",
+    images: [
+      {
+        url: "https://adilmukhi.vercel.app/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Adil Mukhi - Personal Website",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Adil Mukhi - Personal Website",
     description: "A showcase of my skills, projects, and experiences as a student and aspiring researcher.",
     creator: "@adilm_0",
+    images: ["https://adilmukhi.vercel.app/og-image.jpg"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://adilmukhi.vercel.app",
   },
   generator: "v0.dev",
 }
@@ -48,7 +68,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="p:domain_verify" content="10e6074a03407f2fd24aed7425a2acd9" />
         <meta name="theme-color" content="#0ea5e9" />
-        <link rel="canonical" href="https://adilmukhi.com" />
+        <link rel="canonical" href="https://adilmukhi.vercel.app" />
 
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -127,15 +147,15 @@ export default function RootLayout({
                 "https://www.instagram.com/adilm.0"
               ],
               "jobTitle": "Student Researcher",
-              "knowsAbout": ["Science", "Medicine", "Research", "Content Creation", "Adil Mukhi", "Adil M"]
+              "knowsAbout": ["Science", "Medicine", "Research", "Content Creation"]
             }
           `}
         </Script>
       </head>
       <body className={inter.className}>
         {/* Background blobs for visual interest */}
-        <div className="bg-blob bg-blob-1"></div>
-        <div className="bg-blob bg-blob-2"></div>
+        <div aria-hidden="true" className="bg-blob bg-blob-1"></div>
+        <div aria-hidden="true" className="bg-blob bg-blob-2"></div>
 
         <noscript>
           <iframe
