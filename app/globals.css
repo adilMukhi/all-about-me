@@ -76,6 +76,8 @@ body {
 
 .hover-effect {
   transition: all 0.5s ease;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .hover-effect:hover {
@@ -84,6 +86,8 @@ body {
 
 .text-hover-effect {
   transition: all 0.5s ease;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .text-hover-effect:hover {
@@ -95,6 +99,8 @@ body {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .button-hover-effect::after {
@@ -115,19 +121,14 @@ body {
 
 .card-hover-effect {
   transition: all 0.8s ease;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .card-hover-effect:hover {
   transform: scale(1.03);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   background-color: #c2dfec;
-}
-
-.text-hover-effect,
-.button-hover-effect,
-.card-hover-effect {
-  will-change: transform;
-  transform: translateZ(0);
 }
 
 .expanded-content {
@@ -218,11 +219,21 @@ body {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 }
 
 .dark .glass-card {
   background: rgba(15, 15, 15, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dark .glass-card:hover {
+  background: rgba(15, 15, 15, 0.35);
 }
 
 @keyframes fadeIn {
@@ -236,5 +247,77 @@ body {
 
 .page-transition {
   animation: fadeIn 0.5s ease-out;
+}
+
+/* Animated background blobs */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Skeleton loading animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Image loading blur-up effect */
+.image-blur-up {
+  filter: blur(20px);
+  transition: filter 0.3s ease-out;
+}
+
+.image-blur-up.loaded {
+  filter: blur(0);
+}
+
+/* Improved scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(14, 165, 233, 0.5);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(14, 165, 233, 0.7);
 }
 

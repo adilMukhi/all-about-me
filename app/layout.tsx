@@ -10,7 +10,30 @@ const inter = Inter({ subsets: ["latin"], display: "swap" })
 
 export const metadata: Metadata = {
   title: "Adil Mukhi - Personal Website",
-  description: "A showcase of my skills, projects, and experiences",
+  description:
+    "A showcase of my skills, projects, and experiences as a student and aspiring researcher in science, medicine, and research.",
+  keywords: "Adil Mukhi, student researcher, science, medicine, research, portfolio, projects, skills",
+  authors: [{ name: "Adil Mukhi" }],
+  creator: "Adil Mukhi",
+  publisher: "Adil Mukhi",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://adilmukhi.com",
+    title: "Adil Mukhi - Personal Website",
+    description: "A showcase of my skills, projects, and experiences as a student and aspiring researcher.",
+    siteName: "Adil Mukhi",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Adil Mukhi - Personal Website",
+    description: "A showcase of my skills, projects, and experiences as a student and aspiring researcher.",
+    creator: "@adilm_0",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   generator: "v0.dev",
 }
 
@@ -24,6 +47,14 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="p:domain_verify" content="10e6074a03407f2fd24aed7425a2acd9" />
+        <meta name="theme-color" content="#0ea5e9" />
+        <link rel="canonical" href="https://adilmukhi.com" />
+
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
@@ -34,6 +65,7 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-KHTXF8N5');
           `}
         </Script>
+
         {/* Google tag (gtag.js) */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=AW-16895913653" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -45,7 +77,8 @@ export default function RootLayout({
             gtag('config', 'AW-16895913653');
           `}
         </Script>
-        {/* Font imports */}
+
+        {/* Font imports with display=swap for better performance */}
         <link
           rel="preload"
           href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap"
@@ -78,6 +111,26 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap" />
+
+        {/* Structured data for better SEO */}
+        <Script id="structured-data" type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Adil Mukhi",
+              "url": "https://adilmukhi.vercel.app",
+              "sameAs": [
+                "https://www.linkedin.com/in/adil-mukhi",
+                "https://github.com/adilMukhi",
+                "https://x.com/adilm_0",
+                "https://www.instagram.com/adilm.0"
+              ],
+              "jobTitle": "Student Researcher",
+              "knowsAbout": ["Science", "Medicine", "Research", "Content Creation", "Adil Mukhi", "Adil M"]
+            }
+          `}
+        </Script>
       </head>
       <body className={inter.className}>
         <noscript>
