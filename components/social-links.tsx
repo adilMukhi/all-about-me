@@ -1,51 +1,58 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Instagram, Linkedin, Github, Link, Building } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { Github, Linkedin, Twitter, Instagram, Mail } from "lucide-react"
 
-const socialLinks = [
-  { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com/in/adil-mukhi-6aba27246", color: "text-blue-500" },
-  { name: "GitHub", icon: Github, url: "https://github.com/adilMukhi", color: "text-gray-700" },
-  { name: "My Club", icon: Building, url: "https://linktr.ee/dr.interested", color: "text-sky-400" },
-  { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/adilm.0/", color: "text-pink-500" },
-  { name: "Linktree", icon: Link, url: "https://linktr.ee/adilm.0", color: "text-green-500" },
-]
-
-export default function SocialLinks() {
+export function SocialLinks() {
   return (
-    <section id="social-links" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-      <h2
-        className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
-        style={{ fontFamily: "Sour Gummy, latin" }}
+    <div className="social-icons-container flex flex-wrap gap-4 sm:gap-6">
+      <Link
+        href="https://github.com/adilMukhi"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-600 hover:text-blue-500 transition-colors duration-300 tooltip"
+        aria-label="GitHub"
       >
-        Connect With Me
-      </h2>
-      <Card className="card-hover-effect">
-        <CardHeader>
-          <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>Let's Stay in Touch</CardTitle>
-        </CardHeader>
-        <CardContent className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-          {socialLinks.map((social) => (
-            <Button
-              key={social.name}
-              variant="outline"
-              className="w-full h-20 flex flex-col items-center justify-center gap-2 transition-all hover:scale-105 button-hover-effect"
-              asChild
-            >
-              <a
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${social.color} hover:text-primary`}
-                style={{ fontFamily: "'Kirang Haerang', cursive", fontSize: "16px" }}
-              >
-                <social.icon className="h-8 w-8" />
-                <span>{social.name}</span>
-              </a>
-            </Button>
-          ))}
-        </CardContent>
-      </Card>
-    </section>
+        <span className="tooltip-text">GitHub</span>
+        <Github className="h-6 w-6 hover:scale-110 transition-transform duration-300" />
+      </Link>
+      <Link
+        href="https://www.linkedin.com/in/adil-mukhi"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-600 hover:text-blue-500 transition-colors duration-300 tooltip"
+        aria-label="LinkedIn"
+      >
+        <span className="tooltip-text">LinkedIn</span>
+        <Linkedin className="h-6 w-6 hover:scale-110 transition-transform duration-300" />
+      </Link>
+      <Link
+        href="https://x.com/adilm_0"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-600 hover:text-blue-500 transition-colors duration-300 tooltip"
+        aria-label="Twitter"
+      >
+        <span className="tooltip-text">Twitter</span>
+        <Twitter className="h-6 w-6 hover:scale-110 transition-transform duration-300" />
+      </Link>
+      <Link
+        href="https://www.instagram.com/adilm.0"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-600 hover:text-blue-500 transition-colors duration-300 tooltip"
+        aria-label="Instagram"
+      >
+        <span className="tooltip-text">Instagram</span>
+        <Instagram className="h-6 w-6 hover:scale-110 transition-transform duration-300" />
+      </Link>
+      <Link
+        href="mailto:contact@adilmukhi.com"
+        className="text-gray-600 hover:text-blue-500 transition-colors duration-300 tooltip"
+        aria-label="Email"
+      >
+        <span className="tooltip-text">Email</span>
+        <Mail className="h-6 w-6 hover:scale-110 transition-transform duration-300" />
+      </Link>
+    </div>
   )
 }
 

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://adilmukhi.com",
+    url: "https://adilmukhi.vercel.app",
     title: "Adil Mukhi - Personal Website",
     description: "A showcase of my skills, projects, and experiences as a student and aspiring researcher.",
     siteName: "Adil Mukhi",
@@ -133,6 +133,10 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={inter.className}>
+        {/* Background blobs for visual interest */}
+        <div className="bg-blob bg-blob-1"></div>
+        <div className="bg-blob bg-blob-2"></div>
+
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-KHTXF8N5"
