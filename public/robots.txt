@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://adilmukhi.vercel.app/sitemap_index.xml
-
