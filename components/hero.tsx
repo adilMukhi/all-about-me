@@ -90,14 +90,14 @@ export default function Hero() {
         </h2>
 
         {/* Social Media Icons - Desktop */}
-        <div className="hidden md:grid grid-cols-6 gap-4 my-4 max-w-2xl mx-auto">
+        <div className="hidden md:flex flex-wrap justify-center gap-4 my-4">
           {socialLinks.map((social, index) => (
             <a
               key={index}
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`${social.color} transition-all duration-300 hover:scale-125 flex justify-center`}
+              className={`${social.color} transition-all duration-300 hover:scale-125`}
               aria-label={social.label}
               title={social.label}
             >
