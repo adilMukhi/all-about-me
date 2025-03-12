@@ -14,7 +14,7 @@ export const homeMetadata: Metadata = {
     url: "/",
     images: [
       {
-        url: "/favicon.ico",
+        url: "/profile-pic.jpg",
         width: 1200,
         height: 630,
         alt: "Adil Mukhi - Student Researcher & Aspiring Medical Professional",
@@ -37,7 +37,7 @@ export const backgroundMetadata: Metadata = {
     url: "/background",
     images: [
       {
-        url: "/favicon.ico",
+        url: "/profile-pic.jpg",
         width: 1200,
         height: 630,
         alt: "Adil Mukhi's Background & Experience",
@@ -60,7 +60,7 @@ export const portfolioMetadata: Metadata = {
     url: "/portfolio",
     images: [
       {
-        url: "/favicon.ico",
+        url: "/profile-pic.jpg",
         width: 1200,
         height: 630,
         alt: "Adil Mukhi's Portfolio",
@@ -83,7 +83,7 @@ export const experiencesMetadata: Metadata = {
     url: "/experiences",
     images: [
       {
-        url: "/favicon.ico",
+        url: "/profile-pic.jpg",
         width: 1200,
         height: 630,
         alt: "Adil Mukhi's Experiences & Blog",
@@ -97,7 +97,7 @@ export const writingPortfolioMetadata: Metadata = {
   description:
     "Explore Adil Mukhi's published articles, research papers, and written works on healthcare, science, and advocacy topics.",
   alternates: {
-    canonical: "/favicon.ico",
+    canonical: "/portfolio/writing",
   },
   openGraph: {
     title: "Writing Portfolio | Adil Mukhi",
@@ -106,7 +106,7 @@ export const writingPortfolioMetadata: Metadata = {
     url: "/portfolio/writing",
     images: [
       {
-        url: "/og-writing.jpg",
+        url: "/profile-pic.jpg",
         width: 1200,
         height: 630,
         alt: "Adil Mukhi's Writing Portfolio",
@@ -129,7 +129,7 @@ export const codingPortfolioMetadata: Metadata = {
     url: "/portfolio/coding",
     images: [
       {
-        url: "/favicon.ico",
+        url: "/profile-pic.jpg",
         width: 1200,
         height: 630,
         alt: "Adil Mukhi's Coding Portfolio",
@@ -152,7 +152,7 @@ export const researchPortfolioMetadata: Metadata = {
     url: "/portfolio/research",
     images: [
       {
-        url: "/favicon.ico",
+        url: "/profile-pic.jpg",
         width: 1200,
         height: 630,
         alt: "Adil Mukhi's Research Portfolio",
@@ -175,7 +175,7 @@ export const artSportsPortfolioMetadata: Metadata = {
     url: "/portfolio/art-sports",
     images: [
       {
-        url: "/favicon.ico",
+        url: "/profile-pic.jpg",
         width: 1200,
         height: 630,
         alt: "Adil Mukhi's Art & Sports Portfolio",

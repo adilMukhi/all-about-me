@@ -13,6 +13,48 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "Exploring Innovation at KITE: The World’s #1 Rehab Research Facility",
+    subtitle: "A behind-the-scenes look at groundbreaking rehab research at UHN’s KITE labs.",
+    date: "March 12, 2025",
+    image: "/blog/kite (4).JPG",
+    slug: "kite-tour",
+    excerpt:
+      "Had the chance to tour KITE, the world's top rehab research facility, and see how cutting-edge innovations are transforming lives...",
+    content: `
+      <p>Stepping into KITE, part of the University Health Network, felt like entering the future of rehabilitation science. Ranked the <strong>#1 rehab research facility in the world</strong>, KITE is where engineers, scientists, and healthcare professionals come together to push the boundaries of what’s possible in mobility, accessibility, and independent living.</p>
+
+      <p>The tour was nothing short of fascinating. Every lab had a unique focus, showing how real-world challenges are tackled through cutting-edge research. Here are some of the highlights:</p>
+
+      <ul>
+        <li><strong>Winter Lab:</strong> Ever wondered which winter boots actually prevent slips and falls? KITE’s Winter Lab puts footwear to the test on icy surfaces under controlled conditions. Seeing this in action made me appreciate how crucial seemingly simple innovations are in preventing injuries—especially in Canada’s harsh winters.</li>
+        
+        <li><strong>Home Lab:</strong> This lab is all about improving living conditions for individuals with mobility impairments, aging adults, and those recovering from injuries. Researchers analyze how different home setups can enhance safety and independence, from smart-home technology to adaptive furniture.</li>
+        
+        <li><strong>Street Lab:</strong> Urban environments can be challenging for individuals with mobility issues. The Street Lab simulates real-world street conditions—think uneven sidewalks, ramps, and public transit obstacles—to test and develop solutions that make cities more accessible for everyone.</li>
+        
+        <li><strong>Falls Lab:</strong> Falls are a leading cause of injury among older adults. This lab uses motion-tracking technology and AI analysis to study how falls happen and how they can be prevented through better footwear, flooring, and assistive devices.</li>
+
+        <li><strong>Driving Simulation Lab:</strong> Getting behind the wheel after an injury or neurological condition can be daunting. This lab uses advanced driving simulators to assess and retrain individuals, ensuring they can drive safely before returning to the road.</li>
+      </ul>
+
+      <p>Walking through these labs, I was struck by how research at KITE is directly shaping the future of rehabilitation. Every experiment, every test, and every prototype is aimed at solving real-world problems, making daily life safer and more accessible for millions of people.</p>
+
+      <p>A huge thank you to the KITE team for this insightful experience! It’s inspiring to see the blend of engineering, medicine, and technology coming together to improve lives. Looking forward to following their groundbreaking work in the years to come.</p>
+    `,
+    images: [
+      "/blog/kite (5).JPG",
+      "/blog/kite (4).JPG",
+      "/blog/kite (3).JPG",
+      "/blog/kite (1).JPG",
+      "/blog/kite (2).JPG",
+      "/blog/kite (6).JPG",
+      "/blog/kite (7).JPG",
+      "/blog/kite (8).JPG",
+      "/blog/kite (9).JPG",
+    ],
+    learnMoreUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7305615801456234499/",
+  },
+  {
     title: "Inside the ER: A Day of Hands-On Training at Sunnybrook Health Sciences Centre",
     subtitle: "What does it take to save a life in the ER? I found out firsthand!",
     date: "February 14, 2025",
