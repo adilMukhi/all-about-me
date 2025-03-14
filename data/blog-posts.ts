@@ -59,7 +59,7 @@ export const blogPosts: BlogPost[] = [
     subtitle: "What does it take to save a life in the ER? I found out firsthand!",
     date: "February 14, 2025",
     image: "/blog/er-training (1).JPG",
-    slug: "inside-er-training-sunnybrook",
+    slug: "er-training",
     excerpt:
       "A firsthand look at ER training at Sunnybrook, practicing life-saving skills in a high-stakes environment...",
     content: `
@@ -96,7 +96,7 @@ export const blogPosts: BlogPost[] = [
     subtitle: "Through my lens: The future of innovation in action!",
     date: "March 2, 2025",
     image: "/blog/stem-symposiumOne.jpg",
-    slug: "photography-stem-symposium",
+    slug: "stem-symposium",
     excerpt:
       "A visual journey through the Glenforest STEM Symposium, capturing the excitement of science and innovation...",
     content: `
@@ -121,7 +121,7 @@ export const blogPosts: BlogPost[] = [
     subtitle: "Unraveling the mysteries of brain tumors—what we know and where we're headed",
     date: "October 4, 2024",
     image: "/blog/research (1).jpg",
-    slug: "astrocytoma-diagnosis-management",
+    slug: "astrocytoma-research",
     excerpt: "Co-authoring a published paper on astrocytomas and receiving recognition for research excellence...",
     content: `
       <p>Brain tumors are one of the most complex and challenging areas of medical research, and my team and I had the privilege of co-authoring a paper on astrocytomas, a type of brain tumor that affects thousands of patients worldwide.</p>
