@@ -13,6 +13,49 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    "title": "PharmPath Program: An In-Depth Experience at the Leslie Dan Faculty of Pharmacy",
+    "subtitle": "A comprehensive look at the hands-on pharmacy experience and tour of the University of Toronto's pharmacy labs.",
+    "date": "March 15, 2025",
+    "image": "/blog/pharm (10).jpg",
+    "slug": "pharmacy",
+    "excerpt": "Had the chance to participate in the PharmPath program at the University of Toronto’s Leslie Dan Faculty of Pharmacy, diving into the pharmaceutical process and lab techniques while learning from top professionals in the field.",
+    "content": 
+      "<p>Yesterday, I had the incredible opportunity to participate in the PharmPath program at the <strong>Leslie Dan Faculty of Pharmacy</strong> at the <strong>University of Toronto</strong>, one of Canada's leading centers for pharmacy education and research. The program provided a unique, hands-on experience that spanned everything from patient interactions and pharmaceutical dispensing to lab-based drug production.</p>" +
+      
+      "<p>The day began with an inspiring keynote speech by the <strong>founder of Black Pharmacy Professionals of Canada</strong> and a multi-pharmacy owner. The speaker emphasized the importance of diversity in healthcare, as well as the evolving role of pharmacists in improving patient outcomes, particularly in underserved communities. The insights shared were motivating and aligned perfectly with the innovative work being done at the Faculty of Pharmacy.</p>" +
+      
+      "<p>We then dove into a case study led by faculty members, where we were walked through the entire process of dispensing pharmaceuticals. Using the faculty's specialized database, we checked and verified dosages, including pediatric doses, ensuring accuracy and patient safety. The hands-on exercise was focused on <strong>dispensing amoxicillin</strong> to a child with an ear infection, a common scenario that required attention to detail in both medication dosage and patient communication.</p>" +
+      
+      "<p>What made the experience even more enriching was our subsequent work in the <strong>pharmacy lab</strong>, which is regularly used by pharmacy students. Under the guidance of expert faculty members, we learned the intricacies of pharmaceutical production—from the creation of tablets to mixing drugs with water to form a prescribed solution. In one particularly interesting exercise, we produced a substance that closely resembled <strong>mango jelly</strong>—yet it was actually a medicinal product! The process involved understanding the delicate balance of ingredients required for consistency, taste, and therapeutic effectiveness.</p>" +
+      
+      "<p>Throughout the day, it became clear just how critical the work being done in pharmacy is, from ensuring proper drug administration to innovating new methods of drug production. It was eye-opening to see how pharmacists don’t just dispense medication but play a central role in the entire healthcare process, from diagnosis to recovery.</p>" +
+      
+      "<p>Finally, we capped off the day with a comprehensive <strong>tour of the University of Toronto campus</strong>, exploring its libraries, classrooms, and the stunning architecture that makes U of T such a prestigious institution. The campus was bustling with students and faculty, adding an extra layer of energy to an already exciting day.</p>" +
+      
+      "<p>The PharmPath program not only deepened my understanding of the pharmacy profession but also gave me invaluable exposure to the practical skills that will shape the future of healthcare. I’m grateful to have had the chance to participate and learn from some of the brightest minds in the field. Looking forward to applying this experience to my future aspirations in the healthcare industry!</p>",
+    
+    "images": [
+      "/blog/pharm (4).jpg",
+      "/blog/pharm (3).jpg",
+      "/blog/pharm (8).jpg",
+      "/blog/tour (1).jpg",
+      "/blog/tour (2).jpg",
+      "/blog/tour (3).jpg",
+      "/blog/pharm (7).jpg",
+      "/blog/pharm (6).jpg",
+      "/blog/pharm (5).jpg",
+      "/blog/pharm (10).jpg",
+      "/blog/pharm (9).jpg",
+      "/blog/pharm (2).jpg",
+      "/blog/pharm (1).jpg",
+      "/blog/tour (4).jpg",
+      "/blog/tour (5).jpg",
+      "/blog/tour (6).jpg",
+    ],
+    
+    "learnMoreUrl": "https://www.pharmacy.utoronto.ca/pharmpath"
+  },  
+  {
     title: "Exploring Innovation at KITE: The World’s #1 Rehab Research Facility",
     subtitle: "A behind-the-scenes look at groundbreaking rehab research at UHN’s KITE labs.",
     date: "March 12, 2025",
