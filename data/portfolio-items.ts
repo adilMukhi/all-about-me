@@ -153,12 +153,12 @@ export const codingProjects: CodingProject[] = [
     codeLink: "https://github.com/StemHiss-int/website",
   },
   {
-    title: "Dr. Interested Website (In Progress)",
+    title: "Dr. Interested Website",
     description:
       "A website for the Dr. Interested club, featuring webinar schedules, research proposal competitions, and resources for aspiring medical professionals.",
-    image: "/portfolio/coding/drinterested.jpg",
+    image: "/portfolio/coding/drinterested.png",
     tags: ["Next.js", "React", "Tailwind CSS"],
-    demoLink: "https://drinterested.vercel.app/",
+    demoLink: "https://drinterested-int.vercel.app/",
     codeLink: "https://github.com/kishys/drinterested-site",
   },
   {
