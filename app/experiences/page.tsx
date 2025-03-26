@@ -5,8 +5,8 @@ import PageLayout from "@/components/page-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
 import Image from "next/image"
-import { Calendar, ArrowRight } from "lucide-react"
 import { blogPosts } from "@/data/blog-posts"
+import { Calendar, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = experiencesMetadata
 
@@ -23,10 +23,7 @@ export default function ExperiencesPage() {
             >
               Experiences
             </h1>
-            <p
-              className="text-center text-muted-foreground max-w-3xl mx-auto mb-16 text-lg"
-              style={{ fontFamily: "'Times New Roman', Times, serif" }}
-            >
+            <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-16 text-lg">
               Personal stories and reflections from my journey in education, research, and leadership.
             </p>
 
@@ -70,13 +67,8 @@ export default function ExperiencesPage() {
                       <CardDescription className="text-base">{post.subtitle}</CardDescription>
                     </CardHeader>
                     <CardContent className="flex flex-col">
-                      <p className="mb-4 line-clamp-2" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-                        {post.excerpt}
-                      </p>
-                      <div
-                        className="mt-auto flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform"
-                        style={{ fontFamily: "'Kirang Haerang', cursive" }}
-                      >
+                      <p className="mb-4 line-clamp-2">{post.excerpt}</p>
+                      <div className="mt-auto flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform">
                         Read more <ArrowRight className="ml-1 h-4 w-4" />
                       </div>
                     </CardContent>

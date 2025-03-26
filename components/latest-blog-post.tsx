@@ -30,11 +30,10 @@ export function LatestBlogPost() {
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/3 relative h-[250px] md:h-auto">
             <Image
-              src={latestPost.image || "/placeholder.svg?height=200&width=400"}
+              src={latestPost.image || "/placeholder.svg?height=400&width=300"}
               alt={latestPost.title}
               fill
               priority
-              sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent pointer-events-none" />
@@ -48,21 +47,15 @@ export function LatestBlogPost() {
                 {latestPost.subtitle} • {latestPost.date}
               </p>
             </div>
-            <p className="mb-6 line-clamp-2" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+            <p className="mb-6 line-clamp-2">
               Join me as I share my latest experiences in medical research and healthcare innovation...
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex gap-4">
               <Button asChild>
-                <Link href={`/experiences/${latestPost.slug}`} style={{ fontFamily: "'Kirang Haerang', cursive" }}>
-                  Read More
-                </Link>
+                <Link href={`/experiences/${latestPost.slug}`}>Read More</Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link
-                  href="/experiences"
-                  className="flex items-center"
-                  style={{ fontFamily: "'Kirang Haerang', cursive" }}
-                >
+                <Link href="/experiences" className="flex items-center">
                   View All Posts
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>

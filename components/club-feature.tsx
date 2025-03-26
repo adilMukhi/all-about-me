@@ -5,7 +5,7 @@ import { Building, Users, BookOpen, Globe } from "lucide-react"
 
 export default function ClubFeature() {
   return (
-    <section className="container py-16">
+    <section className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <h2
         className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
         style={{ fontFamily: "Sour Gummy, latin" }}
@@ -15,17 +15,11 @@ export default function ClubFeature() {
       <Card className="bg-gradient-to-br from-blue-50 to-teal-50 overflow-hidden glass-card">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 relative min-h-[250px] md:min-h-[300px]">
-            <Image
-              src="/drinterested.jpg"
-              alt="Dr. Interested Club"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
+            <Image src="/drinterested.jpg" alt="Dr. Interested Club" fill className="object-cover" />
           </div>
           <div className="md:w-1/2 p-6 md:p-8">
             <CardHeader className="p-0 mb-4">
-              <CardTitle className="text-2xl md:text-3xl" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+              <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }} className="text-2xl md:text-3xl">
                 Inspiring Future Medical Professionals
               </CardTitle>
               <CardDescription className="text-base md:text-lg">
@@ -33,35 +27,30 @@ export default function ClubFeature() {
               </CardDescription>
             </CardHeader>
             <CardContent className="p-0">
-              <p className="mb-4" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+              <p className="mb-4">
                 Dr. Interested is a global community I founded to inspire and support students interested in healthcare
                 careers through research, mentorship, and collaborative opportunities.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center gap-2">
-                  <Users className="h-5 w-5 text-blue-500 flex-shrink-0" />
+                  <Users className="h-5 w-5 text-blue-500" />
                   <span>30+ Executive Members</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Building className="h-5 w-5 text-blue-500 flex-shrink-0" />
+                  <Building className="h-5 w-5 text-blue-500" />
                   <span>Global Reach</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <BookOpen className="h-5 w-5 text-blue-500 flex-shrink-0" />
+                  <BookOpen className="h-5 w-5 text-blue-500" />
                   <span>Research Opportunities</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Globe className="h-5 w-5 text-blue-500 flex-shrink-0" />
+                  <Globe className="h-5 w-5 text-blue-500" />
                   <span>375+ Cards Distributed</span>
                 </div>
               </div>
-              <Button size="lg" className="button-hover-effect w-full sm:w-auto">
-                <a
-                  href="https://linktr.ee/dr.interested"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ fontFamily: "'Kirang Haerang', cursive" }}
-                >
+              <Button size="lg" className="button-hover-effect">
+                <a href="https://linktr.ee/dr.interested" target="_blank" rel="noopener noreferrer">
                   Visit Dr. Interested
                 </a>
               </Button>
