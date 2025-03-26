@@ -110,10 +110,7 @@ export default function Header() {
           <div className="mr-4 flex items-center">
             <Link href="/" className="mr-6 flex items-center space-x-2 hover:opacity-80 transition-opacity">
               <Image src="/pixtin.jpg" alt="Profile picture" width={40} height={40} className="rounded-full" priority />
-              <span
-                className="hidden font-bold sm:inline-block text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 text-hover-effect"
-                style={{ fontFamily: "Sour Gummy, latin" }}
-              >
+              <span className="hidden font-bold sm:inline-block text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 text-hover-effect">
                 Adil Mukhi
               </span>
             </Link>

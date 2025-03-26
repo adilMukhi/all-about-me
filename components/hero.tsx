@@ -96,7 +96,6 @@ export default function Hero() {
           className={`text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-primary to-teal-500 transition-all duration-700 ease-out ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
-          style={{ fontFamily: "Sour Gummy, latin" }}
         >
           Hi, I'm Adil Mukhi!
         </h1>
