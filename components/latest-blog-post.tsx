@@ -19,7 +19,12 @@ export function LatestBlogPost() {
 
   return (
     <section className="container py-16">
-      <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">My Latest Experience</h2>
+      <h2
+        className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+        style={{ fontFamily: "Sour Gummy, latin" }}
+      >
+        My Latest Experience
+      </h2>
 
       <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-blue-50 to-transparent glass-card">
         <div className="flex flex-col md:flex-row">
@@ -36,20 +41,28 @@ export function LatestBlogPost() {
           </div>
           <div className="p-6 md:w-2/3">
             <div className="mb-4">
-              <h3 className="text-2xl font-bold mb-2 subheading">{latestPost.title}</h3>
+              <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+                {latestPost.title}
+              </h3>
               <p className="text-muted-foreground">
                 {latestPost.subtitle} • {latestPost.date}
               </p>
             </div>
-            <p className="mb-6 line-clamp-2">
+            <p className="mb-6 line-clamp-2" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
               Join me as I share my latest experiences in medical research and healthcare innovation...
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild>
-                <Link href={`/experiences/${latestPost.slug}`}>Read More</Link>
+                <Link href={`/experiences/${latestPost.slug}`} style={{ fontFamily: "'Kirang Haerang', cursive" }}>
+                  Read More
+                </Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link href="/experiences" className="flex items-center">
+                <Link
+                  href="/experiences"
+                  className="flex items-center"
+                  style={{ fontFamily: "'Kirang Haerang', cursive" }}
+                >
                   View All Posts
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>

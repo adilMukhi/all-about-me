@@ -6,13 +6,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
 import "./globals.css"
 
-// Use variable font for better performance
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-})
-
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
 export const metadata: Metadata = {
@@ -112,6 +105,16 @@ export default function RootLayout({
         <meta name="p:domain_verify" content="10e6074a03407f2fd24aed7425a2acd9" />
         <meta name="theme-color" content="#0ea5e9" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+        {/* Font imports */}
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap" />
 
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

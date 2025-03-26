@@ -5,7 +5,6 @@ import PageLayout from "@/components/page-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
 import Image from "next/image"
-import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import { Calendar, ArrowRight } from "lucide-react"
 import { blogPosts } from "@/data/blog-posts"
 
@@ -18,12 +17,16 @@ export default function ExperiencesPage() {
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
           <div className="container">
-            <SEOBreadcrumbs items={[{ label: "Experiences", href: "/experiences", active: true }]} />
-
-            <h1 className="text-4xl font-bold tracking-tighter text-center mb-8 sm:text-5xl md:text-6xl">
+            <h1
+              className="text-4xl font-bold tracking-tighter text-center mb-8 sm:text-5xl md:text-6xl"
+              style={{ fontFamily: "Sour Gummy, latin" }}
+            >
               Experiences
             </h1>
-            <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-16 text-lg">
+            <p
+              className="text-center text-muted-foreground max-w-3xl mx-auto mb-16 text-lg"
+              style={{ fontFamily: "'Times New Roman', Times, serif" }}
+            >
               Personal stories and reflections from my journey in education, research, and leadership.
             </p>
 
@@ -47,7 +50,6 @@ export default function ExperiencesPage() {
                         src={post.image || "/placeholder.svg?height=200&width=400"}
                         alt={post.title}
                         fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-70" />
@@ -59,12 +61,22 @@ export default function ExperiencesPage() {
                       </div>
                     </div>
                     <CardHeader>
-                      <CardTitle className="group-hover:text-primary transition-colors">{post.title}</CardTitle>
+                      <CardTitle
+                        style={{ fontFamily: "'Bubblegum Sans', cursive" }}
+                        className="group-hover:text-primary transition-colors"
+                      >
+                        {post.title}
+                      </CardTitle>
                       <CardDescription className="text-base">{post.subtitle}</CardDescription>
                     </CardHeader>
                     <CardContent className="flex flex-col">
-                      <p className="mb-4 line-clamp-2">{post.excerpt}</p>
-                      <div className="mt-auto flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform">
+                      <p className="mb-4 line-clamp-2" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+                        {post.excerpt}
+                      </p>
+                      <div
+                        className="mt-auto flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform"
+                        style={{ fontFamily: "'Kirang Haerang', cursive" }}
+                      >
                         Read more <ArrowRight className="ml-1 h-4 w-4" />
                       </div>
                     </CardContent>

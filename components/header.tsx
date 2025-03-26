@@ -110,7 +110,10 @@ export default function Header() {
           <div className="mr-4 flex items-center">
             <Link href="/" className="mr-6 flex items-center space-x-2 hover:opacity-80 transition-opacity">
               <Image src="/pixtin.jpg" alt="Profile picture" width={40} height={40} className="rounded-full" priority />
-              <span className="hidden font-bold sm:inline-block text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 text-hover-effect">
+              <span
+                className="hidden font-bold sm:inline-block text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 text-hover-effect"
+                style={{ fontFamily: "Sour Gummy, latin" }}
+              >
                 Adil Mukhi
               </span>
             </Link>
@@ -149,7 +152,7 @@ export default function Header() {
           <div id="mobile-menu" className="fixed inset-0 top-16 z-40 bg-background/98 backdrop-blur-sm">
             <div className="h-[calc(100vh-4rem)] overflow-y-auto">
               <div className="container py-6">
-                <nav className="flex flex-col space-y-4 subheading">
+                <nav className="flex flex-col space-y-4">
                   {navConfig.mainNav.map((item) => (
                     <div key={item.title} className="border-b border-gray-100 last:border-0 pb-4 last:pb-0">
                       <MobileNavItem item={item} />
