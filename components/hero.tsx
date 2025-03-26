@@ -93,14 +93,19 @@ export default function Hero() {
 
       <div className="container flex flex-col items-center justify-center gap-4 text-center relative z-10">
         <h1
-          className={`text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-primary to-teal-500 transition-all duration-700 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          className={`text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-primary to-teal-500 transition-all duration-700 ease-out ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}
+          style={{ fontFamily: "Sour Gummy, latin" }}
         >
           Hi, I'm Adil Mukhi!
         </h1>
 
         {/* Social Media Icons - Desktop */}
         <div
-          className={`hidden md:flex flex-wrap justify-center gap-4 my-4 transition-all duration-700 delay-300 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          className={`hidden md:flex flex-wrap justify-center gap-4 my-4 transition-all duration-700 delay-300 ease-out ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}
         >
           {socialLinks.map((social, index) => (
             <a
@@ -137,13 +142,17 @@ export default function Hero() {
         </div>
 
         <p
-          className={`max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 transition-all duration-700 delay-500 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          className={`max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 transition-all duration-700 delay-500 ease-out ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}
         >
           I'm a passionate student and aspiring researcher with a strong interest in science, medicine, and research. I
           enjoy exploring complex topics, conducting research, and creating engaging content.
         </p>
         <div
-          className={`flex gap-4 flex-wrap justify-center transition-all duration-700 delay-700 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          className={`flex gap-4 flex-wrap justify-center transition-all duration-700 delay-700 ease-out ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}
         >
           <Button asChild className="button-hover-effect relative overflow-hidden group">
             <a href="#contact">
@@ -172,3 +181,4 @@ export default function Hero() {
     </section>
   )
 }
+

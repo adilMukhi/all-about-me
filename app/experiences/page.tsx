@@ -4,8 +4,7 @@ import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
-import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
-import ImageWithFallback from "@/components/image-with-fallback"
+import Image from "next/image"
 import { Calendar, ArrowRight } from "lucide-react"
 import { blogPosts } from "@/data/blog-posts"
 
@@ -18,9 +17,10 @@ export default function ExperiencesPage() {
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
           <div className="container">
-            <SEOBreadcrumbs items={[{ label: "Experiences", href: "/experiences", active: true }]} />
-
-            <h1 className="text-4xl font-bold tracking-tighter text-center mb-8 sm:text-5xl md:text-6xl">
+            <h1
+              className="text-4xl font-bold tracking-tighter text-center mb-8 sm:text-5xl md:text-6xl"
+              style={{ fontFamily: "Sour Gummy, latin" }}
+            >
               Experiences
             </h1>
             <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-16 text-lg">
@@ -43,11 +43,10 @@ export default function ExperiencesPage() {
                     }`}
                   >
                     <div className="relative h-56 overflow-hidden">
-                      <ImageWithFallback
-                        src={post.image || "/placeholder.svg"}
+                      <Image
+                        src={post.image || "/placeholder.svg?height=200&width=400"}
                         alt={post.title}
                         fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-70" />
@@ -59,7 +58,10 @@ export default function ExperiencesPage() {
                       </div>
                     </div>
                     <CardHeader>
-                      <CardTitle className="group-hover:text-primary transition-colors subheading">
+                      <CardTitle
+                        style={{ fontFamily: "'Bubblegum Sans', cursive" }}
+                        className="group-hover:text-primary transition-colors"
+                      >
                         {post.title}
                       </CardTitle>
                       <CardDescription className="text-base">{post.subtitle}</CardDescription>

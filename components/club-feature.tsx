@@ -1,4 +1,4 @@
-import ImageWithFallback from "@/components/image-with-fallback"
+import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Building, Users, BookOpen, Globe } from "lucide-react"
@@ -10,7 +10,7 @@ export default function ClubFeature() {
       <Card className="bg-gradient-to-br from-blue-50 to-teal-50 overflow-hidden glass-card">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 relative min-h-[250px] md:min-h-[300px]">
-            <ImageWithFallback
+            <Image
               src="/drinterested.jpg"
               alt="Dr. Interested Club"
               fill

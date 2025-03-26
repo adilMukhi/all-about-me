@@ -1,5 +1,5 @@
 import Link from "next/link"
-import ImageWithFallback from "@/components/image-with-fallback"
+import Image from "next/image"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
@@ -24,8 +24,8 @@ export function LatestBlogPost() {
       <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-blue-50 to-transparent glass-card">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/3 relative h-[250px] md:h-auto">
-            <ImageWithFallback
-              src={latestPost.image || "/placeholder.svg"}
+            <Image
+              src={latestPost.image || "/placeholder.svg?height=200&width=400"}
               alt={latestPost.title}
               fill
               priority
