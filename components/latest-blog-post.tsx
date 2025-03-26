@@ -1,5 +1,5 @@
 import Link from "next/link"
-import Image from "next/image"
+import ImageWithFallback from "@/components/image-with-fallback"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
@@ -19,30 +19,24 @@ export function LatestBlogPost() {
 
   return (
     <section className="container py-16">
-      <h2
-        className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
-        style={{ fontFamily: "Sour Gummy, latin" }}
-      >
-        My Latest Experience
-      </h2>
+      <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">My Latest Experience</h2>
 
       <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-blue-50 to-transparent glass-card">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/3 relative h-[250px] md:h-auto">
-            <Image
-              src={latestPost.image || "/placeholder.svg?height=400&width=300"}
+            <ImageWithFallback
+              src={latestPost.image || "/placeholder.svg"}
               alt={latestPost.title}
               fill
               priority
+              sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent pointer-events-none" />
           </div>
           <div className="p-6 md:w-2/3">
             <div className="mb-4">
-              <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
-                {latestPost.title}
-              </h3>
+              <h3 className="text-2xl font-bold mb-2 subheading">{latestPost.title}</h3>
               <p className="text-muted-foreground">
                 {latestPost.subtitle} • {latestPost.date}
               </p>
@@ -50,7 +44,7 @@ export function LatestBlogPost() {
             <p className="mb-6 line-clamp-2">
               Join me as I share my latest experiences in medical research and healthcare innovation...
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild>
                 <Link href={`/experiences/${latestPost.slug}`}>Read More</Link>
               </Button>

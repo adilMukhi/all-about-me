@@ -10,7 +10,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        times: ["Times New Roman", "Times", "serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        heading: ["var(--font-heading)", "sans-serif"],
+        subheading: ["var(--font-subheading)", "cursive"],
       },
     },
     container: {

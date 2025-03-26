@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
@@ -13,7 +13,18 @@ import { cn } from "@/lib/utils"
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [expandedItem, setExpandedItem] = useState<string | null>(null)
+  const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
+
+  // Track scroll position for header styling
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const toggleExpanded = (title: string) => {
     setExpandedItem(expandedItem === title ? null : title)
@@ -31,7 +42,7 @@ export default function Header() {
           <Link
             href={item.href}
             className={cn(
-              "block py-2 transition-colors",
+              "block py-2 transition-colors text-base",
               isActive ? "text-blue-500 font-medium" : "text-foreground hover:text-blue-500",
             )}
             onClick={() => {
@@ -51,6 +62,8 @@ export default function Header() {
                 toggleExpanded(item.title)
               }}
               className="p-2"
+              aria-expanded={isExpanded}
+              aria-label={isExpanded ? "Collapse menu" : "Expand menu"}
             >
               {isExpanded ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </Button>
@@ -87,15 +100,17 @@ export default function Header() {
       {/* Spacer div for fixed header */}
       <div className="h-16" />
 
-      <header className="fixed top-0 left-0 right-0 z-40 bg-background border-b shadow-sm">
+      <header
+        className={cn(
+          "fixed top-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-sm border-b transition-shadow duration-300",
+          isScrolled ? "shadow-md" : "",
+        )}
+      >
         <div className="container flex h-16 items-center">
-          <div className="mr-4 flex items-center" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+          <div className="mr-4 flex items-center">
             <Link href="/" className="mr-6 flex items-center space-x-2 hover:opacity-80 transition-opacity">
-              <Image src="/pixtin.jpg" alt="Profile picture" width={40} height={40} className="rounded-full" />
-              <span
-                className="hidden font-bold sm:inline-block text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 text-hover-effect"
-                style={{ fontFamily: "Sour Gummy, latin" }}
-              >
+              <Image src="/pixtin.jpg" alt="Profile picture" width={40} height={40} className="rounded-full" priority />
+              <span className="hidden font-bold sm:inline-block text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 text-hover-effect">
                 Adil Mukhi
               </span>
             </Link>
@@ -131,10 +146,10 @@ export default function Header() {
 
         {/* Mobile menu overlay */}
         {isMenuOpen && (
-          <div id="mobile-menu" className="fixed inset-0 top-16 z-40 bg-background">
+          <div id="mobile-menu" className="fixed inset-0 top-16 z-40 bg-background/98 backdrop-blur-sm">
             <div className="h-[calc(100vh-4rem)] overflow-y-auto">
               <div className="container py-6">
-                <nav className="flex flex-col space-y-4" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+                <nav className="flex flex-col space-y-4 subheading">
                   {navConfig.mainNav.map((item) => (
                     <div key={item.title} className="border-b border-gray-100 last:border-0 pb-4 last:pb-0">
                       <MobileNavItem item={item} />

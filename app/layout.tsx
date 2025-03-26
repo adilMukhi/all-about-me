@@ -6,7 +6,14 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"], display: "swap" })
+// Use variable font for better performance
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+})
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
 export const metadata: Metadata = {
   title: {
@@ -30,17 +37,17 @@ export const metadata: Metadata = {
     "IB student",
     "youth researcher",
   ],
-  authors: [{ name: "Adil Mukhi", url: "https://adilmukhi.vercel.app" }],
+  authors: [{ name: "Adil Mukhi", url: siteUrl }],
   creator: "Adil Mukhi",
   publisher: "Adil Mukhi",
-  metadataBase: new URL("https://adilmukhi.vercel.app"),
+  metadataBase: new URL(siteUrl),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://adilmukhi.vercel.app",
+    url: siteUrl,
     title: "Adil Mukhi - Student Researcher & Aspiring Medical Professional",
     description:
       "Adil Mukhi is a student researcher and aspiring medical professional with experience in healthcare, research, and leadership. Explore his projects, publications, and achievements.",
@@ -100,17 +107,22 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`scroll-smooth ${inter.variable}`}>
       <head>
         <meta name="p:domain_verify" content="10e6074a03407f2fd24aed7425a2acd9" />
         <meta name="theme-color" content="#0ea5e9" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
 
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
 
-        {/* Google Tag Manager */}
+        {/* Preload critical assets */}
+        <link rel="preload" href="/profile-pic.jpg" as="image" />
+        <link rel="preload" href="/pixtin.jpg" as="image" />
+
+        {/* Google Tag Manager - load with strategy="afterInteractive" for better performance */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -133,50 +145,16 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Font imports with display=swap for better performance */}
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap"
-          as="style"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
-          as="style"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"
-          as="style"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap"
-          as="style"
-          crossOrigin="anonymous"
-        />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
-        />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap" />
-
         {/* Structured data for Person */}
         <Script id="structured-data-person" type="application/ld+json">
           {`
             {
               "@context": "https://schema.org",
               "@type": "Person",
-              "@id": "https://adilmukhi.vercel.app/#person",
+              "@id": "${siteUrl}/#person",
               "name": "Adil Mukhi",
-              "url": "https://adilmukhi.vercel.app",
-              "image": "https://adilmukhi.vercel.app/profile-pic.jpg",
+              "url": "${siteUrl}",
+              "image": "${siteUrl}/profile-pic.jpg",
               "sameAs": [
                 "https://www.linkedin.com/in/adil-mukhi",
                 "https://github.com/adilMukhi",
@@ -206,12 +184,12 @@ export default function RootLayout({
             {
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "@id": "https://adilmukhi.vercel.app/#website",
-              "url": "https://adilmukhi.vercel.app",
+              "@id": "${siteUrl}/#website",
+              "url": "${siteUrl}",
               "name": "Adil Mukhi - Student Researcher & Aspiring Medical Professional",
               "description": "Adil Mukhi is a student researcher and aspiring medical professional with experience in healthcare, research, and leadership.",
               "publisher": {
-                "@id": "https://adilmukhi.vercel.app/#person"
+                "@id": "${siteUrl}/#person"
               },
               "inLanguage": "en-US"
             }

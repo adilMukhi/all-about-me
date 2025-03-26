@@ -79,20 +79,21 @@ export default function Hero() {
       color: "text-yellow-500 hover:text-yellow-600",
     },
   ]
+  
+  // Only show the most important social links on mobile
+  const mobileSocialLinks = socialLinks.slice(0, 5)
 
   return (
     <section className="bg-gradient-to-b from-primary/5 to-primary/10 py-16 relative overflow-hidden">
-      {/* Animated background elements */}
+      {/* Simplified background elements with better performance */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute top-96 -right-24 w-96 h-96 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-24 left-1/2 w-96 h-96 bg-primary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div className="absolute top-96 -right-24 w-96 h-96 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
       </div>
 
       <div className="container flex flex-col items-center justify-center gap-4 text-center relative z-10">
         <h1
-          className={`text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl normal-case bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-primary to-teal-500 transition-all duration-700 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-          style={{ fontFamily: "DynaPuff, serif", letterSpacing: "0.1em" }}
+          className={`text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-primary to-teal-500 transition-all duration-700 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
         >
           Hi, I'm Adil Mukhi!
         </h1>
@@ -107,10 +108,9 @@ export default function Hero() {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`${social.color} transition-all duration-300 hover:scale-125 hover:rotate-6`}
+              className={`${social.color} transition-all duration-300 hover:scale-125`}
               aria-label={social.label}
               title={social.label}
-              style={{ transitionDelay: `${index * 50}ms` }}
             >
               <social.icon className="h-6 w-6" />
               <span className="sr-only">{social.label}</span>
@@ -118,18 +118,17 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* Mobile social links - centered grid */}
-        <div className="grid grid-cols-6 gap-x-2 gap-y-3 md:hidden my-4 mx-auto w-full max-w-xs">
-          {socialLinks.map((social, index) => (
+        {/* Mobile social links - optimized grid */}
+        <div className="grid grid-cols-5 gap-x-2 gap-y-3 md:hidden my-4 mx-auto w-full max-w-xs">
+          {mobileSocialLinks.map((social, index) => (
             <a
               key={index}
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`${social.color} transition-all duration-300 hover:scale-125 flex justify-center items-center`}
+              className={`${social.color} transition-all duration-300 flex justify-center items-center`}
               aria-label={social.label}
               title={social.label}
-              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <social.icon className="h-5 w-5" />
               <span className="sr-only">{social.label}</span>
@@ -139,7 +138,6 @@ export default function Hero() {
 
         <p
           className={`max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 transition-all duration-700 delay-500 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-          style={{ fontFamily: "'Times New Roman', Times, latin" }}
         >
           I'm a passionate student and aspiring researcher with a strong interest in science, medicine, and research. I
           enjoy exploring complex topics, conducting research, and creating engaging content.
@@ -163,16 +161,6 @@ export default function Hero() {
               <span className="absolute inset-0 bg-gradient-to-r from-teal-400 to-blue-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
             </a>
           </Button>
-          <Button variant="secondary" asChild className="button-hover-effect relative overflow-hidden group">
-            <a
-              href="https://drive.google.com/file/d/1xIuHrE6H3Lf-Oj3S-PrXI15dIHi9XtDi/view"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="relative z-10">Visual Resume</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-teal-400 to-blue-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
-            </a>
-          </Button>
           <Button asChild className="button-hover-effect relative overflow-hidden group">
             <a href="/experiences">
               <span className="relative z-10">See More!</span>
@@ -184,4 +172,3 @@ export default function Hero() {
     </section>
   )
 }
-
