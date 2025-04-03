@@ -10,6 +10,38 @@ export type Award = {
   
   export const honorsAwards: Award[] = [
     {
+      title: "Congress of Future Medical Leaders Nomination",
+      issuer: "National Academy of Future Physicians and Medical Scientists",
+      year: "Apr 2025",
+      description:
+          "Nominated to attend the Congress of Future Medical Leaders for academic excellence, leadership potential, and dedication to the medical field. The Congress is a prestigious honors program where top high school students learn from Nobel Laureates, medical school deans, and leaders in healthcare innovation.",
+      image: "/Congress Medical Leaders.png",
+      skills: [
+          "Leadership",
+          "Academic Excellence",
+          "Medical Knowledge",
+          "Networking",
+          "Professional Development",
+      ],
+      link: "https://www.futuredocs.com/m0625-wl-lug?utm_source=AdaptiveMailer&utm_medium=email&utm_campaign=M0625%20Web%20Leads%20LUG",
+    },
+    {
+      title: "Semifinalist, 2025 High School Health Research Challenge",
+      issuer: "High School Health Research Forum",
+      year: "Mar 2025",
+      description:
+          "Selected as a semifinalist in the 2025 High School Health Research Challenge, a prestigious competition recognizing outstanding high school research in health sciences. My research project was recognized among the top 10 submissions out of nearly 100 applicants for its creativity, feasibility, and impact in addressing a critical health issue. As a semifinalist, my research will be showcased on the official HSHRF platform, contributing to the broader discourse on health innovation.",
+      image: "/HSHRF.png",
+      skills: [
+          "Research",
+          "Health Sciences",
+          "Innovation",
+          "Scientific Communication",
+          "Critical Thinking",
+      ],
+      link: "https://www.instagram.com/p/DHP0sZeOkC1/",
+    },
+    {
       title: "SemiFinalist, (p + q = 1) exam",
       issuer: "Mitosisphere",
       year: "Feb 2025",
