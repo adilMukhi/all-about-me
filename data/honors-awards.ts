@@ -26,6 +26,15 @@ export type Award = {
       link: "https://www.futuredocs.com/m0625-wl-lug?utm_source=AdaptiveMailer&utm_medium=email&utm_campaign=M0625%20Web%20Leads%20LUG",
     },
     {
+      title: "Distinction – Canadian Computing Competition (Junior Division)",
+      issuer: "University of Waterloo – Centre for Education in Mathematics and Computing (CEMC)",
+      year: "2025",
+      description: "Earned a Distinction in the Canadian Computing Competition (CCC) – Junior Division, placing 2nd overall at Glenforest Secondary School. The CCC challenges students to solve complex algorithmic problems using programming and logical thinking.",
+      image: "/ccc.jpg", // Replace with actual certificate or proof if available
+      skills: ["Problem Solving", "Algorithmic Thinking", "Programming", "Computational Logic", "Time Management"],
+      link: "https://www.cemc.uwaterloo.ca/contests/computing.html"
+    },
+    {
       title: "Semifinalist, 2025 High School Health Research Challenge",
       issuer: "High School Health Research Forum",
       year: "Mar 2025",
