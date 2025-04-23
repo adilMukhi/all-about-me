@@ -10,6 +10,22 @@ export type Award = {
   
   export const honorsAwards: Award[] = [
     {
+      title: "Bronze Medal – Canadian Biology Olympiad",
+      issuer: "Canadian Biology Olympiad Committee",
+      year: "2025",
+      description:
+          "Awarded the Bronze Medal in the Canadian Biology Olympiad, placing within the top 60% of all youth across Canada in the highest-level national biology competition for high school students. The competition tested knowledge in subjects including cell biology, molecular genetics, physiology, and ecology, recognizing top performers for their academic excellence and critical thinking skills.",
+      image: "/CBO.png",
+      skills: [
+          "Biology",
+          "Critical Thinking",
+          "Problem Solving",
+          "Academic Excellence",
+          "Research",
+      ],
+      link: "https://www.canadianbiologyolympiad.ca/Medal%20Winners%202025.pdf",  // Replace with the official CBO link if necessary
+    },
+    {
       title: "Congress of Future Medical Leaders Nomination",
       issuer: "National Academy of Future Physicians and Medical Scientists",
       year: "Apr 2025",

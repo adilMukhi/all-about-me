@@ -18,6 +18,14 @@ export const publications: Publication[] = [
     link: "https://virusesunveiled.substack.com/",
   },
   {
+    title: "A World Left Waiting",
+    publisher: "Merritt Herald",
+    date: "March 27, 2025",
+    description:
+      "A reflective article exploring the themes of societal anticipation and the consequences of waiting for change, analyzing how these dynamics impact communities and individuals.",
+    link: "https://issuu.com/merritt-herald/docs/merritt_herald_march_27_2025/6",  // Replace with the actual article URL if available
+  },
+  {
     title: "Un monde laissé en attente",
     publisher: "La Nouvelle Union",
     date: "March 1, 2025",
@@ -191,6 +199,15 @@ export type ResearchProject = {
 }
 
 export const researchProjects: ResearchProject[] = [
+  {
+    title: "Integrating AI in Alzheimer's: Diagnosis Methods, Prevention Strategies, and more!",
+    description: "A comprehensive research project examining the role of AI in Alzheimer's, covering diagnosis methods, prevention strategies, treatment options, and clinical trials.",
+    image: "/alzheimers_research.png", // Replace with the image path if available
+    tags: ["AI", "Alzheimer's Disease", "Medical Research", "Neurology"],
+    link: "https://drive.google.com/file/d/1ykansS3_jAV1_o77_3ZYOJC4LKApo4qJ/view?usp=sharing",
+    institution: "Personal Research",
+    year: "2025",
+  },
   {
     title: "Astrocytoma: From Diagnosis to Management",
     description: "A comprehensive overview of astrocytoma diagnosis, treatment options, and management strategies.",
