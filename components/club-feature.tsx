@@ -15,7 +15,7 @@ export default function ClubFeature() {
       <Card className="bg-gradient-to-br from-blue-50 to-teal-50 overflow-hidden glass-card">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 relative min-h-[250px] md:min-h-[300px]">
-            <Image src="/drinterested.jpg" alt="Dr. Interested Club" fill className="object-cover" />
+            <Image src="/drinterested.png" alt="Dr. Interested Club" fill className="object-cover" />
           </div>
           <div className="md:w-1/2 p-6 md:p-8">
             <CardHeader className="p-0 mb-4">
@@ -51,7 +51,7 @@ export default function ClubFeature() {
                 </div>
               </div>
               <Button size="lg" className="button-hover-effect">
-                <a href="https://linktr.ee/dr.interested" target="_blank" rel="noopener noreferrer">
+                <a href="https://drinterested.tech/" target="_blank" rel="noopener noreferrer">
                   Visit Dr. Interested
                 </a>
               </Button>

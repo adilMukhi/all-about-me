@@ -161,6 +161,15 @@ export const codingProjects: CodingProject[] = [
     codeLink: "https://github.com/StemHiss-int/website",
   },
   {
+    title: "Lib Sci Club Website",
+    description:
+      "A modern and interactive website built for the Lib Sci Club to highlight scientific discussions, projects, and events. Designed for accessibility and ease of navigation.",
+    image: "/portfolio/coding/libsci.png", // Replace with your actual image path if available
+    tags: ["React", "Next.js", "Tailwind CSS", "Vercel"],
+    demoLink: "https://natscitech.vercel.app/",
+    codeLink: "https://github.com/NatSciTech-Int/website", // Add GitHub or relevant code link if available
+  },
+  {
     title: "Dr. Interested Website",
     description:
       "A website for the Dr. Interested club, featuring webinar schedules, research proposal competitions, and resources for aspiring medical professionals.",
