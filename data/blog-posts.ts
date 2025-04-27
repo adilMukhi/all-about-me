@@ -13,6 +13,39 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "Exploring the World of Biochemistry at the University of Toronto",
+    subtitle: "A hands-on journey through biochemistry labs, student panels, and epidemiology simulations.",
+    date: "April 26, 2025",
+    image: "/blog/biochem (2).JPG",
+    slug: "biochemistry",
+    excerpt: "I had the amazing opportunity to spend a day at the University of Toronto’s Biochemistry Day, learning from students and professors, exploring research labs, and even performing hands-on experiments like size exclusion chromatography and epidemiology simulations.",
+    content: 
+      "<p>Yesterday, I had the incredible opportunity to attend <strong>Biochemistry Day</strong> at the <strong>University of Toronto</strong>, one of Canada's leading research institutions. The event provided a unique insight into the dynamic world of biochemistry through a blend of lectures, lab tours, and hands-on experiments.</p>" +
+      
+      "<p>The day began with an inspiring panel discussion featuring undergraduate and graduate students who shared their academic journeys, research experiences, and career pathways. Hearing about their diverse projects and challenges gave me a clearer understanding of what it’s like to pursue biochemistry at a high level.</p>" +
+      
+      "<p>Following the panel, we had the privilege of listening to an <strong>associate professor</strong> who discussed current trends in biochemical research and the critical role biochemistry plays in solving global health challenges. His talk emphasized the innovative research happening right at UofT, from molecular biology to disease diagnostics.</p>" +
+      
+      "<p>One of the highlights of the day was touring the state-of-the-art <strong>graduate student labs</strong>. Walking through the spaces where cutting-edge research happens every day was truly inspiring. We got to see how experimental setups are organized and how collaborative the research environment is.</p>" +
+      
+      "<p>After the tours, we had the chance to perform <strong>size exclusion chromatography</strong> ourselves. In this hands-on experiment, we separated molecules like <strong>hemoglobin</strong> and <strong>vitamin B-12</strong> based on size. It was fascinating to see firsthand how biochemists use these techniques to analyze complex biological mixtures.</p>" +
+      
+      "<p>We also participated in an engaging <strong>epidemiology simulation</strong>, where we learned how biochemical tools and methods help track and contain outbreaks. We worked through a case study to trace the origin of a virus, applying critical thinking and problem-solving skills in real time.</p>" +
+      
+      "<p>Overall, Biochemistry Day at UofT was an unforgettable experience that expanded my understanding of laboratory science and epidemiology while igniting an even deeper passion for pursuing a career in biochemistry and healthcare research. I am incredibly grateful for the opportunity and excited to continue exploring this field!</p>",
+      
+    images: [
+      "/blog/biochem (3).JPG",
+      "/blog/biochem (2).JPG",
+      "/blog/biochem (1).JPG",
+      "/blog/biochem (4).JPG",
+      "/blog/biochem (5).JPG",
+      "/blog/biochem (6).JPG",
+    ],
+    
+    learnMoreUrl: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7322399927177818112/" // <- Placeholder, replace with your actual LinkedIn post link if you want
+  },
+  {
     "title": "PharmPath Program: An In-Depth Experience at the Leslie Dan Faculty of Pharmacy",
     "subtitle": "A comprehensive look at the hands-on pharmacy experience and tour of the University of Toronto's pharmacy labs.",
     "date": "March 15, 2025",
