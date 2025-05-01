@@ -18,7 +18,7 @@ export const workExperiences: WorkExperience[] = [
     period: "Dec 2024 - Present (3 months)",
     description:
       "Dr. Interested is a student-led initiative aiming to inspire future medical professionals through research, mentorship, and outreach. The organization has educated 20,000+ people through its initiatives, enrolled 40+ individuals in research programs, sent 375+ appreciation cards to nurses, and grown to 200+ members with 30+ executives working toward a brighter future. Additionally, Dr. Interested received a $100 grant to further its mission.",
-    image: "/drinterested.jpg",
+    image: "/drinterested.png",
     skills: ["Leadership", "Project Management", "Community Building", "Medical Education", "Networking"],
     link: "https://linktr.ee/dr.interested",
   },

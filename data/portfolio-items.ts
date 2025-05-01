@@ -1,4 +1,3 @@
-// Update portfolio items to use direct image paths
 // Writing portfolio
 export type Publication = {
   title: string
@@ -161,15 +160,6 @@ export const codingProjects: CodingProject[] = [
     codeLink: "https://github.com/StemHiss-int/website",
   },
   {
-    title: "Lib Sci Club Website",
-    description:
-      "A modern and interactive website built for the Lib Sci Club to highlight scientific discussions, projects, and events. Designed for accessibility and ease of navigation.",
-    image: "/portfolio/coding/libsci.png", // Replace with your actual image path if available
-    tags: ["React", "Next.js", "Tailwind CSS", "Vercel"],
-    demoLink: "https://natscitech.vercel.app/",
-    codeLink: "https://github.com/NatSciTech-Int/website", // Add GitHub or relevant code link if available
-  },
-  {
     title: "Dr. Interested Website",
     description:
       "A website for the Dr. Interested club, featuring webinar schedules, research proposal competitions, and resources for aspiring medical professionals.",
@@ -177,6 +167,15 @@ export const codingProjects: CodingProject[] = [
     tags: ["Next.js", "React", "Tailwind CSS"],
     demoLink: "https://drinterested-int.vercel.app/",
     codeLink: "https://github.com/kishys/drinterested-site",
+  },
+  {
+    title: "LibSci Website",
+    description:
+      "A modern and interactive website built for the Lib Sci Club to highlight scientific discussions, projects, and events. Designed for accessibility and ease of navigation.",
+    image: "/portfolio/coding/libsci.png",
+    tags: ["React", "Next.js", "Tailwind CSS", "Vercel"],
+    demoLink: "https://libsci.tech/",
+    codeLink: "https://github.com/NatSciTech-Int/website",
   },
   {
     title: "My Personal Website",
@@ -209,13 +208,13 @@ export type ResearchProject = {
 
 export const researchProjects: ResearchProject[] = [
   {
-    title: "Integrating AI in Alzheimer's: Diagnosis Methods, Prevention Strategies, and more!",
-    description: "A comprehensive research project examining the role of AI in Alzheimer's, covering diagnosis methods, prevention strategies, treatment options, and clinical trials.",
-    image: "/alzheimers_research.png", // Replace with the image path if available
-    tags: ["AI", "Alzheimer's Disease", "Medical Research", "Neurology"],
-    link: "https://drive.google.com/file/d/1ykansS3_jAV1_o77_3ZYOJC4LKApo4qJ/view?usp=sharing",
-    institution: "Personal Research",
-    year: "2025",
+    title: "From Stress to Forgetfulness: Understanding How Stress Hormones Shape Your Memory",
+    description: "An in-depth 6741 word exploration of how stress hormones affect memory, from short-term impacts to long-term neurological changes.",
+    image: "/project3.jpg",
+    tags: ["Neuroscience", "Psychology", "Medical Research"],
+    link: "https://drive.google.com/file/d/17nAfJSKQjbB-A5mNme4fTODOxydKA3G1/view?usp=drive_link",
+    institution: "NOSM and GFSS",
+    year: "2023-2025",
   },
   {
     title: "Astrocytoma: From Diagnosis to Management",
@@ -227,13 +226,13 @@ export const researchProjects: ResearchProject[] = [
     year: "2024",
   },
   {
-    title: "From Stress to Forgetfulness: Understanding How Stress Hormones Shape Your Memory",
-    description: "An in-depth 6741 word exploration of how stress hormones affect memory, from short-term impacts to long-term neurological changes.",
-    image: "/project3.jpg",
-    tags: ["Neuroscience", "Psychology", "Medical Research"],
-    link: "https://drive.google.com/file/d/17nAfJSKQjbB-A5mNme4fTODOxydKA3G1/view?usp=drive_link",
-    institution: "NOSM and GFSS",
-    year: "2023-2025",
+    title: "Integrating AI in Alzheimer's: Diagnosis Methods, Prevention Strategies, and more!",
+    description: "A comprehensive research project examining the role of AI in Alzheimer's, covering diagnosis methods, prevention strategies, treatment options, and clinical trials.",
+    image: "/alzheimers_research.png",
+    tags: ["AI", "Alzheimer's Disease", "Medical Research", "Neurology"],
+    link: "https://drive.google.com/file/d/1ykansS3_jAV1_o77_3ZYOJC4LKApo4qJ/view?usp=sharing",
+    institution: "Personal Research",
+    year: "2025",
   },
   {
     title: "Mini-Medical Booklet - Heal for Health",
@@ -366,7 +365,6 @@ export const sportsAchievements: SportsAchievement[] = [
     videoId: "ztSkKMdQpE0", // Updated with the correct YouTube video ID
     tags: ["Tennis", "Competition", "Team Sports"],
     type: "sports",
-  },
-  // Add more sports achievements here...
+  }
 ]
 
