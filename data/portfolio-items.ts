@@ -17,6 +17,14 @@ export const publications: Publication[] = [
     link: "https://virusesunveiled.substack.com/",
   },
   {
+    title: "Canada, Let’s Not Turn Our Backs on the World",
+    publisher: "Results Canada",
+    date: "April 19, 2025",
+    description:
+      "Published in the Volunteer Voices series by Results Canada, this opinion piece advocates for Canada’s global commitments amid the 2025 national election.",
+    link: "https://resultscanada.ca/volunteer-voices-canada-lets-not-turn-our-backs-on-the-world/",
+  },
+  {
     title: "A World Left Waiting",
     publisher: "Merritt Herald",
     date: "March 27, 2025",
