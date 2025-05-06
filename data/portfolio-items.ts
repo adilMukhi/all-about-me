@@ -225,6 +225,15 @@ export const researchProjects: ResearchProject[] = [
     year: "2023-2025",
   },
   {
+    title: "Overcrowding in Emergency Departments: Causes, Consequences, and Solutions",
+    description: "A research poster presented at the IHL Innovate & Educate 2025 competition, examining the systemic causes and potential solutions for ED overcrowding in Canadian hospitals.",
+    image: "/emergency_overcrowding.png",
+    tags: ["Public Health", "Emergency Medicine", "Health Systems"],
+    link: "https://drive.google.com/file/d/1R19MWKdwyO7sgs7DlChjjVzyWEtzrdlU/view?usp=sharing",
+    institution: "IHL Innovate & Educate",
+    year: "2025",
+  },
+  {
     title: "Astrocytoma: From Diagnosis to Management",
     description: "A comprehensive overview of astrocytoma diagnosis, treatment options, and management strategies.",
     image: "/project2.jpg",
