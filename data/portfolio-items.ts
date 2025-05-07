@@ -17,6 +17,22 @@ export const publications: Publication[] = [
     link: "https://virusesunveiled.substack.com/",
   },
   {
+    title: "Born of Embers",
+    publisher: "Polar Expressions Publishing",
+    date: "May 2025",
+    description:
+      "A national youth poetry anthology featuring my original work. Archived in the Library and Archives Canada. ISBN: 978-1-990243-38-7.",
+    link: "https://www.polarexpressions.ca/Shop.html",
+  },
+  {
+    title: "Echoes of the Deep",
+    publisher: "Polar Expressions Publishing",
+    date: "May 2025",
+    description:
+      "A published poetry collection showcasing youth voices across Canada. Includes my original piece, archived in the Library and Archives Canada. ISBN: 978-1-990243-42-4.",
+    link: "https://www.polarexpressions.ca/Shop.html",
+  },
+  {
     title: "Canada, Let’s Not Turn Our Backs on the World",
     publisher: "Results Canada",
     date: "April 19, 2025",

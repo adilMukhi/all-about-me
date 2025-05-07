@@ -42,6 +42,22 @@ export type Award = {
       link: "https://www.futuredocs.com/m0625-wl-lug?utm_source=AdaptiveMailer&utm_medium=email&utm_campaign=M0625%20Web%20Leads%20LUG",
     },
     {
+      title: "Published Author – Polar Expressions Youth Poetry Anthologies",
+      issuer: "Polar Expressions Publishing",
+      year: "May 2025",
+      description:
+        "Selected for publication in two national youth poetry anthologies: Born of Embers (ISBN: 978-1-990243-38-7) and Echoes of the Deep (ISBN: 978-1-990243-42-4). Both books are archived in the Library and Archives Canada, recognizing excellence in youth literary expression across Canada.",
+      image: "/polar_expressions.png", // Replace with actual image path or placeholder
+      skills: [
+        "Creative Writing",
+        "Poetry",
+        "Literary Expression",
+        "Youth Advocacy",
+        "Publication"
+      ],
+      link: "https://www.linkedin.com/feed/update/urn:li:activity:7326016820383993856/",
+    },
+    {
       title: "Distinction – Canadian Computing Competition (Junior Division)",
       issuer: "University of Waterloo – Centre for Education in Mathematics and Computing (CEMC)",
       year: "2025",
