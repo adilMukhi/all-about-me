@@ -9,6 +9,14 @@ export type Publication = {
 
 export const publications: Publication[] = [
   {
+    title: "Continue support",
+    publisher: "The London Free Press",
+    date: "July 5, 2025",
+    description:
+      "A letter to the editor of The London Free Press, addressing the need for continued support for the work of the Global Fund.",
+    link: "https://lfpress.com/opinion/letters/letters-to-the-editor-july-5-2025#:~:text=Article%20content-,Continue%20support,-Article%20content",
+  },
+  {
     title: "Viruses Unveiled: A Blog on the West Nile Virus",
     publisher: "Substack",
     date: "January 2025",
