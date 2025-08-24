@@ -1,12 +1,10 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"], display: "swap" })
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
 export const metadata: Metadata = {
@@ -107,8 +105,6 @@ export default function RootLayout({
         <meta name="theme-color" content="#0ea5e9" />
         
         {/* Preconnect to external domains */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
 
         {/* Preload critical assets */}
@@ -137,40 +133,6 @@ export default function RootLayout({
             gtag('config', 'AW-16895913653');
           `}
         </Script>
-        
-        {/* Font imports with display=swap for better performance */}
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap"
-          as="style"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
-          as="style"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"
-          as="style"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap"
-          as="style"
-          crossOrigin="anonymous"
-        />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
-        />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap" />
 
         {/* Structured data for Person */}
         <Script id="structured-data-person" type="application/ld+json">
@@ -223,7 +185,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={inter.className}>
+      <body>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-KHTXF8N5"
