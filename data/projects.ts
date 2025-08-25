@@ -39,5 +39,3 @@ export type Project = {
       codeLink: "https://drive.google.com/file/d/1hsuDwq_5UjnS9a4G984gqhuAkOkmabe8/view?usp=sharing",
     },
   ]
-  
-  

@@ -142,4 +142,3 @@ export type Certificate = {
     image: "/pals.jpg",
   },
   ]
-  

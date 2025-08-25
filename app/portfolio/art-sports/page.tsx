@@ -7,4 +7,3 @@ export const metadata: Metadata = artSportsPortfolioMetadata
 export default function ArtSportsPortfolioPage() {
   return <ArtSportsPortfolioPageClient />
 }
-

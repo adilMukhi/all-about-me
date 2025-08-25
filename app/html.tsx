@@ -1,23 +1,14 @@
-<!DOCTYPE
-html >
-  <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- Link to main.css -->
-    <link href="main.css" rel="stylesheet">
+// app/html.tsx
+import React from "react";
 
-    <!-- Font imports -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap">
-    <!-- Title = DynaPuff  -->
-    <!-- SubTitle = Sour Gummy -->
-    <!-- Header = Bubblegum Sans -->
-    <!-- Paragraph = Times New Roman -->
-    <!-- Footer/links = Kirang Haerang -->
-
-</head>
-</html>
-
+export default function Html({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <head>
+        {/* Link to main.css */}
+        <link rel="stylesheet" href="/main.css" />
+      </head>
+      <body>{children}</body>
+    </html>
+  );
+}

@@ -129,4 +129,3 @@ export function MainNav({ items }: MainNavProps) {
     </NavigationMenu>
   )
 }
-

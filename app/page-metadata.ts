@@ -185,4 +185,3 @@ export const artSportsPortfolioMetadata: Metadata = {
     ],
   },
 }
-

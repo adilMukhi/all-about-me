@@ -3,9 +3,25 @@ import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
+import { Inter, Fredoka } from "next/font/google"
 import "./globals.css"
+import StartAnimation from "@/components/start-animation"
+import { Suspense } from "react"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+})
+
+const fredoka = Fredoka({
+  weight: ["400", "500", "600"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-fredoka",
+})
 
 export const metadata: Metadata = {
   title: {
@@ -91,6 +107,7 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   category: "portfolio",
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -99,11 +116,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`scroll-smooth ${inter.variable} ${fredoka.variable}`}>
       <head>
         <meta name="p:domain_verify" content="10e6074a03407f2fd24aed7425a2acd9" />
         <meta name="theme-color" content="#0ea5e9" />
-        
+
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
 
@@ -194,11 +211,13 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-        {children}
+        <Suspense fallback={null}>
+          <StartAnimation />
+          {children}
+        </Suspense>
         <Analytics />
         <SpeedInsights />
       </body>
     </html>
   )
 }
-

@@ -35,4 +35,3 @@ export const educationData: Education[] = [
     image: "/ib-logo.jpg",
   },
 ]
-

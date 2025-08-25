@@ -23,4 +23,3 @@ export const softSkills = [
   "Leadership",
   "Creativity",
 ]
-

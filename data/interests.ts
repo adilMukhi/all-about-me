@@ -9,5 +9,3 @@ export type Interests = {
     hobbies: ["Photography", "Writing", "Chess", "Reading"],
     teams: ["GFSS Tennis Team - ROPSSAA Quarter Finalist"],
   }
-  
-  

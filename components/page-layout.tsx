@@ -82,4 +82,3 @@ export default function PageLayout({ children, includeSocialLinks = true }: Page
     </div>
   )
 }
-

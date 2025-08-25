@@ -408,4 +408,3 @@ export const sportsAchievements: SportsAchievement[] = [
     type: "sports",
   }
 ]
-

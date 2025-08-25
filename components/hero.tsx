@@ -79,7 +79,7 @@ export default function Hero() {
       color: "text-yellow-500 hover:text-yellow-600",
     },
   ]
-  
+
   // Only show the most important social links on mobile
   const mobileSocialLinks = socialLinks.slice(0, 5)
 
@@ -94,8 +94,12 @@ export default function Hero() {
 
       <div className="container flex flex-col items-center justify-center gap-4 text-center relative z-10">
         <h1
-          className={`text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl normal-case bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-primary to-teal-500 transition-all duration-700 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-          style={{ fontFamily: "DynaPuff, serif", letterSpacing: "0.1em" }}
+          className={`font-fredoka text-4xl font-semibold tracking-wide sm:text-5xl md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-primary to-teal-500 transition-all duration-700 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          style={{
+            letterSpacing: "0.1em",
+            textShadow:
+              "0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.2), 0 0 60px rgba(59, 130, 246, 0.1)",
+          }}
         >
           Hi, I'm Adil Mukhi!
         </h1>
@@ -141,8 +145,7 @@ export default function Hero() {
         </div>
 
         <p
-          className={`max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 transition-all duration-700 delay-500 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-          style={{ fontFamily: "'Times New Roman', Times, latin" }}
+          className={`font-body max-w-[42rem] leading-relaxed text-muted-foreground sm:text-xl sm:leading-8 transition-all duration-700 delay-500 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
         >
           I'm a passionate student and aspiring researcher with a strong interest in science, medicine, and research. I
           enjoy exploring complex topics, conducting research, and creating engaging content.
@@ -187,4 +190,3 @@ export default function Hero() {
     </section>
   )
 }
-

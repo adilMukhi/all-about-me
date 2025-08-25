@@ -152,4 +152,4 @@ export type Award = {
       skills: ["Creative Writing", "Storytelling", "Grammar and Composition", "Research Skills", "Self-Expression"],
       link: "https://www.biopage.com/post/10435",
     },
-  ] 
+  ]

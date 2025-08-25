@@ -42,4 +42,3 @@ export function ArtModal({ isOpen, onClose, title, images }: ArtModalProps) {
     </Dialog>
   )
 }
-

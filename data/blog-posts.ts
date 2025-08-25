@@ -230,4 +230,3 @@ export const blogPosts: BlogPost[] = [
     learnMoreUrl: "https://www.instagram.com/p/DB0a2wmo49U/?img_index=1",
   },
 ]
-

@@ -9,4 +9,3 @@ export type MainNavItem = {
 export type NavConfig = {
   mainNav: MainNavItem[]
 }
-

@@ -74,5 +74,3 @@ export type VolunteerWork = {
       link: "https://www.flourishfoundation.org/",
     },
   ]
-  
-  

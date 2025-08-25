@@ -139,4 +139,3 @@ export const workExperiences: WorkExperience[] = [
     link: "https://childrenfirstcanada.org/wp-content/uploads/2024/10/Raising-Canada-2024-Final.pdf",
   },
 ]
-
