@@ -63,10 +63,8 @@
 
     --radius: 0.5rem;
 
-    /* Updated font variables for better typography system */
-    --font-fredoka: "Fredoka", "Comic Neue", "Nunito", cursive;
-    --font-heading: "Inter", "Segoe UI", system-ui, sans-serif;
-    --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+    /* Added Fredoka font variable for bubbly text */
+    --font-fredoka: "Fredoka", cursive;
   }
 }
 
@@ -77,89 +75,14 @@
 
   body {
     @apply bg-background text-foreground;
-    /* Improved body font with better fallbacks and line height */
-    font-family: var(--font-body);
-    line-height: 1.6;
-    font-weight: 400;
-  }
-
-  /* Added consistent heading styles */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-heading);
-    font-weight: 600;
-    line-height: 1.3;
-    letter-spacing: -0.025em;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-  }
-
-  h2 {
-    font-size: 2rem;
-    font-weight: 600;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-
-  h4 {
-    font-size: 1.25rem;
-    font-weight: 600;
-  }
-
-  h5 {
-    font-size: 1.125rem;
-    font-weight: 500;
-  }
-
-  h6 {
-    font-size: 1rem;
-    font-weight: 500;
-  }
-
-  /* Improved paragraph and text spacing */
-  p {
-    line-height: 1.7;
-    margin-bottom: 1rem;
-  }
-
-  /* Better link styling */
-  a {
-    transition: color 0.2s ease;
-  }
-
-  a:hover {
-    color: hsl(var(--primary));
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans",
+      "Droid Sans", "Helvetica Neue", sans-serif;
   }
 }
 
-/* Simplified and improved font utility classes */
+/* Added font-fredoka class for bubbly font */
 .font-fredoka {
-  font-family: var(--font-fredoka);
-  font-weight: 500;
-}
-
-.font-heading {
-  font-family: var(--font-heading);
-}
-
-.font-body {
-  font-family: var(--font-body);
-}
-
-/* Removed redundant font classes and consolidated into one playful font */
-.font-playful {
-  font-family: var(--font-fredoka);
-  font-weight: 500;
+  font-family: var(--font-fredoka), cursive, sans-serif;
 }
 
 .font-dynapuff {

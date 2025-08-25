@@ -17,7 +17,7 @@ const inter = Inter({
 })
 
 const fredoka = Fredoka({
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-fredoka",
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code", // Replace with your actual verification code
+    google: "your-google-verification-code",
   },
   icons: {
     icon: [
@@ -98,12 +98,7 @@ export const metadata: Metadata = {
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
     apple: [{ url: "/apple-touch-icon.png" }],
-    other: [
-      {
-        rel: "mask-icon",
-        url: "/safari-pinned-tab.svg",
-      },
-    ],
+    other: [{ rel: "mask-icon", url: "/safari-pinned-tab.svg" }],
   },
   manifest: "/site.webmanifest",
   category: "portfolio",
@@ -116,19 +111,21 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`scroll-smooth ${inter.variable} ${fredoka.variable}`}>
+    <html
+      lang="en"
+      className={`scroll-smooth ${inter.variable} ${fredoka.variable}`}
+    >
       <head>
-        <meta name="p:domain_verify" content="10e6074a03407f2fd24aed7425a2acd9" />
+        <meta
+          name="p:domain_verify"
+          content="10e6074a03407f2fd24aed7425a2acd9"
+        />
         <meta name="theme-color" content="#0ea5e9" />
 
-        {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-
-        {/* Preload critical assets */}
         <link rel="preload" href="/profile-pic.jpg" as="image" />
         <link rel="preload" href="/pixtin.jpg" as="image" />
 
-        {/* Google Tag Manager - load with strategy="afterInteractive" for better performance */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -139,66 +136,16 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Google tag (gtag.js) */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=AW-16895913653" strategy="afterInteractive" />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16895913653"
+          strategy="afterInteractive"
+        />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-
             gtag('config', 'AW-16895913653');
-          `}
-        </Script>
-
-        {/* Structured data for Person */}
-        <Script id="structured-data-person" type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "@id": "${siteUrl}/#person",
-              "name": "Adil Mukhi",
-              "url": "${siteUrl}",
-              "image": "${siteUrl}/profile-pic.jpg",
-              "sameAs": [
-                "https://www.linkedin.com/in/adil-mukhi",
-                "https://github.com/adilMukhi",
-                "https://x.com/adilm_0",
-                "https://www.instagram.com/adilm.0",
-                "https://linktr.ee/adilm.0"
-              ],
-              "jobTitle": "Student Researcher",
-              "worksFor": {
-                "@type": "Organization",
-                "name": "Dr. Interested",
-                "url": "https://linktr.ee/dr.interested"
-              },
-              "knowsAbout": ["Medical Research", "Healthcare", "Science", "Leadership", "Content Creation"],
-              "alumniOf": {
-                "@type": "EducationalOrganization",
-                "name": "Glenforest Secondary School",
-                "url": "https://glenforest.peelschools.org/"
-              }
-            }
-          `}
-        </Script>
-
-        {/* Structured data for WebSite */}
-        <Script id="structured-data-website" type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "@id": "${siteUrl}/#website",
-              "url": "${siteUrl}",
-              "name": "Adil Mukhi - Student Researcher & Aspiring Medical Professional",
-              "description": "Adil Mukhi is a student researcher and aspiring medical professional with experience in healthcare, research, and leadership.",
-              "publisher": {
-                "@id": "${siteUrl}/#person"
-              },
-              "inLanguage": "en-US"
-            }
           `}
         </Script>
       </head>

@@ -93,17 +93,16 @@ export default function Hero() {
       </div>
 
       <div className="container flex flex-col items-center justify-center gap-4 text-center relative z-10">
-        <h1
-          className={`font-fredoka text-4xl font-semibold tracking-wide sm:text-5xl md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-primary to-teal-500 transition-all duration-700 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-          style={{
-            letterSpacing: "0.1em",
-            textShadow:
-              "0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.2), 0 0 60px rgba(59, 130, 246, 0.1)",
-          }}
-        >
-          Hi, I'm Adil Mukhi!
-        </h1>
-
+      <h1
+        className="font-fredoka text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-primary to-teal-500"
+        style={{
+          textShadow: "0 0 10px rgba(59, 130, 246, 0.25), 0 0 20px rgba(59, 130, 246, 0.15)",
+          animation: "none",
+          transition: "none",
+        }}
+      >
+        Hi, I'm Adil Mukhi!
+      </h1>
         {/* Social Media Icons - Desktop */}
         <div
           className={`hidden md:flex flex-wrap justify-center gap-4 my-4 transition-all duration-700 delay-300 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
@@ -145,7 +144,8 @@ export default function Hero() {
         </div>
 
         <p
-          className={`font-body max-w-[42rem] leading-relaxed text-muted-foreground sm:text-xl sm:leading-8 transition-all duration-700 delay-500 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          className={`max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 transition-all duration-700 delay-500 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          style={{ fontFamily: "'Times New Roman', Times, latin" }}
         >
           I'm a passionate student and aspiring researcher with a strong interest in science, medicine, and research. I
           enjoy exploring complex topics, conducting research, and creating engaging content.
