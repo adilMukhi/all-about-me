@@ -58,7 +58,7 @@ export default function WorkExperienceModal({ experience, isOpen, onClose }: Wor
         </DialogHeader>
 
         <div className="space-y-6">
-          {experience.progression && experience.progression.length > 1 && (
+          {experience.progression && experience.progression.length > 0 && (
             <div>
               <div className="space-y-4">
                 {experience.progression
@@ -78,7 +78,6 @@ export default function WorkExperienceModal({ experience, isOpen, onClose }: Wor
                           <Badge variant={index === 0 ? "default" : "outline"} className="text-xs">
                             {role.period}
                           </Badge>
-                          {index === 0 && <Badge className="text-xs bg-primary">Current</Badge>}
                         </div>
                         {role.description && <p className="text-sm text-muted-foreground">{role.description}</p>}
                       </div>
