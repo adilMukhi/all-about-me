@@ -51,7 +51,7 @@ export const workExperiences: WorkExperience[] = [
     title: "Camp Director",
     company: "Dixie Bloor Neighbourhood Centre",
     period: "Summer 2025",
-    description: "Led 30+ campers and 6 staff, overseeing programming, safety, and team coordination.",
+    description: "Led ~40 campers and 5 staff, overseeing programming, safety, and team coordination.",
     stats: ["~40 campers", "5 staff managed", "8 weeks of camp", "3 field trips organized"],
     image: "/dbnc.jpg",
     skills: ["Leadership", "Team Management", "Youth Engagement", "Program Planning"],
