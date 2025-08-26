@@ -95,7 +95,7 @@ export default function BackgroundPreview() {
       </div>
 
       {/* Portfolio Links */}
-      <div className="text-left">
+      <div className="text-center">
         <h2 className="text-xl font-semibold mb-6" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
           Explore My Work
         </h2>
