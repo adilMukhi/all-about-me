@@ -5,9 +5,9 @@ import { Building, Users, BookOpen, Globe } from "lucide-react"
 
 export default function ClubFeature() {
   return (
-    <section className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+    <section className="container py-8" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <h2
-        className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+        className="mb-6 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
         style={{ fontFamily: "Sour Gummy, latin" }}
       >
         My Club: Dr. Interested
@@ -29,8 +29,8 @@ export default function ClubFeature() {
             <CardContent className="p-0">
               <p className="mb-4">
                 Dr. Interested is a global community I founded to inspire and support students interested in healthcare
-                careers through research, mentorship, and collaborative opportunities. So far we have had 40+ individuals 
-                enrolled in our research programs!
+                careers through research, mentorship, and collaborative opportunities. So far we have had 40+
+                individuals enrolled in our research programs!
               </p>
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center gap-2">

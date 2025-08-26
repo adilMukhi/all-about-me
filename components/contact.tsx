@@ -14,9 +14,9 @@ const socialLinks = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="container py-16">
+    <section id="contact" className="container py-8">
       <h2
-        className="mb-8 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl normal-case"
+        className="mb-6 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl normal-case"
         style={{ fontFamily: "Sour Gummy, latin" }}
       >
         Contact Me

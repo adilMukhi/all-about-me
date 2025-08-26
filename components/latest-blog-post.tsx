@@ -18,9 +18,9 @@ export function LatestBlogPost() {
         }
 
   return (
-    <section className="container py-16">
+    <section className="container py-8">
       <h2
-        className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+        className="mb-6 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
         style={{ fontFamily: "Sour Gummy, latin" }}
       >
         My Latest Experience

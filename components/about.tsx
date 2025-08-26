@@ -9,14 +9,14 @@ export default function About() {
   const [showMore, setShowMore] = useState(false)
 
   return (
-    <section id="about" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+    <section id="about" className="container py-8" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <h2
-        className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl normal-case"
+        className="mb-6 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl normal-case"
         style={{ fontFamily: "Sour Gummy, latin" }}
       >
         About Me
       </h2>
-      <div className="grid gap-12 lg:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2">
         <Card
           className="bg-card shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105"
           className={`card-hover-effect`}

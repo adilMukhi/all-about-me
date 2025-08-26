@@ -46,7 +46,7 @@ export default function Hero() {
   ]
 
   return (
-    <section className="py-4 relative overflow-hidden">
+    <section className="py-4 pb-12 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
@@ -155,7 +155,7 @@ export default function Hero() {
           </div>
 
           <p
-            className={`text-base text-muted-foreground mt-2 transition-all duration-700 delay-900 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+            className={`text-muted-foreground mt-2 transition-all duration-700 delay-900 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
           >
             I'm currently available for{" "}
             <a
