@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, X } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 import type { WorkExperience } from "@/data/work-experience"
 
 interface WorkExperienceModalProps {
@@ -48,15 +48,6 @@ export default function WorkExperienceModal({ experience, isOpen, onClose }: Wor
   return (
     <Dialog open={isOpen} onOpenChange={handleOpenChange}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-        <Button
-          variant="ghost"
-          size="sm"
-          className="absolute right-4 top-4 z-50 h-6 w-6 p-0 hover:bg-secondary"
-          onClick={handleClose}
-        >
-          <X className="h-4 w-4" />
-        </Button>
-
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold pr-8" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
             {experience.title}
@@ -67,6 +58,36 @@ export default function WorkExperienceModal({ experience, isOpen, onClose }: Wor
         </DialogHeader>
 
         <div className="space-y-6">
+          {experience.progression && experience.progression.length > 1 && (
+            <div>
+              <div className="space-y-4">
+                {experience.progression
+                  .slice()
+                  .reverse()
+                  .map((role, index) => (
+                    <div key={index} className="flex items-start gap-4">
+                      <div className="flex flex-col items-center">
+                        <div className={`w-3 h-3 rounded-full ${index === 0 ? "bg-primary" : "bg-muted-foreground"}`} />
+                        {index < experience.progression!.length - 1 && (
+                          <div className="w-px h-8 bg-muted-foreground/30 mt-2" />
+                        )}
+                      </div>
+                      <div className="flex-1 pb-4">
+                        <div className="flex items-center gap-2 mb-1">
+                          <h4 className={`font-semibold ${index === 0 ? "text-base" : "text-sm"}`}>{role.role}</h4>
+                          <Badge variant={index === 0 ? "default" : "outline"} className="text-xs">
+                            {role.period}
+                          </Badge>
+                          {index === 0 && <Badge className="text-xs bg-primary">Current</Badge>}
+                        </div>
+                        {role.description && <p className="text-sm text-muted-foreground">{role.description}</p>}
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          )}
+
           {/* Image Section */}
           <div className="relative">
             <div className={`grid gap-4 ${hasMultipleImages && allImages.length > 2 ? "grid-cols-2" : "grid-cols-1"}`}>
@@ -76,18 +97,18 @@ export default function WorkExperienceModal({ experience, isOpen, onClose }: Wor
                     key={index}
                     src={img || "/placeholder.svg"}
                     alt={`${experience.company} - Image ${index + 1}`}
-                    width={300}
-                    height={200}
-                    className="rounded-lg object-cover w-full"
+                    width={200}
+                    height={120}
+                    className="rounded-lg object-cover w-full max-w-[200px]"
                   />
                 ))
               ) : (
                 <Image
                   src={allImages[currentImageIndex] || "/placeholder.svg"}
                   alt={experience.company}
-                  width={600}
-                  height={300}
-                  className="rounded-lg object-cover w-full"
+                  width={300}
+                  height={180}
+                  className="rounded-lg object-cover w-full max-w-[300px]"
                 />
               )}
             </div>

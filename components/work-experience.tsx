@@ -114,6 +114,18 @@ export default function WorkExperience() {
                   <CardHeader className="pb-3">
                     <CardTitle className="text-lg" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
                       {exp.title}
+                      {exp.progression && exp.progression.length > 1 && (
+                        <div className="text-sm font-normal text-muted-foreground mt-2">
+                          {exp.progression
+                            .slice(0, -1)
+                            .reverse()
+                            .map((role, index) => (
+                              <div key={index} className="text-sm">
+                                Previously: {role.role}
+                              </div>
+                            ))}
+                        </div>
+                      )}
                     </CardTitle>
                     <CardDescription className="text-sm">
                       {exp.company} | {exp.period}
@@ -157,6 +169,18 @@ export default function WorkExperience() {
                     />
                     <h3 className="font-semibold text-sm mb-1" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
                       {exp.title}
+                      {exp.progression && exp.progression.length > 1 && (
+                        <div className="text-xs font-normal text-muted-foreground mt-1">
+                          {exp.progression
+                            .slice(0, -1)
+                            .reverse()
+                            .map((role, index) => (
+                              <div key={index} className="text-xs">
+                                Previously: {role.role}
+                              </div>
+                            ))}
+                        </div>
+                      )}
                     </h3>
                     <p className="text-xs text-muted-foreground mb-1">{exp.company}</p>
                     <p className="text-xs text-muted-foreground">{exp.period}</p>
