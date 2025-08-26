@@ -54,7 +54,7 @@ export default function Hero() {
         <div className="absolute -bottom-24 left-1/2 w-96 h-96 bg-primary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="container flex flex-col lg:flex-row items-center justify-center gap-2 lg:gap-4 text-center lg:text-left relative z-10">
+      <div className="container lg:max-w-none lg:px-8 xl:px-12 flex flex-col lg:flex-row items-center justify-center gap-2 lg:gap-4 text-center lg:text-left relative z-10">
         {/* Social Media Icons - Desktop */}
         <div className="hidden lg:flex flex-col gap-6 order-1">
           {socialLinks.map((social, index) => (
@@ -155,19 +155,19 @@ export default function Hero() {
           </div>
 
           <p
-            className={`text-muted-foreground mt-2 transition-all duration-700 delay-900 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+            className={`text-foreground font-medium text-base sm:text-lg lg:text-xl mt-4 transition-all duration-700 delay-900 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
           >
             I'm currently available for{" "}
             <a
               href="/services"
-              className="text-primary hover:text-primary/80 underline underline-offset-2 transition-colors"
+              className="text-primary hover:text-primary/80 underline underline-offset-2 transition-colors font-semibold"
             >
               consulting engagements
             </a>{" "}
             and{" "}
             <a
               href="/services"
-              className="text-primary hover:text-primary/80 underline underline-offset-2 transition-colors"
+              className="text-primary hover:text-primary/80 underline underline-offset-2 transition-colors font-semibold"
             >
               public speaking opportunities
             </a>
@@ -179,8 +179,8 @@ export default function Hero() {
           <Image
             src="/adil-professional-new.png"
             alt="Adil Mukhi - Professional Photo"
-            width={280}
-            height={360}
+            width={350}
+            height={450}
             className="object-cover"
             priority
           />
