@@ -20,14 +20,14 @@ export default function BackgroundPreview() {
 
   return (
     <section className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-      <div className="text-center mb-12">
+      <div className="text-left mb-12">
         <h2
           className="mb-4 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
           style={{ fontFamily: "Sour Gummy, latin" }}
         >
           Professional Background
         </h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-muted-foreground max-w-2xl">
           A glimpse into my work experience and what colleagues say about working with me.
         </p>
       </div>
@@ -95,29 +95,29 @@ export default function BackgroundPreview() {
       </div>
 
       {/* Portfolio Links */}
-      <div className="text-center">
-        <h3 className="text-xl font-semibold mb-6" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+      <div className="text-left">
+        <h2 className="text-xl font-semibold mb-6" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
           Explore My Work
-        </h3>
+        </h2>
         <div className="flex flex-wrap justify-center gap-4">
-          <Link href="/portfolios/writing">
-            <Button variant="outline" className="button-hover-effect bg-transparent">
+          <Link href="/portfolio/writing">
+            <Button variant="secondary" asChild className="button-hover-effect relative overflow-hidden group">
               📝 Writing Portfolio
             </Button>
           </Link>
-          <Link href="/portfolios/research">
-            <Button variant="outline" className="button-hover-effect bg-transparent">
+          <Link href="/portfolio/research">
+            <Button variant="secondary" asChild className="button-hover-effect relative overflow-hidden group">
               🔬 Research Portfolio
             </Button>
           </Link>
-          <Link href="/portfolios/leadership">
-            <Button variant="outline" className="button-hover-effect bg-transparent">
-              👥 Leadership Portfolio
+          <Link href="/portfolio/art-sports">
+            <Button variant="secondary" asChild className="button-hover-effect relative overflow-hidden group">
+              👥 Art & Sports Portfolio
             </Button>
           </Link>
-          <Link href="/portfolios/community">
-            <Button variant="outline" className="button-hover-effect bg-transparent">
-              🤝 Community Portfolio
+          <Link href="/portfolio/coding">
+            <Button variant="secondary" asChild className="button-hover-effect relative overflow-hidden group">
+              💻 Coding Portfolio
             </Button>
           </Link>
         </div>
