@@ -100,26 +100,21 @@ export default function BackgroundPreview() {
           Explore My Work
         </h2>
         <div className="flex flex-wrap justify-center gap-4">
-          <Link href="/portfolio/writing">
-            <Button variant="secondary" asChild className="button-hover-effect relative overflow-hidden group">
-              📝 Writing Portfolio
-            </Button>
-          </Link>
-          <Link href="/portfolio/research">
-            <Button variant="secondary" asChild className="button-hover-effect relative overflow-hidden group">
-              🔬 Research Portfolio
-            </Button>
-          </Link>
-          <Link href="/portfolio/art-sports">
-            <Button variant="secondary" asChild className="button-hover-effect relative overflow-hidden group">
-              👥 Art & Sports Portfolio
-            </Button>
-          </Link>
-          <Link href="/portfolio/coding">
-            <Button variant="secondary" asChild className="button-hover-effect relative overflow-hidden group">
-              💻 Coding Portfolio
-            </Button>
-          </Link>
+          <Button variant="secondary" asChild className="button-hover-effect relative overflow-hidden group">
+            <Link href="/portfolio/writing">📝 Writing Portfolio</Link>
+          </Button>
+
+          <Button variant="secondary" asChild className="button-hover-effect relative overflow-hidden group">
+            <Link href="/portfolio/research">🔬 Research Portfolio</Link>
+          </Button>
+
+          <Button variant="secondary" asChild className="button-hover-effect relative overflow-hidden group">
+            <Link href="/portfolio/art-sports">👥 Art & Sports Portfolio</Link>
+          </Button>
+
+          <Button variant="secondary" asChild className="button-hover-effect relative overflow-hidden group">
+            <Link href="/portfolio/coding">💻 Coding Portfolio</Link>
+          </Button>
         </div>
       </div>
     </section>
