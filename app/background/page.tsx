@@ -8,11 +8,10 @@ import PageLayout from "@/components/page-layout"
 import WorkExperience from "@/components/work-experience"
 import Education from "@/components/education"
 import Testimonials from "@/components/testimonials"
-import Projects from "@/components/projects"
 import Certificates from "@/components/certificates"
 import VolunteerWork from "@/components/volunteer-work"
 import HonorsAwards from "@/components/honors-awards"
-import { Briefcase, GraduationCap, MessageSquare, Award, BadgeCheck, Heart, Trophy } from "lucide-react"
+import { Briefcase, GraduationCap, MessageSquare, BadgeCheck, Heart, Trophy } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
@@ -45,13 +44,6 @@ const sections: Section[] = [
     icon: MessageSquare,
     component: Testimonials,
     color: "bg-blue-50 hover:bg-blue-100",
-  },
-  {
-    id: "projects",
-    title: "Projects",
-    icon: Award,
-    component: Projects,
-    color: "bg-yellow-50 hover:bg-yellow-100",
   },
   {
     id: "certificates",
