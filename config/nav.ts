@@ -19,7 +19,15 @@ export const navConfig: NavConfig = {
       items: [],
     },
     {
-      title: "Portfolio",
+      title: "Media",
+      href: "/media",
+    },
+    {
+      title: "Services",
+      href: "/services",
+    },
+    {
+      title: "Portfolios",
       href: "/portfolio",
       items: [
         {
@@ -45,7 +53,7 @@ export const navConfig: NavConfig = {
       ],
     },
     {
-      title: "Experiences",
+      title: "Blog",
       href: "/experiences",
       items: blogPostItems.map((post) => ({
         title: post.title,

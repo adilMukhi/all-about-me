@@ -7,8 +7,10 @@ import Image from "next/image"
 const introNavItems = [
   { key: "Home", label: "Home" },
   { key: "Background", label: "Background" },
-  { key: "Portfolio", label: "Portfolio" },
-  { key: "Experiences", label: "Experiences" },
+  { key: "Media", label: "Media" },
+  { key: "Services", label: "Services" },
+  { key: "Portfolios", label: "Portfolios" },
+  { key: "Blog", label: "Blog" },
 ]
 
 const quips = ["something cool", "ideas into pixels", "your experience", "a little magic", "the good stuff"]
