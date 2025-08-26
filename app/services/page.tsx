@@ -5,6 +5,7 @@ import AnimatedSection from "@/components/animated-section"
 import { Button } from "@/components/ui/button"
 import { Plus, Minus } from "lucide-react"
 import { useState, useEffect } from "react"
+import SocialLinks from "@/components/social-links"
 
 const CalBookingScript = () => {
   useEffect(() => {
@@ -228,6 +229,9 @@ export default function ServicesPage() {
       </AnimatedSection>
       <AnimatedSection delay={200}>
         <PastEngagements />
+      </AnimatedSection>
+      <AnimatedSection delay={250}>
+        <SocialLinks />
       </AnimatedSection>
       <Footer />
     </main>

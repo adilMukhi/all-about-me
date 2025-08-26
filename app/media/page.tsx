@@ -3,6 +3,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import AnimatedSection from "@/components/animated-section"
 import { Separator } from "@/components/ui/separator"
+import SocialLinks from "@/components/social-links"
 
 const MediaHero = () => (
   <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
@@ -109,6 +110,9 @@ export default function MediaPage() {
       <Separator />
       <AnimatedSection delay={100}>
         <MediaGrid />
+      </AnimatedSection>
+      <AnimatedSection delay={200}>
+        <SocialLinks />
       </AnimatedSection>
       <Footer />
     </main>

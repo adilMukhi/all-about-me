@@ -102,7 +102,7 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   category: "portfolio",
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export default function RootLayout({
@@ -111,15 +111,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="en"
-      className={`scroll-smooth ${inter.variable} ${fredoka.variable}`}
-    >
+    <html lang="en" className={`scroll-smooth ${inter.variable} ${fredoka.variable}`}>
       <head>
-        <meta
-          name="p:domain_verify"
-          content="10e6074a03407f2fd24aed7425a2acd9"
-        />
+        <meta name="p:domain_verify" content="10e6074a03407f2fd24aed7425a2acd9" />
         <meta name="theme-color" content="#0ea5e9" />
 
         <link rel="preconnect" href="https://www.googletagmanager.com" />
@@ -136,16 +130,25 @@ export default function RootLayout({
           `}
         </Script>
 
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16895913653"
-          strategy="afterInteractive"
-        />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=AW-16895913653" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-16895913653');
+          `}
+        </Script>
+
+        <Script id="accessibility-widget" strategy="afterInteractive">
+          {`
+            setTimeout(() => { 
+              let aioa_script_tag = document.createElement("script"); 
+              aioa_script_tag.src = "https://www.skynettechnologies.com/accessibility/js/all-in-one-accessibility-js-widget-minify.js?colorcode=#63a7e4&token=null&position=bottom_right";  
+              aioa_script_tag.id = "aioa-adawidget";
+              aioa_script_tag.defer="true"; 
+              document.getElementsByTagName("body")[0].appendChild(aioa_script_tag);
+            }, 3500);
           `}
         </Script>
       </head>

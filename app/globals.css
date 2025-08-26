@@ -191,6 +191,13 @@
 
 .prose h3 {
   font-family: "Comic Sans MS", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", cursive, sans-serif;
+  font-style: normal;
+}
+
+@media (min-width: 1024px) {
+  .prose h3 {
+    font-style: italic;
+  }
 }
 
 .prose ul {

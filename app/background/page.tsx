@@ -5,14 +5,14 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
-import Skills from "@/components/skills"
 import WorkExperience from "@/components/work-experience"
 import Education from "@/components/education"
+import Testimonials from "@/components/testimonials"
 import Projects from "@/components/projects"
 import Certificates from "@/components/certificates"
 import VolunteerWork from "@/components/volunteer-work"
 import HonorsAwards from "@/components/honors-awards"
-import { Lightbulb, Briefcase, GraduationCap, Award, BadgeCheck, Heart, Trophy } from "lucide-react"
+import { Briefcase, GraduationCap, MessageSquare, Award, BadgeCheck, Heart, Trophy } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
@@ -26,13 +26,6 @@ type Section = {
 
 const sections: Section[] = [
   {
-    id: "skills",
-    title: "Skills",
-    icon: Lightbulb,
-    component: Skills,
-    color: "bg-blue-50 hover:bg-blue-100",
-  },
-  {
     id: "work",
     title: "Work Experience",
     icon: Briefcase,
@@ -45,6 +38,13 @@ const sections: Section[] = [
     icon: GraduationCap,
     component: Education,
     color: "bg-purple-50 hover:bg-purple-100",
+  },
+  {
+    id: "testimonials",
+    title: "Testimonials",
+    icon: MessageSquare,
+    component: Testimonials,
+    color: "bg-blue-50 hover:bg-blue-100",
   },
   {
     id: "projects",
@@ -115,8 +115,7 @@ export default function BackgroundPage() {
               Explore my professional journey, skills, education, and achievements that have shaped my career path.
             </p>
 
-            {/* Mobile dropdown */}
-            <div className="md:hidden mb-8">
+            <div className="xl:hidden mb-8">
               <Select
                 value={activeSection}
                 onValueChange={(value) => {
@@ -148,9 +147,8 @@ export default function BackgroundPage() {
               </Select>
             </div>
 
-            {/* Desktop buttons */}
-            <div className="hidden md:flex justify-center mb-12">
-              <div className="flex space-x-4">
+            <div className="hidden xl:flex justify-center mb-12">
+              <div className="flex justify-center gap-3">
                 {sections.map((section) => (
                   <button
                     key={section.id}
@@ -165,14 +163,14 @@ export default function BackgroundPage() {
                       }
                     }}
                     className={cn(
-                      "flex items-center gap-2 px-6 py-3 rounded-lg transition-all relative",
+                      "flex items-center gap-2 px-4 py-3 rounded-lg transition-all relative text-sm",
                       section.color,
                       activeSection === section.id ? "ring-2 ring-blue-500 shadow-lg scale-105" : "hover:scale-105",
                       // Add overflow-hidden to contain the pseudo-element
                       "overflow-hidden",
                     )}
                   >
-                    <section.icon className="h-5 w-5" />
+                    <section.icon className="h-4 w-4" />
                     <span className="font-medium whitespace-nowrap">{section.title}</span>
                   </button>
                 ))}

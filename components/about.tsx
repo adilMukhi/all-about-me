@@ -1,13 +1,10 @@
 "use client"
 
-import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 
 export default function About() {
-  const [showMore, setShowMore] = useState(false)
-
   return (
     <section id="about" className="container py-8" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <h2
@@ -16,48 +13,73 @@ export default function About() {
       >
         About Me
       </h2>
-      <div className="grid gap-6 lg:grid-cols-2">
-        <Card
-          className="bg-card shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105"
-          className={`card-hover-effect`}
-        >
+      <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
+        <Card className="bg-card shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 card-hover-effect">
           <CardHeader>
-            <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>A Bit About Myself</CardTitle>
-            <CardDescription>Get to know me better</CardDescription>
+            <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>My Journey</CardTitle>
+            <CardDescription>From curiosity to leadership</CardDescription>
           </CardHeader>
-          <CardContent>
-            <p className="leading-7 [&:not(:first-child)]:mt-6">
-              I'm a Grade 10 IB MYP student at Glenforest Secondary School who is dedicated to both academic success and
-              effective leadership. I am a curious student with a passion for improvement, knowledge and trying new
-              things. "With curiosity as my guide, I will never go wrong." Read the specifics below: 👇🏼
-            </p>
-            {showMore && (
-              <p className="leading-7 [&:not(:first-child)]:mt-6">
-                I am a driven student leader, researcher, and advocate passionate about medicine and education. As the
-                President and Founder of Dr. Interested, I lead a global team to inspire future medical professionals
-                through mentorship and research. In the IB I maintain a 98% average while holding leadership roles in
-                French Club and STEM Fellowship, and actively helping in Peer Helpers. My research experience includes
-                studies on stress hormones and astrocytomas, and I serve as a Youth Advisor at the University of Toronto
-                Faculty of Kinesiology and Physical Education. I have earned Distinction in the Beaver Computing
-                Challenge and am currently enrolled in UofT's MedLinx Program, furthering my passion for healthcare and
-                advocacy.
+          <CardContent className="space-y-4">
+            <div className="space-y-4">
+              <p className="leading-7">
+                <strong>The Beginning:</strong> I'm a Grade 10 IB MYP student at Glenforest Secondary School, where my
+                journey began with a simple philosophy: <em>"With curiosity as my guide, I will never go wrong."</em>{" "}
+                This mindset has shaped everything I do, from maintaining a 98% academic average to exploring the
+                frontiers of medical research.
               </p>
-            )}
-            <Button variant="link" onClick={() => setShowMore(!showMore)} className="mt-4 p-0">
-              {showMore ? "Show Less" : "Show More"}
-            </Button>
+
+              <p className="leading-7">
+                <strong>Building Dreams:</strong> My passion for medicine led me to found{" "}
+                <strong>Dr. Interested</strong>, where I serve as President, leading a global team to inspire future
+                medical professionals through mentorship and research. What started as personal curiosity has grown into
+                a platform that connects aspiring doctors worldwide.
+              </p>
+
+              <p className="leading-7">
+                <strong>Research & Discovery:</strong> My research journey includes fascinating studies on stress
+                hormones and astrocytomas, work that has deepened my understanding of the human body and mind. As a
+                Youth Advisor at the University of Toronto Faculty of Kinesiology and Physical Education, I bridge the
+                gap between student perspectives and academic excellence.
+              </p>
+
+              <p className="leading-7">
+                <strong>Leadership in Action:</strong> Beyond academics, I actively lead in French Club and STEM
+                Fellowship, while contributing to my community through Peer Helpers. I've earned Distinction in the
+                Beaver Computing Challenge and am currently enrolled in UofT's MedLinx Program, constantly expanding my
+                horizons.
+              </p>
+
+              <p className="leading-7">
+                <strong>Looking Forward:</strong> Every experience, from research labs to leadership roles, shapes my
+                path toward making a meaningful impact in healthcare and education. I believe in the power of curiosity,
+                dedication, and community to create positive change.
+              </p>
+
+              <div className="pt-4">
+                <Link
+                  href="/background"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors"
+                >
+                  Explore my full background →
+                </Link>
+              </div>
+            </div>
           </CardContent>
         </Card>
-        <div className="flex items-center justify-center">
-          <div className="relative w-full max-w-md aspect-square">
+
+        <div className="flex flex-col items-center justify-start space-y-4">
+          <div className="relative w-full aspect-[3/5] max-w-md">
             <Image
-              src="/profile-pic.jpg"
-              alt="Adil Mukhi"
+              src="/tedx-speaking.jpeg"
+              alt="Adil Mukhi speaking at TEDxMcFarren"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="rounded-full object-cover"
+              className="rounded-lg object-cover shadow-lg"
             />
           </div>
+          <p className="text-sm text-muted-foreground text-center italic">
+            Speaking at TEDxMcFarren - sharing insights on leadership and innovation
+          </p>
         </div>
       </div>
     </section>
