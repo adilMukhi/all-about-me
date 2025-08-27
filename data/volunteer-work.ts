@@ -134,7 +134,7 @@ export const volunteerWork: VolunteerWork[] = [
     period: "Dec 2023",
     description:
       "Assembled care packages with school supplies, toys, and essentials for children in need at the University of Toronto (Mississauga Campus).",
-    image: "/flourishfoundation.jpg",
+    image: "/floursihfoundation.jpg",
     skills: ["Teamwork", "Philanthropy", "Logistics", "Community Service"],
     link: "https://www.flourishfoundation.org/",
   },
@@ -144,7 +144,7 @@ export const volunteerWork: VolunteerWork[] = [
     period: "Dec 2023",
     description:
       "Created 40 thank-you and holiday cards for youth and staff at local shelters to spread kindness and encouragement.",
-    image: "/ptyt.jpg",
+    image: "/ptyt.jpeg",
     skills: ["Creativity", "Community Support", "Empathy"],
     link: "",
   },
@@ -154,7 +154,7 @@ export const volunteerWork: VolunteerWork[] = [
     period: "Oct – Nov 2023",
     description:
       "Helped during Parent’s Night by greeting families, offering information, and assisting with event logistics.",
-    image: "/peer-helpers.jpg",
+    image: "/peer-helpers.png",
     skills: ["Public Relations", "Communication", "Event Support"],
     link: "",
   },
