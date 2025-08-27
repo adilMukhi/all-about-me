@@ -155,7 +155,7 @@ export const honorsAwards: Award[] = [
     issuer: "The Valleys",
     year: "2023",
     description: "Delivered a graduation speech to the 2023 graduating grade 8 class, their parents, and school staff.",
-    image: ["valleys-grad.png", "/valleys-grad-2.png", "/valleys_speech.jpg"],
+    image: ["/valleys-grad.png", "/valleys-grad-2.png", "/valleys_speech.jpg"],
     skills: ["Public Speaking", "Leadership", "Writing Skills", "Emotional Intelligence", "Audience Engagement"],
     link: "https://thevalleys.peelschools.org/",
   },
