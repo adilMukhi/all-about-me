@@ -69,7 +69,7 @@ export default function VolunteerWorkModal({ experience, isOpen, onClose }: Volu
           {/* Career Progression */}
           {experience.progression && experience.progression.length > 0 && (
             <div>
-              <h3 className="text-lg font-semibold mb-3">Career Progression</h3>
+              <h3 className="text-lg font-semibold mb-3">Roles:</h3>
               <div className="space-y-4">
                 {experience.progression.map((prog, index) => (
                   <div key={index} className="border-l-2 border-primary pl-4 pb-4">
