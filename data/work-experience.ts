@@ -91,7 +91,18 @@ export const workExperiences: WorkExperience[] = [
     link: "",
     slug: "children-first-advising",
   },
-    {
+  {
+    title: "General Volunteer",
+    company: "National Youth Advisory Council (NYAC) of the Mood Disorders Society of Canada",
+    period: "2025-06-01 – 2026-05-31",
+    description: "Contributed to national youth mental health initiatives, supporting programs and advocacy efforts across Canada.",
+    stats: ["Participated in national initiatives", "Supported youth mental health projects"],
+    image: "/NYACofMDSC.png", // Replace with actual path to image
+    skills: ["Youth Advocacy", "Mental Health Awareness", "Community Engagement"],
+    link: "https://www.mooddisorders.ca/nyac",
+    slug: "nyac-mdsc-volunteer",
+  },
+  {
     title: "Youth Collective Member",
     company: "KPE Rethink Sport Collective, University of Toronto",
     period: "2024–Present",
