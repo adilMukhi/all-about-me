@@ -20,7 +20,7 @@ export const volunteerWork: VolunteerWork[] = [
     period: "Jan 2024 – Present",
     description:
       "Appointed as Junior Team Lead (JTL) for a one-year term to train junior volunteers and take on more responsibilities. Focuses on youth development, event planning, inclusivity, and accessibility.",
-    image: "/ismailivolunteers.jpg",
+    image: "/ismalivolunteers.jpg",
     skills: [
       "Leadership",
       "Event Planning",
