@@ -12,7 +12,7 @@ const featuredTestimonial = {
   timeKnown: "October 2024",
   testimonial:
     "I have had the pleasure of directly managing Adil as a Research Aid for the international research collaboration at my youth non-profit, Restoring Rainbows Southlake. From the very beginning, Adil has demonstrated an incredible work ethic and a level of motivation that is truly commendable. He consistently approaches his tasks with a proactive mindset, often being two steps ahead.",
-  image: "/professional-woman-headshot.png",
+  image: "/RiyaDutta.jpeg",
 }
 
 export default function BackgroundPreview() {

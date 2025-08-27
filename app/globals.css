@@ -65,6 +65,7 @@
 
     /* Added Fredoka font variable for bubbly text */
     --font-fredoka: "Fredoka", cursive;
+    --font-inter: "Inter", sans-serif;
   }
 }
 
@@ -75,8 +76,9 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans",
-      "Droid Sans", "Helvetica Neue", sans-serif;
+    /* Updated body font to use Fredoka instead of system fonts */
+    font-family:
+      var(--font-fredoka), var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   }
 }
 
