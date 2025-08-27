@@ -15,7 +15,7 @@ export const honorsAwards: Award[] = [
     year: "Aug 2025",
     description:
       "Nominated and selected for the Ontario Volunteer Service Award recognizing 2 to 4 years of continuous volunteer service with the Ismaili Council for Southwest Ontario – Mississauga Jamatkhana. To be formally recognized in a ceremony on September 1, 2025, and presented with a certificate and lapel pin for dedication to community service.",
-    image: "/ontario_volunteer_award.png",
+    image: "/OVSA.jpg",
     skills: ["Volunteerism", "Community Engagement", "Leadership", "Commitment", "Service"],
     link: "https://mail.google.com/mail/u/0/?tab=rm&ogbl#search/nomination/FMfcgzQbgcNCxmqvLcQGlgpbwXJxpdNz",
   },
@@ -87,7 +87,7 @@ export const honorsAwards: Award[] = [
     year: "2024",
     description:
       "Awarded Honourable Mention in the 2024 International Medical Journalism Olympiad, an online examination held on September 29th, 2024 from 1:00-3:00 PM. This prestigious competition recognizes excellence in medical journalism and communication skills among students worldwide.",
-    image: "/journalism_olympiad_certificate.jpg",
+    image: "/IMJO-cert.png",
     skills: ["Medical Journalism", "Writing", "Communication", "Research", "Critical Analysis"],
     link: "https://journalismsociety.org/medical-journalism-olympiad",
   },
@@ -107,7 +107,7 @@ export const honorsAwards: Award[] = [
     year: "Jul 2025",
     description:
       "Nominated for the Global Youth Awards 2025, which celebrate inspiring young leaders making positive social impact worldwide. The awards ceremony will be held on November 8, 2025, at PRYZM Kingston, London, and livestreamed globally.",
-    image: "/global_youth_award.png",
+    image: "/GYA-nomination.jpeg",
     skills: ["Leadership", "Global Citizenship", "Youth Advocacy", "Innovation", "Community Impact"],
     link: "https://mail.google.com/mail/u/0/?tab=rm&ogbl#search/nomination/FMfcgzQbgRnJDGzLwGtRMhQxlglMTBSD",
   },
@@ -117,7 +117,7 @@ export const honorsAwards: Award[] = [
     year: "Jun 2025",
     description:
       "Nominated for the Civic Award of Recognition in the category of Youth Community and Civic Engagement, acknowledging exceptional dedication to serving and uplifting the community.",
-    image: "/civic_award.png",
+    image: "/Mississauga.jpg",
     skills: ["Community Engagement", "Civic Leadership", "Volunteerism", "Youth Leadership", "Service"],
     link: "https://mail.google.com/mail/u/0/?tab=rm&ogbl#search/nomination/FMfcgzQbfpHrXfGzRQKrBgdBFzJShwJK",
   },
@@ -155,7 +155,7 @@ export const honorsAwards: Award[] = [
     issuer: "The Valleys",
     year: "2023",
     description: "Delivered a graduation speech to the 2023 graduating grade 8 class, their parents, and school staff.",
-    image: "/valleys_speech.jpg",
+    image: ["valleys-grad.png", "/valleys-grad-2.png", "/valleys_speech.jpg"],
     skills: ["Public Speaking", "Leadership", "Writing Skills", "Emotional Intelligence", "Audience Engagement"],
     link: "https://thevalleys.peelschools.org/",
   },
