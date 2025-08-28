@@ -32,42 +32,85 @@ const SpeakingEngagementsHero = () => (
         className="text-4xl font-bold tracking-tighter text-center mb-16 sm:text-5xl md:text-6xl text-primary"
         style={{ fontFamily: "Sour Gummy, latin" }}
       >
-        Speaking Engagements
+        Speaking Engagements & Consulting
       </h2>
 
       <div className="max-w-4xl mx-auto text-center space-y-8">
         <p className="text-xl leading-relaxed text-muted-foreground">
-          Book Adil as your next speaker at your event/engagement.
+          Book Adil as your next speaker or consultant for your event, organization, or initiative.
         </p>
 
-        <div className="text-left max-w-2xl mx-auto">
-          <p className="text-lg mb-6 text-muted-foreground">He provides the following services:</p>
-          <ul className="space-y-3 text-lg">
-            <li className="flex items-start gap-3">
-              <span className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></span>
-              <span className="text-muted-foreground">Presentations</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></span>
-              <span className="text-muted-foreground">Workshops</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></span>
-              <span className="text-muted-foreground">Facilitation/Moderation</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></span>
-              <span className="text-muted-foreground">Panels</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></span>
-              <span className="text-muted-foreground">Interviews</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></span>
-              <span className="text-muted-foreground">and more!</span>
-            </li>
-          </ul>
+        <div className="text-left max-w-3xl mx-auto">
+          <div className="bg-primary/5 p-8 rounded-lg mb-8">
+            <h3 className="text-2xl font-semibold text-primary mb-6 text-center">What I Offer</h3>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-lg font-semibold text-primary mb-4">Speaking Services</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></span>
+                    <span className="text-muted-foreground">Keynote Presentations</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></span>
+                    <span className="text-muted-foreground">Interactive Workshops</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></span>
+                    <span className="text-muted-foreground">Panel Discussions</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></span>
+                    <span className="text-muted-foreground">Event Facilitation & MC</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></span>
+                    <span className="text-muted-foreground">Podcast Interviews</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-primary mb-4">Consulting Services</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></span>
+                    <span className="text-muted-foreground">Youth Advocacy & Engagement</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></span>
+                    <span className="text-muted-foreground">Mental Health Program Development</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></span>
+                    <span className="text-muted-foreground">Policy Review & Feedback</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></span>
+                    <span className="text-muted-foreground">Research Collaboration</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></span>
+                    <span className="text-muted-foreground">Educational Curriculum Input</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-8 p-6 bg-white/50 rounded-lg border border-primary/20">
+              <h4 className="text-lg font-semibold text-primary mb-3">💰 Free Services</h4>
+              <div className="space-y-2 text-muted-foreground">
+                <p>
+                  All speaking and consulting services are offered at <strong>no cost</strong> to support meaningful
+                  causes and organizations.
+                </p>
+                <p>
+                  <strong>Location:</strong> Available online worldwide or in-person in the Greater Toronto Area (GTA)
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -96,40 +139,53 @@ const ServicesAccordion = () => {
 
   const services = [
     {
-      id: "youth-mental-health",
-      title: "Youth Mental Health",
+      id: "youth",
+      title: "Youth",
       content:
-        "Specialized consulting and speaking services focused on youth mental health initiatives, program development, and community outreach. I work with organizations to develop comprehensive mental health support systems for young people.",
+        "Specialized consulting and speaking services focused on youth engagement, advocacy, and empowerment. I work with organizations to develop comprehensive youth programs, facilitate meaningful youth participation in decision-making, and create engaging presentations that resonate with young audiences.",
     },
     {
-      id: "youth-engagement",
-      title: "Youth Engagement",
+      id: "mental-health",
+      title: "Mental Health",
       content:
-        "Dynamic presentations and workshops designed to engage young audiences in meaningful conversations about health, education, and personal development. Perfect for schools, youth organizations, and community groups.",
+        "Mental health advocacy and program development with a focus on youth mental wellness. Drawing from extensive experience with research organizations and advocacy groups, I provide consulting on mental health initiatives, community outreach programs, and evidence-based support systems.",
     },
     {
-      id: "education",
-      title: "Education",
+      id: "sports",
+      title: "Sports",
       content:
-        "Educational consulting services including curriculum development, research methodology training, and academic program evaluation. I help educational institutions enhance their programs and student outcomes.",
+        "Sports-related consulting and speaking services, including youth sports development, policy recommendations, and advocacy work. I contribute to discussions on the future of sport and help organizations create inclusive, healthy sporting environments for young people.",
     },
     {
-      id: "others",
-      title: "Others by Request!",
+      id: "policy",
+      title: "Policy",
       content:
-        "Custom consulting and speaking services tailored to your organization's specific needs. Whether it's research collaboration, program evaluation, or specialized presentations, I'm here to help.",
+        "Policy consultation and review services with a youth perspective. I provide feedback on policy development, participate in roundtables and consultations, and help organizations understand how policies impact young people. Experience includes work with government agencies and advocacy organizations.",
+    },
+    {
+      id: "education-research",
+      title: "Education & Research",
+      content:
+        "Educational consulting services including curriculum development, research methodology training, and academic program evaluation. I help educational institutions enhance their programs through evidence-based approaches and collaborate on research projects focused on youth outcomes.",
+    },
+    {
+      id: "custom-solutions",
+      title: "Custom Solutions",
+      content:
+        "Tailored consulting and speaking services designed around your organization's specific needs. Whether it's program evaluation, research collaboration, specialized presentations on emerging topics, or unique advocacy initiatives, I work with you to create solutions that fit your goals and audience.",
     },
   ]
 
   return (
     <section className="py-16">
-      <div className="container max-w-4xl">
-        <div className="space-y-4">
+      <div className="container max-w-6xl">
+        <h2 className="text-3xl font-bold text-primary mb-8 text-center">Service Areas</h2>
+        <div className="grid md:grid-cols-2 gap-6">
           {services.map((service) => (
-            <div key={service.id} className="border-b border-gray-200">
+            <div key={service.id} className="border border-gray-200 rounded-lg">
               <button
                 onClick={() => toggleSection(service.id)}
-                className="w-full flex justify-between items-center py-6 text-left"
+                className="w-full flex justify-between items-center p-6 text-left"
               >
                 <h3 className="text-xl font-semibold text-primary">{service.title}</h3>
                 {openSection === service.id ? (
@@ -139,7 +195,7 @@ const ServicesAccordion = () => {
                 )}
               </button>
               {openSection === service.id && (
-                <div className="pb-6">
+                <div className="px-6 pb-6">
                   <p className="text-muted-foreground leading-relaxed">{service.content}</p>
                 </div>
               )}
@@ -148,25 +204,26 @@ const ServicesAccordion = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <div className="bg-primary/5 p-6 rounded-lg mb-8">
-            <p className="text-muted-foreground mb-4">
-              I offer both <strong>free and paid services</strong> depending on your organization's mission and
-              non-profit status. All services are available both <strong>online and in-person</strong> anywhere in or
-              around the <strong>Greater Toronto Area (GTA)</strong>.
+          <div className="bg-primary/5 p-8 rounded-lg mb-8">
+            <h3 className="text-xl font-semibold text-primary mb-4">Ready to Work Together?</h3>
+            <p className="text-muted-foreground mb-4 leading-relaxed">
+              The button below is for connecting with me to discuss your event. Use it if you'd like to explore working
+              together, confirm details, or invite me to speak or consult. I'll work with you to understand your needs
+              and create a customized approach that fits your organization and budget.
             </p>
-            <p className="text-sm text-muted-foreground">
-              Contact me to discuss your specific needs and how we can work together.
+            <p className="text-sm text-muted-foreground italic">
+              Let's discuss how we can make your event or initiative impactful and engaging.
             </p>
           </div>
 
           <Button
             size="lg"
-            className="px-12 py-3 text-lg"
+            className="px-12 py-3 text-lg font-semibold"
             data-cal-link="adilm.0/15min"
             data-cal-namespace="15min"
             data-cal-config='{"layout":"month_view","theme":"light"}'
           >
-            Book
+            👉 Work With Me
           </Button>
         </div>
       </div>
@@ -176,35 +233,185 @@ const ServicesAccordion = () => {
 
 const PastEngagements = () => (
   <section className="py-16 bg-gradient-to-b from-background to-primary/5">
-    <div className="container max-w-4xl">
+    <div className="container max-w-6xl ml-auto pr-8">
       <h2 className="text-3xl font-bold text-primary mb-8">Past Engagements</h2>
-      <div className="space-y-4">
-        <div className="flex items-start gap-3">
-          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-          <div>
-            <p className="font-medium">Lorem Ipsum Dolor Sit Amet Consectetur</p>
-            <p className="text-sm text-muted-foreground">2024 - Adipiscing, Elit</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {/* Speaking Section */}
+        <div>
+          <h3 className="text-2xl font-semibold text-primary mb-6">Speaking</h3>
+          <div className="space-y-4">
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Guest Speaker for the NACY Emerging Leaders Group</p>
+                <p className="text-sm text-muted-foreground">July 2025 - NACY</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Speaker in World Youth Skills Day Message</p>
+                <p className="text-sm text-muted-foreground">2025 - Results Canada</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Panel Speaker for the Results Action Kickoff</p>
+                <p className="text-sm text-muted-foreground">May 2025 - Results Canada</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Speaker on the BEYOND THE HELIX Podcast</p>
+                <p className="text-sm text-muted-foreground">August 2025 - MediQuills & Revitalized Medicine</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">SDG Accelerator Program Facilitator</p>
+                <p className="text-sm text-muted-foreground">2025 - Children First Canada</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">MC, Resilient Minds</p>
+                <p className="text-sm text-muted-foreground">April 2025 - Dr. Interested & YSA</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">AMA with the ED of Dr. Interested</p>
+                <p className="text-sm text-muted-foreground">August 2025 - Dr. Interested</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">MC, WOW Program</p>
+                <p className="text-sm text-muted-foreground">September 2025 - DBNC</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">MC, Job/Volunteer Fair</p>
+                <p className="text-sm text-muted-foreground">March 2024 - Volunteer MBC</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Valedictorian, Grade 8 Graduation</p>
+                <p className="text-sm text-muted-foreground">June 2023 - The Valleys Sr. PS</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">And many other Dr. Interested and club events</p>
+                <p className="text-sm text-muted-foreground">Various dates</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="flex items-start gap-3">
-          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-          <div>
-            <p className="font-medium">Sed Do Eiusmod Tempor Incididunt Ut Labore</p>
-            <p className="text-sm text-muted-foreground">2023 - Magna, Aliqua</p>
-          </div>
-        </div>
-        <div className="flex items-start gap-3">
-          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-          <div>
-            <p className="font-medium">Ut Enim Ad Minim Veniam Quis Nostrud</p>
-            <p className="text-sm text-muted-foreground">2023 - Exercitation, Ullamco</p>
-          </div>
-        </div>
-        <div className="flex items-start gap-3">
-          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-          <div>
-            <p className="font-medium">Duis Aute Irure Dolor In Reprehenderit</p>
-            <p className="text-sm text-muted-foreground">2022 - Voluptate, Velit</p>
+
+        {/* Consulting Section */}
+        <div>
+          <h3 className="text-2xl font-semibold text-primary mb-6">Consulting as a Youth Advocate</h3>
+          <div className="space-y-4">
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Children's Privacy Code Consultation</p>
+                <p className="text-sm text-muted-foreground">
+                  July 2025 - Office of the Privacy Commissioner of Canada
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Highlighted in Presentation at Clinton Global Initiative Annual Meeting</p>
+                <p className="text-sm text-muted-foreground">September 2025 - Project Green Challenge</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Youth Tech Consultation</p>
+                <p className="text-sm text-muted-foreground">August 2025 - UNICEF</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Contributor, OPTIMAL (CIHR Healthy Youth Team Grant)</p>
+                <p className="text-sm text-muted-foreground">2025 - SickKids & YCRH</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Youth Advocate, Future of Sport Commission Recommendations</p>
+                <p className="text-sm text-muted-foreground">2025 - UofTKPE</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Op-Ed Highlight, Policy in the Age of AI</p>
+                <p className="text-sm text-muted-foreground">July 2025 - NACY</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Youth Collective Member</p>
+                <p className="text-sm text-muted-foreground">2025 - University of Toronto, Faculty of KPE</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Youth Reviewer, Raising Canada Report</p>
+                <p className="text-sm text-muted-foreground">2024 - Children First Canada</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Mental Health Focus Group</p>
+                <p className="text-sm text-muted-foreground">
+                  2024 - University of Western Ontario & School Mental Health Ontario
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Participant, Right to a Healthy Environment Roundtable</p>
+                <p className="text-sm text-muted-foreground">2024 - Break the Divide</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Youth Council Member</p>
+                <p className="text-sm text-muted-foreground">2024–2025 - Eco Brothers</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">And my other work as a member of the YCRH, the NYAC of the MDSC, and CFC</p>
+                <p className="text-sm text-muted-foreground">Ongoing</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
