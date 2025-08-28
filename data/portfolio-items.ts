@@ -539,6 +539,33 @@ export type CodingProject = {
 }
 
 export const codingProjects: CodingProject[] = [
+    {
+    title: "Dr. Interested Website",
+    description:
+      "A website for the Dr. Interested club, featuring webinar schedules, research proposal competitions, and resources for aspiring medical professionals.",
+    image: "/portfolio/coding/drinterested.png",
+    tags: ["Next.js", "React", "Tailwind CSS"],
+    demoLink: "https://drinterested-int.vercel.app/",
+    codeLink: "https://github.com/drinterested/drinterested-final",
+  },
+  {
+    title: "Youth Law Advocacy Website",
+    description:
+      "A website created to support youth in understanding their legal rights and accessing legal resources.",
+    image: "/portfolio/coding/youthlaw.png",
+    tags: ["Next.js", "React", "Tailwind CSS"],
+    demoLink: "https://yla.vercel.app/",
+    codeLink: "https://github.com/youthlawadvocacy/website",
+  },
+  {
+    title: "Explore3 Case Comp Website",
+    description:
+      "A website created for the Explore3 case competition, showcasing innovative solutions and projects.",
+    image: "/portfolio/coding/explore3.png",
+    tags: ["Next.js", "React", "Tailwind CSS"],
+    demoLink: "https://explore3.vercel.app/",
+    codeLink: "https://github.com/adilMukhi/explore3",
+  },
   {
     title: "StemHiss Website",
     description:
@@ -547,15 +574,6 @@ export const codingProjects: CodingProject[] = [
     tags: ["HTML", "CSS", "JavaScript", "React"],
     demoLink: "https://stemhiss.vercel.app/",
     codeLink: "https://github.com/StemHiss-int/website",
-  },
-  {
-    title: "Dr. Interested Website",
-    description:
-      "A website for the Dr. Interested club, featuring webinar schedules, research proposal competitions, and resources for aspiring medical professionals.",
-    image: "/portfolio/coding/drinterested.png",
-    tags: ["Next.js", "React", "Tailwind CSS"],
-    demoLink: "https://drinterested-int.vercel.app/",
-    codeLink: "https://github.com/kishys/drinterested-site",
   },
   {
     title: "LibSci Website",
