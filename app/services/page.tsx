@@ -66,7 +66,7 @@ const SpeakingEngagementsHero = () => (
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></span>
-                    <span className="text-muted-foreground">Podcast Interviews</span>
+                    <span className="text-muted-foreground">Interviews</span>
                   </li>
                 </ul>
               </div>

@@ -2,7 +2,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Instagram, Linkedin, Link, Building, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 const socialLinks = [
   { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com/in/adil-mukhi-6aba27246", color: "text-blue-500" },
@@ -12,19 +12,85 @@ const socialLinks = [
 ]
 
 const CalBookingScript = () => {
-  useEffect(() => {
-    const script = document.createElement("script")
-    script.innerHTML = `
-      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-      Cal("init", "15min", {origin:"https://app.cal.com"});
-      Cal.ns["15min"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#bbd3e5"},"dark":{"cal-brand":"#bbd3e5"}},"hideEventTypeDetails":false,"layout":"month_view"});
-    `
-    document.head.appendChild(script)
+  const [isLoaded, setIsLoaded] = useState(false)
+  const [retryCount, setRetryCount] = useState(0)
 
-    return () => {
-      document.head.removeChild(script)
+  useEffect(() => {
+    const loadCalScript = () => {
+      // Check if Cal is already loaded
+      if (window.Cal) {
+        setIsLoaded(true)
+        return
+      }
+
+      const script = document.createElement("script")
+      script.src = "https://app.cal.com/embed/embed.js"
+      script.async = true
+
+      script.onload = () => {
+        try {
+          // Initialize Cal after script loads
+          window.Cal =
+            window.Cal ||
+            (() => {
+              ;(window.Cal.q = window.Cal.q || []).push(arguments)
+            })
+          window.Cal.l =
+            window.Cal.l ||
+            (() => {
+              ;(window.Cal.q = window.Cal.q || []).push(arguments)
+            })
+
+          window.Cal("init", "15min", { origin: "https://app.cal.com" })
+          window.Cal.ns = window.Cal.ns || {}
+          window.Cal("initNamespace", "15min")
+          window.Cal.ns["15min"] =
+            window.Cal.ns["15min"] ||
+            (() => {
+              ;(window.Cal.ns["15min"].q = window.Cal.ns["15min"].q || []).push(arguments)
+            })
+          window.Cal.ns["15min"]("ui", {
+            theme: "light",
+            cssVarsPerTheme: { light: { "cal-brand": "#bbd3e5" }, dark: { "cal-brand": "#bbd3e5" } },
+            hideEventTypeDetails: false,
+            layout: "month_view",
+          })
+
+          setIsLoaded(true)
+        } catch (error) {
+          console.error("[v0] Cal.com initialization error:", error)
+          // Retry up to 3 times
+          if (retryCount < 3) {
+            setTimeout(() => {
+              setRetryCount((prev) => prev + 1)
+            }, 1000)
+          }
+        }
+      }
+
+      script.onerror = () => {
+        console.error("[v0] Failed to load Cal.com script")
+        // Retry up to 3 times
+        if (retryCount < 3) {
+          setTimeout(() => {
+            setRetryCount((prev) => prev + 1)
+          }, 2000)
+        }
+      }
+
+      document.head.appendChild(script)
+
+      return () => {
+        try {
+          document.head.removeChild(script)
+        } catch (e) {
+          // Script might already be removed
+        }
+      }
     }
-  }, [])
+
+    loadCalScript()
+  }, [retryCount])
 
   return null
 }

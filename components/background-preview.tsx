@@ -34,12 +34,12 @@ export default function BackgroundPreview() {
 
       <div className="grid gap-8 md:grid-cols-2 mb-12">
         {/* Work Experience Preview */}
-        <Card className="card-hover-effect">
+        <Card className="card-hover-effect flex flex-col">
           <CardHeader>
             <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>Latest Experience</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex gap-4">
+          <CardContent className="space-y-4 flex-1 flex flex-col">
+            <div className="flex gap-4 flex-1">
               <Image
                 src={latestExperience.image || "/placeholder.svg"}
                 alt={latestExperience.company}
@@ -55,19 +55,21 @@ export default function BackgroundPreview() {
                 <p className="text-sm mt-2 line-clamp-3">{latestExperience.description}</p>
               </div>
             </div>
-            <Link href="/background#work">
-              <Button className="w-full button-hover-effect">View All Experience</Button>
-            </Link>
+            <div className="mt-auto">
+              <Link href="/background#work">
+                <Button className="w-full button-hover-effect h-10">View All Experience</Button>
+              </Link>
+            </div>
           </CardContent>
         </Card>
 
         {/* Testimonial Preview */}
-        <Card className="card-hover-effect">
+        <Card className="card-hover-effect flex flex-col">
           <CardHeader>
             <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>What People Say</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex gap-4">
+          <CardContent className="space-y-4 flex-1 flex flex-col">
+            <div className="flex gap-4 flex-1">
               <div className="relative flex-shrink-0">
                 <img
                   src={featuredTestimonial.image || "/placeholder.svg"}
@@ -87,9 +89,11 @@ export default function BackgroundPreview() {
                 </blockquote>
               </div>
             </div>
-            <Link href="/background#testimonials">
-              <Button className="w-full button-hover-effect">Read All Testimonials</Button>
-            </Link>
+            <div className="mt-auto">
+              <Link href="/background#testimonials">
+                <Button className="w-full button-hover-effect h-10">Read All Testimonials</Button>
+              </Link>
+            </div>
           </CardContent>
         </Card>
       </div>
