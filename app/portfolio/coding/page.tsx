@@ -34,9 +34,24 @@ export default function CodingPortfolioPage() {
             >
               Coding Portfolio
             </h1>
-            <p className="text-muted-foreground max-w-3xl mb-16">
+            <p className="text-muted-foreground max-w-3xl mb-8">
               A showcase of my software development projects, web applications, and coding experiments.
             </p>
+
+            <div className="flex flex-wrap gap-4 mb-16">
+              <Button asChild variant="outline" size="lg">
+                <a href="https://github.com/adilMukhi" target="_blank" rel="noopener noreferrer">
+                  <Github className="mr-2 h-5 w-5" />
+                  Check out my GitHub
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <a href="https://devpost.com/AdilM" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="mr-2 h-5 w-5" />
+                  Check out my Devpost
+                </a>
+              </Button>
+            </div>
 
             <div className="grid gap-6 md:grid-cols-2">
               {codingProjects.map((project, index) => (

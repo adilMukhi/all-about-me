@@ -1,8 +1,7 @@
 import type { NavConfig } from "@/types/nav"
 import { blogPosts } from "@/data/blog-posts"
 
-// Use the blog posts from the data file
-const blogPostItems = blogPosts.map((post) => ({
+const blogPostItems = blogPosts.slice(0, 4).map((post) => ({
   title: post.title,
   slug: post.slug,
 }))
