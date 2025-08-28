@@ -1,13 +1,105 @@
 // Writing portfolio
-export type Publication = {
+export type Book = {
   title: string
   publisher: string
   date: string
   description: string
   link: string
+  isbn?: string
+  authors?: string
+  image?: string
+  buyLinks?: {
+    onlineChannels?: Array<{
+      name: string
+      url: string
+    }>
+    ebookChannels?: Array<{
+      name: string
+      url: string
+    }>
+    customLinks?: Array<{
+      name: string
+      url: string
+    }>
+  }
 }
 
-export const publications: Publication[] = [
+export const books: Book[] = [
+  {
+    title: "Doctor Defender Versus RSV",
+    publisher: "Heal for Health",
+    date: "2025",
+    description:
+      "Doctor Defender Versus RSV is a children's book that explains what Respiratory Syncytial Virus (RSV) is and how young kids can protect themselves from it. Written in simple, engaging language, the book teaches important prevention tips in a way that's easy for children to understand. Distributed by Heal for Health, it is shared with families in low-income communities to help spread awareness and support healthier futures.",
+    link: "https://doi.org/10.5281/zenodo.16989982",
+    authors: "Adil Mukhi et al",
+    image: "/RSVbook.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "View Publication",
+          url: "https://doi.org/10.5281/zenodo.16989982",
+        },
+      ],
+    },
+  },
+  {
+    title: "Born of Embers",
+    publisher: "Polar Expressions Publishing",
+    date: "May 2025",
+    description:
+      "A national youth poetry anthology featuring my original work. Archived in the Library and Archives Canada.",
+    link: "https://www.polarexpressions.ca/Shop.html",
+    isbn: "978-1-990243-38-7",
+    authors: "Adil Mukhi et al",
+    image: "/BornofEmbers.jpeg",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Buy from Polar Expressions",
+          url: "https://www.polarexpressions.ca/Shop.html",
+        },
+      ],
+    },
+  },
+  {
+    title: "Echoes of the Deep",
+    publisher: "Polar Expressions Publishing",
+    date: "May 2025",
+    description:
+      "A published poetry collection showcasing youth voices across Canada. Includes my original piece, archived in the Library and Archives Canada.",
+    link: "https://www.polarexpressions.ca/Shop.html",
+    isbn: "978-1-990243-42-4",
+    authors: "Adil Mukhi et al",
+    image: "/echosofthedeep.jpeg",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Buy from Polar Expressions",
+          url: "https://www.polarexpressions.ca/Shop.html",
+        },
+      ],
+    },
+  },
+]
+
+export type LTE = {
+  title: string
+  publisher: string
+  date: string
+  description: string
+  link: string
+  authors?: string
+  image?: string
+  buyLinks?: {
+    customLinks?: Array<{
+      name: string
+      url: string
+    }>
+  }
+}
+
+export const ltes: LTE[] = [
   {
     title: "Continue support",
     publisher: "The London Free Press",
@@ -15,38 +107,34 @@ export const publications: Publication[] = [
     description:
       "A letter to the editor of The London Free Press, addressing the need for continued support for the work of the Global Fund.",
     link: "https://lfpress.com/opinion/letters/letters-to-the-editor-july-5-2025#:~:text=Article%20content-,Continue%20support,-Article%20content",
+    authors: "Adil Mukhi",
+    image: "https://blob.v0.dev/letter.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Article",
+          url: "https://lfpress.com/opinion/letters/letters-to-the-editor-july-5-2025#:~:text=Article%20content-,Continue%20support,-Article%20content",
+        },
+      ],
+    },
   },
   {
-    title: "Viruses Unveiled: A Blog on the West Nile Virus",
-    publisher: "Substack",
-    date: "January 2025",
-    description:
-      "A research-driven blog featuring 12 posts analyzing the West Nile virus, referencing 35+ peer-reviewed sources.",
-    link: "https://virusesunveiled.substack.com/",
-  },
-  {
-    title: "Born of Embers",
-    publisher: "Polar Expressions Publishing",
-    date: "May 2025",
-    description:
-      "A national youth poetry anthology featuring my original work. Archived in the Library and Archives Canada. ISBN: 978-1-990243-38-7.",
-    link: "https://www.polarexpressions.ca/Shop.html",
-  },
-  {
-    title: "Echoes of the Deep",
-    publisher: "Polar Expressions Publishing",
-    date: "May 2025",
-    description:
-      "A published poetry collection showcasing youth voices across Canada. Includes my original piece, archived in the Library and Archives Canada. ISBN: 978-1-990243-42-4.",
-    link: "https://www.polarexpressions.ca/Shop.html",
-  },
-  {
-    title: "Canada, Let’s Not Turn Our Backs on the World",
+    title: "Canada, Let's Not Turn Our Backs on the World",
     publisher: "Results Canada",
     date: "April 19, 2025",
     description:
-      "Published in the Volunteer Voices series by Results Canada, this opinion piece advocates for Canada’s global commitments amid the 2025 national election.",
+      "Published in the Volunteer Voices series by Results Canada, this opinion piece advocates for Canada's global commitments amid the 2025 national election.",
     link: "https://resultscanada.ca/volunteer-voices-canada-lets-not-turn-our-backs-on-the-world/",
+    authors: "Adil Mukhi",
+    image: "https://blob.v0.dev/canada.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Article",
+          url: "https://resultscanada.ca/volunteer-voices-canada-lets-not-turn-our-backs-on-the-world/",
+        },
+      ],
+    },
   },
   {
     title: "A World Left Waiting",
@@ -54,7 +142,17 @@ export const publications: Publication[] = [
     date: "March 27, 2025",
     description:
       "A reflective article exploring the themes of societal anticipation and the consequences of waiting for change, analyzing how these dynamics impact communities and individuals.",
-    link: "https://issuu.com/merritt-herald/docs/merritt_herald_march_27_2025/6",  // Replace with the actual article URL if available
+    link: "https://issuu.com/merritt-herald/docs/merritt_herald_march_27_2025/6",
+    authors: "Adil Mukhi",
+    image: "https://blob.v0.dev/world.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Article",
+          url: "https://issuu.com/merritt-herald/docs/merritt_herald_march_27_2025/6",
+        },
+      ],
+    },
   },
   {
     title: "Un monde laissé en attente",
@@ -62,42 +160,16 @@ export const publications: Publication[] = [
     date: "March 1, 2025",
     description: "An opinion piece reflecting on a world left on hold.",
     link: "https://www.lanouvelle.net/lettres-dopinion/un-monde-laisse-en-attente/",
-  },
-  {
-    title: "Light-Based Medical Technologies",
-    publisher: "The Bulleteen",
-    date: "November 2024",
-    description: "An article exploring the applications of light-based technologies in medicine.",
-    link: "https://thebulleteen.com/nov-2024/",
-  },
-  {
-    title: "Why Photonic Computing Could Be the Key to Solving the Energy Crisis",
-    publisher: "The Bulleteen",
-    date: "November 2024",
-    description: "A deep dive into the potential of photonic computing in addressing energy challenges.",
-    link: "https://thebulleteen.com/nov-2024/",
-  },
-  {
-    title: "Astrocytoma: From Diagnosis to Management – A Comprehensive Overview",
-    publisher: "Sunshine 4 Cancer Kids",
-    date: "August 13, 2024",
-    description:
-      "A peer-reviewed research paper analyzing astrocytoma diagnosis, treatment, and management. Contributed to Treatments and Impacts sections.",
-    link: "https://sunshine4cancerkid.wixsite.com/sunshine-4-cancer-ki/post/astrocytoma-from-diagnosis-to-management-a-comprehensive-overview",
-  },
-  {
-    title: "Bioengineering Breakthroughs: The End of Organ Transplant Lists?",
-    publisher: "The Bulleteen",
-    date: "September 2024",
-    description: "A discussion on how bioengineering innovations may revolutionize organ transplants.",
-    link: "https://thebulleteen.com/sep-2024/",
-  },
-  {
-    title: "Telemedicine’s Future: A Panacea for Healthcare Inequities or a Temporary Fix?",
-    publisher: "The Bulleteen",
-    date: "September 2024",
-    description: "An analysis of the role of telemedicine in addressing healthcare disparities.",
-    link: "https://thebulleteen.com/sep-2024/",
+    authors: "Adil Mukhi",
+    image: "https://blob.v0.dev/world_french.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Article",
+          url: "https://www.lanouvelle.net/lettres-dopinion/un-monde-laisse-en-attente/",
+        },
+      ],
+    },
   },
   {
     title: "Vaccines: A Global Imperative for a Healthier Future",
@@ -105,20 +177,33 @@ export const publications: Publication[] = [
     date: "July 24, 2024",
     description: "An opinion piece advocating for global vaccine initiatives.",
     link: "https://thefulcrum.ca/opinions/letters/letter-to-the-editor-vaccines-a-global-imperative-for-a-healthier-future/",
+    authors: "Adil Mukhi",
+    image: "https://blob.v0.dev/vaccines.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Article",
+          url: "https://thefulcrum.ca/opinions/letters/letter-to-the-editor-vaccines-a-global-imperative-for-a-healthier-future/",
+        },
+      ],
+    },
   },
   {
-    title: "Anthology #1",
-    publisher: "Aid4NeedxVoice4Need",
-    date: "May 20, 2024",
-    description: "A collection of literary works compiled for advocacy and awareness.",
-    link: "https://ko-fi.com/s/34b4610f05?published=true#shareNewShopItemModal",
-  },
-  {
-    title: "Protéger les enfants en cas d’urgence",
+    title: "Protéger les enfants en cas d'urgence",
     publisher: "Le Devoir",
     date: "May 11, 2024",
     description: "A letter to the editor addressing the importance of protecting children in emergencies.",
     link: "https://www.ledevoir.com/opinion/lettres/812816/proteger-enfants-cas-urgence",
+    authors: "Adil Mukhi",
+    image: "https://blob.v0.dev/protect_children.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Letter",
+          url: "https://www.ledevoir.com/opinion/lettres/812816/proteger-enfants-cas-urgence",
+        },
+      ],
+    },
   },
   {
     title: "Empowering Children: Calling on Canada to Prioritize Human Capital in IDA21",
@@ -126,6 +211,16 @@ export const publications: Publication[] = [
     date: "April 8, 2024",
     description: "A call for investment in children's futures through international development.",
     link: "https://thefulcrum.ca/opinions/letters/letter-to-the-editor-empowering-children-calling-on-canada-to-prioritize-human-capital-in-ida21/",
+    authors: "Adil Mukhi",
+    image: "https://blob.v0.dev/empowering_children.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Article",
+          url: "https://thefulcrum.ca/opinions/letters/letter-to-the-editor-empowering-children-calling-on-canada-to-prioritize-human-capital-in-ida21/",
+        },
+      ],
+    },
   },
   {
     title: "Investing in Children's Well-being",
@@ -133,13 +228,16 @@ export const publications: Publication[] = [
     date: "April 7, 2024",
     description: "An op-ed on the need for greater investment in children's health and education.",
     link: "https://resultscanada.ca/volunteer-voices-investing-in-childrens-well-being/",
-  },
-  {
-    title: "Creative Mention: Navigating the Path to Sustainable Healthcare: Innovations and Challenges",
-    publisher: "Human Nature Projects Ontario",
-    date: "March 16, 2024",
-    description: "An article exploring sustainable solutions in healthcare.",
-    link: "bit.ly/creativemention_adilm",
+    authors: "Adil Mukhi",
+    image: "https://blob.v0.dev/investing_wellbeing.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Article",
+          url: "https://resultscanada.ca/volunteer-voices-investing-in-childrens-well-being/",
+        },
+      ],
+    },
   },
   {
     title: "Journée mondiale de la tuberculose : la Tour CN sera illuminée en rouge",
@@ -147,6 +245,16 @@ export const publications: Publication[] = [
     date: "March 15, 2024",
     description: "A letter discussing World Tuberculosis Day and its significance.",
     link: "https://lecourrier.com/lettre-ouverte/2024/03/15/journee-mondiale-de-la-tuberculose-la-tour-cn-sera-illuminee-en-rouge/",
+    authors: "Adil Mukhi",
+    image: "https://blob.v0.dev/tuberculosis.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Letter",
+          url: "https://lecourrier.com/lettre-ouverte/2024/03/15/journee-mondiale-de-la-tuberculose-la-tour-cn-sera-illuminee-en-rouge/",
+        },
+      ],
+    },
   },
   {
     title: "Investing in Children's Well-being",
@@ -154,6 +262,16 @@ export const publications: Publication[] = [
     date: "March 14, 2024",
     description: "An op-ed emphasizing the importance of children's welfare investments.",
     link: "https://issuu.com/make_a_difference/docs/op_ed_-_adil_mukhi_-_investing_in_children_s_well-",
+    authors: "Adil Mukhi",
+    image: "https://blob.v0.dev/investing_wellbeing_issuu.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Article",
+          url: "https://issuu.com/make_a_difference/docs/op_ed_-_adil_mukhi_-_investing_in_children_s_well-",
+        },
+      ],
+    },
   },
   {
     title: "A call to action: Let us unite for the future of children",
@@ -161,13 +279,252 @@ export const publications: Publication[] = [
     date: "February 9, 2024",
     description: "A plea for collective action to secure children's futures.",
     link: "https://lecourrier.com/lettre-a-lediteur/2024/02/09/un-appel-a-laction-unissons-nous-pour-lavenir-des-enfants/",
+    authors: "Adil Mukhi",
+    image: "https://blob.v0.dev/call_to_action.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Letter",
+          url: "https://lecourrier.com/lettre-a-lediteur/2024/02/09/un-appel-a-laction-unissons-nous-pour-lavenir-des-enfants/",
+        },
+      ],
+    },
   },
   {
-    title: "Un appel à l’action : unissons-nous pour l’avenir des enfants",
+    title: "Un appel à l'action : unissons-nous pour l'avenir des enfants",
     publisher: "La Nouvelle union",
     date: "February 6, 2024",
     description: "A French-language opinion piece advocating for children's rights and future.",
     link: "https://www.lanouvelle.net/lettres-dopinion/un-appel-a-laction-unissons-nous-pour-lavenir-des-enfants/",
+    authors: "Adil Mukhi",
+    image: "https://blob.v0.dev/call_to_action_french.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Letter",
+          url: "https://www.lanouvelle.net/lettres-dopinion/un-appel-a-laction-unissons-nous-pour-lavenir-des-enfants/",
+        },
+      ],
+    },
+  },
+]
+
+export type Blog = {
+  title: string
+  publisher: string
+  date: string
+  description: string
+  link: string
+  authors?: string
+  image?: string
+  blogArticles?: Array<{
+    title: string
+    subtitle: string
+    date: string
+    views: number
+  }>
+}
+
+export const blogs: Blog[] = [
+  {
+    title: "Viruses Unveiled: A Blog on the West Nile Virus",
+    publisher: "Substack",
+    date: "January 2025",
+    description:
+      "A research-driven blog featuring 12 posts analyzing the West Nile virus, referencing 35+ peer-reviewed sources.",
+    link: "https://virusesunveiled.substack.com/",
+    authors: "Adil Mukhi",
+    image: "/virusesunveiled.png",
+    blogArticles: [
+      {
+        title: "The End & A New Beginning",
+        subtitle: "My new club Dr. Interested is officially out!",
+        date: "Feb 7",
+        views: 224,
+      },
+      {
+        title: "Wrapping Up The West Nile Virus",
+        subtitle: "Key Takeaways and Future Outlook",
+        date: "Feb 6",
+        views: 284,
+      },
+      {
+        title: "The Future of West Nile Virus",
+        subtitle: "The Next Chapter—Where Science is Headed!",
+        date: "Feb 4",
+        views: 285,
+      },
+      {
+        title: "Prevention and Control of West Nile Virus",
+        subtitle: "A Game Plan to Outfox Mosquitoes!",
+        date: "Jan 28",
+        views: 276,
+      },
+      {
+        title: "Winged Carriers: How Birds Spread West Nile Virus",
+        subtitle: "What do crows, sparrows, and mosquitoes have in common?",
+        date: "Jan 21",
+        views: 284,
+      },
+      {
+        title: "Diagnosing and Treating West Nile Virus",
+        subtitle: "A Plain-English Guide",
+        date: "Jan 14",
+        views: 286,
+      },
+      {
+        title: "Cracking the Code: The Chemical Structure",
+        subtitle: "Unlocking the Secrets of West Nile Virus",
+        date: "Jan 8",
+        views: 254,
+      },
+      {
+        title: "Toll of West Nile Virus: Symptoms and Health Impacts",
+        subtitle: "What Happens When a Mosquito Bite Turns Deadly?",
+        date: "Dec 27, 2024",
+        views: 247,
+      },
+      {
+        title: "Climate Change and Mosquito Populations",
+        subtitle: "A Rising Threat",
+        date: "Dec 23, 2024",
+        views: 237,
+      },
+      {
+        title: "West Nile Virus in Canada: An Overview",
+        subtitle: "How a Tiny Mosquito is Driving Big Public Health Challenges",
+        date: "Dec 19, 2024",
+        views: 268,
+      },
+      {
+        title: "West Nile Virus: What You Need to Know",
+        subtitle: "From Discovery in Africa to Growing Risks in Ontario",
+        date: "Dec 6, 2024",
+        views: 362,
+      },
+      { title: "Welcome", subtitle: "Our new blog... and chat!", date: "Nov 23, 2024", views: 269 },
+    ],
+  },
+]
+
+export type ClubPublication = {
+  title: string
+  publisher: string
+  date: string
+  description: string
+  link: string
+  authors?: string
+  image?: string
+  buyLinks?: {
+    customLinks?: Array<{
+      name: string
+      url: string
+    }>
+  }
+}
+
+export const clubPublications: ClubPublication[] = [
+  {
+    title: "Anthology #1",
+    publisher: "Aid4NeedxVoice4Need",
+    date: "May 20, 2024",
+    description: "A collection of literary works compiled for advocacy and awareness.",
+    link: "https://ko-fi.com/s/34b4610f05?published=true#shareNewShopItemModal",
+    authors: "Adil Mukhi et al",
+    image: "https://blob.v0.dev/anthology.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "View Collection",
+          url: "https://ko-fi.com/s/34b4610f05?published=true#shareNewShopItemModal",
+        },
+      ],
+    },
+  },
+  {
+    title: "Creative Mention: Navigating the Path to Sustainable Healthcare: Innovations and Challenges",
+    publisher: "Human Nature Projects Ontario",
+    date: "March 16, 2024",
+    description: "An article exploring sustainable solutions in healthcare.",
+    link: "https://adilmukhi.vercel.app/portfolio/bit.ly/creativemention_adilm",
+    authors: "Adil Mukhi",
+    image: "https://blob.v0.dev/creative_mention.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Article",
+          url: "https://adilmukhi.vercel.app/portfolio/bit.ly/creativemention_adilm",
+        },
+      ],
+    },
+  },
+  {
+    title: "Light-Based Medical Technologies",
+    publisher: "The Bulleteen",
+    date: "November 2024",
+    description: "An article exploring the applications of light-based technologies in medicine.",
+    link: "https://thebulleteen.com/nov-2024/",
+    authors: "Adil Mukhi",
+    image: "https://blob.v0.dev/light_based.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Article",
+          url: "https://thebulleteen.com/nov-2024/",
+        },
+      ],
+    },
+  },
+  {
+    title: "Why Photonic Computing Could Be the Key to Solving the Energy Crisis",
+    publisher: "The Bulleteen",
+    date: "November 2024",
+    description: "A deep dive into the potential of photonic computing in addressing energy challenges.",
+    link: "https://thebulleteen.com/nov-2024/",
+    authors: "Adil Mukhi",
+    image: "https://blob.v0.dev/photonic_computing.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Article",
+          url: "https://thebulleteen.com/nov-2024/",
+        },
+      ],
+    },
+  },
+  {
+    title: "Bioengineering Breakthroughs: The End of Organ Transplant Lists?",
+    publisher: "The Bulleteen",
+    date: "September 2024",
+    description: "A discussion on how bioengineering innovations may revolutionize organ transplants.",
+    link: "https://thebulleteen.com/sep-2024/",
+    authors: "Adil Mukhi",
+    image: "https://blob.v0.dev/bioengineering.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Article",
+          url: "https://thebulleteen.com/sep-2024/",
+        },
+      ],
+    },
+  },
+  {
+    title: "Telemedicine's Future: A Panacea for Healthcare Inequities or a Temporary Fix?",
+    publisher: "The Bulleteen",
+    date: "September 2024",
+    description: "An analysis of the role of telemedicine in addressing healthcare disparities.",
+    link: "https://thebulleteen.com/sep-2024/",
+    authors: "Adil Mukhi",
+    image: "https://blob.v0.dev/telemedicine.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Article",
+          url: "https://thebulleteen.com/sep-2024/",
+        },
+      ],
+    },
   },
 ]
 
@@ -241,7 +598,8 @@ export type ResearchProject = {
 export const researchProjects: ResearchProject[] = [
   {
     title: "From Stress to Forgetfulness: Understanding How Stress Hormones Shape Your Memory",
-    description: "An in-depth 6741 word exploration of how stress hormones affect memory, from short-term impacts to long-term neurological changes.",
+    description:
+      "An in-depth 6741 word exploration of how stress hormones affect memory, from short-term impacts to long-term neurological changes.",
     image: "/project3.jpg",
     tags: ["Neuroscience", "Psychology", "Medical Research"],
     link: "https://drive.google.com/file/d/17nAfJSKQjbB-A5mNme4fTODOxydKA3G1/view?usp=drive_link",
@@ -250,7 +608,8 @@ export const researchProjects: ResearchProject[] = [
   },
   {
     title: "Overcrowding in Emergency Departments: Causes, Consequences, and Solutions",
-    description: "A research poster presented at the IHL Innovate & Educate 2025 competition, examining the systemic causes and potential solutions for ED overcrowding in Canadian hospitals.",
+    description:
+      "A research poster presented at the IHL Innovate & Educate 2025 competition, examining the systemic causes and potential solutions for ED overcrowding in Canadian hospitals.",
     image: "/emergency_overcrowding.png",
     tags: ["Public Health", "Emergency Medicine", "Health Systems"],
     link: "https://drive.google.com/file/d/1R19MWKdwyO7sgs7DlChjjVzyWEtzrdlU/view?usp=sharing",
@@ -268,7 +627,8 @@ export const researchProjects: ResearchProject[] = [
   },
   {
     title: "Integrating AI in Alzheimer's: Diagnosis Methods, Prevention Strategies, and more!",
-    description: "A comprehensive research project examining the role of AI in Alzheimer's, covering diagnosis methods, prevention strategies, treatment options, and clinical trials.",
+    description:
+      "A comprehensive research project examining the role of AI in Alzheimer's, covering diagnosis methods, prevention strategies, treatment options, and clinical trials.",
     image: "/alzheimers_research.png",
     tags: ["AI", "Alzheimer's Disease", "Medical Research", "Neurology"],
     link: "https://drive.google.com/file/d/1ykansS3_jAV1_o77_3ZYOJC4LKApo4qJ/view?usp=sharing",
@@ -277,7 +637,8 @@ export const researchProjects: ResearchProject[] = [
   },
   {
     title: "Mini-Medical Booklet - Heal for Health",
-    description: "A concise medical booklet providing essential health information for various conditions and treatments.",
+    description:
+      "A concise medical booklet providing essential health information for various conditions and treatments.",
     image: "/portfolio/research/booklet.jpg",
     tags: ["Health Education", "Medical Research", "Public Health"],
     link: "https://drive.google.com/file/d/18PFkzwb5aEaP7VK-Eg3y1ZntnttjTALH/view?usp=sharing",
@@ -286,7 +647,8 @@ export const researchProjects: ResearchProject[] = [
   },
   {
     title: "Research Dump - School Supplies and Education",
-    description: "A research initiative focused on improving access to school supplies and education for underprivileged students.",
+    description:
+      "A research initiative focused on improving access to school supplies and education for underprivileged students.",
     image: "/portfolio/research/rrs.jpg",
     tags: ["Education", "Social Impact", "Community Research"],
     link: "https://drive.google.com/file/d/1K7tkkKjVaTmcyP2uJK3fU1BEA758G2aj/view?usp=sharing",
@@ -295,7 +657,8 @@ export const researchProjects: ResearchProject[] = [
   },
   {
     title: "Immunology's Next Frontier: From Classic Vaccines to Cutting-Edge Targeted Therapies",
-    description: "A deep dive into the evolution of immunology, from traditional vaccines to advanced targeted therapies.",
+    description:
+      "A deep dive into the evolution of immunology, from traditional vaccines to advanced targeted therapies.",
     image: "/portfolio/research/biomedizone.jpg",
     tags: ["Immunology", "Medical Research", "Biotechnology"],
     link: "https://drive.google.com/file/d/1CuMHv3eoGpjlWz2uoueTL3eIoxOFi0qK/view?usp=sharing",
@@ -304,15 +667,15 @@ export const researchProjects: ResearchProject[] = [
   },
   {
     title: "Precision Medicine Unveiled: Nanoparticles in Targeted Drug Delivery Systems",
-    description: "An exploration of how nanoparticles are revolutionizing precision medicine and targeted drug delivery systems.",
+    description:
+      "An exploration of how nanoparticles are revolutionizing precision medicine and targeted drug delivery systems.",
     image: "/portfolio/research/targeted.jpg",
     tags: ["Nanotechnology", "Pharmacology", "Medical Research"],
     link: "https://drive.google.com/file/d/11Sw8EDXzCxuaV6vbrX26YrM6E53-9mVP/view?usp=sharing",
     institution: "CosmicUs",
     year: "2023",
   },
-];
-
+]
 
 // Art projects
 export type ArtProject = {
@@ -327,15 +690,26 @@ export type ArtProject = {
 export const artProjects: ArtProject[] = [
   {
     title: "Cosmos: From Olympus To The Moon",
-    description: "Story 'Illumination' art - An artistic representation of the story 'Illumination,' exploring themes of mythology and space.",
+    description:
+      "Story 'Illumination' art - An artistic representation of the story 'Illumination,' exploring themes of mythology and space.",
     image: "/portfolio/art/moon (1).jpg",
-    images: ["/portfolio/art/moon (1).jpg", "/portfolio/art/moon (2).jpg", "/portfolio/art/moon (3).jpg", "/portfolio/art/moon (4).jpg", "/portfolio/art/moon (5).jpg", "/portfolio/art/moon (6).jpg", "/portfolio/art/moon (7).jpg", "/portfolio/art/moon (8).jpg"],
+    images: [
+      "/portfolio/art/moon (1).jpg",
+      "/portfolio/art/moon (2).jpg",
+      "/portfolio/art/moon (3).jpg",
+      "/portfolio/art/moon (4).jpg",
+      "/portfolio/art/moon (5).jpg",
+      "/portfolio/art/moon (6).jpg",
+      "/portfolio/art/moon (7).jpg",
+      "/portfolio/art/moon (8).jpg",
+    ],
     tags: ["Mythology", "Space", "Story Art"],
     type: "art",
   },
   {
     title: "Hello It's Me",
-    description: "Gif design - A dynamic and expressive GIF design that visually represents self-reflection and identity.",
+    description:
+      "Gif design - A dynamic and expressive GIF design that visually represents self-reflection and identity.",
     image: "/portfolio/art/gifdesign.gif",
     tags: ["GIF", "Digital Art", "Identity"],
     type: "art",
@@ -344,23 +718,47 @@ export const artProjects: ArtProject[] = [
     title: "Buildings Of Pakistan & The UAE",
     description: "Sensory lantern - A sensory lantern inspired by the architectural heritage of Pakistan and the UAE.",
     image: "/portfolio/art/lantern1.jpg",
-    images: ["/portfolio/art/lantern1.jpg", "/portfolio/art/lantern2.jpg", "/portfolio/art/lantern3.jpg", "/portfolio/art/lantern4.jpg"],
+    images: [
+      "/portfolio/art/lantern1.jpg",
+      "/portfolio/art/lantern2.jpg",
+      "/portfolio/art/lantern3.jpg",
+      "/portfolio/art/lantern4.jpg",
+    ],
     tags: ["Architecture", "Cultural Art", "Lantern"],
     type: "art",
   },
   {
     title: "A Train Ride Away",
-    description: "Zine design - A visually captivating zine design depicting the emotions and experiences of a train journey.",
+    description:
+      "Zine design - A visually captivating zine design depicting the emotions and experiences of a train journey.",
     image: "/portfolio/art/zine_design1.jpg",
-    images: ["/portfolio/art/zine_design1.jpg", "/portfolio/art/zine_design2.jpg", "/portfolio/art/zine_design3.jpg", "/portfolio/art/zine_design4.jpg", "/portfolio/art/zine_design5.jpg", "/portfolio/art/zine_design6.jpg", "/portfolio/art/zine_design7.jpg", "/portfolio/art/zine_design8.jpg", "/portfolio/art/zine_design9.jpg", "/portfolio/art/zine_design10.jpg", "/portfolio/art/zine_design11.jpg"],
+    images: [
+      "/portfolio/art/zine_design1.jpg",
+      "/portfolio/art/zine_design2.jpg",
+      "/portfolio/art/zine_design3.jpg",
+      "/portfolio/art/zine_design4.jpg",
+      "/portfolio/art/zine_design5.jpg",
+      "/portfolio/art/zine_design6.jpg",
+      "/portfolio/art/zine_design7.jpg",
+      "/portfolio/art/zine_design8.jpg",
+      "/portfolio/art/zine_design9.jpg",
+      "/portfolio/art/zine_design10.jpg",
+      "/portfolio/art/zine_design11.jpg",
+    ],
     tags: ["Zine", "Travel", "Illustration"],
     type: "art",
   },
   {
     title: "Easter/Navroz: The Blending Of Tradition",
-    description: "Clay tic-tac-toe design - A handcrafted clay tic-tac-toe board symbolizing the fusion of Easter and Navroz traditions.",
+    description:
+      "Clay tic-tac-toe design - A handcrafted clay tic-tac-toe board symbolizing the fusion of Easter and Navroz traditions.",
     image: "/portfolio/art/clay_tictactoe1.jpg",
-    images: ["/portfolio/art/clay_tictactoe1.jpg", "/portfolio/art/clay_tictactoe2.jpg", "/portfolio/art/clay_tictactoe3.jpg", "/portfolio/art/clay_tictactoe4.jpg"],
+    images: [
+      "/portfolio/art/clay_tictactoe1.jpg",
+      "/portfolio/art/clay_tictactoe2.jpg",
+      "/portfolio/art/clay_tictactoe3.jpg",
+      "/portfolio/art/clay_tictactoe4.jpg",
+    ],
     tags: ["Cultural Art", "Tradition", "Clay"],
     type: "art",
   },
@@ -368,7 +766,15 @@ export const artProjects: ArtProject[] = [
     title: "Contour Drawings",
     description: "A collection of contour drawings emphasizing form and structure through minimalistic lines.",
     image: "/portfolio/art/contour_drawing (6).jpg",
-    images: ["/portfolio/art/contour_drawing (1).jpg", "/portfolio/art/contour_drawing (2).jpg", "/portfolio/art/contour_drawing (3).jpg", "/portfolio/art/contour_drawing (4).jpg", "/portfolio/art/contour_drawing (5).jpg", "/portfolio/art/contour_drawing (6).jpg", "/portfolio/art/contour_drawing (7).jpg"],
+    images: [
+      "/portfolio/art/contour_drawing (1).jpg",
+      "/portfolio/art/contour_drawing (2).jpg",
+      "/portfolio/art/contour_drawing (3).jpg",
+      "/portfolio/art/contour_drawing (4).jpg",
+      "/portfolio/art/contour_drawing (5).jpg",
+      "/portfolio/art/contour_drawing (6).jpg",
+      "/portfolio/art/contour_drawing (7).jpg",
+    ],
     tags: ["Drawing", "Minimalism", "Line Art"],
     type: "art",
   },
@@ -381,11 +787,12 @@ export const artProjects: ArtProject[] = [
   },
   {
     title: "Earth’s Demise: The Metamorphosis Of Plastic Litter",
-    description: "transformation project - a transformation art project that visualizes the devastating impact of plastic pollution on the planet.",
+    description:
+      "transformation project - a transformation art project that visualizes the devastating impact of plastic pollution on the planet.",
     image: "/portfolio/art/transformation.jpg",
     tags: ["Environmental Art", "Plastic Pollution", "Transformation"],
     type: "art",
-  }
+  },
 ]
 
 // Sports achievements
@@ -401,10 +808,11 @@ export type SportsAchievement = {
 export const sportsAchievements: SportsAchievement[] = [
   {
     title: "ROPSSAA Tennis Quarter-Finalist",
-    description: "Achieved Quarter-Finalist placement in the ROPSSAA (Region of Peel Secondary Schools Athletic Association) Boys Doubles Junior Tennis South East Qualifier 2024. Demonstrated strong teamwork, strategic play, and resilience against competitive opponents, showcasing significant improvement from previous seasons. Trained extensively in the off-season to refine technical skills, endurance, and match tactics, contributing to a successful performance in the tournament",
+    description:
+      "Achieved Quarter-Finalist placement in the ROPSSAA (Region of Peel Secondary Schools Athletic Association) Boys Doubles Junior Tennis South East Qualifier 2024. Demonstrated strong teamwork, strategic play, and resilience against competitive opponents, showcasing significant improvement from previous seasons. Trained extensively in the off-season to refine technical skills, endurance, and match tactics, contributing to a successful performance in the tournament",
     image: "/portfolio/sports/tennis.jpg",
     videoId: "ztSkKMdQpE0", // Updated with the correct YouTube video ID
     tags: ["Tennis", "Competition", "Team Sports"],
     type: "sports",
-  }
+  },
 ]
