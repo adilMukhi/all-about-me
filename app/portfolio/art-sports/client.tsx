@@ -146,6 +146,50 @@ export default function ArtSportsPortfolioPageClient() {
               <h2 className="text-2xl font-bold mb-6" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
                 Sports Achievements
               </h2>
+
+              <div className="mb-8">
+                <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h3 className="text-lg font-semibold mb-2">NCSA Sports Profile</h3>
+                        <p className="text-muted-foreground">
+                          Check out my official NCSA recruiting profile for tennis achievements and statistics.
+                        </p>
+                      </div>
+                      <Button asChild variant="outline">
+                        <Link
+                          href="https://www.ncsasports.org/mens-tennis-recruiting/international/can/adil-mukhi"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          View NCSA Profile
+                        </Link>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="mb-8">
+                <Card className="bg-gradient-to-r from-green-50 to-emerald-50 border-green-200">
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-semibold mb-4">Intramural Sports</h3>
+                    <p className="text-muted-foreground mb-4">
+                      I actively participate in various intramural sports, staying engaged in competitive athletics
+                      across multiple disciplines:
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {["Badminton", "Volleyball", "Dodgeball", "Table Tennis", "Soccer"].map((sport) => (
+                        <Badge key={sport} variant="secondary" className="bg-green-100 text-green-800">
+                          {sport}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
               {sportsAchievements.map((achievement, index) => (
                 <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg mb-6">
                   <div className="flex flex-col md:flex-row">
@@ -208,7 +252,7 @@ export default function ArtSportsPortfolioPageClient() {
                       </div>
                       <Button
                         variant="outline"
-                        className="w-full flex items-center justify-center gap-2"
+                        className="w-full flex items-center justify-center gap-2 bg-transparent"
                         onClick={() => openArtModal(project.title, project.images || [project.image])}
                       >
                         <Eye className="h-4 w-4" />
