@@ -114,8 +114,7 @@ export default function Hero() {
             className={`max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 transition-all duration-700 delay-500 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
             style={{ fontFamily: "'Times New Roman', Times, latin" }}
           >
-            I'm a passionate student and aspiring researcher with a strong interest in science, medicine, and research.
-            I enjoy exploring complex topics, conducting research, and creating engaging content.
+            I’m a public speaker, youth advocate & changemaker: mentoring through Dr. Interested, contributing to CIHR-funded youth health research, and speaking at TEDx. Explore my work and experiences below!
           </p>
           <div
             className={`flex gap-4 flex-wrap justify-center lg:justify-start transition-all duration-700 delay-700 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
