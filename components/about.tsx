@@ -22,23 +22,23 @@ export default function About() {
           <CardContent className="space-y-4">
             <div className="space-y-4">
               <p className="leading-7">
-              I’m <strong>Adil Mukhi</strong>; <strong>public speaker, youth advocate & changemaker</strong>! As someone who’s navigated the challenges of the IB program while leading initiatives that reach tens of thousands of young people, I’ve learned how <em>curiosity, resilience, and purpose</em> can transform ideas into action. My journey began with a simple philosophy: <em>"With curiosity as my guide, I will never go wrong."</em> This mindset has shaped everything I do, from maintaining a <strong>98% academic average</strong> to exploring the frontiers of medical research.
+              I’m <strong>Adil Mukhi</strong>; public speaker, youth advocate & changemaker! As someone who’s navigated the challenges of the IB program while leading initiatives that reach tens of thousands of young people, I’ve learned how <em>curiosity, resilience, and purpose</em> can transform ideas into action. My journey began with a simple philosophy: <em>"With curiosity as my guide, I will never go wrong."</em> My work is guided by the belief that meaningful change begins when young people are given the opportunity and support to lead.
               </p>
 
               <p className="leading-7">
-              My passion for medicine led me to found <strong>Dr. Interested</strong>, where I serve as President, mentoring hundreds of students, organizing major events, and creating programs that connect youth to real-world challenges. Beyond mentorship, I’ve contributed to national-level research on youth health and social media by submitting a CIHR grant with SickKids for the <strong>OPTIMAL Project</strong>, as well as signing onto evidence-based recommendations presented in person to the <strong>Future of Sport in Canada Commission</strong>.
+              A cornerstone of my work is the <strong>Play-to-Heal movement</strong>, where I explore how sport, mental health, and policy intersect. From mentoring young athletes to contributing to national-level research on youth well-being, I’ve supported evidence-based policy by signing onto recommendations submitted in person to the <strong>Future of Sport in Canada Commission</strong>. Tennis, for me, isn’t just a sport—it’s a way to build community, resilience, and focus.
               </p>
 
               <p className="leading-7">
-              I’m also active in the <strong>Play-to-Heal movement</strong>, exploring how sport, mental health, and policy intersect, and tennis has been a personal outlet for building resilience and focus. My research includes studies on <em>stress hormones</em> and <em>astrocytomas</em>, deepening my understanding of the human body and mind.
+              Beyond sports, I’ve built initiatives that give young people a voice in research, policy, and advocacy. As Founder of <strong>Dr. Interested</strong>, I’ve led hundreds of students through mentorship programs, organized major events, and launched campaigns that connect youth to real-world challenges. I’ve also contributed to submitting a CIHR grant with SickKids for the <strong>OPTIMAL Project</strong>, a national research initiative studying youth social media use and informing policy guidelines.
               </p>
 
               <p className="leading-7">
-              Public speaking at <strong>TEDx</strong>, consulting on youth policy, and leading initiatives in French Club, STEM Fellowship, and Peer Helpers have taught me that <em>impact comes from curiosity, collaboration, and persistence</em>. Every experience, from research labs to leadership roles, shapes my path toward making meaningful change in healthcare, education, and youth advocacy.
+              Public speaking, research, and leadership roles have taught me that impact comes from curiosity, collaboration, and persistence. Whether it’s mentoring peers, consulting on policy, or presenting at <strong>TEDx</strong>, I aim to create opportunities for youth to make a difference.
               </p>
 
               <p className="leading-7">
-              I believe that when young people are given the <em>tools, support, and confidence to lead</em>, the possibilities for impact are <strong>limitless</strong>.
+              At my core, I’m committed to shaping spaces where young people are empowered to innovate, lead, and challenge the status quo. I believe that with the right guidance, tools, and confidence, youth have the power to transform communities—and the world.
               </p>
               <div className="pt-4">
                 <Link
