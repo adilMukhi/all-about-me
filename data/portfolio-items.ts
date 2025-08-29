@@ -1,3 +1,5 @@
+import SocialLinks from "@/components/social-links"
+
 // Writing portfolio
 export type Book = {
   title: string
@@ -570,6 +572,30 @@ export const researchProjects: ResearchProject[] = [
     ],
   },
   {
+    title: "Astrocytoma: From Diagnosis to Management",
+    description: "A comprehensive overview of astrocytoma diagnosis, treatment options, and management strategies.",
+    image: "/project2.jpg",
+    tags: ["Oncology", "Neuroscience", "Medical Research"],
+    institution: "Sunshine 4 Cancer Kids",
+    year: "2024",
+    doiLinks: [
+      {
+        doiNumber: "10.5281/zenodo.16990359",
+        url: "https://doi.org/10.5281/zenodo.16990359",
+      },
+    ],
+    otherLinks: [
+        {
+          text: "Google Scholar Link",
+          url: "https://scholar.google.ca/scholar?oi=bibs&hl=en&q=related:CMU0P3CC8KMJ:scholar.google.com/",
+        },
+        {
+          text: "Conference Presentation Link",
+          url: "https://doi.org/10.5281/zenodo.16990394",
+        },
+    ],
+  },
+  {
     title: "Overcrowding in Emergency Departments: Causes, Consequences, and Solutions",
     description:
       "A research poster presented at the IHL Innovate & Educate 2025 competition, examining the systemic causes and potential solutions for ED overcrowding in Canadian hospitals.",
@@ -585,16 +611,17 @@ export const researchProjects: ResearchProject[] = [
     ],
   },
   {
-    title: "Astrocytoma: From Diagnosis to Management",
-    description: "A comprehensive overview of astrocytoma diagnosis, treatment options, and management strategies.",
-    image: "/project2.jpg",
-    tags: ["Oncology", "Neuroscience", "Medical Research"],
-    institution: "Sunshine 4 Cancer Kids",
-    year: "2024",
-    otherLinks: [
+    title: "Synbiotic Therapy with LGG in Stage 3 COPD: Inflammation and Lung Function",
+    description:
+      "A research project investigating the Effect of Synbiotic Therapy Using Lactobacillus Rhamnosus GG on Systemic Inflammatory Markers (IL-6, TNF-α) and Pulmonary Function (FEV1) in Patients with Stage 3 COPD. Conference: StemBuddies Research Competition, Virtual (Session 1, Part 1)",
+    image: "/portfolio/research/copd.png",
+    tags: ["Pulmonology", "Microbiology", "Medical Research"],
+    institution: "StemBuddies",
+    year: "2025",
+    doiLinks: [
       {
-        text: "View Article",
-        url: "https://sunshine4cancerkid.wixsite.com/sunshine-4-cancer-ki/post/astrocytoma-from-diagnosis-to-management-a-comprehensive-overview",
+        doiNumber: "10.5281/zenodo.16990556",
+        url: "https://doi.org/10.5281/zenodo.16990556",
       },
     ],
   },
@@ -606,10 +633,10 @@ export const researchProjects: ResearchProject[] = [
     tags: ["AI", "Alzheimer's Disease", "Medical Research", "Neurology"],
     institution: "Personal Research",
     year: "2025",
-    otherLinks: [
+    doiLinks: [
       {
-        text: "View Research",
-        url: "https://drive.google.com/file/d/1ykansS3_jAV1_o77_3ZYOJC4LKApo4qJ/view?usp=sharing",
+        doiNumber: "10.5281/zenodo.16990404",
+        url: "https://doi.org/10.5281/zenodo.16990404",
       },
     ],
   },
@@ -621,6 +648,12 @@ export const researchProjects: ResearchProject[] = [
     tags: ["Health Education", "Medical Research", "Public Health"],
     institution: "Heal for Health",
     year: "2024",
+    doiLinks: [
+      {
+        doiNumber: "10.5281/zenodo.16989982",
+        url: "https://doi.org/10.5281/zenodo.16989982",
+      },
+    ],
     otherLinks: [
       {
         text: "View Booklet",
@@ -636,40 +669,46 @@ export const researchProjects: ResearchProject[] = [
     tags: ["Education", "Social Impact", "Community Research"],
     institution: "Restoring Rainbows SouthLake",
     year: "2024",
-    otherLinks: [
+    doiLinks: [
       {
-        text: "View Research",
-        url: "https://drive.google.com/file/d/1K7tkkKjVaTmcyP2uJK3fU1BEA758G2aj/view?usp=sharing",
+        doiNumber: "10.5281/zenodo.16990412",
+        url: "https://doi.org/10.5281/zenodo.16990412",
       },
     ],
   },
   {
     title: "Immunology's Next Frontier: From Classic Vaccines to Cutting-Edge Targeted Therapies",
     description:
-      "A deep dive into the evolution of immunology, from traditional vaccines to advanced targeted therapies.",
+      "A deep dive into the evolution of immunology, from traditional vaccines to advanced targeted therapies. Presented at BioMedizone's Immunology Research Competition (Session 1, Part 1)",
     image: "/portfolio/research/biomedizone.jpg",
     tags: ["Immunology", "Medical Research", "Biotechnology"],
     institution: "BioMedizone",
     year: "2024",
     doiLinks: [
       {
-        doiNumber: "10.5281/zenodo.15619185", // Updated to use doiNumber field
-        url: "https://doi.org/10.5281/zenodo.15619185",
+        doiNumber: "10.5281/zenodo.16990489",
+        url: "https://doi.org/10.5281/zenodo.16990489",
       },
     ],
   },
   {
     title: "Precision Medicine Unveiled: Nanoparticles in Targeted Drug Delivery Systems",
     description:
-      "An exploration of how nanoparticles are revolutionizing precision medicine and targeted drug delivery systems.",
+      "An exploration of how nanoparticles are revolutionizing precision medicine and targeted drug delivery systems. Presented at the CosmicUs Research Competition (Virtual)",
     image: "/portfolio/research/targeted.jpg",
     tags: ["Nanotechnology", "Pharmacology", "Medical Research"],
     institution: "CosmicUs",
     year: "2023",
     doiLinks: [
       {
-        doiNumber: "10.5281/zenodo.15619185", // Updated to use doiNumber field
-        url: "https://doi.org/10.5281/zenodo.15619185",
+        doiNumber: "10.5281/zenodo.16990498",
+        url: "https://doi.org/10.5281/zenodo.16990498",
+      },
+    ],
+    otherLinks: [
+      {
+        text: "View Research Proposal",
+        url: "https://doi.org/10.5281/zenodo.16990516",
       },
     ],
   },
