@@ -21,11 +21,11 @@ export type WorkExperience = {
 
 export const workExperiences: WorkExperience[] = [
   {
-    title: "Founder & President",
+    title: "Founder & Executive Director",
     company: "Dr. Interested",
     period: "2024–Present",
     description: "Leading a youth-focused organization impacting every continent except Antarctica through events, advocacy, and mentorship programs.",
-    longDescription: "As Founder & President, I lead Dr. Interested to engage youth globally, organize impactful events, and foster mentorship programs, connecting 60,000+ youth and collaborating with medical student advisors to create research, advocacy, and educational opportunities across multiple continents.",
+    longDescription: "As Founder & Executive Director, I lead Dr. Interested to engage youth globally, organize impactful events, and foster mentorship programs, connecting 60,000+ youth and collaborating with medical student advisors to create research, advocacy, and educational opportunities across multiple continents.",
     stats: [
       "60,000+ youth reached",
       "11+ major events",
