@@ -31,7 +31,7 @@ export default function Contact() {
           <div className="w-full md:w-1/2 flex flex-col items-center space-y-6">
             <div className="relative w-64 h-64 md:w-72 md:h-72">
               <Image
-                src="/secondpic.jpg"
+                src="/pictures/Adil Mukhi - Formal Pic.jpg"
                 alt="Adil Mukhi"
                 fill
                 sizes="(max-width: 768px) 256px, 288px"

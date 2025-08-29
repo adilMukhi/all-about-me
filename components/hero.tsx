@@ -177,8 +177,8 @@ export default function Hero() {
 
         <div className="flex-shrink-0 order-2 lg:order-2">
           <Image
-            src="/adil-professional-new.png"
-            alt="Adil Mukhi - Professional Photo"
+            src="/pictures/Adil Mukhi - Tedx 1.png"
+            alt="Adil Mukhi - Tedx Photo"
             width={350}
             height={450}
             className="object-cover"

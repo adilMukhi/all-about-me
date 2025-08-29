@@ -250,6 +250,13 @@ const PastEngagements = () => (
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
+                <p className="font-medium">Tedx Speaker: Stress, Memory, and Why You Can’t Find Your Keys</p>
+                <p className="text-sm text-muted-foreground">July 2025 - TEDxMcFarren</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
                 <p className="font-medium">Speaker in World Youth Skills Day Message</p>
                 <p className="text-sm text-muted-foreground">2025 - Results Canada</p>
               </div>
