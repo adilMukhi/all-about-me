@@ -165,7 +165,7 @@ export const ltes: LTE[] = [
     buyLinks: {
       customLinks: [
         {
-          name: "Read Article",
+          name: "Read Letter",
           url: "https://www.lanouvelle.net/lettres-dopinion/un-monde-laisse-en-attente/",
         },
       ],
@@ -528,6 +528,153 @@ export const clubPublications: ClubPublication[] = [
   },
 ]
 
+// Research portfolio
+export type ResearchProject = {
+  title: string
+  description: string
+  image: string
+  tags: string[]
+  institution: string
+  year: string
+  doiLinks?: Array<{
+    doiNumber: string // Changed from 'text' to 'doiNumber' to separate DOI numbers from URLs
+    url: string
+  }>
+  otherLinks?: Array<{
+    text: string
+    url: string
+  }>
+  link?: string
+}
+
+export const researchProjects: ResearchProject[] = [
+  {
+    title: "From Stress to Forgetfulness: Understanding How Stress Hormones Shape Your Memory",
+    description:
+      "An in-depth 6741 word exploration of how stress hormones affect memory, from short-term impacts to long-term neurological changes.",
+    image: "/project3.jpg",
+    tags: ["Neuroscience", "Psychology", "Medical Research"],
+    institution: "NOSM and GFSS",
+    year: "2023-2025",
+    doiLinks: [
+      {
+        doiNumber: "10.13140/RG.2.2.22259.23849", // Updated to use doiNumber field
+        url: "https://doi.org/10.13140/RG.2.2.22259.23849",
+      },
+    ],
+    otherLinks: [
+        {
+          text: "Google Scholar Link",
+          url: "https://scholar.google.ca/scholar?q=related:YJckOSRjJKUJ:scholar.google.com/&scioq=From+Stress+to+Forgetfulness:+Understanding+How+Stress+Hormones+Shape+Your+Memory&hl=en&as_sdt=0,5",
+        },
+    ],
+  },
+  {
+    title: "Overcrowding in Emergency Departments: Causes, Consequences, and Solutions",
+    description:
+      "A research poster presented at the IHL Innovate & Educate 2025 competition, examining the systemic causes and potential solutions for ED overcrowding in Canadian hospitals.",
+    image: "/emergency_overcrowding.png",
+    tags: ["Public Health", "Emergency Medicine", "Health Systems"],
+    institution: "IHL Innovate & Educate",
+    year: "2025",
+    doiLinks: [
+      {
+        doiNumber: "10.5281/zenodo.15763819", // Updated to use doiNumber field
+        url: "https://doi.org/10.5281/zenodo.15763819",
+      },
+    ],
+  },
+  {
+    title: "Astrocytoma: From Diagnosis to Management",
+    description: "A comprehensive overview of astrocytoma diagnosis, treatment options, and management strategies.",
+    image: "/project2.jpg",
+    tags: ["Oncology", "Neuroscience", "Medical Research"],
+    institution: "Sunshine 4 Cancer Kids",
+    year: "2024",
+    otherLinks: [
+      {
+        text: "View Article",
+        url: "https://sunshine4cancerkid.wixsite.com/sunshine-4-cancer-ki/post/astrocytoma-from-diagnosis-to-management-a-comprehensive-overview",
+      },
+    ],
+  },
+  {
+    title: "Integrating AI in Alzheimer's: Diagnosis Methods, Prevention Strategies, and more!",
+    description:
+      "A comprehensive research project examining the role of AI in Alzheimer's, covering diagnosis methods, prevention strategies, treatment options, and clinical trials.",
+    image: "/alzheimers_research.png",
+    tags: ["AI", "Alzheimer's Disease", "Medical Research", "Neurology"],
+    institution: "Personal Research",
+    year: "2025",
+    otherLinks: [
+      {
+        text: "View Research",
+        url: "https://drive.google.com/file/d/1ykansS3_jAV1_o77_3ZYOJC4LKApo4qJ/view?usp=sharing",
+      },
+    ],
+  },
+  {
+    title: "Mini-Medical Booklet - Heal for Health",
+    description:
+      "A concise medical booklet providing essential health information for various conditions and treatments.",
+    image: "/portfolio/research/booklet.jpg",
+    tags: ["Health Education", "Medical Research", "Public Health"],
+    institution: "Heal for Health",
+    year: "2024",
+    otherLinks: [
+      {
+        text: "View Booklet",
+        url: "https://drive.google.com/file/d/18PFkzwb5aEaP7VK-Eg3y1ZntnttjTALH/view?usp=sharing",
+      },
+    ],
+  },
+  {
+    title: "Research Dump - School Supplies and Education",
+    description:
+      "A research initiative focused on improving access to school supplies and education for underprivileged students.",
+    image: "/portfolio/research/rrs.jpg",
+    tags: ["Education", "Social Impact", "Community Research"],
+    institution: "Restoring Rainbows SouthLake",
+    year: "2024",
+    otherLinks: [
+      {
+        text: "View Research",
+        url: "https://drive.google.com/file/d/1K7tkkKjVaTmcyP2uJK3fU1BEA758G2aj/view?usp=sharing",
+      },
+    ],
+  },
+  {
+    title: "Immunology's Next Frontier: From Classic Vaccines to Cutting-Edge Targeted Therapies",
+    description:
+      "A deep dive into the evolution of immunology, from traditional vaccines to advanced targeted therapies.",
+    image: "/portfolio/research/biomedizone.jpg",
+    tags: ["Immunology", "Medical Research", "Biotechnology"],
+    institution: "BioMedizone",
+    year: "2024",
+    doiLinks: [
+      {
+        doiNumber: "10.5281/zenodo.15619185", // Updated to use doiNumber field
+        url: "https://doi.org/10.5281/zenodo.15619185",
+      },
+    ],
+  },
+  {
+    title: "Precision Medicine Unveiled: Nanoparticles in Targeted Drug Delivery Systems",
+    description:
+      "An exploration of how nanoparticles are revolutionizing precision medicine and targeted drug delivery systems.",
+    image: "/portfolio/research/targeted.jpg",
+    tags: ["Nanotechnology", "Pharmacology", "Medical Research"],
+    institution: "CosmicUs",
+    year: "2023",
+    doiLinks: [
+      {
+        doiNumber: "10.5281/zenodo.15619185", // Updated to use doiNumber field
+        url: "https://doi.org/10.5281/zenodo.15619185",
+      },
+    ],
+  },
+]
+
 // Coding portfolio
 export type CodingProject = {
   title: string
@@ -539,7 +686,7 @@ export type CodingProject = {
 }
 
 export const codingProjects: CodingProject[] = [
-    {
+  {
     title: "Dr. Interested Website",
     description:
       "A website for the Dr. Interested club, featuring webinar schedules, research proposal competitions, and resources for aspiring medical professionals.",
@@ -559,8 +706,7 @@ export const codingProjects: CodingProject[] = [
   },
   {
     title: "Explore3 Case Comp Website",
-    description:
-      "A website created for the Explore3 case competition, showcasing innovative solutions and projects.",
+    description: "A website created for the Explore3 case competition, showcasing innovative solutions and projects.",
     image: "/portfolio/coding/explore3.png",
     tags: ["Next.js", "React", "Tailwind CSS"],
     demoLink: "https://explore3.vercel.app/",
@@ -599,99 +745,6 @@ export const codingProjects: CodingProject[] = [
     tags: ["Python", "PyGame", "Game Development"],
     demoLink: "https://github.com/arghya-v/ICD208-Final-Project",
     codeLink: "https://github.com/arghya-v/ICD208-Final-Project",
-  },
-]
-
-// Research portfolio
-export type ResearchProject = {
-  title: string
-  description: string
-  image: string
-  tags: string[]
-  link: string
-  institution: string
-  year: string
-}
-
-export const researchProjects: ResearchProject[] = [
-  {
-    title: "From Stress to Forgetfulness: Understanding How Stress Hormones Shape Your Memory",
-    description:
-      "An in-depth 6741 word exploration of how stress hormones affect memory, from short-term impacts to long-term neurological changes.",
-    image: "/project3.jpg",
-    tags: ["Neuroscience", "Psychology", "Medical Research"],
-    link: "https://drive.google.com/file/d/17nAfJSKQjbB-A5mNme4fTODOxydKA3G1/view?usp=drive_link",
-    institution: "NOSM and GFSS",
-    year: "2023-2025",
-  },
-  {
-    title: "Overcrowding in Emergency Departments: Causes, Consequences, and Solutions",
-    description:
-      "A research poster presented at the IHL Innovate & Educate 2025 competition, examining the systemic causes and potential solutions for ED overcrowding in Canadian hospitals.",
-    image: "/emergency_overcrowding.png",
-    tags: ["Public Health", "Emergency Medicine", "Health Systems"],
-    link: "https://drive.google.com/file/d/1R19MWKdwyO7sgs7DlChjjVzyWEtzrdlU/view?usp=sharing",
-    institution: "IHL Innovate & Educate",
-    year: "2025",
-  },
-  {
-    title: "Astrocytoma: From Diagnosis to Management",
-    description: "A comprehensive overview of astrocytoma diagnosis, treatment options, and management strategies.",
-    image: "/project2.jpg",
-    tags: ["Oncology", "Neuroscience", "Medical Research"],
-    link: "https://sunshine4cancerkid.wixsite.com/sunshine-4-cancer-ki/post/astrocytoma-from-diagnosis-to-management-a-comprehensive-overview",
-    institution: "Sunshine 4 Cancer Kids",
-    year: "2024",
-  },
-  {
-    title: "Integrating AI in Alzheimer's: Diagnosis Methods, Prevention Strategies, and more!",
-    description:
-      "A comprehensive research project examining the role of AI in Alzheimer's, covering diagnosis methods, prevention strategies, treatment options, and clinical trials.",
-    image: "/alzheimers_research.png",
-    tags: ["AI", "Alzheimer's Disease", "Medical Research", "Neurology"],
-    link: "https://drive.google.com/file/d/1ykansS3_jAV1_o77_3ZYOJC4LKApo4qJ/view?usp=sharing",
-    institution: "Personal Research",
-    year: "2025",
-  },
-  {
-    title: "Mini-Medical Booklet - Heal for Health",
-    description:
-      "A concise medical booklet providing essential health information for various conditions and treatments.",
-    image: "/portfolio/research/booklet.jpg",
-    tags: ["Health Education", "Medical Research", "Public Health"],
-    link: "https://drive.google.com/file/d/18PFkzwb5aEaP7VK-Eg3y1ZntnttjTALH/view?usp=sharing",
-    institution: "Heal for Health",
-    year: "2024",
-  },
-  {
-    title: "Research Dump - School Supplies and Education",
-    description:
-      "A research initiative focused on improving access to school supplies and education for underprivileged students.",
-    image: "/portfolio/research/rrs.jpg",
-    tags: ["Education", "Social Impact", "Community Research"],
-    link: "https://drive.google.com/file/d/1K7tkkKjVaTmcyP2uJK3fU1BEA758G2aj/view?usp=sharing",
-    institution: "Restoring Rainbows SouthLake",
-    year: "2024",
-  },
-  {
-    title: "Immunology's Next Frontier: From Classic Vaccines to Cutting-Edge Targeted Therapies",
-    description:
-      "A deep dive into the evolution of immunology, from traditional vaccines to advanced targeted therapies.",
-    image: "/portfolio/research/biomedizone.jpg",
-    tags: ["Immunology", "Medical Research", "Biotechnology"],
-    link: "https://drive.google.com/file/d/1CuMHv3eoGpjlWz2uoueTL3eIoxOFi0qK/view?usp=sharing",
-    institution: "BioMedizone",
-    year: "2024",
-  },
-  {
-    title: "Precision Medicine Unveiled: Nanoparticles in Targeted Drug Delivery Systems",
-    description:
-      "An exploration of how nanoparticles are revolutionizing precision medicine and targeted drug delivery systems.",
-    image: "/portfolio/research/targeted.jpg",
-    tags: ["Nanotechnology", "Pharmacology", "Medical Research"],
-    link: "https://drive.google.com/file/d/11Sw8EDXzCxuaV6vbrX26YrM6E53-9mVP/view?usp=sharing",
-    institution: "CosmicUs",
-    year: "2023",
   },
 ]
 
