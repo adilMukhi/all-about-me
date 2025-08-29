@@ -76,7 +76,7 @@ const ServiceMediaPreview = () => {
             <div className="space-y-3">
               <div className="border-l-2 border-primary/20 pl-4">
                 <h4 className="font-medium text-sm text-primary">Featured Publications</h4>
-                <p className="text-xs text-muted-foreground">Global News, The Aquinian, Future of Good</p>
+                <p className="text-xs text-muted-foreground">The Global Indian, Rising Phenom Magazine, and More!</p>
               </div>
               <div className="border-l-2 border-primary/20 pl-4">
                 <h4 className="font-medium text-sm text-primary">Recent Coverage</h4>
