@@ -22,39 +22,16 @@ export default function About() {
           <CardContent className="space-y-4">
             <div className="space-y-4">
               <p className="leading-7">
-                <strong>The Beginning:</strong> I'm a Grade 10 IB MYP student at Glenforest Secondary School, where my
-                journey began with a simple philosophy: <em>"With curiosity as my guide, I will never go wrong."</em>{" "}
-                This mindset has shaped everything I do, from maintaining a 98% academic average to exploring the
-                frontiers of medical research.
-              </p>
+              I’m <strong>Adil Mukhi</strong>; <strong>public speaker, youth advocate & changemaker</strong>! As someone who’s navigated the challenges of the IB program while leading initiatives that reach tens of thousands of young people, I’ve learned how *curiosity, resilience, and purpose* can transform ideas into action. My journey began with a simple philosophy: <em>"With curiosity as my guide, I will never go wrong."</em> This mindset has shaped everything I do, from maintaining a <strong>98% academic average</strong> to exploring the frontiers of medical research.  
 
-              <p className="leading-7">
-                <strong>Building Dreams:</strong> My passion for medicine led me to found{" "}
-                <strong>Dr. Interested</strong>, where I serve as President, leading a global team to inspire future
-                medical professionals through mentorship and research. What started as personal curiosity has grown into
-                a platform that connects aspiring doctors worldwide.
-              </p>
+              My passion for medicine led me to found <strong>Dr. Interested</strong>, where I serve as President, *mentoring hundreds of students*, organizing major events, and creating programs that connect youth to real-world challenges. Beyond mentorship, I’ve contributed to *national-level research* on youth health and social media by submitting a CIHR grant with SickKids for the <strong>OPTIMAL Project</strong>, as well as signing onto evidence-based recommendations presented in person to the <strong>Future of Sport in Canada Commission</strong>.  
 
-              <p className="leading-7">
-                <strong>Research & Discovery:</strong> My research journey includes fascinating studies on stress
-                hormones and astrocytomas, work that has deepened my understanding of the human body and mind. As a
-                Youth Advisor at the University of Toronto Faculty of Kinesiology and Physical Education, I bridge the
-                gap between student perspectives and academic excellence.
-              </p>
+              I’m also active in the <strong>Play-to-Heal movement</strong>, exploring how sport, mental health, and policy intersect, and tennis has been a personal outlet for building resilience and focus. My research includes studies on *stress hormones* and *astrocytomas*, deepening my understanding of the human body and mind.  
 
-              <p className="leading-7">
-                <strong>Leadership in Action:</strong> Beyond academics, I actively lead in French Club and STEM
-                Fellowship, while contributing to my community through Peer Helpers. I've earned Distinction in the
-                Beaver Computing Challenge and am currently enrolled in UofT's MedLinx Program, constantly expanding my
-                horizons.
-              </p>
+              Public speaking at <strong>TEDx</strong>, consulting on youth policy, and leading initiatives in French Club, STEM Fellowship, and Peer Helpers have taught me that *impact comes from curiosity, collaboration, and persistence*. Every experience, from research labs to leadership roles, shapes my path toward making meaningful change in healthcare, education, and youth advocacy.  
 
-              <p className="leading-7">
-                <strong>Looking Forward:</strong> Every experience, from research labs to leadership roles, shapes my
-                path toward making a meaningful impact in healthcare and education. I believe in the power of curiosity,
-                dedication, and community to create positive change.
+              I believe that when young people are given the *tools, support, and confidence to lead*, the possibilities for impact are <strong>limitless</strong>.
               </p>
-
               <div className="pt-4">
                 <Link
                   href="/background"
