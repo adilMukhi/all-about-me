@@ -91,8 +91,26 @@ const MediaGrid = () => {
 }
 
 export const metadata: Metadata = {
-  title: "Media - Adil Mukhi",
-  description: "Media coverage and press articles featuring Adil Mukhi's work and initiatives.",
+  title: "Media Coverage | Adil Mukhi",
+  description:
+    "Media coverage and press articles featuring Adil Mukhi's work as a youth advocate, TEDx speaker, and changemaker. Featured in national publications for advocacy and research contributions.",
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"}/media`,
+  },
+  openGraph: {
+    title: "Media Coverage | Adil Mukhi",
+    description:
+      "Press coverage and media features highlighting the advocacy work and achievements of youth leader Adil Mukhi.",
+    url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"}/media`,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Adil Mukhi Media Coverage",
+      },
+    ],
+  },
 }
 
 export default function MediaPage() {

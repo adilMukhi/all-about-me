@@ -28,26 +28,24 @@ export default function ClubFeature() {
             </CardHeader>
             <CardContent className="p-0">
               <p className="mb-4">
-                Dr. Interested is a global community I founded to inspire and support students interested in healthcare
-                careers through research, mentorship, and collaborative opportunities. So far we have had 40+
-                individuals enrolled in our research programs!
+                Dr. Interested is a youth-led global pre-med community I founded to help students explore healthcare, research, and advocacy. We empower youth to discover their unique “spark” in medicine through interactive programs, mentorship, and leadership development — with 11+ major events run so far.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center gap-2">
                   <Users className="h-5 w-5 text-blue-500" />
-                  <span>20,000+ people educated</span>
+                  <span>60,000+ people educated</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Building className="h-5 w-5 text-blue-500" />
-                  <span>200+ members & 30+ executives</span>
+                  <span>900+ members & 70+ executives</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <BookOpen className="h-5 w-5 text-blue-500" />
-                  <span>$100 grant received</span>
+                  <span>400,000+ marketing reach</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Globe className="h-5 w-5 text-blue-500" />
-                  <span>375+ nurse appreciation cards</span>
+                  <span>Every continent except antartica</span>
                 </div>
               </div>
               <Button size="lg" className="button-hover-effect">
