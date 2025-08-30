@@ -146,7 +146,7 @@ export default function Hero() {
               </a>
             </Button>
             <Button asChild className="button-hover-effect relative overflow-hidden group">
-              <a href="/blog">
+              <a href="/experiences">
                 <span className="relative z-10">See More!</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-primary opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
               </a>
