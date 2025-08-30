@@ -15,6 +15,11 @@ import { Briefcase, GraduationCap, MessageSquare, BadgeCheck, Heart, Trophy } fr
 import { cn } from "@/lib/utils"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
+import type { Metadata } from "next"
+import { backgroundMetadata } from "@/app/page-metadata"
+
+export const metadata: Metadata = backgroundMetadata
+
 type Section = {
   id: string
   title: string
