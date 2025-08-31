@@ -177,10 +177,29 @@ export async function GET() {
       headers: {
         "Content-Type": "application/rss+xml; charset=utf-8",
         "Cache-Control": "public, max-age=3600, s-maxage=3600",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "X-Robots-Tag": "index, follow",
+        Vary: "User-Agent",
       },
     })
   } catch (error) {
     console.error("[v0] RSS feed generation failed:", error)
-    return new NextResponse("RSS feed generation failed", { status: 500 })
+    const errorXml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>RSS Feed Error</title>
+    <description>RSS feed temporarily unavailable</description>
+  </channel>
+</rss>`
+
+    return new NextResponse(errorXml, {
+      status: 200,
+      headers: {
+        "Content-Type": "application/rss+xml; charset=utf-8",
+        "Access-Control-Allow-Origin": "*",
+      },
+    })
   }
 }
