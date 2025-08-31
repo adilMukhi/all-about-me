@@ -5,6 +5,7 @@ import { mediaItems } from "@/data/media-items"
 
 // XML encoding function to escape special characters
 function escapeXml(unsafe: string): string {
+  if (!unsafe) return ""
   return unsafe.replace(/[<>&'"]/g, (c) => {
     switch (c) {
       case "<":
@@ -24,106 +25,136 @@ function escapeXml(unsafe: string): string {
 }
 
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
+  try {
+    console.log("[v0] RSS feed generation started")
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
-  // Professional photos from sitemap
-  const professionalPhotos = [
-    "/pictures/adil-mukhi-tedx-speaking-1.jpg",
-    "/pictures/adil-mukhi-tedx-speaking-2.jpg",
-    "/pictures/adil-mukhi-formal-headshot.jpg",
-    "/pictures/adil-mukhi-camera-photographer.jpg",
-    "/pictures/adil-mukhi-dr-interested-founder.jpg",
-    "/pictures/adil-mukhi-informal-portrait.jpg",
-    "/pictures/adil-mukhi-lab-coat-medical-research.jpg",
-    "/pictures/adil-mukhi-tennis-sports.jpg",
-    "/pictures/adil-mukhi-graduation.jpg",
-  ]
+    // Professional photos from sitemap
+    const professionalPhotos = [
+      "/pictures/adil-mukhi-tedx-speaking-1.jpg",
+      "/pictures/adil-mukhi-tedx-speaking-2.jpg",
+      "/pictures/adil-mukhi-formal-headshot.jpg",
+      "/pictures/adil-mukhi-camera-photographer.jpg",
+      "/pictures/adil-mukhi-dr-interested-founder.jpg",
+      "/pictures/adil-mukhi-informal-portrait.jpg",
+      "/pictures/adil-mukhi-lab-coat-medical-research.jpg",
+      "/pictures/adil-mukhi-tennis-sports.jpg",
+      "/pictures/adil-mukhi-graduation.jpg",
+    ]
 
-  const rssItems: string[] = []
+    const rssItems: string[] = []
 
-  // Add professional photos portfolio
-  rssItems.push(`
-    <item>
-      <title>${escapeXml("Adil Mukhi - Professional Portfolio Photos")}</title>
-      <link>${baseUrl}/about</link>
-      <description>${escapeXml("Professional photos of Adil Mukhi including TEDx speaking, medical research, tennis, and formal portraits. Medical student, researcher, and entrepreneur.")}</description>
-      <pubDate>${new Date().toUTCString()}</pubDate>
-      <guid>${baseUrl}/portfolio/professional-photos</guid>
-      ${professionalPhotos
-        .map(
-          (photo) => `
-      <enclosure url="${baseUrl}${photo}" type="image/jpeg" />
-      <media:content url="${baseUrl}${photo}" type="image/jpeg" medium="image" />
-      `,
-        )
-        .join("")}
-    </item>
-  `)
+    try {
+      rssItems.push(`
+        <item>
+          <title>${escapeXml("Adil Mukhi - Professional Portfolio Photos")}</title>
+          <link>${baseUrl}/about</link>
+          <description>${escapeXml("Professional photos of Adil Mukhi including TEDx speaking, medical research, tennis, and formal portraits. Medical student, researcher, and entrepreneur.")}</description>
+          <pubDate>${new Date().toUTCString()}</pubDate>
+          <guid>${baseUrl}/portfolio/professional-photos</guid>
+          ${professionalPhotos
+            .map(
+              (photo) => `
+          <enclosure url="${baseUrl}${photo}" type="image/jpeg" />
+          <media:content url="${baseUrl}${photo}" type="image/jpeg" medium="image" />
+          `,
+            )
+            .join("")}
+        </item>
+      `)
+      console.log("[v0] Added professional photos to RSS")
+    } catch (error) {
+      console.log("[v0] Error adding professional photos:", error)
+    }
 
-  // Add blog posts/experiences
-  blogPosts.forEach((post) => {
-    const images = post.images || []
-    const imageElements = images
-      .map(
-        (image) => `
-      <enclosure url="${baseUrl}${image}" type="image/jpeg" />
-      <media:content url="${baseUrl}${image}" type="image/jpeg" medium="image" />
-    `,
-      )
-      .join("")
+    try {
+      blogPosts?.forEach((post, index) => {
+        try {
+          const images = post?.images || []
+          const imageElements = images
+            .map(
+              (image) => `
+          <enclosure url="${baseUrl}${image}" type="image/jpeg" />
+          <media:content url="${baseUrl}${image}" type="image/jpeg" medium="image" />
+        `,
+            )
+            .join("")
 
-    rssItems.push(`
-      <item>
-        <title>${escapeXml(post.title)}</title>
-        <link>${baseUrl}/experiences/${post.slug}</link>
-        <description>${escapeXml(post.description)}</description>
-        <pubDate>${new Date(post.date).toUTCString()}</pubDate>
-        <guid>${baseUrl}/experiences/${post.slug}</guid>
-        ${imageElements}
-      </item>
-    `)
-  })
+          rssItems.push(`
+            <item>
+              <title>${escapeXml(post?.title || "Untitled Post")}</title>
+              <link>${baseUrl}/experiences/${post?.slug || ""}</link>
+              <description>${escapeXml(post?.description || "")}</description>
+              <pubDate>${new Date(post?.date || new Date()).toUTCString()}</pubDate>
+              <guid>${baseUrl}/experiences/${post?.slug || index}</guid>
+              ${imageElements}
+            </item>
+          `)
+        } catch (postError) {
+          console.log("[v0] Error processing blog post:", post?.title, postError)
+        }
+      })
+      console.log("[v0] Added blog posts to RSS")
+    } catch (error) {
+      console.log("[v0] Error adding blog posts:", error)
+    }
 
-  // Add portfolio items
-  portfolioItems.forEach((item) => {
-    const images = item.images || []
-    const imageElements = images
-      .map(
-        (image) => `
-      <enclosure url="${baseUrl}${image}" type="image/jpeg" />
-      <media:content url="${baseUrl}${image}" type="image/jpeg" medium="image" />
-    `,
-      )
-      .join("")
+    try {
+      portfolioItems?.forEach((item, index) => {
+        try {
+          const images = item?.images || []
+          const imageElements = images
+            .map(
+              (image) => `
+          <enclosure url="${baseUrl}${image}" type="image/jpeg" />
+          <media:content url="${baseUrl}${image}" type="image/jpeg" medium="image" />
+        `,
+            )
+            .join("")
 
-    rssItems.push(`
-      <item>
-        <title>${escapeXml(`${item.type}: ${item.title}`)}</title>
-        <link>${baseUrl}/${item.type === "Research Project" ? "research" : "portfolio"}</link>
-        <description>${escapeXml(item.description)}</description>
-        <pubDate>${new Date().toUTCString()}</pubDate>
-        <guid>${baseUrl}/portfolio/${item.title.toLowerCase().replace(/\s+/g, "-")}</guid>
-        ${imageElements}
-      </item>
-    `)
-  })
+          rssItems.push(`
+            <item>
+              <title>${escapeXml(`${item?.type || "Portfolio"}: ${item?.title || "Untitled"}`)}</title>
+              <link>${baseUrl}/${item?.type === "Research Project" ? "research" : "portfolio"}</link>
+              <description>${escapeXml(item?.description || "")}</description>
+              <pubDate>${new Date().toUTCString()}</pubDate>
+              <guid>${baseUrl}/portfolio/${(item?.title || `item-${index}`).toLowerCase().replace(/\s+/g, "-")}</guid>
+              ${imageElements}
+            </item>
+          `)
+        } catch (itemError) {
+          console.log("[v0] Error processing portfolio item:", item?.title, itemError)
+        }
+      })
+      console.log("[v0] Added portfolio items to RSS")
+    } catch (error) {
+      console.log("[v0] Error adding portfolio items:", error)
+    }
 
-  // Add media coverage
-  mediaItems.forEach((item) => {
-    rssItems.push(`
-      <item>
-        <title>${escapeXml(`Media Coverage: ${item.title}`)}</title>
-        <link>${item.url}</link>
-        <description>${escapeXml(`${item.description} - Featured in ${item.publication}`)}</description>
-        <pubDate>${new Date(item.date).toUTCString()}</pubDate>
-        <guid>${item.url}</guid>
-        <enclosure url="${baseUrl}/pictures/adil-mukhi-formal-headshot.jpg" type="image/jpeg" />
-        <media:content url="${baseUrl}/pictures/adil-mukhi-formal-headshot.jpg" type="image/jpeg" medium="image" />
-      </item>
-    `)
-  })
+    try {
+      mediaItems?.forEach((item, index) => {
+        try {
+          rssItems.push(`
+            <item>
+              <title>${escapeXml(`Media Coverage: ${item?.title || "Untitled"}`)}</title>
+              <link>${item?.url || baseUrl}</link>
+              <description>${escapeXml(`${item?.description || ""} - Featured in ${item?.publication || ""}`)}</description>
+              <pubDate>${new Date(item?.date || new Date()).toUTCString()}</pubDate>
+              <guid>${item?.url || `${baseUrl}/media/${index}`}</guid>
+              <enclosure url="${baseUrl}/pictures/adil-mukhi-formal-headshot.jpg" type="image/jpeg" />
+              <media:content url="${baseUrl}/pictures/adil-mukhi-formal-headshot.jpg" type="image/jpeg" medium="image" />
+            </item>
+          `)
+        } catch (itemError) {
+          console.log("[v0] Error processing media item:", item?.title, itemError)
+        }
+      })
+      console.log("[v0] Added media items to RSS")
+    } catch (error) {
+      console.log("[v0] Error adding media items:", error)
+    }
 
-  const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
+    const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>${escapeXml("Adil Mukhi - Medical Student, Researcher & Entrepreneur")}</title>
@@ -140,10 +171,16 @@ export async function GET() {
   </channel>
 </rss>`
 
-  return new NextResponse(rssXml, {
-    headers: {
-      "Content-Type": "application/rss+xml; charset=utf-8",
-      "Cache-Control": "public, max-age=3600, s-maxage=3600",
-    },
-  })
+    console.log("[v0] RSS feed generated successfully with", rssItems.length, "items")
+
+    return new NextResponse(rssXml, {
+      headers: {
+        "Content-Type": "application/rss+xml; charset=utf-8",
+        "Cache-Control": "public, max-age=3600, s-maxage=3600",
+      },
+    })
+  } catch (error) {
+    console.error("[v0] RSS feed generation failed:", error)
+    return new NextResponse("RSS feed generation failed", { status: 500 })
+  }
 }
