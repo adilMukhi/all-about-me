@@ -3,6 +3,7 @@
 export const urlMappings: Record<string, string> = {
   // Education shortcuts - now accessible via /s/edu1
   edu1: "https://adilmukhi.vercel.app/background?education=high-school-diploma#education",
+  links: "https://linktr.ee/adilm.0",
 
   // Add more mappings as needed
   // 'shortcode': 'https://full-long-url-here'
