@@ -3,6 +3,26 @@ import { blogPosts } from "@/data/blog-posts"
 import { portfolioItems } from "@/data/portfolio-items"
 import { mediaItems } from "@/data/media-items"
 
+// XML encoding function to escape special characters
+function escapeXml(unsafe: string): string {
+  return unsafe.replace(/[<>&'"]/g, (c) => {
+    switch (c) {
+      case "<":
+        return "&lt;"
+      case ">":
+        return "&gt;"
+      case "&":
+        return "&amp;"
+      case "'":
+        return "&apos;"
+      case '"':
+        return "&quot;"
+      default:
+        return c
+    }
+  })
+}
+
 export async function GET() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
@@ -21,19 +41,19 @@ export async function GET() {
 
   const rssItems: string[] = []
 
-  // Add professional photos portfolio post
+  // Add professional photos portfolio
   rssItems.push(`
     <item>
-      <title>Adil Mukhi - Professional Portfolio Photos</title>
+      <title>${escapeXml("Adil Mukhi - Professional Portfolio Photos")}</title>
       <link>${baseUrl}/about</link>
-      <description><![CDATA[Professional photos of Adil Mukhi including TEDx speaking engagements, medical research, tennis achievements, and graduation moments. Medical student, researcher, and entrepreneur.]]></description>
+      <description>${escapeXml("Professional photos of Adil Mukhi including TEDx speaking, medical research, tennis, and formal portraits. Medical student, researcher, and entrepreneur.")}</description>
       <pubDate>${new Date().toUTCString()}</pubDate>
       <guid>${baseUrl}/portfolio/professional-photos</guid>
       ${professionalPhotos
         .map(
           (photo) => `
-        <enclosure url="${baseUrl}${photo}" type="image/jpeg" />
-        <media:content url="${baseUrl}${photo}" type="image/jpeg" medium="image" />
+      <enclosure url="${baseUrl}${photo}" type="image/jpeg" />
+      <media:content url="${baseUrl}${photo}" type="image/jpeg" medium="image" />
       `,
         )
         .join("")}
@@ -43,75 +63,77 @@ export async function GET() {
   // Add blog posts/experiences
   blogPosts.forEach((post) => {
     const images = post.images || []
+    const imageElements = images
+      .map(
+        (image) => `
+      <enclosure url="${baseUrl}${image}" type="image/jpeg" />
+      <media:content url="${baseUrl}${image}" type="image/jpeg" medium="image" />
+    `,
+      )
+      .join("")
+
     rssItems.push(`
       <item>
-        <title><![CDATA[${post.title}]]></title>
+        <title>${escapeXml(post.title)}</title>
         <link>${baseUrl}/experiences/${post.slug}</link>
-        <description><![CDATA[${post.description} - Medical student experience and research insights.]]></description>
+        <description>${escapeXml(post.description)}</description>
         <pubDate>${new Date(post.date).toUTCString()}</pubDate>
         <guid>${baseUrl}/experiences/${post.slug}</guid>
-        ${images
-          .map(
-            (image) => `
-          <enclosure url="${baseUrl}${image}" type="image/jpeg" />
-          <media:content url="${baseUrl}${image}" type="image/jpeg" medium="image" />
-        `,
-          )
-          .join("")}
+        ${imageElements}
       </item>
     `)
   })
 
   // Add portfolio items
-  portfolioItems.forEach((item, index) => {
+  portfolioItems.forEach((item) => {
     const images = item.images || []
+    const imageElements = images
+      .map(
+        (image) => `
+      <enclosure url="${baseUrl}${image}" type="image/jpeg" />
+      <media:content url="${baseUrl}${image}" type="image/jpeg" medium="image" />
+    `,
+      )
+      .join("")
+
     rssItems.push(`
       <item>
-        <title><![CDATA[${item.title}]]></title>
-        <link>${baseUrl}/${item.type === "book" ? "writing" : "portfolio"}</link>
-        <description><![CDATA[${item.description} - ${item.type} by medical student and researcher Adil Mukhi.]]></description>
+        <title>${escapeXml(`${item.type}: ${item.title}`)}</title>
+        <link>${baseUrl}/${item.type === "Research Project" ? "research" : "portfolio"}</link>
+        <description>${escapeXml(item.description)}</description>
         <pubDate>${new Date().toUTCString()}</pubDate>
-        <guid>${baseUrl}/portfolio/${item.type}-${index}</guid>
-        ${images
-          .map(
-            (image) => `
-          <enclosure url="${baseUrl}${image}" type="image/jpeg" />
-          <media:content url="${baseUrl}${image}" type="image/jpeg" medium="image" />
-        `,
-          )
-          .join("")}
+        <guid>${baseUrl}/portfolio/${item.title.toLowerCase().replace(/\s+/g, "-")}</guid>
+        ${imageElements}
       </item>
     `)
   })
 
   // Add media coverage
-  mediaItems.forEach((item, index) => {
-    const imageUrl = item.image || "/pictures/adil-mukhi-formal-headshot.jpg"
+  mediaItems.forEach((item) => {
     rssItems.push(`
       <item>
-        <title><![CDATA[${item.title}]]></title>
+        <title>${escapeXml(`Media Coverage: ${item.title}`)}</title>
         <link>${item.url}</link>
-        <description><![CDATA[${item.description} - Media coverage of medical student and researcher Adil Mukhi.]]></description>
+        <description>${escapeXml(`${item.description} - Featured in ${item.publication}`)}</description>
         <pubDate>${new Date(item.date).toUTCString()}</pubDate>
-        <guid>${baseUrl}/media/${index}</guid>
-        <enclosure url="${baseUrl}${imageUrl}" type="image/jpeg" />
-        <media:content url="${baseUrl}${imageUrl}" type="image/jpeg" medium="image" />
+        <guid>${item.url}</guid>
+        <enclosure url="${baseUrl}/pictures/adil-mukhi-formal-headshot.jpg" type="image/jpeg" />
+        <media:content url="${baseUrl}/pictures/adil-mukhi-formal-headshot.jpg" type="image/jpeg" medium="image" />
       </item>
     `)
   })
 
   const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>Adil Mukhi - Medical Student, Researcher & Entrepreneur</title>
+    <title>${escapeXml("Adil Mukhi - Medical Student, Researcher & Entrepreneur")}</title>
     <link>${baseUrl}</link>
-    <description>Professional portfolio and experiences of Adil Mukhi - medical student, researcher, entrepreneur, and TEDx speaker. Featuring medical research, educational content, and professional achievements.</description>
+    <description>${escapeXml("Follow Adil Mukhi's journey in medicine, research, and entrepreneurship. Medical student at McMaster University, founder of Dr. Interested, and passionate about healthcare innovation.")}</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-    <atom:link href="${baseUrl}/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>${baseUrl}/pictures/adil-mukhi-formal-headshot.jpg</url>
-      <title>Adil Mukhi</title>
+      <title>${escapeXml("Adil Mukhi")}</title>
       <link>${baseUrl}</link>
     </image>
     ${rssItems.join("")}
@@ -120,8 +142,8 @@ export async function GET() {
 
   return new NextResponse(rssXml, {
     headers: {
-      "Content-Type": "application/xml",
-      "Cache-Control": "public, max-age=3600",
+      "Content-Type": "application/rss+xml; charset=utf-8",
+      "Cache-Control": "public, max-age=3600, s-maxage=3600",
     },
   })
 }
