@@ -58,6 +58,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   alternates: {
     canonical: "/",
+    types: {
+      "application/rss+xml": [{ url: "/rss.xml", title: "Adil Mukhi RSS Feed" }],
+    },
   },
   openGraph: {
     type: "website",
@@ -122,6 +125,8 @@ export default function RootLayout({
       <head>
         <meta name="p:domain_verify" content="10e6074a03407f2fd24aed7425a2acd9" />
         <meta name="theme-color" content="#0ea5e9" />
+
+        <link rel="alternate" type="application/rss+xml" title="Adil Mukhi RSS Feed" href={`${siteUrl}/rss.xml`} />
 
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preload" href="/profile-pic.jpg" as="image" />

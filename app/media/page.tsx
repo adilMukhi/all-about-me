@@ -52,37 +52,70 @@ const MediaGrid = () => {
     }
   }
 
+  const getMediaImage = (item: any) => {
+    // Map media items to relevant professional photos
+    if (item.title.includes("TEDx") || item.title.includes("speaker")) {
+      return "/pictures/Adil Mukhi - Tedx 1.png"
+    }
+    if (item.title.includes("podcast") || item.title.includes("interview")) {
+      return "/pictures/Adil Mukhi - Camera.JPG"
+    }
+    if (item.title.includes("Dr. Interested") || item.title.includes("founder")) {
+      return "/pictures/Adil Mukhi - Dr. Interested.JPG"
+    }
+    if (item.title.includes("research") || item.title.includes("medical")) {
+      return "/pictures/Adil Mukhi - Labcoat.JPG"
+    }
+    if (item.title.includes("Youth") || item.title.includes("advocacy")) {
+      return "/pictures/Adil Mukhi - Formal Pic.jpg"
+    }
+    // Default to professional headshot
+    return "/pictures/Adil Mukhi - Formal Pic.jpg"
+  }
+
   return (
     <section className="py-16 bg-gradient-to-b from-background to-primary/5">
       <div className="container max-w-6xl">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {mediaItems.map((item, index) => (
-            <div key={index} className="bg-card rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow space-y-4">
-              <div className="flex items-center gap-2">
-                <span className={`text-xs font-medium px-2 py-1 rounded-full bg-muted ${getTypeColor(item.type)}`}>
-                  {getTypeLabel(item.type)}
-                </span>
+            <div key={index} className="bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div className="aspect-video relative overflow-hidden">
+                <img
+                  src={getMediaImage(item) || "/placeholder.svg"}
+                  alt={`${item.title} - ${item.publication}`}
+                  className="w-full h-full object-cover transition-transform hover:scale-105"
+                />
+                <div className="absolute top-3 left-3">
+                  <span
+                    className={`text-xs font-medium px-2 py-1 rounded-full bg-white/90 backdrop-blur-sm ${getTypeColor(item.type)}`}
+                  >
+                    {getTypeLabel(item.type)}
+                  </span>
+                </div>
               </div>
-              <h3 className="text-lg font-semibold text-primary leading-tight">{item.title}</h3>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Calendar className="h-4 w-4" />
-                <span>
-                  {item.publication}, {item.date}
-                </span>
+
+              <div className="p-6 space-y-4">
+                <h3 className="text-lg font-semibold text-primary leading-tight">{item.title}</h3>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Calendar className="h-4 w-4" />
+                  <span>
+                    {item.publication}, {item.date}
+                  </span>
+                </div>
+                <div className="bg-muted/50 rounded-md p-3 border-l-2 border-primary/20">
+                  <Quote className="h-4 w-4 text-primary mb-2" />
+                  <p className="text-sm text-muted-foreground leading-relaxed italic">"{item.quote}"</p>
+                </div>
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+                >
+                  Read More
+                  <ExternalLink className="h-3 w-3" />
+                </a>
               </div>
-              <div className="bg-muted/50 rounded-md p-3 border-l-2 border-primary/20">
-                <Quote className="h-4 w-4 text-primary mb-2" />
-                <p className="text-sm text-muted-foreground leading-relaxed italic">"{item.quote}"</p>
-              </div>
-              <a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-medium"
-              >
-                Read More
-                <ExternalLink className="h-3 w-3" />
-              </a>
             </div>
           ))}
         </div>
