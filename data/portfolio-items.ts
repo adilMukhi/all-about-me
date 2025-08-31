@@ -1,5 +1,3 @@
-import SocialLinks from "@/components/social-links"
-
 // Writing portfolio
 export type Book = {
   title: string
@@ -565,10 +563,10 @@ export const researchProjects: ResearchProject[] = [
       },
     ],
     otherLinks: [
-        {
-          text: "Google Scholar Link",
-          url: "https://scholar.google.ca/scholar?q=related:YJckOSRjJKUJ:scholar.google.com/&scioq=From+Stress+to+Forgetfulness:+Understanding+How+Stress+Hormones+Shape+Your+Memory&hl=en&as_sdt=0,5",
-        },
+      {
+        text: "Google Scholar Link",
+        url: "https://scholar.google.ca/scholar?q=related:YJckOSRjJKUJ:scholar.google.com/&scioq=From+Stress+to+Forgetfulness:+Understanding+How+Stress+Hormones+Shape+Your+Memory&hl=en&as_sdt=0,5",
+      },
     ],
   },
   {
@@ -585,14 +583,14 @@ export const researchProjects: ResearchProject[] = [
       },
     ],
     otherLinks: [
-        {
-          text: "Google Scholar Link",
-          url: "https://scholar.google.ca/scholar?oi=bibs&hl=en&q=related:CMU0P3CC8KMJ:scholar.google.com/",
-        },
-        {
-          text: "Conference Presentation Link",
-          url: "https://doi.org/10.5281/zenodo.16990394",
-        },
+      {
+        text: "Google Scholar Link",
+        url: "https://scholar.google.ca/scholar?oi=bibs&hl=en&q=related:CMU0P3CC8KMJ:scholar.google.com/",
+      },
+      {
+        text: "Conference Presentation Link",
+        url: "https://doi.org/10.5281/zenodo.16990394",
+      },
     ],
   },
   {
@@ -925,4 +923,15 @@ export const sportsAchievements: SportsAchievement[] = [
     tags: ["Tennis", "Competition", "Team Sports"],
     type: "sports",
   },
+]
+
+export const portfolioItems = [
+  ...books.map((item) => ({ ...item, type: "book" as const })),
+  ...ltes.map((item) => ({ ...item, type: "lte" as const })),
+  ...blogs.map((item) => ({ ...item, type: "blog" as const })),
+  ...clubPublications.map((item) => ({ ...item, type: "clubPublication" as const })),
+  ...researchProjects.map((item) => ({ ...item, type: "research" as const })),
+  ...codingProjects.map((item) => ({ ...item, type: "coding" as const })),
+  ...artProjects,
+  ...sportsAchievements,
 ]
