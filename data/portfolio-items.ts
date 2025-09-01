@@ -67,7 +67,7 @@ export const books: Book[] = [
     publisher: "Polar Expressions Publishing",
     date: "May 2025",
     description:
-      "A published poetry collection showcasing youth voices across Canada. Includes my original piece, archived in the Library and Archives Canada.",
+      "A published story collection showcasing youth voices across Canada. Includes my original piece, archived in the Library and Archives Canada.",
     link: "https://www.polarexpressions.ca/Shop.html",
     isbn: "978-1-990243-42-4",
     authors: "Adil Mukhi et al",
@@ -424,6 +424,22 @@ export type ClubPublication = {
 }
 
 export const clubPublications: ClubPublication[] = [
+  {
+  title: "Youth in the Age of AI: Why Canada Needs a Youth-Centred AI Policy Now",
+  publisher: "Dr. Interested Blog",
+  date: "June 11, 2025",
+  description: "Later featured in the NACY Frontiers newsletter, this op-ed explores the urgent need for youth-centred AI policy in Canada, highlighting its impact on education, healthcare, and the future of work. The piece argues for meaningful youth inclusion in shaping AI governance.",
+  link: "https://drinterested.tech/blog/youth-ai-healthcare-policy",
+  authors: "Adil Mukhi",
+  buyLinks: {
+    customLinks: [
+      {
+        name: "Read Article",
+        url: "https://drinterested.tech/blog/youth-ai-healthcare-policy",
+      },
+    ],
+  },
+  },
   {
     title: "Anthology #1",
     publisher: "Aid4NeedxVoice4Need",
