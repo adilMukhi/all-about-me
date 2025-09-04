@@ -10,7 +10,7 @@ export default function ClubFeature() {
         className="mb-6 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
         style={{ fontFamily: "Sour Gummy, latin" }}
       >
-        My Club: Dr. Interested
+        Executive Director of Dr. Interested
       </h2>
       <Card className="bg-gradient-to-br from-blue-50 to-teal-50 overflow-hidden glass-card">
         <div className="flex flex-col md:flex-row">
