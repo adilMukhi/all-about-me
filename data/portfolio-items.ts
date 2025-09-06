@@ -35,6 +35,16 @@ export const books: Book[] = [
     authors: "Adil Mukhi et al",
     image: "/RSVbook.png",
     buyLinks: {
+      ebookChannels: [
+        {
+          name: "Amazon Kindle",
+          url: "https://www.amazon.ca/dp/B0FPPHV719",
+        },
+        {
+          name: "LuLu Bookstore",
+          url: "https://www.lulu.com/shop/adil-mukhi-and-malik-evans-and-sukrit-kaur-and-arisee-gupta/doctor-defender-vs-rsv/ebook/product-yvg9rjz.html?page=1&pageSize=4",
+        }
+      ],
       customLinks: [
         {
           name: "View Publication",
