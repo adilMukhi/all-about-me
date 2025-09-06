@@ -106,6 +106,37 @@ export const certificates: Certificate[] = [
     image: "/pals.jpg",
     slug: "nhcps-pals-certification",
   },
+    {
+    name: "Immigrant and Refugee Mental Health Course - Health Service Providers Stream",
+    issuer: "Temerty Faculty of Medicine, University of Toronto & Centre for Addiction and Mental Health (CAMH)",
+    date: "July 14 – August 25, 2025",
+    description: "Evidence-based course on immigrant and refugee mental health, covering social determinants of health, migration trajectory, and equitable access to care. Accredited by CFPC and RCPSC for up to 30 Mainpro+ credits.",
+    skills: [
+      "Immigrant and refugee mental health",
+      "Social determinants of health",
+      "Equitable access to care",
+      "Interdisciplinary partnerships",
+      "Evidence-based clinical practice"
+    ],
+    link: "",
+    image: "/certificates/immigrant-mentalhealth-course.png",
+    slug: "immigrant-refugee-mental-health-course"
+  },
+  {
+    name: "Fundamentals of Social Epidemiology Research: An Overview of Current Theories and Methods",
+    issuer: "University of British Columbia & University of Toronto",
+    date: "July 28, 2025",
+    description: "Course on key theories and methods in social epidemiology research, focusing on the intersection of health, equity, and population outcomes.",
+    skills: [
+      "Social epidemiology",
+      "Health equity research",
+      "Epidemiological methods",
+      "Population health analysis"
+    ],
+    link: "",
+    image: "/certificates/Fundamentals of Social Epidemiology Research.png",
+    slug: "fundamentals-social-epidemiology-research"
+  },
   {
     name: "Ministry of Labour, Training and Skills Development - Worker Health and Safety Awareness",
     issuer: "Labour, Immigration, Training and Skills Development",
