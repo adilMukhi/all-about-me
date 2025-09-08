@@ -138,6 +138,26 @@ export const certificates: Certificate[] = [
     slug: "fundamentals-social-epidemiology-research"
   },
   {
+  "name": "Google Data Analytics Professional Certificate (v2)",
+  "issuer": "Google via Coursera",
+  "date": "May 2025",
+  "description": "A comprehensive, hands-on program designed to equip beginners with the skills and tools needed for entry-level data analyst roles. The curriculum includes data cleaning, analysis, visualization, and communication using spreadsheets, SQL, R, and Tableau. The certificate is recognized for approximately 187 learning hours and is endorsed at EQF levels 5 and 6, equivalent to 7 ECTS credits. :contentReference[oaicite:6]{index=6}",
+  "skills": [
+    "Data Cleaning",
+    "Data Analysis",
+    "Data Visualization",
+    "SQL",
+    "R Programming",
+    "Tableau",
+    "Spreadsheets",
+    "Data Storytelling",
+    "Stakeholder Communication"
+  ],
+  "link": "https://www.coursera.org/professional-certificates/google-data-analytics",
+  "image": "/certificates/googledatacert.png",
+  "slug": "google-data-analytics-professional-v2"
+  },
+  {
     name: "Ministry of Labour, Training and Skills Development - Worker Health and Safety Awareness",
     issuer: "Labour, Immigration, Training and Skills Development",
     date: "Jun 2024",
