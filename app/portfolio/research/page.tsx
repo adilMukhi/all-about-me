@@ -86,7 +86,7 @@ export default function ResearchPortfolioPage() {
                   className="h-auto p-4 bg-teal-50 border-teal-200 hover:bg-teal-100 hover:border-teal-300"
                 >
                   <a
-                    href="https://www.researchgate.net/scientific-contributions/Adil-Mukhi-2317397140"
+                    href="https://www.researchgate.net/profile/Adil-Mukhi-2"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
