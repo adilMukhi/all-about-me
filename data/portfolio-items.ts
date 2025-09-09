@@ -43,7 +43,11 @@ export const books: Book[] = [
         {
           name: "LuLu Bookstore",
           url: "https://www.lulu.com/shop/adil-mukhi-and-malik-evans-and-sukrit-kaur-and-arisee-gupta/doctor-defender-vs-rsv/ebook/product-yvg9rjz.html?page=1&pageSize=4",
-        }
+        },
+        {
+          name: "Kobo eBooks",
+          url: "https://www.kobo.com/ca/en/ebook/doctor-defender-v-s-rsv",
+        },
       ],
       customLinks: [
         {
