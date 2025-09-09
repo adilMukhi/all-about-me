@@ -48,6 +48,10 @@ export const books: Book[] = [
           name: "Kobo eBooks",
           url: "https://www.kobo.com/ca/en/ebook/doctor-defender-v-s-rsv",
         },
+        {
+          name: "Apple Books",
+          url: "https://books.apple.com/us/book/doctor-defender-v-s-rsv/id6752131968",
+        },
       ],
       customLinks: [
         {
