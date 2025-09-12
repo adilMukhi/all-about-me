@@ -145,36 +145,6 @@ export const workExperiences: WorkExperience[] = [
     slug: "children-first-sdg",
   },
   {
-    title: "Head of Writing",
-    company: "MedMind",
-    period: "2024–Present",
-    description: "Directed content creation for youth mental health platform.",
-    image: "/medmind.png",
-    skills: ["Writing", "Content Strategy", "Youth Engagement", "Health Communication"],
-    link: "https://medmindblog.wixsite.com/medmind/team-4#:~:text=Adil%20Mukhi,Head%20of%20Writing",
-    slug: "medmind-writing",
-  },
-  {
-    title: "Director of R&D",
-    company: "NeuroGenesis",
-    period: "2024–Present",
-    description: "Led youth research projects in health and neuroscience, connecting students with mentors.",
-    image: "/neurogensis.jpg",
-    skills: ["Research", "Leadership", "Mentorship", "Neuroscience"],
-    link: "https://www.linkedin.com/company/neurogenesis-pakistan/posts/?feedView=all",
-    slug: "neurogenesis-rd",
-  },
-  {
-    title: "Assistant Director of Publications",
-    company: "Harmony Health Initiative",
-    period: "2024–Present",
-    description: "Managed communications and publications for youth health initiatives.",
-    image: "/HHI.jpg",
-    skills: ["Communication", "Editing", "Publishing", "Leadership"],
-    link: "https://harmonyhealthiniti.wixsite.com/harmony-health-initi/blank-1",
-    slug: "hhi-publications",
-  },
-  {
     title: "Youth Council Member",
     company: "Eco Brothers Youth Council",
     period: "2024-Present",
@@ -215,6 +185,36 @@ export const workExperiences: WorkExperience[] = [
     link: "https://libsci.tech/members",
     slug: "libsci-tech",
   },
+    {
+    title: "Head of Writing",
+    company: "MedMind",
+    period: "2024 – Sep 2025",
+    description: "Directed content creation for youth mental health platform.",
+    image: "/medmind.png",
+    skills: ["Writing", "Content Strategy", "Youth Engagement", "Health Communication"],
+    link: "https://medmindblog.wixsite.com/medmind/team-4#:~:text=Adil%20Mukhi,Head%20of%20Writing",
+    slug: "medmind-writing",
+  },
+  {
+    title: "Director of R&D",
+    company: "NeuroGenesis",
+    period: "2024 – Sep 2025",
+    description: "Led youth research projects in health and neuroscience, connecting students with mentors.",
+    image: "/neurogensis.jpg",
+    skills: ["Research", "Leadership", "Mentorship", "Neuroscience"],
+    link: "https://www.linkedin.com/company/neurogenesis-pakistan/posts/?feedView=all",
+    slug: "neurogenesis-rd",
+  },
+  {
+    title: "Assistant Director of Publications",
+    company: "Harmony Health Initiative",
+    period: "2024 – Sep 2025",
+    description: "Managed communications and publications for youth health initiatives.",
+    image: "/HHI.jpg",
+    skills: ["Communication", "Editing", "Publishing", "Leadership"],
+    link: "https://harmonyhealthiniti.wixsite.com/harmony-health-initi/blank-1",
+    slug: "hhi-publications",
+  },
   {
     title: "Peer Helper",
     company: "Glenforest Secondary School",
@@ -239,6 +239,28 @@ export const workExperiences: WorkExperience[] = [
     slug: "glenforest-athletics",
   },
   {
+    title: "President",
+    company: "Glenforest Secondary School Newcomers Club",
+    period: "2025–2026",
+    description: "President of Glenforest Secondary School's Newcomers Club for the 2025–26 school year. Leading events with over 50 participants and a team of 7, while working closely with teachers and community partners.",
+    image: "/newcomersclub.png",
+    skills: ["Leadership", "Event Planning", "Team Management", "Community Engagement"],
+    link: "",
+    slug: "glenforest-newcomers",
+    progression: [
+      {
+        role: "Events Coordinator",
+        period: "2024–2025",
+        description: "Organized events for newcomer students to support integration."
+      },
+      {
+        role: "Member",
+        period: "2023–2024",
+        description: "Participated in club activities and assisted with events."
+      }
+    ]
+  },
+  {
     title: "French Club Vice-President",
     company: "Glenforest Secondary School",
     period: "2024–2025",
@@ -254,23 +276,6 @@ export const workExperiences: WorkExperience[] = [
         description: "Supported French Club activities and events.",
       },
     ],
-  },
-  {
-    title: "Newcomers Club Events Coordinator",
-    company: "Glenforest Secondary School",
-    period: "2024–2025",
-    description: "Organized events for newcomer students to support integration.",
-    image: "/newcomersclub.jpg",
-    skills: ["Event Planning", "Coordination", "Leadership"],
-    link: "",
-    slug: "glenforest-newcomers",
-    progression: [
-      {
-        role: "Member",
-        period: "2023–2024",
-        description: "Participated in club activities and assisted with events."
-      }
-    ]
   },
   {
     title: "Stem Fellowship Vice-President",

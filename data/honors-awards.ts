@@ -15,7 +15,7 @@ export const honorsAwards: Award[] = [
     year: "Aug 2025",
     description:
       "Nominated and selected for the Ontario Volunteer Service Award recognizing 2 to 4 years of continuous volunteer service with the Ismaili Council for Southwest Ontario – Mississauga Jamatkhana. To be formally recognized in a ceremony on September 1, 2025, and presented with a certificate and lapel pin for dedication to community service.",
-    image: "/OVSA.jpg",
+    image: "/ovsa.png",
     skills: ["Volunteerism", "Community Engagement", "Leadership", "Commitment", "Service"],
     link: "https://mail.google.com/mail/u/0/?tab=rm&ogbl#search/nomination/FMfcgzQbgcNCxmqvLcQGlgpbwXJxpdNz",
   },
