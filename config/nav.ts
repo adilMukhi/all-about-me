@@ -52,7 +52,7 @@ export const navConfig: NavConfig = {
       ],
     },
     {
-      title: "Blog",
+      title: "Experiences",
       href: "/experiences",
       items: blogPostItems.map((post) => ({
         title: post.title,

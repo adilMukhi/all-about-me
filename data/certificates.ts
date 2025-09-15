@@ -186,6 +186,22 @@ export const certificates: Certificate[] = [
     slug: "results-canada-outstanding-youth",
   },
   {
+    name: "MFOTG: Recognize, Respond, Refer and Reflect",
+    issuer: "MoreFeetOnTheGround.ca",
+    date: "September 14, 2025",
+    description: "Successfully completed the 'MFOTG: Recognize, Respond, Refer and Reflect' training, focused on recognizing, responding, and referring individuals experiencing mental health challenges, and reflecting on best practices for support.",
+    skills: [
+      "Mental Health Awareness",
+      "Crisis Response",
+      "Support Strategies",
+      "Referral Skills",
+      "Reflection Practices"
+    ],
+    link: "https://morefeetontheground.ca/",
+    image: "/MoreFeetOnTheGroundcourse.png",
+    slug: "mfotg-certification"
+  },
+  {
     name: "Certificate of Recognition - International Health Leaders Program",
     issuer: "International Health Leaders Program",
     date: "2024",

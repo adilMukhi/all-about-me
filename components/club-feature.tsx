@@ -28,7 +28,7 @@ export default function ClubFeature() {
             </CardHeader>
             <CardContent className="p-0">
               <p className="mb-4">
-                Dr. Interested is a youth-led global pre-med community I founded to help students explore healthcare, research, and advocacy. We empower youth to discover their unique “spark” in medicine through interactive programs, mentorship, and leadership development — with 11+ major events run so far.
+                Dr. Interested is a youth-led global pre-med community I founded to help students explore healthcare, research, and advocacy. We empower youth to discover their unique “spark” in medicine through interactive programs, mentorship, and leadership development — with 13+ major events run so far.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center gap-2">
@@ -37,15 +37,15 @@ export default function ClubFeature() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Building className="h-5 w-5 text-blue-500" />
-                  <span>900+ members & 70+ executives</span>
+                  <span>900+ members & 90+ executives</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <BookOpen className="h-5 w-5 text-blue-500" />
-                  <span>400,000+ marketing reach</span>
+                  <span>1,000,000+ marketing reach</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Globe className="h-5 w-5 text-blue-500" />
-                  <span>Every continent except antartica</span>
+                  <span>Every continent except Antarctica</span>
                 </div>
               </div>
               <Button size="lg" className="button-hover-effect">
