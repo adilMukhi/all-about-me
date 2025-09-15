@@ -10,7 +10,7 @@ const introNavItems = [
   { key: "Media", label: "Media" },
   { key: "Services", label: "Services" },
   { key: "Portfolios", label: "Portfolios" },
-  { key: "Blog", label: "Blog" },
+  { key: "Experiences", label: "Experiences" },
 ]
 
 const quips = ["something cool", "ideas into pixels", "your experience", "a little magic", "the good stuff"]
