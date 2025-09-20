@@ -41,7 +41,7 @@ export default function ClubFeature() {
                 </div>
                 <div className="flex items-center gap-2">
                   <BookOpen className="h-5 w-5 text-blue-500" />
-                  <span>1,000,000+ marketing reach</span>
+                  <span>500,000+ marketing reach</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Globe className="h-5 w-5 text-blue-500" />
