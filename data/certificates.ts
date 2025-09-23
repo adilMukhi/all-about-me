@@ -173,6 +173,22 @@ export const certificates: Certificate[] = [
     slug: "see-different-principles-dei"
   },
   {
+    name: "See Different Sticker Design Contest – Honourable Mention",
+    issuer: "See Different",
+    date: "September 7, 2025",
+    description:
+      "Submitted a design to the 'What does belonging mean to you?' contest, receiving an Honourable Mention for the Inclusion Cat artwork.",
+    skills: [
+      "Creative Expression",
+      "Diversity, Equity, and Inclusion",
+      "Youth Advocacy",
+      "Design Thinking"
+    ],
+    link: "#",
+    image: "/SeeDifferentHonorableMention.png",
+    slug: "see-different-honourable-mention"
+  },
+  {
     name: "Ministry of Labour, Training and Skills Development - Worker Health and Safety Awareness",
     issuer: "Labour, Immigration, Training and Skills Development",
     date: "Jun 2024",

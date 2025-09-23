@@ -264,6 +264,15 @@ const PastEngagements = () => (
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
+                <p className="font-medium">1st Place – Story Slam Awards Ceremony and Readout</p>
+                <p className="text-sm text-muted-foreground">
+                  September 2025 - Mississauga Literary Festival.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
                 <p className="font-medium">Speaker in World Youth Skills Day Message</p>
                 <p className="text-sm text-muted-foreground">2025 - Results Canada</p>
               </div>
