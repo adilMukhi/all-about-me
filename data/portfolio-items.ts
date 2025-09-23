@@ -56,6 +56,10 @@ export const books: Book[] = [
           name: "Fnac Fr E-Book",
           url: "https://www.fnac.com/livre-numerique/a22011286/Adil-Mukhi-Doctor-Defender-v-s-RSV",
         },
+        {
+          name: "Booktopia",
+          url: "https://www.booktopia.com.au/doctor-defender-v-s-rsv-adil-mukhi/ebook/1230009348349.html?srsltid=AfmBOoqBb7BurotjcJvDaHAf8P0YOU03A1h3Qc2GgWawBBLezsBILfW1",
+        },
       ],
       customLinks: [
         {

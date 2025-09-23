@@ -6,13 +6,13 @@ import Image from "next/image"
 import { workExperiences } from "@/data/work-experience"
 
 const featuredTestimonial = {
-  name: "Riya Dutta",
-  role: "Founder & CEO @ Restoring Rainbows Southlake",
-  relationship: "Direct Manager",
-  timeKnown: "October 2024",
+  name: "Peace Mukazi Ndekezi, Ph.D.",
+  role: "PhD in Conflict Studies | Women-Led Peacebuilding & Community-Based Approaches",
+  relationship: "Senior Colleague",
+  timeKnown: "September 2023 - Present",
   testimonial:
-    "I have had the pleasure of directly managing Adil as a Research Aid for the international research collaboration at my youth non-profit, Restoring Rainbows Southlake. From the very beginning, Adil has demonstrated an incredible work ethic and a level of motivation that is truly commendable. He consistently approaches his tasks with a proactive mindset, often being two steps ahead.",
-  image: "/RiyaDutta.jpeg",
+    "I've had the privilege of working with Adil through Results Canada and am continually impressed by his leadership, dedication, and advocacy. As High-School Advocacy Group Lead, he guided 49 members nationwide, contributing 200+ hours and publishing 12+ LTEs. His public-speaking and communication skills, including panel presentations, inspire and drive meaningful action.",
+  image: "/Peace-Mukazi-Ndekei.jpg",
 }
 
 export default function BackgroundPreview() {
