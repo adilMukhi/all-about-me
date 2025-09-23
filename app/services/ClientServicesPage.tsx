@@ -278,7 +278,7 @@ const PastEngagements = () => (
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
-                <p className="font-medium">Speaker on the BEYOND THE HELIX Podcast</p>
+                <p className="font-medium">Guest Speaker on the BEYOND THE HELIX Podcast</p>
                 <p className="text-sm text-muted-foreground">August 2025 - MediQuills & Revitalized Medicine</p>
               </div>
             </div>
@@ -352,6 +352,15 @@ const PastEngagements = () => (
               <div>
                 <p className="font-medium">Highlighted in Presentation at Clinton Global Initiative Annual Meeting</p>
                 <p className="text-sm text-muted-foreground">September 2025 - Project Green Challenge</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Submitted Youth Mental Health Video</p>
+                <p className="text-sm text-muted-foreground">
+                  September 2025 - United Nations Youth Office, Youth Mental Health & Well-Being
+                </p>
               </div>
             </div>
             <div className="flex items-start gap-3">
