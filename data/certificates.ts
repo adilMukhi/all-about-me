@@ -306,6 +306,17 @@ export const certificates: Certificate[] = [
     slug: "biopage-silver-medal",
   },
   {
+    name: "Your Voice is Power - Runner Up",
+    issuer: "TakingITGlobal, UBC, and Amazon Future Engineer",
+    date: "September 23, 2025",
+    description:
+      "Recognized as one of 40 Runner Up awardees out of hundreds of entries across Canada in the 2024-25 Your Voice is Power competition. Submitted a song (code) titled 'Time to change the world'.",
+    skills: ["Music Coding", "Creativity", "STEM & Arts Integration", "Innovation", "Youth Empowerment"],
+    link: "https://www.yourvoiceispower.ca/winner-and-judges/2025-winners#:~:text=Adil%2C%20Glenforest%20Secondary%20School%20(Mississauga)",
+    image: "/certificates/voiceispower.png",
+    slug: "your-voice-is-power-runner-up",
+  },
+  {
     name: "Certificate of Accomplishment - STEMHiss Vice President",
     issuer: "STEMHiss",
     date: "2024",
