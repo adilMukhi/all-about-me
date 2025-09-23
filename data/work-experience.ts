@@ -24,7 +24,7 @@ export const workExperiences: WorkExperience[] = [
     title: "Founder & Executive Director",
     company: "Dr. Interested",
     period: "2024–Present",
-    description: "Leading a youth-focused organization impacting every continent except Antarctica through events, advocacy, and mentorship programs.",
+    description: "Leading Dr. Interested, I design programs and initiatives that empower youth through mentorship, advocacy, and impactful events. I guide a team of students, fostering community engagement and creating opportunities that reach thousands nationally and internationally.",
     longDescription: "As Founder & Executive Director, I lead Dr. Interested to engage youth globally, organize impactful events, and foster mentorship programs, connecting 60,000+ youth and collaborating with medical student advisors to create research, advocacy, and educational opportunities across multiple continents.",
     stats: [
       "60,000+ youth reached",
