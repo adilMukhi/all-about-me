@@ -127,6 +127,24 @@ export type LTE = {
 
 export const ltes: LTE[] = [
   {
+    title: "Le Canada doit demeurer un leader dans la lutte contre la tuberculose",
+    publisher: "Le Devoir",
+    date: "September 21, 2025",
+    description:
+      "A letter published in Le Devoir, highlighting the urgent need for Canada to remain a leader in the fight against tuberculosis, the world's deadliest infectious disease.",
+    link: "https://www.ledevoir.com/opinion/lettres/919500/canada-doit-demeurer-leader-lutte-contre-tuberculose",
+    authors: "Adil Mukhi",
+    image: "https://blob.v0.dev/letter.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Article",
+          url: "https://www.ledevoir.com/opinion/lettres/919500/canada-doit-demeurer-leader-lutte-contre-tuberculose",
+        },
+      ],
+    },
+  },
+  {
     title: "Continue support",
     publisher: "The London Free Press",
     date: "July 5, 2025",
