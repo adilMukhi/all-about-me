@@ -22,10 +22,30 @@ const testimonials = [
       "I had the pleasure of working with Adil during the SDG Accelerator Program at Children First Canada, where he served as a Facilitator. Throughout the program, Adil demonstrated an impressive level of responsibility and professionalism. He was always punctual and well-prepared, setting a strong example for both his peers and the youth he worked with.\n\nAdil also took initiative in this leadership role, whether that meant guiding his group through complex ideas, facilitating engaging discussions, or stepping in to support the broader program team when needed. He balanced patience and clarity in his teaching with confidence in leading workshops, which created an inclusive and productive environment for young participants.",
     image: "/KaiFlicker.jpg",
   },
+    {
+    name: "Kate Tucker",
+    role: "Medical Student at NOSM U",
+    relationship: "Mentor",
+    timeKnown: "September 29, 2025",
+    connection: "STEM Fellowship mentorship program",
+    testimonial:
+      "I had the pleasure of mentoring Adil through the STEM Fellowship mentorship program. Since first meeting him, he has impressed me with his drive, leadership, and curiosity. Our first project together was to write and publish a paper titled From Stress to Forgetfulness: Understanding How Stress Hormones Shape Your Memory—an exploration into the neuroscience and psychology of stress and memory. His keen interest in developing his research skills, attention to detail, and interdisciplinary thinking of medicine and social sciences were instrumental in pushing the work to completion and transferring the skills he tested to many other aspects of his life.\n\nBeyond research, I also had the opportunity to mentor him in his leadership role with Dr. Interested, a youth advocacy initiative that he helped scale to reach over 60,000 youth, with 900+ members, 70 executives, and 13 active programs. Adil seeks opportunity to learn, network, and expand his thinking in all aspects of his life and so I was excited to support him when he asked for support in sharing those skills and tools with other high school students interested in medicine by founding Dr. Interested. Since then, his leadership, strategic thinking, collaborative spirit, and ability to bring others together have been key to its success—culminating in an impressive marketing reach, excellent and accessible resources, and a bright vision for the future of the club.\n\nWhether in academic research, mentorship, or youth leadership, Adil brings integrity, creativity, and a relentless drive to all that he does. It has been my pleasure to work and learn alongside him, his future collaborators will surely be as impressed as I have been.",
+    image: "/KateTucker.jpg",
+  },
+  {
+    name: "Michael Furdyk",
+    role: "Co-founder & Director of Innovation, TakingITGlobal",
+    relationship: "Client",
+    timeKnown: "September 23, 2025",
+    connection: "Curriculum review for YVIP AI lessons and modules",
+    testimonial:
+      "We appreciate [Adil's] insights in your review of our new Artificial Intelligence lessons and curriculum modules, helping us tailor them to students across middle and high school, and ensuring they have the greatest impact possible.",
+    image: "/MichaelFurdyk.jpg",
+  },
   {
     name: "Zeynep Kaya",
     role: "Cyber Valkyries / Keynote Coordinator",
-    relationship: "Event Organizer",
+    relationship: "Client",
     timeKnown: "September 2025",
     connection: "Keynote Speaker at CyberValkyrie Cybersecurity Summit",
     testimonial:
@@ -75,9 +95,9 @@ const testimonials = [
   {
     name: "Kishan Suhirthan",
     role: "Logistics at Innovire | Deputy Executive Director at Dr. Interested | Glenforest SS IB ’27 | Exploring Engineering",
-    relationship: "Direct Report",
+    relationship: "Directly Reported to Me",
     timeKnown: "September 23, 2025",
-    connection: "Collaboration on Dr. Interested initiatives",
+    connection: "Kishan is the Deputy Executive Director at Dr. Interested",
     testimonial:
       "It has been a pleasure working alongside Adil, both in Dr. Interested and at school, to create better opportunities for youth. Through Dr. Interested, we’ve engaged over 60,000 students across 70+ countries, reached more than 600,000 people, and built a community of 900+ active members.\n\nAdil’s leadership and problem-solving skills have been key in turning challenges into opportunities, and his positive energy motivates everyone around him to aim higher. He consistently goes above and beyond in his work, setting a strong example for peers and younger students alike. I’m looking forward to continuing our collaboration and empowering even more youth together!",
     image: "/KishanSuhirthan.jpg",
@@ -85,9 +105,9 @@ const testimonials = [
   {
     name: "Arghya Vyas",
     role: "Grade 11 IB1 Student at Glenforest Secondary School | Vex Robotics @31331 | Director of IT @Youth Venture International & @Dr. Interested | Design and Development @FutureMD",
-    relationship: "Direct Report",
+    relationship: "Directly Reported to Me",
     timeKnown: "September 16, 2025",
-    connection: "Mentorship and leadership at Dr. Interested",
+    connection: "Arghya is the Director of Technology at Dr. Interested",
     testimonial:
       "It has been a pleasure working with Adil, and helping to create better opportunities for youth through Dr. Interested. Adil is strong at persevering with his goals, and always goes above and beyond when working. Looking forward to continuing working with him!",
     image: "/ArghyaVyas.jpg",
