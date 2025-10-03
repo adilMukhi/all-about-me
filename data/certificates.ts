@@ -294,6 +294,22 @@ export const certificates: Certificate[] = [
     image: "/certificates/stembuddies-third-place.png",
     slug: "stembuddies-third-place",
   },
+    {
+    name: "Certificate of Completion - Genetics & Beyond",
+    issuer: "STEMBuddies",
+    date: "October 2025",
+    description:
+      "Successfully completed the Genetics & Beyond course, gaining knowledge in genetics, building STEM connections, and exploring future career pathways.",
+    skills: [
+      "Genetics",
+      "STEM Education",
+      "Critical Thinking",
+      "Scientific Learning",
+    ],
+    link: "#",
+    image: "/certificates/Certificate_of_Completion_Adil_Mukhi_Genetics_and_Beyond.png",
+    slug: "genetics-and-beyond-completion",
+  },
   {
     name: "Certificate of Appreciation - Silver Medal",
     issuer: "Biopage",
