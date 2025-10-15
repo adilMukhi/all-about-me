@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
       message: "URL mapping created successfully",
       shortCode,
       longUrl,
-      shortUrl: `${process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"}/${shortCode}`,
+      shortUrl: `${process.env.NEXT_PUBLIC_SITE_URL || "https://adilm.drinterested.org"}/${shortCode}`,
     })
   } catch (error) {
     return NextResponse.json({ error: "Invalid request body" }, { status: 400 })

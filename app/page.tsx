@@ -10,6 +10,7 @@ import { Separator } from "@/components/ui/separator"
 import ClubFeature from "@/components/club-feature"
 import ServiceMediaPreview from "@/components/service-media-preview"
 import BackgroundPreview from "@/components/background-preview"
+import TedxFeature from "@/components/tedx-feature" // Added TEDx component import
 import { homeMetadata } from "./page-metadata"
 
 export const metadata: Metadata = homeMetadata
@@ -29,6 +30,10 @@ export default function Home() {
       <Separator />
       <AnimatedSection delay={200}>
         <ClubFeature />
+      </AnimatedSection>
+      <Separator />
+      <AnimatedSection delay={225}>
+        <TedxFeature />
       </AnimatedSection>
       <Separator />
       <AnimatedSection delay={250}>

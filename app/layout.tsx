@@ -8,7 +8,7 @@ import "./globals.css"
 import StartAnimation from "@/components/start-animation"
 import { Suspense } from "react"
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilm.drinterested.org"
 
 const inter = Inter({
   subsets: ["latin"],

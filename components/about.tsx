@@ -55,7 +55,7 @@ export default function About() {
         <div className="flex flex-col items-center justify-start space-y-4">
           <div className="relative w-full aspect-[3/5] max-w-md">
             <Image
-              src="/pictures/Adil Mukhi - Tedx 2.jpeg"
+              src="/pictures/adil-mukhi-tedx-speaking-2.jpeg"
               alt="Adil Mukhi speaking at TEDxMcFarren"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"

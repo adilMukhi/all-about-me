@@ -52,27 +52,6 @@ const MediaGrid = () => {
     }
   }
 
-  const getMediaImage = (item: any) => {
-    // Map media items to relevant professional photos
-    if (item.title.includes("TEDx") || item.title.includes("speaker")) {
-      return "/pictures/Adil Mukhi - Tedx 1.png"
-    }
-    if (item.title.includes("podcast") || item.title.includes("interview")) {
-      return "/pictures/Adil Mukhi - Camera.JPG"
-    }
-    if (item.title.includes("Dr. Interested") || item.title.includes("founder")) {
-      return "/pictures/Adil Mukhi - Dr. Interested.JPG"
-    }
-    if (item.title.includes("research") || item.title.includes("medical")) {
-      return "/pictures/Adil Mukhi - Labcoat.JPG"
-    }
-    if (item.title.includes("Youth") || item.title.includes("advocacy")) {
-      return "/pictures/Adil Mukhi - Formal Pic.jpg"
-    }
-    // Default to professional headshot
-    return "/pictures/Adil Mukhi - Formal Pic.jpg"
-  }
-
   return (
     <section className="py-16 bg-gradient-to-b from-background to-primary/5">
       <div className="container max-w-6xl">
@@ -81,7 +60,7 @@ const MediaGrid = () => {
             <div key={index} className="bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <div className="aspect-video relative overflow-hidden">
                 <img
-                  src={getMediaImage(item) || "/placeholder.svg"}
+                  src={item.image || "/placeholder.svg"}
                   alt={`${item.title} - ${item.publication}`}
                   className="w-full h-full object-cover transition-transform hover:scale-105"
                 />

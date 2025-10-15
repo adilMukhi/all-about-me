@@ -469,20 +469,21 @@ export type ClubPublication = {
 
 export const clubPublications: ClubPublication[] = [
   {
-  title: "Youth in the Age of AI: Why Canada Needs a Youth-Centred AI Policy Now",
-  publisher: "Dr. Interested Blog",
-  date: "June 11, 2025",
-  description: "Later featured in the NACY Frontiers newsletter, this op-ed explores the urgent need for youth-centred AI policy in Canada, highlighting its impact on education, healthcare, and the future of work. The piece argues for meaningful youth inclusion in shaping AI governance.",
-  link: "https://drinterested.tech/blog/youth-ai-healthcare-policy",
-  authors: "Adil Mukhi",
-  buyLinks: {
-    customLinks: [
-      {
-        name: "Read Article",
-        url: "https://drinterested.tech/blog/youth-ai-healthcare-policy",
-      },
-    ],
-  },
+    title: "Youth in the Age of AI: Why Canada Needs a Youth-Centred AI Policy Now",
+    publisher: "Dr. Interested Blog",
+    date: "June 11, 2025",
+    description:
+      "Later featured in the NACY Frontiers newsletter, this op-ed explores the urgent need for youth-centred AI policy in Canada, highlighting its impact on education, healthcare, and the future of work. The piece argues for meaningful youth inclusion in shaping AI governance.",
+    link: "https://drinterested.tech/blog/youth-ai-healthcare-policy",
+    authors: "Adil Mukhi",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Article",
+          url: "https://drinterested.tech/blog/youth-ai-healthcare-policy",
+        },
+      ],
+    },
   },
   {
     title: "Anthology #1",
@@ -506,89 +507,20 @@ export const clubPublications: ClubPublication[] = [
     publisher: "Human Nature Projects Ontario",
     date: "March 16, 2024",
     description: "An article exploring sustainable solutions in healthcare.",
-    link: "https://adilmukhi.vercel.app/portfolio/bit.ly/creativemention_adilm",
+    link: "https://adilm.drinterested.org/portfolio/bit.ly/creativemention_adilm",
     authors: "Adil Mukhi",
     image: "https://blob.v0.dev/creative_mention.png",
     buyLinks: {
       customLinks: [
         {
           name: "Read Article",
-          url: "https://adilmukhi.vercel.app/portfolio/bit.ly/creativemention_adilm",
-        },
-      ],
-    },
-  },
-  {
-    title: "Light-Based Medical Technologies",
-    publisher: "The Bulleteen",
-    date: "November 2024",
-    description: "An article exploring the applications of light-based technologies in medicine.",
-    link: "https://thebulleteen.com/nov-2024/",
-    authors: "Adil Mukhi",
-    image: "https://blob.v0.dev/light_based.png",
-    buyLinks: {
-      customLinks: [
-        {
-          name: "Read Article",
-          url: "https://thebulleteen.com/nov-2024/",
-        },
-      ],
-    },
-  },
-  {
-    title: "Why Photonic Computing Could Be the Key to Solving the Energy Crisis",
-    publisher: "The Bulleteen",
-    date: "November 2024",
-    description: "A deep dive into the potential of photonic computing in addressing energy challenges.",
-    link: "https://thebulleteen.com/nov-2024/",
-    authors: "Adil Mukhi",
-    image: "https://blob.v0.dev/photonic_computing.png",
-    buyLinks: {
-      customLinks: [
-        {
-          name: "Read Article",
-          url: "https://thebulleteen.com/nov-2024/",
-        },
-      ],
-    },
-  },
-  {
-    title: "Bioengineering Breakthroughs: The End of Organ Transplant Lists?",
-    publisher: "The Bulleteen",
-    date: "September 2024",
-    description: "A discussion on how bioengineering innovations may revolutionize organ transplants.",
-    link: "https://thebulleteen.com/sep-2024/",
-    authors: "Adil Mukhi",
-    image: "https://blob.v0.dev/bioengineering.png",
-    buyLinks: {
-      customLinks: [
-        {
-          name: "Read Article",
-          url: "https://thebulleteen.com/sep-2024/",
-        },
-      ],
-    },
-  },
-  {
-    title: "Telemedicine's Future: A Panacea for Healthcare Inequities or a Temporary Fix?",
-    publisher: "The Bulleteen",
-    date: "September 2024",
-    description: "An analysis of the role of telemedicine in addressing healthcare disparities.",
-    link: "https://thebulleteen.com/sep-2024/",
-    authors: "Adil Mukhi",
-    image: "https://blob.v0.dev/telemedicine.png",
-    buyLinks: {
-      customLinks: [
-        {
-          name: "Read Article",
-          url: "https://thebulleteen.com/sep-2024/",
+          url: "https://adilm.drinterested.org/portfolio/bit.ly/creativemention_adilm",
         },
       ],
     },
   },
 ]
 
-// Research portfolio
 export type ResearchProject = {
   title: string
   description: string
@@ -772,7 +704,6 @@ export const researchProjects: ResearchProject[] = [
   },
 ]
 
-// Coding portfolio
 export type CodingProject = {
   title: string
   description: string
@@ -979,7 +910,7 @@ export const sportsAchievements: SportsAchievement[] = [
     description:
       "Achieved Quarter-Finalist placement in the ROPSSAA (Region of Peel Secondary Schools Athletic Association) Boys Doubles Junior Tennis South East Qualifier 2024. Demonstrated strong teamwork, strategic play, and resilience against competitive opponents, showcasing significant improvement from previous seasons. Trained extensively in the off-season to refine technical skills, endurance, and match tactics, contributing to a successful performance in the tournament",
     image: "/portfolio/sports/tennis.jpg",
-    videoId: "ztSkKMdQpE0", // Updated with the correct YouTube video ID
+    videoId: "dEKB5Jc9sPw", // Updated to new YouTube short ID
     tags: ["Tennis", "Competition", "Team Sports"],
     type: "sports",
   },
