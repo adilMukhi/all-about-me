@@ -307,6 +307,13 @@ export async function GET() {
       const coverImageUrl = `${baseUrl}${post.image}`
       const images = post?.images || []
 
+      // Validate date
+      let pubDate = new Date()
+      if (post.date) {
+        const d = new Date(post.date)
+        if (!isNaN(d.getTime())) pubDate = d
+      }
+
       const mediaContent = [
         // Cover image
         `<media:content url="${escapeXml(coverImageUrl)}" medium="image" type="image/jpeg">
@@ -328,7 +335,7 @@ export async function GET() {
           <link>${escapeXml(postUrl)}</link>
           <guid isPermaLink="true">${escapeXml(postUrl)}</guid>
           <description>${escapeXml(post.excerpt)}</description>
-          <pubDate>${new Date(post.date).toUTCString()}</pubDate>
+          <pubDate>${pubDate.toUTCString()}</pubDate>
           <category>Blog</category>
           ${mediaContent}
           <content:encoded><![CDATA[
@@ -341,6 +348,13 @@ export async function GET() {
 
     portfolioItems?.forEach((item) => {
       const itemImages = (item as any)?.images || ((item as any)?.image ? [(item as any).image] : [])
+
+      // Validate date
+      let pubDate = new Date()
+      if ((item as any)?.date) {
+        const d = new Date((item as any).date)
+        if (!isNaN(d.getTime())) pubDate = d
+      }
 
       if (itemImages.length > 0) {
         const mediaContent = itemImages
@@ -358,7 +372,7 @@ export async function GET() {
             <title>${escapeXml(item.title)}</title>
             <link>${(item as any)?.link || baseUrl}</link>
             <description>${escapeXml(item.description)}</description>
-            <pubDate>${new Date((item as any)?.date || new Date()).toUTCString()}</pubDate>
+            <pubDate>${pubDate.toUTCString()}</pubDate>
             <category>${escapeXml((item as any)?.type || "Portfolio")}</category>
             <guid>${(item as any)?.link || `${baseUrl}/portfolio/${item.title.toLowerCase().replace(/\s+/g, "-")}`}</guid>
             ${mediaContent}
@@ -368,12 +382,18 @@ export async function GET() {
     })
 
     mediaItems?.forEach((item) => {
+      // Validate date
+      let pubDate = new Date()
+      if ((item as any)?.date) {
+        const d = new Date((item as any).date)
+        if (!isNaN(d.getTime())) pubDate = d
+      }
       rssItems.push(`
         <item>
           <title>${escapeXml(`Media Coverage: ${(item as any)?.title || "Untitled"}`)}</title>
           <link>${(item as any)?.url || baseUrl}</link>
           <description>${escapeXml(`${(item as any)?.description || ""} - Featured in ${(item as any)?.publication || ""}`)}</description>
-          <pubDate>${new Date((item as any)?.date || new Date()).toUTCString()}</pubDate>
+          <pubDate>${pubDate.toUTCString()}</pubDate>
           <category>Media</category>
           <guid>${(item as any)?.url || `${baseUrl}/media/${(item as any).title}`}</guid>
           <media:content url="${baseUrl}/pictures/adil-mukhi-formal-headshot.jpg" type="image/jpeg" medium="image">
@@ -388,13 +408,20 @@ export async function GET() {
       const certUrl = `${baseUrl}/experiences#certificates`
       const imageUrl = `${baseUrl}${cert.image}`
 
+      // Validate date
+      let pubDate = new Date()
+      if (cert.date) {
+        const d = new Date(cert.date)
+        if (!isNaN(d.getTime())) pubDate = d
+      }
+
       rssItems.push(`
         <item>
           <title>${escapeXml(`Certificate: ${cert.name}`)}</title>
           <link>${escapeXml(cert.link || certUrl)}</link>
           <guid>${escapeXml(certUrl)}-${escapeXml(cert.slug || cert.name)}</guid>
           <description>${escapeXml(cert.description)} - Issued by ${escapeXml(cert.issuer)} on ${escapeXml(cert.date)}</description>
-          <pubDate>${new Date(cert.date || new Date()).toUTCString()}</pubDate>
+          <pubDate>${pubDate.toUTCString()}</pubDate>
           <category>Certificate</category>
           <media:content url="${escapeXml(imageUrl)}" medium="image" type="image/jpeg">
             <media:title>${escapeXml(cert.name)} - ${escapeXml(cert.issuer)}</media:title>
@@ -417,6 +444,13 @@ export async function GET() {
       const imageUrl = `${baseUrl}${edu.image}`
       const eduImages = (edu as any)?.images || []
 
+      // Validate date
+      let pubDate = new Date()
+      if (edu.period) {
+        const d = new Date(edu.period)
+        if (!isNaN(d.getTime())) pubDate = d
+      }
+
       const mediaContent = [
         `<media:content url="${escapeXml(imageUrl)}" medium="image" type="image/jpeg">
           <media:title>${escapeXml(edu.degree)} - ${escapeXml(edu.institution)}</media:title>
@@ -436,7 +470,7 @@ export async function GET() {
           <link>${escapeXml(edu.link || eduUrl)}</link>
           <guid>${escapeXml(eduUrl)}-${escapeXml(edu.slug)}</guid>
           <description>${escapeXml(edu.description)} - ${escapeXml(edu.institution)} (${escapeXml(edu.period)})</description>
-          <pubDate>${new Date(edu.period || new Date()).toUTCString()}</pubDate>
+          <pubDate>${pubDate.toUTCString()}</pubDate>
           <category>Education</category>
           ${mediaContent}
           <content:encoded><![CDATA[
@@ -454,6 +488,13 @@ export async function GET() {
       const awardUrl = `${baseUrl}/experiences#awards`
       const images = Array.isArray(award.image) ? award.image : [award.image]
 
+      // Validate date
+      let pubDate = new Date()
+      if (award.year) {
+        const d = new Date(award.year)
+        if (!isNaN(d.getTime())) pubDate = d
+      }
+
       const mediaContent = images
         .map((image) => {
           const imageUrl = `${baseUrl}${image}`
@@ -470,7 +511,7 @@ export async function GET() {
           <link>${escapeXml(award.link || awardUrl)}</link>
           <guid>${escapeXml(awardUrl)}-${escapeXml(award.title)}</guid>
           <description>${escapeXml(award.description)} - Awarded by ${escapeXml(award.issuer)} in ${escapeXml(award.year)}</description>
-          <pubDate>${new Date(award.year || new Date()).toUTCString()}</pubDate>
+          <pubDate>${pubDate.toUTCString()}</pubDate>
           <category>Award</category>
           ${mediaContent}
           <content:encoded><![CDATA[
@@ -489,13 +530,20 @@ export async function GET() {
       const volunteerUrl = `${baseUrl}/experiences#volunteer`
       const imageUrl = `${baseUrl}${volunteer.image}`
 
+      // Validate date
+      let pubDate = new Date()
+      if (volunteer.period) {
+        const d = new Date(volunteer.period)
+        if (!isNaN(d.getTime())) pubDate = d
+      }
+
       rssItems.push(`
         <item>
           <title>${escapeXml(`Volunteer: ${volunteer.role} at ${volunteer.organization}`)}</title>
           <link>${escapeXml(volunteer.link || volunteerUrl)}</link>
           <guid>${escapeXml(volunteerUrl)}-${escapeXml(volunteer.role)}</guid>
           <description>${escapeXml(volunteer.description)} - ${escapeXml(volunteer.organization)} (${escapeXml(volunteer.period)})</description>
-          <pubDate>${new Date(volunteer.period || new Date()).toUTCString()}</pubDate>
+          <pubDate>${pubDate.toUTCString()}</pubDate>
           <category>Volunteer Work</category>
           <media:content url="${escapeXml(imageUrl)}" medium="image" type="image/jpeg">
             <media:title>${escapeXml(volunteer.role)} - ${escapeXml(volunteer.organization)}</media:title>
@@ -518,6 +566,13 @@ export async function GET() {
       const imageUrl = `${baseUrl}${work.image}`
       const workImages = (work as any)?.images || []
 
+      // Validate date
+      let pubDate = new Date()
+      if (work.period) {
+        const d = new Date(work.period)
+        if (!isNaN(d.getTime())) pubDate = d
+      }
+
       const mediaContent = [
         `<media:content url="${escapeXml(imageUrl)}" medium="image" type="image/jpeg">
           <media:title>${escapeXml(work.title)} - ${escapeXml(work.company)}</media:title>
@@ -537,7 +592,7 @@ export async function GET() {
           <link>${escapeXml(work.link || workUrl)}</link>
           <guid>${escapeXml(workUrl)}-${escapeXml(work.slug)}</guid>
           <description>${escapeXml(work.description)} - ${escapeXml(work.company)} (${escapeXml(work.period)})</description>
-          <pubDate>${new Date(work.period || new Date()).toUTCString()}</pubDate>
+          <pubDate>${pubDate.toUTCString()}</pubDate>
           <category>Work Experience</category>
           ${mediaContent}
           <content:encoded><![CDATA[

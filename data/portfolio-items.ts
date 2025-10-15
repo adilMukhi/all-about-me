@@ -126,6 +126,24 @@ export type LTE = {
 }
 
 export const ltes: LTE[] = [
+    {
+    title: "Canada must continue to lead in the fight against TB",
+    publisher: "Port Hawkesbury Reporter",
+    date: "October 2, 2025",
+    description:
+      "An opinion piece published in the Port Hawkesbury Reporter, urging Canada to maintain its leadership in the global fight against tuberculosis. Highlights the importance of continued advocacy and support for TB initiatives.",
+    link: "https://porthawkesburyreporter.com/canada-must-continue-to-lead-in-the-fight-against-tb/",
+    authors: "Adil Mukhi",
+    image: "https://blob.v0.dev/letter.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "Read Article",
+          url: "https://porthawkesburyreporter.com/canada-must-continue-to-lead-in-the-fight-against-tb/",
+        },
+      ],
+    },
+  },
   {
     title: "Le Canada doit demeurer un leader dans la lutte contre la tuberculose",
     publisher: "Le Devoir",
