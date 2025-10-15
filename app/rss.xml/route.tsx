@@ -288,19 +288,17 @@ export async function GET() {
       <item>
         <title>${escapeXml("Adil Mukhi - Professional Portfolio Photos")}</title>
         <link>${baseUrl}/about</link>
-        <description>${escapeXml("Professional photos of Adil Mukhi including TEDx speaking, medical research, tennis, and formal portraits. Medical student, researcher, and entrepreneur.")}</description>
+        <description>${escapeXml("Professional photos of Adil Mukhi including TEDx speaking, medical research, tennis, and formal portraits. Public speaker, Youth Advocate and Changemaker.")}</description>
         <pubDate>${new Date().toUTCString()}</pubDate>
         <guid>${baseUrl}/portfolio/professional-photos</guid>
         ${professionalPhotos
           .map(
-            (photo) => `
-        <media:content url="${baseUrl}${photo}" type="image/jpeg" medium="image">
-          <media:title><![CDATA[${escapeXml(imageDescriptions[photo] || "Professional photo of Adil Mukhi")}]]></media:title>
-          <media:description><![CDATA[${escapeXml(imageDescriptions[photo] || "Professional photo of Adil Mukhi - Medical student, researcher, and entrepreneur")}]]></media:description>
-        </media:content>
-        `,
+            (photo) => `<media:content url="${baseUrl}${photo}" type="image/jpeg" medium="image">
+          <media:title>${escapeXml(imageDescriptions[photo] || "Professional photo of Adil Mukhi")}</media:title>
+          <media:description>${escapeXml(imageDescriptions[photo] || "Professional photo of Adil Mukhi - Public speaker, Youth Advocate and Changemaker")}</media:description>
+        </media:content>`,
           )
-          .join("")}
+          .join("\n        ")}
       </item>
     `)
 
@@ -312,29 +310,29 @@ export async function GET() {
       const mediaContent = [
         // Cover image
         `<media:content url="${escapeXml(coverImageUrl)}" medium="image" type="image/jpeg">
-          <media:title><![CDATA[${escapeXml(post.title)} - Cover Image]]></media:title>
-          <media:description><![CDATA[${escapeXml(imageDescriptions[post.image] || post.excerpt)}]]></media:description>
+          <media:title>${escapeXml(post.title)} - Cover Image</media:title>
+          <media:description>${escapeXml(imageDescriptions[post.image] || post.excerpt)}</media:description>
         </media:content>`,
         // Additional images
         ...images.map(
           (image) => `<media:content url="${escapeXml(baseUrl + image)}" medium="image" type="image/jpeg">
-          <media:title><![CDATA[${escapeXml(post.title)} - ${escapeXml(imageDescriptions[image] || "Image")}]]></media:title>
-          <media:description><![CDATA[${escapeXml(imageDescriptions[image] || post.excerpt)}]]></media:description>
+          <media:title>${escapeXml(post.title)} - ${escapeXml(imageDescriptions[image] || "Image")}</media:title>
+          <media:description>${escapeXml(imageDescriptions[image] || post.excerpt)}</media:description>
         </media:content>`,
         ),
       ].join("\n        ")
 
       rssItems.push(`
         <item>
-          <title><![CDATA[${escapeXml(post.title)}]]></title>
+          <title>${escapeXml(post.title)}</title>
           <link>${escapeXml(postUrl)}</link>
           <guid isPermaLink="true">${escapeXml(postUrl)}</guid>
-          <description><![CDATA[${escapeXml(post.excerpt)}]]></description>
+          <description>${escapeXml(post.excerpt)}</description>
           <pubDate>${new Date(post.date).toUTCString()}</pubDate>
           <category>Blog</category>
           ${mediaContent}
           <content:encoded><![CDATA[
-            <img src="${escapeXml(coverImageUrl)}" alt="${escapeXml(post.title)}" />
+            <img src="${coverImageUrl}" alt="${post.title.replace(/"/g, "&quot;")}" />
             ${post.content}
           ]]></content:encoded>
         </item>
@@ -342,27 +340,27 @@ export async function GET() {
     })
 
     portfolioItems?.forEach((item) => {
-      const itemImages = item?.images || (item?.image ? [item.image] : [])
+      const itemImages = (item as any)?.images || ((item as any)?.image ? [(item as any).image] : [])
 
       if (itemImages.length > 0) {
         const mediaContent = itemImages
-          .map((image) => {
+          .map((image: string) => {
             const imageUrl = image.startsWith("http") ? image : `${baseUrl}${image}`
             return `<media:content url="${escapeXml(imageUrl)}" medium="image" type="image/jpeg">
-          <media:title><![CDATA[${escapeXml(item.title)} - ${escapeXml(imageDescriptions[image] || "Image")}]]></media:title>
-          <media:description><![CDATA[${escapeXml(imageDescriptions[image] || item.description)}]]></media:description>
+          <media:title>${escapeXml(item.title)} - ${escapeXml(imageDescriptions[image] || "Image")}</media:title>
+          <media:description>${escapeXml(imageDescriptions[image] || item.description)}</media:description>
         </media:content>`
           })
           .join("\n        ")
 
         rssItems.push(`
           <item>
-            <title><![CDATA[${escapeXml(item.title)}]]></title>
-            <link>${item?.link || baseUrl}</link>
-            <description><![CDATA[${escapeXml(item.description)}]]></description>
-            <pubDate>${new Date(item?.date || new Date()).toUTCString()}</pubDate>
-            <category>${escapeXml(item?.type || "Portfolio")}</category>
-            <guid>${item?.link || `${baseUrl}/portfolio/${item.title.toLowerCase().replace(/\s+/g, "-")}`}</guid>
+            <title>${escapeXml(item.title)}</title>
+            <link>${(item as any)?.link || baseUrl}</link>
+            <description>${escapeXml(item.description)}</description>
+            <pubDate>${new Date((item as any)?.date || new Date()).toUTCString()}</pubDate>
+            <category>${escapeXml((item as any)?.type || "Portfolio")}</category>
+            <guid>${(item as any)?.link || `${baseUrl}/portfolio/${item.title.toLowerCase().replace(/\s+/g, "-")}`}</guid>
             ${mediaContent}
           </item>
         `)
@@ -372,15 +370,15 @@ export async function GET() {
     mediaItems?.forEach((item) => {
       rssItems.push(`
         <item>
-          <title><![CDATA[${escapeXml(`Media Coverage: ${item?.title || "Untitled"}`)}]]></title>
-          <link>${item?.url || baseUrl}</link>
-          <description><![CDATA[${escapeXml(`${item?.description || ""} - Featured in ${item?.publication || ""}`)}]]></description>
-          <pubDate>${new Date(item?.date || new Date()).toUTCString()}</pubDate>
+          <title>${escapeXml(`Media Coverage: ${(item as any)?.title || "Untitled"}`)}</title>
+          <link>${(item as any)?.url || baseUrl}</link>
+          <description>${escapeXml(`${(item as any)?.description || ""} - Featured in ${(item as any)?.publication || ""}`)}</description>
+          <pubDate>${new Date((item as any)?.date || new Date()).toUTCString()}</pubDate>
           <category>Media</category>
-          <guid>${item?.url || `${baseUrl}/media/${item.title}`}</guid>
+          <guid>${(item as any)?.url || `${baseUrl}/media/${(item as any).title}`}</guid>
           <media:content url="${baseUrl}/pictures/adil-mukhi-formal-headshot.jpg" type="image/jpeg" medium="image">
-            <media:title><![CDATA[Adil Mukhi - Professional Headshot]]></media:title>
-            <media:description><![CDATA[Professional headshot of Adil Mukhi, medical student and researcher]]></media:description>
+            <media:title>Adil Mukhi - Professional Headshot</media:title>
+            <media:description>Professional headshot of Adil Mukhi, medical student and researcher</media:description>
           </media:content>
         </item>
       `)
@@ -392,23 +390,23 @@ export async function GET() {
 
       rssItems.push(`
         <item>
-          <title><![CDATA[Certificate: ${escapeXml(cert.name)}]]></title>
+          <title>${escapeXml(`Certificate: ${cert.name}`)}</title>
           <link>${escapeXml(cert.link || certUrl)}</link>
           <guid>${escapeXml(certUrl)}-${escapeXml(cert.slug || cert.name)}</guid>
-          <description><![CDATA[${escapeXml(cert.description)} - Issued by ${escapeXml(cert.issuer)} on ${escapeXml(cert.date)}]]></description>
+          <description>${escapeXml(cert.description)} - Issued by ${escapeXml(cert.issuer)} on ${escapeXml(cert.date)}</description>
           <pubDate>${new Date(cert.date || new Date()).toUTCString()}</pubDate>
           <category>Certificate</category>
           <media:content url="${escapeXml(imageUrl)}" medium="image" type="image/jpeg">
-            <media:title><![CDATA[${escapeXml(cert.name)} - ${escapeXml(cert.issuer)}]]></media:title>
-            <media:description><![CDATA[${escapeXml(imageDescriptions[cert.image] || cert.description)}]]></media:description>
+            <media:title>${escapeXml(cert.name)} - ${escapeXml(cert.issuer)}</media:title>
+            <media:description>${escapeXml(imageDescriptions[cert.image] || cert.description)}</media:description>
           </media:content>
           <content:encoded><![CDATA[
-            <img src="${escapeXml(imageUrl)}" alt="${escapeXml(cert.name)}" />
-            <h3>${escapeXml(cert.name)}</h3>
-            <p><strong>Issuer:</strong> ${escapeXml(cert.issuer)}</p>
-            <p><strong>Date:</strong> ${escapeXml(cert.date)}</p>
-            <p>${escapeXml(cert.description)}</p>
-            <p><strong>Skills:</strong> ${cert.skills.map(escapeXml).join(", ")}</p>
+            <img src="${imageUrl}" alt="${cert.name.replace(/"/g, "&quot;")}" />
+            <h3>${cert.name}</h3>
+            <p><strong>Issuer:</strong> ${cert.issuer}</p>
+            <p><strong>Date:</strong> ${cert.date}</p>
+            <p>${cert.description}</p>
+            <p><strong>Skills:</strong> ${cert.skills.join(", ")}</p>
           ]]></content:encoded>
         </item>
       `)
@@ -417,36 +415,36 @@ export async function GET() {
     educationData?.forEach((edu) => {
       const eduUrl = `${baseUrl}/experiences#education`
       const imageUrl = `${baseUrl}${edu.image}`
-      const eduImages = edu?.images || []
+      const eduImages = (edu as any)?.images || []
 
       const mediaContent = [
         `<media:content url="${escapeXml(imageUrl)}" medium="image" type="image/jpeg">
-          <media:title><![CDATA[${escapeXml(edu.degree)} - ${escapeXml(edu.institution)}]]></media:title>
-          <media:description><![CDATA[${escapeXml(imageDescriptions[edu.image] || edu.description)}]]></media:description>
+          <media:title>${escapeXml(edu.degree)} - ${escapeXml(edu.institution)}</media:title>
+          <media:description>${escapeXml(imageDescriptions[edu.image] || edu.description)}</media:description>
         </media:content>`,
         ...eduImages.map(
-          (image) => `<media:content url="${escapeXml(baseUrl + image)}" medium="image" type="image/jpeg">
-          <media:title><![CDATA[${escapeXml(edu.degree)} - Additional Image]]></media:title>
-          <media:description><![CDATA[${escapeXml(imageDescriptions[image] || edu.description)}]]></media:description>
+          (image: string) => `<media:content url="${escapeXml(baseUrl + image)}" medium="image" type="image/jpeg">
+          <media:title>${escapeXml(edu.degree)} - Additional Image</media:title>
+          <media:description>${escapeXml(imageDescriptions[image] || edu.description)}</media:description>
         </media:content>`,
         ),
       ].join("\n        ")
 
       rssItems.push(`
         <item>
-          <title><![CDATA[Education: ${escapeXml(edu.degree)}]]></title>
+          <title>${escapeXml(`Education: ${edu.degree}`)}</title>
           <link>${escapeXml(edu.link || eduUrl)}</link>
           <guid>${escapeXml(eduUrl)}-${escapeXml(edu.slug)}</guid>
-          <description><![CDATA[${escapeXml(edu.description)} - ${escapeXml(edu.institution)} (${escapeXml(edu.period)})]]></description>
+          <description>${escapeXml(edu.description)} - ${escapeXml(edu.institution)} (${escapeXml(edu.period)})</description>
           <pubDate>${new Date(edu.period || new Date()).toUTCString()}</pubDate>
           <category>Education</category>
           ${mediaContent}
           <content:encoded><![CDATA[
-            <img src="${escapeXml(imageUrl)}" alt="${escapeXml(edu.degree)}" />
-            <h3>${escapeXml(edu.degree)}</h3>
-            <p><strong>Institution:</strong> ${escapeXml(edu.institution)}</p>
-            <p><strong>Period:</strong> ${escapeXml(edu.period)}</p>
-            <p>${escapeXml(edu.longDescription || edu.description)}</p>
+            <img src="${imageUrl}" alt="${edu.degree.replace(/"/g, "&quot;")}" />
+            <h3>${edu.degree}</h3>
+            <p><strong>Institution:</strong> ${edu.institution}</p>
+            <p><strong>Period:</strong> ${edu.period}</p>
+            <p>${edu.longDescription || edu.description}</p>
           ]]></content:encoded>
         </item>
       `)
@@ -460,28 +458,28 @@ export async function GET() {
         .map((image) => {
           const imageUrl = `${baseUrl}${image}`
           return `<media:content url="${escapeXml(imageUrl)}" medium="image" type="image/jpeg">
-          <media:title><![CDATA[${escapeXml(award.title)} - ${escapeXml(award.issuer)}]]></media:title>
-          <media:description><![CDATA[${escapeXml(imageDescriptions[image] || award.description)}]]></media:description>
+          <media:title>${escapeXml(award.title)} - ${escapeXml(award.issuer)}</media:title>
+          <media:description>${escapeXml(imageDescriptions[image] || award.description)}</media:description>
         </media:content>`
         })
         .join("\n        ")
 
       rssItems.push(`
         <item>
-          <title><![CDATA[Award: ${escapeXml(award.title)}]]></title>
+          <title>${escapeXml(`Award: ${award.title}`)}</title>
           <link>${escapeXml(award.link || awardUrl)}</link>
           <guid>${escapeXml(awardUrl)}-${escapeXml(award.title)}</guid>
-          <description><![CDATA[${escapeXml(award.description)} - Awarded by ${escapeXml(award.issuer)} in ${escapeXml(award.year)}]]></description>
+          <description>${escapeXml(award.description)} - Awarded by ${escapeXml(award.issuer)} in ${escapeXml(award.year)}</description>
           <pubDate>${new Date(award.year || new Date()).toUTCString()}</pubDate>
           <category>Award</category>
           ${mediaContent}
           <content:encoded><![CDATA[
-            <img src="${escapeXml(baseUrl + images[0])}" alt="${escapeXml(award.title)}" />
-            <h3>${escapeXml(award.title)}</h3>
-            <p><strong>Issuer:</strong> ${escapeXml(award.issuer)}</p>
-            <p><strong>Year:</strong> ${escapeXml(award.year)}</p>
-            <p>${escapeXml(award.description)}</p>
-            <p><strong>Skills:</strong> ${award.skills.map(escapeXml).join(", ")}</p>
+            <img src="${baseUrl + images[0]}" alt="${award.title.replace(/"/g, "&quot;")}" />
+            <h3>${award.title}</h3>
+            <p><strong>Issuer:</strong> ${award.issuer}</p>
+            <p><strong>Year:</strong> ${award.year}</p>
+            <p>${award.description}</p>
+            <p><strong>Skills:</strong> ${award.skills.join(", ")}</p>
           ]]></content:encoded>
         </item>
       `)
@@ -493,23 +491,23 @@ export async function GET() {
 
       rssItems.push(`
         <item>
-          <title><![CDATA[Volunteer: ${escapeXml(volunteer.role)} at ${escapeXml(volunteer.organization)}]]></title>
+          <title>${escapeXml(`Volunteer: ${volunteer.role} at ${volunteer.organization}`)}</title>
           <link>${escapeXml(volunteer.link || volunteerUrl)}</link>
           <guid>${escapeXml(volunteerUrl)}-${escapeXml(volunteer.role)}</guid>
-          <description><![CDATA[${escapeXml(volunteer.description)} - ${escapeXml(volunteer.organization)} (${escapeXml(volunteer.period)})]]></description>
+          <description>${escapeXml(volunteer.description)} - ${escapeXml(volunteer.organization)} (${escapeXml(volunteer.period)})</description>
           <pubDate>${new Date(volunteer.period || new Date()).toUTCString()}</pubDate>
           <category>Volunteer Work</category>
           <media:content url="${escapeXml(imageUrl)}" medium="image" type="image/jpeg">
-            <media:title><![CDATA[${escapeXml(volunteer.role)} - ${escapeXml(volunteer.organization)}]]></media:title>
-            <media:description><![CDATA[${escapeXml(imageDescriptions[volunteer.image] || volunteer.description)}]]></media:description>
+            <media:title>${escapeXml(volunteer.role)} - ${escapeXml(volunteer.organization)}</media:title>
+            <media:description>${escapeXml(imageDescriptions[volunteer.image] || volunteer.description)}</media:description>
           </media:content>
           <content:encoded><![CDATA[
-            <img src="${escapeXml(imageUrl)}" alt="${escapeXml(volunteer.role)}" />
-            <h3>${escapeXml(volunteer.role)}</h3>
-            <p><strong>Organization:</strong> ${escapeXml(volunteer.organization)}</p>
-            <p><strong>Period:</strong> ${escapeXml(volunteer.period)}</p>
-            <p>${escapeXml(volunteer.description)}</p>
-            <p><strong>Skills:</strong> ${volunteer.skills.map(escapeXml).join(", ")}</p>
+            <img src="${imageUrl}" alt="${volunteer.role.replace(/"/g, "&quot;")}" />
+            <h3>${volunteer.role}</h3>
+            <p><strong>Organization:</strong> ${volunteer.organization}</p>
+            <p><strong>Period:</strong> ${volunteer.period}</p>
+            <p>${volunteer.description}</p>
+            <p><strong>Skills:</strong> ${volunteer.skills.join(", ")}</p>
           ]]></content:encoded>
         </item>
       `)
@@ -518,38 +516,38 @@ export async function GET() {
     workExperiences?.forEach((work) => {
       const workUrl = `${baseUrl}/experiences#work`
       const imageUrl = `${baseUrl}${work.image}`
-      const workImages = work?.images || []
+      const workImages = (work as any)?.images || []
 
       const mediaContent = [
         `<media:content url="${escapeXml(imageUrl)}" medium="image" type="image/jpeg">
-          <media:title><![CDATA[${escapeXml(work.title)} - ${escapeXml(work.company)}]]></media:title>
-          <media:description><![CDATA[${escapeXml(imageDescriptions[work.image] || work.description)}]]></media:description>
+          <media:title>${escapeXml(work.title)} - ${escapeXml(work.company)}</media:title>
+          <media:description>${escapeXml(imageDescriptions[work.image] || work.description)}</media:description>
         </media:content>`,
         ...workImages.map(
-          (image) => `<media:content url="${escapeXml(baseUrl + image)}" medium="image" type="image/jpeg">
-          <media:title><![CDATA[${escapeXml(work.title)} - Additional Image]]></media:title>
-          <media:description><![CDATA[${escapeXml(imageDescriptions[image] || work.description)}]]></media:description>
+          (image: string) => `<media:content url="${escapeXml(baseUrl + image)}" medium="image" type="image/jpeg">
+          <media:title>${escapeXml(work.title)} - Additional Image</media:title>
+          <media:description>${escapeXml(imageDescriptions[image] || work.description)}</media:description>
         </media:content>`,
         ),
       ].join("\n        ")
 
       rssItems.push(`
         <item>
-          <title><![CDATA[Work: ${escapeXml(work.title)} at ${escapeXml(work.company)}]]></title>
+          <title>${escapeXml(`Work: ${work.title} at ${work.company}`)}</title>
           <link>${escapeXml(work.link || workUrl)}</link>
           <guid>${escapeXml(workUrl)}-${escapeXml(work.slug)}</guid>
-          <description><![CDATA[${escapeXml(work.description)} - ${escapeXml(work.company)} (${escapeXml(work.period)})]]></description>
+          <description>${escapeXml(work.description)} - ${escapeXml(work.company)} (${escapeXml(work.period)})</description>
           <pubDate>${new Date(work.period || new Date()).toUTCString()}</pubDate>
           <category>Work Experience</category>
           ${mediaContent}
           <content:encoded><![CDATA[
-            <img src="${escapeXml(imageUrl)}" alt="${escapeXml(work.title)}" />
-            <h3>${escapeXml(work.title)}</h3>
-            <p><strong>Company:</strong> ${escapeXml(work.company)}</p>
-            <p><strong>Period:</strong> ${escapeXml(work.period)}</p>
-            <p>${escapeXml(work.longDescription || work.description)}</p>
-            ${work.stats ? `<p><strong>Stats:</strong> ${work.stats.map(escapeXml).join(", ")}</p>` : ""}
-            <p><strong>Skills:</strong> ${work.skills.map(escapeXml).join(", ")}</p>
+            <img src="${imageUrl}" alt="${work.title.replace(/"/g, "&quot;")}" />
+            <h3>${work.title}</h3>
+            <p><strong>Company:</strong> ${work.company}</p>
+            <p><strong>Period:</strong> ${work.period}</p>
+            <p>${work.longDescription || work.description}</p>
+            ${(work as any).stats ? `<p><strong>Stats:</strong> ${(work as any).stats.join(", ")}</p>` : ""}
+            <p><strong>Skills:</strong> ${work.skills.join(", ")}</p>
           ]]></content:encoded>
         </item>
       `)
@@ -558,13 +556,15 @@ export async function GET() {
     const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" 
      xmlns:media="http://search.yahoo.com/mrss/" 
-     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>${escapeXml("Adil Mukhi - Medical Student, Researcher & Entrepreneur")}</title>
     <link>${baseUrl}</link>
-    <description>${escapeXml("Follow Adil Mukhi's journey in medicine, research, and entrepreneurship. Medical student at McMaster University, founder of Dr. Interested, and passionate about healthcare innovation.")}</description>
+    <description>${escapeXml("Follow Adil Mukhi's journey in medicine, research, and entrepreneurship. Public speaker, Youth Advocate and Changemaker.")}</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <atom:link href="${baseUrl}/rss.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>${baseUrl}/pictures/adil-mukhi-formal-headshot.jpg</url>
       <title>${escapeXml("Adil Mukhi")}</title>
