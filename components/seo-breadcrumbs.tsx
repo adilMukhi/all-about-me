@@ -13,7 +13,7 @@ interface SEOBreadcrumbsProps {
 }
 
 export function SEOBreadcrumbs({ items }: SEOBreadcrumbsProps) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilm.drinterested.org"
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
   // Generate structured data for breadcrumbs
   const breadcrumbStructuredData = {

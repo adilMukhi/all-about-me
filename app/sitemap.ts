@@ -3,7 +3,7 @@ import { blogPosts } from "@/data/blog-posts"
 import { portfolioItems } from "@/data/portfolio-items"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilm.drinterested.org"
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
   // Current date for lastModified
   const currentDate = new Date()

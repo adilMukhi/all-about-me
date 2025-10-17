@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilm.drinterested.org"
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
 export const homeMetadata: Metadata = {
   title: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker",

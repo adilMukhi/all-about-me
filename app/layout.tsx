@@ -8,7 +8,7 @@ import "./globals.css"
 import StartAnimation from "@/components/start-animation"
 import { Suspense } from "react"
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilm.drinterested.org"
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,6 +36,13 @@ export const metadata: Metadata = {
     "public speaker",
     "changemaker",
     "Dr. Interested",
+    "Youth",
+    "Mississauga",
+    "Ontario",
+    "Canada",
+    "Glenforest",
+    "Speaking",
+    "Impactful youth in Canada",
     "TEDx speaker",
     "mental health advocate",
     "youth empowerment",
@@ -51,6 +58,11 @@ export const metadata: Metadata = {
     "student researcher",
     "medical research",
     "healthcare advocacy",
+    "youth mentorship",
+    "advising",
+    "facilitating",
+    "workshops",
+    "youth conferences",
   ],
   authors: [{ name: "Adil Mukhi", url: siteUrl }],
   creator: "Adil Mukhi",

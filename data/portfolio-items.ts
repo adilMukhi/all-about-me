@@ -525,14 +525,14 @@ export const clubPublications: ClubPublication[] = [
     publisher: "Human Nature Projects Ontario",
     date: "March 16, 2024",
     description: "An article exploring sustainable solutions in healthcare.",
-    link: "https://adilm.drinterested.org/portfolio/bit.ly/creativemention_adilm",
+    link: "https://bit.ly/creativemention_adilm",
     authors: "Adil Mukhi",
     image: "https://blob.v0.dev/creative_mention.png",
     buyLinks: {
       customLinks: [
         {
           name: "Read Article",
-          url: "https://adilm.drinterested.org/portfolio/bit.ly/creativemention_adilm",
+          url: "https://bit.ly/creativemention_adilm",
         },
       ],
     },

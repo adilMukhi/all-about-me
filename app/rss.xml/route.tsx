@@ -268,7 +268,7 @@ const imageDescriptions: Record<string, string> = {
 
 export async function GET() {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilm.drinterested.org"
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
     const rssItems: string[] = []
 
