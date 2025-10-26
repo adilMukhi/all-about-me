@@ -58,22 +58,12 @@ const MediaGrid = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {mediaItems.map((item, index) => (
             <div key={index} className="bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-              <div className="aspect-video relative overflow-hidden">
-                <img
-                  src={item.image || "/placeholder.svg"}
-                  alt={`${item.title} - ${item.publication}`}
-                  className="w-full h-full object-cover transition-transform hover:scale-105"
-                />
-                <div className="absolute top-3 left-3">
-                  <span
-                    className={`text-xs font-medium px-2 py-1 rounded-full bg-white/90 backdrop-blur-sm ${getTypeColor(item.type)}`}
-                  >
+              <div className="p-6 space-y-4">
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <span className={`text-xs font-medium px-2 py-1 rounded-full bg-muted ${getTypeColor(item.type)}`}>
                     {getTypeLabel(item.type)}
                   </span>
                 </div>
-              </div>
-
-              <div className="p-6 space-y-4">
                 <h3 className="text-lg font-semibold text-primary leading-tight">{item.title}</h3>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Calendar className="h-4 w-4" />

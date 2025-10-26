@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Plus, Minus } from "lucide-react"
 import { useState, useEffect } from "react"
 import SocialLinks from "@/components/social-links"
+import Image from "next/image"
 
 const CalBookingScript = () => {
   useEffect(() => {
@@ -19,6 +20,40 @@ const CalBookingScript = () => {
 
     return () => {
       document.head.removeChild(script)
+    }
+  }, [])
+
+  return null
+}
+
+const InstagramEmbedScript = () => {
+  useEffect(() => {
+    const script = document.createElement("script")
+    script.src = "//www.instagram.com/embed.js"
+    script.async = true
+    document.body.appendChild(script)
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script)
+      }
+    }
+  }, [])
+
+  return null
+}
+
+const TikTokEmbedScript = () => {
+  useEffect(() => {
+    const script = document.createElement("script")
+    script.src = "https://www.tiktok.com/embed.js"
+    script.async = true
+    document.body.appendChild(script)
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script)
+      }
     }
   }, [])
 
@@ -239,6 +274,30 @@ const PastEngagements = () => (
         {/* Speaking Section */}
         <div>
           <h3 className="text-2xl font-semibold text-primary mb-6">Speaking</h3>
+
+          <div className="bg-primary/10 border-l-4 border-primary p-6 rounded-lg mb-6">
+            <div className="flex items-start gap-4 mb-4">
+              <Image
+                src="/ZeynepKaya.jpg"
+                alt="Zeynep Kaya"
+                width={60}
+                height={60}
+                className="rounded-full object-cover flex-shrink-0"
+              />
+              <div>
+                <p className="text-muted-foreground italic">
+                  "Adil was truly an inspiring presence. His words of advice were like that of a brother's, sweet and
+                  heartfelt. We felt seen and heard by listening to his story and got an idea of how to pave our own
+                  way."
+                </p>
+              </div>
+            </div>
+            <div className="text-sm">
+              <p className="font-semibold text-primary">Zeynep Kaya</p>
+              <p className="text-muted-foreground">Cyber Valkyries / Keynote Coordinator</p>
+            </div>
+          </div>
+
           <div className="space-y-4">
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
@@ -250,7 +309,7 @@ const PastEngagements = () => (
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
-                <p className="font-medium">Tedx Speaker: Stress, Memory, and Why You Can’t Find Your Keys</p>
+                <p className="font-medium">Tedx Speaker: Stress, Memory, and Why You Can't Find Your Keys</p>
                 <p className="text-sm text-muted-foreground">July 2025 - TEDxMcFarren</p>
               </div>
             </div>
@@ -265,9 +324,7 @@ const PastEngagements = () => (
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
                 <p className="font-medium">1st Place – Story Slam Awards Ceremony and Readout</p>
-                <p className="text-sm text-muted-foreground">
-                  September 2025 - Mississauga Literary Festival.
-                </p>
+                <p className="text-sm text-muted-foreground">September 2025 - Mississauga Literary Festival.</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -360,6 +417,29 @@ const PastEngagements = () => (
         {/* Consulting Section */}
         <div>
           <h3 className="text-2xl font-semibold text-primary mb-6">Consulting as a Youth Advocate</h3>
+
+          <div className="bg-primary/10 border-l-4 border-primary p-6 rounded-lg mb-6">
+            <div className="flex items-start gap-4 mb-4">
+              <Image
+                src="/MichaelFurdyk.jpg"
+                alt="Michael Furdyk"
+                width={60}
+                height={60}
+                className="rounded-full object-cover flex-shrink-0"
+              />
+              <div>
+                <p className="text-muted-foreground italic">
+                  "We appreciate [Adil's] insights in your review of our new Artificial Intelligence lessons and
+                  curriculum modules, helping us tailor them to students across middle and high school."
+                </p>
+              </div>
+            </div>
+            <div className="text-sm">
+              <p className="font-semibold text-primary">Michael Furdyk</p>
+              <p className="text-muted-foreground">Co-founder & Director of Innovation, TakingITGlobal</p>
+            </div>
+          </div>
+
           <div className="space-y-4">
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
@@ -465,10 +545,105 @@ const PastEngagements = () => (
   </section>
 )
 
+const WatchMeSpeak = () => (
+  <section className="py-16 bg-gradient-to-b from-primary/5 to-background">
+    <div className="container max-w-6xl">
+      <h2 className="text-3xl font-bold text-primary mb-8 text-center">Watch Me Speak</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        {/* YouTube Shorts */}
+        <div className="flex flex-col items-center">
+          <div className="w-full aspect-[9/16] max-w-[315px] overflow-hidden rounded-lg">
+            <iframe
+              className="w-full h-full rounded-lg"
+              src="https://www.youtube.com/embed/PvS46xFqAtc"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+
+        {/* Instagram Reel */}
+        <div className="flex flex-col items-center">
+          <div className="w-full aspect-[9/16] max-w-[315px] overflow-hidden rounded-lg">
+            <blockquote
+              className="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/reel/DQIECglD4iO/?utm_source=ig_embed&amp;utm_campaign=loading"
+              data-instgrm-version="14"
+              style={{
+                background: "#FFF",
+                border: 0,
+                borderRadius: "3px",
+                boxShadow: "0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)",
+                margin: "0 auto",
+                maxWidth: "315px",
+                minWidth: "315px",
+                padding: 0,
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              <div style={{ padding: "16px" }}>
+                <a
+                  href="https://www.instagram.com/reel/DQIECglD4iO/?utm_source=ig_embed&amp;utm_campaign=loading"
+                  style={{
+                    background: "#FFFFFF",
+                    lineHeight: 0,
+                    padding: "0 0",
+                    textAlign: "center",
+                    textDecoration: "none",
+                    width: "100%",
+                  }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View this post on Instagram
+                </a>
+              </div>
+            </blockquote>
+          </div>
+        </div>
+
+        {/* TikTok */}
+        <div className="flex flex-col items-center">
+          <div className="w-full aspect-[9/16] max-w-[315px] overflow-hidden rounded-lg">
+            <blockquote
+              className="tiktok-embed"
+              cite="https://www.tiktok.com/@adilm.0/video/7564888481281920263"
+              data-video-id="7564888481281920263"
+              style={{
+                maxWidth: "315px",
+                minWidth: "315px",
+                margin: "0 auto",
+                height: "100%",
+                overflow: "hidden",
+              }}
+            >
+              <section>
+                <a
+                  target="_blank"
+                  title="@adilm.0"
+                  href="https://www.tiktok.com/@adilm.0?refer=embed"
+                  rel="noopener noreferrer"
+                >
+                  @adilm.0
+                </a>
+              </section>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+)
+
 export default function ClientServicesPage() {
   return (
     <main className="min-h-screen bg-background page-transition">
       <CalBookingScript />
+      <InstagramEmbedScript />
+      <TikTokEmbedScript />
       <Header />
       <h1 className="sr-only">Services - Adil Mukhi</h1>
       <AnimatedSection>
@@ -482,6 +657,9 @@ export default function ClientServicesPage() {
       </AnimatedSection>
       <AnimatedSection delay={200}>
         <PastEngagements />
+      </AnimatedSection>
+      <AnimatedSection delay={225}>
+        <WatchMeSpeak />
       </AnimatedSection>
       <AnimatedSection delay={250}>
         <SocialLinks />

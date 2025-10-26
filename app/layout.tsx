@@ -10,6 +10,14 @@ import { Suspense } from "react"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
+const getValidUrl = (url: string): URL => {
+  try {
+    return new URL(url)
+  } catch {
+    return new URL("https://adilmukhi.vercel.app")
+  }
+}
+
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -67,7 +75,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Adil Mukhi", url: siteUrl }],
   creator: "Adil Mukhi",
   publisher: "Adil Mukhi",
-  metadataBase: new URL(siteUrl),
+  metadataBase: getValidUrl(siteUrl),
   alternates: {
     canonical: "/",
     types: {
