@@ -539,6 +539,23 @@ export const certificates: Certificate[] = [
 
   // 📘 Medium Tier
   {
+    name: "Certificate of Attendance – Global Youth Tech Consultation",
+    issuer: "Datasphere Initiative (with UNICEF)",
+    date: "Aug 27 · Online",
+    description:
+      "Certified attendance at the Global Youth Tech Consultation, contributing input that informed UNICEF’s recommendations on data for edtech and fintech.",
+    skills: [
+      "Youth Tech Policy",
+      "Data Governance",
+      "EdTech",
+      "FinTech",
+      "UNICEF Consultation",
+    ],
+    link: "https://www.datasphereinitiative.org/",
+    image: "/certificates/datasphere-unicef-attendance.png",
+    slug: "datasphere-unicef-attendance",
+  },
+  {
     name: "Certificate of Graduation - Young Canadians' Parliament",
     issuer: "Young Canadians' Parliament",
     date: "March 1, 2025",

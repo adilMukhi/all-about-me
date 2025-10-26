@@ -102,12 +102,12 @@ export const honorsAwards: Award[] = [
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7326016820383993856/",
   },
   {
-    title: "Global Youth Awards Nomination",
+    title: "Global Youth Awards Finalist – Empowerment Category",
     issuer: "Legacy Project",
     year: "Jul 2025",
     description:
-      "Nominated for the Global Youth Awards 2025, which celebrate inspiring young leaders making positive social impact worldwide. The awards ceremony will be held on November 8, 2025, at PRYZM Kingston, London, and livestreamed globally.",
-    image: "/GYA-nomination.jpeg",
+      "Named one of nine finalists in the Empowerment category and one of three finalists in the Change sub-category for the Global Youth Awards 2025, selected from over 400 nominations from more than 90 countries. The Global Youth Awards celebrate inspiring young leaders making positive social impact worldwide. The awards ceremony was held on November 8, 2025, at PRYZM Kingston, London, and livestreamed globally.",
+    image: "/GYA-finalists.jpg",
     skills: ["Leadership", "Global Citizenship", "Youth Advocacy", "Innovation", "Community Impact"],
     link: "https://mail.google.com/mail/u/0/?tab=rm&ogbl#search/nomination/FMfcgzQbgRnJDGzLwGtRMhQxlglMTBSD",
   },

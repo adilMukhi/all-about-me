@@ -301,6 +301,20 @@ const PastEngagements = () => (
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
+                <p className="font-medium">Commencement Speech at Culture and Psychology Conference</p>
+                <p className="text-sm text-muted-foreground">October 2025 - Dr. Interested</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Grade 11 Speaker for IB Info Night</p>
+                <p className="text-sm text-muted-foreground">October 2025 - Glenforest Secondary School</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
                 <p className="font-medium">MC, Resilient Minds</p>
                 <p className="text-sm text-muted-foreground">April 2025 - Dr. Interested & YSA</p>
               </div>
