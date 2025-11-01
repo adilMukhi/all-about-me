@@ -158,6 +158,22 @@ export const certificates: Certificate[] = [
     slug: "google-data-analytics-professional-v2"
   },
   {
+    name: "Certificate of Participation – Project Green Challenge 2025",
+    issuer: "Turning Green",
+    date: "October 2025",
+    description: "Completed Project Green Challenge 2025 by engaging in daily research, creative expression, and impactful environmental actions throughout October. Demonstrated dedication to climate action, public health, and social and environmental justice, positively influencing life, campus, and community while advancing a sustainable future.",
+    skills: [
+      "Climate Action",
+      "Environmental Advocacy",
+      "Sustainability",
+      "Public Health Awareness",
+      "Social Justice"
+    ],
+    link: "https://turninggreen.org/pgc",
+    image: "/certificates/pgcadilmukhi.png",
+    slug: "project-green-challenge-2025"
+  },
+  {
     name: "See Different – Principles of DEI Certificate of Completion",
     issuer: "Canadian Centre for Diversity and Inclusion (CCDI)",
     date: "September 18, 2025",

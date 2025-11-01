@@ -20,6 +20,16 @@ export const honorsAwards: Award[] = [
     link: "https://mail.google.com/mail/u/0/?tab=rm&ogbl#search/nomination/FMfcgzQbgcNCxmqvLcQGlgpbwXJxpdNz",
   },
   {
+    title: "Top 50 Youth across Canada",
+    issuer: "Children First Canada",
+    year: "2025",
+    description:
+      "Selected as one of the top 50 exceptional youth across Canada by Children First Canada, a national charitable organization dedicated to making Canada the best place in the world for kids to grow up. This prestigious recognition honors young leaders who demonstrate outstanding commitment to child advocacy, community impact, and positive social change. Selected from thousands of youth nationwide, this distinction celebrates dedication to improving the lives of children and youth across the country through innovative leadership, meaningful advocacy, and transformative community engagement.",
+    image: "/adilmukhitop50u18.jpg",
+    skills: ["Youth Leadership", "Child Advocacy", "Community Impact", "Social Change", "National Recognition"],
+    link: "https://childrenfirstcanada.org/",
+  },
+  {
     title: "Bronze Medal – Canadian Biology Olympiad",
     issuer: "Canadian Biology Olympiad Committee",
     year: "2025",
