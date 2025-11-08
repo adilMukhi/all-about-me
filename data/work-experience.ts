@@ -88,8 +88,14 @@ export const workExperiences: WorkExperience[] = [
     period: "2024-2025",
     description: "Reviewed the Raising Canada Report (2024) and provided feedback from youth perspective. Participated in consultations with the Office of the Privacy Commissioner to advise on children’s privacy regulations.",
     longDescription:
-      "Reviewed the Raising Canada Report (2024) and attended a consultation with the Office of the Privacy Commissioner of Canada.",
-    stats: ["Report reviewed", "Recommendations submitted", "Consultation attended", "Policy feedback provided"],
+      "Reviewed the Raising Canada Report (2024) and attended a consultation with the Office of the Privacy Commissioner of Canada. In November 2025, I was invited to co-host the Young Children’s Parliament, a program empowering youth to engage directly in government and policymaking.",
+    stats: [
+      "Report reviewed",
+      "Recommendations submitted",
+      "Consultation attended",
+      "Policy feedback provided",
+      "Invited co-host – Young Children’s Parliament (Nov 2025)"
+    ],
     image: "/childernfirstcanada.jpg",
     skills: ["Youth Advocacy", "Policy Input", "Report Analysis", "Policy Consultation", "Youth Advocacy", "Research"],
     link: "",
@@ -124,12 +130,13 @@ export const workExperiences: WorkExperience[] = [
     company: "Results Canada",
     period: "2024–Present",
     description: "Led campaigns to raise awareness on global poverty and youth engagement. Received the Outstanding Youth Award.",
-    longDescription: "Led a group of 49 members nationwide, raising awareness on global poverty and youth engagement. Served as a Panel Speaker for the Results Action Kickoff in May 2025, and was awarded the Outstanding Youth Award (one of two nationally). Featured in World Youth Skills Day in both 2024 and 2025, with 12+ LTEs published and 200+ hours of advocacy contributed.",
+    longDescription: "Led a group of 49 members nationwide, raising awareness on global poverty and youth engagement. Served as a Panel Speaker for the Results Action Kickoff in May 2025 and delivered a November 2025 Action Kickoff talk on how to publish LTEs. Awarded the Outstanding Youth Award (one of two nationally). Featured in World Youth Skills Day in both 2024 and 2025, with 12+ LTEs published and 200+ hours of advocacy contributed.",
     stats: [
       "Led a group of 49 members nationwide",
       "12+ LTEs published",
       "Contributed 200+ hours",
       "Panel Speaker – Results Action Kickoff May 2025",
+      "Speaker – November 2025 Action Kickoff (How to Publish LTEs)",
       "Awarded Outstanding Youth Award (1 of 2 nationally)",
       "Featured in World Youth Skills Day (2024 & 2025)"
     ],

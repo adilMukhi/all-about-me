@@ -10,16 +10,6 @@ export type Award = {
 
 export const honorsAwards: Award[] = [
   {
-    title: "Ontario Volunteer Service Award (2–4 Years)",
-    issuer: "Province of Ontario",
-    year: "Aug 2025",
-    description:
-      "Nominated and selected for the Ontario Volunteer Service Award recognizing 2 to 4 years of continuous volunteer service with the Ismaili Council for Southwest Ontario – Mississauga Jamatkhana. To be formally recognized in a ceremony on September 1, 2025, and presented with a certificate and lapel pin for dedication to community service.",
-    image: "/ovsa.png",
-    skills: ["Volunteerism", "Community Engagement", "Leadership", "Commitment", "Service"],
-    link: "https://mail.google.com/mail/u/0/?tab=rm&ogbl#search/nomination/FMfcgzQbgcNCxmqvLcQGlgpbwXJxpdNz",
-  },
-  {
     title: "Top 50 Youth across Canada",
     issuer: "Children First Canada",
     year: "2025",
@@ -27,7 +17,37 @@ export const honorsAwards: Award[] = [
       "Selected as one of the top 50 exceptional youth across Canada by Children First Canada, a national charitable organization dedicated to making Canada the best place in the world for kids to grow up. This prestigious recognition honors young leaders who demonstrate outstanding commitment to child advocacy, community impact, and positive social change. Selected from thousands of youth nationwide, this distinction celebrates dedication to improving the lives of children and youth across the country through innovative leadership, meaningful advocacy, and transformative community engagement.",
     image: "/adilmukhitop50u18.jpg",
     skills: ["Youth Leadership", "Child Advocacy", "Community Impact", "Social Change", "National Recognition"],
-    link: "https://childrenfirstcanada.org/",
+    link: "https://www.instagram.com/p/DQhjpqbgOnz/?img_index=1",
+  },
+  {
+    title: "Global Youth Awards Finalist – Empowerment Category",
+    issuer: "Legacy Project",
+    year: "Jul 2025",
+    description:
+      "Named one of nine finalists in the Empowerment category and one of three finalists in the Change sub-category for the Global Youth Awards 2025, selected from over 400 nominations from more than 90 countries. The Global Youth Awards celebrate inspiring young leaders making positive social impact worldwide. The awards ceremony was held on November 8, 2025, at PRYZM Kingston, London, and livestreamed globally.",
+    image: "/GYA-finalists.png",
+    skills: ["Leadership", "Global Citizenship", "Youth Advocacy", "Innovation", "Community Impact"],
+    link: "https://www.instagram.com/p/DQElQUvk7Nh/",
+  },
+  {
+    title: "Ontario Volunteer Service Award (2–4 Years)",
+    issuer: "Province of Ontario",
+    year: "Aug 2025",
+    description:
+      "Nominated and selected for the Ontario Volunteer Service Award recognizing 2 to 4 years of continuous volunteer service with the Ismaili Council for Southwest Ontario – Mississauga Jamatkhana. To be formally recognized in a ceremony on September 1, 2025, and presented with a certificate and lapel pin for dedication to community service.",
+    image: "/ovsa.png",
+    skills: ["Volunteerism", "Community Engagement", "Leadership", "Commitment", "Service"],
+    link: "https://www.instagram.com/p/DOkH6cQAKV5/",
+  },
+  {
+    title: "Civic Award of Recognition",
+    issuer: "City of Mississauga",
+    year: "Nov  2025",
+    description:
+      "I received the Civic Award of Recognition in the category of Youth Community and Civic Engagement, acknowledging exceptional dedication to serving and uplifting the community.",
+    image: "/Mississauga.jpg",
+    skills: ["Community Engagement", "Civic Leadership", "Volunteerism", "Youth Leadership", "Service"],
+    link: "",
   },
   {
     title: "Bronze Medal – Canadian Biology Olympiad",
@@ -110,26 +130,6 @@ export const honorsAwards: Award[] = [
     image: "/polar_expressions.png",
     skills: ["Creative Writing", "Poetry", "Literary Expression", "Youth Advocacy", "Publication"],
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7326016820383993856/",
-  },
-  {
-    title: "Global Youth Awards Finalist – Empowerment Category",
-    issuer: "Legacy Project",
-    year: "Jul 2025",
-    description:
-      "Named one of nine finalists in the Empowerment category and one of three finalists in the Change sub-category for the Global Youth Awards 2025, selected from over 400 nominations from more than 90 countries. The Global Youth Awards celebrate inspiring young leaders making positive social impact worldwide. The awards ceremony was held on November 8, 2025, at PRYZM Kingston, London, and livestreamed globally.",
-    image: "/GYA-finalists.png",
-    skills: ["Leadership", "Global Citizenship", "Youth Advocacy", "Innovation", "Community Impact"],
-    link: "https://mail.google.com/mail/u/0/?tab=rm&ogbl#search/nomination/FMfcgzQbgRnJDGzLwGtRMhQxlglMTBSD",
-  },
-  {
-    title: "Civic Award of Recognition Nomination",
-    issuer: "City of Mississauga",
-    year: "Jun 2025",
-    description:
-      "Nominated for the Civic Award of Recognition in the category of Youth Community and Civic Engagement, acknowledging exceptional dedication to serving and uplifting the community.",
-    image: "/Mississauga.jpg",
-    skills: ["Community Engagement", "Civic Leadership", "Volunteerism", "Youth Leadership", "Service"],
-    link: "https://mail.google.com/mail/u/0/?tab=rm&ogbl#search/nomination/FMfcgzQbfpHrXfGzRQKrBgdBFzJShwJK",
   },
   {
     title: "Congress of Future Medical Leaders Nomination",

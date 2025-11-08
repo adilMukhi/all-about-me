@@ -337,6 +337,13 @@ const PastEngagements = () => (
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
+                <p className="font-medium">Speaker at Results Canada November AKO: How to Publish LTEs</p>
+                <p className="text-sm text-muted-foreground">November 2025 - Results Canada</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
                 <p className="font-medium">Panel Speaker for the Results Action Kickoff</p>
                 <p className="text-sm text-muted-foreground">May 2025 - Results Canada</p>
               </div>

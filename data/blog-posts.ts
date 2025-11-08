@@ -12,6 +12,23 @@ export type BlogPost = {
 }
 
 export const blogPosts: BlogPost[] = [
+    {
+    title: "The Future Is Now Awards: Honoured to Be Named Top 50 Under 18 in Canada",
+    subtitle: "Celebrating youth leadership, advocacy, and national impact at a landmark event",
+    date: "November 1, 2025",
+    image: "/blog/cfcfutureisnow (1).png", 
+    slug: "future-is-now-awards",
+    excerpt: "Honoured to be named one of the Top 50 youth in Canada at The Future Is Now Awards—an inspiring night celebrating youth leadership and national impact.",
+    content: `
+      <p>Honoured to be selected as one of the <strong>Top 50 youth in Canada</strong> 🍁 at <strong>The Future Is Now Awards</strong>, hosted by <strong>Children First Canada</strong> and organized by Bassett Events Inc.</p>
+      <p>The room was filled with an energy of purpose—youth leaders advancing mental health, policy, climate action, equity, education, and community resilience. Every conversation was a reminder that change is being driven now, not someday in the future.</p>
+      <p>What stood out most was the sense of collective momentum. This wasn’t just an awards show; it was a national snapshot of what happens when young people are given platforms, trust, and responsibility. Ideas were exchanged, future collaborations sparked, and shared challenges openly discussed.</p>
+      <p>A heartfelt thank you to <strong>Sara L. Austin</strong>, Founder & CEO of Children First Canada, and to the partners and supporters who made the evening possible. Your commitment amplifies youth voices and validates the work happening in communities across the country.</p>
+      <p>This recognition fuels my drive to keep building accessible, youth-centered initiatives—through advocacy, program design, research, writing, and mentorship. Grateful for the honour—and even more excited for what comes next.</p>
+    `,
+    images: ["/blog/cfcfutureisnow (1).png", "/blog/cfcfutureisnow (2).png", "/blog/cfcfutureisnow (3).png", "/blog/cfcfutureisnow (4).png", "/blog/cfcfutureisnow (5).png", "/blog/cfcfutureisnow (6).png", "/blog/cfcfutureisnow (7).png", "/blog/cfcfutureisnow (8).png"],
+    learnMoreUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7390470168973332480/", 
+  },
   {
     title: "Exploring the World of Biochemistry at the University of Toronto",
     subtitle: "A hands-on journey through biochemistry labs, student panels, and epidemiology simulations.",
