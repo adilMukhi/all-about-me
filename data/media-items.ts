@@ -23,7 +23,7 @@ export const mediaItems: MediaItem[] = [
     date: "November 20, 2025",
     link: "https://www.ohchr.org/en/stories/2025/11/children-want-shape-their-rights-digital-world",
     quote:
-      "My quote featured via the 5Rights program, highlighting youth voices shaping digital rights and protections.",
+      "Adil, a 16-year-old Canadian Youth Ambassador for 5Rights Foundation, shared his views on the matter. His time is shared between schooling and working with youth initiatives where he mentors peers and speaks publicly about education, equity and health. Online platforms, he said, help him to amplify his engagement in these initiatives. \“Digital platforms offer incredible opportunities, but children’s rights are not always fully protected online. Privacy and safety are major concerns, and content moderation often leaves gaps that can expose young people to risks,” Adil said. “Even when tools are meant to be safe, young users rarely have enough control or understanding of how their data is used. For a truly equitable digital world, children need clear protections, transparency, and meaningful ways to participate safely.\”",
     type: "article",
   },
   {
