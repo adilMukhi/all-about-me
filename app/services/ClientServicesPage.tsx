@@ -467,6 +467,20 @@ const PastEngagements = () => (
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
+                <p className="font-medium">UN Article on Children's Digital Rights</p>
+                <p className="text-sm text-muted-foreground">November 20, 2025 - United Nations OHCHR (5Rights Program)</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Supporter & Signatory: Upcoming Youth Mental Health Report</p>
+                <p className="text-sm text-muted-foreground">November 20, 2025 - UN Youth Office & UNU-IIGH</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
                 <p className="font-medium">Submitted Youth Mental Health Video</p>
                 <p className="text-sm text-muted-foreground">
                   September 2025 - United Nations Youth Office, Youth Mental Health & Well-Being

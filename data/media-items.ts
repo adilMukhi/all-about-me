@@ -18,6 +18,15 @@ export const mediaItems: MediaItem[] = [
     type: "article",
   },
   {
+    title: "Children want to shape their rights in the digital world",
+    publication: "United Nations Office of the High Commissioner for Human Rights",
+    date: "November 20, 2025",
+    link: "https://www.ohchr.org/en/stories/2025/11/children-want-shape-their-rights-digital-world",
+    quote:
+      "My quote featured via the 5Rights program, highlighting youth voices shaping digital rights and protections.",
+    type: "article",
+  },
+  {
     title: "Recombinant Therapies For Athletes w/Adil Mukhi, Founder of Dr. Interested",
     publication: "Beyond the Helix Podcast",
     date: "August 4, 2025",
