@@ -27,6 +27,24 @@ export const mediaItems: MediaItem[] = [
     type: "article",
   },
   {
+    title: "Why Adil Mukhi Is Canada's Rising Youth Advocate! The TEDx Youth Leader and Founder Inspiring Change",
+    publication: "The World Is Your Bowl Of Noodles",
+    date: "November 23, 2025",
+    link: "https://www.youtube.com/watch?v=J0WMiFPdAX8",
+    quote:
+      "Adil Mukhi is a passionate youth advocate, public speaker, and changemaker based in Toronto, Canada. As the Founder & Executive Director of @dr.interested, Adil is on a mission to empower young people and amplify their voices. He's also a TEDx speaker, inspiring audiences to take action and create meaningful change. In this video, we dive into Adil's journey, his vision for youth empowerment, and why he believes 'a change has to be...'. Whether you're a young person looking for inspiration or someone passionate about social impact, Adil's story will motivate you to step up and make a difference.",
+    type: "interview",
+  },
+  {
+    title: "Professor Kev is joined by Adil Mukhi from Dr. Interested",
+    publication: "The Professor Kev Show",
+    date: "2025",
+    link: "https://youtu.be/oOdXM5fxsR4",
+    quote:
+      "The Professor Kev Show features student entrepreneurs, youth leaders, and changemakers transforming their communities and the world. And today Professor Kev is joined by Adil Mukhi from Dr. Interested.",
+    type: "interview",
+  },
+  {
     title: "Recombinant Therapies For Athletes w/Adil Mukhi, Founder of Dr. Interested",
     publication: "Beyond the Helix Podcast",
     date: "August 4, 2025",
