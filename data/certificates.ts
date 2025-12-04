@@ -158,6 +158,23 @@ export const certificates: Certificate[] = [
     slug: "google-data-analytics-professional-v2"
   },
   {
+    name: "Certificate of Participation – Our Digital World, Our Say",
+    issuer: "UN OHCHR · Digital Futures for Children (LSE) · 5Rights Foundation",
+    date: "December 1, 2025",
+    description:
+      "Participated in the global children's consultation 'Our Digital World, Our Say,' sharing experiences with digital technologies, reflecting on online rights, and providing recommendations to policymakers, product designers, and tech companies on protecting children's rights in digital environments.",
+    skills: [
+      "Children's Digital Rights",
+      "Youth Consultation",
+      "Digital Safety Advocacy",
+      "Policy Recommendations",
+      "Online Rights Awareness"
+    ],
+    link: "https://digital-futures-for-children.net",
+    image: "/certificates/our-digital-world-our-say.png",
+    slug: "our-digital-world-our-say"
+  },
+  {
     name: "Certificate of Participation – Project Green Challenge 2025",
     issuer: "Turning Green",
     date: "October 2025",
