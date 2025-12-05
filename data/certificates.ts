@@ -250,6 +250,17 @@ export const certificates: Certificate[] = [
     slug: "results-canada-outstanding-youth",
   },
   {
+    name: "Leadership Excellence Merit Badge",
+    issuer: "Results Canada",
+    date: "December 4, 2025",
+    description:
+      "Recognition for exceptional dedication to growing the movement and leading by example to push for progress on key global issues. Awarded for outstanding passion and commitment to advocacy in advancing Results Canada's mission to end extreme poverty.",
+    skills: ["Leadership Excellence", "Youth Advocacy", "Global Issues", "Movement Building", "Commitment to Action"],
+    link: "#",
+    image: "/certificates/leadershipbadgeresults.png",
+    slug: "results-canada-leadership-excellence",
+  },
+  {
     name: "MFOTG: Recognize, Respond, Refer and Reflect",
     issuer: "MoreFeetOnTheGround.ca",
     date: "September 14, 2025",
