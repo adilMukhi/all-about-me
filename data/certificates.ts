@@ -712,6 +712,23 @@ export const certificates: Certificate[] = [
     slug: "hnp-ontario-creativity-mention",
   },
   {
+    name: "Certificate of Participation – Through the Eyes of the Earth: Arts Competition",
+    issuer: "Human Nature Projects Canada",
+    date: "October 12, 2025",
+    description:
+      "Created an original piece of art regarding the theme of humanity's dependence on nature, using creative expression to raise awareness about our relationship with the environment and gaining insight into how art can serve as a form of environmental activism and the important role youth play in driving change.",
+    skills: [
+      "Environmental Activism",
+      "Creative Expression",
+      "Art & Design",
+      "Environmental Awareness",
+      "Youth Advocacy"
+    ],
+    link: "#",
+    image: "/certificates/hnpartcomp.png",
+    slug: "hnp-through-eyes-of-earth-arts",
+  },
+  {
     name: "Certificate of Participation - Literary Competition",
     issuer: "Project Scruto",
     date: "2024",
