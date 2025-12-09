@@ -377,6 +377,17 @@ export const certificates: Certificate[] = [
     slug: "your-voice-is-power-runner-up",
   },
   {
+    name: "First Place - Mississauga Story Slam: Writing Contest",
+    issuer: "Hazel McCallion Central Library (The Library - City of Mississauga)",
+    date: "September 13, 2025",
+    description:
+      "Achieved first place in the Youth Summer Series Story Slam: Writing Contest for Ages 12-18, demonstrating exceptional creativity, voice, and storytelling skills.",
+    skills: ["Creative Writing", "Storytelling", "Youth Writing", "Literary Competition", "First Place Achievement"],
+    link: "https://www.mississauga.ca/library/",
+    image: "/certificates/storyslam.png",
+    slug: "library-story-slam-first-place",
+  },
+  {
     name: "Certificate of Accomplishment - STEMHiss Vice President",
     issuer: "STEMHiss",
     date: "2024",
