@@ -388,6 +388,17 @@ export const certificates: Certificate[] = [
     slug: "library-story-slam-first-place",
   },
   {
+    name: "3rd Place - Dites-le en vidéo 2025",
+    issuer: "Canadian Parents for French",
+    date: "2025",
+    description:
+      "Achieved 3rd place in the Dites-le en vidéo 2025 competition in the 9e/10e/11e Français de base category, demonstrating French language proficiency, creative video production skills, and effective communication in French.",
+    skills: ["French Language", "Video Production", "Creative Communication", "French Proficiency", "Multimedia Storytelling"],
+    link: "https://cpf.ca/whats-new/dites-le-en-video-2025-winners/",
+    image: "/certificates/cpf-dites-le.png",
+    slug: "cpf-dites-le-en-video-third-place",
+  },
+  {
     name: "Certificate of Accomplishment - STEMHiss Vice President",
     issuer: "STEMHiss",
     date: "2024",
