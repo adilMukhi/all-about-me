@@ -36,6 +36,15 @@ export const mediaItems: MediaItem[] = [
     type: "interview",
   },
   {
+    title: "Season 4 Ep 4 | Follow your Youth Passion ft. Adil Mukhi",
+    publication: "Lian's Corner Podcast",
+    date: "December 19, 2025",
+    link: "https://www.youtube.com/watch?v=QS6bjSg9AuM",
+    quote:
+      "Season 4 is a quiet reminder for those on their academic journey: not to rush or compare, but to keep moving forward steadily and with purpose. Progress is often invisible, yet consistency never lies. Showing up is already growth.",
+    type: "interview",
+  },
+  {
     title: "Professor Kev is joined by Adil Mukhi from Dr. Interested",
     publication: "The Professor Kev Show",
     date: "2025",
