@@ -398,6 +398,17 @@ export const certificates: Certificate[] = [
     image: "/certificates/cpf-dites-le.png",
     slug: "cpf-dites-le-en-video-third-place",
   },
+    {
+    name: "1st Place - Global Youth Scholars Essay Competition",
+    issuer: "Global Youth Scholars",
+    date: "January 10, 2026",
+    description:
+      "Awarded first place for the essay 'The Impact of Stress on Memory and Cognition,' recognized as the most exceptional writer in the competition for outstanding achievements demonstrating excellence, creativity, and insight in essay writing and thoughtful analysis.",
+    skills: ["Academic Writing", "Essay Competition", "Cognitive Science", "Memory Research", "Research Analysis", "First Place Achievement"],
+    link: "#",
+    image: "/certificates/globalyouthscholarsessaycompitition1st.png",
+    slug: "global-youth-scholars-first-place",
+  },
   {
     name: "Certificate of Accomplishment - STEMHiss Vice President",
     issuer: "STEMHiss",

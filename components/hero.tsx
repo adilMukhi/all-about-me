@@ -127,7 +127,7 @@ export default function Hero() {
             </Button>
             <Button variant="secondary" asChild className="button-hover-effect relative overflow-hidden group">
               <a
-                href="https://drive.google.com/file/d/1pcggPR8oLREeZlc2H5wCt1O_DxVH2fQ7/view"
+                href="https://drive.google.com/file/d/1832UHQ7zJaenBINhTJthJM2Hf5rbeG_W/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -137,7 +137,7 @@ export default function Hero() {
             </Button>
             <Button variant="secondary" asChild className="button-hover-effect relative overflow-hidden group">
               <a
-                href="https://drive.google.com/file/d/1xIuHrE6H3Lf-Oj3S-PrXI15dIHi9XtDi/view"
+                href="https://drive.google.com/file/d/11wc_Kbo9O7BtBwjKS1Sls-Qrqivk5Rk_/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
               >
