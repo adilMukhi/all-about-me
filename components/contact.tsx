@@ -7,7 +7,7 @@ import Script from "next/script"
 const socialLinks = [
   { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com/in/adil-mukhi-6aba27246", color: "text-blue-500" },
   { name: "GitHub", icon: Github, url: "https://github.com/adilMukhi", color: "text-gray-700" },
-  { name: "My Club", icon: Building, url: "https://linktr.ee/dr.interested", color: "text-sky-400" },
+  { name: "My Org", icon: Building, url: "https://linktr.ee/dr.interested", color: "text-sky-400" },
   { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/adilm.0/", color: "text-pink-500" },
   { name: "Linktree", icon: Link, url: "https://linktr.ee/adilm.0", color: "text-green-500" },
 ]
