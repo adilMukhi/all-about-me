@@ -16,7 +16,7 @@ export default function Hero() {
     {
       icon: Building,
       url: "https://linktr.ee/dr.interested",
-      label: "My Club",
+      label: "Dr. Interested",
       color: "text-blue-500 hover:text-blue-700",
     },
     {

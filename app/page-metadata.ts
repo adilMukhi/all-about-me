@@ -5,14 +5,14 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.ap
 export const homeMetadata: Metadata = {
   title: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker",
   description:
-    "Adil Mukhi is a youth advocate, public speaker, and changemaker. Founder of Dr. Interested reaching 60,000+ youth globally. TEDx speaker, Ontario Volunteer Service Award recipient, and advocate for mental health and youth empowerment.",
+    "Adil Mukhi is a youth advocate, public speaker, and changemaker. Founder and Executive Director of Dr. Interested, an organization impacting 160,000+ individuals across 106 countries with 1,400+ members. TEDx speaker, Ontario Volunteer Service Award recipient, and advocate for mental health and youth empowerment.",
   alternates: {
     canonical: `${siteUrl}/`,
   },
   openGraph: {
     title: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker",
     description:
-      "Youth advocate, public speaker, and changemaker. Founder of Dr. Interested reaching 60,000+ youth globally. TEDx speaker and advocate for mental health and youth empowerment.",
+      "Youth advocate, public speaker, and changemaker. Founder and Executive Director of Dr. Interested, an organization reaching 160,000+ individuals across 106 countries with 1,400+ members. TEDx speaker and advocate for mental health and youth empowerment.",
     url: `${siteUrl}/`,
     images: [
       {
@@ -28,7 +28,7 @@ export const homeMetadata: Metadata = {
 export const backgroundMetadata: Metadata = {
   title: "Background",
   description:
-    "Explore Adil Mukhi's background as a youth advocate and changemaker. Ontario Volunteer Service Award recipient, TEDx speaker, research volunteer at SickKids Hospital, and founder of Dr. Interested reaching 60,000+ youth globally.",
+    "Explore Adil Mukhi's background as a youth advocate and changemaker. Ontario Volunteer Service Award recipient, TEDx speaker, research volunteer at SickKids Hospital, and founder and Executive Director of Dr. Interested, an organization impacting 160,000+ individuals across 106 countries with 1,400+ members.",
   alternates: {
     canonical: `${siteUrl}/background`,
   },
