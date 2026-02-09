@@ -70,6 +70,24 @@ export const books: Book[] = [
     },
   },
   {
+    title: "(Im)migration Stories at the Nexus of Climate Justice in Canada: Beneath the Concrete Sky",
+    publisher: "Righting History • 2025",
+    date: "Feb 2026",
+    description:
+      "Selected as an honorable mention in the 2025 Righting History Literary Contest, this work explores the theme of (Im)migration Stories at the Nexus of Climate Justice in Canada through original creative writing. My piece highlights storytelling as a form of resistance, healing, and transformation, connecting personal narrative with broader social and environmental issues. Included in the digital and limited edition print publication, Movement-Building From the Margins: Curated Collection of Stories & Critical Scholarship Rooted in Creative Resistance.",
+    link: "https://www.rightinghistory.ca/literary-contest",
+    authors: "Adil Mukhi et al",
+    image: "/righting-history.png",
+    buyLinks: {
+      customLinks: [
+        {
+          name: "View Publication: Righting History Literary Contest",
+          url: "https://www.rightinghistory.ca/literary-contest",
+        },
+      ],
+    },
+  },
+  {
     title: "Born of Embers",
     publisher: "Polar Expressions Publishing",
     date: "May 2025",
