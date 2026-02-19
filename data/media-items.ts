@@ -107,4 +107,13 @@ export const mediaItems: MediaItem[] = [
       "Meet Adil Mukhi, a high school student from Ontario, Canada and the founder of Dr. Interested, a virtual student-run initiative that helps youth discover their passions through interactive workshops, research programs, and career-focused events. They have garnered over 350,000+ views and impacted over 55,000 youth, aiming to increase access to mentorship and opportunity to more equitable access across Canada and beyond.",
     type: "spotlight",
   },
+  {
+    title: "How Youth Advocate Adil Mukhi Makes an Impact",
+    publication: "Toronto Climate Week",
+    date: "February 2026",
+    link: "https://open.substack.com/pub/tocw/p/how-youth-advocate-adil-mukhi-makes",
+    quote:
+      "This week, we’re sitting down with Adil Mukhi, a Grade 11 student and youth climate advocate, to talk about what it takes to create change as a young person. Adil’s journey shows us that meaningful action starts small — and that leadership and education can happen anywhere.",
+    type: "feature",
+  },
 ]
