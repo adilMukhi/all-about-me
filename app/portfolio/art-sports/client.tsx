@@ -6,7 +6,7 @@ import PageLayout from "@/components/page-layout"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Camera, Palette, Eye } from "lucide-react"
+import { ArrowLeft, Camera, Palette, Eye, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { artProjects, sportsAchievements } from "@/data/portfolio-items"
@@ -224,6 +224,20 @@ export default function ArtSportsPortfolioPageClient() {
               <h2 className="text-2xl font-bold mb-6" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
                 Art Projects
               </h2>
+              <div className="mb-8 flex justify-center">
+                <a
+                  href="https://feeling-creations.com/articles/artist-adil-mukhi-on-innovation-and-environmental-art"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full max-w-[450px]"
+                >
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/68e1be9512be5f7bb811355c/b72fc8af-3804-4154-a505-1263bc1caa69/as+featured+FC+FULL+HORIZONTAL.jpg?format=1000w"
+                    alt="As Featured on Feeling Creative"
+                    className="w-full h-auto block rounded-lg"
+                  />
+                </a>
+              </div>
               <div className="grid gap-6 md:grid-cols-2">
                 {artProjectsWithIcons.map((project, index) => (
                   <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg">

@@ -116,4 +116,13 @@ export const mediaItems: MediaItem[] = [
       "This week, we’re sitting down with Adil Mukhi, a Grade 11 student and youth climate advocate, to talk about what it takes to create change as a young person. Adil’s journey shows us that meaningful action starts small — and that leadership and education can happen anywhere.",
     type: "feature",
   },
+  {
+    title: "Artist Adil Mukhi on Systems Thinking, Innovation, and Environmental Art",
+    publication: "Feeling Creative",
+    date: "2026",
+    link: "https://feeling-creations.com/articles/artist-adil-mukhi-on-innovation-and-environmental-art",
+    quote:
+      "Youth advocate and artist Adil Mukhi explores the tension between human ambition and environmental consequence through his mixed-media watercolor piece, Veins of Progress.",
+    type: "feature",
+  },
 ]
