@@ -14,6 +14,8 @@ interface EducationModalProps {
 export default function EducationModal({ education, isOpen, onClose }: EducationModalProps) {
   if (!education) return null
 
+  const coursesHeading = education.slug === "ib-diploma" ? "Courses In Progress" : "Courses Completed"
+
   const handleClose = () => {
     onClose()
   }
@@ -66,7 +68,7 @@ export default function EducationModal({ education, isOpen, onClose }: Education
           {/* Courses */}
           {education.courses && education.courses.length > 0 && (
             <div className="space-y-3">
-              <h3 className="text-lg font-semibold">Courses Completed</h3>
+              <h3 className="text-lg font-semibold">{coursesHeading}</h3>
               <div className="flex flex-wrap gap-2">
                 {education.courses.map((course, index) => (
                   <Badge key={index} variant="secondary" className="text-sm">

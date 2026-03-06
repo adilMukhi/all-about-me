@@ -59,8 +59,6 @@ export const educationData: Education[] = [
     longDescription:
       "International Baccalaureate program emphasizing critical thinking, research skills, and global perspective. Comprehensive curriculum preparing students for university-level work.",
     achievements: [
-      "Extended Essay completion",
-      "Theory of Knowledge course",
       "Creativity, Activity, Service (CAS) hours",
     ],
     courses: [
