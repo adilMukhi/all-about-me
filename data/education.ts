@@ -41,11 +41,11 @@ export const educationData: Education[] = [
     longDescription:
       "In progress: Grade 11. Comprehensive high school education with focus on leadership development and extracurricular involvement. Active participation in various clubs and academic competitions.",
     achievements: [
+      "President of Newcomers Club",
       "Vice President of French Club",
-      "STEM Fellowship Chapter member",
+      "Vice President of HOSA Chapter",
       "Peer Helper Tutor",
-      "DECA participant",
-      "HOSA member",
+      "Tennis Team Duos Player",
     ],
   },
   {
@@ -95,7 +95,7 @@ export const educationData: Education[] = [
   },
   {
     degree: "Social Epidemiology Course: Fundamentals of Social Epidemiology Research",
-    institution: "SickKids Hospital",
+    institution: "University of British Columbia & University of Toronto",
     period: "Jul 2025 - Jul 2025",
     description: "Research fundamentals in social epidemiology and population health equity.",
     link: "https://phesc.instructure.com/courses/403/discussion_topics/978",
