@@ -80,16 +80,18 @@ export default function Education() {
               </CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col md:flex-row gap-4">
-              <div className="md:w-1/3">
-                <Image
-                  src={edu.image || "/placeholder.svg"}
-                  alt={edu.institution}
-                  width={150}
-                  height={150}
-                  className="rounded-lg object-cover w-full"
-                />
-              </div>
-              <div className="md:w-2/3">
+              {edu.image && (
+                <div className="md:w-1/3">
+                  <Image
+                    src={edu.image}
+                    alt={edu.institution}
+                    width={150}
+                    height={150}
+                    className="rounded-lg object-cover w-full"
+                  />
+                </div>
+              )}
+              <div className={edu.image ? "md:w-2/3" : "w-full"}>
                 <p>{edu.description}</p>
               </div>
             </CardContent>
@@ -124,13 +126,15 @@ export default function Education() {
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <Image
-                      src={edu.image || "/placeholder.svg"}
-                      alt={edu.institution}
-                      width={32}
-                      height={32}
-                      className="rounded object-cover flex-shrink-0"
-                    />
+                    {edu.image && (
+                      <Image
+                        src={edu.image}
+                        alt={edu.institution}
+                        width={32}
+                        height={32}
+                        className="rounded object-cover flex-shrink-0"
+                      />
+                    )}
                     <div className="min-w-0 flex-1">
                       <h4
                         className="font-semibold text-sm leading-tight"

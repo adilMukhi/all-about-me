@@ -34,12 +34,12 @@ export const educationData: Education[] = [
     institution: "Glenforest Secondary School",
     period: "Sep 2023 - Jun 2027",
     description:
-      "Grade 9-12. Active in leadership roles such as Vice President of the French Club and STEM Fellowship Chapter. Participates in DECA, HOSA, Peer Helper Tutor.",
+      "In progress: Grade 11. Active in leadership roles such as Vice President of the French Club and STEM Fellowship Chapter. Participates in DECA, HOSA, and Peer Helper Tutor.",
     link: "https://glenforest.peelschools.org/",
     image: "/gfss-logo.jpg",
     slug: "high-school-diploma",
     longDescription:
-      "Comprehensive high school education with focus on leadership development and extracurricular involvement. Active participation in various clubs and academic competitions.",
+      "In progress: Grade 11. Comprehensive high school education with focus on leadership development and extracurricular involvement. Active participation in various clubs and academic competitions.",
     achievements: [
       "Vice President of French Club",
       "STEM Fellowship Chapter member",
@@ -52,12 +52,13 @@ export const educationData: Education[] = [
     degree: "IB MYP and IB DP Diploma, Core",
     institution: "International Baccalaureate",
     period: "Sep 2023 - May 2027",
-    description: "Global education framework focusing on research, communication, and global understanding skills.",
+    description:
+      "In progress: IB DP 1. Global education framework focusing on research, communication, and global understanding skills.",
     link: "https://www.ibo.org/benefits/",
-    image: "/ib-logo.jpg",
+    image: "",
     slug: "ib-diploma",
     longDescription:
-      "International Baccalaureate program emphasizing critical thinking, research skills, and global perspective. Comprehensive curriculum preparing students for university-level work.",
+      "In progress: IB DP 1. International Baccalaureate program emphasizing critical thinking, research skills, and global perspective. Comprehensive curriculum preparing students for university-level work.",
     achievements: [
       "Creativity, Activity, Service (CAS) hours",
     ],

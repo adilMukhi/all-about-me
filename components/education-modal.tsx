@@ -35,15 +35,17 @@ export default function EducationModal({ education, isOpen, onClose }: Education
           </div>
 
           {/* Image */}
-          <div className="flex justify-center">
-            <Image
-              src={education.image || "/placeholder.svg"}
-              alt={education.institution}
-              width={300}
-              height={180}
-              className="rounded-lg object-cover"
-            />
-          </div>
+          {education.image && (
+            <div className="flex justify-center">
+              <Image
+                src={education.image}
+                alt={education.institution}
+                width={300}
+                height={180}
+                className="rounded-lg object-cover"
+              />
+            </div>
+          )}
 
           {/* Description */}
           <div className="space-y-4">
