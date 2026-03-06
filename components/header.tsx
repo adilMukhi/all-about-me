@@ -104,14 +104,8 @@ export default function Header() {
             <MainNav items={navConfig.mainNav} />
           </div>
           <div className="flex-1 flex justify-end">
-            <Button className="hidden md:inline-flex button-hover-effect">
-              <a
-                href="https://drive.google.com/file/d/11wc_Kbo9O7BtBwjKS1Sls-Qrqivk5Rk_/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                My Resume
-              </a>
+            <Button asChild className="hidden md:inline-flex button-hover-effect">
+              <Link href="/services#booking:~:text=Ready%20to%20Work%20Together%3F">Book Me</Link>
             </Button>
           </div>
           <div className="md:hidden">
@@ -141,14 +135,10 @@ export default function Header() {
                     </div>
                   ))}
                   <div className="pt-4 mt-4 border-t">
-                    <Button className="w-full button-hover-effect">
-                      <a
-                        href="https://drive.google.com/file/d/1xIuHrE6H3Lf-Oj3S-PrXI15dIHi9XtDi/view"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        My Resume
-                      </a>
+                    <Button asChild className="w-full button-hover-effect">
+                      <Link href="/services#booking:~:text=Ready%20to%20Work%20Together%3F" onClick={() => setIsMenuOpen(false)}>
+                        Book Me
+                      </Link>
                     </Button>
                   </div>
                 </nav>

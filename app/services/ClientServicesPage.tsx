@@ -134,11 +134,11 @@ const SpeakingEngagementsHero = () => (
             </div>
 
             <div className="mt-8 p-6 bg-white/50 rounded-lg border border-primary/20">
-              <h4 className="text-lg font-semibold text-primary mb-3">💰 Free Services</h4>
+              <h4 className="text-lg font-semibold text-primary mb-3">💼 Paid Services</h4>
               <div className="space-y-2 text-muted-foreground">
                 <p>
-                  All speaking and consulting services are offered at <strong>no cost</strong> to support meaningful
-                  causes and organizations.
+                  All speaking and consulting services are offered as <strong>paid engagements</strong>. Rates are
+                  tailored based on your event scope, format, and required preparation.
                 </p>
                 <p>
                   <strong>Location:</strong> Available online worldwide or in-person in the Greater Toronto Area (GTA)
@@ -238,7 +238,7 @@ const ServicesAccordion = () => {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div id="booking" className="mt-12 text-center scroll-mt-24">
           <div className="bg-primary/5 p-8 rounded-lg mb-8">
             <h3 className="text-xl font-semibold text-primary mb-4">Ready to Work Together?</h3>
             <p className="text-muted-foreground mb-4 leading-relaxed">
