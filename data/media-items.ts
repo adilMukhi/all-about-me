@@ -27,6 +27,15 @@ export const mediaItems: MediaItem[] = [
     type: "article",
   },
   {
+    title: "Empowering Peel students through global leadership and opportunity",
+    publication: "Peel District School Board - Share the Smile",
+    date: "March 11, 2026",
+    link: "https://www.sharethesmile.ca/news/empowering-peel-students-through-global-leadership-and-opportunity-20260311202706",
+    quote:
+      "Founded by Executive Director Adil Mukhi, Dr. Interested was created to address a structural problem. While talent exists in every classroom, exposure to professional networks and mentorship is not always equally available. \"We focus on equity deserving youth because talent is everywhere, but opportunity is not,\" said Mukhi.",
+    type: "feature",
+  },
+  {
     title: "Why Adil Mukhi Is Canada's Rising Youth Advocate! The TEDx Youth Leader and Founder Inspiring Change",
     publication: "The World Is Your Bowl Of Noodles",
     date: "November 23, 2025",
