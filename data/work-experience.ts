@@ -66,21 +66,22 @@ export const workExperiences: WorkExperience[] = [
     ],
   },
   {
-    title: "General Member",
-    company: "Young Canadian Roundtable on Health (YCRH)",
-    period: "2024–Present",
-    description: "Participated in national youth health projects, contributing to research, policy, and advocacy initiatives across Canada.",
-    longDescription: "Supported the CIHR grant submission for the OPTIMAL Project (SickKids) studying youth social media use. Collaborated with 20+ members nationwide on youth health equity projects, policy recommendations, and consultations. Created over 8 social media posts for the YCRH network to amplify youth voices in health policy and advocacy.",
+    title: "Youth Advisor",
+    company: "The Hospital for Sick Children",
+    period: "Jan 2026 – Mar 2026",
+    description: "Served as a Youth Advisor on the OPTIMAL research project, supporting a CIHR grant on youth social media use and well-being.",
+    longDescription: "Worked as a contract part-time Youth Advisor on the OPTIMAL research project at The Hospital for Sick Children. Co-facilitated youth engagement sessions, led qualitative data collection through participant discussions, and supported the design of inclusive, youth-centered research environments with strategies to promote healthier digital habits.",
     stats: [
-      "20+ members collaborated with",
-      "1 national research project",
-      "Policy recommendations submitted",
-      "8+ social media posts created for YCRH network"
+      "3-month contract part-time role",
+      "Youth Advisor on the OPTIMAL research project",
+      "Supported CIHR-funded youth social media and well-being research",
+      "Co-facilitated youth engagement sessions",
+      "Led qualitative data collection through participant discussions"
     ],
-    image: "/ycrh.jpg",
-    skills: ["Health Policy", "Research", "Advocacy", "Collaboration"],
+    image: "/sickkids.jpg",
+    skills: ["Research", "Youth Engagement", "Qualitative Data Collection", "Health Advocacy", "Facilitation"],
     link: "",
-    slug: "ycrh-general-member"
+    slug: "sickkids-youth-advisor",
   },
   {
     title: "Youth Advisor",
@@ -102,16 +103,29 @@ export const workExperiences: WorkExperience[] = [
     slug: "children-first-advising",
   },
   {
-    title: "General Volunteer",
+    title: "High School Committee Chair",
     company: "National Youth Advisory Council (NYAC) of the Mood Disorders Society of Canada",
-    period: "2025-06-01 – 2026-05-31",
-    description: "Contributing to national youth mental health initiatives and supporting advocacy efforts across Canada.",
-    longDescription: "As a General Volunteer with NYAC, I actively engage with youth-focused mental health initiatives, supporting programs and advocacy efforts. Collaborating with a national network, I aim to help advance awareness, accessibility, and community engagement in mental health for young Canadians.",
-    stats: ["National youth mental health initiatives supported", "Community programs contributed to", "Ongoing advocacy efforts"],
+    period: "Feb 2026 – Present",
+    description: "Leading the High School Committee within the National Youth Advisory Council to advance youth-led mental health initiatives across Canada.",
+    longDescription: "As High School Committee Chair, I lead and mentor a national network of student leaders to design and implement advocacy, awareness, and engagement campaigns. I collaborate with council members and stakeholders to strengthen youth voice in mental health policy and programming, spearheading projects focused on accessibility, equity, and peer support while facilitating strategic planning and execution with measurable community impact.",
+    stats: [
+      "Leading the NYAC High School Committee",
+      "Mentoring a national network of student leaders",
+      "Driving advocacy, awareness, and engagement campaigns",
+      "Collaborating on youth mental health policy and programming",
+      "Facilitating planning and implementation of high-impact initiatives"
+    ],
     image: "/NYACofMDSC.png",
-    skills: ["Youth Advocacy", "Mental Health Awareness", "Community Engagement"],
-    link: "https://mdsc.ca/",
+    skills: ["Youth Advocacy", "Mental Health Awareness", "Leadership", "Strategic Planning", "Community Engagement"],
+    link: "https://mdsc.ca/nyac/#:~:text=of%20Fundraising%20Professionals.-,High%20School%20Committee,-Adil%20Mukhi%20%7C%20High",
     slug: "nyac-mdsc-volunteer",
+    progression: [
+      {
+        role: "General Volunteer",
+        period: "Jun 2025 – Jan 2026",
+        description: "Contributed to national youth mental health initiatives and supported advocacy efforts across Canada."
+      }
+    ]
   },
   {
     title: "Youth Collective Member",
@@ -124,6 +138,23 @@ export const workExperiences: WorkExperience[] = [
     skills: ["Research", "Advocacy", "Data Analysis", "Public Speaking"],
     link: "https://www.rethinksportproject.com/general-5",
     slug: "kpe-youth-collective",
+  },
+  {
+    title: "General Member",
+    company: "Young Canadian Roundtable on Health (YCRH)",
+    period: "2024–Present",
+    description: "Participated in national youth health projects, contributing to research, policy, and advocacy initiatives across Canada.",
+    longDescription: "Supported the CIHR grant submission for the OPTIMAL Project (SickKids) studying youth social media use. Collaborated with 20+ members nationwide on youth health equity projects, policy recommendations, and consultations. Created over 8 social media posts for the YCRH network to amplify youth voices in health policy and advocacy.",
+    stats: [
+      "20+ members collaborated with",
+      "1 national research project",
+      "Policy recommendations submitted",
+      "8+ social media posts created for YCRH network"
+    ],
+    image: "/ycrh.jpg",
+    skills: ["Health Policy", "Research", "Advocacy", "Collaboration"],
+    link: "",
+    slug: "ycrh-general-member"
   },
   {
     title: "National High School Group Lead",
@@ -149,6 +180,29 @@ export const workExperiences: WorkExperience[] = [
         role: "General Member (with voting rights)",
         period: "2023–2024",
         description: "Participated in advocacy campaigns and contributed to group decisions."
+      }
+    ]
+  },
+  {
+    title: "Committee Lead, Dress Loud Day 2026",
+    company: "VOICE for Deaf and Hard of Hearing Children",
+    period: "Dec 2025–Present",
+    description: "Working with VOICE to support Deaf and hard of hearing children through advocacy and youth-focused initiatives.",
+    longDescription: "Since December 2025, I have supported VOICE for Deaf and Hard of Hearing Children through community initiatives and youth engagement. In February 2026, I took on a leadership role as Committee Lead for Dress Loud Day 2026, helping coordinate planning, collaboration, and outreach.",
+    stats: [
+      "Started with VOICE in Dec 2025",
+      "Promoted to Committee Lead in Feb 2026",
+      "Leading Dress Loud Day 2026 planning and coordination"
+    ],
+    image: "/voice-logo-2023-large.png",
+    skills: ["Leadership", "Advocacy", "Event Coordination", "Youth Engagement", "Community Outreach"],
+    link: "https://www.voicefordeafkids.com/page-1075425",
+    slug: "voice-dress-loud-day",
+    progression: [
+      {
+        role: "Volunteer",
+        period: "Dec 2025–Jan 2026",
+        description: "Supported VOICE initiatives and youth-centered community engagement activities."
       }
     ]
   },

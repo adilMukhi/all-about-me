@@ -13,6 +13,7 @@ export const urlMappings: Record<string, string> = {
   kpe: "https://adilmukhi.vercel.app/background?experience=kpe-youth-collective#work",
   nyac: "https://adilmukhi.vercel.app/background?experience=nyac-mdsc-volunteer#work",
   results: "https://adilmukhi.vercel.app/background?experience=results-canada-advocate#work",
+  voice: "https://adilmukhi.vercel.app/background?experience=voice-dress-loud-day#work",
 
   // Add more mappings as needed
   // 'shortcode': 'https://full-long-url-here'
