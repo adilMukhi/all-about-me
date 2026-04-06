@@ -36,6 +36,15 @@ export const mediaItems: MediaItem[] = [
     type: "feature",
   },
   {
+    title: "Inspiring Conversations with Adil Mukhi of Dr. Interested",
+    publication: "VoyageDallas",
+    date: "April 1, 2026",
+    link: "https://voyagedallas.com/inspiring-conversations-with-adil-mukhi-of-dr-interested/",
+    quote:
+      "My journey has really been about turning curiosity into impact, and creating the kind of opportunities I wish I had when I was just getting started.",
+    type: "feature",
+  },
+  {
     title: "Why Adil Mukhi Is Canada's Rising Youth Advocate! The TEDx Youth Leader and Founder Inspiring Change",
     publication: "The World Is Your Bowl Of Noodles",
     date: "November 23, 2025",
