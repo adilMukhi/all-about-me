@@ -1,6 +1,18 @@
 import type { Metadata } from "next"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
+const defaultOgImage = {
+  url: `${siteUrl}/og-image.png`,
+  width: 1200,
+  height: 630,
+}
+
+const defaultTwitter = {
+  card: "summary_large_image" as const,
+  creator: "@adilm_0",
+  site: "@adilm_0",
+  images: ["/og-image.png"],
+}
 
 export const homeMetadata: Metadata = {
   title: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker",
@@ -10,18 +22,21 @@ export const homeMetadata: Metadata = {
     canonical: `${siteUrl}/`,
   },
   openGraph: {
+    type: "website",
+    siteName: "Adil Mukhi",
     title: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker",
     description:
       "Youth advocate, public speaker, and changemaker. Founder and Executive Director of Dr. Interested, an organization reaching 160,000+ individuals across 106 countries with 1,400+ members. TEDx speaker and advocate for mental health and youth empowerment.",
     url: `${siteUrl}/`,
     images: [
-      {
-        url: `${siteUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker",
-      },
+      { ...defaultOgImage, alt: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker" },
     ],
+  },
+  twitter: {
+    ...defaultTwitter,
+    title: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker",
+    description:
+      "Youth advocate, public speaker, and changemaker. Founder and Executive Director of Dr. Interested, an organization reaching 160,000+ individuals across 106 countries.",
   },
 }
 
@@ -33,18 +48,21 @@ export const backgroundMetadata: Metadata = {
     canonical: `${siteUrl}/background`,
   },
   openGraph: {
+    type: "website",
+    siteName: "Adil Mukhi",
     title: "Background",
     description:
       "Youth advocate and changemaker with extensive experience in research, advocacy, and community service. Ontario Volunteer Service Award recipient and TEDx speaker.",
     url: `${siteUrl}/background`,
     images: [
-      {
-        url: `${siteUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "Adil Mukhi's Background",
-      },
+      { ...defaultOgImage, alt: "Adil Mukhi's Background" },
     ],
+  },
+  twitter: {
+    ...defaultTwitter,
+    title: "Background | Adil Mukhi",
+    description:
+      "Youth advocate and changemaker with extensive experience in research, advocacy, and community service.",
   },
 }
 
@@ -56,18 +74,21 @@ export const portfolioMetadata: Metadata = {
     canonical: `${siteUrl}/portfolio`,
   },
   openGraph: {
+    type: "website",
+    siteName: "Adil Mukhi",
     title: "Portfolio",
     description:
       "Diverse portfolio of youth advocacy projects, research initiatives, published writings, and technology solutions making impact globally.",
     url: `${siteUrl}/portfolio`,
     images: [
-      {
-        url: `${siteUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "Adil Mukhi's Portfolio",
-      },
+      { ...defaultOgImage, alt: "Adil Mukhi's Portfolio" },
     ],
+  },
+  twitter: {
+    ...defaultTwitter,
+    title: "Portfolio | Adil Mukhi",
+    description:
+      "Diverse portfolio of youth advocacy projects, research initiatives, published writings, and technology solutions.",
   },
 }
 
@@ -107,11 +128,10 @@ export const experiencesMetadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    ...defaultTwitter,
     title: "Experiences | Adil Mukhi",
     description:
       "Personal stories and reflections from youth advocacy, research, community leadership, and public speaking.",
-    images: ["/og-image.png"],
   },
 }
 
@@ -123,18 +143,21 @@ export const writingPortfolioMetadata: Metadata = {
     canonical: `${siteUrl}/portfolio/writing`,
   },
   openGraph: {
+    type: "website",
+    siteName: "Adil Mukhi",
     title: "Writing Portfolio",
     description:
       "Published articles, research papers, and advocacy writings on youth empowerment, mental health, and healthcare policy by youth advocate Adil Mukhi.",
     url: `${siteUrl}/portfolio/writing`,
     images: [
-      {
-        url: `${siteUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "Adil Mukhi's Writing Portfolio",
-      },
+      { ...defaultOgImage, alt: "Adil Mukhi's Writing Portfolio" },
     ],
+  },
+  twitter: {
+    ...defaultTwitter,
+    title: "Writing Portfolio | Adil Mukhi",
+    description:
+      "Published articles, research papers, and advocacy writings on youth empowerment, mental health, and healthcare policy.",
   },
 }
 
@@ -146,18 +169,21 @@ export const codingPortfolioMetadata: Metadata = {
     canonical: `${siteUrl}/portfolio/coding`,
   },
   openGraph: {
+    type: "website",
+    siteName: "Adil Mukhi",
     title: "Coding Portfolio",
     description:
       "Software development projects and technology solutions by youth advocate and developer Adil Mukhi, including platforms reaching 60,000+ users globally.",
     url: `${siteUrl}/portfolio/coding`,
     images: [
-      {
-        url: `${siteUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "Adil Mukhi's Coding Portfolio",
-      },
+      { ...defaultOgImage, alt: "Adil Mukhi's Coding Portfolio" },
     ],
+  },
+  twitter: {
+    ...defaultTwitter,
+    title: "Coding Portfolio | Adil Mukhi",
+    description:
+      "Software development projects and technology solutions by youth advocate and developer Adil Mukhi.",
   },
 }
 
@@ -169,18 +195,21 @@ export const researchPortfolioMetadata: Metadata = {
     canonical: `${siteUrl}/portfolio/research`,
   },
   openGraph: {
+    type: "website",
+    siteName: "Adil Mukhi",
     title: "Research Portfolio",
     description:
       "Academic and scientific research projects by youth researcher Adil Mukhi, focusing on healthcare, neuroscience, and youth mental health initiatives.",
     url: `${siteUrl}/portfolio/research`,
     images: [
-      {
-        url: `${siteUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "Adil Mukhi's Research Portfolio",
-      },
+      { ...defaultOgImage, alt: "Adil Mukhi's Research Portfolio" },
     ],
+  },
+  twitter: {
+    ...defaultTwitter,
+    title: "Research Portfolio | Adil Mukhi",
+    description:
+      "Academic and scientific research projects focused on healthcare, neuroscience, and youth mental health.",
   },
 }
 
@@ -192,18 +221,20 @@ export const artSportsPortfolioMetadata: Metadata = {
     canonical: `${siteUrl}/portfolio/art-sports`,
   },
   openGraph: {
+    type: "website",
+    siteName: "Adil Mukhi",
     title: "Art & Sports Portfolio",
     description:
       "Creative works and athletic achievements by youth advocate Adil Mukhi, including published poetry and artistic projects.",
     url: `${siteUrl}/portfolio/art-sports`,
     images: [
-      {
-        url: `${siteUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "Adil Mukhi's Art & Sports Portfolio",
-      },
+      { ...defaultOgImage, alt: "Adil Mukhi's Art & Sports Portfolio" },
     ],
+  },
+  twitter: {
+    ...defaultTwitter,
+    title: "Art & Sports Portfolio | Adil Mukhi",
+    description: "Creative works and athletic achievements by youth advocate Adil Mukhi.",
   },
 }
 
@@ -215,18 +246,21 @@ export const servicesMetadata: Metadata = {
     canonical: `${siteUrl}/services`,
   },
   openGraph: {
+    type: "website",
+    siteName: "Adil Mukhi",
     title: "Services - Speaking & Consulting",
     description:
       "Professional speaking and consulting services by youth advocate and TEDx speaker Adil Mukhi. Specializing in youth advocacy, mental health, and policy consultation.",
     url: `${siteUrl}/services`,
     images: [
-      {
-        url: `${siteUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "Adil Mukhi's Speaking & Consulting Services",
-      },
+      { ...defaultOgImage, alt: "Adil Mukhi's Speaking & Consulting Services" },
     ],
+  },
+  twitter: {
+    ...defaultTwitter,
+    title: "Services | Adil Mukhi",
+    description:
+      "Professional speaking and consulting services by youth advocate and TEDx speaker Adil Mukhi.",
   },
 }
 
@@ -238,17 +272,42 @@ export const mediaMetadata: Metadata = {
     canonical: `${siteUrl}/media`,
   },
   openGraph: {
+    type: "website",
+    siteName: "Adil Mukhi",
     title: "Media Coverage",
     description:
       "Press coverage and media features highlighting the advocacy work and achievements of youth leader Adil Mukhi.",
     url: `${siteUrl}/media`,
     images: [
-      {
-        url: `${siteUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "Adil Mukhi Media Coverage",
-      },
+      { ...defaultOgImage, alt: "Adil Mukhi Media Coverage" },
     ],
+  },
+  twitter: {
+    ...defaultTwitter,
+    title: "Media Coverage | Adil Mukhi",
+    description: "Press coverage and media features highlighting the advocacy work and achievements of Adil Mukhi.",
+  },
+}
+
+export const profilesMetadata: Metadata = {
+  title: "Follow & Profiles",
+  description:
+    "Find all official Adil Mukhi profiles and social channels in one place, including LinkedIn, Instagram, Facebook, X, Bluesky, TikTok, YouTube, and official websites.",
+  alternates: {
+    canonical: `${siteUrl}/profiles`,
+  },
+  openGraph: {
+    type: "profile",
+    siteName: "Adil Mukhi",
+    title: "Follow & Profiles | Adil Mukhi",
+    description:
+      "Official profile hub for Adil Mukhi across social media and web platforms.",
+    url: `${siteUrl}/profiles`,
+    images: [{ ...defaultOgImage, alt: "Adil Mukhi Follow & Profiles" }],
+  },
+  twitter: {
+    ...defaultTwitter,
+    title: "Follow & Profiles | Adil Mukhi",
+    description: "Official profile hub for Adil Mukhi across social channels and websites.",
   },
 }

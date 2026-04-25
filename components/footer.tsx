@@ -1,15 +1,16 @@
 import { Github } from "lucide-react"
 
 const profileLinks = [
-  { label: "Website", href: "https://adilmukhi.vercel.app/" },
-  { label: "Alt Site", href: "https://adilm.drinterested.org/" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/adil-mukhi" },
-  { label: "Instagram", href: "https://www.instagram.com/adilm.0" },
-  { label: "Facebook", href: "https://www.facebook.com/adilm.0/" },
-  { label: "X", href: "https://x.com/adilm_0" },
-  { label: "Bluesky", href: "https://bsky.app/profile/adilm0.bsky.social" },
-  { label: "TikTok", href: "https://www.tiktok.com/@adilm.0" },
-  { label: "YouTube", href: "https://www.youtube.com/@AdilMukhi" },
+  { label: "Profiles Hub", href: "/profiles", external: false },
+  { label: "Website", href: "https://adilmukhi.vercel.app/", external: true },
+  { label: "Alt Site", href: "https://adilm.drinterested.org/", external: true },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/adil-mukhi", external: true },
+  { label: "Instagram", href: "https://www.instagram.com/adilm.0", external: true },
+  { label: "Facebook", href: "https://www.facebook.com/adilm.0/", external: true },
+  { label: "X", href: "https://x.com/adilm_0", external: true },
+  { label: "Bluesky", href: "https://bsky.app/profile/adilm0.bsky.social", external: true },
+  { label: "TikTok", href: "https://www.tiktok.com/@adilm.0", external: true },
+  { label: "YouTube", href: "https://www.youtube.com/@AdilMukhi", external: true },
 ]
 
 export default function Footer() {
@@ -37,8 +38,8 @@ export default function Footer() {
               <a
                 key={link.label}
                 href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
                 className="underline underline-offset-4 hover:text-primary transition-colors"
               >
                 {link.label}

@@ -172,12 +172,27 @@ export default function RootLayout({
             },
             {
               "@context": "https://schema.org",
+              "@type": "Organization",
+              "@id": `${siteUrl}/#organization`,
+              name: "Adil Mukhi",
+              url: siteUrl,
+              logo: `${siteUrl}/pixtin.jpg`,
+              founder: {
+                "@id": `${siteUrl}/#person`,
+              },
+              sameAs: [...siteAliases, ...socialProfiles],
+            },
+            {
+              "@context": "https://schema.org",
               "@type": "Person",
               "@id": `${siteUrl}/#person`,
               name: "Adil Mukhi",
               url: siteUrl,
               mainEntityOfPage: siteUrl,
               sameAs: [...siteAliases, ...socialProfiles],
+              worksFor: {
+                "@id": `${siteUrl}/#organization`,
+              },
             },
           ])}
         </Script>

@@ -69,6 +69,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: post.title,
       description: post.subtitle || post.excerpt,
       creator: "@adilm_0",
+      site: "@adilm_0",
       images: [post.image ? `${siteUrl}${post.image}` : `${siteUrl}/og-blog-default.jpg`],
     },
     robots: {

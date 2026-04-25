@@ -71,10 +71,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/profiles`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/rss.xml`,
       lastModified: currentDate,
       changeFrequency: "daily",
       priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/sitemap-images.xml`,
+      lastModified: currentDate,
+      changeFrequency: "daily",
+      priority: 0.4,
     },
   ]
 
