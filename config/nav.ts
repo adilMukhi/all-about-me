@@ -26,10 +26,6 @@ export const navConfig: NavConfig = {
       href: "/services",
     },
     {
-      title: "Profiles",
-      href: "/profiles",
-    },
-    {
       title: "Portfolios",
       href: "/portfolio",
       items: [
