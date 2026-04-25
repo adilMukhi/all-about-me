@@ -5,8 +5,9 @@ import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import Script from "next/script"
 
 // Generate metadata for each blog post dynamically
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = blogPosts.find((post) => post.slug === params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const post = blogPosts.find((post) => post.slug === slug)
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
   if (!post) {
@@ -51,8 +52,9 @@ const getBlogPost = (slug: string) => {
   return blogPosts.find((post) => post.slug === slug)
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = getBlogPost(params.slug)
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const post = getBlogPost(slug)
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
   // Generate structured data for the article
@@ -76,7 +78,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         },
         mainEntityOfPage: {
           "@type": "WebPage",
-          "@id": `${siteUrl}/experiences/${params.slug}`,
+          "@id": `${siteUrl}/experiences/${slug}`,
         },
       }
     : null
@@ -92,11 +94,11 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       <SEOBreadcrumbs
         items={[
           { label: "Experiences", href: "/experiences" },
-          { label: post?.title || "Blog Post", href: `/experiences/${params.slug}`, active: true },
+          { label: post?.title || "Blog Post", href: `/experiences/${slug}`, active: true },
         ]}
       />
 
-      <BlogPostClient post={post} slug={params.slug} />
+      <BlogPostClient post={post} slug={slug} />
     </>
   )
 }

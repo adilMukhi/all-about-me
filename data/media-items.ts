@@ -45,6 +45,14 @@ export const mediaItems: MediaItem[] = [
     type: "feature",
   },
   {
+    title: "Meet Adil Mukhi",
+    publication: "Bold Journey Magazine",
+    date: "April 23, 2026",
+    link: "https://boldjourney.com/meet-adil-mukhi/",
+    quote: "As a high school student trying to build a global healthcare community, I faced plenty of skeptics who thought a teenager couldn’t lead a team of over 300 people or reach millions of youth ... Persistence is a habit born from the knowledge that the work you're doing is bigger than the doubts of the people around you.",
+    type: "feature",
+  },
+  {
     title: "Why Adil Mukhi Is Canada's Rising Youth Advocate! The TEDx Youth Leader and Founder Inspiring Change",
     publication: "The World Is Your Bowl Of Noodles",
     date: "November 23, 2025",
