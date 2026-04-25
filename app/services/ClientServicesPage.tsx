@@ -298,6 +298,7 @@ const PastEngagements = () => (
               <p className="text-muted-foreground">Cyber Valkyries / Keynote Coordinator</p>
             </div>
           </div>
+          <div className="space-y-4">
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
@@ -403,25 +404,21 @@ const PastEngagements = () => (
                 <p className="text-sm text-muted-foreground">March 2024 - Volunteer MBC</p>
               </div>
             </div>
-                      <div className="space-y-4">
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
                 <p className="font-medium">Speaker, GFSS Staff Meeting</p>
-                <p className="text-sm text-muted-foreground">
-                  April 13, 2026 - Glenforest Secondary School
-                </p>
+                <p className="text-sm text-muted-foreground">April 13, 2026 - Glenforest Secondary School</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
                 <p className="font-medium">Speaking at the Global Youth Summit</p>
-                <p className="text-sm text-muted-foreground">
-                  April 18, 2026 - The World is Your Bowl of Noodles
-                </p>
+                <p className="text-sm text-muted-foreground">April 18, 2026 - The World is Your Bowl of Noodles</p>
               </div>
             </div>
+          </div>
         </div>
 
         {/* Consulting Section */}
