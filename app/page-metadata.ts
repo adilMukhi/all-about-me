@@ -74,15 +74,29 @@ export const portfolioMetadata: Metadata = {
 export const experiencesMetadata: Metadata = {
   title: "Experiences",
   description:
-    "Read about Adil Mukhi's experiences as a youth advocate, TEDx speaker, and changemaker. Insights from leading Dr. Interested, research at SickKids Hospital, and advocacy work with national organizations.",
+    "Explore Adil Mukhi's experiences across youth advocacy, healthcare research, community leadership, and public speaking. Read stories from Dr. Interested, SickKids, Children First Canada, and more.",
+  keywords: [
+    "Adil Mukhi experiences",
+    "youth advocacy",
+    "research experience",
+    "public speaking",
+    "community leadership",
+    "SickKids",
+    "Children First Canada",
+    "Dr. Interested",
+    "portfolio experiences",
+    "leadership stories",
+  ],
   alternates: {
     canonical: `${siteUrl}/experiences`,
   },
   openGraph: {
-    title: "Experiences",
+    type: "website",
+    title: "Experiences | Adil Mukhi",
     description:
-      "Personal experiences and insights from a youth advocate and changemaker working in research, policy advocacy, and community empowerment.",
+      "Personal stories and reflections from youth advocacy, research, community leadership, and public speaking.",
     url: `${siteUrl}/experiences`,
+    siteName: "Adil Mukhi",
     images: [
       {
         url: `${siteUrl}/og-image.png`,
@@ -91,6 +105,13 @@ export const experiencesMetadata: Metadata = {
         alt: "Adil Mukhi's Experiences",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Experiences | Adil Mukhi",
+    description:
+      "Personal stories and reflections from youth advocacy, research, community leadership, and public speaking.",
+    images: ["/og-image.png"],
   },
 }
 

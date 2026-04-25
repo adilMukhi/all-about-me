@@ -14,6 +14,7 @@ interface SEOBreadcrumbsProps {
 
 export function SEOBreadcrumbs({ items }: SEOBreadcrumbsProps) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
+  const homeUrl = new URL("/", siteUrl).toString()
 
   // Generate structured data for breadcrumbs
   const breadcrumbStructuredData = {
@@ -24,13 +25,13 @@ export function SEOBreadcrumbs({ items }: SEOBreadcrumbsProps) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: siteUrl,
+        item: homeUrl,
       },
       ...items.map((item, index) => ({
         "@type": "ListItem",
         position: index + 2,
         name: item.label,
-        item: `${siteUrl}${item.href}`,
+        item: new URL(item.href, siteUrl).toString(),
       })),
     ],
   }
@@ -54,7 +55,9 @@ export function SEOBreadcrumbs({ items }: SEOBreadcrumbsProps) {
             <li key={item.href} className="flex items-center">
               <ChevronRight className="h-4 w-4 mx-1 text-gray-400" />
               {item.active ? (
-                <span className="font-medium text-blue-600">{item.label}</span>
+                <span className="font-medium text-blue-600" aria-current="page">
+                  {item.label}
+                </span>
               ) : (
                 <Link href={item.href} className="hover:text-blue-600 transition-colors">
                   {item.label}

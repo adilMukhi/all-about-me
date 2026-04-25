@@ -9,6 +9,16 @@ import StartAnimation from "@/components/start-animation"
 import { Suspense } from "react"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
+const socialProfiles = [
+  "https://www.linkedin.com/in/adil-mukhi",
+  "https://www.instagram.com/adilm.0",
+  "https://www.facebook.com/adilm.0/",
+  "https://x.com/adilm_0",
+  "https://bsky.app/profile/adilm0.bsky.social",
+  "https://www.tiktok.com/@adilm.0",
+  "https://www.youtube.com/@AdilMukhi",
+]
+const siteAliases = ["https://adilmukhi.vercel.app/", "https://adilm.drinterested.org/"]
 
 const getValidUrl = (url: string): URL => {
   try {
@@ -75,6 +85,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Adil Mukhi", url: siteUrl }],
   creator: "Adil Mukhi",
   publisher: "Adil Mukhi",
+  applicationName: "Adil Mukhi",
   metadataBase: getValidUrl(siteUrl),
   alternates: {
     canonical: "/",
@@ -90,6 +101,7 @@ export const metadata: Metadata = {
     description:
       "Adil Mukhi is a youth advocate, public speaker, and changemaker. Founder of Dr. Interested reaching 60,000+ youth globally. TEDx speaker and advocate for mental health and youth empowerment.",
     siteName: "Adil Mukhi",
+    authors: ["Adil Mukhi"],
     images: [
       {
         url: "/og-image.png",
@@ -105,6 +117,7 @@ export const metadata: Metadata = {
     description:
       "Youth advocate, public speaker, and changemaker. Founder of Dr. Interested reaching 60,000+ youth globally. TEDx speaker and mental health advocate.",
     creator: "@adilm_0",
+    site: "@adilm_0",
     images: ["/og-image.png"],
   },
   robots: {
@@ -143,6 +156,31 @@ export default function RootLayout({
   return (
     <html lang="en" className={`scroll-smooth ${inter.variable} ${fredoka.variable}`}>
       <head>
+        <Script id="site-structured-data" type="application/ld+json">
+          {JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": `${siteUrl}/#website`,
+              url: siteUrl,
+              name: "Adil Mukhi",
+              alternateName: ["Adil Mukhi Personal Website", ...siteAliases],
+              inLanguage: "en-CA",
+              publisher: {
+                "@id": `${siteUrl}/#person`,
+              },
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "@id": `${siteUrl}/#person`,
+              name: "Adil Mukhi",
+              url: siteUrl,
+              mainEntityOfPage: siteUrl,
+              sameAs: [...siteAliases, ...socialProfiles],
+            },
+          ])}
+        </Script>
         <meta name="p:domain_verify" content="10e6074a03407f2fd24aed7425a2acd9" />
         <meta name="theme-color" content="#0ea5e9" />
 

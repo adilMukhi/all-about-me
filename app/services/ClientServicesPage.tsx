@@ -7,6 +7,7 @@ import { Plus, Minus } from "lucide-react"
 import { useState, useEffect } from "react"
 import SocialLinks from "@/components/social-links"
 import Image from "next/image"
+import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 
 const CalBookingScript = () => {
   useEffect(() => {
@@ -63,6 +64,7 @@ const TikTokEmbedScript = () => {
 const SpeakingEngagementsHero = () => (
   <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
     <div className="container">
+      <SEOBreadcrumbs items={[{ label: "Services", href: "/services", active: true }]} />
       <h2
         className="text-4xl font-bold tracking-tighter text-center mb-16 sm:text-5xl md:text-6xl text-primary"
         style={{ fontFamily: "Sour Gummy, latin" }}

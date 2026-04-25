@@ -13,6 +13,7 @@ import HonorsAwards from "@/components/honors-awards"
 import { Briefcase, GraduationCap, MessageSquare, BadgeCheck, Heart, Trophy } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 
 type Section = {
   id: string
@@ -96,6 +97,7 @@ export default function ClientBackgroundPage() {
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
           <div className="container">
+            <SEOBreadcrumbs items={[{ label: "Background", href: "/background", active: true }]} />
             <h1
               className="text-4xl font-bold tracking-tighter text-center mb-8 sm:text-5xl md:text-6xl"
               style={{ fontFamily: "Sour Gummy, latin" }}

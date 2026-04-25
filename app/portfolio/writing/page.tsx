@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, ExternalLink, BookOpen } from "lucide-react"
 import Link from "next/link"
 import { books, ltes, blogs, clubPublications } from "@/data/portfolio-items"
+import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 
 export const metadata: Metadata = writingPortfolioMetadata
 
@@ -193,6 +194,12 @@ export default function WritingPortfolioPage() {
       <main className="min-h-screen bg-background">
         <section className="py-16 bg-gradient-to-b from-blue-50 to-background">
           <div className="container">
+            <SEOBreadcrumbs
+              items={[
+                { label: "Portfolio", href: "/portfolio" },
+                { label: "Writing", href: "/portfolio/writing", active: true },
+              ]}
+            />
             <div className="flex items-center gap-2 mb-8">
               <Button variant="ghost" size="sm" asChild>
                 <Link href="/portfolio">

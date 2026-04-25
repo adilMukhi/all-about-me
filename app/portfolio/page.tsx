@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card"
 import { FileText, Code, Palette, Microscope } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 
 export const metadata: Metadata = portfolioMetadata
 
@@ -51,6 +52,7 @@ export default function PortfolioPage() {
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
           <div className="container">
+            <SEOBreadcrumbs items={[{ label: "Portfolio", href: "/portfolio", active: true }]} />
             <h1
               className="text-4xl font-bold tracking-tighter text-center mb-8 sm:text-5xl md:text-6xl"
               style={{ fontFamily: "Sour Gummy, latin" }}

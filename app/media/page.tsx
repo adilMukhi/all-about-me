@@ -7,10 +7,12 @@ import SocialLinks from "@/components/social-links"
 import { mediaItems } from "@/data/media-items"
 import { ExternalLink, Calendar, Quote } from "lucide-react"
 import { mediaMetadata } from "@/app/page-metadata"
+import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 
 const MediaHero = () => (
   <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
     <div className="container">
+      <SEOBreadcrumbs items={[{ label: "Media", href: "/media", active: true }]} />
       <h1
         className="text-4xl font-bold tracking-tighter text-center mb-8 sm:text-5xl md:text-6xl text-primary"
         style={{ fontFamily: "Sour Gummy, latin" }}

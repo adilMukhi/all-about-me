@@ -9,6 +9,7 @@ import { ArrowLeft, Github, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { codingProjects } from "@/data/portfolio-items"
+import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 
 export const metadata: Metadata = codingPortfolioMetadata
 
@@ -19,6 +20,12 @@ export default function CodingPortfolioPage() {
       <main className="min-h-screen bg-background">
         <section className="py-16 bg-gradient-to-b from-purple-50 to-background">
           <div className="container">
+            <SEOBreadcrumbs
+              items={[
+                { label: "Portfolio", href: "/portfolio" },
+                { label: "Coding", href: "/portfolio/coding", active: true },
+              ]}
+            />
             <div className="flex items-center gap-2 mb-8">
               <Button variant="ghost" size="sm" asChild>
                 <Link href="/portfolio">

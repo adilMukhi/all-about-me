@@ -1,14 +1,22 @@
 "use client"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Instagram, Linkedin, Link, Building, Calendar } from "lucide-react"
+import { Instagram, Linkedin, Calendar, Globe, Facebook, Twitter, Youtube, Music2, Cloud } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 
 const socialLinks = [
-  { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com/in/adil-mukhi-6aba27246", color: "text-blue-500" },
-  { name: "My Org", icon: Building, url: "https://linktr.ee/dr.interested", color: "text-sky-400" },
+  { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/adil-mukhi", color: "text-blue-600" },
   { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/adilm.0/", color: "text-pink-500" },
-  { name: "Linktree", icon: Link, url: "https://linktr.ee/adilm.0", color: "text-green-500" },
+  { name: "Facebook", icon: Facebook, url: "https://www.facebook.com/adilm.0/", color: "text-blue-500" },
+  { name: "X", icon: Twitter, url: "https://x.com/adilm_0", color: "text-gray-700" },
+  { name: "Bluesky", icon: Cloud, url: "https://bsky.app/profile/adilm0.bsky.social", color: "text-sky-500" },
+  { name: "TikTok", icon: Music2, url: "https://www.tiktok.com/@adilm.0", color: "text-gray-900" },
+  { name: "YouTube", icon: Youtube, url: "https://www.youtube.com/@AdilMukhi", color: "text-red-500" },
+]
+
+const websiteLinks = [
+  { name: "Primary Website", icon: Globe, url: "https://adilmukhi.vercel.app/", color: "text-emerald-600" },
+  { name: "Alternate Website", icon: Globe, url: "https://adilm.drinterested.org/", color: "text-teal-600" },
 ]
 
 const CalBookingScript = () => {
@@ -128,6 +136,25 @@ export default function SocialLinks() {
                 <p className="text-sm text-muted-foreground">Stay updated with my latest work</p>
               </CardHeader>
               <CardContent className="grid gap-3 sm:grid-cols-2 pt-0">
+                {websiteLinks.map((website) => (
+                  <Button
+                    key={website.name}
+                    variant="outline"
+                    className="h-12 flex items-center justify-start gap-3 transition-all hover:scale-105 button-hover-effect group bg-transparent"
+                    asChild
+                  >
+                    <a
+                      href={website.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full"
+                      style={{ fontFamily: "'Kirang Haerang', cursive" }}
+                    >
+                      <website.icon className={`h-5 w-5 ${website.color} group-hover:text-primary transition-colors`} />
+                      <span className="group-hover:text-primary transition-colors text-sm">{website.name}</span>
+                    </a>
+                  </Button>
+                ))}
                 {socialLinks.map((social) => (
                   <Button
                     key={social.name}

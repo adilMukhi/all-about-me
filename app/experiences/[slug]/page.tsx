@@ -3,6 +3,17 @@ import { blogPosts } from "@/data/blog-posts"
 import BlogPostClient from "./client"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import Script from "next/script"
+import { notFound } from "next/navigation"
+
+const socialProfiles = [
+  "https://www.linkedin.com/in/adil-mukhi",
+  "https://www.instagram.com/adilm.0",
+  "https://www.facebook.com/adilm.0/",
+  "https://x.com/adilm_0",
+  "https://bsky.app/profile/adilm0.bsky.social",
+  "https://www.tiktok.com/@adilm.0",
+  "https://www.youtube.com/@AdilMukhi",
+]
 
 // Generate metadata for each blog post dynamically
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -17,9 +28,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
   }
 
+  const keywords = [
+    post.title,
+    post.subtitle,
+    "Adil Mukhi",
+    "Experiences",
+    "youth advocacy",
+    "research",
+    "leadership",
+  ].filter(Boolean) as string[]
+
   return {
     title: post.title,
     description: post.subtitle || post.excerpt,
+    keywords,
+    authors: [{ name: "Adil Mukhi", url: siteUrl }],
+    category: "article",
     alternates: {
       canonical: `${siteUrl}/experiences/${post.slug}`,
     },
@@ -28,21 +52,28 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: post.subtitle || post.excerpt,
       type: "article",
       url: `${siteUrl}/experiences/${post.slug}`,
+      siteName: "Adil Mukhi",
       images: [
         {
-          url: post.image || "/og-blog-default.jpg",
+          url: post.image ? `${siteUrl}${post.image}` : `${siteUrl}/og-blog-default.jpg`,
           width: 1200,
           height: 630,
           alt: post.title,
         },
       ],
       publishedTime: post.date,
+      authors: ["Adil Mukhi"],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.subtitle || post.excerpt,
-      images: [post.image || "/og-blog-default.jpg"],
+      creator: "@adilm_0",
+      images: [post.image ? `${siteUrl}${post.image}` : `${siteUrl}/og-blog-default.jpg`],
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   }
 }
@@ -57,6 +88,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const post = getBlogPost(slug)
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
+  if (!post) {
+    notFound()
+  }
+
   // Generate structured data for the article
   const articleStructuredData = post
     ? {
@@ -70,15 +105,24 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           "@type": "Person",
           name: "Adil Mukhi",
           url: siteUrl,
+          sameAs: socialProfiles,
         },
         publisher: {
           "@type": "Person",
           name: "Adil Mukhi",
           url: siteUrl,
+          sameAs: socialProfiles,
         },
         mainEntityOfPage: {
           "@type": "WebPage",
           "@id": `${siteUrl}/experiences/${slug}`,
+        },
+        url: `${siteUrl}/experiences/${slug}`,
+        isPartOf: {
+          "@type": "Blog",
+          "@id": `${siteUrl}/experiences#blog`,
+          name: "Adil Mukhi Experiences",
+          url: `${siteUrl}/experiences`,
         },
       }
     : null
