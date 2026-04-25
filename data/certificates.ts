@@ -471,6 +471,17 @@ export const certificates: Certificate[] = [
     image: "/certificates/mitosisphere-semifinalist.png",
     slug: "mitosisphere-semifinalist",
   },
+  {
+    name: "Canada Service Corps 120 Hours Certificate",
+    issuer: "Dr. Interested x GLOCAL (Canada Service Corps)",
+    date: "2026",
+    description:
+      "Awarded for service completed through Dr. Interested as part of a Dr. Interested x GLOCAL partnership under Canada Service Corps, recognizing 120 hours of community impact and youth service.",
+    skills: ["Community Service", "Youth Leadership", "Partnership Collaboration", "Civic Engagement", "Advocacy"],
+    link: "#",
+    image: "/certificates/Adil Mukhi - Dr. Interested Canada Service Corp GLOCAL 120 Hours Certificate.png",
+    slug: "canada-service-corps-glocal-120-hours",
+  },
 
   // ✅ Strong Tier
   {
@@ -644,7 +655,24 @@ export const certificates: Certificate[] = [
     slug: "young-canadians-parliament-graduation",
   },
   {
-    name: "Certificate of Participation - UHN STEM Pathways",
+    name: "2026 Certificate of Participation - UHN STEM Pathways",
+    issuer: "University Health Network (UHN)",
+    date: "2026",
+    description:
+      "Recognized for participation in UHN STEM Pathways 2026 and continued commitment to learning in science, technology, engineering, and math through healthcare-focused educational sessions.",
+    skills: [
+      "STEM Education",
+      "Healthcare Innovation",
+      "Scientific Learning",
+      "Youth Development",
+      "University Collaboration",
+    ],
+    link: "#",
+    image: "/certificates/UHN StemPathways - Certificate of Participation 2026 - Adil Mukhi.png",
+    slug: "uhn-stem-pathways-participation-2026",
+  },
+  {
+    name: "2025 Certificate of Participation - UHN STEM Pathways",
     issuer: "University Health Network (UHN)",
     date: "2024-2025",
     description:
@@ -749,5 +777,5 @@ export const certificates: Certificate[] = [
     link: "#",
     image: "/certificates/cosmic-us-participation.png",
     slug: "cosmic-us-research-participation",
-  }
+  },
 ]

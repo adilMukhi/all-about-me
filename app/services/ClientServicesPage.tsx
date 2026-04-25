@@ -76,7 +76,6 @@ const SpeakingEngagementsHero = () => (
         <p className="text-xl leading-relaxed text-muted-foreground">
           Book Adil as your next speaker or consultant for your event, organization, or initiative.
         </p>
-
         <div className="text-left max-w-3xl mx-auto">
           <div className="bg-primary/5 p-8 rounded-lg mb-8">
             <h3 className="text-2xl font-semibold text-primary mb-6 text-center">What I Offer</h3>
@@ -299,8 +298,6 @@ const PastEngagements = () => (
               <p className="text-muted-foreground">Cyber Valkyries / Keynote Coordinator</p>
             </div>
           </div>
-
-          <div className="space-y-4">
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
@@ -406,21 +403,25 @@ const PastEngagements = () => (
                 <p className="text-sm text-muted-foreground">March 2024 - Volunteer MBC</p>
               </div>
             </div>
+                      <div className="space-y-4">
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
-                <p className="font-medium">Valedictorian, Grade 8 Graduation</p>
-                <p className="text-sm text-muted-foreground">June 2023 - The Valleys Sr. PS</p>
+                <p className="font-medium">Speaker, GFSS Staff Meeting</p>
+                <p className="text-sm text-muted-foreground">
+                  April 13, 2026 - Glenforest Secondary School
+                </p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
-                <p className="font-medium">And many other Dr. Interested and club events</p>
-                <p className="text-sm text-muted-foreground">Various dates</p>
+                <p className="font-medium">Speaking at the Global Youth Summit</p>
+                <p className="text-sm text-muted-foreground">
+                  April 18, 2026 - The World is Your Bowl of Noodles
+                </p>
               </div>
             </div>
-          </div>
         </div>
 
         {/* Consulting Section */}
