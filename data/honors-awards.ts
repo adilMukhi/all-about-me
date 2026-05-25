@@ -50,14 +50,34 @@ export const honorsAwards: Award[] = [
     link: "",
   },
   {
-    title: "Bronze Medal – Canadian Biology Olympiad",
+    title: "Silver Medal – Canadian Biology Olympiad",
     issuer: "Canadian Biology Olympiad Committee",
-    year: "2025",
+    year: "2026",
     description:
-      "Awarded the Bronze Medal in the Canadian Biology Olympiad, placing within the top 60% of all youth across Canada in the highest-level national biology competition for high school students. The competition tested knowledge in subjects including cell biology, molecular genetics, physiology, and ecology, recognizing top performers for their academic excellence and critical thinking skills.",
-    image: "/CBO.png",
-    skills: ["Biology", "Critical Thinking", "Problem Solving", "Academic Excellence", "Research"],
-    link: "https://www.canadianbiologyolympiad.ca/Medal%20Winners%202025.pdf",
+      "Awarded the Silver Medal in the 2026 Canadian Biology Olympiad (CBO). Improved on last year's Bronze result; coached/mentored by Ms. Virdi.",
+    image: "/certificates/cbo-silver.png",
+    skills: ["Biology", "Competition Excellence", "Analytical Reasoning", "Experimental Design"],
+    link: "https://www.canadianbiologyolympiad.ca/CBO2026_Results-levels.pdf",
+  },
+  {
+    title: "National Biology Scholar with Distinction",
+    issuer: "University of Toronto — National Biology Competition",
+    year: "2026",
+    description:
+      "Designated National Biology Scholar with Distinction for placing in the top 0.4% nationally in the 2026 National Biology Competition.",
+    image: "/certificates/nbc-distinction.png",
+    skills: ["Biology", "Exam Excellence", "Scientific Knowledge"],
+    link: "https://bioexplorerchallenge.com/student",
+  },
+  {
+    title: "Award of Distinction — Peel District School Board",
+    issuer: "Peel District School Board",
+    year: "May 4, 2026",
+    description:
+      "Selected to receive the Award of Distinction in recognition of contributions to public education in Peel and to the broader Peel community. Includes a certificate and a formal letter from the Director of Education.",
+    image: "/certificates/award of distintion (1).png",
+    skills: ["Education Leadership", "Community Contribution", "Recognition"],
+    link: "https://www.peelschools.org",
   },
   {
     title: "Distinction – Canadian Computing Competition (Junior Division)",
@@ -84,6 +104,46 @@ export const honorsAwards: Award[] = [
       "Attention to Detail",
     ],
     link: "https://cemc.uwaterloo.ca/sites/default/files/documents/2024/2024BCCResults.pdf",
+  },
+  {
+    title: "Ontario Volunteer Service Award — Dr. Interested (2–4 Years)",
+    issuer: "Province of Ontario",
+    year: "May 19, 2026",
+    description:
+      "Presented with a lapel pin and certificate in recognition of commitment and dedication as a volunteer with Dr. Interested. Award recognizes two-to-four years of service for youth volunteers.",
+    image: "/certificates/ovsa-drint.png",
+    skills: ["Volunteerism", "Community Service", "Youth Leadership"],
+    link: "https://www.ontario.ca",
+  },
+  {
+    title: "Ontario Volunteer Service Award — Results Canada (2–4 Years)",
+    issuer: "Province of Ontario",
+    year: "May 19, 2026",
+    description:
+      "Presented with a lapel pin and certificate in recognition of commitment and dedication as a volunteer with Results Canada. Award recognizes two-to-four years of service for youth volunteers.",
+    image: "/certificates/ovsa-results.png",
+    skills: ["Volunteerism", "Community Service", "Youth Leadership"],
+    link: "https://www.ontario.ca",
+  },
+  {
+    title: "Bronze Medal – Canadian Biology Olympiad",
+    issuer: "Canadian Biology Olympiad Committee",
+    year: "2025",
+    description:
+      "Awarded the Bronze Medal in the Canadian Biology Olympiad, placing within the top 60% of all youth across Canada in the highest-level national biology competition for high school students. The competition tested knowledge in subjects including cell biology, molecular genetics, physiology, and ecology, recognizing top performers for their academic excellence and critical thinking skills.",
+    image: "/CBO.png",
+    skills: ["Biology", "Critical Thinking", "Problem Solving", "Academic Excellence", "Research"],
+    link: "https://www.canadianbiologyolympiad.ca/Medal%20Winners%202025.pdf",
+  },
+  {
+    title: "Certificate of Achievement — National Biology Competition (Glenforest Secondary)",
+    issuer: "University of Toronto — National Biology Competition",
+    year: "April 8, 2026",
+    description:
+      "Awarded Certificate of Achievement for obtaining the highest score in the 2026 National Biology Competition among participating students from Glenforest Secondary.",
+    image: "/certificates/nbc-achevement.png",
+    skills: ["Exam Excellence", "School Achievement", "Biology Knowledge"],
+    link: "https://bioexplorerchallenge.com/student",
   },
   {
     title: "SemiFinalist – (p + q = 1) Exam",

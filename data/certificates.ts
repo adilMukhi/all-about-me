@@ -672,6 +672,17 @@ export const certificates: Certificate[] = [
     slug: "uhn-stem-pathways-participation-2026",
   },
   {
+    name: "National Biology Competition — Participation (2026)",
+    issuer: "University of Toronto — National Biology Competition",
+    date: "2026",
+    description:
+      "Certificate of Participation for competing in the 2026 National Biology Competition.",
+    skills: ["Participation", "Biology Competition"],
+    link: "https://bioexplorerchallenge.com/student",
+    image: "/certificates/nbc-participation-2026.png",
+    slug: "national-biology-competition-2026-participation",
+  },
+  {
     name: "2025 Certificate of Participation - UHN STEM Pathways",
     issuer: "University Health Network (UHN)",
     date: "2024-2025",
@@ -778,4 +789,4 @@ export const certificates: Certificate[] = [
     image: "/certificates/cosmic-us-participation.png",
     slug: "cosmic-us-research-participation",
   },
-]
+];
