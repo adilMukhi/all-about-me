@@ -68,11 +68,11 @@ export const workExperiences: WorkExperience[] = [
   {
     title: "Youth Advisor",
     company: "The Hospital for Sick Children",
-    period: "Jan 2026 – Mar 2026",
-    description: "Served as a Youth Advisor on the OPTIMAL research project, supporting a CIHR grant on youth social media use and well-being.",
-    longDescription: "Worked as a contract part-time Youth Advisor on the OPTIMAL research project at The Hospital for Sick Children. Co-facilitated youth engagement sessions, led qualitative data collection through participant discussions, and supported the design of inclusive, youth-centered research environments with strategies to promote healthier digital habits.",
+    period: "Jan 2026 – Present",
+    description: "Served as a Youth Advisor on the OPTIMAL research project and now continues as Youth Principal Applicant, supporting a CIHR Team Grant on youth social media use and well-being.",
+    longDescription: "Worked as a contract part-time Youth Advisor on the OPTIMAL research project at The Hospital for Sick Children and continues as the Youth Principal Applicant. Co-facilitated youth engagement sessions, led qualitative data collection through participant discussions, and supported the design of inclusive, youth-centered research environments with strategies to promote healthier digital habits.",
     stats: [
-      "3-month contract part-time role",
+      "Continues now as Youth Principal Applicant",
       "Youth Advisor on the OPTIMAL research project",
       "Supported CIHR-funded youth social media and well-being research",
       "Co-facilitated youth engagement sessions",
@@ -82,6 +82,13 @@ export const workExperiences: WorkExperience[] = [
     skills: ["Research", "Youth Engagement", "Qualitative Data Collection", "Health Advocacy", "Facilitation"],
     link: "",
     slug: "sickkids-youth-advisor",
+    progression: [
+      {
+        role: "Youth Principal Applicant",
+        period: "May 2026 – Present",
+        description: "Continuing the OPTIMAL Project youth role within the CIHR Team Grant: Healthy Youth study."
+      }
+    ],
   },
   {
     title: "Youth Advisor",
@@ -101,6 +108,39 @@ export const workExperiences: WorkExperience[] = [
     skills: ["Youth Advocacy", "Policy Input", "Report Analysis", "Policy Consultation", "Youth Advocacy", "Research"],
     link: "",
     slug: "children-first-advising",
+  },
+  {
+    title: "Youth Advisory Committee Member",
+    company: "Aga Khan Foundation Canada",
+    period: "Apr 2026 – Dec 2026",
+    description: "Serving on AKFC's Youth Advisory Committee, contributing to content creation, outreach and engagement, research and evaluation, and subcommittee work.",
+    longDescription: "As a member of AKFC's Youth Advisory Committee, I collaborate with peers across Canada on content creation, outreach and engagement, and research and evaluation. I also participate in up to two subcommittees focused on areas such as communications, research, and priority initiatives.",
+    stats: [
+      "Content creation",
+      "Outreach and engagement",
+      "Research and evaluation",
+      "Up to 2 subcommittees"
+    ],
+    image: "/akfc-yac-2026.png",
+    skills: ["Youth Advisory", "Content Creation", "Outreach", "Research", "Community Engagement"],
+    link: "https://www.akfc.ca/yac-recruitment/#1748574966734-b6fa013e-4f95",
+    slug: "akfc-yac-2026",
+  },
+  {
+    title: "Youth Council Member",
+    company: "5Rights Foundation",
+    period: "May 2026 – Present",
+    description: "Joined the 5Rights Youth Council to help advance children's digital rights, online safety, and youth-centered policy and research.",
+    longDescription: "As a Youth Council member with 5Rights Foundation, I contribute youth perspective to work on digital rights, online safety, and policy engagement. The role centers youth voice in research, advocacy, and initiatives that shape safer digital environments for children and young people.",
+    stats: [
+      "Youth digital rights advocacy",
+      "Policy and research input",
+      "Online safety focus"
+    ],
+    image: "/5rights-youth-council-2026.png",
+    skills: ["Digital Rights", "Youth Advocacy", "Policy Engagement", "Online Safety", "Research"],
+    link: "https://5rightsfoundation.com/",
+    slug: "5rights-youth-council-2026",
   },
   {
     title: "High School Committee Chair",
