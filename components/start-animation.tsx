@@ -3,6 +3,9 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import dynamic from "next/dynamic"
+
+const Avatar3D = dynamic(() => import("./avatar-3d"), { ssr: false })
 
 const introNavItems = [
   { key: "Home", label: "Home" },
@@ -115,8 +118,8 @@ export default function StartAnimation() {
         Hi, I'm Adil Mukhi!
       </h1>
 
-      {/* Outer ring (perfectly centered) */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+      {/* Outer ring (positioned higher than center) */}
+      <div className="absolute inset-0 flex items-start justify-center pointer-events-none z-0 pt-[20%]">
         <motion.svg
           width="420"
           height="420"
@@ -145,22 +148,15 @@ export default function StartAnimation() {
         </motion.svg>
       </div>
 
-      {/* Avatar stays centered */}
-      <div className="absolute inset-0 flex items-center justify-center z-10">
+      {/* 3D Avatar positioned in lower center */}
+      <div className="absolute inset-0 flex items-end justify-center z-10 pb-[10%]">
         <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.5, type: "spring" }}
-          className="w-24 h-24 rounded-full overflow-hidden border-4 border-blue-500"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8, type: "spring", delay: 0.2 }}
+          className="w-64 h-80"
         >
-          <Image
-            src="/pixtin.jpg"
-            alt="Avatar"
-            width={96}
-            height={96}
-            className="w-full h-full object-cover"
-            priority
-          />
+          <Avatar3D />
         </motion.div>
       </div>
 
