@@ -72,11 +72,12 @@ const SpeakingEngagementsHero = () => (
         Speaking Engagements & Consulting
       </h2>
 
-      <div className="max-w-4xl mx-auto text-center space-y-8">
+      <div className="max-w-6xl mx-auto text-center space-y-8">
         <p className="text-xl leading-relaxed text-muted-foreground">
           Book Adil as your next speaker or consultant for your event, organization, or initiative.
         </p>
-        <div className="text-left max-w-3xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 items-start">
+          <div className="text-left">
           <div className="bg-primary/5 p-8 rounded-lg mb-8">
             <h3 className="text-2xl font-semibold text-primary mb-6 text-center">What I Offer</h3>
 
@@ -142,9 +143,81 @@ const SpeakingEngagementsHero = () => (
                   tailored based on your event scope, format, and required preparation.
                 </p>
                 <p>
-                  <strong>Location:</strong> Available online worldwide or in-person in the Greater Toronto Area (GTA)
+                  <strong>Location:</strong> Available online worldwide or in-person (based in Greater Toronto Area, available for travel)
                 </p>
               </div>
+            </div>
+
+            <div className="mt-8 p-6 bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg border border-primary/30">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
+                <h4 className="text-lg font-semibold text-primary">📊 Approximate Rates (Tailored Per Engagement)</h4>
+                <Button size="sm" asChild>
+                  <a href="https://cal.com/adil-mukhi/15min" target="_blank" rel="noopener noreferrer">
+                    Get your tailored rate
+                  </a>
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground mb-4 italic">
+                The rates below are approximate. All rates are <strong>customized</strong> based on your specific needs, event scope, and preparation requirements. To discuss your project and receive an official quote, book a meeting below.
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h5 className="text-base font-semibold text-primary mb-3">Public Speaking</h5>
+                  <div className="space-y-3 text-sm text-muted-foreground">
+                    <div>
+                      <p className="font-medium text-foreground">For-Profit Companies</p>
+                      <ul className="ml-3 space-y-1 mt-1">
+                        <li>• <strong>In-Person:</strong> $400/hour <span className="text-xs">(+ travel, accommodation, meals if needed)</span></li>
+                        <li>• <strong>Online:</strong> $200/hour</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="font-medium text-foreground">Non-Profit & Social Good</p>
+                      <ul className="ml-3 space-y-1 mt-1">
+                        <li>• <strong>In-Person:</strong> $200/hour <span className="text-xs">(+ travel, accommodation, meals if needed)</span></li>
+                        <li>• <strong>Online:</strong> $100/hour</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h5 className="text-base font-semibold text-primary mb-3">Consulting Services</h5>
+                  <div className="space-y-3 text-sm text-muted-foreground">
+                    <div>
+                      <ul className="space-y-2">
+                        <li>• <strong>In-Person:</strong> $150/hour</li>
+                        <li>• <strong>Online:</strong> $75/hour</li>
+                      </ul>
+                    </div>
+                    <p className="text-xs italic mt-4">Minimum engagement varies by project scope</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div className="flex flex-col gap-6 items-center justify-start">
+            <div className="relative w-full max-w-sm overflow-hidden rounded-lg shadow-lg">
+              <Image
+                src="https://images.unsplash.com/photo-1781722321176-f110d64b544a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Adil Mukhi speaking about AI"
+                width={400}
+                height={500}
+                className="w-full h-auto object-cover"
+              />
+              <p className="text-xs text-muted-foreground text-center mt-2 italic">Speaking on AI topics</p>
+            </div>
+            <div className="relative w-full max-w-sm overflow-hidden rounded-lg shadow-lg">
+              <Image
+                src="https://images.unsplash.com/photo-1781722321115-bb3dcfd224cd?q=80&w=927&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Adil Mukhi at Kids Help Phone Walk"
+                width={400}
+                height={300}
+                className="w-full h-auto object-cover"
+              />
+              <p className="text-xs text-muted-foreground text-center mt-2 italic">Leading Kids Help Phone Walk</p>
             </div>
           </div>
         </div>

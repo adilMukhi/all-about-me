@@ -125,26 +125,6 @@ export default function Hero() {
                 <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-primary opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
               </a>
             </Button>
-            <Button variant="secondary" asChild className="button-hover-effect relative overflow-hidden group">
-              <a
-                href="https://drive.google.com/file/d/1832UHQ7zJaenBINhTJthJM2Hf5rbeG_W/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="relative z-10">My Resume</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-teal-400 to-blue-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
-              </a>
-            </Button>
-            <Button variant="secondary" asChild className="button-hover-effect relative overflow-hidden group">
-              <a
-                href="https://drive.google.com/file/d/11wc_Kbo9O7BtBwjKS1Sls-Qrqivk5Rk_/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="relative z-10">Visual Resume</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-teal-400 to-blue-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
-              </a>
-            </Button>
             <Button asChild className="button-hover-effect relative overflow-hidden group">
               <a href="/experiences">
                 <span className="relative z-10">See More!</span>
@@ -168,7 +148,7 @@ export default function Hero() {
               href="/services"
               className="text-primary hover:text-primary/80 underline underline-offset-2 transition-colors font-semibold"
             >
-              public speaking opportunities
+              public speaking bookings
             </a>
             .
           </p>
