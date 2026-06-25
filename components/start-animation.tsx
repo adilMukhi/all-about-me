@@ -3,6 +3,9 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import dynamic from "next/dynamic"
+
+const Avatar3D = dynamic(() => import("./avatar-3d"), { ssr: false })
 
 const introNavItems = [
   { key: "Home", label: "Home" },
@@ -145,22 +148,15 @@ export default function StartAnimation() {
         </motion.svg>
       </div>
 
-      {/* Avatar stays centered */}
+      {/* 3D Avatar stays centered */}
       <div className="absolute inset-0 flex items-center justify-center z-10">
         <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.5, type: "spring" }}
-          className="w-24 h-24 rounded-full overflow-hidden border-4 border-blue-500"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8, type: "spring", delay: 0.2 }}
+          className="w-64 h-80"
         >
-          <Image
-            src="/pixtin.jpg"
-            alt="Avatar"
-            width={96}
-            height={96}
-            className="w-full h-full object-cover"
-            priority
-          />
+          <Avatar3D />
         </motion.div>
       </div>
 
