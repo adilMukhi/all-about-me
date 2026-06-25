@@ -19,8 +19,8 @@ export default function DrInterestedClient() {
 
   const stats = [
     { label: "Executives", value: "360+", icon: Users },
-    { label: "Members", value: "1,700", icon: Globe },
-    { label: "Countries", value: "106", icon: Trophy },
+    { label: "Members", value: "1,700", icon: Trophy },
+    { label: "Countries", value: "106", icon: Globe },
     { label: "Events", value: "20+", icon: Zap },
   ]
 
@@ -31,7 +31,7 @@ export default function DrInterestedClient() {
       title: "Hosting The Minds Project Panel",
     },
     {
-      src: "https://i.postimg.cc/zLHS3FH7/tudent-Networking-at-Psychology-Conference.png",
+      src: "https://i.imgur.com/ym74D8N.png",
       alt: "Dr. Interested Community Event",
       title: "Psychology & Culture Conference",
     },
@@ -51,7 +51,7 @@ export default function DrInterestedClient() {
       title: "Political Leaders at Explore3",
     },
     {
-      src: "https://i.imgur.com/ym74D8N.png",
+      src: "https://i.postimg.cc/zLHS3FH7/tudent-Networking-at-Psychology-Conference.png",
       alt: "Community in Action",
       title: "Community in Action",
     },
@@ -126,13 +126,13 @@ export default function DrInterestedClient() {
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
                     As Founder and Executive Director of Dr. Interested, I design programs and initiatives that empower
-                    youth through mentorship, advocacy, and impactful events. Our platform connects 60,000+ youth
+                    youth through mentorship, advocacy, and impactful events. Our platform connects 1,700+ youth
                     globally, fostering a community where students can explore their curiosity, engage in meaningful
                     research, and become leaders in their fields.
                   </p>
                   <p>
-                    Dr. Interested operates with a dedicated team of 6 medical student advisors and a passionate
-                    community of 900+ members worldwide. We organize 11+ major events annually, creating spaces where
+                    Dr. Interested operates with a dedicated team of 15 medical student advisors and a passionate
+                    community of 1,700+ members worldwide. We organize 20+ major events annually, creating spaces where
                     youth can collaborate, learn, and make a real impact on pressing global issues.
                   </p>
                   <p>
@@ -145,7 +145,7 @@ export default function DrInterestedClient() {
 
               <div className="relative aspect-[4/5] overflow-hidden rounded-lg shadow-2xl">
                 <Image
-                  src="https://i.postimg.cc/zLHS3FH7/tudent-Networking-at-Psychology-Conference.png"
+                  src="https://i.imgur.com/ym74D8N.png"
                   alt="Dr. Interested Community Event - Culture and Psychology Conference"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
@@ -185,9 +185,9 @@ export default function DrInterestedClient() {
                   passions and build lasting professional relationships.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• 900+ active members across 6 continents</li>
-                  <li>• 11+ major events annually</li>
-                  <li>• 1,000,000+ reach through marketing</li>
+                  <li>• 1700+ active members across 6 continents</li>
+                  <li>• 20+ major events annually</li>
+                  <li>• 3,700,000+ reach through marketing</li>
                 </ul>
               </div>
 

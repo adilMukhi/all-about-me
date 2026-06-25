@@ -136,7 +136,7 @@ const SpeakingEngagementsHero = () => (
             </div>
 
             <div className="mt-8 p-6 bg-white/50 rounded-lg border border-primary/20">
-              <h4 className="text-lg font-semibold text-primary mb-3">💼 Paid Services</h4>
+              <h4 className="text-lg font-semibold text-primary mb-3">Paid Services</h4>
               <div className="space-y-2 text-muted-foreground">
                 <p>
                   All speaking and consulting services are offered as <strong>paid engagements</strong>. Rates are
@@ -150,15 +150,19 @@ const SpeakingEngagementsHero = () => (
 
             <div className="mt-8 p-6 bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg border border-primary/30">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
-                <h4 className="text-lg font-semibold text-primary">📊 Approximate Rates (Tailored Per Engagement)</h4>
-                <Button size="sm" asChild>
-                  <a href="https://cal.com/adil-mukhi/15min" target="_blank" rel="noopener noreferrer">
-                    Get your tailored rate
-                  </a>
+                <h4 className="text-lg font-semibold text-primary">Approximate Rates</h4>
+                <Button
+                  size="lg"
+                  className="px-12 py-3 text-lg font-semibold"
+                  data-cal-link="adilm.0/15min"
+                  data-cal-namespace="15min"
+                  data-cal-config='{"layout":"month_view","theme":"light"}'
+                >
+                  Get your tailored rate
                 </Button>
               </div>
               <p className="text-sm text-muted-foreground mb-4 italic">
-                The rates below are approximate. All rates are <strong>customized</strong> based on your specific needs, event scope, and preparation requirements. To discuss your project and receive an official quote, book a meeting below.
+                The rates below are approximate. All rates are <strong>tailored</strong> based on your specific needs, event scope, and preparation requirements. To discuss your project and receive an official quote, book a meeting below.
               </p>
               
               <div className="grid md:grid-cols-2 gap-6">
