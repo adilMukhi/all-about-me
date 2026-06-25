@@ -18,10 +18,10 @@ export default function DrInterestedClient() {
   }, [])
 
   const stats = [
-    { label: "Youth Reached", value: "60,000+", icon: Users },
-    { label: "Major Events", value: "11+", icon: Zap },
-    { label: "Global Members", value: "900+", icon: Globe },
-    { label: "Med Student Advisors", value: "6", icon: Trophy },
+    { label: "Executives", value: "360+", icon: Users },
+    { label: "Members", value: "1,700", icon: Globe },
+    { label: "Countries", value: "106", icon: Trophy },
+    { label: "Events", value: "20+", icon: Zap },
   ]
 
   const images = [
@@ -31,9 +31,9 @@ export default function DrInterestedClient() {
       title: "Hosting The Minds Project Panel",
     },
     {
-      src: "https://i.imgur.com/ym74D8N.png",
-      alt: "Dr. Interested presentation",
-      title: "Dr. Interested Community Event",
+      src: "https://i.postimg.cc/zLHS3FH7/tudent-Networking-at-Psychology-Conference.png",
+      alt: "Dr. Interested Community Event",
+      title: "Psychology & Culture Conference",
     },
     {
       src: "https://i.postimg.cc/ft47dSYd/Dr-Interested-Volunteer-Team-Group-Photo.jpg",
@@ -51,9 +51,9 @@ export default function DrInterestedClient() {
       title: "Political Leaders at Explore3",
     },
     {
-      src: "https://i.postimg.cc/zLHS3FH7/tudent-Networking-at-Psychology-Conference.png",
-      alt: "Student Networking at Psychology Conference",
-      title: "Psychology Conference Networking",
+      src: "https://i.imgur.com/ym74D8N.png",
+      alt: "Community in Action",
+      title: "Community in Action",
     },
   ]
 
@@ -145,8 +145,8 @@ export default function DrInterestedClient() {
 
               <div className="relative aspect-[4/5] overflow-hidden rounded-lg shadow-2xl">
                 <Image
-                  src="https://i.postimg.cc/r06G4R5g/Adil-Mukhi-Hosting-The-Minds-Project-Panel.png"
-                  alt="Adil Mukhi Hosting The Minds Project Panel"
+                  src="https://i.postimg.cc/zLHS3FH7/tudent-Networking-at-Psychology-Conference.png"
+                  alt="Dr. Interested Community Event - Culture and Psychology Conference"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                 />
@@ -265,7 +265,7 @@ export default function DrInterestedClient() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="px-8">
-                <a href="https://impact2025.drinterested.tech/" target="_blank" rel="noopener noreferrer">
+                <a href="https://impact.drinterested.org/" target="_blank" rel="noopener noreferrer">
                   Learn More & Join
                 </a>
               </Button>
@@ -295,13 +295,16 @@ export default function DrInterestedClient() {
             foundingDate: "2024",
             numberOfEmployees: "6",
             areaServed: "Global",
-            url: "https://drinterested.tech/",
+            url: "https://drinterested.org/",
             sameAs: ["https://linktr.ee/dr.interested"],
             image: "https://i.postimg.cc/r06G4R5g/Adil-Mukhi-Hosting-The-Minds-Project-Panel.png",
             statistics: {
-              youthReached: "60000",
-              majorEvents: "11",
-              globalMembers: "900",
+              executives: "360",
+              members: "1700",
+              countries: "106",
+              events: "20",
+              impacted: "160000",
+              volunteers: "900",
             },
           }),
         }}

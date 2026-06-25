@@ -143,13 +143,20 @@ const SpeakingEngagementsHero = () => (
                   tailored based on your event scope, format, and required preparation.
                 </p>
                 <p>
-                  <strong>Location:</strong> Available online worldwide or in-person in the Greater Toronto Area (GTA)
+                  <strong>Location:</strong> Available online worldwide or in-person (based in Greater Toronto Area, available for travel)
                 </p>
               </div>
             </div>
 
             <div className="mt-8 p-6 bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg border border-primary/30">
-              <h4 className="text-lg font-semibold text-primary mb-4">📊 Approximate Rates (Tailored Per Engagement)</h4>
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
+                <h4 className="text-lg font-semibold text-primary">📊 Approximate Rates (Tailored Per Engagement)</h4>
+                <Button size="sm" asChild>
+                  <a href="https://cal.com/adil-mukhi/15min" target="_blank" rel="noopener noreferrer">
+                    Get your tailored rate
+                  </a>
+                </Button>
+              </div>
               <p className="text-sm text-muted-foreground mb-4 italic">
                 The rates below are approximate. All rates are <strong>customized</strong> based on your specific needs, event scope, and preparation requirements. To discuss your project and receive an official quote, book a meeting below.
               </p>
@@ -161,14 +168,14 @@ const SpeakingEngagementsHero = () => (
                     <div>
                       <p className="font-medium text-foreground">For-Profit Companies</p>
                       <ul className="ml-3 space-y-1 mt-1">
-                        <li>• <strong>In-Person:</strong> $400/hour <span className="text-xs">(+ travel, accommodation, meals)</span></li>
+                        <li>• <strong>In-Person:</strong> $400/hour <span className="text-xs">(+ travel, accommodation, meals if needed)</span></li>
                         <li>• <strong>Online:</strong> $200/hour</li>
                       </ul>
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Non-Profit & Social Good</p>
                       <ul className="ml-3 space-y-1 mt-1">
-                        <li>• <strong>In-Person:</strong> $200/hour <span className="text-xs">(+ travel, accommodation, meals)</span></li>
+                        <li>• <strong>In-Person:</strong> $200/hour <span className="text-xs">(+ travel, accommodation, meals if needed)</span></li>
                         <li>• <strong>Online:</strong> $100/hour</li>
                       </ul>
                     </div>
@@ -204,7 +211,7 @@ const SpeakingEngagementsHero = () => (
             </div>
             <div className="relative w-full max-w-sm overflow-hidden rounded-lg shadow-lg">
               <Image
-                src="https://i.postimg.cc/SYJ69LJg/Adil-Mukhi-Leading-Kids-Help-Phone-Walk-so-Kids-Can-Talk-in-Mississauga.jpg"
+                src="https://images.unsplash.com/photo-1781722321115-bb3dcfd224cd?q=80&w=927&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Adil Mukhi at Kids Help Phone Walk"
                 width={400}
                 height={300}
