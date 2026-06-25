@@ -14,6 +14,11 @@ export const metadata: Metadata = experiencesMetadata
 
 export default function ExperiencesPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
+  const toIsoDate = (dateString: string) => {
+    const parsedDate = new Date(dateString)
+    return Number.isNaN(parsedDate.getTime()) ? undefined : parsedDate.toISOString()
+  }
+
   const experiencesStructuredData = {
     "@context": "https://schema.org",
     "@type": "Blog",
@@ -26,11 +31,15 @@ export default function ExperiencesPage() {
       url: siteUrl,
     },
     blogPost: blogPosts.map((post) => ({
-      "@type": "BlogPosting",
+      "@type": "NewsArticle",
       headline: post.title,
+      description: post.subtitle || post.excerpt,
       url: `${siteUrl}/experiences/${post.slug}`,
-      datePublished: post.date,
+      datePublished: toIsoDate(post.date),
+      dateModified: toIsoDate(post.date),
       image: post.image ? `${siteUrl}${post.image}` : undefined,
+      articleSection: "Experiences",
+      keywords: [post.title, post.subtitle, "Adil Mukhi", "news", "experiences"].filter(Boolean),
       sameAs: post.learnMoreUrl || undefined,
     })),
   }
@@ -52,7 +61,7 @@ export default function ExperiencesPage() {
               Experiences
             </h1>
             <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-16 text-lg">
-              Personal stories and reflections from my journey in education, research, and leadership.
+              News-style updates and featured stories from my journey in education, research, and leadership.
             </p>
 
             <div className="grid gap-8 md:grid-cols-2">

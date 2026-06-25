@@ -93,11 +93,13 @@ export const portfolioMetadata: Metadata = {
 }
 
 export const experiencesMetadata: Metadata = {
-  title: "Experiences",
+  title: "Experiences News & Updates | Adil Mukhi",
   description:
-    "Explore Adil Mukhi's experiences across youth advocacy, healthcare research, community leadership, and public speaking. Read stories from Dr. Interested, SickKids, Children First Canada, and more.",
+    "Read news-style updates and featured experiences from Adil Mukhi across youth advocacy, healthcare research, community leadership, and public speaking.",
   keywords: [
+    "Adil Mukhi news",
     "Adil Mukhi experiences",
+    "news updates",
     "youth advocacy",
     "research experience",
     "public speaking",
@@ -113,9 +115,9 @@ export const experiencesMetadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "Experiences | Adil Mukhi",
+    title: "Experiences News & Updates | Adil Mukhi",
     description:
-      "Personal stories and reflections from youth advocacy, research, community leadership, and public speaking.",
+      "News-style stories and updates from youth advocacy, research, community leadership, and public speaking.",
     url: `${siteUrl}/experiences`,
     siteName: "Adil Mukhi",
     images: [
@@ -129,9 +131,9 @@ export const experiencesMetadata: Metadata = {
   },
   twitter: {
     ...defaultTwitter,
-    title: "Experiences | Adil Mukhi",
+    title: "Experiences News & Updates | Adil Mukhi",
     description:
-      "Personal stories and reflections from youth advocacy, research, community leadership, and public speaking.",
+      "News-style stories and updates from youth advocacy, research, community leadership, and public speaking.",
   },
 }
 

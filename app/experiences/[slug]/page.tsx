@@ -15,6 +15,11 @@ const socialProfiles = [
   "https://www.youtube.com/@AdilMukhi",
 ]
 
+const toIsoDate = (dateString: string) => {
+  const parsedDate = new Date(dateString)
+  return Number.isNaN(parsedDate.getTime()) ? undefined : parsedDate.toISOString()
+}
+
 // Generate metadata for each blog post dynamically
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
@@ -43,7 +48,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: post.subtitle || post.excerpt,
     keywords,
     authors: [{ name: "Adil Mukhi", url: siteUrl }],
-    category: "article",
+    category: "news",
     alternates: {
       canonical: `${siteUrl}/experiences/${post.slug}`,
     },
@@ -61,7 +66,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
           alt: post.title,
         },
       ],
-      publishedTime: post.date,
+      publishedTime: toIsoDate(post.date),
       authors: ["Adil Mukhi"],
     },
     twitter: {
@@ -97,11 +102,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const articleStructuredData = post
     ? {
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": "NewsArticle",
         headline: post.title,
         description: post.subtitle || post.excerpt,
         image: post.image ? [`${siteUrl}${post.image}`] : [],
-        datePublished: post.date,
+        datePublished: toIsoDate(post.date),
+        dateModified: toIsoDate(post.date),
+        articleSection: "Experiences",
+        keywords: [post.title, post.subtitle, "Adil Mukhi", "news", "experiences"].filter(Boolean),
         author: {
           "@type": "Person",
           name: "Adil Mukhi",
@@ -109,7 +117,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           sameAs: socialProfiles,
         },
         publisher: {
-          "@type": "Person",
+          "@type": "Organization",
           name: "Adil Mukhi",
           url: siteUrl,
           sameAs: socialProfiles,
