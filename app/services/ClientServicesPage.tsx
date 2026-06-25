@@ -190,6 +190,7 @@ const SpeakingEngagementsHero = () => (
               </div>
             </div>
           </div>
+          </div>
           <div className="flex flex-col gap-6 items-center justify-start">
             <div className="relative w-full max-w-sm overflow-hidden rounded-lg shadow-lg">
               <Image
