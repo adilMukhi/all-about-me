@@ -118,8 +118,8 @@ export default function StartAnimation() {
         Hi, I'm Adil Mukhi!
       </h1>
 
-      {/* Outer ring (perfectly centered) */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+      {/* Outer ring (positioned higher than center) */}
+      <div className="absolute inset-0 flex items-start justify-center pointer-events-none z-0 pt-[20%]">
         <motion.svg
           width="420"
           height="420"
@@ -148,8 +148,8 @@ export default function StartAnimation() {
         </motion.svg>
       </div>
 
-      {/* 3D Avatar stays centered */}
-      <div className="absolute inset-0 flex items-center justify-center z-10">
+      {/* 3D Avatar positioned in lower center */}
+      <div className="absolute inset-0 flex items-end justify-center z-10 pb-[10%]">
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
