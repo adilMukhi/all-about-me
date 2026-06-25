@@ -11,57 +11,6 @@ export type Certificate = {
 
 export const certificates: Certificate[] = [
   {
-    name: "Difference Maker – Certificate of Recognition 2026",
-    issuer: "Rick Hansen Foundation School Program (RHFSP)",
-    date: "2026",
-    description:
-      "Recognized as a 2026 Difference Maker by the Rick Hansen Foundation School Program for making the world a better place by improving access and disability inclusion for people with disabilities.",
-    skills: [
-      "Accessibility Advocacy",
-      "Disability Inclusion",
-      "Community Leadership",
-      "Youth Advocacy",
-      "Social Impact",
-    ],
-    link: "https://www.rickhansen.com/become-accessible/rick-hansen-foundation-school-program",
-    image: "/certificates/rhf-difference-maker-2026.png",
-    slug: "rhf-difference-maker-recognition-2026",
-  },
-  {
-    name: "Bronze Certification of Participation",
-    issuer: "HOSA Canada",
-    date: "2025-2026",
-    description:
-      "Earned Bronze Certification for attending at least 2 seminars and 1 workshop over the course of the 2025-2026 academic year through the HOSA Canada Health Professions Workshop Program.",
-    skills: [
-      "Healthcare Leadership",
-      "Professional Development",
-      "Workshop Participation",
-      "Medical Education",
-      "Leadership Training",
-    ],
-    link: "#",
-    image: "/certificates/hosa-bronze-participation-2026.png",
-    slug: "hosa-bronze-participation-2026",
-  },
-  {
-    name: "Certificate of Distinction – Chem 13 News Exam",
-    issuer: "University of Waterloo · Faculty of Science, Department of Chemistry",
-    date: "May 7, 2026",
-    description:
-      "Awarded Distinction as a 2026 recipient of the Chem 13 News Exam administered by the University of Waterloo. Placed third at Glenforest Secondary School and scored high enough to earn distinction in the chemistry competition.",
-    skills: [
-      "Chemistry",
-      "Scientific Problem Solving",
-      "Academic Excellence",
-      "STEM Knowledge",
-      "Competition Achievement",
-    ],
-    link: "https://uwaterloo.ca/chem13-news-magazine/",
-    image: "/certificates/chem13-distinction.png",
-    slug: "chem13-news-distinction-2026",
-  },
-  {
     name: "Psychological First Aid, Blended Standard First Aid & CPR/AED Level C, WHMIS + First Aid for Opioid Poisoning",
     issuer: "Canadian Red Cross",
     date: "Revalidated Jun 2026 (official certificate pending)",
@@ -255,6 +204,57 @@ export const certificates: Certificate[] = [
     link: "https://ccdi.ca/learning/see-different",
     image: "/certificates/seedifferentcert.png",
     slug: "see-different-principles-dei"
+  },
+    {
+    name: "Difference Maker – Certificate of Recognition 2026",
+    issuer: "Rick Hansen Foundation School Program (RHFSP)",
+    date: "2026",
+    description:
+      "Recognized as a 2026 Difference Maker by the Rick Hansen Foundation School Program for making the world a better place by improving access and disability inclusion for people with disabilities.",
+    skills: [
+      "Accessibility Advocacy",
+      "Disability Inclusion",
+      "Community Leadership",
+      "Youth Advocacy",
+      "Social Impact",
+    ],
+    link: "https://www.rickhansen.com/become-accessible/rick-hansen-foundation-school-program",
+    image: "/certificates/rhf-difference-maker-2026.png",
+    slug: "rhf-difference-maker-recognition-2026",
+  },
+  {
+    name: "Bronze Certification of Participation",
+    issuer: "HOSA Canada",
+    date: "2025-2026",
+    description:
+      "Earned Bronze Certification for attending at least 2 seminars and 1 workshop over the course of the 2025-2026 academic year through the HOSA Canada Health Professions Workshop Program.",
+    skills: [
+      "Healthcare Leadership",
+      "Professional Development",
+      "Workshop Participation",
+      "Medical Education",
+      "Leadership Training",
+    ],
+    link: "#",
+    image: "/certificates/hosa-bronze-participation-2026.png",
+    slug: "hosa-bronze-participation-2026",
+  },
+  {
+    name: "Certificate of Distinction – Chem 13 News Exam",
+    issuer: "University of Waterloo · Faculty of Science, Department of Chemistry",
+    date: "May 7, 2026",
+    description:
+      "Awarded Distinction as a 2026 recipient of the Chem 13 News Exam administered by the University of Waterloo. Placed third at Glenforest Secondary School and scored high enough to earn distinction in the chemistry competition.",
+    skills: [
+      "Chemistry",
+      "Scientific Problem Solving",
+      "Academic Excellence",
+      "STEM Knowledge",
+      "Competition Achievement",
+    ],
+    link: "https://uwaterloo.ca/chem13-news-magazine/",
+    image: "/certificates/chem13-distinction.png",
+    slug: "chem13-news-distinction-2026",
   },
   {
     name: "See Different Sticker Design Contest – Honourable Mention",

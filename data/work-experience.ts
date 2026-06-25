@@ -66,14 +66,14 @@ export const workExperiences: WorkExperience[] = [
     ],
   },
   {
-    title: "Youth Advisor",
+    title: "Co–Knowledge Mobilization Champion",
     company: "The Hospital for Sick Children",
-    period: "Jan 2026 – Present",
-    description: "Served as a Youth Advisor on the OPTIMAL research project and now continues as Co–Knowledge Mobilization Champion, supporting a CIHR Team Grant on youth social media use and well-being.",
-    longDescription: "Worked as a contract part-time Youth Advisor on the OPTIMAL research project at The Hospital for Sick Children and continues as the Co–Knowledge Mobilization Champion. Co-facilitated youth engagement sessions, led qualitative data collection through participant discussions, and supported the design of inclusive, youth-centered research environments with strategies to promote healthier digital habits.",
+    period: "May 2026 – Present",
+    description: "Currently serving as Co–Knowledge Mobilization Champion for the CIHR Team Grant: Healthy Youth study; previously served as Youth Advisor on the OPTIMAL research project.",
+    longDescription: "Originally worked as a contract part-time Youth Advisor on the OPTIMAL research project at The Hospital for Sick Children. Continuation of this role as Co–Knowledge Mobilization Champion includes co-facilitating youth engagement sessions, leading qualitative data collection through participant discussions, and supporting the design of inclusive, youth-centered research environments with strategies to promote healthier digital habits.",
     stats: [
-      "Continues now as Co–Knowledge Mobilization Champion",
-      "Youth Advisor on the OPTIMAL research project",
+      "Co–Knowledge Mobilization Champion (current)",
+      "Previously Youth Advisor on the OPTIMAL research project",
       "Supported CIHR-funded youth social media and well-being research",
       "Co-facilitated youth engagement sessions",
       "Led qualitative data collection through participant discussions"
@@ -84,9 +84,9 @@ export const workExperiences: WorkExperience[] = [
     slug: "sickkids-youth-advisor",
     progression: [
       {
-        role: "Co–Knowledge Mobilization Champion",
-        period: "May 2026 – Present",
-        description: "Continuing the OPTIMAL Project youth role as Co–Knowledge Mobilization Champion within the CIHR Team Grant: Healthy Youth study."
+        role: "Youth Advisor",
+        period: "Jan 2026 – May 2026",
+        description: "Served as a Youth Advisor on the OPTIMAL research project, supporting youth engagement and qualitative data collection."
       }
     ],
   },
