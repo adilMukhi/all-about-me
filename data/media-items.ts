@@ -151,4 +151,13 @@ export const mediaItems: MediaItem[] = [
       "Youth advocate and artist Adil Mukhi explores the tension between human ambition and environmental consequence through his mixed-media watercolor piece, Veins of Progress.",
     type: "feature",
   },
+  {
+    title: "Spotlights for Health – Youth Leadership in Action: Adil Mukhi on Health Advocacy & Impact",
+    publication: "72 Dragons Health",
+    date: "2026",
+    link: "https://health72.com/Individual_Video/youth-leadership-in-action-adil-mukhi-on-health-advocacy--impact-6a2bbbfa385f2",
+    quote:
+      "Interviewed by Dr. Pietro Aparicio, MD, MPH, as part of 72 Dragons Health's Spotlights for Health series, Adil Mukhi shares his journey in youth-led health advocacy and the impact of empowering young people to lead change in their communities.",
+    type: "interview",
+  },
 ]
