@@ -36,7 +36,7 @@ export const workExperiences: WorkExperience[] = [
     ],
     image: "/drinterested.png",
     skills: ["Leadership", "Advocacy", "Global Outreach", "Public Speaking", "Program Management"],
-    link: "https://impact2025.drinterested.tech/",
+    link: "/experience/drinterested",
     slug: "dr-interested-founder",
     progression: [
       {

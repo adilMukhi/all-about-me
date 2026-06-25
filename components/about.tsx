@@ -53,17 +53,17 @@ export default function About() {
         </Card>
 
         <div className="flex flex-col items-center justify-start space-y-4">
-          <div className="relative w-full aspect-[3/5] max-w-md">
+          <div className="relative w-full aspect-[3/5] max-w-md overflow-hidden rounded-lg shadow-lg">
             <Image
-              src="/pictures/adil-mukhi-tedx-speaking-2.jpeg"
-              alt="Adil Mukhi speaking at TEDxMcFarren"
+              src="https://images.unsplash.com/photo-1781722321163-4a86d37df143?q=80&w=927&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Adil Mukhi presenting at Toronto Climate Week 2026"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="rounded-lg object-cover shadow-lg"
+              className="object-cover"
             />
           </div>
           <p className="text-sm text-muted-foreground text-center italic">
-            Speaking at TEDxMcFarren - sharing insights on leadership and innovation
+            Presenting at Toronto Climate Week 2026
           </p>
         </div>
       </div>
