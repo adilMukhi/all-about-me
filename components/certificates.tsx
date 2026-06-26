@@ -8,6 +8,8 @@ import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Maximize2 } from "lucide-react"
 import CertificatesModal from "./certificates-modal"
+import Link from "next/link"
+import { getCertificatePath } from "@/lib/seo-paths"
 
 export default function Certificates() {
   const [selectedCertificate, setSelectedCertificate] = useState<(typeof certificates)[0] | null>(null)
@@ -83,7 +85,15 @@ export default function Certificates() {
             </Button>
 
             <CardHeader>
-              <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{cert.name}</CardTitle>
+              <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+                <Link
+                  href={getCertificatePath(cert)}
+                  className="hover:text-primary transition-colors"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {cert.name}
+                </Link>
+              </CardTitle>
               <CardDescription>
                 {cert.issuer} | {cert.date}
               </CardDescription>
@@ -97,6 +107,11 @@ export default function Certificates() {
                 className="rounded-lg object-cover"
               />
               <p>{cert.description}</p>
+              <Button asChild size="sm" variant="outline">
+                <Link href={getCertificatePath(cert)} onClick={(e) => e.stopPropagation()}>
+                  Open page
+                </Link>
+              </Button>
             </CardContent>
           </Card>
         ))}
@@ -115,7 +130,15 @@ export default function Certificates() {
                 <div className="relative w-full h-full">
                   <Image src={cert.image || "/placeholder.svg"} alt={cert.name} fill className="object-cover" />
                   <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-4 text-white text-center">
-                    <h4 className="font-semibold text-sm mb-2 line-clamp-2">{cert.name}</h4>
+                    <h4 className="font-semibold text-sm mb-2 line-clamp-2">
+                      <Link
+                        href={getCertificatePath(cert)}
+                        className="hover:underline"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {cert.name}
+                      </Link>
+                    </h4>
                     <p className="text-xs mb-3 line-clamp-3">{cert.description}</p>
                     <Button
                       size="sm"
@@ -128,6 +151,11 @@ export default function Certificates() {
                     >
                       <Maximize2 className="h-3 w-3 mr-1" />
                       Expand
+                    </Button>
+                    <Button asChild size="sm" variant="outline" className="mt-2 bg-white/10 text-white border-white/20 hover:bg-white/20">
+                      <Link href={getCertificatePath(cert)} onClick={(e) => e.stopPropagation()}>
+                        Open page
+                      </Link>
                     </Button>
                   </div>
                 </div>

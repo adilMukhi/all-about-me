@@ -19,6 +19,18 @@ const socialProfiles = [
   "https://www.youtube.com/@AdilMukhi",
 ]
 const siteAliases = ["https://adilmukhi.vercel.app/", "https://adilm.drinterested.org/"]
+const personKeywords = [
+  "youth advocacy",
+  "public speaking",
+  "mental health",
+  "digital rights",
+  "research",
+  "healthcare advocacy",
+  "community leadership",
+  "education",
+  "social impact",
+  "service consulting",
+]
 
 const getValidUrl = (url: string): URL => {
   try {
@@ -189,6 +201,24 @@ export default function RootLayout({
               name: "Adil Mukhi",
               url: siteUrl,
               mainEntityOfPage: siteUrl,
+              image: `${siteUrl}/pictures/adil-mukhi-formal-headshot.jpg`,
+              jobTitle: "Youth Advocate, Public Speaker, Founder & Executive Director",
+              description:
+                "Adil Mukhi is a youth advocate, public speaker, founder of Dr. Interested, and community leader focused on mental health, education, and social impact.",
+              knowsAbout: personKeywords,
+              award: ["Ontario Volunteer Service Award", "Outstanding Youth Award"],
+              memberOf: [
+                {
+                  "@type": "Organization",
+                  name: "Dr. Interested",
+                  url: `${siteUrl}/experience/drinterested`,
+                },
+                {
+                  "@type": "Organization",
+                  name: "5Rights Youth Council",
+                  url: "https://5rightsfoundation.com/",
+                },
+              ],
               sameAs: [...siteAliases, ...socialProfiles],
               worksFor: {
                 "@id": `${siteUrl}/#organization`,

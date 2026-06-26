@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import AnimatedSection from "@/components/animated-section"
@@ -6,8 +7,9 @@ import { Separator } from "@/components/ui/separator"
 import SocialLinks from "@/components/social-links"
 import { mediaItems } from "@/data/media-items"
 import { ExternalLink, Calendar, Quote } from "lucide-react"
-import { mediaMetadata } from "@/app/page-metadata"
+import { mediaIndexMetadata } from "@/app/page-metadata"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
+import { getMediaPath } from "@/lib/seo-paths"
 
 const MediaHero = () => (
   <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
@@ -66,7 +68,11 @@ const MediaGrid = () => {
                     {getTypeLabel(item.type)}
                   </span>
                 </div>
-                <h3 className="text-lg font-semibold text-primary leading-tight">{item.title}</h3>
+                <h3 className="text-lg font-semibold text-primary leading-tight">
+                  <Link href={getMediaPath(item)} className="hover:underline">
+                    {item.title}
+                  </Link>
+                </h3>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Calendar className="h-4 w-4" />
                   <span>
@@ -109,7 +115,7 @@ const MediaGrid = () => {
   )
 }
 
-export const metadata: Metadata = mediaMetadata
+export const metadata: Metadata = mediaIndexMetadata
 
 export default function MediaPage() {
   return (

@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button"
 import { educationData } from "@/data/education"
 import EducationModal from "./education-modal"
 import { Maximize2 } from "lucide-react"
+import Link from "next/link"
+import { getEducationPath } from "@/lib/seo-paths"
 
 export default function Education() {
   const [selectedEducation, setSelectedEducation] = useState<(typeof educationData)[0] | null>(null)
@@ -74,7 +76,11 @@ export default function Education() {
               </Button>
             </div>
             <CardHeader>
-              <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{edu.degree}</CardTitle>
+              <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+                <Link href={getEducationPath(edu)} className="hover:text-primary transition-colors" onClick={(e) => e.stopPropagation()}>
+                  {edu.degree}
+                </Link>
+              </CardTitle>
               <CardDescription>
                 {edu.institution} | {edu.period}
               </CardDescription>
@@ -93,6 +99,13 @@ export default function Education() {
               )}
               <div className={edu.image ? "md:w-2/3" : "w-full"}>
                 <p>{edu.description}</p>
+                <div className="mt-4">
+                  <Button asChild size="sm" variant="outline">
+                    <Link href={getEducationPath(edu)} onClick={(e) => e.stopPropagation()}>
+                      Open page
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -140,10 +153,19 @@ export default function Education() {
                         className="font-semibold text-sm leading-tight"
                         style={{ fontFamily: "'Bubblegum Sans', cursive" }}
                       >
-                        {edu.degree}
+                        <Link href={getEducationPath(edu)} className="hover:text-primary transition-colors" onClick={(e) => e.stopPropagation()}>
+                          {edu.degree}
+                        </Link>
                       </h4>
                       <p className="text-xs text-muted-foreground truncate">{edu.institution}</p>
                       <p className="text-xs text-muted-foreground">{edu.period}</p>
+                      <div className="mt-3">
+                        <Button asChild size="sm" variant="outline">
+                          <Link href={getEducationPath(edu)} onClick={(e) => e.stopPropagation()}>
+                            Open page
+                          </Link>
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>

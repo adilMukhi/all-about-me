@@ -1,5 +1,7 @@
 import { Star, Quote } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import Link from "next/link"
+import { slugify } from "@/lib/seo-paths"
 
 const testimonials = [
   {
@@ -149,7 +151,14 @@ export default function Testimonials() {
                       </div>
                     </div>
 
-                    <h3 className="font-bold text-lg mb-1">{testimonial.name}</h3>
+                    <h3 className="font-bold text-lg mb-1">
+                      <Link
+                        href={`/testimonials/${slugify(`${testimonial.name}-${testimonial.connection}`)}`}
+                        className="hover:text-primary transition-colors"
+                      >
+                        {testimonial.name}
+                      </Link>
+                    </h3>
                     <p className="text-sm text-muted-foreground mb-3 leading-relaxed">{testimonial.role}</p>
 
                     <div className="space-y-2 text-sm">

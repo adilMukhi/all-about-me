@@ -137,6 +137,172 @@ export const experiencesMetadata: Metadata = {
   },
 }
 
+export const experienceIndexMetadata: Metadata = {
+  title: "Experience Library",
+  description:
+    "Explore Adil Mukhi's indexed experience pages for leadership roles, youth advocacy work, research, public speaking, and community impact.",
+  alternates: {
+    canonical: `${siteUrl}/experience`,
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Adil Mukhi",
+    title: "Experience Library",
+    description:
+      "Indexed landing pages for Adil Mukhi's roles and leadership experiences across youth advocacy, research, and public service.",
+    url: `${siteUrl}/experience`,
+    images: [{ ...defaultOgImage, alt: "Adil Mukhi Experience Library" }],
+  },
+  twitter: {
+    ...defaultTwitter,
+    title: "Experience Library | Adil Mukhi",
+    description:
+      "Indexed landing pages for Adil Mukhi's leadership roles, public speaking, research, and youth advocacy work.",
+  },
+}
+
+export const certificateIndexMetadata: Metadata = {
+  title: "Certificates & Credentials",
+  description:
+    "Browse Adil Mukhi's indexed certificate pages, training credentials, and verified learning experiences across healthcare, leadership, accessibility, and youth advocacy.",
+  alternates: {
+    canonical: `${siteUrl}/certificates`,
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Adil Mukhi",
+    title: "Certificates & Credentials",
+    description:
+      "Indexed certificate pages highlighting Adil Mukhi's training, credentials, and continuing education.",
+    url: `${siteUrl}/certificates`,
+    images: [{ ...defaultOgImage, alt: "Adil Mukhi Certificates and Credentials" }],
+  },
+  twitter: {
+    ...defaultTwitter,
+    title: "Certificates & Credentials | Adil Mukhi",
+    description:
+      "Indexed certificate pages highlighting Adil Mukhi's healthcare, accessibility, and leadership credentials.",
+  },
+}
+
+export const educationIndexMetadata: Metadata = {
+  title: "Education & Training",
+  description:
+    "Explore Adil Mukhi's education, professional training, and academic programs through dedicated indexable pages.",
+  alternates: {
+    canonical: `${siteUrl}/education`,
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Adil Mukhi",
+    title: "Education & Training",
+    description:
+      "Indexed education pages covering Adil Mukhi's academic background, training, and professional development.",
+    url: `${siteUrl}/education`,
+    images: [{ ...defaultOgImage, alt: "Adil Mukhi Education and Training" }],
+  },
+  twitter: {
+    ...defaultTwitter,
+    title: "Education & Training | Adil Mukhi",
+    description:
+      "Indexed education pages covering Adil Mukhi's academic background, training, and professional development.",
+  },
+}
+
+export const volunteerIndexMetadata: Metadata = {
+  title: "Volunteer Work",
+  description:
+    "Explore Adil Mukhi's indexed volunteer work pages covering community service, youth leadership, research volunteering, and public engagement.",
+  alternates: {
+    canonical: `${siteUrl}/volunteer`,
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Adil Mukhi",
+    title: "Volunteer Work",
+    description:
+      "Indexed volunteer pages covering Adil Mukhi's community service, youth leadership, and research volunteering.",
+    url: `${siteUrl}/volunteer`,
+    images: [{ ...defaultOgImage, alt: "Adil Mukhi Volunteer Work" }],
+  },
+  twitter: {
+    ...defaultTwitter,
+    title: "Volunteer Work | Adil Mukhi",
+    description:
+      "Indexed volunteer pages covering Adil Mukhi's community service, youth leadership, and research volunteering.",
+  },
+}
+
+export const honorsIndexMetadata: Metadata = {
+  title: "Honors & Awards",
+  description:
+    "Explore Adil Mukhi's indexed honors and awards pages, including national recognition, academic distinctions, and community awards.",
+  alternates: {
+    canonical: `${siteUrl}/honors`,
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Adil Mukhi",
+    title: "Honors & Awards",
+    description:
+      "Indexed honors and awards pages for Adil Mukhi's academic distinctions, national awards, and community recognition.",
+    url: `${siteUrl}/honors`,
+    images: [{ ...defaultOgImage, alt: "Adil Mukhi Honors and Awards" }],
+  },
+  twitter: {
+    ...defaultTwitter,
+    title: "Honors & Awards | Adil Mukhi",
+    description:
+      "Indexed honors and awards pages for Adil Mukhi's academic distinctions, national awards, and community recognition.",
+  },
+}
+
+export const testimonialsIndexMetadata: Metadata = {
+  title: "Testimonials",
+  description:
+    "Explore recommendations and testimonials from colleagues, mentors, and collaborators who have worked with Adil Mukhi.",
+  alternates: {
+    canonical: `${siteUrl}/testimonials`,
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Adil Mukhi",
+    title: "Testimonials",
+    description:
+      "Public testimonial pages featuring recommendations from colleagues, mentors, and collaborators.",
+    url: `${siteUrl}/testimonials`,
+    images: [{ ...defaultOgImage, alt: "Adil Mukhi Testimonials" }],
+  },
+  twitter: {
+    ...defaultTwitter,
+    title: "Testimonials | Adil Mukhi",
+    description: "Public testimonial pages featuring recommendations from colleagues, mentors, and collaborators.",
+  },
+}
+
+export const mediaIndexMetadata: Metadata = {
+  title: "Media Coverage",
+  description:
+    "Explore indexed media coverage pages featuring interviews, articles, and spotlights on Adil Mukhi's work.",
+  alternates: {
+    canonical: `${siteUrl}/media`,
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Adil Mukhi",
+    title: "Media Coverage",
+    description:
+      "Indexed media pages featuring interviews, articles, and public coverage of Adil Mukhi's work.",
+    url: `${siteUrl}/media`,
+    images: [{ ...defaultOgImage, alt: "Adil Mukhi Media Coverage" }],
+  },
+  twitter: {
+    ...defaultTwitter,
+    title: "Media Coverage | Adil Mukhi",
+    description: "Indexed media pages featuring interviews, articles, and public coverage of Adil Mukhi's work.",
+  },
+}
+
 export const writingPortfolioMetadata: Metadata = {
   title: "Writing Portfolio",
   description:

@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background page-transition">
       <Header />
-      <h1 className="sr-only">Adil Mukhi - Student Researcher and Aspiring Medical Professional</h1>
+      <h1 className="sr-only">Adil Mukhi - Youth Advocate, Public Speaker, Founder, and Research Leader</h1>
       <AnimatedSection>
         <Hero />
       </AnimatedSection>

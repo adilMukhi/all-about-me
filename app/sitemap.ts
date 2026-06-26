@@ -1,6 +1,13 @@
 import type { MetadataRoute } from "next"
 import { blogPosts } from "@/data/blog-posts"
+import { certificates } from "@/data/certificates"
+import { educationData } from "@/data/education"
+import { honorsAwards } from "@/data/honors-awards"
+import { mediaItems } from "@/data/media-items"
 import { portfolioItems } from "@/data/portfolio-items"
+import { workExperiences } from "@/data/work-experience"
+import { getCertificatePath, getEducationPath, getHonorPath, getMediaPath, getWorkExperiencePath, getVolunteerPath } from "@/lib/seo-paths"
+import { volunteerWork } from "@/data/volunteer-work"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
@@ -23,10 +30,46 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/experience`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/experience/drinterested`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/certificates`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/education`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/volunteer`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/honors`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/testimonials`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/background`,
@@ -116,5 +159,59 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     }))
 
-  return [...mainPages, ...blogRoutes, ...portfolioRoutes]
+  const experienceRoutes: MetadataRoute.Sitemap = workExperiences
+    .filter((experience) => experience.company !== "Dr. Interested")
+    .map((experience) => ({
+      url: `${baseUrl}${getWorkExperiencePath(experience)}`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    }))
+
+  const certificateRoutes: MetadataRoute.Sitemap = certificates.map((certificate) => ({
+    url: `${baseUrl}${getCertificatePath(certificate)}`,
+    lastModified: currentDate,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }))
+
+  const educationRoutes: MetadataRoute.Sitemap = educationData.map((education) => ({
+    url: `${baseUrl}${getEducationPath(education)}`,
+    lastModified: currentDate,
+    changeFrequency: "monthly",
+    priority: 0.65,
+  }))
+
+  const volunteerRoutes: MetadataRoute.Sitemap = volunteerWork.map((volunteer) => ({
+    url: `${baseUrl}${getVolunteerPath(volunteer)}`,
+    lastModified: currentDate,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }))
+
+  const honorRoutes: MetadataRoute.Sitemap = honorsAwards.map((award) => ({
+    url: `${baseUrl}${getHonorPath(award)}`,
+    lastModified: currentDate,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }))
+
+  const mediaRoutes: MetadataRoute.Sitemap = mediaItems.map((item) => ({
+    url: `${baseUrl}${getMediaPath(item)}`,
+    lastModified: currentDate,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }))
+
+  return [
+    ...mainPages,
+    ...blogRoutes,
+    ...portfolioRoutes,
+    ...experienceRoutes,
+    ...certificateRoutes,
+    ...educationRoutes,
+    ...volunteerRoutes,
+    ...honorRoutes,
+    ...mediaRoutes,
+  ]
 }

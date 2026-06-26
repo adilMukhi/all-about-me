@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button"
 import { Maximize2 } from "lucide-react"
 import { volunteerWork } from "@/data/volunteer-work"
 import VolunteerWorkModal from "@/components/volunteer-work-modal"
+import Link from "next/link"
+import { getVolunteerPath } from "@/lib/seo-paths"
 
 const experiences = volunteerWork
 
@@ -113,7 +115,9 @@ export default function VolunteerWork() {
                 <>
                   <CardHeader className="pb-3">
                     <CardTitle className="text-lg" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
-                      {exp.role}
+                      <Link href={getVolunteerPath(exp)} className="hover:text-primary transition-colors" onClick={(e) => e.stopPropagation()}>
+                        {exp.role}
+                      </Link>
                       {exp.progression && exp.progression.length > 0 && (
                         <div className="text-sm font-normal text-muted-foreground mt-2">
                           {exp.progression.map((role, index) => (
@@ -151,6 +155,13 @@ export default function VolunteerWork() {
                           <span className="text-xs text-muted-foreground px-2 py-1">+{exp.skills.length - 2}</span>
                         )}
                       </div>
+                      <div className="mt-4">
+                        <Button asChild size="sm" variant="outline">
+                          <Link href={getVolunteerPath(exp)} onClick={(e) => e.stopPropagation()}>
+                            Open page
+                          </Link>
+                        </Button>
+                      </div>
                     </div>
                   </CardContent>
                 </>
@@ -165,7 +176,9 @@ export default function VolunteerWork() {
                       className="rounded-lg object-cover mx-auto mb-2"
                     />
                     <h3 className="font-semibold text-sm mb-1" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
-                      {exp.role}
+                      <Link href={getVolunteerPath(exp)} className="hover:text-primary transition-colors" onClick={(e) => e.stopPropagation()}>
+                        {exp.role}
+                      </Link>
                       {exp.progression && exp.progression.length > 0 && (
                         <div className="text-xs font-normal text-muted-foreground mt-1">
                           {exp.progression.map((role, index) => (
@@ -178,6 +191,13 @@ export default function VolunteerWork() {
                     </h3>
                     <p className="text-xs text-muted-foreground mb-1">{exp.organization}</p>
                     <p className="text-xs text-muted-foreground">{exp.period}</p>
+                    <div className="mt-3">
+                      <Button asChild size="sm" variant="outline">
+                        <Link href={getVolunteerPath(exp)} onClick={(e) => e.stopPropagation()}>
+                          Open page
+                        </Link>
+                      </Button>
+                    </div>
                   </div>
                 </CardContent>
               )}

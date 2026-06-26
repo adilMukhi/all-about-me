@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button"
 import { Maximize2 } from "lucide-react"
 import { honorsAwards } from "@/data/honors-awards"
 import HonorsAwardsModal from "@/components/honors-awards-modal"
+import Link from "next/link"
+import { getHonorPath } from "@/lib/seo-paths"
 
 const awards = honorsAwards
 
@@ -114,7 +116,9 @@ export default function HonorsAwards() {
                 <>
                   <CardHeader className="pb-3">
                     <CardTitle className="text-lg" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
-                      {award.title}
+                      <Link href={getHonorPath(award)} className="hover:text-primary transition-colors" onClick={(e) => e.stopPropagation()}>
+                        {award.title}
+                      </Link>
                     </CardTitle>
                     <CardDescription className="text-sm">
                       {award.issuer} | {award.year}
@@ -143,6 +147,13 @@ export default function HonorsAwards() {
                           <span className="text-xs text-muted-foreground px-2 py-1">+{award.skills.length - 2}</span>
                         )}
                       </div>
+                      <div className="mt-4">
+                        <Button asChild size="sm" variant="outline">
+                          <Link href={getHonorPath(award)} onClick={(e) => e.stopPropagation()}>
+                            Open page
+                          </Link>
+                        </Button>
+                      </div>
                     </div>
                   </CardContent>
                 </>
@@ -157,10 +168,19 @@ export default function HonorsAwards() {
                       className="rounded-lg object-cover mx-auto mb-2"
                     />
                     <h3 className="font-semibold text-sm mb-1" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
-                      {award.title}
+                      <Link href={getHonorPath(award)} className="hover:text-primary transition-colors" onClick={(e) => e.stopPropagation()}>
+                        {award.title}
+                      </Link>
                     </h3>
                     <p className="text-xs text-muted-foreground mb-1">{award.issuer}</p>
                     <p className="text-xs text-muted-foreground">{award.year}</p>
+                    <div className="mt-3">
+                      <Button asChild size="sm" variant="outline">
+                        <Link href={getHonorPath(award)} onClick={(e) => e.stopPropagation()}>
+                          Open page
+                        </Link>
+                      </Button>
+                    </div>
                   </div>
                 </CardContent>
               )}

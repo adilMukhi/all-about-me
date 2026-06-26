@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button"
 import { Maximize2 } from "lucide-react"
 import { workExperiences } from "@/data/work-experience"
 import WorkExperienceModal from "@/components/work-experience-modal"
+import Link from "next/link"
+import { getWorkExperiencePath } from "@/lib/seo-paths"
 
 const experiences = workExperiences
 
@@ -100,10 +102,10 @@ export default function WorkExperience() {
                   size="sm"
                   variant="secondary"
                   className="h-6 w-6 p-0 bg-background/80 backdrop-blur-sm hover:bg-background/90"
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    openExperience(exp)
-                  }}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      openExperience(exp)
+                    }}
                 >
                   <Maximize2 className="h-3 w-3" />
                 </Button>
@@ -113,7 +115,13 @@ export default function WorkExperience() {
                 <>
                   <CardHeader className="pb-3">
                     <CardTitle className="text-lg" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
-                      {exp.title}
+                      <Link
+                        href={getWorkExperiencePath(exp)}
+                        className="hover:text-primary transition-colors"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {exp.title}
+                      </Link>
                       {exp.progression && exp.progression.length > 0 && (
                         <div className="text-sm font-normal text-muted-foreground mt-2">
                           {exp.progression.map((role, index) => (
@@ -151,6 +159,13 @@ export default function WorkExperience() {
                           <span className="text-xs text-muted-foreground px-2 py-1">+{exp.skills.length - 2}</span>
                         )}
                       </div>
+                      <div className="mt-4">
+                        <Button asChild size="sm" variant="outline">
+                          <Link href={getWorkExperiencePath(exp)} onClick={(e) => e.stopPropagation()}>
+                            Open page
+                          </Link>
+                        </Button>
+                      </div>
                     </div>
                   </CardContent>
                 </>
@@ -165,7 +180,13 @@ export default function WorkExperience() {
                       className="rounded-lg object-cover mx-auto mb-2"
                     />
                     <h3 className="font-semibold text-sm mb-1" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
-                      {exp.title}
+                      <Link
+                        href={getWorkExperiencePath(exp)}
+                        className="hover:text-primary transition-colors"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {exp.title}
+                      </Link>
                       {exp.progression && exp.progression.length > 0 && (
                         <div className="text-xs font-normal text-muted-foreground mt-1">
                           {exp.progression.map((role, index) => (
@@ -178,6 +199,13 @@ export default function WorkExperience() {
                     </h3>
                     <p className="text-xs text-muted-foreground mb-1">{exp.company}</p>
                     <p className="text-xs text-muted-foreground">{exp.period}</p>
+                    <div className="mt-3">
+                      <Button asChild size="sm" variant="outline">
+                        <Link href={getWorkExperiencePath(exp)} onClick={(e) => e.stopPropagation()}>
+                          Open page
+                        </Link>
+                      </Button>
+                    </div>
                   </div>
                 </CardContent>
               )}
