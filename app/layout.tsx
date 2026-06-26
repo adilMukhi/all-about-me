@@ -19,14 +19,39 @@ const socialProfiles = [
   "https://www.youtube.com/@AdilMukhi",
 ]
 const siteAliases = ["https://adilmukhi.vercel.app/", "https://adilm.drinterested.org/"]
+const drInterestedStats = [
+  "367 executives",
+  "1,700 members",
+  "106 countries",
+  "20+ events",
+  "160,000 impacted",
+  "400+ mentor hours",
+  "900 volunteers",
+  "12,169 followers",
+  "752 posts",
+  "3,713,406 impressions",
+  "Revenue $5,233.70",
+  "Operating income: net loss of $81.01",
+]
 const personKeywords = [
   "youth advocacy",
   "public speaking",
+  "public speaker",
+  "speaker",
+  "keynote speaker",
   "mental health",
   "digital rights",
   "research",
   "healthcare advocacy",
   "community leadership",
+  "advising",
+  "consulting",
+  "workshop facilitation",
+  "Greater Toronto Area",
+  "Toronto speaker",
+  "Mississauga speaker",
+  "Ontario speaker",
+  "global speaker",
   "education",
   "social impact",
   "service consulting",
@@ -192,6 +217,18 @@ export default function RootLayout({
               founder: {
                 "@id": `${siteUrl}/#person`,
               },
+              description:
+                "Dr. Interested is a youth-led global organization founded by Adil Mukhi. It serves as a platform for public speaking, advising, consulting, mentorship, and youth leadership across the Greater Toronto Area and worldwide. Stats: 367 executives, 1,700 members, 106 countries, 20+ events, 160,000 impacted, 400+ mentor hours, 900 volunteers, 12,169 followers, 752 posts, and 3,713,406 impressions.",
+              sameAs: [...siteAliases, ...socialProfiles],
+              knowsAbout: [
+                "public speaking",
+                "advising",
+                "consulting",
+                "youth leadership",
+                "mentorship",
+                "community engagement",
+                "public health advocacy",
+              ],
               sameAs: [...siteAliases, ...socialProfiles],
             },
             {
@@ -202,9 +239,9 @@ export default function RootLayout({
               url: siteUrl,
               mainEntityOfPage: siteUrl,
               image: `${siteUrl}/pictures/adil-mukhi-formal-headshot.jpg`,
-              jobTitle: "Youth Advocate, Public Speaker, Founder & Executive Director",
+              jobTitle: "Youth Advocate, Public Speaker, Advisor, Consultant & Founder",
               description:
-                "Adil Mukhi is a youth advocate, public speaker, founder of Dr. Interested, and community leader focused on mental health, education, and social impact.",
+                "Adil Mukhi is a youth advocate, public speaker, advisor, consultant, founder of Dr. Interested, and community leader focused on mental health, education, social impact, and youth empowerment across the Greater Toronto Area and worldwide. Dr. Interested stats: 367 executives, 1,700 members, 106 countries, 20+ events, 160,000 impacted, 400+ mentor hours, 900 volunteers, 12,169 followers, 752 posts, 3,713,406 impressions, revenue $5,233.70, and operating income: net loss of $81.01.",
               knowsAbout: personKeywords,
               award: ["Ontario Volunteer Service Award", "Outstanding Youth Award"],
               memberOf: [

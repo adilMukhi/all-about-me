@@ -17,7 +17,7 @@ const defaultTwitter = {
 export const homeMetadata: Metadata = {
   title: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker",
   description:
-    "Adil Mukhi is a youth advocate, public speaker, and changemaker. Founder and Executive Director of Dr. Interested, an organization impacting 160,000+ individuals across 106 countries with 1,400+ members. TEDx speaker, Ontario Volunteer Service Award recipient, and advocate for mental health and youth empowerment.",
+    "Adil Mukhi is a youth advocate, public speaker, advisor, consultant, and changemaker from the Greater Toronto Area. Founder and Executive Director of Dr. Interested, an organization impacting 160,000+ individuals across 106 countries with 1,700 members, 367 executives, 400+ mentor hours, and 20+ events. TEDx speaker, Ontario Volunteer Service Award recipient, and advocate for mental health and youth empowerment.",
   alternates: {
     canonical: `${siteUrl}/`,
   },
@@ -26,7 +26,7 @@ export const homeMetadata: Metadata = {
     siteName: "Adil Mukhi",
     title: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker",
     description:
-      "Youth advocate, public speaker, and changemaker. Founder and Executive Director of Dr. Interested, an organization reaching 160,000+ individuals across 106 countries with 1,400+ members. TEDx speaker and advocate for mental health and youth empowerment.",
+      "Youth advocate, public speaker, advisor, consultant, and changemaker from the Greater Toronto Area. Founder and Executive Director of Dr. Interested, an organization reaching 160,000+ individuals across 106 countries with 1,700 members, 367 executives, 400+ mentor hours, and 20+ events. TEDx speaker and advocate for mental health and youth empowerment.",
     url: `${siteUrl}/`,
     images: [
       { ...defaultOgImage, alt: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker" },
@@ -36,14 +36,14 @@ export const homeMetadata: Metadata = {
     ...defaultTwitter,
     title: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker",
     description:
-      "Youth advocate, public speaker, and changemaker. Founder and Executive Director of Dr. Interested, an organization reaching 160,000+ individuals across 106 countries.",
+      "Youth advocate, public speaker, advisor, consultant, and changemaker. Founder and Executive Director of Dr. Interested, an organization reaching 160,000+ individuals across 106 countries with 1,700 members and 367 executives.",
   },
 }
 
 export const backgroundMetadata: Metadata = {
   title: "Background",
   description:
-    "Explore Adil Mukhi's background as a youth advocate and changemaker. Ontario Volunteer Service Award recipient, TEDx speaker, research volunteer at SickKids Hospital, and founder and Executive Director of Dr. Interested, an organization impacting 160,000+ individuals across 106 countries with 1,400+ members.",
+    "Explore Adil Mukhi's background as a youth advocate, public speaker, advisor, and consultant. Ontario Volunteer Service Award recipient, TEDx speaker, research volunteer at SickKids Hospital, and founder and Executive Director of Dr. Interested, an organization impacting 160,000+ individuals across 106 countries with 1,700 members, 367 executives, 400+ mentor hours, and 20+ events.",
   alternates: {
     canonical: `${siteUrl}/background`,
   },
@@ -52,7 +52,7 @@ export const backgroundMetadata: Metadata = {
     siteName: "Adil Mukhi",
     title: "Background",
     description:
-      "Youth advocate and changemaker with extensive experience in research, advocacy, and community service. Ontario Volunteer Service Award recipient and TEDx speaker.",
+      "Youth advocate, public speaker, advisor, and consultant with extensive experience in research, advocacy, mentoring, and community service across the Greater Toronto Area and worldwide. Ontario Volunteer Service Award recipient and TEDx speaker.",
     url: `${siteUrl}/background`,
     images: [
       { ...defaultOgImage, alt: "Adil Mukhi's Background" },
@@ -62,7 +62,7 @@ export const backgroundMetadata: Metadata = {
     ...defaultTwitter,
     title: "Background | Adil Mukhi",
     description:
-      "Youth advocate and changemaker with extensive experience in research, advocacy, and community service.",
+      "Youth advocate, public speaker, advisor, and consultant with extensive experience in research, advocacy, and community service.",
   },
 }
 
@@ -409,7 +409,19 @@ export const artSportsPortfolioMetadata: Metadata = {
 export const servicesMetadata: Metadata = {
   title: "Services - Speaking & Consulting",
   description:
-    "Book Adil Mukhi for speaking engagements and consulting services. TEDx speaker offering keynote presentations, workshops, and youth advocacy consulting. Free services for meaningful causes worldwide.",
+    "Book Adil Mukhi for speaking engagements, advising, and consulting services. TEDx speaker offering keynote presentations, workshops, youth advocacy consulting, and leadership sessions across the Greater Toronto Area and worldwide.",
+  keywords: [
+    "Mississauga public speaker hire",
+    "Mississauga youth public speaker",
+    "Greater Toronto Area speaker",
+    "youth advisor",
+    "consultant",
+    "keynote speaker",
+    "speaking engagements",
+    "public speaking services",
+    "youth advocacy consulting",
+    "GTA speaker",
+  ],
   alternates: {
     canonical: `${siteUrl}/services`,
   },
@@ -418,7 +430,7 @@ export const servicesMetadata: Metadata = {
     siteName: "Adil Mukhi",
     title: "Services - Speaking & Consulting",
     description:
-      "Professional speaking and consulting services by youth advocate and TEDx speaker Adil Mukhi. Specializing in youth advocacy, mental health, and policy consultation.",
+      "Professional speaking, advising, and consulting services by youth advocate and TEDx speaker Adil Mukhi. Specializing in youth advocacy, mental health, public engagement, and policy consultation.",
     url: `${siteUrl}/services`,
     images: [
       { ...defaultOgImage, alt: "Adil Mukhi's Speaking & Consulting Services" },
@@ -426,9 +438,9 @@ export const servicesMetadata: Metadata = {
   },
   twitter: {
     ...defaultTwitter,
-    title: "Services | Adil Mukhi",
+    title: "Mississauga Public Speaker Hire | Adil Mukhi",
     description:
-      "Professional speaking and consulting services by youth advocate and TEDx speaker Adil Mukhi.",
+      "Professional speaking, advising, and consulting services by youth advocate and TEDx speaker Adil Mukhi.",
   },
 }
 

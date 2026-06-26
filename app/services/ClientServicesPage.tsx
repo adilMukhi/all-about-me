@@ -8,6 +8,9 @@ import { useState, useEffect } from "react"
 import SocialLinks from "@/components/social-links"
 import Image from "next/image"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
+import Script from "next/script"
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
 const CalBookingScript = () => {
   useEffect(() => {
@@ -75,6 +78,11 @@ const SpeakingEngagementsHero = () => (
       <div className="max-w-6xl mx-auto text-center space-y-8">
         <p className="text-xl leading-relaxed text-muted-foreground">
           Book Adil as your next speaker or consultant for your event, organization, or initiative.
+        </p>
+        <p className="text-lg leading-relaxed text-muted-foreground max-w-4xl mx-auto">
+          If you are looking to hire a Mississauga youth public speaker, a Greater Toronto Area keynote speaker, or a
+          youth advisor and consultant for workshops, panels, and strategy sessions, Adil works with schools,
+          nonprofits, community groups, and organizations worldwide.
         </p>
         <div className="grid md:grid-cols-2 gap-8 items-start">
           <div className="text-left">
@@ -148,7 +156,7 @@ const SpeakingEngagementsHero = () => (
               </div>
             </div>
 
-            <div className="mt-8 p-6 bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg border border-primary/30">
+            <div id="booking" className="mt-8 p-6 bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg border border-primary/30">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
                 <h4 className="text-lg font-semibold text-primary">Approximate Rates</h4>
                 <Button
@@ -229,6 +237,883 @@ const SpeakingEngagementsHero = () => (
     </div>
   </section>
 )
+
+const ServicesStructuredData = () => {
+  const siteUrl = "https://adilmukhi.vercel.app"
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}#website`,
+        url: siteUrl,
+        name: "Adil Mukhi",
+        description:
+          "Public speaking, youth advocacy, consulting, and advisory services focused on youth, education, mental health, and social impact.",
+        inLanguage: "en",
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${siteUrl}/services`,
+        url: `${siteUrl}/services`,
+        name: "Speaking & Consulting Services – Adil Mukhi",
+        isPartOf: {
+          "@id": `${siteUrl}#website`,
+        },
+        about: {
+          "@id": `${siteUrl}#adil`,
+        },
+        description:
+          "Hire youth public speaker and consultant Adil Mukhi for keynotes, workshops, panels, MC, and youth advocacy consulting.",
+        inLanguage: "en",
+        breadcrumb: {
+          "@id": `${siteUrl}/services#breadcrumb`,
+        },
+        mainEntity: {
+          "@id": `${siteUrl}/services#professional-service`,
+        },
+        speakable: {
+          "@type": "SpeakableSpecification",
+          xpath: [
+            "/html/head/title",
+            "/html/body//h1",
+            "/html/body//h2",
+            "/html/body//section[@id='services']",
+          ],
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${siteUrl}/services#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            item: {
+              "@id": `${siteUrl}#website`,
+              name: "Home",
+            },
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            item: {
+              "@id": `${siteUrl}/services`,
+              name: "Services",
+            },
+          },
+        ],
+      },
+      {
+        "@type": "Person",
+        "@id": `${siteUrl}#adil`,
+        name: "Adil Mukhi",
+        url: siteUrl,
+        givenName: "Adil",
+        familyName: "Mukhi",
+        jobTitle: "Public Speaker, Youth Advocate, Consultant, and Advisor",
+        description:
+          "Youth public speaker, advocate, and consultant specializing in youth leadership, mental health, education, policy, and community impact.",
+        sameAs: [siteUrl],
+        knowsAbout: [
+          "Youth Leadership",
+          "Youth Advocacy",
+          "Youth Engagement",
+          "Mental Health",
+          "Mental Health Literacy",
+          "Student Leadership",
+          "Health Equity",
+          "Healthcare Careers",
+          "Medicine",
+          "Medical Education",
+          "Public Speaking",
+          "Keynote Speaking",
+          "Workshop Facilitation",
+          "Master of Ceremonies",
+          "Conference Facilitation",
+          "Panel Moderation",
+          "Education",
+          "Educational Leadership",
+          "Student Success",
+          "Volunteer Management",
+          "Volunteer Engagement",
+          "Community Development",
+          "Public Policy",
+          "Youth Policy",
+          "Artificial Intelligence in Education",
+          "Research",
+          "Knowledge Mobilization",
+          "Health Research",
+          "Community Health",
+          "Nonprofit Leadership",
+          "Social Impact",
+          "Accessibility",
+          "Disability Advocacy",
+          "Cochlear Implant Awareness",
+          "Sports Policy",
+          "Future of Healthcare",
+          "Future of Education",
+          "Career Development",
+          "Mentorship",
+          "Science Communication",
+          "Global Citizenship",
+          "Civic Engagement",
+          "Advocacy Campaigns",
+        ],
+        areaServed: [
+          {
+            "@type": "Country",
+            name: "Canada",
+          },
+          {
+            "@type": "Country",
+            name: "United States",
+          },
+          {
+            "@type": "Country",
+            name: "United Kingdom",
+          },
+          {
+            "@type": "Country",
+            name: "Australia",
+          },
+          {
+            "@type": "AdministrativeArea",
+            name: "Ontario",
+          },
+          {
+            "@type": "City",
+            name: "Mississauga",
+          },
+          {
+            "@type": "City",
+            name: "Toronto",
+          },
+          {
+            "@type": "Place",
+            name: "Worldwide (Virtual)",
+          },
+        ],
+        award: [
+          "Ontario Volunteer Service Award",
+          "Top 50 Youth in Canada",
+          "Canadian Biology Olympiad Bronze Medal",
+          "Canadian Computing Competition Distinction",
+          "Beaver Computing Challenge Distinction",
+          "TEDx Speaker",
+          "Published Author",
+        ],
+        hasOccupation: [
+          {
+            "@type": "Occupation",
+            name: "Public Speaker",
+            description:
+              "Keynote speaker, guest speaker, conference speaker, and youth-focused presenter for schools, organizations, and events.",
+          },
+          {
+            "@type": "Occupation",
+            name: "Consultant and Advisor",
+            description:
+              "Youth advisory, policy feedback, curriculum input, and strategic consulting for organizations and institutions.",
+          },
+          {
+            "@type": "Occupation",
+            name: "Youth Advocate",
+            description:
+              "Advocacy for youth mental health, education, accessibility, and social impact across communities and institutions.",
+          },
+        ],
+        memberOf: [
+          {
+            "@id": `${siteUrl}#dr-interested`,
+          },
+          {
+            "@id": `${siteUrl}#future-interested`,
+          },
+        ],
+        hasOfferCatalog: {
+          "@id": `${siteUrl}/services#offer-catalog`,
+        },
+      },
+      {
+        "@type": "Organization",
+        "@id": `${siteUrl}#dr-interested`,
+        name: "Dr. Interested",
+        description:
+          "Youth-led initiative and organization focused on curiosity, learning, and future-focused education and health exploration.",
+      },
+      {
+        "@type": "Organization",
+        "@id": `${siteUrl}#future-interested`,
+        name: "Future Interested",
+        description:
+          "Youth organization and platform empowering students to explore future careers, education, and social impact pathways.",
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": `${siteUrl}/services#professional-service`,
+        name: "Professional Speaking and Consulting Services",
+        provider: {
+          "@id": `${siteUrl}#adil`,
+        },
+        serviceType: "Public Speaking and Consulting",
+        areaServed: [
+          {
+            "@type": "Country",
+            name: "Canada",
+          },
+          {
+            "@type": "Country",
+            name: "United States",
+          },
+          {
+            "@type": "Country",
+            name: "United Kingdom",
+          },
+          {
+            "@type": "Country",
+            name: "Australia",
+          },
+          {
+            "@type": "AdministrativeArea",
+            name: "Ontario",
+          },
+          {
+            "@type": "City",
+            name: "Mississauga",
+          },
+          {
+            "@type": "City",
+            name: "Toronto",
+          },
+          {
+            "@type": "Place",
+            name: "Worldwide (Virtual)",
+          },
+        ],
+        audience: {
+          "@type": "Audience",
+          audienceType: [
+            "Schools",
+            "School Boards",
+            "Universities",
+            "Colleges",
+            "Students",
+            "Teachers",
+            "Parents",
+            "Healthcare Organizations",
+            "Hospitals",
+            "Medical Schools",
+            "Governments",
+            "Municipal Governments",
+            "Federal Organizations",
+            "Youth Organizations",
+            "Community Organizations",
+            "Foundations",
+            "Nonprofits",
+            "Corporations",
+            "Professional Associations",
+            "Conferences",
+            "Summits",
+            "Libraries",
+            "Sports Organizations",
+            "Mental Health Organizations",
+            "Volunteer Organizations",
+            "Research Institutes",
+          ],
+        },
+        hasOfferCatalog: {
+          "@id": `${siteUrl}/services#offer-catalog`,
+        },
+      },
+      {
+        "@type": "OfferCatalog",
+        "@id": `${siteUrl}/services#offer-catalog`,
+        name: "Professional Speaking & Consulting Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            "@id": `${siteUrl}/services#offer-keynote-speaking`,
+            itemOffered: {
+              "@id": `${siteUrl}/services#service-keynote-speaking`,
+            },
+            priceSpecification: [
+              {
+                "@type": "PriceSpecification",
+                price: "400",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "For-Profit Company",
+                priceType: "InPerson",
+                description:
+                  "Approximate in-person keynote speaking rate for for-profit companies, plus travel, accommodation, and meals if needed.",
+              },
+              {
+                "@type": "PriceSpecification",
+                price: "200",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "For-Profit Company",
+                priceType: "Online",
+                description: "Approximate online keynote speaking rate for for-profit companies.",
+              },
+              {
+                "@type": "PriceSpecification",
+                price: "200",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "Nonprofit Organization",
+                priceType: "InPerson",
+                description:
+                  "Approximate in-person keynote speaking rate for nonprofits and social good organizations, plus travel, accommodation, and meals if needed.",
+              },
+              {
+                "@type": "PriceSpecification",
+                price: "100",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "Nonprofit Organization",
+                priceType: "Online",
+                description: "Approximate online keynote speaking rate for nonprofits and social good organizations.",
+              },
+            ],
+            url: `${siteUrl}/services#booking`,
+          },
+          {
+            "@type": "Offer",
+            "@id": `${siteUrl}/services#offer-workshops`,
+            itemOffered: {
+              "@id": `${siteUrl}/services#service-interactive-workshops`,
+            },
+            priceSpecification: [
+              {
+                "@type": "PriceSpecification",
+                price: "400",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "For-Profit Company",
+                priceType: "InPerson",
+                description:
+                  "Approximate in-person interactive workshop rate for for-profit companies, plus travel, accommodation, and meals if needed.",
+              },
+              {
+                "@type": "PriceSpecification",
+                price: "200",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "For-Profit Company",
+                priceType: "Online",
+                description: "Approximate online interactive workshop rate for for-profit companies.",
+              },
+              {
+                "@type": "PriceSpecification",
+                price: "200",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "Nonprofit Organization",
+                priceType: "InPerson",
+                description:
+                  "Approximate in-person interactive workshop rate for nonprofits and social good organizations, plus travel, accommodation, and meals if needed.",
+              },
+              {
+                "@type": "PriceSpecification",
+                price: "100",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "Nonprofit Organization",
+                priceType: "Online",
+                description: "Approximate online interactive workshop rate for nonprofits and social good organizations.",
+              },
+            ],
+            url: `${siteUrl}/services#booking`,
+          },
+          {
+            "@type": "Offer",
+            "@id": `${siteUrl}/services#offer-panel-discussions`,
+            itemOffered: {
+              "@id": `${siteUrl}/services#service-panel-discussions`,
+            },
+            priceSpecification: [
+              {
+                "@type": "PriceSpecification",
+                price: "400",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "For-Profit Company",
+                priceType: "InPerson",
+                description:
+                  "Approximate in-person panel speaking or moderation rate for for-profit companies, plus travel, accommodation, and meals if needed.",
+              },
+              {
+                "@type": "PriceSpecification",
+                price: "200",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "For-Profit Company",
+                priceType: "Online",
+                description: "Approximate online panel speaking or moderation rate for for-profit companies.",
+              },
+              {
+                "@type": "PriceSpecification",
+                price: "200",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "Nonprofit Organization",
+                priceType: "InPerson",
+                description:
+                  "Approximate in-person panel speaking or moderation rate for nonprofits and social good organizations, plus travel, accommodation, and meals if needed.",
+              },
+              {
+                "@type": "PriceSpecification",
+                price: "100",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "Nonprofit Organization",
+                priceType: "Online",
+                description:
+                  "Approximate online panel speaking or moderation rate for nonprofits and social good organizations.",
+              },
+            ],
+            url: `${siteUrl}/services#booking`,
+          },
+          {
+            "@type": "Offer",
+            "@id": `${siteUrl}/services#offer-event-mc`,
+            itemOffered: {
+              "@id": `${siteUrl}/services#service-event-facilitation-mc`,
+            },
+            priceSpecification: [
+              {
+                "@type": "PriceSpecification",
+                price: "400",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "For-Profit Company",
+                priceType: "InPerson",
+                description:
+                  "Approximate in-person event facilitation and MC rate for for-profit companies, plus travel, accommodation, and meals if needed.",
+              },
+              {
+                "@type": "PriceSpecification",
+                price: "200",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "For-Profit Company",
+                priceType: "Online",
+                description: "Approximate online event facilitation and MC rate for for-profit companies.",
+              },
+              {
+                "@type": "PriceSpecification",
+                price: "200",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "Nonprofit Organization",
+                priceType: "InPerson",
+                description:
+                  "Approximate in-person event facilitation and MC rate for nonprofits and social good organizations, plus travel, accommodation, and meals if needed.",
+              },
+              {
+                "@type": "PriceSpecification",
+                price: "100",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "Nonprofit Organization",
+                priceType: "Online",
+                description:
+                  "Approximate online event facilitation and MC rate for nonprofits and social good organizations.",
+              },
+            ],
+            url: `${siteUrl}/services#booking`,
+          },
+          {
+            "@type": "Offer",
+            "@id": `${siteUrl}/services#offer-interviews`,
+            itemOffered: {
+              "@id": `${siteUrl}/services#service-interviews`,
+            },
+            priceSpecification: [
+              {
+                "@type": "PriceSpecification",
+                price: "200",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "For-Profit Company",
+                priceType: "Online",
+                description:
+                  "Approximate online interview, podcast guest, or media appearance rate for for-profit organizations.",
+              },
+              {
+                "@type": "PriceSpecification",
+                price: "100",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "Nonprofit Organization",
+                priceType: "Online",
+                description:
+                  "Approximate online interview, podcast guest, or media appearance rate for nonprofits and social good organizations.",
+              },
+            ],
+            url: `${siteUrl}/services#booking`,
+          },
+          {
+            "@type": "Offer",
+            "@id": `${siteUrl}/services#offer-consulting`,
+            itemOffered: {
+              "@id": `${siteUrl}/services#service-consulting`,
+            },
+            priceSpecification: [
+              {
+                "@type": "PriceSpecification",
+                price: "150",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "Organization",
+                priceType: "InPerson",
+                description:
+                  "Approximate in-person consulting rate for youth advocacy, engagement, policy review, research collaboration, and curriculum input.",
+              },
+              {
+                "@type": "PriceSpecification",
+                price: "75",
+                priceCurrency: "CAD",
+                eligibleCustomerType: "Organization",
+                priceType: "Online",
+                description:
+                  "Approximate online consulting rate for youth advocacy, engagement, policy review, research collaboration, and curriculum input.",
+              },
+            ],
+            url: `${siteUrl}/services#booking`,
+          },
+        ],
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/services#service-keynote-speaking`,
+        name: "Keynote Speaking",
+        serviceType: "Keynote Speaker",
+        provider: {
+          "@id": `${siteUrl}#adil`,
+        },
+        areaServed: [
+          {
+            "@type": "Place",
+            name: "Worldwide (Virtual)",
+          },
+          {
+            "@type": "City",
+            name: "Mississauga",
+          },
+          {
+            "@type": "City",
+            name: "Toronto",
+          },
+          {
+            "@type": "AdministrativeArea",
+            name: "Ontario",
+          },
+          {
+            "@type": "Country",
+            name: "Canada",
+          },
+        ],
+        audience: {
+          "@type": "Audience",
+          audienceType: [
+            "Schools",
+            "School Boards",
+            "Universities",
+            "Colleges",
+            "Youth Organizations",
+            "Community Organizations",
+            "Healthcare Organizations",
+            "Nonprofits",
+            "Corporations",
+            "Conferences",
+            "Summits",
+          ],
+        },
+        description:
+          "Keynote presentations on youth leadership, mental health, education, social impact, accessibility, and future of healthcare and education.",
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/services#service-interactive-workshops`,
+        name: "Interactive Workshops",
+        serviceType: "Workshop Facilitation",
+        provider: {
+          "@id": `${siteUrl}#adil`,
+        },
+        areaServed: [
+          {
+            "@type": "Place",
+            name: "Worldwide (Virtual)",
+          },
+          {
+            "@type": "City",
+            name: "Mississauga",
+          },
+          {
+            "@type": "City",
+            name: "Toronto",
+          },
+          {
+            "@type": "AdministrativeArea",
+            name: "Ontario",
+          },
+          {
+            "@type": "Country",
+            name: "Canada",
+          },
+        ],
+        audience: {
+          "@type": "Audience",
+          audienceType: [
+            "Students",
+            "Teachers",
+            "Parents",
+            "Youth Organizations",
+            "Community Organizations",
+            "Mental Health Organizations",
+            "Volunteer Organizations",
+          ],
+        },
+        description:
+          "Interactive workshops on youth mental health literacy, leadership, advocacy, global citizenship, civic engagement, and career development.",
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/services#service-panel-discussions`,
+        name: "Panel Discussions",
+        serviceType: ["Panel Speaker", "Panel Moderator"],
+        provider: {
+          "@id": `${siteUrl}#adil`,
+        },
+        areaServed: [
+          {
+            "@type": "Place",
+            name: "Worldwide (Virtual)",
+          },
+          {
+            "@type": "City",
+            name: "Mississauga",
+          },
+          {
+            "@type": "City",
+            name: "Toronto",
+          },
+          {
+            "@type": "AdministrativeArea",
+            name: "Ontario",
+          },
+          {
+            "@type": "Country",
+            name: "Canada",
+          },
+        ],
+        audience: {
+          "@type": "Audience",
+          audienceType: [
+            "Conferences",
+            "Summits",
+            "Professional Associations",
+            "Youth Organizations",
+            "Community Organizations",
+            "Governments",
+          ],
+        },
+        description:
+          "Panel speaking and moderation on youth policy, health equity, education, accessibility, social impact, and future-focused topics.",
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/services#service-event-facilitation-mc`,
+        name: "Event Facilitation & MC",
+        serviceType: ["Master of Ceremonies", "Host", "Conference Facilitator"],
+        provider: {
+          "@id": `${siteUrl}#adil`,
+        },
+        areaServed: [
+          {
+            "@type": "Place",
+            name: "Worldwide (Virtual)",
+          },
+          {
+            "@type": "City",
+            name: "Mississauga",
+          },
+          {
+            "@type": "City",
+            name: "Toronto",
+          },
+          {
+            "@type": "AdministrativeArea",
+            name: "Ontario",
+          },
+          {
+            "@type": "Country",
+            name: "Canada",
+          },
+        ],
+        audience: {
+          "@type": "Audience",
+          audienceType: [
+            "Conferences",
+            "Summits",
+            "Schools",
+            "Universities",
+            "Youth Organizations",
+            "Community Organizations",
+          ],
+        },
+        description:
+          "Event facilitation, hosting, and MC services for youth events, conferences, summits, and community gatherings.",
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/services#service-interviews`,
+        name: "Interviews & Media Appearances",
+        serviceType: ["Podcast Guest", "Interview Guest", "Webinar Speaker"],
+        provider: {
+          "@id": `${siteUrl}#adil`,
+        },
+        areaServed: [
+          {
+            "@type": "Place",
+            name: "Worldwide (Virtual)",
+          },
+        ],
+        audience: {
+          "@type": "Audience",
+          audienceType: [
+            "Podcasts",
+            "Media Outlets",
+            "Webinar Hosts",
+            "Online Conferences",
+          ],
+        },
+        description:
+          "Interviews, podcast guest appearances, and webinar speaking on youth advocacy, mental health, education, and social impact.",
+      },
+      {
+        "@type": "Service",
+        "@id": `${siteUrl}/services#service-consulting`,
+        name: "Youth Advocacy & Consulting",
+        serviceType: [
+          "Consultant",
+          "Advisor",
+          "Youth Advisor",
+          "Strategic Advisor",
+          "Research Collaborator",
+          "Curriculum Reviewer",
+          "Policy Consultant",
+        ],
+        provider: {
+          "@id": `${siteUrl}#adil`,
+        },
+        areaServed: [
+          {
+            "@type": "Place",
+            name: "Worldwide (Virtual)",
+          },
+          {
+            "@type": "Country",
+            name: "Canada",
+          },
+        ],
+        audience: {
+          "@type": "Audience",
+          audienceType: [
+            "Governments",
+            "School Boards",
+            "Universities",
+            "Colleges",
+            "Healthcare Organizations",
+            "Nonprofits",
+            "Foundations",
+            "Youth Organizations",
+            "Research Institutes",
+          ],
+        },
+        description:
+          "Consulting services in youth advocacy and engagement, mental health program development, policy review and feedback, research collaboration, and educational curriculum input.",
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${siteUrl}/services#faq`,
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "Can I hire Adil Mukhi as a public speaker in Mississauga or the Greater Toronto Area?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Adil Mukhi is available for speaking engagements in Mississauga, Toronto, the Greater Toronto Area, and worldwide (virtual).",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Does Adil provide both speaking and consulting services?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Adil offers keynote speaking, interactive workshops, panels, event facilitation and MC, interviews, and consulting services including youth advocacy, mental health program development, policy review, research collaboration, and curriculum input.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What topics does Adil speak on?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Adil speaks on youth leadership, youth advocacy, mental health and mental health literacy, education, student success, health equity, accessibility, disability advocacy, cochlear implant awareness, global citizenship, civic engagement, social impact, and the future of healthcare and education.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What audiences does Adil work with?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Adil works with schools, school boards, universities, colleges, students, teachers, parents, youth organizations, community organizations, nonprofits, foundations, healthcare organizations, hospitals, medical schools, governments, corporations, professional associations, conferences, summits, sports organizations, mental health organizations, volunteer organizations, and research institutes.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Are Adil’s speaking and consulting services paid?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. All speaking and consulting services are offered as paid engagements. Rates are tailored based on event scope, format, audience, and preparation requirements, with approximate hourly rates provided for for-profit and nonprofit organizations.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What are the approximate speaking rates for for-profit organizations?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "For for-profit organizations, approximate rates are $400/hour for in-person speaking (plus travel, accommodation, and meals if needed) and $200/hour for online speaking.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What are the approximate speaking rates for nonprofits and social good organizations?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "For nonprofits and social good organizations, approximate rates are $200/hour for in-person speaking (plus travel, accommodation, and meals if needed) and $100/hour for online speaking.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What are the approximate consulting rates?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Consulting services are approximately $150/hour for in-person engagements and $75/hour for online engagements. Minimum engagement varies by project scope.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Where is Adil based and does he offer virtual services?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Adil is based in the Greater Toronto Area (Mississauga, Ontario) and offers both in-person services locally and virtual services worldwide.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How can I get a tailored quote for my event or project?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "You can request a tailored quote by booking a meeting or contacting Adil through the services page to discuss your event scope, audience, format, and preparation needs.",
+            },
+          },
+        ],
+      },
+    ],
+  }
+
+  return (
+    <Script id="services-schema" type="application/ld+json">
+      {JSON.stringify(structuredData)}
+    </Script>
+  )
+}
 
 const ServicesHero = () => (
   <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
@@ -743,7 +1628,8 @@ export default function ClientServicesPage() {
       <InstagramEmbedScript />
       <TikTokEmbedScript />
       <Header />
-      <h1 className="sr-only">Services - Adil Mukhi</h1>
+      <ServicesStructuredData />
+      <h1 className="sr-only">Adil Mukhi - Public Speaker, Advisor, and Consultant in Mississauga and the Greater Toronto Area</h1>
       <AnimatedSection>
         <SpeakingEngagementsHero />
       </AnimatedSection>
