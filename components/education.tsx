@@ -98,13 +98,6 @@ export default function Education() {
               )}
               <div className={edu.image ? "md:w-2/3" : "w-full"}>
                 <p>{edu.description}</p>
-                <div className="mt-4">
-                  <Button asChild size="sm" variant="outline">
-                    <Link href={`/background?education=${edu.slug}#education`} onClick={(e) => e.stopPropagation()}>
-                      Open page
-                    </Link>
-                  </Button>
-                </div>
               </div>
             </CardContent>
           </Card>
@@ -158,13 +151,6 @@ export default function Education() {
                       </h4>
                       <p className="text-xs text-muted-foreground truncate">{edu.institution}</p>
                       <p className="text-xs text-muted-foreground">{edu.period}</p>
-                      <div className="mt-3">
-                        <Button asChild size="sm" variant="outline">
-                          <Link href={`/background?education=${edu.slug}#education`} onClick={(e) => e.stopPropagation()}>
-                            Open page
-                          </Link>
-                        </Button>
-                      </div>
                     </div>
                   </div>
                 </div>

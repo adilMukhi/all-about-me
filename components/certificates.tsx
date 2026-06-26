@@ -107,11 +107,6 @@ export default function Certificates() {
                 className="rounded-lg object-cover"
               />
               <p>{cert.description}</p>
-              <Button asChild size="sm" variant="outline">
-                <Link href={`/background?certificate=${cert.slug || slugify(cert.name)}#certificates`} onClick={(e) => e.stopPropagation()}>
-                  Open page
-                </Link>
-              </Button>
             </CardContent>
           </Card>
         ))}
@@ -151,11 +146,6 @@ export default function Certificates() {
                     >
                       <Maximize2 className="h-3 w-3 mr-1" />
                       Expand
-                    </Button>
-                    <Button asChild size="sm" variant="outline" className="mt-2 bg-white/10 text-white border-white/20 hover:bg-white/20">
-                      <Link href={`/background?certificate=${cert.slug || slugify(cert.name)}#certificates`} onClick={(e) => e.stopPropagation()}>
-                        Open page
-                      </Link>
                     </Button>
                   </div>
                 </div>

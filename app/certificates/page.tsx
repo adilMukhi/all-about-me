@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
-import { BadgeCheck, ArrowRight, ExternalLink } from "lucide-react"
+import { BadgeCheck, ExternalLink } from "lucide-react"
 
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
@@ -75,12 +75,6 @@ export default function CertificatesIndexPage() {
                         {certificate.skills.length > 4 && <Badge variant="outline">+{certificate.skills.length - 4}</Badge>}
                       </div>
                       <div className="flex items-center justify-between gap-3 pt-2">
-                        <Button asChild size="sm">
-                          <Link href={href}>
-                            Read full page
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                          </Link>
-                        </Button>
                         {certificate.link && certificate.link.startsWith("http") && (
                           <Button asChild variant="ghost" size="sm">
                             <a href={certificate.link} target="_blank" rel="noopener noreferrer">

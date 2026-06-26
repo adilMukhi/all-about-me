@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
-import { Trophy, ArrowRight, ExternalLink } from "lucide-react"
+import { Trophy, ExternalLink } from "lucide-react"
 
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
@@ -75,12 +75,6 @@ export default function HonorsIndexPage() {
                         {award.skills.length > 4 && <Badge variant="outline">+{award.skills.length - 4}</Badge>}
                       </div>
                       <div className="flex items-center justify-between gap-3 pt-2">
-                        <Button asChild size="sm">
-                          <Link href={href}>
-                            Read full page
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                          </Link>
-                        </Button>
                         {award.link && award.link.startsWith("http") && (
                           <Button asChild variant="ghost" size="sm">
                             <a href={award.link} target="_blank" rel="noopener noreferrer">

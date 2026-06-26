@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
-import { MessageSquareQuote, ArrowRight } from "lucide-react"
+import { MessageSquareQuote } from "lucide-react"
 
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
@@ -100,12 +100,6 @@ export default function TestimonialsIndexPage() {
                         <Badge variant="secondary">{testimonial.timeKnown}</Badge>
                         <Badge variant="outline">{testimonial.connection}</Badge>
                       </div>
-                      <Button asChild size="sm">
-                        <Link href={href}>
-                          Read full page
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                      </Button>
                     </CardContent>
                   </Card>
                 )

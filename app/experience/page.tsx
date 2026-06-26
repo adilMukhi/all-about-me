@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Briefcase, ExternalLink } from "lucide-react"
+import { Briefcase, ExternalLink } from "lucide-react"
 
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
@@ -84,12 +84,6 @@ export default function ExperienceIndexPage() {
                         {experience.skills.length > 4 && <Badge variant="outline">+{experience.skills.length - 4}</Badge>}
                       </div>
                       <div className="flex items-center justify-between gap-3 pt-2">
-                        <Button asChild size="sm">
-                          <Link href={href}>
-                            Read full page
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                          </Link>
-                        </Button>
                         {experience.link && experience.link.startsWith("http") && (
                           <Button asChild variant="ghost" size="sm">
                             <a href={experience.link} target="_blank" rel="noopener noreferrer">

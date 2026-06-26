@@ -158,13 +158,6 @@ export default function WorkExperience() {
                           <span className="text-xs text-muted-foreground px-2 py-1">+{exp.skills.length - 2}</span>
                         )}
                       </div>
-                      <div className="mt-4">
-                        <Button asChild size="sm" variant="outline">
-                          <Link href={`/background?experience=${exp.slug}#work`} onClick={(e) => e.stopPropagation()}>
-                            Open page
-                          </Link>
-                        </Button>
-                      </div>
                     </div>
                   </CardContent>
                 </>
@@ -198,13 +191,6 @@ export default function WorkExperience() {
                     </h3>
                     <p className="text-xs text-muted-foreground mb-1">{exp.company}</p>
                     <p className="text-xs text-muted-foreground">{exp.period}</p>
-                    <div className="mt-3">
-                      <Button asChild size="sm" variant="outline">
-                        <Link href={`/background?experience=${exp.slug}#work`} onClick={(e) => e.stopPropagation()}>
-                          Open page
-                        </Link>
-                      </Button>
-                    </div>
                   </div>
                 </CardContent>
               )}

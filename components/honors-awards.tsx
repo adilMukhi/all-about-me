@@ -147,13 +147,6 @@ export default function HonorsAwards() {
                           <span className="text-xs text-muted-foreground px-2 py-1">+{award.skills.length - 2}</span>
                         )}
                       </div>
-                      <div className="mt-4">
-                        <Button asChild size="sm" variant="outline">
-                          <Link href={`/background?award=${slugify(`${award.title}-${award.issuer}`)}#honors`} onClick={(e) => e.stopPropagation()}>
-                            Open page
-                          </Link>
-                        </Button>
-                      </div>
                     </div>
                   </CardContent>
                 </>
@@ -174,13 +167,6 @@ export default function HonorsAwards() {
                     </h3>
                     <p className="text-xs text-muted-foreground mb-1">{award.issuer}</p>
                     <p className="text-xs text-muted-foreground">{award.year}</p>
-                    <div className="mt-3">
-                      <Button asChild size="sm" variant="outline">
-                        <Link href={`/background?award=${slugify(`${award.title}-${award.issuer}`)}#honors`} onClick={(e) => e.stopPropagation()}>
-                          Open page
-                        </Link>
-                      </Button>
-                    </div>
                   </div>
                 </CardContent>
               )}
