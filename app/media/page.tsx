@@ -9,7 +9,6 @@ import { mediaItems } from "@/data/media-items"
 import { ExternalLink, Calendar, Quote } from "lucide-react"
 import { mediaIndexMetadata } from "@/app/page-metadata"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
-import { getMediaPath } from "@/lib/seo-paths"
 
 const MediaHero = () => (
   <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
@@ -69,9 +68,9 @@ const MediaGrid = () => {
                   </span>
                 </div>
                 <h3 className="text-lg font-semibold text-primary leading-tight">
-                  <Link href={getMediaPath(item)} className="hover:underline">
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
                     {item.title}
-                  </Link>
+                  </a>
                 </h3>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Calendar className="h-4 w-4" />

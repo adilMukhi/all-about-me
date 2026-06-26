@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation"
 import { Maximize2 } from "lucide-react"
 import CertificatesModal from "./certificates-modal"
 import Link from "next/link"
-import { getCertificatePath } from "@/lib/seo-paths"
+import { slugify } from "@/lib/seo-paths"
 
 export default function Certificates() {
   const [selectedCertificate, setSelectedCertificate] = useState<(typeof certificates)[0] | null>(null)
@@ -87,7 +87,7 @@ export default function Certificates() {
             <CardHeader>
               <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
                 <Link
-                  href={getCertificatePath(cert)}
+                  href={`/background?certificate=${cert.slug || slugify(cert.name)}#certificates`}
                   className="hover:text-primary transition-colors"
                   onClick={(e) => e.stopPropagation()}
                 >
@@ -108,7 +108,7 @@ export default function Certificates() {
               />
               <p>{cert.description}</p>
               <Button asChild size="sm" variant="outline">
-                <Link href={getCertificatePath(cert)} onClick={(e) => e.stopPropagation()}>
+                <Link href={`/background?certificate=${cert.slug || slugify(cert.name)}#certificates`} onClick={(e) => e.stopPropagation()}>
                   Open page
                 </Link>
               </Button>
@@ -132,7 +132,7 @@ export default function Certificates() {
                   <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-4 text-white text-center">
                     <h4 className="font-semibold text-sm mb-2 line-clamp-2">
                       <Link
-                        href={getCertificatePath(cert)}
+                        href={`/background?certificate=${cert.slug || slugify(cert.name)}#certificates`}
                         className="hover:underline"
                         onClick={(e) => e.stopPropagation()}
                       >
@@ -153,7 +153,7 @@ export default function Certificates() {
                       Expand
                     </Button>
                     <Button asChild size="sm" variant="outline" className="mt-2 bg-white/10 text-white border-white/20 hover:bg-white/20">
-                      <Link href={getCertificatePath(cert)} onClick={(e) => e.stopPropagation()}>
+                      <Link href={`/background?certificate=${cert.slug || slugify(cert.name)}#certificates`} onClick={(e) => e.stopPropagation()}>
                         Open page
                       </Link>
                     </Button>

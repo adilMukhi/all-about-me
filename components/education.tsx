@@ -8,7 +8,6 @@ import { educationData } from "@/data/education"
 import EducationModal from "./education-modal"
 import { Maximize2 } from "lucide-react"
 import Link from "next/link"
-import { getEducationPath } from "@/lib/seo-paths"
 
 export default function Education() {
   const [selectedEducation, setSelectedEducation] = useState<(typeof educationData)[0] | null>(null)
@@ -77,7 +76,7 @@ export default function Education() {
             </div>
             <CardHeader>
               <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
-                <Link href={getEducationPath(edu)} className="hover:text-primary transition-colors" onClick={(e) => e.stopPropagation()}>
+                <Link href={`/background?education=${edu.slug}#education`} className="hover:text-primary transition-colors" onClick={(e) => e.stopPropagation()}>
                   {edu.degree}
                 </Link>
               </CardTitle>
@@ -101,7 +100,7 @@ export default function Education() {
                 <p>{edu.description}</p>
                 <div className="mt-4">
                   <Button asChild size="sm" variant="outline">
-                    <Link href={getEducationPath(edu)} onClick={(e) => e.stopPropagation()}>
+                    <Link href={`/background?education=${edu.slug}#education`} onClick={(e) => e.stopPropagation()}>
                       Open page
                     </Link>
                   </Button>
@@ -153,7 +152,7 @@ export default function Education() {
                         className="font-semibold text-sm leading-tight"
                         style={{ fontFamily: "'Bubblegum Sans', cursive" }}
                       >
-                        <Link href={getEducationPath(edu)} className="hover:text-primary transition-colors" onClick={(e) => e.stopPropagation()}>
+                        <Link href={`/background?education=${edu.slug}#education`} className="hover:text-primary transition-colors" onClick={(e) => e.stopPropagation()}>
                           {edu.degree}
                         </Link>
                       </h4>
@@ -161,7 +160,7 @@ export default function Education() {
                       <p className="text-xs text-muted-foreground">{edu.period}</p>
                       <div className="mt-3">
                         <Button asChild size="sm" variant="outline">
-                          <Link href={getEducationPath(edu)} onClick={(e) => e.stopPropagation()}>
+                          <Link href={`/background?education=${edu.slug}#education`} onClick={(e) => e.stopPropagation()}>
                             Open page
                           </Link>
                         </Button>

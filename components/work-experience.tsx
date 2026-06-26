@@ -8,7 +8,6 @@ import { Maximize2 } from "lucide-react"
 import { workExperiences } from "@/data/work-experience"
 import WorkExperienceModal from "@/components/work-experience-modal"
 import Link from "next/link"
-import { getWorkExperiencePath } from "@/lib/seo-paths"
 
 const experiences = workExperiences
 
@@ -116,7 +115,7 @@ export default function WorkExperience() {
                   <CardHeader className="pb-3">
                     <CardTitle className="text-lg" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
                       <Link
-                        href={getWorkExperiencePath(exp)}
+                        href={`/background?experience=${exp.slug}#work`}
                         className="hover:text-primary transition-colors"
                         onClick={(e) => e.stopPropagation()}
                       >
@@ -161,7 +160,7 @@ export default function WorkExperience() {
                       </div>
                       <div className="mt-4">
                         <Button asChild size="sm" variant="outline">
-                          <Link href={getWorkExperiencePath(exp)} onClick={(e) => e.stopPropagation()}>
+                          <Link href={`/background?experience=${exp.slug}#work`} onClick={(e) => e.stopPropagation()}>
                             Open page
                           </Link>
                         </Button>
@@ -181,7 +180,7 @@ export default function WorkExperience() {
                     />
                     <h3 className="font-semibold text-sm mb-1" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
                       <Link
-                        href={getWorkExperiencePath(exp)}
+                        href={`/background?experience=${exp.slug}#work`}
                         className="hover:text-primary transition-colors"
                         onClick={(e) => e.stopPropagation()}
                       >
@@ -201,7 +200,7 @@ export default function WorkExperience() {
                     <p className="text-xs text-muted-foreground">{exp.period}</p>
                     <div className="mt-3">
                       <Button asChild size="sm" variant="outline">
-                        <Link href={getWorkExperiencePath(exp)} onClick={(e) => e.stopPropagation()}>
+                        <Link href={`/background?experience=${exp.slug}#work`} onClick={(e) => e.stopPropagation()}>
                           Open page
                         </Link>
                       </Button>

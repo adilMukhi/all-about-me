@@ -153,7 +153,7 @@ export default function Testimonials() {
 
                     <h3 className="font-bold text-lg mb-1">
                       <Link
-                        href={`/testimonials/${slugify(`${testimonial.name}-${testimonial.connection}`)}`}
+                        href="/background#testimonials"
                         className="hover:text-primary transition-colors"
                       >
                         {testimonial.name}
