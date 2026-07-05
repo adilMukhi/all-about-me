@@ -53,6 +53,15 @@ export const mediaItems: MediaItem[] = [
     type: "feature",
   },
   {
+    title: "Elevate E48: How Curiosity is Shaping Canada's Next Generation of Changemakers",
+    publication: "Dixie Bloor Neighbourhood Centre",
+    date: "June 30, 2026",
+    link: "https://www.youtube.com/watch?v=5la_lzi05nQ",
+    quote:
+      "In this inspiring episode of Elevate: DBNC Leadership Podcast, we sit down with youth advocate, public speaker, researcher, and founder Adil Mukhi to explore how curiosity, resilience, and purpose can transform ideas into action. While balancing the demands of the IB program, Adil has already mentored thousands of young people, contributed to national policy conversations, led youth initiatives, and built platforms that empower the next generation of leaders. We explore why curiosity is one of the greatest leadership skills, how sports build resilience and community, the connection between mental health and advocacy, and why young people do not have to wait to make an impact.",
+    type: "interview",
+  },
+  {
     title: "Why Adil Mukhi Is Canada's Rising Youth Advocate! The TEDx Youth Leader and Founder Inspiring Change",
     publication: "The World Is Your Bowl Of Noodles",
     date: "November 23, 2025",

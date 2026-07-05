@@ -49,15 +49,20 @@ export const workExperiences: WorkExperience[] = [
   {
     title: "Camp Director",
     company: "Dixie Bloor Neighbourhood Centre",
-    period: "Summer 2025",
-    description: "Directed a nonprofit summer camp, leading 40 campers and 5 staff, ensuring safe, engaging programs and coordinating interdepartmental activities.",
-    longDescription: "As Camp Director, I managed 40 campers and 5 staff across 8 weeks, organized 3 major field trips, and collaborated with multiple departments to deliver safe, educational, and fun experiences. Focused on leadership, team coordination, and enhancing youth engagement throughout the program.",
-    stats: ["40 campers led", "5 staff managed", "8 weeks of camp", "3 field trips organized"],
+    period: "Summer 2026",
+    description: "Returned as Camp Director, leading 50 campers and 8 staff, overseeing safe and engaging programming including field trips and daily operations.",
+    longDescription: "As Camp Director, I returned to lead the summer camp program, overseeing 50 campers and a team of 4 full-time and 4 part-time staff across the full summer season. I managed daily operations, staff coordination, and program delivery while ensuring a safe, inclusive, and engaging environment. This summer included 4 field trips and continued collaboration across departments to enhance youth experiences and program quality.",
+    stats: ["50 campers led", "8 staff managed", "4 field trips organized", "Full program leadership"],
     image: "/dbnc.jpg",
-    skills: ["Leadership", "Team Management", "Youth Engagement", "Program Planning"],
+    skills: ["Leadership", "Team Management", "Youth Engagement", "Program Planning", "Operations"],
     link: "",
     slug: "camp-director",
     progression: [
+      {
+        role: "Camp Director",
+        period: "Summer 2025",
+        description: "Led 40 campers and 5 staff, overseeing program delivery, safety, and engagement across 8 weeks of camp.",
+      },
       {
         role: "Summer Camp Counselor",
         period: "Summer 2024",
