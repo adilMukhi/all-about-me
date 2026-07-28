@@ -55,7 +55,7 @@
     "input-otp": "latest",
     "jspdf": "^4.2.0",
     "lucide-react": "^0.454.0",
-    "next": "16.2.5",
+    "next": "16.2.12",
     "next-themes": "latest",
     "react": "19.2.1",
     "react-day-picker": "latest",
