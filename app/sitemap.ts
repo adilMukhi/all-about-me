@@ -134,6 +134,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
+  // Next's sitemap serializer does not XML-escape the <video:*> extension
+  // fields, so an unescaped & / < / > in a title or description produces
+  // invalid XML. Escape them here.
+  const xmlText = (value: string) =>
+    value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+
   const videoRoutes: MetadataRoute.Sitemap = videos.map((video) => {
     const publicationDate = new Date(video.date)
     const hasValidDate = !Number.isNaN(publicationDate.getTime())
@@ -144,13 +150,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: video.category === "TEDx Talk" ? 0.8 : 0.7,
       videos: [
         {
-          title: video.title.slice(0, 100),
-          thumbnail_loc: getVideoThumbnail(video, baseUrl),
-          description: video.description.slice(0, 2048),
-          player_loc:
+          title: xmlText(video.title.slice(0, 100)),
+          thumbnail_loc: xmlText(getVideoThumbnail(video, baseUrl)),
+          description: xmlText(video.description.slice(0, 2048)),
+          player_loc: xmlText(
             video.platform === "youtube"
               ? `https://www.youtube-nocookie.com/embed/${video.videoId}`
               : video.watchUrl,
+          ),
           ...(hasValidDate ? { publication_date: publicationDate.toISOString() } : {}),
         },
       ],
