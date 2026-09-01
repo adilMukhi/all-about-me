@@ -168,6 +168,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   manifest: "/site.webmanifest",
   category: "portfolio",
   generator: "Next.js",
