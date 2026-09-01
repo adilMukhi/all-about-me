@@ -64,17 +64,39 @@ export default function EducationDetailPage({ params }: { params: { slug: string
 
   const canonicalPath = getEducationPath(education)
   const pageTitle = `${education.degree} | ${education.institution}`
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: pageTitle,
-    url: `${siteUrl}${canonicalPath}`,
-    description: education.longDescription || education.description,
-    about: {
-      "@id": `${siteUrl}/#person`,
+  const canonicalUrl = `${siteUrl}${canonicalPath}`
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOccupationalProgram",
+      "@id": `${canonicalUrl}#program`,
+      name: education.degree,
+      description: education.longDescription || education.description,
+      url: canonicalUrl,
+      ...(education.courses && education.courses.length
+        ? { hasCourse: education.courses.map((c) => ({ "@type": "Course", name: c })) }
+        : {}),
+      provider: {
+        "@type": "EducationalOrganization",
+        name: education.institution,
+        ...(education.link && education.link.startsWith("http") ? { url: education.link } : {}),
+      },
     },
-    mentions: [education.institution, ...(education.achievements || []), ...(education.courses || [])],
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      name: pageTitle,
+      url: canonicalUrl,
+      description: education.longDescription || education.description,
+      isPartOf: { "@id": `${siteUrl}/#website` },
+      about: { "@id": `${siteUrl}/#person` },
+      ...(education.image ? { primaryImageOfPage: `${siteUrl}${education.image}` } : {}),
+      mainEntity: { "@id": `${canonicalUrl}#program` },
+      mentions: [education.institution, ...(education.achievements || []), ...(education.courses || [])],
+      inLanguage: "en-CA",
+    },
+  ]
 
   return (
     <>

@@ -8,6 +8,7 @@ import { portfolioItems } from "@/data/portfolio-items"
 import { workExperiences } from "@/data/work-experience"
 import { getCertificatePath, getEducationPath, getHonorPath, getMediaPath, getWorkExperiencePath, getVolunteerPath } from "@/lib/seo-paths"
 import { volunteerWork } from "@/data/volunteer-work"
+import { videos, getVideoPath, getVideoThumbnail } from "@/data/videos"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
@@ -120,24 +121,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/watch`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/profiles`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.7,
     },
-    {
-      url: `${baseUrl}/rss.xml`,
-      lastModified: currentDate,
-      changeFrequency: "daily",
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/sitemap-images.xml`,
-      lastModified: currentDate,
-      changeFrequency: "daily",
-      priority: 0.4,
-    },
   ]
+
+  const videoRoutes: MetadataRoute.Sitemap = videos.map((video) => {
+    const publicationDate = new Date(video.date)
+    const hasValidDate = !Number.isNaN(publicationDate.getTime())
+    return {
+      url: `${baseUrl}${getVideoPath(video)}`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: video.category === "TEDx Talk" ? 0.8 : 0.7,
+      videos: [
+        {
+          title: video.title.slice(0, 100),
+          thumbnail_loc: getVideoThumbnail(video, baseUrl),
+          description: video.description.slice(0, 2048),
+          player_loc:
+            video.platform === "youtube"
+              ? `https://www.youtube-nocookie.com/embed/${video.videoId}`
+              : video.watchUrl,
+          ...(hasValidDate ? { publication_date: publicationDate.toISOString() } : {}),
+        },
+      ],
+    }
+  })
 
   // Blog posts (experiences) with proper date handling
   const blogRoutes: MetadataRoute.Sitemap = blogPosts
@@ -213,5 +231,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...volunteerRoutes,
     ...honorRoutes,
     ...mediaRoutes,
+    ...videoRoutes,
   ]
 }

@@ -8,6 +8,7 @@ import PageLayout from "@/components/page-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import Script from "next/script"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import { certificateIndexMetadata } from "../page-metadata"
 import { certificates } from "@/data/certificates"
@@ -15,9 +16,35 @@ import { getCertificatePath } from "@/lib/seo-paths"
 
 export const metadata: Metadata = certificateIndexMetadata
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
+
+const certificatesStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${siteUrl}/certificates#webpage`,
+  url: `${siteUrl}/certificates`,
+  name: "Certificates & Credentials — Adil Mukhi",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  about: { "@id": `${siteUrl}/#person` },
+  inLanguage: "en-CA",
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: certificates.length,
+    itemListElement: certificates.map((certificate, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `${siteUrl}${getCertificatePath(certificate)}`,
+      name: certificate.name,
+    })),
+  },
+}
+
 export default function CertificatesIndexPage() {
   return (
     <>
+      <Script id="certificates-structured-data" type="application/ld+json">
+        {JSON.stringify(certificatesStructuredData)}
+      </Script>
       <Header />
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">

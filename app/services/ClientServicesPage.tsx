@@ -312,6 +312,8 @@ const ServicesStructuredData = () => {
         url: siteUrl,
         givenName: "Adil",
         familyName: "Mukhi",
+        email: "adilm@drinterested.org",
+        telephone: "+1-289-796-2566",
         jobTitle: "Public Speaker, Youth Advocate, Consultant, and Advisor",
         description:
           "Youth public speaker, advocate, and consultant specializing in youth leadership, mental health, education, policy, and community impact.",
@@ -522,6 +524,13 @@ const ServicesStructuredData = () => {
             "Volunteer Organizations",
             "Research Institutes",
           ],
+        },
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "speaking and consulting inquiries",
+          email: "adilm@drinterested.org",
+          telephone: "+1-289-796-2566",
+          availableLanguage: ["English", "French"],
         },
         hasOfferCatalog: {
           "@id": `${siteUrl}/services#offer-catalog`,
@@ -1223,6 +1232,18 @@ const ServicesAccordion = () => {
           >
             👉 Work With Me
           </Button>
+
+          <p className="mt-6 text-sm text-muted-foreground">
+            Prefer to reach out directly? Email{" "}
+            <a href="mailto:adilm@drinterested.org" className="text-primary underline underline-offset-2">
+              adilm@drinterested.org
+            </a>{" "}
+            or call{" "}
+            <a href="tel:+12897962566" className="text-primary underline underline-offset-2">
+              +1 289 796 2566
+            </a>
+            .
+          </p>
         </div>
       </div>
     </section>

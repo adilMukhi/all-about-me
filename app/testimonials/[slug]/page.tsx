@@ -104,17 +104,49 @@ export default function TestimonialDetailPage({ params }: { params: { slug: stri
     notFound()
   }
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: `${testimonial.name} recommends Adil Mukhi`,
-    url: `${siteUrl}/testimonials/${params.slug}`,
-    description: testimonial.testimonial,
-    about: {
-      "@id": `${siteUrl}/#person`,
-    },
-    mentions: [testimonial.relationship, testimonial.connection],
+  const canonicalUrl = `${siteUrl}/testimonials/${params.slug}`
+  const toIso = (d: string) => {
+    const parsed = new Date(d)
+    return Number.isNaN(parsed.getTime()) ? undefined : parsed.toISOString()
   }
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      name: `${testimonial.name} recommends Adil Mukhi`,
+      url: canonicalUrl,
+      description: testimonial.testimonial,
+      isPartOf: { "@id": `${siteUrl}/#website` },
+      about: { "@id": `${siteUrl}/#person` },
+      inLanguage: "en-CA",
+      mainEntity: { "@id": `${canonicalUrl}#review` },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "@id": `${canonicalUrl}#review`,
+      url: canonicalUrl,
+      reviewBody: testimonial.testimonial,
+      ...(toIso(testimonial.timeKnown) ? { datePublished: toIso(testimonial.timeKnown) } : {}),
+      itemReviewed: {
+        "@type": "Person",
+        "@id": `${siteUrl}/#person`,
+        name: "Adil Mukhi",
+      },
+      author: {
+        "@type": "Person",
+        name: testimonial.name,
+        jobTitle: testimonial.role,
+      },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: 5,
+        bestRating: 5,
+        worstRating: 1,
+      },
+    },
+  ]
 
   return (
     <>

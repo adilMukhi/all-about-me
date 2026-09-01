@@ -64,17 +64,45 @@ export default function CertificateDetailPage({ params }: { params: { slug: stri
 
   const canonicalPath = getCertificatePath(certificate)
   const pageTitle = `${certificate.name} | ${certificate.issuer}`
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: pageTitle,
-    url: `${siteUrl}${canonicalPath}`,
-    description: certificate.description,
-    about: {
-      "@id": `${siteUrl}/#person`,
+  const canonicalUrl = `${siteUrl}${canonicalPath}`
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOccupationalCredential",
+      "@id": `${canonicalUrl}#credential`,
+      name: certificate.name,
+      description: certificate.description,
+      url: canonicalUrl,
+      credentialCategory: "certificate",
+      competencyRequired: certificate.skills,
+      ...(certificate.image ? { image: `${siteUrl}${certificate.image}` } : {}),
+      recognizedBy: {
+        "@type": "Organization",
+        name: certificate.issuer,
+        ...(certificate.link && certificate.link.startsWith("http") ? { url: certificate.link } : {}),
+      },
+      about: { "@id": `${siteUrl}/#person` },
     },
-    mentions: [certificate.issuer, ...certificate.skills],
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      name: pageTitle,
+      url: canonicalUrl,
+      description: certificate.description,
+      isPartOf: { "@id": `${siteUrl}/#website` },
+      about: { "@id": `${siteUrl}/#person` },
+      ...(certificate.image ? { primaryImageOfPage: `${siteUrl}${certificate.image}` } : {}),
+      mainEntity: { "@id": `${canonicalUrl}#credential` },
+      inLanguage: "en-CA",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      hasCredential: { "@id": `${canonicalUrl}#credential` },
+    },
+  ]
 
   return (
     <>

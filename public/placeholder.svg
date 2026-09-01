@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Placeholder image">
+  <rect width="1200" height="900" fill="#e2e8f0"/>
+  <path d="M0 640l360-300 260 210 220-160 360 300v210H0z" fill="#cbd5e1"/>
+  <circle cx="900" cy="240" r="90" fill="#cbd5e1"/>
+  <text x="600" y="470" text-anchor="middle" font-family="Verdana, Geneva, sans-serif" font-size="44" fill="#64748b">Adil Mukhi</text>
+</svg>

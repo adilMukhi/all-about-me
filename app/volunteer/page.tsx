@@ -8,6 +8,7 @@ import PageLayout from "@/components/page-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import Script from "next/script"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import { volunteerIndexMetadata } from "../page-metadata"
 import { volunteerWork } from "@/data/volunteer-work"
@@ -15,9 +16,35 @@ import { getVolunteerPath } from "@/lib/seo-paths"
 
 export const metadata: Metadata = volunteerIndexMetadata
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
+
+const volunteerStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${siteUrl}/volunteer#webpage`,
+  url: `${siteUrl}/volunteer`,
+  name: "Volunteer Work — Adil Mukhi",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  about: { "@id": `${siteUrl}/#person` },
+  inLanguage: "en-CA",
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: volunteerWork.length,
+    itemListElement: volunteerWork.map((volunteer, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `${siteUrl}${getVolunteerPath(volunteer)}`,
+      name: `${volunteer.role} — ${volunteer.organization}`,
+    })),
+  },
+}
+
 export default function VolunteerIndexPage() {
   return (
     <>
+      <Script id="volunteer-structured-data" type="application/ld+json">
+        {JSON.stringify(volunteerStructuredData)}
+      </Script>
       <Header />
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">

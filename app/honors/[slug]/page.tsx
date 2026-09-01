@@ -67,17 +67,31 @@ export default function HonorDetailPage({ params }: { params: { slug: string } }
   const canonicalPath = getHonorPath(award)
   const pageTitle = `${award.title} | ${award.issuer}`
   const image = Array.isArray(award.image) ? award.image[0] : award.image
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: pageTitle,
-    url: `${siteUrl}${canonicalPath}`,
-    description: award.description,
-    about: {
-      "@id": `${siteUrl}/#person`,
+  const canonicalUrl = `${siteUrl}${canonicalPath}`
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      name: pageTitle,
+      url: canonicalUrl,
+      description: award.description,
+      isPartOf: { "@id": `${siteUrl}/#website` },
+      about: { "@id": `${siteUrl}/#person` },
+      ...(image ? { primaryImageOfPage: `${siteUrl}${image}` } : {}),
+      mentions: [
+        { "@type": "Organization", name: award.issuer },
+        ...award.skills.map((skill) => ({ "@type": "Thing", name: skill })),
+      ],
+      inLanguage: "en-CA",
     },
-    mentions: [award.issuer, ...award.skills],
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      award: `${award.title} — ${award.issuer} (${award.year})`,
+    },
+  ]
 
   return (
     <>

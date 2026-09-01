@@ -3,7 +3,7 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import Script from "next/script"
-import { ArrowLeft, ExternalLink, Sparkles } from "lucide-react"
+import { ArrowLeft, ExternalLink, Play, Sparkles } from "lucide-react"
 
 import Header from "@/components/header"
 import Footer from "@/components/footer"
@@ -14,6 +14,11 @@ import { Button } from "@/components/ui/button"
 import { mediaItems } from "@/data/media-items"
 import { getMediaBySlug, getMediaPath } from "@/lib/seo-paths"
 import { mediaIndexMetadata } from "@/app/page-metadata"
+import { videos, getVideoPath } from "@/data/videos"
+
+const findMatchingVideo = (link: string) =>
+  videos.find((video) => video.watchUrl === link) ||
+  videos.find((video) => video.videoId.length > 0 && link.includes(video.videoId))
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
@@ -62,17 +67,40 @@ export default function MediaDetailPage({ params }: { params: { slug: string } }
   }
 
   const canonicalPath = getMediaPath(item)
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: item.title,
-    url: `${siteUrl}${canonicalPath}`,
-    description: item.quote,
-    about: {
-      "@id": `${siteUrl}/#person`,
-    },
-    mentions: [item.publication, item.type],
+  const canonicalUrl = `${siteUrl}${canonicalPath}`
+  const matchingVideo = findMatchingVideo(item.link)
+  const toIso = (d: string) => {
+    const parsed = new Date(d)
+    return Number.isNaN(parsed.getTime()) ? undefined : parsed.toISOString()
   }
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      name: item.title,
+      url: canonicalUrl,
+      description: item.quote,
+      isPartOf: { "@id": `${siteUrl}/#website` },
+      about: { "@id": `${siteUrl}/#person` },
+      inLanguage: "en-CA",
+      mainEntity: { "@id": `${canonicalUrl}#article` },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "@id": `${canonicalUrl}#article`,
+      headline: item.title,
+      description: item.quote,
+      url: item.link,
+      ...(toIso(item.date) ? { datePublished: toIso(item.date) } : {}),
+      isBasedOn: item.link,
+      publisher: { "@type": "Organization", name: item.publication },
+      author: { "@type": "Organization", name: item.publication },
+      about: { "@id": `${siteUrl}/#person` },
+      mentions: { "@id": `${siteUrl}/#person` },
+    },
+  ]
 
   return (
     <>
@@ -87,6 +115,7 @@ export default function MediaDetailPage({ params }: { params: { slug: string } }
               <SEOBreadcrumbs
                 items={[
                   { label: "Media", href: "/media" },
+                  ...(matchingVideo ? [{ label: "Watch & Listen", href: "/watch" }] : []),
                   { label: item.title, href: canonicalPath, active: true },
                 ]}
               />
@@ -118,11 +147,19 @@ export default function MediaDetailPage({ params }: { params: { slug: string } }
                   <blockquote className="mt-8 rounded-2xl border bg-card p-6 text-lg leading-8 text-muted-foreground italic">
                     {item.quote}
                   </blockquote>
-                  <div className="mt-8">
-                    <Button asChild>
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    {matchingVideo ? (
+                      <Button asChild>
+                        <Link href={getVideoPath(matchingVideo)}>
+                          <Play className="mr-2 h-4 w-4" />
+                          Watch on this site
+                        </Link>
+                      </Button>
+                    ) : null}
+                    <Button asChild variant={matchingVideo ? "outline" : "default"}>
                       <a href={item.link} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="mr-2 h-4 w-4" />
-                        Read original coverage
+                        {matchingVideo ? "Original source" : "Read original coverage"}
                       </a>
                     </Button>
                   </div>

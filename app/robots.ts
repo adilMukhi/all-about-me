@@ -138,10 +138,10 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/private/", "/admin/"],
+        disallow: ["/private/", "/admin/", "/api/", "/s/"],
       },
     ],
-    sitemap: `${siteUrl}/sitemap.xml`,
+    sitemap: [`${siteUrl}/sitemap.xml`, `${siteUrl}/sitemap-images.xml`],
     host: siteUrl,
     other: {
       "RSS-Feed": `${siteUrl}/rss.xml`,

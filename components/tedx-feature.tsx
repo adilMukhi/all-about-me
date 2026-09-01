@@ -1,6 +1,7 @@
+import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ExternalLink } from "lucide-react"
+import { ExternalLink, Play } from "lucide-react"
 
 export default function TedxFeature() {
   return (
@@ -34,17 +35,25 @@ export default function TedxFeature() {
             neuroplasticity and stress hormones, I break down the science behind memory formation and how chronic stress
             impacts our cognitive abilities.
           </p>
-          <Button asChild className="w-full sm:w-auto button-hover-effect">
-            <a
-              href="https://youtu.be/T95mH5SwkfM?t=5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2"
-            >
-              Watch on YouTube
-              <ExternalLink className="h-4 w-4" />
-            </a>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Button asChild className="w-full sm:w-auto button-hover-effect">
+              <Link href="/watch/tedx-stress-memory-and-why-you-cant-find-your-keys" className="flex items-center gap-2">
+                <Play className="h-4 w-4" />
+                Watch full page
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="w-full sm:w-auto button-hover-effect">
+              <a
+                href="https://youtu.be/T95mH5SwkfM?t=5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                Watch on YouTube
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            </Button>
+          </div>
         </CardContent>
       </Card>
     </section>

@@ -132,7 +132,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_CA",
     url: siteUrl,
     title: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker",
     description:
@@ -168,21 +168,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
-  icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png" }],
-    other: [{ rel: "mask-icon", url: "/safari-pinned-tab.svg" }],
-  },
   manifest: "/site.webmanifest",
   category: "portfolio",
-  generator: "v0.app",
+  generator: "Next.js",
 }
 
 export default function RootLayout({
@@ -191,7 +179,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`scroll-smooth ${inter.variable} ${fredoka.variable}`}>
+    <html lang="en-CA" className={`scroll-smooth ${inter.variable} ${fredoka.variable}`}>
       <head>
         <Script id="site-structured-data" type="application/ld+json">
           {JSON.stringify([
@@ -211,15 +199,30 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "@id": `${siteUrl}/#organization`,
-              name: "Adil Mukhi",
+              name: "Dr. Interested",
+              alternateName: "Adil Mukhi",
               url: siteUrl,
-              logo: `${siteUrl}/pixtin.jpg`,
+              logo: {
+                "@type": "ImageObject",
+                url: `${siteUrl}/pixtin.jpg`,
+                caption: "Dr. Interested",
+              },
+              foundingDate: "2024",
               founder: {
                 "@id": `${siteUrl}/#person`,
               },
+              areaServed: "Worldwide",
+              email: "adilm@drinterested.org",
+              telephone: "+1-289-796-2566",
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "adilm@drinterested.org",
+                telephone: "+1-289-796-2566",
+                contactType: "speaking and consulting inquiries",
+                availableLanguage: ["English", "French"],
+              },
               description:
                 "Dr. Interested is a youth-led global organization founded by Adil Mukhi. It serves as a platform for public speaking, advising, consulting, mentorship, and youth leadership across the Greater Toronto Area and worldwide. Stats: 367 executives, 1,700 members, 106 countries, 20+ events, 160,000 impacted, 400+ mentor hours, 900 volunteers, 12,169 followers, 752 posts, and 3,713,406 impressions.",
-              sameAs: [...siteAliases, ...socialProfiles],
               knowsAbout: [
                 "public speaking",
                 "advising",
@@ -236,14 +239,57 @@ export default function RootLayout({
               "@type": "Person",
               "@id": `${siteUrl}/#person`,
               name: "Adil Mukhi",
+              givenName: "Adil",
+              familyName: "Mukhi",
               url: siteUrl,
               mainEntityOfPage: siteUrl,
-              image: `${siteUrl}/pictures/adil-mukhi-formal-headshot.jpg`,
+              image: {
+                "@type": "ImageObject",
+                url: `${siteUrl}/pictures/adil-mukhi-formal-headshot.jpg`,
+                caption: "Adil Mukhi",
+              },
               jobTitle: "Youth Advocate, Public Speaker, Advisor, Consultant & Founder",
+              email: "adilm@drinterested.org",
+              telephone: "+1-289-796-2566",
               description:
                 "Adil Mukhi is a youth advocate, public speaker, advisor, consultant, founder of Dr. Interested, and community leader focused on mental health, education, social impact, and youth empowerment across the Greater Toronto Area and worldwide. Dr. Interested stats: 367 executives, 1,700 members, 106 countries, 20+ events, 160,000 impacted, 400+ mentor hours, 900 volunteers, 12,169 followers, 752 posts, 3,713,406 impressions, revenue $5,233.70, and operating income: net loss of $81.01.",
               knowsAbout: personKeywords,
-              award: ["Ontario Volunteer Service Award", "Outstanding Youth Award"],
+              knowsLanguage: ["en", "fr"],
+              nationality: { "@type": "Country", name: "Canada" },
+              homeLocation: {
+                "@type": "Place",
+                name: "Mississauga, Ontario, Canada",
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Mississauga",
+                  addressRegion: "ON",
+                  addressCountry: "CA",
+                },
+              },
+              hasOccupation: [
+                { "@type": "Occupation", name: "Public Speaker", occupationLocation: { "@type": "City", name: "Mississauga" } },
+                { "@type": "Occupation", name: "Youth Advocate" },
+                { "@type": "Occupation", name: "Consultant" },
+              ],
+              alumniOf: [
+                {
+                  "@type": "EducationalOrganization",
+                  name: "Glenforest Secondary School",
+                  url: "https://glenforest.peelschools.org/",
+                },
+                {
+                  "@type": "CollegeOrUniversity",
+                  name: "University of Toronto, Temerty Faculty of Medicine",
+                  url: "https://temertymedicine.utoronto.ca/",
+                },
+              ],
+              award: [
+                "Top 50 Youth across Canada (Children First Canada, 2025)",
+                "Global Youth Awards Finalist – Empowerment Category (Legacy Project, 2025)",
+                "Ontario Volunteer Service Award",
+                "Civic Award of Recognition (City of Mississauga)",
+                "Outstanding Youth Award",
+              ],
               memberOf: [
                 {
                   "@type": "Organization",
@@ -269,8 +315,10 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" title="Adil Mukhi RSS Feed" href={`${siteUrl}/rss.xml`} />
 
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preload" href="/profile-pic.jpg" as="image" />
-        <link rel="preload" href="/pixtin.jpg" as="image" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        {socialProfiles.map((profile) => (
+          <link key={profile} rel="me" href={profile} />
+        ))}
 
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`

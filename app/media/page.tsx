@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Script from "next/script"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import AnimatedSection from "@/components/animated-section"
@@ -9,17 +10,59 @@ import { mediaItems } from "@/data/media-items"
 import { ExternalLink, Calendar, Quote } from "lucide-react"
 import { mediaIndexMetadata } from "@/app/page-metadata"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
+import { getMediaPath } from "@/lib/seo-paths"
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
+
+const toIsoDate = (d: string) => {
+  const parsed = new Date(d)
+  return Number.isNaN(parsed.getTime()) ? undefined : parsed.toISOString()
+}
+
+const mediaStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${siteUrl}/media#webpage`,
+  url: `${siteUrl}/media`,
+  name: "Media Coverage — Adil Mukhi",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  about: { "@id": `${siteUrl}/#person` },
+  inLanguage: "en-CA",
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: mediaItems.length,
+    itemListElement: mediaItems.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `${siteUrl}${getMediaPath(item)}`,
+      item: {
+        "@type": "NewsArticle",
+        headline: item.title,
+        url: item.link,
+        ...(toIsoDate(item.date) ? { datePublished: toIsoDate(item.date) } : {}),
+        publisher: { "@type": "Organization", name: item.publication },
+        about: { "@id": `${siteUrl}/#person` },
+      },
+    })),
+  },
+}
 
 const MediaHero = () => (
   <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
     <div className="container">
       <SEOBreadcrumbs items={[{ label: "Media", href: "/media", active: true }]} />
       <h1
-        className="text-4xl font-bold tracking-tighter text-center mb-8 sm:text-5xl md:text-6xl text-primary"
+        className="text-4xl font-bold tracking-tighter text-center mb-4 sm:text-5xl md:text-6xl text-primary"
         style={{ fontFamily: "Sour Gummy, latin" }}
       >
         Media
       </h1>
+      <p className="text-center text-muted-foreground">
+        Looking for interviews, podcasts, and TEDx talks?{" "}
+        <Link href="/watch" className="text-primary underline underline-offset-2 font-medium">
+          Watch &amp; Listen &rarr;
+        </Link>
+      </p>
     </div>
   </section>
 )
@@ -119,6 +162,9 @@ export const metadata: Metadata = mediaIndexMetadata
 export default function MediaPage() {
   return (
     <main className="min-h-screen bg-background page-transition">
+      <Script id="media-structured-data" type="application/ld+json">
+        {JSON.stringify(mediaStructuredData)}
+      </Script>
       <Header />
       <h1 className="sr-only">Media - Adil Mukhi</h1>
       <AnimatedSection>

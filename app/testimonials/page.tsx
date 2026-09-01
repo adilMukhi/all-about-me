@@ -8,9 +8,12 @@ import PageLayout from "@/components/page-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import Script from "next/script"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import { testimonialsIndexMetadata } from "../page-metadata"
 import { slugify } from "@/lib/seo-paths"
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
 const testimonials = [
   {
@@ -57,9 +60,59 @@ const testimonials = [
 
 export const metadata: Metadata = testimonialsIndexMetadata
 
+const toIso = (d: string) => {
+  const parsed = new Date(d)
+  return Number.isNaN(parsed.getTime()) ? undefined : parsed.toISOString()
+}
+
+const testimonialsStructuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${siteUrl}/testimonials#webpage`,
+    url: `${siteUrl}/testimonials`,
+    name: "Testimonials for Adil Mukhi",
+    isPartOf: { "@id": `${siteUrl}/#website` },
+    about: { "@id": `${siteUrl}/#person` },
+    inLanguage: "en-CA",
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: testimonials.length,
+      itemListElement: testimonials.map((t, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `${siteUrl}/testimonials/${slugify(`${t.name}-${t.connection}`)}`,
+      })),
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${siteUrl}/#person`,
+    name: "Adil Mukhi",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: 5,
+      bestRating: 5,
+      worstRating: 1,
+      reviewCount: testimonials.length,
+    },
+    review: testimonials.map((t) => ({
+      "@type": "Review",
+      reviewBody: t.testimonial,
+      ...(toIso(t.timeKnown) ? { datePublished: toIso(t.timeKnown) } : {}),
+      author: { "@type": "Person", name: t.name, jobTitle: t.role },
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5, worstRating: 1 },
+    })),
+  },
+]
+
 export default function TestimonialsIndexPage() {
   return (
     <>
+      <Script id="testimonials-structured-data" type="application/ld+json">
+        {JSON.stringify(testimonialsStructuredData)}
+      </Script>
       <Header />
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">

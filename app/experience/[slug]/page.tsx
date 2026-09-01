@@ -66,17 +66,40 @@ export default function ExperienceDetailPage({ params }: { params: { slug: strin
 
   const canonicalPath = getWorkExperiencePath(experience)
   const pageTitle = `${experience.title} at ${experience.company}`
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: pageTitle,
-    url: `${siteUrl}${canonicalPath}`,
-    description: experience.longDescription || experience.description,
-    about: {
-      "@id": `${siteUrl}/#person`,
+  const canonicalUrl = `${siteUrl}${canonicalPath}`
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      name: pageTitle,
+      url: canonicalUrl,
+      description: experience.longDescription || experience.description,
+      isPartOf: { "@id": `${siteUrl}/#website` },
+      about: { "@id": `${siteUrl}/#person` },
+      ...(experience.image ? { primaryImageOfPage: `${siteUrl}${experience.image}` } : {}),
+      mentions: [
+        { "@type": "Organization", name: experience.company },
+        ...experience.skills.map((skill) => ({ "@type": "Thing", name: skill })),
+      ],
+      inLanguage: "en-CA",
     },
-    mentions: [experience.company, ...experience.skills],
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      hasOccupation: {
+        "@type": "Occupation",
+        name: experience.title,
+        occupationalCategory: experience.company,
+      },
+      memberOf: {
+        "@type": "Organization",
+        name: experience.company,
+        ...(experience.link && experience.link.startsWith("http") ? { url: experience.link } : {}),
+      },
+    },
+  ]
 
   return (
     <>

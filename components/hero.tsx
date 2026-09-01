@@ -21,7 +21,7 @@ export default function Hero() {
     },
     {
       icon: Mail,
-      url: "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=mukhiadil2009@gmail.com",
+      url: "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=adilm@drinterested.org",
       label: "Email Me",
       color: "text-red-500 hover:text-red-700",
     },
@@ -76,10 +76,10 @@ export default function Hero() {
 
         <div className="flex flex-col items-center lg:items-start gap-3 order-1 lg:order-3">
           <div className="flex flex-col items-center lg:items-start">
-            <h1 className="font-fredoka text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-primary to-teal-500 mb-0.5">
+            <p className="font-fredoka text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-primary to-teal-500 mb-0.5">
               Hi, I'm
-            </h1>
-            <h1
+            </p>
+            <p
               className="font-fredoka text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-primary to-teal-500"
               style={{
                 textShadow: "0 0 10px rgba(59, 130, 246, 0.25), 0 0 20px rgba(59, 130, 246, 0.15)",
@@ -88,7 +88,7 @@ export default function Hero() {
               }}
             >
               Adil Mukhi!
-            </h1>
+            </p>
           </div>
 
           {/* Mobile social links - centered grid */}

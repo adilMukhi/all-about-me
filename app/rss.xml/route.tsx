@@ -16,6 +16,7 @@ import {
 } from "@/data/portfolio-items"
 import { volunteerWork } from "@/data/volunteer-work"
 import { workExperiences } from "@/data/work-experience"
+import { videos } from "@/data/videos"
 
 // Professional images from public/pictures
 const professionalImages = [
@@ -105,7 +106,7 @@ function buildSeoTitle(main: string, context?: string): string {
 }
 
 function generateRssFeed() {
-  const baseUrl = "https://adilmukhi.com"
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
   const currentDate = new Date().toUTCString()
 
   let rssItems = ""
@@ -182,6 +183,38 @@ function generateRssFeed() {
     }
 
     rssItems += `
+    </item>`
+  })
+
+  // 2b. Videos — interviews, podcasts, and TEDx talks
+  videos.forEach((video) => {
+    const videoDate = new Date(video.date)
+    const pubDate = Number.isNaN(videoDate.getTime()) ? currentDate : videoDate.toUTCString()
+    const thumb =
+      video.platform === "youtube" ? `https://i.ytimg.com/vi/${video.videoId}/hqdefault.jpg` : `${baseUrl}/og-image.png`
+    const player =
+      video.platform === "youtube" ? `https://www.youtube-nocookie.com/embed/${video.videoId}` : video.watchUrl
+    const kw = generateKeywords(`${video.title} ${video.publisher}`, ["video", "interview", video.category])
+
+    rssItems += `
+    <item>
+      <title>${escapeXml(`${video.category}: ${video.title}`)}</title>
+      <link>${baseUrl}/watch/${video.slug}</link>
+      <guid isPermaLink="true">${baseUrl}/watch/${video.slug}</guid>
+      <pubDate>${pubDate}</pubDate>
+      <description>${escapeXml(video.description)}</description>
+      <category>Video</category>
+      <category>${escapeXml(video.category)}</category>
+      <category>${escapeXml(video.publisher)}</category>
+      <media:content url="${escapeXml(player)}" medium="video">
+        <media:title>${escapeXml(video.title)}</media:title>
+        <media:description>${escapeXml(video.description)}</media:description>
+        <media:thumbnail url="${escapeXml(thumb)}" />
+        <media:keywords>${escapeXml(kw)}</media:keywords>
+        <media:rating>nonadult</media:rating>
+      </media:content>
+      <atom:link href="${escapeXml(video.watchUrl)}" rel="related" type="text/html" />
+      <dc:creator>Adil Mukhi</dc:creator>
     </item>`
   })
 
@@ -711,7 +744,7 @@ function generateRssFeed() {
     <link>${baseUrl}</link>
     <atom:link href="${baseUrl}/rss.xml" rel="self" type="application/rss+xml" />
     <description>Comprehensive RSS feed featuring blog posts, research projects, certificates, awards, publications, work experience, volunteer work, and professional images from Adil Mukhi's portfolio.</description>
-    <language>en-us</language>
+    <language>en-CA</language>
     <lastBuildDate>${currentDate}</lastBuildDate>
     <pubDate>${currentDate}</pubDate>
     <ttl>60</ttl>
@@ -726,8 +759,8 @@ function generateRssFeed() {
     <category>STEM</category>
     <category>Youth Leadership</category>
     <category>Advocacy</category>
-    <managingEditor>adilmukhii@gmail.com (Adil Mukhi)</managingEditor>
-    <webMaster>adilmukhii@gmail.com (Adil Mukhi)</webMaster>
+    <managingEditor>adilm@drinterested.org (Adil Mukhi)</managingEditor>
+    <webMaster>adilm@drinterested.org (Adil Mukhi)</webMaster>
     <copyright>Copyright ${new Date().getFullYear()} Adil Mukhi. All rights reserved.</copyright>
     <generator>Next.js RSS Generator</generator>
 ${rssItems}

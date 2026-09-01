@@ -66,9 +66,14 @@ export default function Contact() {
                 </a>
               ))}
             </div>
-            <Button asChild className="button-hover-effect w-full max-w-lg text-base h-12 mt-4">
-              <a href="mailto:mukhiadil2009@gmail.com">Email Me</a>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-3 w-full max-w-lg mt-4">
+              <Button asChild className="button-hover-effect flex-1 text-base h-12">
+                <a href="mailto:adilm@drinterested.org">Email Me</a>
+              </Button>
+              <Button asChild variant="outline" className="button-hover-effect flex-1 text-base h-12">
+                <a href="tel:+12897962566">Call: +1 289 796 2566</a>
+              </Button>
+            </div>
           </div>
           <div className="w-full md:w-1/2">
             <div

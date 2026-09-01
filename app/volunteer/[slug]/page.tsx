@@ -64,17 +64,35 @@ export default function VolunteerDetailPage({ params }: { params: { slug: string
 
   const canonicalPath = getVolunteerPath(volunteer)
   const pageTitle = `${volunteer.role} | ${volunteer.organization}`
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: pageTitle,
-    url: `${siteUrl}${canonicalPath}`,
-    description: volunteer.description,
-    about: {
-      "@id": `${siteUrl}/#person`,
+  const canonicalUrl = `${siteUrl}${canonicalPath}`
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      name: pageTitle,
+      url: canonicalUrl,
+      description: volunteer.description,
+      isPartOf: { "@id": `${siteUrl}/#website` },
+      about: { "@id": `${siteUrl}/#person` },
+      ...(volunteer.image ? { primaryImageOfPage: `${siteUrl}${volunteer.image}` } : {}),
+      mentions: [
+        { "@type": "Organization", name: volunteer.organization },
+        ...volunteer.skills.map((skill) => ({ "@type": "Thing", name: skill })),
+      ],
+      inLanguage: "en-CA",
     },
-    mentions: [volunteer.organization, ...volunteer.skills],
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      memberOf: {
+        "@type": "Organization",
+        name: volunteer.organization,
+        ...(volunteer.link && volunteer.link.startsWith("http") ? { url: volunteer.link } : {}),
+      },
+    },
+  ]
 
   return (
     <>

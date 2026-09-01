@@ -8,6 +8,7 @@ import PageLayout from "@/components/page-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import Script from "next/script"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import { honorsIndexMetadata } from "../page-metadata"
 import { honorsAwards } from "@/data/honors-awards"
@@ -15,9 +16,35 @@ import { getHonorPath } from "@/lib/seo-paths"
 
 export const metadata: Metadata = honorsIndexMetadata
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
+
+const honorsStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${siteUrl}/honors#webpage`,
+  url: `${siteUrl}/honors`,
+  name: "Honors & Awards — Adil Mukhi",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  about: { "@id": `${siteUrl}/#person` },
+  inLanguage: "en-CA",
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: honorsAwards.length,
+    itemListElement: honorsAwards.map((award, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `${siteUrl}${getHonorPath(award)}`,
+      name: `${award.title} — ${award.issuer}`,
+    })),
+  },
+}
+
 export default function HonorsIndexPage() {
   return (
     <>
+      <Script id="honors-structured-data" type="application/ld+json">
+        {JSON.stringify(honorsStructuredData)}
+      </Script>
       <Header />
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">

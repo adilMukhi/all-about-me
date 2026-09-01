@@ -20,6 +20,18 @@ export const navConfig: NavConfig = {
     {
       title: "Media",
       href: "/media",
+      items: [
+        {
+          title: "Media Coverage",
+          href: "/media",
+          description: "Press, articles, interviews, and features",
+        },
+        {
+          title: "Watch & Listen",
+          href: "/watch",
+          description: "Interviews, podcasts, and TEDx talks",
+        },
+      ],
     },
     {
       title: "Services",

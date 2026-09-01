@@ -67,7 +67,7 @@ export default function DrInterestedClient() {
           <div className="container">
             <SEOBreadcrumbs
               items={[
-                { label: "Background", href: "/background" },
+                { label: "Experience", href: "/experience" },
                 { label: "Dr. Interested", href: "/experience/drinterested", active: true },
               ]}
             />

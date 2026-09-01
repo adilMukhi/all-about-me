@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       siteName: "Adil Mukhi",
       images: [
         {
-          url: post.image ? `${siteUrl}${post.image}` : `${siteUrl}/og-blog-default.jpg`,
+          url: post.image ? `${siteUrl}${post.image}` : `${siteUrl}/og-image.png`,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -75,7 +75,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: post.subtitle || post.excerpt,
       creator: "@adilm_0",
       site: "@adilm_0",
-      images: [post.image ? `${siteUrl}${post.image}` : `${siteUrl}/og-blog-default.jpg`],
+      images: [post.image ? `${siteUrl}${post.image}` : `${siteUrl}/og-image.png`],
     },
     robots: {
       index: true,
