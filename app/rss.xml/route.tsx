@@ -112,8 +112,9 @@ function generateRssFeed() {
   let rssItems = ""
 
   // 1. Professional Images - Highest Priority
-  professionalImages.forEach((image, index) => {
-    const imageName = image.split("/").pop()?.replace(/\.(jpg|jpeg|png|webp|gif|svg|JPG|JPEG|PNG|WEBP|GIF|SVG)/g, "")
+  professionalImages.forEach((imageRaw, index) => {
+    const image = encodeURI(imageRaw)
+    const imageName = imageRaw.split("/").pop()?.replace(/\.(jpg|jpeg|png|webp|gif|svg|JPG|JPEG|PNG|WEBP|GIF|SVG)/g, "")
     const prettyName = imageName
       ?.split("-")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
@@ -740,7 +741,7 @@ function generateRssFeed() {
      xmlns:prism="http://prismstandard.org/namespaces/basic/2.0/"
      xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Adil Mukhi - Portfolio & Achievements</title>
+    <title>Adil Mukhi - Portfolio &amp; Achievements</title>
     <link>${baseUrl}</link>
     <atom:link href="${baseUrl}/rss.xml" rel="self" type="application/rss+xml" />
     <description>Comprehensive RSS feed featuring blog posts, research projects, certificates, awards, publications, work experience, volunteer work, and professional images from Adil Mukhi's portfolio.</description>
