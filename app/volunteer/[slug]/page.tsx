@@ -152,7 +152,7 @@ export default function VolunteerDetailPage({ params }: { params: { slug: string
                 <div className="overflow-hidden rounded-2xl border bg-card shadow-lg">
                   <div className="relative aspect-[4/3]">
                     <Image
-                      src={volunteer.image || "/placeholder.svg?height=600&width=800"}
+                      src={volunteer.image || "/placeholder.svg"}
                       alt={`${volunteer.role} at ${volunteer.organization}`}
                       fill
                       className="object-cover"

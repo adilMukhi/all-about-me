@@ -250,7 +250,7 @@ export default function ArtSportsPortfolioPageClient() {
                   <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg">
                     <div className="relative h-48">
                       <Image
-                        src={project.image || "/placeholder.svg?height=200&width=400"}
+                        src={project.image || "/placeholder.svg"}
                         alt={project.title}
                         fill
                         className="object-cover"

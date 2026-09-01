@@ -78,7 +78,7 @@ export default function VolunteerIndexPage() {
                   >
                     <Link href={href} className="block h-52 overflow-hidden relative">
                       <Image
-                        src={volunteer.image || "/placeholder.svg?height=300&width=500"}
+                        src={volunteer.image || "/placeholder.svg"}
                         alt={`${volunteer.role} at ${volunteer.organization}`}
                         fill
                         className="object-cover transition-transform duration-500 hover:scale-105"

@@ -78,7 +78,7 @@ export default function CertificatesIndexPage() {
                   >
                     <Link href={href} className="block h-52 overflow-hidden relative">
                       <Image
-                        src={certificate.image || "/placeholder.svg?height=300&width=500"}
+                        src={certificate.image || "/placeholder.svg"}
                         alt={certificate.name}
                         fill
                         className="object-cover transition-transform duration-500 hover:scale-105"

@@ -30,7 +30,7 @@ export function LatestBlogPost() {
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/3 relative h-[250px] md:h-auto">
             <Image
-              src={latestPost.image || "/placeholder.svg?height=400&width=300"}
+              src={latestPost.image || "/placeholder.svg"}
               alt={latestPost.title}
               fill
               priority

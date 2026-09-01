@@ -69,7 +69,7 @@ export default function PortfolioPage() {
                   <Card className="overflow-hidden h-full transition-all duration-300 hover:scale-105 hover:shadow-lg">
                     <div className="relative h-64">
                       <Image
-                        src={category.image || "/placeholder.svg?height=200&width=400"}
+                        src={category.image || "/placeholder.svg"}
                         alt={category.title}
                         fill
                         className="object-cover"

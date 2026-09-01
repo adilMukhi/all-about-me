@@ -161,7 +161,7 @@ export default function ExperienceDetailPage({ params }: { params: { slug: strin
                 <div className="overflow-hidden rounded-2xl border bg-card shadow-lg">
                   <div className="relative aspect-[4/3]">
                     <Image
-                      src={experience.image || "/placeholder.svg?height=600&width=800"}
+                      src={experience.image || "/placeholder.svg"}
                       alt={`${experience.title} at ${experience.company}`}
                       fill
                       className="object-cover"

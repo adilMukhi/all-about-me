@@ -98,7 +98,7 @@ export default function BlogPostClient({ post, slug }: BlogPostClientProps) {
                         }`}
                       >
                         <Image
-                          src={image || "/placeholder.svg?height=400&width=800"}
+                          src={image || "/placeholder.svg"}
                           alt={`${post.title} - Image ${index + 1}`}
                           fill
                           className="object-contain"

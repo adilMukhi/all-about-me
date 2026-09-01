@@ -52,7 +52,7 @@ export default function ExperienceIndexPage() {
                     <Link href={href} className="block h-full">
                       <div className="relative h-56 overflow-hidden">
                         <Image
-                          src={experience.image || "/placeholder.svg?height=300&width=500"}
+                          src={experience.image || "/placeholder.svg"}
                           alt={`${experience.title} at ${experience.company}`}
                           fill
                           className="object-cover transition-transform duration-500 hover:scale-105"

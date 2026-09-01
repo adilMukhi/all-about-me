@@ -75,7 +75,7 @@ export function ArtCarousel({
             )}
           >
             <Image
-              src={image || "/placeholder.svg?height=200&width=400"}
+              src={image || "/placeholder.svg"}
               alt={`${title} - Image ${index + 1}`}
               fill
               sizes="(max-width: 768px) 100vw, 90vw"

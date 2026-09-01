@@ -94,8 +94,8 @@ export default function StartAnimation() {
       setTimeout(() => {
         setShowIntro(false)
         sessionStorage.setItem("hasSeenIntro", "true")
-      }, 1000)
-    }, 4000)
+      }, 300)
+    }, 1100)
 
     return () => clearTimeout(timer)
   }, [])
@@ -125,7 +125,7 @@ export default function StartAnimation() {
           className="block"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ delay: 0.6, duration: 0.8, type: "spring" }}
+          transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
         >
           {introNavItems.map((item, index) => (
             <motion.g
@@ -133,8 +133,8 @@ export default function StartAnimation() {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{
-                delay: 0.6 + index * 0.2,
-                duration: 0.6,
+                delay: 0.15 + index * 0.05,
+                duration: 0.35,
                 type: "spring",
                 stiffness: 200,
               }}

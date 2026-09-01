@@ -82,7 +82,7 @@ export default function ExperiencesPage() {
                     <div className="relative h-56 overflow-hidden">
                       <Link href={`/experiences/${post.slug}`} className="block h-full" aria-label={`Read ${post.title}`}>
                         <Image
-                          src={post.image || "/placeholder.svg?height=200&width=400"}
+                          src={post.image || "/placeholder.svg"}
                           alt={post.title}
                           fill
                           className="object-cover transition-transform duration-500 group-hover:scale-110"

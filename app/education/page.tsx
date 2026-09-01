@@ -78,7 +78,7 @@ export default function EducationIndexPage() {
                   >
                     <Link href={href} className="block h-52 overflow-hidden relative">
                       <Image
-                        src={education.image || "/placeholder.svg?height=300&width=500"}
+                        src={education.image || "/placeholder.svg"}
                         alt={education.degree}
                         fill
                         className="object-cover transition-transform duration-500 hover:scale-105"

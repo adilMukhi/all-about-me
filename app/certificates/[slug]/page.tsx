@@ -156,7 +156,7 @@ export default function CertificateDetailPage({ params }: { params: { slug: stri
                 <div className="overflow-hidden rounded-2xl border bg-card shadow-lg">
                   <div className="relative aspect-[4/3]">
                     <Image
-                      src={certificate.image || "/placeholder.svg?height=600&width=800"}
+                      src={certificate.image || "/placeholder.svg"}
                       alt={certificate.name}
                       fill
                       className="object-cover"
