@@ -5,7 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
 import { Inter, Fredoka } from "next/font/google"
 import "./globals.css"
-import StartAnimation from "@/components/start-animation"
+import StartAnimation from "@/components/start-animation-lazy"
 import { Suspense } from "react"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"

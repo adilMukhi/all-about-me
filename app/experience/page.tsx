@@ -29,7 +29,7 @@ export default function ExperienceIndexPage() {
                 <Briefcase className="h-4 w-4" />
                 Indexed role pages
               </div>
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl" style={{ fontFamily: "Sour Gummy, latin" }}>
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl" style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                 Experience Library
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
@@ -60,7 +60,7 @@ export default function ExperienceIndexPage() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
                         <div className="absolute bottom-4 left-4 right-4 text-white">
                           <p className="text-sm uppercase tracking-[0.2em] text-white/75">{experience.period}</p>
-                          <h2 className="mt-1 text-2xl font-bold leading-tight" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+                          <h2 className="mt-1 text-2xl font-bold leading-tight" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                             {experience.title}
                           </h2>
                           <p className="text-sm text-white/85">{experience.company}</p>
@@ -69,7 +69,7 @@ export default function ExperienceIndexPage() {
                     </Link>
                     <CardHeader>
                       <CardDescription>{experience.period}</CardDescription>
-                      <CardTitle className="text-xl" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+                      <CardTitle className="text-xl" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                         {experience.company}
                       </CardTitle>
                     </CardHeader>

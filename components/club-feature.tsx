@@ -8,7 +8,7 @@ export default function ClubFeature() {
     <section className="container py-8" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <h2
         className="mb-6 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
-        style={{ fontFamily: "Sour Gummy, latin" }}
+        style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
       >
         Executive Director of Dr. Interested
       </h2>
@@ -19,7 +19,7 @@ export default function ClubFeature() {
           </div>
           <div className="md:w-1/2 p-6 md:p-8">
             <CardHeader className="p-0 mb-4">
-              <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }} className="text-2xl md:text-3xl">
+              <CardTitle style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }} className="text-2xl md:text-3xl">
                 Inspiring Future Medical Professionals
               </CardTitle>
               <CardDescription className="text-base md:text-lg">
@@ -61,7 +61,7 @@ export default function ClubFeature() {
       </Card>
 
       <div className="mt-8">
-        <h3 className="text-2xl font-semibold mb-6 text-center" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+        <h3 className="text-2xl font-semibold mb-6 text-center" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
           Community Impact
         </h3>
         <div className="grid md:grid-cols-2 gap-6">

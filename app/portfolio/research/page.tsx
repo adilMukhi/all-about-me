@@ -38,7 +38,7 @@ export default function ResearchPortfolioPage() {
 
             <h1
               className="text-4xl font-bold tracking-tighter mb-8 sm:text-5xl"
-              style={{ fontFamily: "Sour Gummy, latin" }}
+              style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
             >
               Research Portfolio
             </h1>
@@ -140,7 +140,7 @@ export default function ResearchPortfolioPage() {
                     />
                   </div>
                   <CardHeader>
-                    <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{project.title}</CardTitle>
+                    <CardTitle style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>{project.title}</CardTitle>
                     <CardDescription>
                       {project.institution} • {project.year}
                     </CardDescription>

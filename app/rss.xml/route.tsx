@@ -109,12 +109,32 @@ function generateRssFeed() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
   const currentDate = new Date().toUTCString()
 
+  // Always return a valid RFC-822 date; fall back to build time for unparseable inputs.
+  const safeUTC = (input: unknown): string => {
+    const d = input instanceof Date ? input : new Date(String(input))
+    return Number.isNaN(d.getTime()) ? currentDate : d.toUTCString()
+  }
+
+  // Build a valid, XML-safe absolute URL for an image/media path.
+  const mediaSrc = (path: string | undefined | null): string => {
+    if (!path) return ""
+    const encoded = encodeURI(path).replace(/\(/g, "%28").replace(/\)/g, "%29")
+    const full = /^https?:\/\//i.test(path) ? path : `${baseUrl}${encoded}`
+    return escapeXml(full)
+  }
+
+  // Deterministic, XML-safe slug for <guid> values.
+  const guidSlug = (value: unknown): string =>
+    String(value)
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "")
+
   let rssItems = ""
 
   // 1. Professional Images - Highest Priority
-  professionalImages.forEach((imageRaw, index) => {
-    const image = encodeURI(imageRaw)
-    const imageName = imageRaw.split("/").pop()?.replace(/\.(jpg|jpeg|png|webp|gif|svg|JPG|JPEG|PNG|WEBP|GIF|SVG)/g, "")
+  professionalImages.forEach((image, index) => {
+    const imageName = image.split("/").pop()?.replace(/\.(jpg|jpeg|png|webp|gif|svg|JPG|JPEG|PNG|WEBP|GIF|SVG)/g, "")
     const prettyName = imageName
       ?.split("-")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
@@ -132,9 +152,9 @@ function generateRssFeed() {
       <guid isPermaLink="false">professional-image-${stableSlug}</guid>
       <pubDate>${currentDate}</pubDate>
       <description>${escapeXml(description)}</description>
-      <enclosure url="${baseUrl}${image}" type="${mimeType}" />
+      <enclosure length="0" url="${mediaSrc(image)}" type="${mimeType}" />
       <category>Professional Images</category>
-      <media:content url="${baseUrl}${image}" type="${mimeType}" medium="image">
+      <media:content url="${mediaSrc(image)}" type="${mimeType}" medium="image">
         <media:title>${escapeXml(title)}</media:title>
         <media:description>${escapeXml(description)}</media:description>
         <media:keywords>${escapeXml(keywords)}</media:keywords>
@@ -145,7 +165,7 @@ function generateRssFeed() {
 
   // 2. Blog Posts with Images
   blogPosts.forEach((post) => {
-    const postDate = new Date(post.date).toUTCString()
+    const postDate = safeUTC(post.date)
     const description = stripHtml(post.content)
     const excerpt = (post.excerpt || description.substring(0, 500)) + (post.excerpt ? "" : "...")
     const mimeType = getMimeTypeFromPath(post.image || "")
@@ -160,8 +180,8 @@ function generateRssFeed() {
       <description>${escapeXml(excerpt)}</description>
       <content:encoded><![CDATA[${post.content}]]></content:encoded>
       <category>Blog Post</category>
-      <enclosure url="${baseUrl}${post.image}" type="${mimeType}" />
-      <media:content url="${baseUrl}${post.image}" type="${mimeType}" medium="image">
+      <enclosure length="0" url="${mediaSrc(post.image)}" type="${mimeType}" />
+      <media:content url="${mediaSrc(post.image)}" type="${mimeType}" medium="image">
         <media:title>${escapeXml(post.title)}</media:title>
         <media:description>${escapeXml(post.subtitle)}</media:description>
         <media:keywords>${escapeXml(kw)}</media:keywords>
@@ -172,7 +192,7 @@ function generateRssFeed() {
     if (post.images && post.images.length > 0) {
       post.images.forEach((img, idx) => {
         rssItems += `
-      <media:content url="${baseUrl}${img}" type="image/jpeg" medium="image">
+      <media:content url="${mediaSrc(img)}" type="image/jpeg" medium="image">
         <media:title>${escapeXml(post.title)} - Image ${idx + 1}</media:title>
       </media:content>`
       })
@@ -221,7 +241,7 @@ function generateRssFeed() {
 
   // 3. Certificates with Images
   certificates.forEach((cert) => {
-  const certDate = new Date(cert.date).toUTCString()
+  const certDate = safeUTC(cert.date)
   const mimeType = getMimeTypeFromPath(cert.image || "")
   const kw = generateKeywords(`${cert.name} ${cert.issuer}`, ["certificate", "education", ...cert.skills])
 
@@ -229,7 +249,7 @@ function generateRssFeed() {
     <item>
       <title>${escapeXml(`Certificate: ${cert.name}`)}</title>
       <link>${baseUrl}/#certificates</link>
-      <guid isPermaLink="false">cert-${cert.slug || cert.name.replace(/\s+/g, "-").toLowerCase()}</guid>
+      <guid isPermaLink="false">cert-${guidSlug(cert.slug || cert.name)}</guid>
       <pubDate>${certDate}</pubDate>
       <description>${escapeXml(cert.description)}</description>
       <category>Certificate</category>
@@ -241,8 +261,8 @@ function generateRssFeed() {
     })
 
     rssItems += `
-      <enclosure url="${baseUrl}${cert.image}" type="${mimeType}" />
-      <media:content url="${baseUrl}${cert.image}" type="${mimeType}" medium="image">
+      <enclosure length="0" url="${mediaSrc(cert.image)}" type="${mimeType}" />
+      <media:content url="${mediaSrc(cert.image)}" type="${mimeType}" medium="image">
         <media:title>${escapeXml(cert.name)}</media:title>
         <media:description>${escapeXml(`${cert.issuer} - ${cert.description}`)}</media:description>
         <media:keywords>${escapeXml(kw)}</media:keywords>
@@ -255,7 +275,7 @@ function generateRssFeed() {
 
   // 4. Education
   educationData.forEach((edu) => {
-  const eduDate = new Date(edu.period.split(" - ")[0]).toUTCString()
+  const eduDate = safeUTC(edu.period.split(" - ")[0])
   const mimeType = getMimeTypeFromPath(edu.image || "")
   const kw = generateKeywords(`${edu.degree} ${edu.institution}`, ["education"]) 
 
@@ -267,8 +287,8 @@ function generateRssFeed() {
       <pubDate>${eduDate}</pubDate>
       <description>${escapeXml(`${edu.degree} at ${edu.institution} (${edu.period}). ${edu.description}`)}</description>
       <category>Education</category>
-      <enclosure url="${baseUrl}${edu.image}" type="${mimeType}" />
-      <media:content url="${baseUrl}${edu.image}" type="${mimeType}" medium="image">
+      <enclosure length="0" url="${mediaSrc(edu.image)}" type="${mimeType}" />
+      <media:content url="${mediaSrc(edu.image)}" type="${mimeType}" medium="image">
         <media:title>${escapeXml(edu.institution)}</media:title>
         <media:keywords>${escapeXml(kw)}</media:keywords>
         <media:rating>nonadult</media:rating>
@@ -277,7 +297,7 @@ function generateRssFeed() {
     if (edu.images && edu.images.length > 0) {
       edu.images.forEach((img, idx) => {
         rssItems += `
-      <media:content url="${baseUrl}${img}" type="${getMimeTypeFromPath(img)}" medium="image">
+      <media:content url="${mediaSrc(img)}" type="${getMimeTypeFromPath(img)}" medium="image">
         <media:title>${escapeXml(edu.degree)} - Image ${idx + 1}</media:title>
       </media:content>`
       })
@@ -289,14 +309,14 @@ function generateRssFeed() {
 
   // 5. Honors & Awards with Images
   honorsAwards.forEach((award) => {
-  const awardDate = new Date(award.year).toUTCString()
+  const awardDate = safeUTC(award.year)
   const kw = generateKeywords(`${award.title} ${award.issuer || ""}`, ["award", "achievement", ...award.skills])
 
     rssItems += `
     <item>
       <title>${escapeXml(`Award: ${award.title}`)}</title>
       <link>${baseUrl}/#honors-awards</link>
-      <guid isPermaLink="false">award-${award.title.replace(/\s+/g, "-").toLowerCase()}</guid>
+      <guid isPermaLink="false">award-${guidSlug(award.title)}</guid>
       <pubDate>${awardDate}</pubDate>
       <description>${escapeXml(`${award.description} (${award.issuer}, ${award.year})`)}</description>
       <category>Award</category>
@@ -311,7 +331,7 @@ function generateRssFeed() {
     if (Array.isArray(award.image)) {
       award.image.forEach((img, idx) => {
         rssItems += `
-      <media:content url="${baseUrl}${img}" type="${getMimeTypeFromPath(img)}" medium="image">
+      <media:content url="${mediaSrc(img)}" type="${getMimeTypeFromPath(img)}" medium="image">
         <media:title>${escapeXml(award.title)} - Image ${idx + 1}</media:title>
         <media:keywords>${escapeXml(kw)}</media:keywords>
         <media:rating>nonadult</media:rating>
@@ -319,8 +339,8 @@ function generateRssFeed() {
       })
     } else {
       rssItems += `
-      <enclosure url="${baseUrl}${award.image}" type="${getMimeTypeFromPath(award.image)}" />
-      <media:content url="${baseUrl}${award.image}" type="${getMimeTypeFromPath(award.image)}" medium="image">
+      <enclosure length="0" url="${mediaSrc(award.image)}" type="${getMimeTypeFromPath(award.image)}" />
+      <media:content url="${mediaSrc(award.image)}" type="${getMimeTypeFromPath(award.image)}" medium="image">
         <media:title>${escapeXml(award.title)}</media:title>
         <media:keywords>${escapeXml(kw)}</media:keywords>
         <media:rating>nonadult</media:rating>
@@ -333,7 +353,7 @@ function generateRssFeed() {
 
   // 6. Media Features
   mediaItems.forEach((media) => {
-  const mediaDate = new Date(media.date).toUTCString()
+  const mediaDate = safeUTC(media.date)
 
     rssItems += `
     <item>
@@ -350,7 +370,7 @@ function generateRssFeed() {
 
   // 7. Research Projects with Images and DOIs
   researchProjects.forEach((project) => {
-  const projectDate = new Date(parseInt(project.year), 0, 1).toUTCString()
+  const projectDate = safeUTC(new Date(parseInt(project.year), 0, 1))
   const mimeType = getMimeTypeFromPath(project.image || "")
   const kw = generateKeywords(`${project.title} ${project.institution || ""}`, ["research", ...project.tags])
 
@@ -358,7 +378,7 @@ function generateRssFeed() {
     <item>
       <title>${escapeXml(`Research: ${project.title}`)}</title>
       <link>${baseUrl}/portfolio/research</link>
-      <guid isPermaLink="false">research-${project.title.replace(/\s+/g, "-").toLowerCase()}</guid>
+      <guid isPermaLink="false">research-${guidSlug(project.title)}</guid>
       <pubDate>${projectDate}</pubDate>
       <description>${escapeXml(`${project.description} (${project.institution}, ${project.year})`)}</description>
       <category>Research</category>
@@ -370,8 +390,8 @@ function generateRssFeed() {
     })
 
     rssItems += `
-      <enclosure url="${baseUrl}${project.image}" type="${mimeType}" />
-      <media:content url="${baseUrl}${project.image}" type="${mimeType}" medium="image">
+      <enclosure length="0" url="${mediaSrc(project.image)}" type="${mimeType}" />
+      <media:content url="${mediaSrc(project.image)}" type="${mimeType}" medium="image">
         <media:title>${escapeXml(project.title)}</media:title>
         <media:keywords>${escapeXml(kw)}</media:keywords>
         <media:rating>nonadult</media:rating>
@@ -400,7 +420,7 @@ function generateRssFeed() {
 
   // 8. Books with Images and ISBNs
   books.forEach((book) => {
-  const bookDate = new Date(book.date).toUTCString()
+  const bookDate = safeUTC(book.date)
   const mimeType = getMimeTypeFromPath(book.image || "")
   const kw = generateKeywords(`${book.title} ${book.publisher || ""}`, ["book", "publication", ...(book.authors ? [book.authors] : [])])
 
@@ -408,7 +428,7 @@ function generateRssFeed() {
     <item>
       <title>${escapeXml(`Book: ${book.title}`)}</title>
       <link>${escapeXml(book.link)}</link>
-      <guid isPermaLink="false">book-${book.title.replace(/\s+/g, "-").toLowerCase()}</guid>
+      <guid isPermaLink="false">book-${guidSlug(book.title)}</guid>
       <pubDate>${bookDate}</pubDate>
       <description>${escapeXml(`${book.description} Published by ${book.publisher}.`)}</description>
       <category>Book</category>
@@ -422,8 +442,8 @@ function generateRssFeed() {
 
     if (book.image) {
       rssItems += `
-      <enclosure url="${baseUrl}${book.image}" type="${mimeType}" />
-      <media:content url="${baseUrl}${book.image}" type="${mimeType}" medium="image">
+      <enclosure length="0" url="${mediaSrc(book.image)}" type="${mimeType}" />
+      <media:content url="${mediaSrc(book.image)}" type="${mimeType}" medium="image">
         <media:title>${escapeXml(book.title)}</media:title>
         <media:keywords>${escapeXml(kw)}</media:keywords>
         <media:rating>nonadult</media:rating>
@@ -458,7 +478,7 @@ function generateRssFeed() {
 
   // 9. Letters to the Editor
   ltes.forEach((lte) => {
-  const lteDate = new Date(lte.date).toUTCString()
+  const lteDate = safeUTC(lte.date)
 
     rssItems += `
     <item>
@@ -476,7 +496,7 @@ function generateRssFeed() {
 
   // 10. Blogs
   blogs.forEach((blog) => {
-  const blogDate = new Date(blog.date).toUTCString()
+  const blogDate = safeUTC(blog.date)
   const mimeType = getMimeTypeFromPath(blog.image || "")
   const kw = generateKeywords(`${blog.title} ${blog.publisher || ""}`, ["blog", "publication"]) 
 
@@ -493,8 +513,8 @@ function generateRssFeed() {
 
     if (blog.image) {
       rssItems += `
-      <enclosure url="${baseUrl}${blog.image}" type="${mimeType}" />
-      <media:content url="${baseUrl}${blog.image}" type="${mimeType}" medium="image">
+      <enclosure length="0" url="${mediaSrc(blog.image)}" type="${mimeType}" />
+      <media:content url="${mediaSrc(blog.image)}" type="${mimeType}" medium="image">
         <media:title>${escapeXml(blog.title)}</media:title>
         <media:keywords>${escapeXml(kw)}</media:keywords>
         <media:rating>nonadult</media:rating>
@@ -521,7 +541,7 @@ function generateRssFeed() {
 
   // 11. Club Publications
   clubPublications.forEach((pub) => {
-  const pubDate = new Date(pub.date).toUTCString()
+  const pubDate = safeUTC(pub.date)
   const kw = generateKeywords(`${pub.title} ${pub.publisher || ""}`, ["publication", "club"]) 
 
     rssItems += `
@@ -538,8 +558,8 @@ function generateRssFeed() {
     if (pub.image) {
       const mimeType = getMimeTypeFromPath(pub.image)
       rssItems += `
-      <enclosure url="${baseUrl}${pub.image}" type="${mimeType}" />
-      <media:content url="${baseUrl}${pub.image}" type="${mimeType}" medium="image">
+      <enclosure length="0" url="${mediaSrc(pub.image)}" type="${mimeType}" />
+      <media:content url="${mediaSrc(pub.image)}" type="${mimeType}" medium="image">
         <media:title>${escapeXml(pub.title)}</media:title>
         <media:keywords>${escapeXml(kw)}</media:keywords>
         <media:rating>nonadult</media:rating>
@@ -557,7 +577,7 @@ function generateRssFeed() {
     <item>
       <title>${escapeXml(`Coding Project: ${project.title}`)}</title>
       <link>${escapeXml(project.demoLink)}</link>
-      <guid isPermaLink="false">coding-${project.title.replace(/\s+/g, "-").toLowerCase()}</guid>
+      <guid isPermaLink="false">coding-${guidSlug(project.title)}</guid>
       <pubDate>${currentDate}</pubDate>
       <description>${escapeXml(project.description)}</description>
       <category>Coding</category>
@@ -569,8 +589,8 @@ function generateRssFeed() {
     })
 
     rssItems += `
-      <enclosure url="${baseUrl}${project.image}" type="${getMimeTypeFromPath(project.image)}" />
-      <media:content url="${baseUrl}${project.image}" type="${getMimeTypeFromPath(project.image)}" medium="image">
+      <enclosure length="0" url="${mediaSrc(project.image)}" type="${getMimeTypeFromPath(project.image)}" />
+      <media:content url="${mediaSrc(project.image)}" type="${getMimeTypeFromPath(project.image)}" medium="image">
         <media:title>${escapeXml(project.title)}</media:title>
         <media:keywords>${escapeXml(kw)}</media:keywords>
         <media:rating>nonadult</media:rating>
@@ -586,7 +606,7 @@ function generateRssFeed() {
     <item>
       <title>${escapeXml(`Art: ${project.title}`)}</title>
       <link>${baseUrl}/portfolio/art-sports</link>
-      <guid isPermaLink="false">art-${project.title.replace(/\s+/g, "-").toLowerCase()}</guid>
+      <guid isPermaLink="false">art-${guidSlug(project.title)}</guid>
       <pubDate>${currentDate}</pubDate>
       <description>${escapeXml(project.description)}</description>
       <category>Art</category>`
@@ -597,8 +617,8 @@ function generateRssFeed() {
     })
 
     rssItems += `
-      <enclosure url="${baseUrl}${project.image}" type="${getMimeTypeFromPath(project.image)}" />
-      <media:content url="${baseUrl}${project.image}" type="${getMimeTypeFromPath(project.image)}" medium="image">
+      <enclosure length="0" url="${mediaSrc(project.image)}" type="${getMimeTypeFromPath(project.image)}" />
+      <media:content url="${mediaSrc(project.image)}" type="${getMimeTypeFromPath(project.image)}" medium="image">
         <media:title>${escapeXml(project.title)}</media:title>
         <media:keywords>${escapeXml(kw)}</media:keywords>
         <media:rating>nonadult</media:rating>
@@ -608,7 +628,7 @@ function generateRssFeed() {
     if (project.images && project.images.length > 0) {
       project.images.forEach((img, idx) => {
         rssItems += `
-      <media:content url="${baseUrl}${img}" type="${getMimeTypeFromPath(img)}" medium="image">
+      <media:content url="${mediaSrc(img)}" type="${getMimeTypeFromPath(img)}" medium="image">
         <media:title>${escapeXml(project.title)} - Image ${idx + 1}</media:title>
         <media:keywords>${escapeXml(kw)}</media:keywords>
         <media:rating>nonadult</media:rating>
@@ -627,7 +647,7 @@ function generateRssFeed() {
     <item>
       <title>${escapeXml(`Sports: ${achievement.title}`)}</title>
       <link>${baseUrl}/portfolio/art-sports</link>
-      <guid isPermaLink="false">sports-${achievement.title.replace(/\s+/g, "-").toLowerCase()}</guid>
+      <guid isPermaLink="false">sports-${guidSlug(achievement.title)}</guid>
       <pubDate>${currentDate}</pubDate>
       <description>${escapeXml(achievement.description)}</description>
       <category>Sports</category>
@@ -639,8 +659,8 @@ function generateRssFeed() {
     })
 
     rssItems += `
-      <enclosure url="${baseUrl}${achievement.image}" type="${getMimeTypeFromPath(achievement.image)}" />
-      <media:content url="${baseUrl}${achievement.image}" type="${getMimeTypeFromPath(achievement.image)}" medium="image">
+      <enclosure length="0" url="${mediaSrc(achievement.image)}" type="${getMimeTypeFromPath(achievement.image)}" />
+      <media:content url="${mediaSrc(achievement.image)}" type="${getMimeTypeFromPath(achievement.image)}" medium="image">
         <media:title>${escapeXml(achievement.title)}</media:title>
         <media:keywords>${escapeXml(kw)}</media:keywords>
         <media:rating>nonadult</media:rating>
@@ -659,7 +679,7 @@ function generateRssFeed() {
 
   // 15. Volunteer Work with Images
   volunteerWork.forEach((work) => {
-  const workDate = new Date(work.period.split(" – ")[0]).toUTCString()
+  const workDate = safeUTC(work.period.split(" – ")[0])
   const mimeType = getMimeTypeFromPath(work.image || "")
   const kw = generateKeywords(`${work.role} ${work.organization}`, ["volunteer", "experience", ...work.skills])
 
@@ -667,7 +687,7 @@ function generateRssFeed() {
     <item>
       <title>${escapeXml(`Volunteer: ${work.role} at ${work.organization}`)}</title>
       <link>${baseUrl}/#volunteer-work</link>
-      <guid isPermaLink="false">volunteer-${work.role.replace(/\s+/g, "-").toLowerCase()}-${work.organization.replace(/\s+/g, "-").toLowerCase()}</guid>
+      <guid isPermaLink="false">volunteer-${guidSlug(work.role)}-${guidSlug(work.organization)}</guid>
       <pubDate>${workDate}</pubDate>
       <description>${escapeXml(`${work.role} at ${work.organization} (${work.period}). ${work.description}`)}</description>
       <category>Volunteer Work</category>
@@ -679,8 +699,8 @@ function generateRssFeed() {
     })
 
     rssItems += `
-      <enclosure url="${baseUrl}${work.image}" type="${mimeType}" />
-      <media:content url="${baseUrl}${work.image}" type="${mimeType}" medium="image">
+      <enclosure length="0" url="${mediaSrc(work.image)}" type="${mimeType}" />
+      <media:content url="${mediaSrc(work.image)}" type="${mimeType}" medium="image">
         <media:title>${escapeXml(work.organization)}</media:title>
         <media:keywords>${escapeXml(kw)}</media:keywords>
         <media:rating>nonadult</media:rating>
@@ -690,7 +710,7 @@ function generateRssFeed() {
 
   // 16. Work Experience with Images
   workExperiences.forEach((work) => {
-    const workDate = new Date(work.period.split("–")[0]).toUTCString()
+    const workDate = safeUTC(work.period.split("–")[0])
     const mimeType = getMimeTypeFromPath(work.image || "")
     const kw = generateKeywords(`${work.title} ${work.company}`, ["work", "experience", ...work.skills])
 
@@ -710,8 +730,8 @@ function generateRssFeed() {
     })
 
     rssItems += `
-      <enclosure url="${baseUrl}${work.image}" type="${mimeType}" />
-      <media:content url="${baseUrl}${work.image}" type="${mimeType}" medium="image">
+      <enclosure length="0" url="${mediaSrc(work.image)}" type="${mimeType}" />
+      <media:content url="${mediaSrc(work.image)}" type="${mimeType}" medium="image">
         <media:title>${escapeXml(work.company)}</media:title>
         <media:keywords>${escapeXml(kw)}</media:keywords>
         <media:rating>nonadult</media:rating>
@@ -721,7 +741,7 @@ function generateRssFeed() {
     if (work.images && work.images.length > 0) {
       work.images.forEach((img, idx) => {
         rssItems += `
-      <media:content url="${baseUrl}${img}" type="${getMimeTypeFromPath(img)}" medium="image">
+      <media:content url="${mediaSrc(img)}" type="${getMimeTypeFromPath(img)}" medium="image">
         <media:title>${escapeXml(work.title)} - Image ${idx + 1}</media:title>
         <media:keywords>${escapeXml(kw)}</media:keywords>
         <media:rating>nonadult</media:rating>

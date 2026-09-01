@@ -89,12 +89,12 @@ export default function Header() {
 
       <header className="fixed top-0 left-0 right-0 z-40 bg-background border-b shadow-sm">
         <div className="container flex h-16 items-center">
-          <div className="mr-4 flex items-center" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+          <div className="mr-4 flex items-center" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
             <Link href="/" className="mr-6 flex items-center space-x-2 hover:opacity-80 transition-opacity">
               <Image src="/pixtin.jpg" alt="Profile picture" width={40} height={40} className="rounded-full" />
               <span
                 className="hidden font-bold sm:inline-block text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 text-hover-effect"
-                style={{ fontFamily: "Sour Gummy, latin" }}
+                style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
               >
                 Adil Mukhi
               </span>
@@ -128,7 +128,7 @@ export default function Header() {
           <div id="mobile-menu" className="fixed inset-0 top-16 z-40 bg-background">
             <div className="h-[calc(100vh-4rem)] overflow-y-auto">
               <div className="container py-6">
-                <nav className="flex flex-col space-y-4" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+                <nav className="flex flex-col space-y-4" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                   {navConfig.mainNav.map((item) => (
                     <div key={item.title} className="border-b border-gray-100 last:border-0 pb-4 last:pb-0">
                       <MobileNavItem item={item} />

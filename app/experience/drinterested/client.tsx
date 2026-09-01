@@ -80,7 +80,7 @@ export default function DrInterestedClient() {
 
               <h1
                 className="text-5xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-primary to-teal-500 mb-4"
-                style={{ fontFamily: "Sour Gummy, latin" }}
+                style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
               >
                 Dr. Interested
               </h1>

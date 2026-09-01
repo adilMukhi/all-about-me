@@ -64,8 +64,8 @@
     --radius: 0.5rem;
 
     /* Added Fredoka font variable for bubbly text */
-    --font-fredoka: "Fredoka", cursive;
-    --font-inter: "Inter", sans-serif;
+    --font-fredoka: "Fredoka", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+    --font-inter: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   }
 }
 
@@ -84,23 +84,18 @@
 
 /* Added font-fredoka class for bubbly font */
 .font-fredoka {
-  font-family: var(--font-fredoka), cursive, sans-serif;
+  font-family: var(--font-fredoka), "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
 }
 
-.font-dynapuff {
-  font-family: "Comic Sans MS", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", cursive, sans-serif;
-}
-
-.font-sourgummy {
-  font-family: "Comic Sans MS", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", cursive, sans-serif;
+/* Display / "bubbly" fallbacks: readable rounded sans on every platform (no bare cursive). */
+.font-dynapuff,
+.font-sourgummy,
+.font-bubblegum {
+  font-family: var(--font-fredoka), "Fredoka", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
 }
 
 .font-kiranghaerang {
   font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-}
-
-.font-bubblegum {
-  font-family: "Comic Sans MS", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", cursive, sans-serif;
 }
 
 .animate-fade-in-up {
@@ -192,7 +187,7 @@
 }
 
 .prose h3 {
-  font-family: "Comic Sans MS", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", cursive, sans-serif;
+  font-family: var(--font-fredoka), "Fredoka", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
   font-style: normal;
 }
 

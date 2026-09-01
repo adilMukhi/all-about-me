@@ -100,7 +100,7 @@ export default function ClientBackgroundPage() {
             <SEOBreadcrumbs items={[{ label: "Background", href: "/background", active: true }]} />
             <h1
               className="text-4xl font-bold tracking-tighter text-center mb-8 sm:text-5xl md:text-6xl"
-              style={{ fontFamily: "Sour Gummy, latin" }}
+              style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
             >
               Background
             </h1>

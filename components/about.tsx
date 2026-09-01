@@ -9,14 +9,14 @@ export default function About() {
     <section id="about" className="container py-8" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <h2
         className="mb-6 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl normal-case"
-        style={{ fontFamily: "Sour Gummy, latin" }}
+        style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
       >
         About Me
       </h2>
       <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
         <Card className="bg-card shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 card-hover-effect">
           <CardHeader>
-            <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>My Journey</CardTitle>
+            <CardTitle style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>My Journey</CardTitle>
             <CardDescription>From curiosity to leadership</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">

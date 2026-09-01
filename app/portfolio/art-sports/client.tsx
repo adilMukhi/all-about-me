@@ -140,7 +140,7 @@ export default function ArtSportsPortfolioPageClient() {
 
             <h1
               className="text-4xl font-bold tracking-tighter mb-8 sm:text-5xl"
-              style={{ fontFamily: "Sour Gummy, latin" }}
+              style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
             >
               Art & Sports Portfolio
             </h1>
@@ -150,7 +150,7 @@ export default function ArtSportsPortfolioPageClient() {
 
             {/* Sports Section */}
             <div className="mb-16">
-              <h2 className="text-2xl font-bold mb-6" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+              <h2 className="text-2xl font-bold mb-6" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                 Sports Achievements
               </h2>
 
@@ -208,7 +208,7 @@ export default function ArtSportsPortfolioPageClient() {
                     </div>
                     <div className="md:w-1/2">
                       <CardHeader>
-                        <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{achievement.title}</CardTitle>
+                        <CardTitle style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>{achievement.title}</CardTitle>
                         <CardDescription>{achievement.description}</CardDescription>
                       </CardHeader>
                       <CardContent>
@@ -228,7 +228,7 @@ export default function ArtSportsPortfolioPageClient() {
 
             {/* Art Projects Section */}
             <div>
-              <h2 className="text-2xl font-bold mb-6" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+              <h2 className="text-2xl font-bold mb-6" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                 Art Projects
               </h2>
               <div className="mb-8 flex justify-center">
@@ -259,7 +259,7 @@ export default function ArtSportsPortfolioPageClient() {
                     <CardHeader className="flex flex-row items-center gap-4">
                       <project.icon className="h-8 w-8" />
                       <div>
-                        <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{project.title}</CardTitle>
+                        <CardTitle style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>{project.title}</CardTitle>
                         <CardDescription>{project.description}</CardDescription>
                       </div>
                     </CardHeader>

@@ -20,7 +20,7 @@ export default function Footer() {
         <div className="flex flex-col items-center gap-4 px-8 text-center">
           <p
             className="text-center text-sm leading-loose md:text-left"
-            style={{ fontFamily: "Sour Gummy, latin", fontSize: "16px" }}
+            style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif", fontSize: "16px" }}
           >
             Built by Adil Mukhi. The source code is available on{" "}
             <a

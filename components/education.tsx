@@ -54,7 +54,7 @@ export default function Education() {
     <section id="education" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <h2
         className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl normal-case"
-        style={{ fontFamily: "Sour Gummy, latin" }}
+        style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
       >
         Education
       </h2>
@@ -75,7 +75,7 @@ export default function Education() {
               </Button>
             </div>
             <CardHeader>
-              <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+              <CardTitle style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                 <Link href={`/background?education=${edu.slug}#education`} className="hover:text-primary transition-colors" onClick={(e) => e.stopPropagation()}>
                   {edu.degree}
                 </Link>
@@ -106,7 +106,7 @@ export default function Education() {
 
       {educationData.length > 3 && (
         <div className="mt-8">
-          <h3 className="text-xl font-semibold mb-6" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+          <h3 className="text-xl font-semibold mb-6" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
             Additional Certifications & Training
           </h3>
           <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-4">
@@ -143,7 +143,7 @@ export default function Education() {
                     <div className="min-w-0 flex-1">
                       <h4
                         className="font-semibold text-sm leading-tight"
-                        style={{ fontFamily: "'Bubblegum Sans', cursive" }}
+                        style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
                       >
                         <Link href={`/background?education=${edu.slug}#education`} className="hover:text-primary transition-colors" onClick={(e) => e.stopPropagation()}>
                           {edu.degree}

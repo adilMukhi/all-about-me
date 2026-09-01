@@ -23,7 +23,7 @@ export default function BackgroundPreview() {
       <div className="text-left mb-12">
         <h2
           className="mb-4 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
-          style={{ fontFamily: "Sour Gummy, latin" }}
+          style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
         >
           Professional Background
         </h2>
@@ -36,7 +36,7 @@ export default function BackgroundPreview() {
         {/* Work Experience Preview */}
         <Card className="card-hover-effect flex flex-col">
           <CardHeader>
-            <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>Latest Experience</CardTitle>
+            <CardTitle style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>Latest Experience</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 flex-1 flex flex-col">
             <div className="flex gap-4 flex-1">
@@ -66,7 +66,7 @@ export default function BackgroundPreview() {
         {/* Testimonial Preview */}
         <Card className="card-hover-effect flex flex-col">
           <CardHeader>
-            <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>What People Say</CardTitle>
+            <CardTitle style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>What People Say</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 flex-1 flex flex-col">
             <div className="flex gap-4 flex-1">
@@ -100,7 +100,7 @@ export default function BackgroundPreview() {
 
       {/* Portfolio Links */}
       <div className="text-center">
-        <h2 className="text-xl font-semibold mb-6" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+        <h2 className="text-xl font-semibold mb-6" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
           Explore My Work
         </h2>
         <div className="flex flex-wrap justify-center gap-4">

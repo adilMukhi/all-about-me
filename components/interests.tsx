@@ -7,7 +7,7 @@ export default function Interests() {
     <section id="interests" className="container py-8" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <h2
         className="mb-6 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
-        style={{ fontFamily: "Sour Gummy, latin" }}
+        style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
       >
         Interests
       </h2>

@@ -48,7 +48,7 @@ export default function ProfilesPage() {
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
           <div className="container max-w-4xl">
             <SEOBreadcrumbs items={[{ label: "Profiles", href: "/profiles", active: true }]} />
-            <h1 className="text-4xl font-bold tracking-tighter mb-6 sm:text-5xl md:text-6xl" style={{ fontFamily: "Sour Gummy, latin" }}>
+            <h1 className="text-4xl font-bold tracking-tighter mb-6 sm:text-5xl md:text-6xl" style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
               Follow & Profiles
             </h1>
             <p className="text-muted-foreground mb-10 text-lg">
@@ -57,7 +57,7 @@ export default function ProfilesPage() {
 
             <Card>
               <CardHeader>
-                <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>Official Links</CardTitle>
+                <CardTitle style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>Official Links</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">

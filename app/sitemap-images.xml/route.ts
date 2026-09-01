@@ -41,9 +41,18 @@ function titleFromPath(source: string): string {
   return normalized.replace(/\b\w/g, (character) => character.toUpperCase())
 }
 
+function encodePath(path: string): string {
+  try {
+    return encodeURI(path).replace(/\(/g, "%28").replace(/\)/g, "%29")
+  } catch {
+    return path
+  }
+}
+
 function toImageEntry(source: string, baseUrl: string, title?: string, caption?: string): ImageEntry {
   const trimmed = source.trim()
-  const loc = trimmed.startsWith("http://") || trimmed.startsWith("https://") ? trimmed : `${baseUrl}${trimmed}`
+  const isAbsolute = trimmed.startsWith("http://") || trimmed.startsWith("https://")
+  const loc = isAbsolute ? trimmed : `${baseUrl}${encodePath(trimmed)}`
   const fallback = titleFromPath(trimmed)
 
   return {

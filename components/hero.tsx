@@ -112,7 +112,7 @@ export default function Hero() {
 
           <p
             className={`max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 transition-all duration-700 delay-500 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-            style={{ fontFamily: "'Times New Roman', Times, latin" }}
+            style={{ fontFamily: "'Times New Roman', Times, serif" }}
           >
             I’m a public speaker, youth advocate & changemaker: from mentoring through Dr. Interested, contributing to applying for CIHR research grants, and speaking at TEDx. Explore my work and experiences below!
           </p>

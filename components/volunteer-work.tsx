@@ -79,7 +79,7 @@ export default function VolunteerWork() {
       <section id="volunteer" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
         <h2
           className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
-          style={{ fontFamily: "Sour Gummy, latin" }}
+          style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
         >
           Volunteer Work
         </h2>
@@ -113,7 +113,7 @@ export default function VolunteerWork() {
               {index < 6 ? (
                 <>
                   <CardHeader className="pb-3">
-                    <CardTitle className="text-lg" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+                    <CardTitle className="text-lg" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                       <Link href={`/background?volunteer=${index}#volunteer`} className="hover:text-primary transition-colors" onClick={(e) => e.stopPropagation()}>
                         {exp.role}
                       </Link>
@@ -167,7 +167,7 @@ export default function VolunteerWork() {
                       height={60}
                       className="rounded-lg object-cover mx-auto mb-2"
                     />
-                    <h3 className="font-semibold text-sm mb-1" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+                    <h3 className="font-semibold text-sm mb-1" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                       <Link href={`/background?volunteer=${index}#volunteer`} className="hover:text-primary transition-colors" onClick={(e) => e.stopPropagation()}>
                         {exp.role}
                       </Link>

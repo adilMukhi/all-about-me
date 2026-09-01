@@ -56,7 +56,7 @@ export default function ExperiencesPage() {
             <SEOBreadcrumbs items={[{ label: "Experiences", href: "/experiences", active: true }]} />
             <h1
               className="text-4xl font-bold tracking-tighter text-center mb-8 sm:text-5xl md:text-6xl"
-              style={{ fontFamily: "Sour Gummy, latin" }}
+              style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
             >
               Experiences
             </h1>
@@ -97,7 +97,7 @@ export default function ExperiencesPage() {
                       </div>
                     </div>
                     <CardHeader>
-                      <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }} className="transition-colors">
+                      <CardTitle style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }} className="transition-colors">
                         <Link href={`/experiences/${post.slug}`} className="hover:text-primary">
                           {post.title}
                         </Link>
@@ -109,6 +109,7 @@ export default function ExperiencesPage() {
                       <div className="mt-auto flex items-center gap-4">
                         <Link
                           href={`/experiences/${post.slug}`}
+                          aria-label={`Read more: ${post.title}`}
                           className="flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform"
                         >
                           Read more <ArrowRight className="ml-1 h-4 w-4" />

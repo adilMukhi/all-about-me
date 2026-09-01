@@ -7,7 +7,7 @@ const ServiceMediaPreview = () => {
     <section className="container py-8" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <h2
         className="mb-6 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl normal-case"
-        style={{ fontFamily: "Sour Gummy, latin" }}
+        style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
       >
         Services & Media
       </h2>
@@ -16,7 +16,7 @@ const ServiceMediaPreview = () => {
         <div className="bg-card shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 card-hover-effect rounded-lg p-8 flex flex-col">
           <div className="flex items-center gap-3 mb-6">
             <Calendar className="h-8 w-8 text-primary" />
-            <h3 className="text-2xl font-bold text-primary" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+            <h3 className="text-2xl font-bold text-primary" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
               Services
             </h3>
           </div>
@@ -62,7 +62,7 @@ const ServiceMediaPreview = () => {
         <div className="bg-card shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 card-hover-effect rounded-lg p-8 flex flex-col">
           <div className="flex items-center gap-3 mb-6">
             <Newspaper className="h-8 w-8 text-primary" />
-            <h3 className="text-2xl font-bold text-primary" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+            <h3 className="text-2xl font-bold text-primary" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
               Media
             </h3>
           </div>

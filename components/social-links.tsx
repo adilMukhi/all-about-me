@@ -111,7 +111,7 @@ export default function SocialLinks() {
           <div className="text-left mb-6">
             <h2
               className="mb-4 text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl normal-case"
-              style={{ fontFamily: "Sour Gummy, latin" }}
+              style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
             >
               Contact Me
             </h2>
@@ -125,7 +125,7 @@ export default function SocialLinks() {
             {/* Social Links Card */}
             <Card className="card-hover-effect h-fit">
               <CardHeader className="text-center pb-4">
-                <CardTitle className="text-xl text-primary" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+                <CardTitle className="text-xl text-primary" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                   Follow My Journey
                 </CardTitle>
                 <p className="text-sm text-muted-foreground">Stay updated with my latest work</p>
@@ -143,7 +143,7 @@ export default function SocialLinks() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full"
-                      style={{ fontFamily: "'Kirang Haerang', cursive" }}
+                      style={{ fontFamily: "'Kirang Haerang', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
                     >
                       <social.icon className={`h-5 w-5 ${social.color} group-hover:text-primary transition-colors`} />
                       <span className="group-hover:text-primary transition-colors text-sm">{social.name}</span>
@@ -157,7 +157,7 @@ export default function SocialLinks() {
               <CardHeader className="text-center pb-4">
                 <CardTitle
                   className="text-xl text-primary flex items-center justify-center gap-2"
-                  style={{ fontFamily: "'Bubblegum Sans', cursive" }}
+                  style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
                 >
                   <Calendar className="h-5 w-5" />
                   Let's Meet

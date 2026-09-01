@@ -53,7 +53,7 @@ const MediaHero = () => (
       <SEOBreadcrumbs items={[{ label: "Media", href: "/media", active: true }]} />
       <h1
         className="text-4xl font-bold tracking-tighter text-center mb-4 sm:text-5xl md:text-6xl text-primary"
-        style={{ fontFamily: "Sour Gummy, latin" }}
+        style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
       >
         Media
       </h1>

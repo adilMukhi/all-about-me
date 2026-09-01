@@ -70,7 +70,7 @@ const SpeakingEngagementsHero = () => (
       <SEOBreadcrumbs items={[{ label: "Services", href: "/services", active: true }]} />
       <h2
         className="text-4xl font-bold tracking-tighter text-center mb-16 sm:text-5xl md:text-6xl text-primary"
-        style={{ fontFamily: "Sour Gummy, latin" }}
+        style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
       >
         Speaking Engagements & Consulting
       </h2>
@@ -1129,7 +1129,7 @@ const ServicesHero = () => (
     <div className="container">
       <h1
         className="text-4xl font-bold tracking-tighter text-center mb-8 sm:text-5xl md:text-6xl text-primary"
-        style={{ fontFamily: "Sour Gummy, latin" }}
+        style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
       >
         My Services
       </h1>

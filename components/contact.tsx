@@ -2,7 +2,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Instagram, Linkedin, Github, Link, Building } from "lucide-react"
-import Script from "next/script"
+import CalEmbed from "@/components/cal-embed"
 
 const socialLinks = [
   { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com/in/adil-mukhi-6aba27246", color: "text-blue-500" },
@@ -17,13 +17,13 @@ export default function Contact() {
     <section id="contact" className="container py-8">
       <h2
         className="mb-6 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl normal-case"
-        style={{ fontFamily: "Sour Gummy, latin" }}
+        style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
       >
         Contact Me
       </h2>
       <Card className="bg-gradient-to-br from-blue-100 to-teal-100">
         <CardHeader className="pb-4">
-          <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }} className="text-2xl">
+          <CardTitle style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }} className="text-2xl">
             Get in Touch
           </CardTitle>
         </CardHeader>
@@ -48,7 +48,7 @@ export default function Contact() {
                   className={`flex items-center gap-2 ${social.color} hover:text-primary transition-colors justify-center text-hover-effect`}
                 >
                   <social.icon className="h-5 w-5 sm:h-6 sm:w-6" />
-                  <span style={{ fontFamily: "'Kirang Haerang', cursive", fontSize: "18px" }}>{social.name}</span>
+                  <span style={{ fontFamily: "'Kirang Haerang', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif", fontSize: "18px" }}>{social.name}</span>
                 </a>
               ))}
             </div>
@@ -62,7 +62,7 @@ export default function Contact() {
                   className={`flex items-center gap-2 ${social.color} hover:text-primary transition-colors text-hover-effect`}
                 >
                   <social.icon className="h-5 w-5 sm:h-6 sm:w-6" />
-                  <span style={{ fontFamily: "'Kirang Haerang', cursive", fontSize: "18px" }}>{social.name}</span>
+                  <span style={{ fontFamily: "'Kirang Haerang', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif", fontSize: "18px" }}>{social.name}</span>
                 </a>
               ))}
             </div>
@@ -76,61 +76,10 @@ export default function Contact() {
             </div>
           </div>
           <div className="w-full md:w-1/2">
-            <div
-              style={{ width: "100%", height: "450px", overflow: "scroll", borderRadius: "8px" }}
-              id="my-cal-inline-15min"
-            />
+            <CalEmbed />
           </div>
         </CardContent>
       </Card>
-      <Script id="cal-embed-script" strategy="lazyOnload">
-        {`
-          (function (C, A, L) { 
-            let p = function (a, ar) { a.q.push(ar); }; 
-            let d = C.document; 
-            C.Cal = C.Cal || function () { 
-              let cal = C.Cal; 
-              let ar = arguments; 
-              if (!cal.loaded) { 
-                cal.ns = {}; 
-                cal.q = cal.q || []; 
-                d.head.appendChild(d.createElement("script")).src = A; 
-                cal.loaded = true; 
-              } 
-              if (ar[0] === L) { 
-                const api = function () { p(api, arguments); }; 
-                const namespace = ar[1]; 
-                api.q = api.q || []; 
-                if(typeof namespace === "string"){
-                  cal.ns[namespace] = cal.ns[namespace] || api;
-                  p(cal.ns[namespace], ar);
-                  p(cal, ["initNamespace", namespace]);
-                } else p(cal, ar); 
-                return;
-              } 
-              p(cal, ar); 
-            }; 
-          })(window, "https://app.cal.com/embed/embed.js", "init");
-          
-          Cal("init", "15min", {origin:"https://app.cal.com"});
-          
-          Cal.ns["15min"]("inline", {
-            elementOrSelector:"#my-cal-inline-15min",
-            config: {"layout":"month_view","theme":"light"},
-            calLink: "adilm.0/15min",
-          });
-          
-          Cal.ns["15min"]("ui", {
-            "theme":"light",
-            "cssVarsPerTheme":{
-              "light":{"cal-brand":"#90b1df"},
-              "dark":{"cal-brand":"#90b1df"}
-            },
-            "hideEventTypeDetails":true,
-            "layout":"month_view"
-          });
-        `}
-      </Script>
     </section>
   )
 }

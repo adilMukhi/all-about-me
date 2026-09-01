@@ -55,7 +55,7 @@ export default function PortfolioPage() {
             <SEOBreadcrumbs items={[{ label: "Portfolio", href: "/portfolio", active: true }]} />
             <h1
               className="text-4xl font-bold tracking-tighter text-center mb-8 sm:text-5xl md:text-6xl"
-              style={{ fontFamily: "Sour Gummy, latin" }}
+              style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
             >
               My Portfolios
             </h1>
@@ -78,7 +78,7 @@ export default function PortfolioPage() {
                       <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-6">
                         <h2
                           className="text-4xl md:text-5xl font-bold mb-4"
-                          style={{ fontFamily: "'Bubblegum Sans', cursive" }}
+                          style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
                         >
                           {category.title}
                         </h2>

@@ -64,7 +64,7 @@ export default function Certificates() {
     <section id="certificates" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <h2
         className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
-        style={{ fontFamily: "Sour Gummy, latin" }}
+        style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
       >
         Certificates
       </h2>
@@ -85,7 +85,7 @@ export default function Certificates() {
             </Button>
 
             <CardHeader>
-              <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+              <CardTitle style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                 <Link
                   href={`/background?certificate=${cert.slug || slugify(cert.name)}#certificates`}
                   className="hover:text-primary transition-colors"

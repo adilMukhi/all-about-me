@@ -21,7 +21,7 @@ export function LatestBlogPost() {
     <section className="container py-8">
       <h2
         className="mb-6 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
-        style={{ fontFamily: "Sour Gummy, latin" }}
+        style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
       >
         My Latest Experience
       </h2>
@@ -33,14 +33,15 @@ export function LatestBlogPost() {
               src={latestPost.image || "/placeholder.svg"}
               alt={latestPost.title}
               fill
-              priority
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent pointer-events-none" />
           </div>
           <div className="p-6 md:w-2/3">
             <div className="mb-4">
-              <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+              <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                 {latestPost.title}
               </h3>
               <p className="text-muted-foreground">
@@ -52,7 +53,9 @@ export function LatestBlogPost() {
             </p>
             <div className="flex gap-4">
               <Button asChild>
-                <Link href={`/experiences/${latestPost.slug}`}>Read More</Link>
+                <Link href={`/experiences/${latestPost.slug}`} aria-label={`Read the full story: ${latestPost.title}`}>
+                  Read the full story
+                </Link>
               </Button>
               <Button variant="outline" asChild>
                 <Link href="/experiences" className="flex items-center">

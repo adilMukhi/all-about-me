@@ -56,7 +56,7 @@ export default function HonorsIndexPage() {
                 <Trophy className="h-4 w-4" />
                 Indexed award pages
               </div>
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl" style={{ fontFamily: "Sour Gummy, latin" }}>
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl" style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                 Honors & Awards
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
@@ -86,7 +86,7 @@ export default function HonorsIndexPage() {
                     </Link>
                     <CardHeader>
                       <CardDescription>{award.year}</CardDescription>
-                      <CardTitle className="text-xl" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+                      <CardTitle className="text-xl" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                         {award.title}
                       </CardTitle>
                       <p className="text-sm text-muted-foreground">{award.issuer}</p>

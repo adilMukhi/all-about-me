@@ -121,7 +121,7 @@ export default function Testimonials() {
   return (
     <div className="space-y-8">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "Bubblegum Sans, latin" }}>
+        <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
           What People Say
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">

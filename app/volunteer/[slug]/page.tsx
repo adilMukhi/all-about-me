@@ -123,7 +123,7 @@ export default function VolunteerDetailPage({ params }: { params: { slug: string
                   <Sparkles className="h-4 w-4" />
                   Indexed volunteer page
                 </div>
-                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl" style={{ fontFamily: "Sour Gummy, latin" }}>
+                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl" style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                   {volunteer.role}
                 </h1>
                 <p className="mt-4 text-2xl font-semibold text-primary">{volunteer.organization}</p>

@@ -72,7 +72,7 @@ export default function BlogPostClient({ post, slug }: BlogPostClientProps) {
             <div className="bg-gradient-to-r from-blue-50 to-transparent p-8 rounded-lg mb-12">
               <h1
                 className="text-4xl font-bold tracking-tighter mb-4 sm:text-5xl"
-                style={{ fontFamily: "Sour Gummy, latin" }}
+                style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
               >
                 {post.title}
               </h1>

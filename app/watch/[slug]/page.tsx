@@ -149,7 +149,7 @@ export default function WatchDetailPage({ params }: { params: { slug: string } }
               {video.category}
             </div>
 
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" style={{ fontFamily: "Sour Gummy, latin" }}>
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
               {video.title}
             </h1>
             <p className="mt-4 text-xl font-semibold text-primary">{video.publisher}</p>

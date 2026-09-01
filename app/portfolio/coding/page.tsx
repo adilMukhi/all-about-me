@@ -37,7 +37,7 @@ export default function CodingPortfolioPage() {
 
             <h1
               className="text-4xl font-bold tracking-tighter mb-8 sm:text-5xl"
-              style={{ fontFamily: "Sour Gummy, latin" }}
+              style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
             >
               Coding Portfolio
             </h1>
@@ -72,7 +72,7 @@ export default function CodingPortfolioPage() {
                     />
                   </div>
                   <CardHeader>
-                    <CardTitle style={{ fontFamily: "'Bubblegum Sans', cursive" }}>{project.title}</CardTitle>
+                    <CardTitle style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>{project.title}</CardTitle>
                     <CardDescription>{project.description}</CardDescription>
                   </CardHeader>
                   <CardContent>

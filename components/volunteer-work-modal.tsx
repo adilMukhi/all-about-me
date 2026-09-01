@@ -40,7 +40,7 @@ export default function VolunteerWorkModal({ experience, isOpen, onClose }: Volu
     <Dialog open={isOpen} onOpenChange={handleOpenChange}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold pr-8" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+          <DialogTitle className="text-2xl font-bold pr-8" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
             {experience.role}
           </DialogTitle>
           <p className="text-lg text-muted-foreground">

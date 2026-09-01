@@ -123,7 +123,7 @@ export default function TestimonialsIndexPage() {
                 <MessageSquareQuote className="h-4 w-4" />
                 Indexed testimonial pages
               </div>
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl" style={{ fontFamily: "Sour Gummy, latin" }}>
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl" style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                 Testimonials
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
@@ -142,7 +142,7 @@ export default function TestimonialsIndexPage() {
                     </Link>
                     <CardHeader>
                       <CardDescription>{testimonial.relationship}</CardDescription>
-                      <CardTitle className="text-xl" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+                      <CardTitle className="text-xl" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                         {testimonial.name}
                       </CardTitle>
                       <p className="text-sm text-muted-foreground">{testimonial.role}</p>

@@ -28,7 +28,7 @@ function BookCard({ book }: { book: (typeof books)[0] }) {
             )}
           </div>
           <div className="flex-1">
-            <CardTitle className="text-xl mb-2" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+            <CardTitle className="text-xl mb-2" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
               {book.title}
             </CardTitle>
             <p className="text-sm text-muted-foreground mb-2">By: {book.authors || "Adil Mukhi et al"}</p>
@@ -104,7 +104,7 @@ function PublicationCard({ pub }: { pub: (typeof ltes)[0] | (typeof clubPublicat
   return (
     <Card className="transition-all duration-300 hover:shadow-md h-full">
       <CardHeader>
-        <CardTitle className="text-lg" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+        <CardTitle className="text-lg" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
           {pub.title}
         </CardTitle>
         <CardDescription>
@@ -145,7 +145,7 @@ function BlogCard({ blog }: { blog: (typeof blogs)[0] }) {
                 )}
               </div>
               <div className="flex-1">
-                <CardTitle className="text-xl mb-2" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+                <CardTitle className="text-xl mb-2" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                   {blog.title}
                 </CardTitle>
                 <p className="text-sm text-muted-foreground mb-2">By: {blog.authors || "Adil Mukhi"}</p>
@@ -211,7 +211,7 @@ export default function WritingPortfolioPage() {
 
             <h1
               className="text-4xl font-bold tracking-tighter mb-8 sm:text-5xl"
-              style={{ fontFamily: "Sour Gummy, latin" }}
+              style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
             >
               Writing Portfolio
             </h1>
@@ -221,7 +221,7 @@ export default function WritingPortfolioPage() {
 
             {books.length > 0 && (
               <div className="mb-16">
-                <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+                <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                   Books
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -234,7 +234,7 @@ export default function WritingPortfolioPage() {
 
             {ltes.length > 0 && (
               <div className="mb-16">
-                <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+                <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                   LTEs & Op-EDs
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -247,7 +247,7 @@ export default function WritingPortfolioPage() {
 
             {clubPublications.length > 0 && (
               <div className="mb-16">
-                <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+                <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                   Club Publications
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -260,7 +260,7 @@ export default function WritingPortfolioPage() {
 
             {blogs.length > 0 && (
               <div className="mb-16">
-                <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+                <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                   Blogs
                 </h2>
                 <div className="space-y-6">

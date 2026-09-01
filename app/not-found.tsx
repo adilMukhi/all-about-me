@@ -15,7 +15,7 @@ export default function NotFound() {
       <div className="max-w-md px-4">
         <h1
           className="mb-6 text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400"
-          style={{ fontFamily: "'Sour Gummy', sans-serif" }}
+          style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
         >
           404
         </h1>

@@ -26,7 +26,7 @@ export default function EducationModal({ education, isOpen, onClose }: Education
         <div className="space-y-6">
           {/* Header */}
           <div className="space-y-2">
-            <h2 className="text-2xl font-bold" style={{ fontFamily: "'Bubblegum Sans', cursive" }}>
+            <h2 className="text-2xl font-bold" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
               {education.degree}
             </h2>
             <p className="text-lg text-muted-foreground">
