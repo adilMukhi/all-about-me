@@ -17,6 +17,14 @@ import {
 import { volunteerWork } from "@/data/volunteer-work"
 import { workExperiences } from "@/data/work-experience"
 import { videos } from "@/data/videos"
+import {
+  getCertificatePath,
+  getEducationPath,
+  getHonorPath,
+  getMediaPath,
+  getVolunteerPath,
+  getWorkExperiencePath,
+} from "@/lib/seo-paths"
 
 // Professional images from public/pictures
 const professionalImages = [
@@ -116,12 +124,20 @@ function generateRssFeed() {
   }
 
   // Build a valid, XML-safe absolute URL for an image/media path.
+  // Falls back to the site OG image so a <media:content>/<enclosure> url is never empty.
   const mediaSrc = (path: string | undefined | null): string => {
-    if (!path) return ""
+    if (!path) return escapeXml(`${baseUrl}/og-image.png`)
     const encoded = encodeURI(path).replace(/\(/g, "%28").replace(/\)/g, "%29")
     const full = /^https?:\/\//i.test(path) ? path : `${baseUrl}${encoded}`
     return escapeXml(full)
   }
+
+  // Every <link>/<guid> in this feed must be on this domain so the feed also
+  // validates when submitted to Search Console as a sitemap. External sources
+  // are kept as <atom:link rel="related">.
+  const onSite = (path: string) => escapeXml(`${baseUrl}${path.startsWith("/") ? path : `/${path}`}`)
+  const externalRef = (url?: string | null) =>
+    url ? `\n      <atom:link href="${escapeXml(url)}" rel="related" type="text/html" />` : ""
 
   // Deterministic, XML-safe slug for <guid> values.
   const guidSlug = (value: unknown): string =>
@@ -178,7 +194,7 @@ function generateRssFeed() {
       <guid isPermaLink="true">${baseUrl}/experiences/${post.slug}</guid>
       <pubDate>${postDate}</pubDate>
       <description>${escapeXml(excerpt)}</description>
-      <content:encoded><![CDATA[${post.content}]]></content:encoded>
+      <content:encoded><![CDATA[${post.content.split("]]>").join("]]&gt;")}]]></content:encoded>
       <category>Blog Post</category>
       <enclosure length="0" url="${mediaSrc(post.image)}" type="${mimeType}" />
       <media:content url="${mediaSrc(post.image)}" type="${mimeType}" medium="image">
@@ -248,7 +264,7 @@ function generateRssFeed() {
     rssItems += `
     <item>
       <title>${escapeXml(`Certificate: ${cert.name}`)}</title>
-      <link>${baseUrl}/#certificates</link>
+      <link>${onSite(getCertificatePath(cert))}</link>
       <guid isPermaLink="false">cert-${guidSlug(cert.slug || cert.name)}</guid>
       <pubDate>${certDate}</pubDate>
       <description>${escapeXml(cert.description)}</description>
@@ -282,7 +298,7 @@ function generateRssFeed() {
     rssItems += `
     <item>
       <title>${escapeXml(`Education: ${edu.degree}`)}</title>
-      <link>${baseUrl}/#education</link>
+      <link>${onSite(getEducationPath(edu))}</link>
       <guid isPermaLink="false">edu-${edu.slug}</guid>
       <pubDate>${eduDate}</pubDate>
       <description>${escapeXml(`${edu.degree} at ${edu.institution} (${edu.period}). ${edu.description}`)}</description>
@@ -315,7 +331,7 @@ function generateRssFeed() {
     rssItems += `
     <item>
       <title>${escapeXml(`Award: ${award.title}`)}</title>
-      <link>${baseUrl}/#honors-awards</link>
+      <link>${onSite(getHonorPath(award))}</link>
       <guid isPermaLink="false">award-${guidSlug(award.title)}</guid>
       <pubDate>${awardDate}</pubDate>
       <description>${escapeXml(`${award.description} (${award.issuer}, ${award.year})`)}</description>
@@ -358,13 +374,13 @@ function generateRssFeed() {
     rssItems += `
     <item>
       <title>${escapeXml(`Media Feature: ${media.title}`)}</title>
-      <link>${escapeXml(media.link)}</link>
-      <guid isPermaLink="true">${escapeXml(media.link)}</guid>
+      <link>${onSite(getMediaPath(media))}</link>
+      <guid isPermaLink="true">${onSite(getMediaPath(media))}</guid>
       <pubDate>${mediaDate}</pubDate>
       <description>${escapeXml(`Featured in ${media.publication}: "${media.quote}"`)}</description>
       <category>Media</category>
       <category>${escapeXml(media.type)}</category>
-      <category>${escapeXml(media.publication)}</category>
+      <category>${escapeXml(media.publication)}</category>${externalRef(media.link)}
     </item>`
   })
 
@@ -427,8 +443,8 @@ function generateRssFeed() {
     rssItems += `
     <item>
       <title>${escapeXml(`Book: ${book.title}`)}</title>
-      <link>${escapeXml(book.link)}</link>
-      <guid isPermaLink="false">book-${guidSlug(book.title)}</guid>
+      <link>${baseUrl}/portfolio/writing</link>
+      <guid isPermaLink="false">book-${guidSlug(book.title)}</guid>${externalRef(book.link)}
       <pubDate>${bookDate}</pubDate>
       <description>${escapeXml(`${book.description} Published by ${book.publisher}.`)}</description>
       <category>Book</category>
@@ -455,19 +471,19 @@ function generateRssFeed() {
       if (book.buyLinks.onlineChannels) {
         book.buyLinks.onlineChannels.forEach((channel) => {
           rssItems += `
-      <atom:link href="${escapeXml(channel.url)}" rel="alternate" type="text/html" />`
+      <atom:link href="${escapeXml(channel.url)}" rel="related" type="text/html" />`
         })
       }
       if (book.buyLinks.ebookChannels) {
         book.buyLinks.ebookChannels.forEach((channel) => {
           rssItems += `
-      <atom:link href="${escapeXml(channel.url)}" rel="alternate" type="text/html" />`
+      <atom:link href="${escapeXml(channel.url)}" rel="related" type="text/html" />`
         })
       }
       if (book.buyLinks.customLinks) {
         book.buyLinks.customLinks.forEach((link) => {
           rssItems += `
-      <atom:link href="${escapeXml(link.url)}" rel="alternate" type="text/html" />`
+      <atom:link href="${escapeXml(link.url)}" rel="related" type="text/html" />`
         })
       }
     }
@@ -483,14 +499,14 @@ function generateRssFeed() {
     rssItems += `
     <item>
       <title>${escapeXml(`Letter to the Editor: ${lte.title}`)}</title>
-      <link>${escapeXml(lte.link)}</link>
-      <guid isPermaLink="true">${escapeXml(lte.link)}</guid>
+      <link>${baseUrl}/portfolio/writing</link>
+      <guid isPermaLink="false">lte-${guidSlug(lte.title)}</guid>
       <pubDate>${lteDate}</pubDate>
       <description>${escapeXml(`Published in ${lte.publisher}: ${lte.description}`)}</description>
       <category>Letter to the Editor</category>
       <category>Publication</category>
       <category>${escapeXml(lte.publisher)}</category>
-      <dc:creator>${escapeXml(lte.authors || "Adil Mukhi")}</dc:creator>
+      <dc:creator>${escapeXml(lte.authors || "Adil Mukhi")}</dc:creator>${externalRef(lte.link)}
     </item>`
   })
 
@@ -504,12 +520,12 @@ function generateRssFeed() {
     rssItems += `
     <item>
       <title>${escapeXml(`Blog: ${blog.title}`)}</title>
-      <link>${escapeXml(blog.link)}</link>
-      <guid isPermaLink="true">${escapeXml(blog.link)}</guid>
+      <link>${baseUrl}/portfolio/writing</link>
+      <guid isPermaLink="false">blog-${guidSlug(blog.title)}</guid>
       <pubDate>${blogDate}</pubDate>
       <description>${escapeXml(blog.description)}</description>
       <category>Blog</category>
-      <category>${escapeXml(blog.publisher)}</category>`
+      <category>${escapeXml(blog.publisher)}</category>${externalRef(blog.link)}`
 
     if (blog.image) {
       rssItems += `
@@ -531,6 +547,8 @@ function generateRssFeed() {
         rssItems += `
     <item>
       <title>${escapeXml(article.title)}</title>
+      <link>${baseUrl}/portfolio/writing</link>
+      <guid isPermaLink="false">blog-article-${guidSlug(`${blog.title}-${article.title}`)}</guid>
       <description>${escapeXml(article.subtitle)}</description>
       <category>Blog Article</category>
       <media:keywords>${escapeXml(artKw)}</media:keywords>
@@ -547,13 +565,13 @@ function generateRssFeed() {
     rssItems += `
     <item>
       <title>${escapeXml(pub.title)}</title>
-      <link>${escapeXml(pub.link)}</link>
-      <guid isPermaLink="true">${escapeXml(pub.link)}</guid>
+      <link>${baseUrl}/portfolio/writing</link>
+      <guid isPermaLink="false">pub-${guidSlug(pub.title)}</guid>
       <pubDate>${pubDate}</pubDate>
       <description>${escapeXml(pub.description)}</description>
       <category>Publication</category>
       <category>${escapeXml(pub.publisher)}</category>
-      <dc:creator>${escapeXml(pub.authors || "Adil Mukhi")}</dc:creator>`
+      <dc:creator>${escapeXml(pub.authors || "Adil Mukhi")}</dc:creator>${externalRef(pub.link)}`
 
     if (pub.image) {
       const mimeType = getMimeTypeFromPath(pub.image)
@@ -576,12 +594,12 @@ function generateRssFeed() {
     rssItems += `
     <item>
       <title>${escapeXml(`Coding Project: ${project.title}`)}</title>
-      <link>${escapeXml(project.demoLink)}</link>
+      <link>${baseUrl}/portfolio/coding</link>
       <guid isPermaLink="false">coding-${guidSlug(project.title)}</guid>
       <pubDate>${currentDate}</pubDate>
       <description>${escapeXml(project.description)}</description>
       <category>Coding</category>
-      <category>Project</category>`
+      <category>Project</category>${externalRef(project.demoLink)}`
 
     project.tags.forEach((tag) => {
       rssItems += `
@@ -595,7 +613,7 @@ function generateRssFeed() {
         <media:keywords>${escapeXml(kw)}</media:keywords>
         <media:rating>nonadult</media:rating>
       </media:content>
-      <atom:link href="${escapeXml(project.codeLink)}" rel="alternate" type="text/html" />
+      <atom:link href="${escapeXml(project.codeLink)}" rel="related" type="text/html" />
     </item>`
   })
 
@@ -686,7 +704,7 @@ function generateRssFeed() {
     rssItems += `
     <item>
       <title>${escapeXml(`Volunteer: ${work.role} at ${work.organization}`)}</title>
-      <link>${baseUrl}/#volunteer-work</link>
+      <link>${onSite(getVolunteerPath(work))}</link>
       <guid isPermaLink="false">volunteer-${guidSlug(work.role)}-${guidSlug(work.organization)}</guid>
       <pubDate>${workDate}</pubDate>
       <description>${escapeXml(`${work.role} at ${work.organization} (${work.period}). ${work.description}`)}</description>
@@ -717,7 +735,7 @@ function generateRssFeed() {
     rssItems += `
     <item>
       <title>${escapeXml(`Work Experience: ${work.title} at ${work.company}`)}</title>
-      <link>${baseUrl}/#work-experience</link>
+      <link>${onSite(getWorkExperiencePath(work))}</link>
       <guid isPermaLink="false">work-${work.slug}</guid>
       <pubDate>${workDate}</pubDate>
       <description>${escapeXml(`${work.title} at ${work.company} (${work.period}). ${work.description}`)}</description>
