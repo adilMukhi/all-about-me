@@ -19,8 +19,9 @@ export function generateStaticParams() {
   return honorsAwards.map((award) => ({ slug: getHonorPath(award).split("/").pop() as string }))
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const award = getHonorBySlug(params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const award = getHonorBySlug(slug)
 
   if (!award) {
     return {
@@ -57,8 +58,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   }
 }
 
-export default function HonorDetailPage({ params }: { params: { slug: string } }) {
-  const award = getHonorBySlug(params.slug)
+export default async function HonorDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const award = getHonorBySlug(slug)
 
   if (!award) {
     notFound()

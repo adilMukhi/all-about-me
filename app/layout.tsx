@@ -125,7 +125,8 @@ export const metadata: Metadata = {
   applicationName: "Adil Mukhi",
   metadataBase: getValidUrl(siteUrl),
   alternates: {
-    canonical: "/",
+    // No site-wide canonical: every page sets its own absolute canonical so it
+    // never inherits "/" by accident.
     types: {
       "application/rss+xml": [{ url: "/rss.xml", title: "Adil Mukhi RSS Feed" }],
     },
@@ -219,13 +220,22 @@ export default function RootLayout({
               areaServed: "Worldwide",
               email: "adilm@drinterested.org",
               telephone: "+1-289-796-2566",
-              contactPoint: {
-                "@type": "ContactPoint",
-                email: "adilm@drinterested.org",
-                telephone: "+1-289-796-2566",
-                contactType: "speaking and consulting inquiries",
-                availableLanguage: ["English", "French"],
-              },
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  contactType: "speaking and consulting inquiries",
+                  email: "adilm@drinterested.org",
+                  url: "https://cal.com/adilm.0/15min",
+                  availableLanguage: ["English", "French"],
+                },
+                {
+                  "@type": "ContactPoint",
+                  contactType: "business phone",
+                  telephone: "+1-289-796-2566",
+                  description: "Work number — hours vary; booking a call is the reliable option.",
+                  availableLanguage: ["English", "French"],
+                },
+              ],
               description:
                 "Dr. Interested is a youth-led global organization founded by Adil Mukhi. It serves as a platform for public speaking, advising, consulting, mentorship, and youth leadership across the Greater Toronto Area and worldwide. Stats: 367 executives, 1,700 members, 106 countries, 20+ events, 160,000 impacted, 400+ mentor hours, 900 volunteers, 12,169 followers, 752 posts, and 3,713,406 impressions.",
               knowsAbout: [

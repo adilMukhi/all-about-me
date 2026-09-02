@@ -19,29 +19,45 @@ export default function ExperiencesPage() {
     return Number.isNaN(parsedDate.getTime()) ? undefined : parsedDate.toISOString()
   }
 
+  const imageUrl = (path: string) =>
+    /^https?:\/\//i.test(path)
+      ? path
+      : `${siteUrl}${encodeURI(path).replace(/\(/g, "%28").replace(/\)/g, "%29")}`
+
   const experiencesStructuredData = {
     "@context": "https://schema.org",
     "@type": "Blog",
     "@id": `${siteUrl}/experiences#blog`,
     name: "Adil Mukhi Experiences",
     url: `${siteUrl}/experiences`,
-    author: {
-      "@type": "Person",
-      name: "Adil Mukhi",
-      url: siteUrl,
-    },
-    blogPost: blogPosts.map((post) => ({
-      "@type": "NewsArticle",
-      headline: post.title,
-      description: post.subtitle || post.excerpt,
-      url: `${siteUrl}/experiences/${post.slug}`,
-      datePublished: toIsoDate(post.date),
-      dateModified: toIsoDate(post.date),
-      image: post.image ? `${siteUrl}${post.image}` : undefined,
-      articleSection: "Experiences",
-      keywords: [post.title, post.subtitle, "Adil Mukhi", "news", "experiences"].filter(Boolean),
-      sameAs: post.learnMoreUrl || undefined,
-    })),
+    inLanguage: "en-CA",
+    author: { "@id": `${siteUrl}/#person` },
+    publisher: { "@id": `${siteUrl}/#organization` },
+    blogPost: blogPosts
+      .filter((post) => post.slug)
+      .map((post) => {
+        const images = Array.from(
+          new Set([post.image, ...(post.images ?? [])].filter(Boolean).map((p) => imageUrl(p as string))),
+        )
+        return {
+          "@type": "NewsArticle",
+          "@id": `${siteUrl}/experiences/${post.slug}#article`,
+          headline: post.title.length <= 110 ? post.title : `${post.title.slice(0, 107).trimEnd()}…`,
+          description: post.subtitle || post.excerpt,
+          url: `${siteUrl}/experiences/${post.slug}`,
+          mainEntityOfPage: `${siteUrl}/experiences/${post.slug}`,
+          datePublished: toIsoDate(post.date),
+          dateModified: toIsoDate(post.date),
+          image: images.length ? images : undefined,
+          articleSection: "Experiences",
+          inLanguage: "en-CA",
+          isAccessibleForFree: true,
+          author: { "@id": `${siteUrl}/#person` },
+          publisher: { "@id": `${siteUrl}/#organization` },
+          keywords: [post.title, post.subtitle, "Adil Mukhi", "news", "experiences"].filter(Boolean),
+          isBasedOn: post.learnMoreUrl || undefined,
+        }
+      }),
   }
 
   return (

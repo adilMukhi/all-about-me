@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Instagram, Linkedin, Github, Link, Building } from "lucide-react"
 import CalEmbed from "@/components/cal-embed"
+import { CAL_BOOKING_URL, CONTACT_EMAIL, WORK_PHONE_DISPLAY, WORK_PHONE_TEL } from "@/lib/site"
 
 const socialLinks = [
   { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com/in/adil-mukhi-6aba27246", color: "text-blue-500" },
@@ -68,12 +69,24 @@ export default function Contact() {
             </div>
             <div className="flex flex-col sm:flex-row gap-3 w-full max-w-lg mt-4">
               <Button asChild className="button-hover-effect flex-1 text-base h-12">
-                <a href="mailto:adilm@drinterested.org">Email Me</a>
+                <a href={`mailto:${CONTACT_EMAIL}`}>Email Me</a>
               </Button>
               <Button asChild variant="outline" className="button-hover-effect flex-1 text-base h-12">
-                <a href="tel:+12897962566">Call: +1 289 796 2566</a>
+                <a href={`tel:${WORK_PHONE_TEL}`}>Work line: {WORK_PHONE_DISPLAY}</a>
               </Button>
             </div>
+            <p className="w-full max-w-lg text-xs text-muted-foreground text-center">
+              {WORK_PHONE_DISPLAY} is my work number and hours vary day to day — for a guaranteed time,{" "}
+              <a
+                href={CAL_BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary underline underline-offset-2"
+              >
+                book a call on Cal.com
+              </a>
+              .
+            </p>
           </div>
           <div className="w-full md:w-1/2">
             <CalEmbed />

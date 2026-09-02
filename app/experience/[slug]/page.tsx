@@ -21,8 +21,9 @@ export function generateStaticParams() {
     .map((experience) => ({ slug: experience.slug }))
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const experience = getWorkExperienceBySlug(params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const experience = getWorkExperienceBySlug(slug)
 
   if (!experience || experience.company === "Dr. Interested") {
     return {
@@ -57,8 +58,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   }
 }
 
-export default function ExperienceDetailPage({ params }: { params: { slug: string } }) {
-  const experience = getWorkExperienceBySlug(params.slug)
+export default async function ExperienceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const experience = getWorkExperienceBySlug(slug)
 
   if (!experience || experience.company === "Dr. Interested") {
     notFound()

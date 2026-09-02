@@ -19,8 +19,9 @@ export function generateStaticParams() {
   return volunteerWork.map((volunteer) => ({ slug: getVolunteerPath(volunteer).split("/").pop() as string }))
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const volunteer = getVolunteerBySlug(params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const volunteer = getVolunteerBySlug(slug)
 
   if (!volunteer) {
     return {
@@ -55,8 +56,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   }
 }
 
-export default function VolunteerDetailPage({ params }: { params: { slug: string } }) {
-  const volunteer = getVolunteerBySlug(params.slug)
+export default async function VolunteerDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const volunteer = getVolunteerBySlug(slug)
 
   if (!volunteer) {
     notFound()

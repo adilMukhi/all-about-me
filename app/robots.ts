@@ -141,7 +141,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/private/", "/admin/", "/api/", "/s/"],
       },
     ],
-    sitemap: [`${siteUrl}/sitemap.xml`, `${siteUrl}/sitemap-images.xml`],
+    sitemap: [`${siteUrl}/sitemap.xml`, `${siteUrl}/sitemap-images.xml`, `${siteUrl}/news-sitemap.xml`],
     host: siteUrl,
     other: {
       "RSS-Feed": `${siteUrl}/rss.xml`,

@@ -19,8 +19,9 @@ export function generateStaticParams() {
   return certificates.map((certificate) => ({ slug: certificate.slug || certificate.name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "") }))
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const certificate = getCertificateBySlug(params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const certificate = getCertificateBySlug(slug)
 
   if (!certificate) {
     return {
@@ -55,8 +56,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   }
 }
 
-export default function CertificateDetailPage({ params }: { params: { slug: string } }) {
-  const certificate = getCertificateBySlug(params.slug)
+export default async function CertificateDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const certificate = getCertificateBySlug(slug)
 
   if (!certificate) {
     notFound()

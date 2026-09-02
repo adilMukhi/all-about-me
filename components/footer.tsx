@@ -46,6 +46,20 @@ export default function Footer() {
               </a>
             ))}
           </div>
+          <div className="flex flex-wrap justify-center gap-3 text-xs text-muted-foreground">
+            <a href="/privacy" className="underline underline-offset-4 hover:text-primary transition-colors">
+              Privacy Policy
+            </a>
+            <a href="/terms" className="underline underline-offset-4 hover:text-primary transition-colors">
+              Terms of Use
+            </a>
+            <a href="/ai-policy" className="underline underline-offset-4 hover:text-primary transition-colors">
+              AI &amp; Automated Access
+            </a>
+          </div>
+          <p className="text-xs text-muted-foreground">
+            &copy; {new Date().getFullYear()} Adil Mukhi. All rights reserved.
+          </p>
         </div>
         <div className="flex gap-8">
           <a

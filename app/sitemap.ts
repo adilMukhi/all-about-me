@@ -132,6 +132,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: currentDate,
+      changeFrequency: "yearly",
+      priority: 0.2,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: currentDate,
+      changeFrequency: "yearly",
+      priority: 0.2,
+    },
+    {
+      url: `${baseUrl}/ai-policy`,
+      lastModified: currentDate,
+      changeFrequency: "yearly",
+      priority: 0.2,
+    },
   ]
 
   // Next's sitemap serializer does not XML-escape the <video:*> extension
@@ -164,15 +182,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   })
 
-  // Blog posts (experiences) with proper date handling
+  // Blog / image filenames contain spaces and parentheses — encode for valid <image:loc>.
+  const encodeImg = (path: string) =>
+    /^https?:\/\//i.test(path)
+      ? path
+      : `${baseUrl}${encodeURI(path).replace(/\(/g, "%28").replace(/\)/g, "%29")}`
+
+  // Blog posts (experiences) with proper date handling + image references
   const blogRoutes: MetadataRoute.Sitemap = blogPosts
     .filter((post) => post.slug && post.date)
-    .map((post) => ({
-      url: `${baseUrl}/experiences/${post.slug}`,
-      lastModified: new Date(post.date),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    }))
+    .map((post) => {
+      const images = Array.from(
+        new Set([post.image, ...(post.images ?? [])].filter(Boolean).map((p) => encodeImg(p as string))),
+      )
+      return {
+        url: `${baseUrl}/experiences/${post.slug}`,
+        lastModified: new Date(post.date),
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+        ...(images.length ? { images } : {}),
+      }
+    })
 
   // Portfolio items if they have individual pages
   const portfolioRoutes: MetadataRoute.Sitemap = portfolioItems

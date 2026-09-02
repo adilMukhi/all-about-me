@@ -9,26 +9,9 @@ import SocialLinks from "@/components/social-links"
 import Image from "next/image"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import Script from "next/script"
+import { CAL_BOOKING_URL, CONTACT_EMAIL, WORK_PHONE_DISPLAY, WORK_PHONE_TEL } from "@/lib/site"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
-
-const CalBookingScript = () => {
-  useEffect(() => {
-    const script = document.createElement("script")
-    script.innerHTML = `
-      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-      Cal("init", "15min", {origin:"https://app.cal.com"});
-      Cal.ns["15min"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#bbd3e5"},"dark":{"cal-brand":"#bbd3e5"}},"hideEventTypeDetails":false,"layout":"month_view"});
-    `
-    document.head.appendChild(script)
-
-    return () => {
-      document.head.removeChild(script)
-    }
-  }, [])
-
-  return null
-}
 
 const InstagramEmbedScript = () => {
   useEffect(() => {
@@ -159,14 +142,10 @@ const SpeakingEngagementsHero = () => (
             <div id="booking" className="mt-8 p-6 bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg border border-primary/30">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
                 <h4 className="text-lg font-semibold text-primary">Approximate Rates</h4>
-                <Button
-                  size="lg"
-                  className="px-12 py-3 text-lg font-semibold"
-                  data-cal-link="adilm.0/15min"
-                  data-cal-namespace="15min"
-                  data-cal-config='{"layout":"month_view","theme":"light"}'
-                >
-                  Get your tailored rate
+                <Button asChild size="lg" className="px-12 py-3 text-lg font-semibold">
+                  <a href={CAL_BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                    Get your tailored rate
+                  </a>
                 </Button>
               </div>
               <p className="text-sm text-muted-foreground mb-4 italic">
@@ -525,12 +504,26 @@ const ServicesStructuredData = () => {
             "Research Institutes",
           ],
         },
-        contactPoint: {
-          "@type": "ContactPoint",
-          contactType: "speaking and consulting inquiries",
-          email: "adilm@drinterested.org",
-          telephone: "+1-289-796-2566",
-          availableLanguage: ["English", "French"],
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            contactType: "speaking and consulting inquiries",
+            email: CONTACT_EMAIL,
+            url: CAL_BOOKING_URL,
+            availableLanguage: ["English", "French"],
+          },
+          {
+            "@type": "ContactPoint",
+            contactType: "business phone",
+            telephone: "+1-289-796-2566",
+            description: "Work number — hours vary; book a call for a guaranteed time.",
+            availableLanguage: ["English", "French"],
+          },
+        ],
+        potentialAction: {
+          "@type": "ReserveAction",
+          name: "Book a call",
+          target: CAL_BOOKING_URL,
         },
         hasOfferCatalog: {
           "@id": `${siteUrl}/services#offer-catalog`,
@@ -1223,26 +1216,26 @@ const ServicesAccordion = () => {
             </p>
           </div>
 
-          <Button
-            size="lg"
-            className="px-12 py-3 text-lg font-semibold"
-            data-cal-link="adilm.0/15min"
-            data-cal-namespace="15min"
-            data-cal-config='{"layout":"month_view","theme":"light"}'
-          >
-            👉 Work With Me
+          <Button asChild size="lg" className="px-12 py-3 text-lg font-semibold">
+            <a href={CAL_BOOKING_URL} target="_blank" rel="noopener noreferrer">
+              👉 Book a call
+            </a>
           </Button>
 
           <p className="mt-6 text-sm text-muted-foreground">
             Prefer to reach out directly? Email{" "}
-            <a href="mailto:adilm@drinterested.org" className="text-primary underline underline-offset-2">
-              adilm@drinterested.org
-            </a>{" "}
-            or call{" "}
-            <a href="tel:+12897962566" className="text-primary underline underline-offset-2">
-              +1 289 796 2566
+            <a href={`mailto:${CONTACT_EMAIL}`} className="text-primary underline underline-offset-2">
+              {CONTACT_EMAIL}
             </a>
-            .
+            . You can also call my work line at{" "}
+            <a href={`tel:${WORK_PHONE_TEL}`} className="text-primary underline underline-offset-2">
+              {WORK_PHONE_DISPLAY}
+            </a>
+            , but hours vary day to day — {" "}
+            <a href={CAL_BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2">
+              booking a time
+            </a>{" "}
+            is the reliable way to reach me.
           </p>
         </div>
       </div>
@@ -1645,7 +1638,6 @@ const WatchMeSpeak = () => (
 export default function ClientServicesPage() {
   return (
     <main className="min-h-screen bg-background page-transition">
-      <CalBookingScript />
       <InstagramEmbedScript />
       <TikTokEmbedScript />
       <Header />

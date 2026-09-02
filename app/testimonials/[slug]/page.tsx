@@ -61,8 +61,9 @@ export function generateStaticParams() {
   return testimonials.map((testimonial) => ({ slug: slugify(`${testimonial.name}-${testimonial.connection}`) }))
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const testimonial = testimonials.find((item) => slugify(`${item.name}-${item.connection}`) === params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const testimonial = testimonials.find((item) => slugify(`${item.name}-${item.connection}`) === slug)
 
   if (!testimonial) {
     return {
@@ -78,12 +79,12 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     title,
     description,
     alternates: {
-      canonical: `${siteUrl}/testimonials/${params.slug}`,
+      canonical: `${siteUrl}/testimonials/${slug}`,
     },
     openGraph: {
       type: "website",
       siteName: "Adil Mukhi",
-      url: `${siteUrl}/testimonials/${params.slug}`,
+      url: `${siteUrl}/testimonials/${slug}`,
       title,
       description,
       images: [{ url: `${siteUrl}${testimonial.image}`, width: 1200, height: 630, alt: title }],
@@ -97,14 +98,15 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   }
 }
 
-export default function TestimonialDetailPage({ params }: { params: { slug: string } }) {
-  const testimonial = testimonials.find((item) => slugify(`${item.name}-${item.connection}`) === params.slug)
+export default async function TestimonialDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const testimonial = testimonials.find((item) => slugify(`${item.name}-${item.connection}`) === slug)
 
   if (!testimonial) {
     notFound()
   }
 
-  const canonicalUrl = `${siteUrl}/testimonials/${params.slug}`
+  const canonicalUrl = `${siteUrl}/testimonials/${slug}`
   const toIso = (d: string) => {
     const parsed = new Date(d)
     return Number.isNaN(parsed.getTime()) ? undefined : parsed.toISOString()
@@ -151,7 +153,7 @@ export default function TestimonialDetailPage({ params }: { params: { slug: stri
   return (
     <>
       <Header />
-      <Script id={`testimonial-${params.slug}-structured-data`} type="application/ld+json">
+      <Script id={`testimonial-${slug}-structured-data`} type="application/ld+json">
         {JSON.stringify(structuredData)}
       </Script>
       <main className="min-h-screen bg-background page-transition">
@@ -160,7 +162,7 @@ export default function TestimonialDetailPage({ params }: { params: { slug: stri
             <SEOBreadcrumbs
               items={[
                 { label: "Testimonials", href: "/testimonials" },
-                { label: testimonial.name, href: `/testimonials/${params.slug}`, active: true },
+                { label: testimonial.name, href: `/testimonials/${slug}`, active: true },
               ]}
             />
             <Button variant="ghost" size="sm" asChild className="mb-8">

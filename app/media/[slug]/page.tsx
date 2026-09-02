@@ -26,8 +26,9 @@ export function generateStaticParams() {
   return mediaItems.map((item) => ({ slug: getMediaPath(item).split("/").pop() as string }))
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const item = getMediaBySlug(params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const item = getMediaBySlug(slug)
 
   if (!item) {
     return mediaIndexMetadata
@@ -59,8 +60,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   }
 }
 
-export default function MediaDetailPage({ params }: { params: { slug: string } }) {
-  const item = getMediaBySlug(params.slug)
+export default async function MediaDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const item = getMediaBySlug(slug)
 
   if (!item) {
     notFound()
@@ -105,7 +107,7 @@ export default function MediaDetailPage({ params }: { params: { slug: string } }
   return (
     <>
       <Header />
-      <Script id={`media-${params.slug}-structured-data`} type="application/ld+json">
+      <Script id={`media-${slug}-structured-data`} type="application/ld+json">
         {JSON.stringify(structuredData)}
       </Script>
       <main className="min-h-screen bg-background page-transition">

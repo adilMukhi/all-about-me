@@ -19,8 +19,9 @@ export function generateStaticParams() {
   return educationData.map((education) => ({ slug: education.slug }))
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const education = getEducationBySlug(params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const education = getEducationBySlug(slug)
 
   if (!education) {
     return {
@@ -55,8 +56,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   }
 }
 
-export default function EducationDetailPage({ params }: { params: { slug: string } }) {
-  const education = getEducationBySlug(params.slug)
+export default async function EducationDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const education = getEducationBySlug(slug)
 
   if (!education) {
     notFound()
