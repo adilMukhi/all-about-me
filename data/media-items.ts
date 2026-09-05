@@ -9,6 +9,24 @@ export interface MediaItem {
 
 export const mediaItems: MediaItem[] = [
   {
+    title: "How to help your teen with post-summer social media withdrawal",
+    publication: "CBC",
+    date: "September 3, 2025",
+    link: "https://www.cbc.ca/radio/social-media-withdrawal-9.7324642",
+    quote:
+      "At 16, Adil Mukhi knows how hard it is to quit social media. Last year, the Mississauga, Ont., high schooler decided to cut out social media for a month, part of the No Social Media November challenge. Around him, everyone seemed to be glued to their devices. \"They're sitting right beside each other and they're playing the same game or they're scrolling on their phones,\" he said. \"They could have been talking or spending that time actually building their friendship.\"",
+    type: "article",
+  },
+  {
+    title: "Mississauga teen starts global organization helping students explore healthcare careers",
+    publication: "inSauga",
+    date: "August 14, 2025",
+    link: "https://www.insauga.com/mississauga-teen-starts-global-organization-helping-students-explore-healthcare-careers/",
+    quote:
+      "The organization, Dr. Interested, now reaches 106 countries and has impacted over 160,000 people, said its founder ... Adil Mukhi. ... Mukhi started Dr. Interested when he was 13 years old and in Grade 9. When he was in Grade 7 and 8, Adil felt career education was limited due to pandemic lockdowns. ... This weekend, Dr. Interested is holding its inaugural [MedExplore] Conference on Aug. 16 at the University of Toronto Mississauga.",
+    type: "feature",
+  },
+  {
     title: "Adil Mukhi: An Indo-Canadian teen championing youth health education",
     publication: "The Global Indian",
     date: "August 14, 2025",

@@ -31,6 +31,11 @@ export const navConfig: NavConfig = {
           href: "/watch",
           description: "Interviews, podcasts, and TEDx talks",
         },
+        {
+          title: "Media Inquiries",
+          href: "/media-inquiries",
+          description: "Contact and press kit for journalists",
+        },
       ],
     },
     {
