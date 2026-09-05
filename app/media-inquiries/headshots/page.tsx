@@ -71,9 +71,15 @@ const headshots: Shot[] = [
     orientation: "portrait",
   },
   {
-    src: "/pictures/adil-mukhi-informal-portrait.jpg",
-    alt: "Informal portrait of Adil Mukhi",
-    caption: "Informal portrait",
+    src: "/pictures/adil-mukhi-tedx-speaking-1.png",
+    alt: "Adil Mukhi speaking at TEDx",
+    caption: "TEDx talk",
+    orientation: "portrait",
+  },
+  {
+    src: "/pictures/Adil Mukhi - Tedx 1 withbackground.png",
+    alt: "Adil Mukhi at TEDx with event backdrop",
+    caption: "TEDx — with event backdrop",
     orientation: "portrait",
   },
   {
@@ -85,30 +91,6 @@ const headshots: Shot[] = [
 ]
 
 const inAction: Shot[] = [
-  {
-    src: "/pictures/adil-mukhi-tedx-speaking-1.png",
-    alt: "Adil Mukhi speaking at TEDx",
-    caption: "TEDx talk",
-    orientation: "portrait",
-  },
-  {
-    src: "/pictures/adil-mukhi-tedx-speaking-2.jpeg",
-    alt: "Adil Mukhi on stage at TEDx",
-    caption: "TEDx talk (stage)",
-    orientation: "landscape",
-  },
-  {
-    src: "/pictures/Adil Mukhi - Tedx 1 withbackground.png",
-    alt: "Adil Mukhi at TEDx with event backdrop",
-    caption: "TEDx — with event backdrop",
-    orientation: "portrait",
-  },
-  {
-    src: "/pictures/adil-mukhi-dr-interested-founder.JPG",
-    alt: "Adil Mukhi, founder of Dr. Interested",
-    caption: "Working — Dr. Interested",
-    orientation: "landscape",
-  },
   {
     src: "/pictures/AdilMukhiDrInterested (1).jpg",
     alt: "Adil Mukhi representing Dr. Interested",
@@ -147,8 +129,8 @@ const inAction: Shot[] = [
   },
   {
     src: "/pictures/AdilMukhiKHP_WSKCT.JPG",
-    alt: "Adil Mukhi at a University of Toronto KPE event",
-    caption: "U of T KPE — Rethink Sport",
+    alt: "Adil Mukhi at the Walk So Kids Can Talk",
+    caption: "Walk So Kids Can Talk",
     orientation: "landscape",
   },
   {
@@ -161,12 +143,6 @@ const inAction: Shot[] = [
     src: "/pictures/adil-mukhi-tennis-sports.jpg",
     alt: "Adil Mukhi playing tennis",
     caption: "Tennis — Play-to-Heal",
-    orientation: "portrait",
-  },
-  {
-    src: "/pictures/adil-mukhi-graduation.jpg",
-    alt: "Adil Mukhi at graduation",
-    caption: "Graduation",
     orientation: "portrait",
   },
 ]
