@@ -1,3 +1,5 @@
+import type { SchoolRole } from "@/data/work-experience"
+
 export type VolunteerWork = {
   role: string
   organization: string
@@ -6,6 +8,9 @@ export type VolunteerWork = {
   image: string
   skills: string[]
   link: string
+  stats?: string[]
+  // School club roles; the entry renders them grouped by club and by grade from this one list
+  schoolRoles?: SchoolRole[]
   progression?: {
     role: string
     period: string
@@ -56,6 +61,38 @@ export const volunteerWork: VolunteerWork[] = [
     link: "https://lab.research.sickkids.ca/harrison/",
   },
   {
+    role: "School Clubs and Student Leadership",
+    organization: "Glenforest Secondary School",
+    period: "2023 to 2027",
+    description: "Progressive leadership across school clubs and councils, from junior executive to Vice President and President.",
+    image: "/gfss-logo.jpg",
+    skills: ["Leadership", "Event Planning", "Mentorship", "Teamwork", "STEM Outreach"],
+    link: "",
+    stats: [
+      "Peer Helper: tutored and mentored about 40 students in Math and English over 110 hours",
+      "Newcomers Club: leading events with over 50 participants and a team of 7",
+      "Athletic Council award: Exemplary Contribution to Athletics",
+      "STEM Club: photographed the STEM Symposium (Jan 2025) and ushered speakers for the WOW STEM program (May 2025)",
+    ],
+    schoolRoles: [
+      { club: "HOSA chapter", role: "Member and Competitor", period: "2023 to 2025", grades: [9, 10], gradeLabel: "HOSA Member and Competitor" },
+      { club: "HOSA chapter", role: "Vice President", period: "2025 to 2026", grades: [11], gradeLabel: "HOSA Vice President" },
+      { club: "STEM Fellowship chapter", role: "Vice President", period: "2024 to 2026", grades: [10, 11], gradeLabel: "STEM Fellowship Vice President" },
+      { club: "STEM Club", role: "Volunteer, STEM Symposium photographer and speaker usher", period: "2024 to 2025", grades: [10], gradeLabel: "STEM Club Volunteer" },
+      { club: "STEM Club", role: "Vice President", period: "2025 to Present", grades: [11, 12], gradeLabel: "STEM Club Vice President" },
+      { club: "French Club", role: "Junior Executive", period: "2023 to 2024", grades: [9], gradeLabel: "French Club Junior Executive" },
+      { club: "French Club", role: "Vice President", period: "2024 to 2026", grades: [10, 11], gradeLabel: "French Club Vice President" },
+      { club: "Newcomers Club", role: "Events Coordinator", period: "2024 to 2025", grades: [10], gradeLabel: "Newcomers Club Events Coordinator" },
+      { club: "Newcomers Club", role: "President", period: "2025 to Present", grades: [11, 12], gradeLabel: "Newcomers Club President" },
+      { club: "IBSL (International Baccalaureate Student League)", role: "Junior Executive", period: "2023 to 2024", grades: [9], gradeLabel: "IBSL (International Baccalaureate Student League) Junior Executive" },
+      { club: "Peer Helpers", role: "Peer Helper and Tutor", period: "2023 to 2026", grades: [9, 10, 11], gradeLabel: "Peer Helper and Tutor" },
+      { club: "Athletic Council", role: "Member", period: "2023 to 2026", grades: [9, 10, 11], gradeLabel: "Athletic Council Member" },
+      { club: "Varsity Tennis", role: "Varsity Team Member, Grades 9 to 11", period: "2023 to 2026", grades: [9, 10, 11], gradeLabel: "Varsity Tennis" },
+      { club: "Student Super Council", role: "Member", period: "2024 to 2027", grades: [10, 11, 12], gradeLabel: "Super Council Member" },
+      { club: "Grow With Google, Peel District School Board", role: "Ambassador", period: "2026 to Present", grades: [12], gradeLabel: "Grow With Google Ambassador" },
+    ],
+  },
+  {
     role: "Medical Writer",
     organization: "HEAL for Health Ontario",
     period: "Mar 2024 – Aug 2024",
@@ -79,29 +116,6 @@ export const volunteerWork: VolunteerWork[] = [
         role: "WOW Program Volunteer",
         period: "2025",
         description: "Supported World of Welcome (WOW) summer program, continuing work from 2024 and assisting with community events.",
-      },
-    ],
-  },
-  {
-    role: "STEM Club Volunteer",
-    organization: "Glenforest Secondary School STEM Club",
-    period: "2024 – 2025",
-    description:
-      "Contributed to STEM outreach events, supporting student engagement and logistics.",
-    image: "/gfss-stem.jpg",
-    skills: ["STEM Outreach", "Logistics", "Photography", "Event Coordination"],
-    link: "",
-    progression: [
-      {
-        role: "STEM Symposium Volunteer",
-        period: "Jan 2025",
-        description:
-          "Took photos and supported event coordination as middle school students attended STEM workshops and speaker sessions.",
-      },
-      {
-        role: "STEM Speaker Usher",
-        period: "May 2025",
-        description: "Escorted speakers during the WOW STEM program, ensuring smooth event operations.",
       },
     ],
   },

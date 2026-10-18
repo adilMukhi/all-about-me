@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink } from "lucide-react"
 import type { VolunteerWork } from "@/data/volunteer-work"
+import SchoolRolesBreakdown from "@/components/school-roles-breakdown"
 
 interface VolunteerWorkModalProps {
   experience: VolunteerWork | null
@@ -65,6 +66,27 @@ export default function VolunteerWorkModal({ experience, isOpen, onClose }: Volu
             <h3 className="text-lg font-semibold mb-2">About This Role</h3>
             <p className="text-muted-foreground leading-relaxed">{experience.description}</p>
           </div>
+
+          {experience.schoolRoles && experience.schoolRoles.length > 0 && (
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Roles</h3>
+              <SchoolRolesBreakdown roles={experience.schoolRoles} />
+            </div>
+          )}
+
+          {experience.stats && experience.stats.length > 0 && (
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Key Accomplishments</h3>
+              <ul className="space-y-2">
+                {experience.stats.map((stat, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span>{stat}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Career Progression */}
           {experience.progression && experience.progression.length > 0 && (
