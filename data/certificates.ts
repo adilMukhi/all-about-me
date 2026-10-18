@@ -20,6 +20,7 @@ export const certificates: Certificate[] = [
     skills: ["Emergency Response", "CPR Techniques", "AED Operation", "Wound Management", "Patient Assessment"],
     link: "https://www.redcross.ca/training-and-certification",
     image: "/redcross-certificate-2026.jpg",
+    images: ["/redcross-psychological-first-aid-2026.jpg"],
     slug: "first-aid-cpr-aed",
   },
   {

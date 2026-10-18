@@ -510,13 +510,13 @@ export const clubPublications: ClubPublication[] = [
     date: "June 11, 2025",
     description:
       "Later featured in the NACY Frontiers newsletter, this op-ed explores the urgent need for youth-centred AI policy in Canada, highlighting its impact on education, healthcare, and the future of work. The piece argues for meaningful youth inclusion in shaping AI governance.",
-    link: "https://drinterested.tech/blog/youth-ai-healthcare-policy",
+    link: "https://www.drinterested.org/publications/youth-ai-healthcare-policy",
     authors: "Adil Mukhi",
     buyLinks: {
       customLinks: [
         {
           name: "Read Article",
-          url: "https://drinterested.tech/blog/youth-ai-healthcare-policy",
+          url: "https://www.drinterested.org/publications/youth-ai-healthcare-policy",
         },
       ],
     },
@@ -956,7 +956,7 @@ export const sportsAchievements: SportsAchievement[] = [
     title: "ROPSSAA Tennis Quarter-Finalist",
     description:
       "Achieved Quarter-Finalist placement in the ROPSSAA (Region of Peel Secondary Schools Athletic Association) Boys Doubles Junior Tennis South East Qualifier 2024. Demonstrated strong teamwork, strategic play, and resilience against competitive opponents, showcasing significant improvement from previous seasons. Trained extensively in the off-season to refine technical skills, endurance, and match tactics, contributing to a successful performance in the tournament",
-    image: "/portfolio/sports/tennis.jpg",
+    image: "/tennis.jpg",
     videoId: "dEKB5Jc9sPw", // Updated to new YouTube short ID
     tags: ["Tennis", "Competition", "Team Sports"],
     type: "sports",

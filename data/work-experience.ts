@@ -241,7 +241,6 @@ export const workExperiences: WorkExperience[] = [
       "Reviewed the Raising Canada Report (2024) and attended a Privacy Commissioner consultation",
     ],
     image: "/childernfirstcanada.jpg",
-    images: ["/cfc-raising-canada-2026.jpg", "/cfc-future-is-now-summit-2026.jpg"],
     skills: ["Youth Advocacy", "Policy Input", "Report Analysis", "Facilitation", "Workshop Facilitation", "Education", "Media Engagement", "Research"],
     link: "https://www.childrenfirstcanada.com/",
     slug: "children-first-advising",
