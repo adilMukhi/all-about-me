@@ -17,10 +17,10 @@ export default function RecognitionSpotlight() {
   return (
     <section
       aria-labelledby="recognition-heading"
-      className="relative overflow-hidden bg-gradient-to-br from-rose-950 via-slate-950 to-slate-950 py-16 text-white"
+      className="relative overflow-hidden bg-gradient-to-br from-sky-950 via-slate-950 to-slate-950 py-16 text-white"
     >
       <div
-        className="pointer-events-none absolute -left-32 top-10 h-96 w-96 rounded-full bg-amber-400/15 blur-3xl"
+        className="pointer-events-none absolute -left-32 top-10 h-96 w-96 rounded-full bg-sky-400/15 blur-3xl"
         aria-hidden="true"
       />
       <div className="container relative grid items-center gap-12 lg:grid-cols-2">
@@ -59,7 +59,7 @@ export default function RecognitionSpotlight() {
         </div>
 
         <div>
-          <p className="font-mono text-sm uppercase tracking-[0.3em] text-amber-300">Recognition</p>
+          <p className="font-mono text-sm uppercase tracking-[0.3em] text-sky-300">Recognition</p>
           <h2
             id="recognition-heading"
             className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl"
@@ -70,7 +70,7 @@ export default function RecognitionSpotlight() {
           <ol className="mt-8 space-y-4">
             {highlights.map((item) => (
               <li key={item.title} className="flex gap-4">
-                <Award className="mt-1 h-5 w-5 shrink-0 text-amber-300" aria-hidden="true" />
+                <Award className="mt-1 h-5 w-5 shrink-0 text-sky-300" aria-hidden="true" />
                 <div>
                   <p className="text-lg font-semibold leading-snug">{item.title}</p>
                   <p className="text-sm text-white/70">
@@ -82,7 +82,7 @@ export default function RecognitionSpotlight() {
           </ol>
           <Link
             href="/honors"
-            className="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-amber-300 px-6 text-base font-semibold text-slate-950 transition hover:bg-amber-200"
+            className="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-sky-400 px-6 text-base font-semibold text-slate-950 transition hover:bg-sky-300"
           >
             See every award
             <ArrowRight className="h-5 w-5" aria-hidden="true" />
