@@ -12,7 +12,7 @@ export default function TedxFeature() {
   const [playing, setPlaying] = useState(false)
 
   return (
-    <section className="container py-8" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+    <section id="tedx" className="container scroll-mt-20 py-8" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
       <h2
         className="mb-6 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
         style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}

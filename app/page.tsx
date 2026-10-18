@@ -1,7 +1,11 @@
 import type { Metadata } from "next"
 import Script from "next/script"
 import Header from "@/components/header"
-import Hero from "@/components/hero"
+import CinematicHero from "@/components/home/cinematic-hero"
+import ImpactStats from "@/components/home/impact-stats"
+import QuickPaths from "@/components/home/quick-paths"
+import PhotoReel from "@/components/home/photo-reel"
+import RecognitionSpotlight from "@/components/home/recognition-spotlight"
 import About from "@/components/about"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
@@ -11,7 +15,7 @@ import { Separator } from "@/components/ui/separator"
 import ClubFeature from "@/components/club-feature"
 import ServiceMediaPreview from "@/components/service-media-preview"
 import BackgroundPreview from "@/components/background-preview"
-import TedxFeature from "@/components/tedx-feature" // Added TEDx component import
+import TedxFeature from "@/components/tedx-feature"
 import { homeMetadata } from "./page-metadata"
 
 export const metadata: Metadata = homeMetadata
@@ -33,41 +37,40 @@ const homeStructuredData = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background page-transition">
+    <main className="theme-night min-h-screen bg-background text-foreground">
       <Script id="home-structured-data" type="application/ld+json">
         {JSON.stringify(homeStructuredData)}
       </Script>
       <Header />
-      <h1 className="sr-only">Adil Mukhi: Youth Advocate, Public Speaker, Founder, and Research Leader</h1>
-      <AnimatedSection>
-        <Hero />
-      </AnimatedSection>
+      <CinematicHero />
+      <ImpactStats />
+      <QuickPaths />
       <Separator />
-      <AnimatedSection delay={100}>
+      <AnimatedSection>
         <About />
       </AnimatedSection>
-      <Separator />
-      <AnimatedSection delay={200}>
+      <PhotoReel />
+      <AnimatedSection>
         <ClubFeature />
       </AnimatedSection>
       <Separator />
-      <AnimatedSection delay={225}>
+      <AnimatedSection>
         <TedxFeature />
       </AnimatedSection>
-      <Separator />
-      <AnimatedSection delay={250}>
+      <RecognitionSpotlight />
+      <AnimatedSection>
         <ServiceMediaPreview />
       </AnimatedSection>
       <Separator />
-      <AnimatedSection delay={275}>
+      <AnimatedSection>
         <BackgroundPreview />
       </AnimatedSection>
       <Separator />
-      <AnimatedSection delay={300}>
+      <AnimatedSection>
         <LatestBlogPost />
       </AnimatedSection>
       <Separator />
-      <AnimatedSection delay={500}>
+      <AnimatedSection>
         <Contact />
       </AnimatedSection>
       <Footer />

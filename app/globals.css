@@ -356,3 +356,138 @@
 .bubbly-heading {
   animation: bubble-float 3s ease-in-out infinite;
 }
+
+/* Home page: endless photo reel */
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 60s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee 70s linear infinite reverse;
+}
+
+.marquee-paused .animate-marquee,
+.marquee-paused .animate-marquee-reverse,
+.marquee-track:hover .animate-marquee,
+.marquee-track:hover .animate-marquee-reverse,
+.marquee-track:focus-within .animate-marquee,
+.marquee-track:focus-within .animate-marquee-reverse {
+  animation-play-state: paused;
+}
+
+/* Home page: terminal caret */
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.terminal-caret {
+  animation: caret-blink 1s step-end infinite;
+}
+
+/* Home page: faint scan lines over the hero, like a monitor */
+.hero-scanlines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.035) 0px,
+    rgba(255, 255, 255, 0.035) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+.hero-grid {
+  background-image: linear-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at 30% 50%, black 20%, transparent 75%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .terminal-caret {
+    animation: none;
+  }
+}
+
+/* Home page night theme: the hero's navy palette applied to every section, header and footer on the home page.
+   Variables re-point the shared components; the overrides below cover colours hard-coded in shared components. */
+.theme-night {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 96%;
+  --card: 222.2 47.4% 9%;
+  --card-foreground: 210 40% 96%;
+  --popover: 222.2 47.4% 9%;
+  --popover-foreground: 210 40% 96%;
+  --primary: 198 93% 60%;
+  --primary-foreground: 222.2 84% 4.9%;
+  --secondary: 187 92% 69%;
+  --secondary-foreground: 222.2 84% 4.9%;
+  --muted: 217.2 32.6% 14%;
+  --muted-foreground: 215 20.2% 72%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 96%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 198 93% 60%;
+  color-scheme: dark;
+}
+
+.theme-night .text-blue-700,
+.theme-night .hover\:text-blue-700:hover,
+.theme-night .hover\:text-blue-800:hover {
+  color: #7dd3fc;
+}
+
+.theme-night .bg-blue-50,
+.theme-night .hover\:bg-blue-50:hover {
+  background-color: rgba(56, 189, 248, 0.14);
+}
+
+.theme-night .bg-white.rounded-lg {
+  background-color: hsl(var(--popover));
+  border: 1px solid hsl(var(--border));
+}
+
+.theme-night .border-gray-100,
+.theme-night .border-gray-200 {
+  border-color: hsl(var(--border));
+}
+
+.theme-night .text-gray-600 {
+  color: hsl(var(--muted-foreground));
+}
+
+.theme-night .hover\:text-black:hover {
+  color: hsl(var(--foreground));
+}
+
+.theme-night .card-hover-effect:hover {
+  background-color: hsl(217.2 32.6% 14%);
+  box-shadow: 0 20px 40px -12px rgba(56, 189, 248, 0.18);
+}
+
+.theme-night .glass-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.theme-night .button-hover-effect::after {
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0) 70%);
+}

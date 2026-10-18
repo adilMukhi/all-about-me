@@ -1,227 +1,160 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useEffect, useState } from "react"
+import Link from "next/link"
 import SafeImage from "@/components/safe-image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Maximize2 } from "lucide-react"
-import { honorsAwards } from "@/data/honors-awards"
+import { ExternalLink, Maximize2 } from "lucide-react"
+import { honorsAwards, type Award } from "@/data/honors-awards"
 import HonorsAwardsModal from "@/components/honors-awards-modal"
-import Link from "next/link"
-import { slugify } from "@/lib/seo-paths"
+import { getHonorPath } from "@/lib/seo-paths"
 
-const awards = honorsAwards
+// The award's own slug, shared by its indexed page (/honors/[slug]) and its pop up link (?award=[slug])
+const awardSlug = (award: Award) => getHonorPath(award).split("/").pop() as string
+const findAward = (slug: string | null) => (slug ? honorsAwards.find((award) => awardSlug(award) === slug) : undefined)
+const getPrimaryImage = (award: Award) => (Array.isArray(award.image) ? award.image[0] : award.image)
 
-const getPrimaryImage = (award: (typeof awards)[0]) => (Array.isArray(award.image) ? award.image[0] : award.image)
+const headingFont = { fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }
+const titleFont = { fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }
 
-export default function HonorsAwards() {
-  const [selectedAward, setSelectedAward] = useState<(typeof awards)[0] | null>(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const hasInitialized = useRef(false)
+// Honors & Awards grid used on both /honors and the Background page. Clicking an award opens it in a pop up and
+// gives it a shareable ?award= link; each title is also a real link to the award's own page for search engines.
+export default function HonorsAwards({ showHeading = true }: { showHeading?: boolean }) {
+  const [selectedAward, setSelectedAward] = useState<Award | null>(null)
 
+  // Open the award named in the URL on first load and when going back or forward
   useEffect(() => {
-    if (hasInitialized.current) return
-    hasInitialized.current = true
-
-    const urlParams = new URLSearchParams(window.location.search)
-    const awardSlug = urlParams.get("award")
-
-    if (awardSlug) {
-      const award = awards.find((award) => award.slug === awardSlug)
-      if (award) {
-        setSelectedAward(award)
-        setIsModalOpen(true)
-      }
+    const syncFromUrl = () => setSelectedAward(findAward(new URLSearchParams(window.location.search).get("award")) ?? null)
+    const timer = window.setTimeout(syncFromUrl, 0)
+    window.addEventListener("popstate", syncFromUrl)
+    return () => {
+      window.clearTimeout(timer)
+      window.removeEventListener("popstate", syncFromUrl)
     }
   }, [])
 
-  const openAward = (award: (typeof awards)[0]) => {
-    setSelectedAward(award)
-    setIsModalOpen(true)
-
+  const setAwardInUrl = (award: Award | null) => {
     const url = new URL(window.location.href)
-    url.searchParams.set("award", award.slug)
-    if (window.location.hash) {
-      url.hash = window.location.hash
-    }
+    if (award) url.searchParams.set("award", awardSlug(award))
+    else url.searchParams.delete("award")
     window.history.pushState({}, "", url.toString())
+  }
+
+  const openAward = (award: Award) => {
+    setSelectedAward(award)
+    setAwardInUrl(award)
   }
 
   const closeModal = () => {
-    setIsModalOpen(false)
     setSelectedAward(null)
-
-    const url = new URL(window.location.href)
-    url.searchParams.delete("award")
-    if (window.location.hash) {
-      url.hash = window.location.hash
-    }
-    window.history.pushState({}, "", url.toString())
+    setAwardInUrl(null)
   }
 
-  useEffect(() => {
-    const handlePopState = () => {
-      const urlParams = new URLSearchParams(window.location.search)
-      const awardSlug = urlParams.get("award")
+  // Plain clicks open the pop up; ctrl, cmd, shift or middle clicks still open the award's page as normal
+  const onLinkClick = (award: Award) => (event: React.MouseEvent) => {
+    event.stopPropagation()
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return
+    event.preventDefault()
+    openAward(award)
+  }
 
-      if (awardSlug) {
-        const award = awards.find((award) => award.slug === awardSlug)
-        if (award) {
-          setSelectedAward(award)
-          setIsModalOpen(true)
-        }
-      } else {
-        setIsModalOpen(false)
-        setSelectedAward(null)
-      }
-    }
+  const renderCard = (award: Award, featured: boolean) => {
+    const href = getHonorPath(award)
+    const image = award.group === "nomination" ? undefined : getPrimaryImage(award)
 
-    window.addEventListener("popstate", handlePopState)
-    return () => window.removeEventListener("popstate", handlePopState)
-  }, [])
-
-  const visibleAwards = awards.filter((award) => award.group !== "nomination")
-  const nominations = awards.filter((award) => award.group === "nomination")
-
-  const renderCompactContent = (award: (typeof awards)[0]) => (
-    <CardContent className="p-4">
-      <div className="text-center">
-        <SafeImage
-          src={getPrimaryImage(award)}
-          alt={award.title}
-          width={60}
-          height={60}
-          className="rounded-lg object-cover mx-auto mb-2"
-        />
-        <h3 className="font-semibold text-sm mb-1" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
-          <Link href={`/background?award=${slugify(`${award.title}-${award.issuer}`)}#honors`} className="hover:text-primary transition-colors" onClick={(e) => e.stopPropagation()}>
-            {award.title}
-          </Link>
-        </h3>
-        <p className="text-xs text-muted-foreground mb-1">{award.issuer}</p>
-        <p className="text-xs text-muted-foreground">{award.year}</p>
-      </div>
-    </CardContent>
-  )
-
-  const renderCompactCard = (award: (typeof awards)[0], index: number) => (
-    <Card
-      key={index}
-      className="cursor-pointer transition-all duration-200 hover:shadow-lg relative group md:col-span-1"
-      onClick={() => openAward(award)}
-    >
-      <div className="absolute top-2 right-2 z-10">
+    return (
+      <Card
+        key={href}
+        onClick={() => openAward(award)}
+        className={`group relative cursor-pointer overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+          featured ? "md:col-span-2 xl:col-span-2" : ""
+        }`}
+      >
         <Button
           size="sm"
           variant="secondary"
-          className="h-6 w-6 p-0 bg-background/80 backdrop-blur-sm hover:bg-background/90"
-          onClick={(e) => {
-            e.stopPropagation()
+          className="absolute right-2 top-2 z-10 h-8 w-8 p-0 bg-background/80 backdrop-blur-sm hover:bg-background/90"
+          onClick={(event) => {
+            event.stopPropagation()
             openAward(award)
           }}
         >
-          <Maximize2 className="h-3 w-3" />
-          <span className="sr-only">Expand details</span>
+          <Maximize2 className="h-4 w-4" />
+          <span className="sr-only">Expand details for {award.title}</span>
         </Button>
-      </div>
-      {renderCompactContent(award)}
-    </Card>
-  )
+
+        {image && (
+          <SafeImage
+            src={image}
+            alt={award.title}
+            fill
+            sizes={featured ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"}
+            wrapperClassName="relative h-52 overflow-hidden"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        )}
+        <CardHeader>
+          <CardDescription>{award.year}</CardDescription>
+          <CardTitle className="text-xl" style={titleFont}>
+            <Link href={href} onClick={onLinkClick(award)} className="hover:text-primary transition-colors">
+              {award.title}
+            </Link>
+          </CardTitle>
+          <p className="text-sm text-muted-foreground">{award.issuer}</p>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <p className="text-sm text-muted-foreground line-clamp-4">{award.description}</p>
+          <div className="flex flex-wrap gap-2">
+            {award.skills.slice(0, 4).map((skill) => (
+              <Badge key={skill} variant="secondary">
+                {skill}
+              </Badge>
+            ))}
+            {award.skills.length > 4 && <Badge variant="outline">+{award.skills.length - 4}</Badge>}
+          </div>
+          {award.link && award.link.startsWith("http") && (
+            <Button asChild variant="ghost" size="sm" className="-ml-3">
+              <a href={award.link} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()}>
+                Source
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          )}
+        </CardContent>
+      </Card>
+    )
+  }
+
+  const awards = honorsAwards.filter((award) => award.group !== "nomination")
+  const nominations = honorsAwards.filter((award) => award.group === "nomination")
 
   return (
     <>
-      <section id="honors" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-        <h2
-          className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
-          style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
-        >
-          Honors & Awards
-        </h2>
-        <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-4">
-          {visibleAwards.map((award, index) => (
-            <Card
-              key={index}
-              className={`cursor-pointer transition-all duration-200 hover:shadow-lg relative group ${
-                index >= 6 ? "md:col-span-1" : "md:col-span-2 lg:col-span-2"
-              }`}
-              onClick={() => openAward(award)}
-            >
-              <div className="absolute top-2 right-2 z-10">
-                <Button
-                  size="sm"
-                  variant="secondary"
-                  className="h-6 w-6 p-0 bg-background/80 backdrop-blur-sm hover:bg-background/90"
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    openAward(award)
-                  }}
-                >
-                  <Maximize2 className="h-3 w-3" />
-                  <span className="sr-only">Expand details</span>
-                </Button>
-              </div>
-
-              {index < 6 ? (
-                <>
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
-                      <Link href={`/background?award=${slugify(`${award.title}-${award.issuer}`)}#honors`} className="hover:text-primary transition-colors" onClick={(e) => e.stopPropagation()}>
-                        {award.title}
-                      </Link>
-                    </CardTitle>
-                    <CardDescription className="text-sm">
-                      {award.issuer} | {award.year}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex gap-4 items-start">
-                    <SafeImage
-                      src={getPrimaryImage(award)}
-                      alt={award.title}
-                      width={80}
-                      height={80}
-                      className="rounded-lg object-cover flex-shrink-0"
-                    />
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm mb-3 line-clamp-3">{award.description}</p>
-                      <div className="flex flex-wrap gap-1">
-                        {award.skills.slice(0, 2).map((skill, skillIndex) => (
-                          <span
-                            key={skillIndex}
-                            className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                        {award.skills.length > 2 && (
-                          <span className="text-xs text-muted-foreground px-2 py-1">+{award.skills.length - 2}</span>
-                        )}
-                      </div>
-                    </div>
-                  </CardContent>
-                </>
-              ) : (
-                renderCompactContent(award)
-              )}
-            </Card>
-          ))}
+      <section id={showHeading ? "honors-list" : undefined} aria-label={showHeading ? undefined : "Honors and awards"}>
+        {showHeading && (
+          <h2 className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl" style={headingFont}>
+            Honors & Awards
+          </h2>
+        )}
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {awards.map((award, index) => renderCard(award, index === 0))}
         </div>
 
         {nominations.length > 0 && (
           <>
-            <h3
-              className="mt-12 mb-6 text-2xl font-bold tracking-tighter sm:text-3xl"
-              style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
-            >
+            <h2 className="mb-6 mt-14 text-2xl font-bold tracking-tighter sm:text-3xl" style={headingFont}>
               Nominations
-            </h3>
-            <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-4">
-              {nominations.map((award, index) => renderCompactCard(award, index))}
+            </h2>
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {nominations.map((award) => renderCard(award, false))}
             </div>
           </>
         )}
       </section>
 
-      <HonorsAwardsModal award={selectedAward} isOpen={isModalOpen} onClose={closeModal} />
+      <HonorsAwardsModal award={selectedAward} isOpen={Boolean(selectedAward)} onClose={closeModal} />
     </>
   )
 }

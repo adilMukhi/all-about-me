@@ -83,7 +83,7 @@ export default function BackgroundPreview() {
               <div className="flex-1">
                 <h3 className="font-semibold">{featuredTestimonial.name}</h3>
                 <p className="text-xs text-muted-foreground mb-2">{featuredTestimonial.role}</p>
-                <Quote className="w-4 h-4 text-blue-500/20 mb-1" />
+                <Quote className="w-4 h-4 text-primary/40 mb-1" />
                 <blockquote className="text-sm text-muted-foreground line-clamp-4">
                   "{featuredTestimonial.testimonial}"
                 </blockquote>

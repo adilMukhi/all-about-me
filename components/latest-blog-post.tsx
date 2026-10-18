@@ -26,7 +26,7 @@ export function LatestBlogPost() {
         My Latest Experience
       </h2>
 
-      <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-blue-50 to-transparent glass-card">
+      <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 glass-card">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/3 relative h-[250px] md:h-auto">
             <Image

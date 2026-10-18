@@ -43,7 +43,7 @@ export default function About() {
               <div className="pt-4">
                 <Link
                   href="/background"
-                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors"
+                  className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors"
                 >
                   Explore my full background →
                 </Link>
@@ -53,14 +53,36 @@ export default function About() {
         </Card>
 
         <div className="flex flex-col items-center justify-start space-y-4">
-          <div className="relative w-full aspect-[3/5] max-w-md overflow-hidden rounded-lg shadow-lg">
-            <Image
-              src="https://images.unsplash.com/photo-1781722321163-4a86d37df143?q=80&w=927&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Adil Mukhi presenting at Toronto Climate Week 2026"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
-            />
+          <div className="relative w-full max-w-md">
+            <div className="relative aspect-[3/5] w-full overflow-hidden rounded-2xl shadow-xl">
+              <Image
+                src="https://images.unsplash.com/photo-1781722321163-4a86d37df143?q=80&w=927&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Adil Mukhi presenting at Toronto Climate Week 2026"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+            {/* Snapshots pinned to the main photo */}
+            <div className="absolute -left-4 bottom-16 hidden h-40 w-32 -rotate-6 overflow-hidden rounded-xl border-4 border-white shadow-xl transition-transform duration-500 hover:rotate-0 hover:scale-110 sm:block">
+              <Image
+                src="/pictures/adil-mukhi-portrait-closeup.jpg"
+                alt="Close up portrait of Adil Mukhi"
+                fill
+                sizes="128px"
+                className="object-cover"
+                style={{ objectPosition: "50% 30%" }}
+              />
+            </div>
+            <div className="absolute -right-4 top-10 hidden h-36 w-28 rotate-6 overflow-hidden rounded-xl border-4 border-white shadow-xl transition-transform duration-500 hover:rotate-0 hover:scale-110 sm:block">
+              <Image
+                src="/pictures/adil-mukhi-tennis-sports.jpg"
+                alt="Adil Mukhi playing tennis"
+                fill
+                sizes="112px"
+                className="object-cover"
+              />
+            </div>
           </div>
           <p className="text-sm text-muted-foreground text-center italic">
             Presenting at Toronto Climate Week 2026

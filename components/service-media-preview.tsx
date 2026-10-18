@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Calendar, Newspaper } from "lucide-react"
@@ -14,6 +15,16 @@ const ServiceMediaPreview = () => {
       <div className="grid md:grid-cols-2 gap-8 h-full">
         {/* Services Preview */}
         <div className="bg-card shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 card-hover-effect rounded-lg p-8 flex flex-col">
+          <div className="relative -mx-8 -mt-8 mb-6 h-48 overflow-hidden rounded-t-lg">
+            <Image
+              src="/pictures/adil-mukhi-tedx-speaking-2.jpeg"
+              alt="Adil Mukhi speaking on the TEDx stage"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+              style={{ objectPosition: "50% 18%" }}
+            />
+          </div>
           <div className="flex items-center gap-3 mb-6">
             <Calendar className="h-8 w-8 text-primary" />
             <h3 className="text-2xl font-bold text-primary" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
@@ -60,6 +71,16 @@ const ServiceMediaPreview = () => {
 
         {/* Media Preview */}
         <div className="bg-card shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 card-hover-effect rounded-lg p-8 flex flex-col">
+          <div className="relative -mx-8 -mt-8 mb-6 h-48 overflow-hidden rounded-t-lg">
+            <Image
+              src="/pictures/AIforGoodSummit2.png"
+              alt="Adil Mukhi on screen at the AI for Good Global Summit"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+              style={{ objectPosition: "50% 30%" }}
+            />
+          </div>
           <div className="flex items-center gap-3 mb-6">
             <Newspaper className="h-8 w-8 text-primary" />
             <h3 className="text-2xl font-bold text-primary" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>

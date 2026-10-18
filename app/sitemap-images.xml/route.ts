@@ -1,5 +1,6 @@
 import { blogPosts } from "@/data/blog-posts"
 import { headshots, inAction } from "@/data/headshots"
+import { heroVideos, homePhotos } from "@/data/home-photos"
 import { certificates } from "@/data/certificates"
 import { educationData } from "@/data/education"
 import { honorsAwards } from "@/data/honors-awards"
@@ -91,6 +92,9 @@ export function GET() {
   const homeImages: ImageEntry[] = [
     toImageEntry("/pictures/adil-mukhi-formal-headshot.jpg", baseUrl, "Adil Mukhi Professional Headshot", "Adil Mukhi professional photo"),
     toImageEntry("/og-image.png", baseUrl, "Adil Mukhi Website OG Image", "Official Open Graph image for Adil Mukhi website"),
+    toImageEntry(heroVideos.portrait.poster, baseUrl, "Adil Mukhi studio portrait", heroVideos.portrait.label),
+    toImageEntry(heroVideos.background.poster, baseUrl, "Adil Mukhi at work", heroVideos.background.label),
+    ...homePhotos.map((photo) => toImageEntry(photo.src, baseUrl, photo.alt, photo.caption)),
   ]
 
   // Each item's images, keyed by the page that shows them on its own

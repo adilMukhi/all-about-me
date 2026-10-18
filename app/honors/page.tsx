@@ -1,13 +1,9 @@
 import type { Metadata } from "next"
-import Link from "next/link"
-import SafeImage from "@/components/safe-image"
-import { Trophy, ExternalLink } from "lucide-react"
+import { Trophy } from "lucide-react"
 
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import HonorsAwards from "@/components/honors-awards"
 import Script from "next/script"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import { honorsIndexMetadata } from "../page-metadata"
@@ -54,70 +50,18 @@ export default function HonorsIndexPage() {
             <div className="max-w-4xl mx-auto text-center mb-12">
               <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary mb-6">
                 <Trophy className="h-4 w-4" />
-                Indexed  award pages
+                Awards and recognition
               </div>
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl" style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                 Honors & Awards
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
-                Each honor and award now has a public page, making it easier for search engines and AI systems to
-                understand the recognition attached to my work.
+                Recognition for my work in youth advocacy, healthcare, research, and community service. Select any
+                award to see the full story.
               </p>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {honorsAwards.map((award, index) => {
-                const href = getHonorPath(award)
-
-                return (
-                  <Card
-                    key={href}
-                    className={`overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
-                      index === 0 ? "md:col-span-2 xl:col-span-2" : ""
-                    }`}
-                  >
-                    {(Array.isArray(award.image) ? award.image[0] : award.image) && (
-                      <Link href={href} aria-label={award.title} className="block h-52 overflow-hidden relative">
-                        <SafeImage
-                          src={Array.isArray(award.image) ? award.image[0] : award.image}
-                          alt={award.title}
-                          fill
-                          className="object-cover transition-transform duration-500 hover:scale-105"
-                        />
-                      </Link>
-                    )}
-                    <CardHeader>
-                      <CardDescription>{award.year}</CardDescription>
-                      <CardTitle className="text-xl" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
-                        {award.title}
-                      </CardTitle>
-                      <p className="text-sm text-muted-foreground">{award.issuer}</p>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <p className="text-sm text-muted-foreground">{award.description}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {award.skills.slice(0, 4).map((skill) => (
-                          <Badge key={skill} variant="secondary">
-                            {skill}
-                          </Badge>
-                        ))}
-                        {award.skills.length > 4 && <Badge variant="outline">+{award.skills.length - 4}</Badge>}
-                      </div>
-                      <div className="flex items-center justify-between gap-3 pt-2">
-                        {award.link && award.link.startsWith("http") && (
-                          <Button asChild variant="ghost" size="sm">
-                            <a href={award.link} target="_blank" rel="noopener noreferrer">
-                              Source
-                              <ExternalLink className="ml-2 h-4 w-4" />
-                            </a>
-                          </Button>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                )
-              })}
-            </div>
+            <HonorsAwards showHeading={false} />
           </div>
         </section>
       </main>
