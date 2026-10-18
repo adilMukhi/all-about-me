@@ -295,7 +295,7 @@ export default function DrInterestedClient() {
             foundingDate: "2023-09",
             numberOfEmployees: "6",
             areaServed: "Global",
-            url: "https://drinterested.org/",
+            url: "https://www.drinterested.org/",
             sameAs: ["https://linktr.ee/dr.interested"],
             image: "https://i.postimg.cc/r06G4R5g/Adil-Mukhi-Hosting-The-Minds-Project-Panel.png",
             statistics: {

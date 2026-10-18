@@ -767,7 +767,7 @@ export const codingProjects: CodingProject[] = [
       "A website for the Dr. Interested club, featuring webinar schedules, research proposal competitions, and resources for aspiring medical professionals.",
     image: "/portfolio/coding/drinterested.png",
     tags: ["Next.js", "React", "Tailwind CSS"],
-    demoLink: "https://drinterested-int.vercel.app/",
+    demoLink: "https://www.drinterested.org/",
     codeLink: "https://github.com/drinterested/drinterested-final",
   },
   {
