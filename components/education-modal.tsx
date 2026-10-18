@@ -35,15 +35,18 @@ export default function EducationModal({ education, isOpen, onClose }: Education
           </div>
 
           {/* Image */}
-          {education.image && (
-            <div className="flex justify-center">
-              <Image
-                src={education.image}
-                alt={education.institution}
-                width={300}
-                height={180}
-                className="rounded-lg object-cover"
-              />
+          {(education.image || (education.images && education.images.length > 0)) && (
+            <div className="flex flex-wrap justify-center gap-4">
+              {[education.image, ...(education.images || [])].filter(Boolean).map((img, index) => (
+                <Image
+                  key={img}
+                  src={img}
+                  alt={index === 0 ? education.institution : `${education.degree} - Image ${index + 1}`}
+                  width={300}
+                  height={180}
+                  className="rounded-lg object-cover"
+                />
+              ))}
             </div>
           )}
 

@@ -164,6 +164,16 @@ export default async function EducationDetailPage({ params }: { params: Promise<
                   </div>
                 </div>
 
+                {education.images && education.images.length > 0 && (
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {education.images.map((img, index) => (
+                      <div key={img} className="relative aspect-[4/3] overflow-hidden rounded-xl border">
+                        <Image src={img} alt={`${education.degree} - Image ${index + 1}`} fill className="object-contain bg-white" />
+                      </div>
+                    ))}
+                  </div>
+                )}
+
                 {(education.achievements && education.achievements.length > 0) && (
                   <div className="rounded-2xl border bg-card p-6 shadow-sm">
                     <h2 className="text-xl font-semibold mb-4">Academic Achievements</h2>

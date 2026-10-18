@@ -135,13 +135,21 @@ export const educationData: Education[] = [
     degree: "UHN STEM Pathways",
     institution: "University Health Network",
     period: "Dec 2024 to Jun 2026",
-    description: "Toronto-based outreach program with 7 courses leading to certificate.",
+    description: "Toronto-based outreach program with 7 courses leading to a certificate, earned twice (2024 to 2025 and 2025 to 2026).",
     link: "#",
     image: "/uhn-logo.jpg",
+    images: [
+      "/certificates/uhn-stem-pathways.png",
+      "/certificates/UHN StemPathways - Certificate of Participation 2026 - Adil Mukhi.png",
+    ],
     slug: "uhn-stem-pathways",
     longDescription:
-      "Comprehensive STEM education program providing exposure to healthcare research and medical technologies.",
-    achievements: ["7 courses completed", "Certificate earned", "Healthcare research exposure"],
+      "Comprehensive STEM education program providing exposure to healthcare research and medical technologies. Earned the UHN STEM Pathways Certificate of Participation twice, for the 2024 to 2025 and 2025 to 2026 program years.",
+    achievements: [
+      "Certificate of Participation earned twice: 2024 to 2025 and 2025 to 2026",
+      "7 courses completed",
+      "Healthcare research exposure",
+    ],
   },
   {
     degree: "Youth On The Rise",
