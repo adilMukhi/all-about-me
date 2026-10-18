@@ -17,6 +17,12 @@ export default function AnimatedSection({ children, delay = 0 }: AnimatedSection
     const currentRef = sectionRef.current
     if (!currentRef) return
 
+    // Show content right away where animation is unsupported or unwanted
+    if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const timer = window.setTimeout(() => setIsVisible(true), 0)
+      return () => window.clearTimeout(timer)
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -29,8 +35,9 @@ export default function AnimatedSection({ children, delay = 0 }: AnimatedSection
       },
       {
         root: null,
-        rootMargin: "0px",
-        threshold: 0.1,
+        // Any visible part triggers the reveal, so very tall sections still appear
+        rootMargin: "0px 0px 100px 0px",
+        threshold: 0,
       },
     )
 

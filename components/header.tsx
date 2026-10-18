@@ -32,7 +32,7 @@ export default function Header() {
             href={item.href}
             className={cn(
               "block py-2 transition-colors",
-              isActive ? "text-blue-500 font-medium" : "text-foreground hover:text-blue-500",
+              isActive ? "text-blue-700 font-medium" : "text-foreground hover:text-blue-700",
             )}
             onClick={() => {
               if (!hasItems) {
@@ -66,7 +66,7 @@ export default function Header() {
                 href={subItem.href}
                 className={cn(
                   "block py-2 text-sm transition-colors",
-                  pathname === subItem.href ? "text-blue-500 font-medium" : "text-foreground hover:text-blue-500",
+                  pathname === subItem.href ? "text-blue-700 font-medium" : "text-foreground hover:text-blue-700",
                 )}
                 onClick={() => setIsMenuOpen(false)}
               >

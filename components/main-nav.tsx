@@ -35,8 +35,8 @@ export function MainNav({ items }: MainNavProps) {
                   <NavigationMenuLink
                     className={cn(
                       navigationMenuTriggerStyle(),
-                      "hover:text-blue-500 transition-colors",
-                      isActive && "bg-blue-50 text-blue-500",
+                      "hover:text-blue-700 transition-colors",
+                      isActive && "bg-blue-50 text-blue-700",
                     )}
                   >
                     {item.title}
@@ -50,11 +50,23 @@ export function MainNav({ items }: MainNavProps) {
             <NavigationMenuItem key={item.title}>
               {item.title === "Experiences" && item.items ? (
                 <>
-                  <NavigationMenuTrigger className={cn("hover:text-blue-500", isActive && "bg-blue-50 text-blue-500")}>
-                    <Link href={item.href} className="hover:text-blue-500 transition-colors">
+                  {/* The page link and the menu button are siblings, so neither control sits inside the other */}
+                  <div className="flex items-center">
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        "pr-1 hover:text-blue-700 transition-colors",
+                        isActive && "bg-blue-50 text-blue-700",
+                      )}
+                    >
                       {item.title}
                     </Link>
-                  </NavigationMenuTrigger>
+                    <NavigationMenuTrigger
+                      aria-label={`Open ${item.title} menu`}
+                      className={cn("px-2 hover:text-blue-700", isActive && "bg-blue-50 text-blue-700")}
+                    />
+                  </div>
                   <NavigationMenuContent>
                     <div className="fixed left-1/2 transform -translate-x-1/2 w-[600px] p-4 bg-white rounded-lg shadow-lg">
                       <div className="grid grid-cols-2 gap-4">
@@ -64,8 +76,8 @@ export function MainNav({ items }: MainNavProps) {
                             key={post.slug}
                             href={`/experiences/${post.slug}`}
                             className={cn(
-                              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blue-50 hover:text-blue-500",
-                              pathname === `/experiences/${post.slug}` && "bg-blue-50 text-blue-500",
+                              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blue-50 hover:text-blue-700",
+                              pathname === `/experiences/${post.slug}` && "bg-blue-50 text-blue-700",
                             )}
                           >
                             <div className="text-sm font-medium leading-none">{post.title}</div>
@@ -80,11 +92,23 @@ export function MainNav({ items }: MainNavProps) {
                 </>
               ) : item.items ? (
                 <>
-                  <NavigationMenuTrigger className={cn("hover:text-blue-500", isActive && "bg-blue-50 text-blue-500")}>
-                    <Link href={item.href} className="hover:text-blue-500 transition-colors">
+                  {/* The page link and the menu button are siblings, so neither control sits inside the other */}
+                  <div className="flex items-center">
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        "pr-1 hover:text-blue-700 transition-colors",
+                        isActive && "bg-blue-50 text-blue-700",
+                      )}
+                    >
                       {item.title}
                     </Link>
-                  </NavigationMenuTrigger>
+                    <NavigationMenuTrigger
+                      aria-label={`Open ${item.title} menu`}
+                      className={cn("px-2 hover:text-blue-700", isActive && "bg-blue-50 text-blue-700")}
+                    />
+                  </div>
                   <NavigationMenuContent>
                     <div className="fixed left-1/2 transform -translate-x-1/2 w-[600px] p-4 bg-white rounded-lg shadow-lg">
                       <div className="grid grid-cols-2 gap-4">
@@ -93,8 +117,8 @@ export function MainNav({ items }: MainNavProps) {
                             key={subItem.href}
                             href={subItem.href}
                             className={cn(
-                              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blue-50 hover:text-blue-500",
-                              pathname === subItem.href && "bg-blue-50 text-blue-500",
+                              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blue-50 hover:text-blue-700",
+                              pathname === subItem.href && "bg-blue-50 text-blue-700",
                             )}
                           >
                             <div className="text-sm font-medium leading-none">{subItem.title}</div>
@@ -114,8 +138,8 @@ export function MainNav({ items }: MainNavProps) {
                   <NavigationMenuLink
                     className={cn(
                       navigationMenuTriggerStyle(),
-                      "hover:text-blue-500 transition-colors",
-                      isActive && "bg-blue-50 text-blue-500",
+                      "hover:text-blue-700 transition-colors",
+                      isActive && "bg-blue-50 text-blue-700",
                     )}
                   >
                     {item.title}

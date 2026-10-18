@@ -4,6 +4,7 @@ import type React from "react"
 import { useEffect, useState } from "react"
 import SocialLinks from "@/components/social-links"
 import Footer from "@/components/footer"
+import ServicesCta from "@/components/services-cta"
 
 interface PageLayoutProps {
   children: React.ReactNode
@@ -77,6 +78,7 @@ export default function PageLayout({ children, includeSocialLinks = true }: Page
   return (
     <div className={`page-wrapper ${isLoaded ? "page-transition" : "opacity-0"}`}>
       {children}
+      <ServicesCta />
       {includeSocialLinks && <SocialLinks />}
       <Footer />
     </div>

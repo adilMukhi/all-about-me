@@ -50,7 +50,7 @@ export default function ClubFeature() {
                   <span>106 countries globally</span>
                 </div>
               </div>
-              <Button size="lg" className="button-hover-effect">
+              <Button asChild size="lg" className="button-hover-effect">
                 <a href="https://www.drinterested.org/" target="_blank" rel="noopener noreferrer">
                   Interested?
                 </a>

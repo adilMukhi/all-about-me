@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     template: "%s | Adil Mukhi",
   },
   description:
-    "Adil Mukhi is a youth advocate, public speaker, and changemaker. Founder of Dr. Interested reaching 160,000+ youth globally. TEDx speaker, Ontario Volunteer Service Award recipient, and advocate for mental health and youth empowerment.",
+    "Adil Mukhi is a youth advocate, public speaker, and changemaker. Founder of Dr. Interested reaching 160,000+ youth globally. TEDx speaker, Ontario Medal for Young Volunteers recipient, and advocate for mental health and youth empowerment.",
   keywords: [
     "Adil Mukhi",
     "youth advocate",
@@ -102,6 +102,7 @@ export const metadata: Metadata = {
     "mental health advocate",
     "youth empowerment",
     "Ontario Volunteer Service Award",
+    "Ontario Medal for Young Volunteers",
     "Canadian Biology Olympiad",
     "Results Canada",
     "Children First Canada",
@@ -299,11 +300,16 @@ export default function RootLayout({
                 },
               ],
               award: [
+                "Ontario Medal for Young Volunteers (Province of Ontario, 2026)",
+                "Top 20 Under 18 in Canada (Children First Canada, 2026)",
+                "Canadian Choice Award, Non-Profit Organizations, Mississauga (Dr. Interested, 2026)",
+                "Ontario Volunteer Service Award (x3, Province of Ontario, 2025 and 2026)",
+                "City of Mississauga Civic Award (2025 and 2026)",
+                "Award of Distinction (Peel District School Board, 2026)",
+                "National Biology Scholar with Distinction (University of Toronto, 2026)",
                 "Top 50 Youth across Canada (Children First Canada, 2025)",
-                "Global Youth Awards Finalist – Empowerment Category (Legacy Project, 2025)",
-                "Ontario Volunteer Service Award",
-                "Civic Award of Recognition (City of Mississauga)",
-                "Outstanding Youth Award",
+                "Global Youth Awards Finalist, Empowerment Category (Legacy Project, 2025)",
+                "Outstanding Youth Award (Results Canada, 2025)",
               ],
               memberOf: [
                 {
@@ -325,7 +331,11 @@ export default function RootLayout({
           ])}
         </Script>
         <meta name="p:domain_verify" content="10e6074a03407f2fd24aed7425a2acd9" />
-        <meta name="theme-color" content="#0ea5e9" />
+        <meta name="theme-color" content="#0369a1" />
+        {/* Without JavaScript, fade-in sections never animate in, so show them */}
+        <noscript>
+          <style>{`.opacity-0{opacity:1 !important;transform:none !important}`}</style>
+        </noscript>
 
         <link rel="alternate" type="application/rss+xml" title="Adil Mukhi RSS Feed" href={`${siteUrl}/rss.xml`} />
 

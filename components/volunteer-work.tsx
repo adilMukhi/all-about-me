@@ -107,6 +107,7 @@ export default function VolunteerWork() {
                   }}
                 >
                   <Maximize2 className="h-3 w-3" />
+                  <span className="sr-only">Expand details</span>
                 </Button>
               </div>
 

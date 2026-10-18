@@ -225,7 +225,7 @@ const ServicesStructuredData = () => {
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": `${siteUrl}#website`,
+        "@id": `${siteUrl}/#website`,
         url: siteUrl,
         name: "Adil Mukhi",
         description:
@@ -238,10 +238,10 @@ const ServicesStructuredData = () => {
         url: `${siteUrl}/services`,
         name: "Speaking & Consulting Services – Adil Mukhi",
         isPartOf: {
-          "@id": `${siteUrl}#website`,
+          "@id": `${siteUrl}/#website`,
         },
         about: {
-          "@id": `${siteUrl}#adil`,
+          "@id": `${siteUrl}/#person`,
         },
         description:
           "Hire youth public speaker and consultant Adil Mukhi for keynotes, workshops, panels, MC, and youth advocacy consulting.",
@@ -270,7 +270,7 @@ const ServicesStructuredData = () => {
             "@type": "ListItem",
             position: 1,
             item: {
-              "@id": `${siteUrl}#website`,
+              "@id": `${siteUrl}/#website`,
               name: "Home",
             },
           },
@@ -286,7 +286,7 @@ const ServicesStructuredData = () => {
       },
       {
         "@type": "Person",
-        "@id": `${siteUrl}#adil`,
+        "@id": `${siteUrl}/#person`,
         name: "Adil Mukhi",
         url: siteUrl,
         givenName: "Adil",
@@ -296,7 +296,13 @@ const ServicesStructuredData = () => {
         jobTitle: "Public Speaker, Youth Advocate, Consultant, and Advisor",
         description:
           "Youth public speaker, advocate, and consultant specializing in youth leadership, mental health, education, policy, and community impact.",
-        sameAs: [siteUrl],
+        sameAs: [
+          siteUrl,
+          "https://adilm.drinterested.org/",
+          "https://www.linkedin.com/in/adil-mukhi",
+          "https://www.instagram.com/adilm.0",
+          "https://www.youtube.com/@AdilMukhi",
+        ],
         knowsAbout: [
           "Youth Leadership",
           "Youth Advocacy",
@@ -407,7 +413,7 @@ const ServicesStructuredData = () => {
         ],
         memberOf: [
           {
-            "@id": `${siteUrl}#dr-interested`,
+            "@id": `${siteUrl}/#organization`,
           },
           {
             "@id": `${siteUrl}#future-interested`,
@@ -419,7 +425,7 @@ const ServicesStructuredData = () => {
       },
       {
         "@type": "Organization",
-        "@id": `${siteUrl}#dr-interested`,
+        "@id": `${siteUrl}/#organization`,
         name: "Dr. Interested",
         description:
           "Youth-led initiative and organization focused on curiosity, learning, and future-focused education and health exploration.",
@@ -436,7 +442,7 @@ const ServicesStructuredData = () => {
         "@id": `${siteUrl}/services#professional-service`,
         name: "Professional Speaking and Consulting Services",
         provider: {
-          "@id": `${siteUrl}#adil`,
+          "@id": `${siteUrl}/#person`,
         },
         serviceType: "Public Speaking and Consulting",
         areaServed: [
@@ -776,7 +782,7 @@ const ServicesStructuredData = () => {
         name: "Keynote Speaking",
         serviceType: "Keynote Speaker",
         provider: {
-          "@id": `${siteUrl}#adil`,
+          "@id": `${siteUrl}/#person`,
         },
         areaServed: [
           {
@@ -825,7 +831,7 @@ const ServicesStructuredData = () => {
         name: "Interactive Workshops",
         serviceType: "Workshop Facilitation",
         provider: {
-          "@id": `${siteUrl}#adil`,
+          "@id": `${siteUrl}/#person`,
         },
         areaServed: [
           {
@@ -870,7 +876,7 @@ const ServicesStructuredData = () => {
         name: "Panel Discussions",
         serviceType: ["Panel Speaker", "Panel Moderator"],
         provider: {
-          "@id": `${siteUrl}#adil`,
+          "@id": `${siteUrl}/#person`,
         },
         areaServed: [
           {
@@ -914,7 +920,7 @@ const ServicesStructuredData = () => {
         name: "Event Facilitation & MC",
         serviceType: ["Master of Ceremonies", "Host", "Conference Facilitator"],
         provider: {
-          "@id": `${siteUrl}#adil`,
+          "@id": `${siteUrl}/#person`,
         },
         areaServed: [
           {
@@ -958,7 +964,7 @@ const ServicesStructuredData = () => {
         name: "Interviews & Media Appearances",
         serviceType: ["Podcast Guest", "Interview Guest", "Webinar Speaker"],
         provider: {
-          "@id": `${siteUrl}#adil`,
+          "@id": `${siteUrl}/#person`,
         },
         areaServed: [
           {
@@ -992,7 +998,7 @@ const ServicesStructuredData = () => {
           "Policy Consultant",
         ],
         provider: {
-          "@id": `${siteUrl}#adil`,
+          "@id": `${siteUrl}/#person`,
         },
         areaServed: [
           {
@@ -1124,8 +1130,12 @@ const ServicesHero = () => (
         className="text-4xl font-bold tracking-tighter text-center mb-8 sm:text-5xl md:text-6xl text-primary"
         style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
       >
-        My Services
+        Speaking &amp; Consulting Services
       </h1>
+      <p className="mx-auto max-w-3xl text-center text-lg text-muted-foreground">
+        Public speaker, advisor, and consultant in Mississauga and the Greater Toronto Area, available in person and
+        online worldwide.
+      </p>
     </div>
   </section>
 )
@@ -1693,7 +1703,6 @@ export default function ClientServicesPage() {
       <TikTokEmbedScript />
       <Header />
       <ServicesStructuredData />
-      <h1 className="sr-only">Adil Mukhi - Public Speaker, Advisor, and Consultant in Mississauga and the Greater Toronto Area</h1>
       <AnimatedSection>
         <SpeakingEngagementsHero />
       </AnimatedSection>
