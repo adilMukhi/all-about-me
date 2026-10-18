@@ -223,14 +223,15 @@ export const workExperiences: WorkExperience[] = [
     slug: "eco-brothers",
   },
   {
-    title: "Youth Advisor",
+    title: "Youth Advisor and Program Facilitator",
     company: "Children First Canada",
     period: "2024 to Present",
-    description: "Youth contributor to the 2026 Raising Canada Report, facilitator for the Young Canadians' Parliament, and member of the YCP Focus Circle, sharing youth perspectives on children's rights and policy.",
+    description: "Youth contributor to the 2026 Raising Canada Report, facilitator for the Young Canadians' Parliament and the SDG Accelerator Program, and member of the YCP Focus Circle, sharing youth perspectives on children's rights and policy.",
     longDescription:
-      "Reviewed the Raising Canada Report (2024) and attended a consultation with the Office of the Privacy Commissioner of Canada. In November 2025, I was invited to co-host the Young Canadians' Parliament, and I facilitated a youth group through the 2025 to 2026 Young Canadians' Parliament sessions. In 2026, I helped write the youth infographic for the 2026 Raising Canada Report, scripted and filmed a social media video on poverty and food insecurity for the report launch, and joined the youth media roster for interviews about the report. I also took part in the YCP Focus Circle, the Digital Media Bootcamp, and two youth research studies shared through Children First Canada, and attended The Future is NOW! Youth Changemakers Summit on October 16, 2026 as an awards finalist. I have been invited to co-present the Being, Belonging, Becoming program to Ontario teachers at the OHASSTA Reframing Perspectives Conference on November 7, 2026.",
+      "Reviewed the Raising Canada Report (2024) and attended a consultation with the Office of the Privacy Commissioner of Canada. In 2025, I facilitated the SDG Accelerator Program, leading a group of 6 students through 8 workshops that taught the Sustainable Development Goals to youth ages 6 to 16. In November 2025, I was invited to co-host the Young Canadians' Parliament, and I facilitated a youth group through the 2025 to 2026 Young Canadians' Parliament sessions. In 2026, I helped write the youth infographic for the 2026 Raising Canada Report, scripted and filmed a social media video on poverty and food insecurity for the report launch, and joined the youth media roster for interviews about the report. I also took part in the YCP Focus Circle, the Digital Media Bootcamp, and two youth research studies shared through Children First Canada, and attended The Future is NOW! Youth Changemakers Summit on October 16, 2026 as an awards finalist. I have been invited to co-present the Being, Belonging, Becoming program to Ontario teachers at the OHASSTA Reframing Perspectives Conference on November 7, 2026.",
     stats: [
       "Facilitator, Young Canadians' Parliament (2025 to 2026)",
+      "Facilitator, SDG Accelerator Program (2025): 8 workshops for youth ages 6 to 16, leading a group of 6 students",
       "Youth contributor, 2026 Raising Canada Report infographic",
       "Raising Canada 2026 social media video on poverty and food insecurity",
       "Youth media roster, 2026 Raising Canada Report",
@@ -241,9 +242,16 @@ export const workExperiences: WorkExperience[] = [
     ],
     image: "/childernfirstcanada.jpg",
     images: ["/cfc-raising-canada-2026.jpg", "/cfc-future-is-now-summit-2026.jpg"],
-    skills: ["Youth Advocacy", "Policy Input", "Report Analysis", "Facilitation", "Media Engagement", "Research"],
+    skills: ["Youth Advocacy", "Policy Input", "Report Analysis", "Facilitation", "Workshop Facilitation", "Education", "Media Engagement", "Research"],
     link: "https://www.childrenfirstcanada.com/",
     slug: "children-first-advising",
+    progression: [
+      {
+        role: "SDG Accelerator Program Facilitator",
+        period: "2025",
+        description: "Taught the Sustainable Development Goals to youth ages 6 to 16 across 8 workshops, leading a group of 6 students.",
+      },
+    ],
   },
   {
     title: "General Member",
@@ -308,17 +316,6 @@ export const workExperiences: WorkExperience[] = [
         description: "Assisted with daily activities, supporting engagement and learning for 40 campers.",
       },
     ],
-  },
-  {
-    title: "SDG Accelerator Program Facilitator",
-    company: "Children First Canada",
-    period: "2025",
-    description: "Taught Sustainable Development Goals to youth ages 6–16.",
-    stats: ["6–16 year-olds taught", "8 Workshops facilitated", "Led Group of 6 students"],
-    image: "/childernfirstcanada.jpg",
-    skills: ["Education", "Youth Engagement", "Workshop Facilitation"],
-    link: "",
-    slug: "children-first-sdg",
   },
   {
     title: "Head of Writing",
