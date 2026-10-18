@@ -8,18 +8,21 @@ type SafeImageProps = ImageProps & {
   wrapperClassName?: string
 }
 
-// Renders nothing when the image fails to load (for example, a file not yet uploaded to public/)
+// If the optimized image fails (for example, the image optimizer rejects it), retries with the original file.
+// Renders nothing when that also fails (for example, a file not yet uploaded to public/).
 export default function SafeImage({ wrapperClassName, onError, alt, ...props }: SafeImageProps) {
-  const [failed, setFailed] = useState(false)
+  const [attempt, setAttempt] = useState<"optimized" | "original" | "failed">(props.unoptimized ? "original" : "optimized")
 
-  if (failed || !props.src) return null
+  if (attempt === "failed" || !props.src) return null
 
   const image = (
     <Image
+      key={attempt}
       {...props}
       alt={alt}
+      unoptimized={attempt === "original"}
       onError={(e) => {
-        setFailed(true)
+        setAttempt((current) => (current === "optimized" ? "original" : "failed"))
         onError?.(e)
       }}
     />
