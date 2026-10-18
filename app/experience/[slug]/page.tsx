@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Link from "next/link"
-import Image from "next/image"
 import SafeImage from "@/components/safe-image"
 import SchoolRolesBreakdown from "@/components/school-roles-breakdown"
 import Script from "next/script"
@@ -180,9 +179,14 @@ export default async function ExperienceDetailPage({ params }: { params: Promise
                 {experience.images && experience.images.length > 0 && (
                   <div className="grid gap-3 sm:grid-cols-2">
                     {experience.images.map((image, index) => (
-                      <div key={image} className="relative aspect-video overflow-hidden rounded-xl border">
-                        <Image src={image} alt={`${experience.company} image ${index + 1}`} fill className="object-cover" />
-                      </div>
+                      <SafeImage
+                        key={image}
+                        src={image}
+                        alt={`${experience.company} image ${index + 1}`}
+                        fill
+                        className="object-cover"
+                        wrapperClassName="relative aspect-video overflow-hidden rounded-xl border"
+                      />
                     ))}
                   </div>
                 )}

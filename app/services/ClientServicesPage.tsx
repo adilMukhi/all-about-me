@@ -1464,6 +1464,20 @@ const PastEngagements = () => (
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
+                <p className="font-medium">Youth Contributor, 2026 Raising Canada Report (infographic, social media video, media roster)</p>
+                <p className="text-sm text-muted-foreground">2026 · Children First Canada</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Facilitator, Young Canadians' Parliament</p>
+                <p className="text-sm text-muted-foreground">2025 to 2026 · Children First Canada</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
                 <p className="font-medium">Children's Privacy Code Consultation</p>
                 <p className="text-sm text-muted-foreground">
                   July 2025 - Office of the Privacy Commissioner of Canada
