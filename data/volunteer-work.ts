@@ -11,6 +11,8 @@ export type VolunteerWork = {
   stats?: string[]
   // School club roles; the entry renders them grouped by club and by grade from this one list
   schoolRoles?: SchoolRole[]
+  // Small one-off or short school volunteering roles, shown as side notes
+  sideRoles?: { role: string; period: string }[]
   progression?: {
     role: string
     period: string
@@ -91,6 +93,16 @@ export const volunteerWork: VolunteerWork[] = [
       { club: "Student Super Council", role: "Member", period: "2024 to 2027", grades: [10, 11, 12], gradeLabel: "Super Council Member" },
       { club: "Grow With Google, Peel District School Board", role: "Ambassador", period: "2026 to Present", grades: [12], gradeLabel: "Grow With Google Ambassador" },
     ],
+    sideRoles: [
+      { role: "Parent Night Volunteer with Peer Helpers, greeting families and helping with event logistics", period: "Nov 2023, Apr 2025, Oct 2025" },
+      { role: "AV Crew, helped run two school events", period: "2023 to 2024" },
+      { role: "Eco Club Member", period: "2023 to 2025" },
+      { role: "Enchanted Glenforest Volunteer, handed out presents and ran holiday activities for kids", period: "Dec 2023" },
+      { role: "AI Presentation to Peel Board members", period: "Jan 2024 to Feb 2024" },
+      { role: "Grade 11 Speaker, IB Student Night", period: "Oct 2025" },
+      { role: "Guest Speaker, Parents Night at the MYP Personal Project exhibition", period: "Apr 2026" },
+      { role: "Link Crew, Grade 9 orientation", period: "2026" },
+    ],
   },
   {
     role: "Medical Writer",
@@ -160,37 +172,5 @@ export const volunteerWork: VolunteerWork[] = [
     image: "/ptyt.jpeg",
     skills: ["Creativity", "Community Support", "Empathy"],
     link: "",
-  },
-  {
-    role: "Peer Helpers Volunteer",
-    organization: "Glenforest Secondary School",
-    period: "Oct – Nov 2023",
-    description:
-      "Helped during Parent’s Night by greeting families, offering information, and assisting with event logistics.",
-    image: "/peer-helpers.png",
-    skills: ["Public Relations", "Communication", "Event Support"],
-    link: "",
-  },
-  {
-    role: "School Event Volunteer",
-    organization: "Glenforest Secondary School",
-    period: "Dec 2023",
-    description:
-      "Supported school-led events including Christmas celebrations to create an inclusive and fun environment for younger students.",
-    image: "/gfss-logo.jpg",
-    skills: ["Team Support", "Student Engagement", "Leadership"],
-    link: "",
-    progression: [
-      {
-        role: "Enchanted Glenforest Volunteer",
-        period: "Dec 2023",
-        description: "Handed out presents and supported holiday activities for kids.",
-      },
-      {
-        role: "AI Presentation Volunteer",
-        period: "Jan – Feb 2024",
-        description: "Presented on Artificial Intelligence to Peel Board members, helping raise student awareness on technology.",
-      },
-    ],
   },
 ]

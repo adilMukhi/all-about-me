@@ -140,6 +140,22 @@ export default async function VolunteerDetailPage({ params }: { params: Promise<
                   </div>
                 )}
 
+                {volunteer.sideRoles && volunteer.sideRoles.length > 0 && (
+                  <div className="mt-10">
+                    <h2 className="text-2xl font-semibold mb-4">Side Roles</h2>
+                    <ul className="space-y-2 text-muted-foreground">
+                      {volunteer.sideRoles.map((side) => (
+                        <li key={side.role} className="flex gap-2">
+                          <span className="text-primary">•</span>
+                          <span>
+                            {side.role} ({side.period})
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 {volunteer.progression && volunteer.progression.length > 0 && (
                   <div className="mt-10">
                     <h2 className="text-2xl font-semibold mb-4">Progression</h2>

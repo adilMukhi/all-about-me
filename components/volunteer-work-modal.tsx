@@ -74,6 +74,22 @@ export default function VolunteerWorkModal({ experience, isOpen, onClose }: Volu
             </div>
           )}
 
+          {experience.sideRoles && experience.sideRoles.length > 0 && (
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Side Roles</h3>
+              <ul className="space-y-1">
+                {experience.sideRoles.map((side) => (
+                  <li key={side.role} className="flex items-start text-sm text-muted-foreground">
+                    <span className="text-primary mr-2">•</span>
+                    <span>
+                      {side.role} ({side.period})
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           {experience.stats && experience.stats.length > 0 && (
             <div>
               <h3 className="text-lg font-semibold mb-3">Key Accomplishments</h3>
