@@ -47,13 +47,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       url: `${siteUrl}${getHonorPath(award)}`,
       title,
       description,
-      images: [{ url: `${siteUrl}${image}`, width: 1200, height: 630, alt: title }],
+      images: [{ url: image ? `${siteUrl}${image}` : `${siteUrl}/og-image.png`, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [`${siteUrl}${image}`],
+      images: [image ? `${siteUrl}${image}` : `${siteUrl}/og-image.png`],
     },
   }
 }

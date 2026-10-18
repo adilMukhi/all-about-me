@@ -76,14 +76,16 @@ export default function HonorsIndexPage() {
                       index === 0 ? "md:col-span-2 xl:col-span-2" : ""
                     }`}
                   >
-                    <Link href={href} className="block h-52 overflow-hidden relative">
-                      <SafeImage
-                        src={Array.isArray(award.image) ? award.image[0] : award.image}
-                        alt={award.title}
-                        fill
-                        className="object-cover transition-transform duration-500 hover:scale-105"
-                      />
-                    </Link>
+                    {(Array.isArray(award.image) ? award.image[0] : award.image) && (
+                      <Link href={href} className="block h-52 overflow-hidden relative">
+                        <SafeImage
+                          src={Array.isArray(award.image) ? award.image[0] : award.image}
+                          alt={award.title}
+                          fill
+                          className="object-cover transition-transform duration-500 hover:scale-105"
+                        />
+                      </Link>
+                    )}
                     <CardHeader>
                       <CardDescription>{award.year}</CardDescription>
                       <CardTitle className="text-xl" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>

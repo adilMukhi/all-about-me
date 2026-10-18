@@ -87,7 +87,7 @@ export default function HonorsAwards() {
     <CardContent className="p-4">
       <div className="text-center">
         <SafeImage
-          src={getPrimaryImage(award) || "/placeholder.svg"}
+          src={getPrimaryImage(award)}
           alt={award.title}
           width={60}
           height={60}
@@ -173,7 +173,7 @@ export default function HonorsAwards() {
                   </CardHeader>
                   <CardContent className="flex gap-4 items-start">
                     <SafeImage
-                      src={getPrimaryImage(award) || "/placeholder.svg"}
+                      src={getPrimaryImage(award)}
                       alt={award.title}
                       width={80}
                       height={80}

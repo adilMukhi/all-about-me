@@ -52,7 +52,7 @@ export const honorsAwards: Award[] = [
     link: "",
   },
   {
-    title: "Ontario Volunteer Service Awards",
+    title: "Ontario Volunteer Service Award (x3)",
     issuer: "Province of Ontario",
     year: "Aug 2025 and May 2026",
     description:
@@ -254,7 +254,7 @@ export const honorsAwards: Award[] = [
     year: "Nov 2025",
     description:
       "Nominated for the Queen Elizabeth II Ontario Medal for Good Citizenship.",
-    image: "/qeii-medal-nomination-2025.jpg",
+    image: "",
     skills: ["Citizenship", "Community Engagement"],
     link: "",
     group: "nomination",
@@ -265,7 +265,7 @@ export const honorsAwards: Award[] = [
     year: "Oct 2025",
     description:
       "Nominated for the Diana Award, which recognizes young people making a lasting difference in their communities.",
-    image: "/diana-award-nomination-2025.jpg",
+    image: "",
     skills: ["Youth Leadership", "Service"],
     link: "",
     group: "nomination",
@@ -276,7 +276,7 @@ export const honorsAwards: Award[] = [
     year: "Sep 2025",
     description:
       "Nominated for the Commonwealth Youth Awards for Excellence in Development Work.",
-    image: "/commonwealth-youth-awards-nomination-2025.jpg",
+    image: "",
     skills: ["Development", "Youth Leadership"],
     link: "",
     group: "nomination",
