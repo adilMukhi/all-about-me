@@ -82,6 +82,7 @@ export default function Certificates() {
               }}
             >
               <Maximize2 className="h-4 w-4" />
+              <span className="sr-only">Expand details</span>
             </Button>
 
             <CardHeader>

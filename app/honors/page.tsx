@@ -77,7 +77,7 @@ export default function HonorsIndexPage() {
                     }`}
                   >
                     {(Array.isArray(award.image) ? award.image[0] : award.image) && (
-                      <Link href={href} className="block h-52 overflow-hidden relative">
+                      <Link href={href} aria-label={award.title} className="block h-52 overflow-hidden relative">
                         <SafeImage
                           src={Array.isArray(award.image) ? award.image[0] : award.image}
                           alt={award.title}

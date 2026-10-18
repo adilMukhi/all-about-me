@@ -47,6 +47,12 @@ export default function Footer() {
             ))}
           </div>
           <div className="flex flex-wrap justify-center gap-3 text-xs text-muted-foreground">
+            <a href="/services" className="underline underline-offset-4 hover:text-primary transition-colors">
+              Speaking &amp; Consulting
+            </a>
+            <a href="/services#booking" className="underline underline-offset-4 hover:text-primary transition-colors">
+              Book Adil
+            </a>
             <a href="/media-inquiries" className="underline underline-offset-4 hover:text-primary transition-colors">
               Media Inquiries
             </a>

@@ -72,6 +72,7 @@ export default function Education() {
                 }}
               >
                 <Maximize2 className="h-4 w-4" />
+                <span className="sr-only">Expand details</span>
               </Button>
             </div>
             <CardHeader>
@@ -127,6 +128,7 @@ export default function Education() {
                     }}
                   >
                     <Maximize2 className="h-3 w-3" />
+                    <span className="sr-only">Expand details</span>
                   </Button>
                 </div>
                 <div className="space-y-2">

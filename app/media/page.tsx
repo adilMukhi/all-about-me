@@ -71,13 +71,13 @@ const MediaGrid = () => {
   const getTypeColor = (type: string) => {
     switch (type) {
       case "article":
-        return "text-blue-600"
+        return "text-blue-700"
       case "interview":
-        return "text-green-600"
+        return "text-green-700"
       case "feature":
-        return "text-purple-600"
+        return "text-purple-700"
       case "spotlight":
-        return "text-orange-600"
+        return "text-orange-700"
       default:
         return "text-primary"
     }

@@ -1,10 +1,12 @@
 import { blogPosts } from "@/data/blog-posts"
+import { headshots, inAction } from "@/data/headshots"
 import { certificates } from "@/data/certificates"
 import { educationData } from "@/data/education"
 import { honorsAwards } from "@/data/honors-awards"
 import { books, blogs, clubPublications, ltes, researchProjects, codingProjects, artProjects, sportsAchievements } from "@/data/portfolio-items"
 import { volunteerWork } from "@/data/volunteer-work"
 import { workExperiences } from "@/data/work-experience"
+import { getCertificatePath, getEducationPath, getHonorPath, getVolunteerPath, getWorkExperiencePath } from "@/lib/seo-paths"
 
 const escapeXml = (value: string) =>
   value
@@ -63,7 +65,13 @@ function toImageEntry(source: string, baseUrl: string, title?: string, caption?:
 }
 
 function makeEntry(loc: string, images: Array<ImageEntry | null | undefined>): UrlEntry | null {
-  const filteredImages = images.filter((image): image is ImageEntry => Boolean(image))
+  // Keep each image once per page
+  const seen = new Set<string>()
+  const filteredImages = images.filter((image): image is ImageEntry => {
+    if (!image || seen.has(image.loc)) return false
+    seen.add(image.loc)
+    return true
+  })
 
   if (filteredImages.length === 0) {
     return null
@@ -83,38 +91,47 @@ export function GET() {
   const homeImages: ImageEntry[] = [
     toImageEntry("/pictures/adil-mukhi-formal-headshot.jpg", baseUrl, "Adil Mukhi Professional Headshot", "Adil Mukhi professional photo"),
     toImageEntry("/og-image.png", baseUrl, "Adil Mukhi Website OG Image", "Official Open Graph image for Adil Mukhi website"),
-    ...certificates.map((certificate) =>
-      toImageEntry(
-        certificate.image,
-        baseUrl,
-        certificate.name,
-        `${certificate.issuer} certificate for ${certificate.name}`,
-      ),
-    ),
-    ...educationData
-      .flatMap((education) => [
-        education.image ? toImageEntry(education.image, baseUrl, education.degree, education.description) : null,
-        ...(education.images || []).map((image, index) =>
-          toImageEntry(image, baseUrl, `${education.degree} image ${index + 1}`, education.institution),
-        ),
-      ])
-      .filter((image): image is ImageEntry => Boolean(image)),
-    ...honorsAwards.flatMap((award) => {
-      const awardImages = Array.isArray(award.image) ? award.image : [award.image]
+  ]
 
-      return awardImages
-        .filter(Boolean)
-        .map((image, index) => toImageEntry(image, baseUrl, award.title, `${award.issuer} award image ${index + 1}`))
-    }),
-    ...workExperiences
-      .flatMap((experience) => [
-        experience.image ? toImageEntry(experience.image, baseUrl, experience.title, experience.company) : null,
-        ...(experience.images || []).map((image, index) =>
-          toImageEntry(image, baseUrl, `${experience.title} image ${index + 1}`, experience.company),
+  // Each item's images, keyed by the page that shows them on its own
+  const certificateImages = (certificate: (typeof certificates)[number]) =>
+    [certificate.image, ...(certificate.images || [])]
+      .filter(Boolean)
+      .map((image, index) =>
+        toImageEntry(
+          image,
+          baseUrl,
+          index === 0 ? certificate.name : `${certificate.name} image ${index + 1}`,
+          `${certificate.issuer} certificate for ${certificate.name}`,
         ),
-      ])
-      .filter((image): image is ImageEntry => Boolean(image)),
-    ...volunteerWork.map((work) => toImageEntry(work.image, baseUrl, work.role, work.organization)),
+      )
+  const awardImages = (award: (typeof honorsAwards)[number]) =>
+    (Array.isArray(award.image) ? award.image : [award.image])
+      .filter(Boolean)
+      .map((image, index) => toImageEntry(image, baseUrl, award.title, `${award.issuer} award image ${index + 1}`))
+  const educationImages = (education: (typeof educationData)[number]) =>
+    [
+      education.image ? toImageEntry(education.image, baseUrl, education.degree, education.description) : null,
+      ...(education.images || []).map((image, index) =>
+        toImageEntry(image, baseUrl, `${education.degree} image ${index + 1}`, education.institution),
+      ),
+    ].filter((image): image is ImageEntry => Boolean(image))
+  const experienceImages = (experience: (typeof workExperiences)[number]) =>
+    [
+      experience.image ? toImageEntry(experience.image, baseUrl, experience.title, experience.company) : null,
+      ...(experience.images || []).map((image, index) =>
+        toImageEntry(image, baseUrl, `${experience.title} image ${index + 1}`, experience.company),
+      ),
+    ].filter((image): image is ImageEntry => Boolean(image))
+  const volunteerImages = (work: (typeof volunteerWork)[number]) =>
+    work.image ? [toImageEntry(work.image, baseUrl, work.role, work.organization)] : []
+
+  const backgroundImages: ImageEntry[] = [
+    ...certificates.flatMap(certificateImages),
+    ...educationData.flatMap(educationImages),
+    ...honorsAwards.flatMap(awardImages),
+    ...workExperiences.flatMap(experienceImages),
+    ...volunteerWork.flatMap(volunteerImages),
   ].sort((left, right) => left.loc.localeCompare(right.loc))
 
   const portfolioWritingImages: ImageEntry[] = [
@@ -181,6 +198,15 @@ export function GET() {
 
   const staticEntries: UrlEntry[] = [
     makeEntry(`${baseUrl}/`, homeImages),
+    makeEntry(`${baseUrl}/background`, backgroundImages),
+    makeEntry(
+      `${baseUrl}/media-inquiries/headshots`,
+      [...headshots, ...inAction].map((shot) => toImageEntry(shot.src, baseUrl, shot.alt, shot.caption)),
+    ),
+    makeEntry(`${baseUrl}/certificates`, certificates.flatMap(certificateImages)),
+    makeEntry(`${baseUrl}/honors`, honorsAwards.flatMap(awardImages)),
+    makeEntry(`${baseUrl}/education`, educationData.flatMap(educationImages)),
+    makeEntry(`${baseUrl}/volunteer`, volunteerWork.flatMap(volunteerImages)),
     makeEntry(`${baseUrl}/portfolio/writing`, portfolioWritingImages),
     makeEntry(`${baseUrl}/portfolio/research`, researchImages),
     makeEntry(`${baseUrl}/portfolio/coding`, codingImages),
@@ -201,7 +227,17 @@ export function GET() {
     })
     .filter((entry): entry is UrlEntry => Boolean(entry))
 
-  const entries = [...staticEntries, ...blogEntries].sort((left, right) => left.loc.localeCompare(right.loc))
+  const detailEntries = [
+    ...certificates.map((certificate) => makeEntry(`${baseUrl}${getCertificatePath(certificate)}`, certificateImages(certificate))),
+    ...honorsAwards.map((award) => makeEntry(`${baseUrl}${getHonorPath(award)}`, awardImages(award))),
+    ...educationData.map((education) => makeEntry(`${baseUrl}${getEducationPath(education)}`, educationImages(education))),
+    ...workExperiences.map((experience) =>
+      makeEntry(`${baseUrl}${getWorkExperiencePath(experience)}`, experienceImages(experience)),
+    ),
+    ...volunteerWork.map((work) => makeEntry(`${baseUrl}${getVolunteerPath(work)}`, volunteerImages(work))),
+  ].filter((entry): entry is UrlEntry => Boolean(entry))
+
+  const entries = [...staticEntries, ...detailEntries, ...blogEntries].sort((left, right) => left.loc.localeCompare(right.loc))
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">

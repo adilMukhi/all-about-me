@@ -17,7 +17,7 @@ const defaultTwitter = {
 export const homeMetadata: Metadata = {
   title: "Adil Mukhi: Youth Advocate, Public Speaker, Founder, and Research Leader",
   description:
-    "Adil Mukhi is a youth advocate, public speaker, advisor, consultant, and changemaker from the Greater Toronto Area. Founder and Executive Director of Dr. Interested, an organization impacting 160,000+ individuals across 106 countries with 2,100+ members, 367 executives, 400+ mentor hours, and 20+ events. TEDx speaker, Ontario Volunteer Service Award recipient, and advocate for mental health and youth empowerment.",
+    "Adil Mukhi is a youth advocate, public speaker, advisor, consultant, and changemaker from the Greater Toronto Area. Founder and Executive Director of Dr. Interested, an organization impacting 160,000+ individuals across 106 countries with 2,100+ members, 367 executives, 400+ mentor hours, and 20+ events. TEDx speaker, Ontario Medal for Young Volunteers recipient, and advocate for mental health and youth empowerment.",
   alternates: {
     canonical: `${siteUrl}/`,
   },
@@ -43,7 +43,7 @@ export const homeMetadata: Metadata = {
 export const backgroundMetadata: Metadata = {
   title: "Background",
   description:
-    "Explore Adil Mukhi's background as a youth advocate, public speaker, advisor, and consultant. Ontario Volunteer Service Award recipient, TEDx speaker, research volunteer at SickKids Hospital, and founder and Executive Director of Dr. Interested, an organization impacting 160,000+ individuals across 106 countries with 2,100+ members, 367 executives, 400+ mentor hours, and 20+ events.",
+    "Explore Adil Mukhi's background as a youth advocate, public speaker, advisor, and consultant. Ontario Medal for Young Volunteers recipient, TEDx speaker, research volunteer at SickKids Hospital, and founder and Executive Director of Dr. Interested, an organization impacting 160,000+ individuals across 106 countries with 2,100+ members, 367 executives, 400+ mentor hours, and 20+ events.",
   alternates: {
     canonical: `${siteUrl}/background`,
   },
