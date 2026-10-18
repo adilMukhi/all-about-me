@@ -129,6 +129,7 @@ export function GET() {
   ].sort((left, right) => left.loc.localeCompare(right.loc))
 
   const researchImages: ImageEntry[] = researchProjects
+    .filter((project) => project.image)
     .map((project) => toImageEntry(project.image, baseUrl, project.title, project.institution))
     .sort((left, right) => left.loc.localeCompare(right.loc))
 

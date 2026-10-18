@@ -1,6 +1,6 @@
 "use client"
 
-import Image from "next/image"
+import SafeImage from "@/components/safe-image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { certificates } from "@/data/certificates"
@@ -99,7 +99,7 @@ export default function Certificates() {
               </CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col items-center gap-4">
-              <Image
+              <SafeImage
                 src={cert.image || "/placeholder.svg"}
                 alt={cert.name}
                 width={150}
@@ -123,7 +123,7 @@ export default function Certificates() {
                 onClick={() => openModal(cert)}
               >
                 <div className="relative w-full h-full">
-                  <Image src={cert.image || "/placeholder.svg"} alt={cert.name} fill className="object-cover" />
+                  <SafeImage src={cert.image || "/placeholder.svg"} alt={cert.name} fill className="object-cover" />
                   <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-4 text-white text-center">
                     <h4 className="font-semibold text-sm mb-2 line-clamp-2">
                       <Link

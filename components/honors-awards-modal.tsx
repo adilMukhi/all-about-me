@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Image from "next/image"
+import SafeImage from "@/components/safe-image"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -32,7 +32,7 @@ export default function HonorsAwardsModal({ award, isOpen, onClose }: HonorsAwar
     return null
   }
 
-  const allImages = [award.image, ...(award.images || [])].filter(Boolean)
+  const allImages = [...(Array.isArray(award.image) ? award.image : [award.image]), ...(award.images || [])].filter(Boolean)
   const hasMultipleImages = allImages.length > 1
 
   const handleClose = () => {
@@ -63,7 +63,7 @@ export default function HonorsAwardsModal({ award, isOpen, onClose }: HonorsAwar
             <div className={`grid gap-4 ${hasMultipleImages && allImages.length > 2 ? "grid-cols-2" : "grid-cols-1"}`}>
               {hasMultipleImages && allImages.length > 2 ? (
                 allImages.map((img, index) => (
-                  <Image
+                  <SafeImage
                     key={index}
                     src={img || "/placeholder.svg"}
                     alt={`${award.title} - Image ${index + 1}`}
@@ -73,7 +73,8 @@ export default function HonorsAwardsModal({ award, isOpen, onClose }: HonorsAwar
                   />
                 ))
               ) : (
-                <Image
+                <SafeImage
+                  key={currentImageIndex}
                   src={allImages[currentImageIndex] || "/placeholder.svg"}
                   alt={award.title}
                   width={300}

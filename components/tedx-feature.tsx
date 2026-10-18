@@ -24,7 +24,7 @@ export default function TedxFeature() {
           {playing ? (
             <iframe
               src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?start=5&autoplay=1`}
-              title="Stress, Memory, and Why You Can't Find Your Keys | Adil Mukhi | TEDxMcfarren Boulevard Youth"
+              title="Stress, Memory, and Why You Can't Find Your Keys | Adil Mukhi | TEDxMcFarren Boulevard Youth"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="absolute inset-0 w-full h-full"
@@ -55,7 +55,7 @@ export default function TedxFeature() {
           <CardTitle className="text-2xl" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
             Stress, Memory, and Why You Can't Find Your Keys
           </CardTitle>
-          <CardDescription className="text-base">TEDxMcfarren Boulevard Youth</CardDescription>
+          <CardDescription className="text-base">TEDxMcFarren Boulevard Youth</CardDescription>
         </CardHeader>
         <CardContent>
           <p className="text-muted-foreground mb-4">

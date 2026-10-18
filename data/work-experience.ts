@@ -17,20 +17,30 @@ export type WorkExperience = {
     period: string
     description?: string
   }[]
+  // School club roles; the entry renders them grouped by club and by grade from this one list
+  schoolRoles?: SchoolRole[]
+}
+
+export type SchoolRole = {
+  club: string
+  role: string
+  period: string
+  grades: number[]
+  gradeLabel: string
 }
 
 export const workExperiences: WorkExperience[] = [
   {
     title: "Founder & Executive Director",
     company: "Dr. Interested",
-    period: "2024–Present",
+    period: "Sep 2023 to Present",
     description: "Leading Dr. Interested, I design programs and initiatives that empower youth through mentorship, advocacy, and impactful events. I guide a team of students, fostering community engagement and creating opportunities that reach thousands nationally and internationally.",
-    longDescription: "As Founder & Executive Director, I lead Dr. Interested to engage youth globally, organize impactful events, and foster mentorship programs, connecting 60,000+ youth and collaborating with medical student advisors to create research, advocacy, and educational opportunities across multiple continents.",
+    longDescription: "As Founder & Executive Director, I lead Dr. Interested to engage youth globally, organize impactful events, and foster mentorship programs, connecting 160,000+ youth and collaborating with medical student advisors to create research, advocacy, and educational opportunities across multiple continents.",
     stats: [
       "160,000+ youth impacted",
       "20+ major events",
       "3,700,000+ marketing reach",
-      "1700+ members",
+      "2,100+ members",
       "15 Med Student Advisors",
       "Over 250 participants in our 2025 research competition",
     ],
@@ -45,169 +55,6 @@ export const workExperiences: WorkExperience[] = [
         description: "Co-leading with HIEH, YLA, and LibSci to make a Case Competition at TMU's Ted Rogers School of Management.",
       },
     ],
-  },
-  {
-    title: "Camp Director",
-    company: "Dixie Bloor Neighbourhood Centre",
-    period: "Summer 2026",
-    description: "Returned as Camp Director, leading 50 campers and 8 staff, overseeing safe and engaging programming including field trips and daily operations.",
-    longDescription: "As Camp Director, I returned to lead the summer camp program, overseeing 50 campers and a team of 4 full-time and 4 part-time staff across the full summer season. I managed daily operations, staff coordination, and program delivery while ensuring a safe, inclusive, and engaging environment. This summer included 4 field trips and continued collaboration across departments to enhance youth experiences and program quality.",
-    stats: ["50 campers led", "8 staff managed", "4 field trips organized", "Full program leadership"],
-    image: "/dbnc.jpg",
-    skills: ["Leadership", "Team Management", "Youth Engagement", "Program Planning", "Operations"],
-    link: "",
-    slug: "camp-director",
-    progression: [
-      {
-        role: "Camp Director",
-        period: "Summer 2025",
-        description: "Led 40 campers and 5 staff, overseeing program delivery, safety, and engagement across 8 weeks of camp.",
-      },
-      {
-        role: "Summer Camp Counselor",
-        period: "Summer 2024",
-        description: "Assisted with daily activities, supporting engagement and learning for 40 campers.",
-      },
-    ],
-  },
-  {
-    title: "Co–Knowledge Mobilization Champion",
-    company: "The Hospital for Sick Children",
-    period: "May 2026 – Present",
-    description: "Currently serving as Co–Knowledge Mobilization Champion for the CIHR Team Grant: Healthy Youth study; previously served as Youth Advisor on the OPTIMAL research project.",
-    longDescription: "Originally worked as a contract part-time Youth Advisor on the OPTIMAL research project at The Hospital for Sick Children. Continuation of this role as Co–Knowledge Mobilization Champion includes co-facilitating youth engagement sessions, leading qualitative data collection through participant discussions, and supporting the design of inclusive, youth-centered research environments with strategies to promote healthier digital habits.",
-    stats: [
-      "Co–Knowledge Mobilization Champion (current)",
-      "Previously Youth Advisor on the OPTIMAL research project",
-      "Supported CIHR-funded youth social media and well-being research",
-      "Co-facilitated youth engagement sessions",
-      "Led qualitative data collection through participant discussions"
-    ],
-    image: "/sickkids.jpg",
-    skills: ["Research", "Youth Engagement", "Qualitative Data Collection", "Health Advocacy", "Facilitation"],
-    link: "",
-    slug: "sickkids-youth-advisor",
-    progression: [
-      {
-        role: "Youth Advisor",
-        period: "Jan 2026 – May 2026",
-        description: "Served as a Youth Advisor on the OPTIMAL research project, supporting youth engagement and qualitative data collection."
-      }
-    ],
-  },
-  {
-    title: "Youth Advisor",
-    company: "Children First Canada",
-    period: "2024-2025",
-    description: "Reviewed the Raising Canada Report (2024) and provided feedback from youth perspective. Participated in consultations with the Office of the Privacy Commissioner to advise on children’s privacy regulations.",
-    longDescription:
-      "Reviewed the Raising Canada Report (2024) and attended a consultation with the Office of the Privacy Commissioner of Canada. In November 2025, I was invited to co-host the Young Children’s Parliament, a program empowering youth to engage directly in government and policymaking.",
-    stats: [
-      "Report reviewed",
-      "Recommendations submitted",
-      "Consultation attended",
-      "Policy feedback provided",
-      "Invited co-host – Young Children’s Parliament (Nov 2025)"
-    ],
-    image: "/childernfirstcanada.jpg",
-    skills: ["Youth Advocacy", "Policy Input", "Report Analysis", "Policy Consultation", "Youth Advocacy", "Research"],
-    link: "",
-    slug: "children-first-advising",
-  },
-  {
-    title: "Youth Advisory Committee Member",
-    company: "Aga Khan Foundation Canada",
-    period: "Apr 2026 – Dec 2026",
-    description: "Serving on AKFC's Youth Advisory Committee, contributing to content creation, outreach and engagement, research and evaluation, and subcommittee work.",
-    longDescription: "As a member of AKFC's Youth Advisory Committee, I collaborate with peers across Canada on content creation, outreach and engagement, and research and evaluation. I also participate in up to two subcommittees focused on areas such as communications, research, and priority initiatives.",
-    stats: [
-      "Content creation",
-      "Outreach and engagement",
-      "Research and evaluation",
-      "Up to 2 subcommittees"
-    ],
-    image: "/akfc-yac-2026.png",
-    skills: ["Youth Advisory", "Content Creation", "Outreach", "Research", "Community Engagement"],
-    link: "https://www.akfc.ca/yac-recruitment/#1748574966734-b6fa013e-4f95",
-    slug: "akfc-yac-2026",
-  },
-  {
-    title: "Co-Chair",
-    company: "5Rights Youth Council (5Rights Foundation)",
-    period: "May 2026 – Present",
-    description: "Elected as one of two Co-Chairs (spokespersons) of the 5Rights Youth Council, helping advance children's digital rights, online safety, and youth-centered policy and research.",
-    longDescription: "As Co-Chair of the 5Rights Youth Council, I was elected as one of two youth spokespersons to help lead the council's work on digital rights, online safety, and policy engagement. I represent youth voice in research, advocacy, and initiatives that shape safer digital environments for children and young people, including contributing to a video for the AI for Good Summit in Geneva.",
-    stats: [
-      "Elected Co-Chair (1 of 2 spokespersons)",
-      "Youth digital rights advocacy",
-      "Policy and research input",
-      "Online safety focus"
-    ],
-    image: "/5rights-youth-council-2026.png",
-    skills: ["Digital Rights", "Youth Advocacy", "Policy Engagement", "Online Safety", "Research"],
-    link: "https://5rightsfoundation.com/",
-    slug: "5rights-youth-council-2026",
-    progression: [
-      {
-        role: "Youth Council Member",
-        period: "2025 – May 2026",
-        description: "Joined the 5Rights Youth Council to help advance children's digital rights, online safety, and youth-centered policy and research before being elected Co-Chair.",
-      },
-    ],
-  },
-  {
-    title: "High School Committee Chair",
-    company: "National Youth Advisory Council (NYAC) of the Mood Disorders Society of Canada",
-    period: "Feb 2026 – Present",
-    description: "Leading the High School Committee within the National Youth Advisory Council to advance youth-led mental health initiatives across Canada.",
-    longDescription: "As High School Committee Chair, I lead and mentor a national network of student leaders to design and implement advocacy, awareness, and engagement campaigns. I collaborate with council members and stakeholders to strengthen youth voice in mental health policy and programming, spearheading projects focused on accessibility, equity, and peer support while facilitating strategic planning and execution with measurable community impact.",
-    stats: [
-      "Leading the NYAC High School Committee",
-      "Mentoring a national network of student leaders",
-      "Driving advocacy, awareness, and engagement campaigns",
-      "Collaborating on youth mental health policy and programming",
-      "Facilitating planning and implementation of high-impact initiatives"
-    ],
-    image: "/NYACofMDSC.png",
-    skills: ["Youth Advocacy", "Mental Health Awareness", "Leadership", "Strategic Planning", "Community Engagement"],
-    link: "https://mdsc.ca/nyac/#:~:text=of%20Fundraising%20Professionals.-,High%20School%20Committee,-Adil%20Mukhi%20%7C%20High",
-    slug: "nyac-mdsc-volunteer",
-    progression: [
-      {
-        role: "General Volunteer",
-        period: "Jun 2025 – Jan 2026",
-        description: "Contributed to national youth mental health initiatives and supported advocacy efforts across Canada."
-      }
-    ]
-  },
-  {
-    title: "Youth Collective Member",
-    company: "KPE Rethink Sport Collective, University of Toronto",
-    period: "2024–Present",
-    description: "Engaging in national sport research and youth advocacy, reviewing work and signing recommendations shaping the future of sport in Canada.",
-    longDescription: "As a Youth Collective Member, I contribute to national research and youth advocacy initiatives focused on shaping the future of sport in Canada. Reviewed and provided feedback on a poster presented at the NASPSPA Conference, and signed recommendations submitted to the Future of Sport in Canada Commission, supporting evidence-based youth engagement in sport.",
-    stats: ["Poster reviewed for NASPSPA Conference", "Recommendations signed for Future of Sport Commission", "National research collaboration"],
-    image: "/uoftkpe_logo.jpg",
-    skills: ["Research", "Advocacy", "Data Analysis", "Public Speaking"],
-    link: "https://www.rethinksportproject.com/general-5",
-    slug: "kpe-youth-collective",
-  },
-  {
-    title: "General Member",
-    company: "Young Canadian Roundtable on Health (YCRH)",
-    period: "2024–Present",
-    description: "Participated in national youth health projects, contributing to research, policy, and advocacy initiatives across Canada.",
-    longDescription: "Supported the CIHR grant submission for the OPTIMAL Project (SickKids) studying youth social media use. Collaborated with 20+ members nationwide on youth health equity projects, policy recommendations, and consultations. Created over 8 social media posts for the YCRH network to amplify youth voices in health policy and advocacy.",
-    stats: [
-      "20+ members collaborated with",
-      "1 national research project",
-      "Policy recommendations submitted",
-      "8+ social media posts created for YCRH network"
-    ],
-    image: "/ycrh.jpg",
-    skills: ["Health Policy", "Research", "Advocacy", "Collaboration"],
-    link: "",
-    slug: "ycrh-general-member"
   },
   {
     title: "National High School Group Lead",
@@ -237,6 +84,193 @@ export const workExperiences: WorkExperience[] = [
     ]
   },
   {
+    title: "President",
+    company: "SPIHC Toronto (Student Partners In Health Canada, Toronto chapter)",
+    period: "2026 to Present",
+    description: "Started and lead the Toronto chapter of Student Partners In Health Canada, organizing student engagement in global health equity.",
+    image: "/spihc-toronto-logo.png",
+    skills: ["Global Health", "Health Equity", "Leadership", "Student Engagement"],
+    link: "",
+    slug: "spihc-toronto-president",
+    progression: [
+      {
+        role: "Chapter Lead",
+        period: "2026",
+      },
+    ],
+  },
+  {
+    title: "Co-Chair",
+    company: "5Rights Youth Council (5Rights Foundation)",
+    period: "May 2026 – Present",
+    description: "Elected as one of two Co-Chairs (spokespersons) of the 5Rights Youth Council, helping advance children's digital rights, online safety, and youth-centered policy and research.",
+    longDescription: "As Co-Chair of the 5Rights Youth Council, I was elected as one of two youth spokespersons to help lead the council's work on digital rights, online safety, and policy engagement. I represent youth voice in research, advocacy, and initiatives that shape safer digital environments for children and young people, including contributing to a video for the AI for Good Summit in Geneva.",
+    stats: [
+      "Elected Co-Chair (1 of 2 spokespersons)",
+      "Youth digital rights advocacy",
+      "Policy and research input",
+      "Online safety focus"
+    ],
+    image: "/5rights-youth-council-2026.png",
+    skills: ["Digital Rights", "Youth Advocacy", "Policy Engagement", "Online Safety", "Research"],
+    link: "https://5rightsfoundation.com/",
+    slug: "5rights-youth-council-2026",
+    progression: [
+      {
+        role: "Youth Council Member",
+        period: "2025 – May 2026",
+        description: "Joined the 5Rights Youth Council to help advance children's digital rights, online safety, and youth-centered policy and research before being elected Co-Chair.",
+      },
+    ],
+  },
+  {
+    title: "Co–Knowledge Mobilization Champion",
+    company: "The Hospital for Sick Children",
+    period: "May 2026 – Present",
+    description: "Currently serving as Co–Knowledge Mobilization Champion for the CIHR Team Grant: Healthy Youth study; previously served as Youth Advisor on the OPTIMAL research project.",
+    longDescription: "Originally worked as a contract part-time Youth Advisor on the OPTIMAL research project at The Hospital for Sick Children. Continuation of this role as Co–Knowledge Mobilization Champion includes co-facilitating youth engagement sessions, leading qualitative data collection through participant discussions, and supporting the design of inclusive, youth-centered research environments with strategies to promote healthier digital habits.",
+    stats: [
+      "Co–Knowledge Mobilization Champion (current)",
+      "Previously Youth Advisor on the OPTIMAL research project",
+      "Supported CIHR-funded youth social media and well-being research",
+      "Co-facilitated youth engagement sessions",
+      "Led qualitative data collection through participant discussions"
+    ],
+    image: "/sickkids.jpg",
+    skills: ["Research", "Youth Engagement", "Qualitative Data Collection", "Health Advocacy", "Facilitation"],
+    link: "",
+    slug: "sickkids-youth-advisor",
+    progression: [
+      {
+        role: "Youth Advisor",
+        period: "Jan 2026 – May 2026",
+        description: "Served as a Youth Advisor on the OPTIMAL research project, supporting youth engagement and qualitative data collection."
+      }
+    ],
+  },
+  {
+    title: "Member",
+    company: "SickKids iKT Panel (Division of Adolescent Medicine), The Hospital for Sick Children",
+    period: "2026 to Present",
+    description: "Advisory group member supporting a study of the Ontario school phone ban.",
+    image: "/sickkids.jpg",
+    skills: ["Research", "Youth Engagement", "Advisory"],
+    link: "",
+    slug: "sickkids-ikt-panel",
+  },
+  {
+    title: "Youth Collective Member and Advisor",
+    company: "KPE Rethink Sport Collective, University of Toronto",
+    period: "2024–Present",
+    description: "Engaging in national sport research and youth advocacy, reviewing work and signing recommendations shaping the future of sport in Canada. Advise on sport policy for the Rethink Sport Collective.",
+    longDescription: "As a Youth Collective Member, I contribute to national research and youth advocacy initiatives focused on shaping the future of sport in Canada. Reviewed and provided feedback on a poster presented at the NASPSPA Conference, and signed recommendations submitted to the Future of Sport in Canada Commission, supporting evidence-based youth engagement in sport.",
+    stats: ["Poster reviewed for NASPSPA Conference", "Recommendations signed for Future of Sport Commission", "National research collaboration"],
+    image: "/uoftkpe_logo.jpg",
+    skills: ["Research", "Advocacy", "Data Analysis", "Public Speaking"],
+    link: "https://www.rethinksportproject.com/general-5",
+    slug: "kpe-youth-collective",
+  },
+  {
+    title: "Youth Advisory Committee Member",
+    company: "Aga Khan Foundation Canada",
+    period: "Apr 2026 to Present",
+    description: "Serving on AKFC's Youth Advisory Committee, contributing to content creation, outreach and engagement, research and evaluation, and subcommittee work.",
+    longDescription: "As a member of AKFC's Youth Advisory Committee, I collaborate with peers across Canada on content creation, outreach and engagement, and research and evaluation. I also participate in up to two subcommittees focused on areas such as communications, research, and priority initiatives.",
+    stats: [
+      "Content creation",
+      "Outreach and engagement",
+      "Research and evaluation",
+      "Up to 2 subcommittees"
+    ],
+    image: "/akfc-yac-2026.png",
+    skills: ["Youth Advisory", "Content Creation", "Outreach", "Research", "Community Engagement"],
+    link: "https://www.akfc.ca/yac-recruitment/#1748574966734-b6fa013e-4f95",
+    slug: "akfc-yac-2026",
+  },
+  {
+    title: "High School Committee Chair",
+    company: "National Youth Advisory Council (NYAC) of the Mood Disorders Society of Canada",
+    period: "Feb 2026 – Present",
+    description: "Leading the High School Committee within the National Youth Advisory Council to advance youth-led mental health initiatives across Canada.",
+    longDescription: "As High School Committee Chair, I lead and mentor a national network of student leaders to design and implement advocacy, awareness, and engagement campaigns. I collaborate with council members and stakeholders to strengthen youth voice in mental health policy and programming, spearheading projects focused on accessibility, equity, and peer support while facilitating strategic planning and execution with measurable community impact.",
+    stats: [
+      "Leading the NYAC High School Committee",
+      "Mentoring a national network of student leaders",
+      "Driving advocacy, awareness, and engagement campaigns",
+      "Collaborating on youth mental health policy and programming",
+      "Facilitating planning and implementation of high-impact initiatives"
+    ],
+    image: "/NYACofMDSC.png",
+    skills: ["Youth Advocacy", "Mental Health Awareness", "Leadership", "Strategic Planning", "Community Engagement"],
+    link: "https://mdsc.ca/nyac/#:~:text=of%20Fundraising%20Professionals.-,High%20School%20Committee,-Adil%20Mukhi%20%7C%20High",
+    slug: "nyac-mdsc-volunteer",
+    progression: [
+      {
+        role: "General Volunteer",
+        period: "Jun 2025 – Jan 2026",
+        description: "Contributed to national youth mental health initiatives and supported advocacy efforts across Canada."
+      }
+    ]
+  },
+  {
+    title: "Youth Council Member",
+    company: "Eco Brothers Youth Council",
+    period: "2024 to Present",
+    description: "Contributed to local environmental advocacy and youth initiatives.",
+    image: "/ecobrothers.png",
+    skills: ["Environmental Advocacy", "Leadership", "Event Planning"],
+    link: "https://www.ecobrothersinc.org/meet-the-team-1?pgid=lyhb4q9o-a578f188-2145-41e8-ae65-89b812b0333c",
+    slug: "eco-brothers",
+  },
+  {
+    title: "School Clubs and Student Leadership",
+    company: "Glenforest Secondary School",
+    period: "2023 to 2027",
+    description: "Progressive leadership across school clubs and councils, from junior executive to Vice President and President.",
+    image: "/gfss-logo.jpg",
+    skills: ["Leadership", "Event Planning", "Mentorship", "Teamwork"],
+    link: "",
+    slug: "school-clubs-student-leadership",
+    stats: [
+      "Peer Helper: tutored and mentored about 40 students in Math and English over 110 hours",
+      "Newcomers Club: leading events with over 50 participants and a team of 7",
+      "Athletic Council award: Exemplary Contribution to Athletics",
+    ],
+    schoolRoles: [
+      { club: "HOSA chapter", role: "Member and Competitor", period: "2023 to 2025", grades: [9, 10], gradeLabel: "HOSA Member and Competitor" },
+      { club: "HOSA chapter", role: "Vice President", period: "2025 to 2026", grades: [11], gradeLabel: "HOSA Vice President" },
+      { club: "STEM Fellowship chapter", role: "Vice President", period: "2024 to 2026", grades: [10, 11], gradeLabel: "STEM Fellowship Vice President" },
+      { club: "STEM Club", role: "Vice President", period: "2025 to Present", grades: [11, 12], gradeLabel: "STEM Club Vice President" },
+      { club: "French Club", role: "Junior Executive", period: "2023 to 2024", grades: [9], gradeLabel: "French Club Junior Executive" },
+      { club: "French Club", role: "Vice President", period: "2024 to 2026", grades: [10, 11], gradeLabel: "French Club Vice President" },
+      { club: "Newcomers Club", role: "Events Coordinator", period: "2024 to 2025", grades: [10], gradeLabel: "Newcomers Club Events Coordinator" },
+      { club: "Newcomers Club", role: "President", period: "2025 to Present", grades: [11, 12], gradeLabel: "Newcomers Club President" },
+      { club: "IBSL (International Baccalaureate Student League)", role: "Junior Executive", period: "2023 to 2024", grades: [9], gradeLabel: "IBSL (International Baccalaureate Student League) Junior Executive" },
+      { club: "Peer Helpers", role: "Peer Helper and Tutor", period: "2023 to 2026", grades: [9, 10, 11], gradeLabel: "Peer Helper and Tutor" },
+      { club: "Athletic Council", role: "Member", period: "2023 to 2026", grades: [9, 10, 11], gradeLabel: "Athletic Council Member" },
+      { club: "Varsity Tennis", role: "Varsity Team Member, Grades 9 to 11", period: "2023 to 2026", grades: [9, 10, 11], gradeLabel: "Varsity Tennis" },
+      { club: "Student Super Council", role: "Member", period: "2024 to 2027", grades: [10, 11, 12], gradeLabel: "Super Council Member" },
+      { club: "Grow With Google, Peel District School Board", role: "Ambassador", period: "2026 to Present", grades: [12], gradeLabel: "Grow With Google Ambassador" },
+    ],
+  },
+  {
+    title: "General Member",
+    company: "Young Canadian Roundtable on Health (YCRH)",
+    period: "2024–Present",
+    description: "Participated in national youth health projects, contributing to research, policy, and advocacy initiatives across Canada.",
+    longDescription: "Supported the CIHR grant submission for the OPTIMAL Project (SickKids) studying youth social media use. Collaborated with 20+ members nationwide on youth health equity projects, policy recommendations, and consultations. Created over 8 social media posts for the YCRH network to amplify youth voices in health policy and advocacy.",
+    stats: [
+      "20+ members collaborated with",
+      "1 national research project",
+      "Policy recommendations submitted",
+      "8+ social media posts created for YCRH network"
+    ],
+    image: "/ycrh.jpg",
+    skills: ["Health Policy", "Research", "Advocacy", "Collaboration"],
+    link: "",
+    slug: "ycrh-general-member"
+  },
+  {
     title: "Committee Lead, Dress Loud Day 2026",
     company: "VOICE for Deaf and Hard of Hearing Children",
     period: "Dec 2025–Present",
@@ -260,6 +294,49 @@ export const workExperiences: WorkExperience[] = [
     ]
   },
   {
+    title: "Camp Director",
+    company: "Dixie Bloor Neighbourhood Centre",
+    period: "Summer 2026",
+    description: "Returned as Camp Director, leading 50 campers and 10 staff, overseeing safe and engaging programming including field trips and daily operations.",
+    longDescription: "As Camp Director, I returned to lead the summer camp program, overseeing 50 campers and a team of 4 full-time and 4 part-time staff across the full summer season. I managed daily operations, staff coordination, and program delivery while ensuring a safe, inclusive, and engaging environment. This summer included 4 field trips and continued collaboration across departments to enhance youth experiences and program quality.",
+    stats: ["50 campers led", "10 staff managed", "4 field trips organized", "Full program leadership"],
+    image: "/dbnc.jpg",
+    skills: ["Leadership", "Team Management", "Youth Engagement", "Program Planning", "Operations"],
+    link: "",
+    slug: "camp-director",
+    progression: [
+      {
+        role: "Camp Director",
+        period: "Summer 2025",
+        description: "Led 40 campers and 5 staff, overseeing program delivery, safety, and engagement across 8 weeks of camp.",
+      },
+      {
+        role: "Summer Camp Counselor",
+        period: "Summer 2024",
+        description: "Assisted with daily activities, supporting engagement and learning for 40 campers.",
+      },
+    ],
+  },
+  {
+    title: "Youth Advisor",
+    company: "Children First Canada",
+    period: "2024-2025",
+    description: "Reviewed the Raising Canada Report (2024) and provided feedback from youth perspective. Participated in consultations with the Office of the Privacy Commissioner to advise on children’s privacy regulations.",
+    longDescription:
+      "Reviewed the Raising Canada Report (2024) and attended a consultation with the Office of the Privacy Commissioner of Canada. In November 2025, I was invited to co-host the Young Children’s Parliament, a program empowering youth to engage directly in government and policymaking.",
+    stats: [
+      "Report reviewed",
+      "Recommendations submitted",
+      "Consultation attended",
+      "Policy feedback provided",
+      "Invited co-host – Young Children’s Parliament (Nov 2025)"
+    ],
+    image: "/childernfirstcanada.jpg",
+    skills: ["Youth Advocacy", "Policy Input", "Report Analysis", "Policy Consultation", "Youth Advocacy", "Research"],
+    link: "",
+    slug: "children-first-advising",
+  },
+  {
     title: "SDG Accelerator Program Facilitator",
     company: "Children First Canada",
     period: "2025",
@@ -269,16 +346,6 @@ export const workExperiences: WorkExperience[] = [
     skills: ["Education", "Youth Engagement", "Workshop Facilitation"],
     link: "",
     slug: "children-first-sdg",
-  },
-  {
-    title: "Youth Council Member",
-    company: "Eco Brothers Youth Council",
-    period: "2024-Present",
-    description: "Contributed to local environmental advocacy and youth initiatives.",
-    image: "/ecobrothers.png",
-    skills: ["Environmental Advocacy", "Leadership", "Event Planning"],
-    link: "https://www.ecobrothersinc.org/meet-the-team-1?pgid=lyhb4q9o-a578f188-2145-41e8-ae65-89b812b0333c",
-    slug: "eco-brothers",
   },
   {
     title: "Head of Writing",
@@ -315,51 +382,6 @@ export const workExperiences: WorkExperience[] = [
     skills: ["Research", "Leadership", "Mentorship", "Neuroscience", "Science Communication"],
     link: "https://www.linkedin.com/company/neurogenesis-pakistan/posts/?feedView=all",
     slug: "neurogenesis-rd"
-  },
-  {
-    title: "Peer Helper",
-    company: "Glenforest Secondary School",
-    period: "2023–Present",
-    description: "Provided academic support and mentorship in Math and English, helping peers succeed over two years of dedicated service.",
-    longDescription: "As a Peer Helper, I tutored and mentored approximately 40 students in Math and English over two years, dedicating 110 hours to supporting academic growth. Focused on improving understanding, building confidence, and fostering positive peer relationships through effective communication and guidance.",
-    stats: ["40 students assisted", "110 hours of tutoring and mentorship", "2 years of service"],
-    image: "/peer-helpers.png",
-    skills: ["Tutoring", "Mentorship", "Communication"],
-    link: "",
-    slug: "glenforest-peer-helper",
-  },
-  {
-    title: "Athletics Council Member",
-    company: "Glenforest Secondary School",
-    period: "2023–Present",
-    description: "Organized school events, ensuring student safety and engagement.",
-    stats: ["Events organized", "Award: Exemplary Contribution to Athletics"],
-    image: "/athletic-council.jpg",
-    skills: ["Event Planning", "Leadership", "Teamwork"],
-    link: "https://www.instagram.com/p/DKkCYoUxil7/?hl=en&img_index=6",
-    slug: "glenforest-athletics",
-  },
-  {
-    title: "President",
-    company: "Glenforest Secondary School Newcomers Club",
-    period: "2025–2026",
-    description: "President of Glenforest Secondary School's Newcomers Club for the 2025–26 school year. Leading events with over 50 participants and a team of 7, while working closely with teachers and community partners.",
-    image: "/newcomersclub.png",
-    skills: ["Leadership", "Event Planning", "Team Management", "Community Engagement"],
-    link: "",
-    slug: "glenforest-newcomers",
-    progression: [
-      {
-        role: "Events Coordinator",
-        period: "2024–2025",
-        description: "Organized events for newcomer students to support integration."
-      },
-      {
-        role: "Member",
-        period: "2023–2024",
-        description: "Participated in club activities and assisted with events."
-      }
-    ]
   },
   {
     title: "Research Aid",

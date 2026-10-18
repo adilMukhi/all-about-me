@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "Adil Mukhi podcast",
     "Adil Mukhi talk",
     "youth advocate interview",
-    "TEDxMcfarren Boulevard Youth",
+    "TEDxMcFarren Boulevard Youth",
     "Dr. Interested founder interview",
   ],
   alternates: { canonical: `${siteUrl}/watch` },

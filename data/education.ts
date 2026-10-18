@@ -20,7 +20,7 @@ export const educationData: Education[] = [
     period: "Dec 2024 - Apr 2025",
     description:
       "Real-world experience in healthcare through hands-on activities, mentorship, and academic workshops. I took the U of T course Introduction to the Role of the Human Development Index and Social Determinants of Health on the Global Burden of Disease - Taught by Dr. Andrea K. Boggild, BSc, MSc, MD",
-    link: "https://www.linkedin.com/in/adil-mukhi-6aba27246/#:~:text=and%20%2B15%20skills-,University%20of%20Toronto,-University%20of%20Toronto",
+    link: "https://www.linkedin.com/in/adil-mukhi",
     image: "/uoft-logo.jpg",
     slug: "medlinx-program",
     longDescription:
@@ -34,12 +34,12 @@ export const educationData: Education[] = [
     institution: "Glenforest Secondary School",
     period: "Sep 2023 - Jun 2027",
     description:
-      "In progress: Grade 11. Active in leadership roles such as Vice President of the French Club and STEM Fellowship Chapter. Participates in DECA, HOSA, and Peer Helper Tutor.",
+      "In progress: Grade 12. Active in leadership roles including Vice President of the French Club, STEM Club, STEM Fellowship chapter, and HOSA chapter, President of the Newcomers Club, and member of the Super Council. Also a Peer Helper tutor.",
     link: "https://glenforest.peelschools.org/",
     image: "/gfss-logo.jpg",
     slug: "high-school-diploma",
     longDescription:
-      "In progress: Grade 11. Comprehensive high school education with focus on leadership development and extracurricular involvement. Active participation in various clubs and academic competitions.",
+      "In progress: Grade 12. Comprehensive high school education with focus on leadership development and extracurricular involvement. Active participation in various clubs and academic competitions.",
     achievements: [
       "President of Newcomers Club",
       "Vice President of French Club",
@@ -53,12 +53,12 @@ export const educationData: Education[] = [
     institution: "International Baccalaureate",
     period: "Sep 2023 - May 2027",
     description:
-      "In progress: IB DP 1. Global education framework focusing on research, communication, and global understanding skills.",
+      "In progress: IB DP 2. Global education framework focusing on research, communication, and global understanding skills.",
     link: "https://www.ibo.org/benefits/",
     image: "",
     slug: "ib-diploma",
     longDescription:
-      "In progress: IB DP 1. International Baccalaureate program emphasizing critical thinking, research skills, and global perspective. Comprehensive curriculum preparing students for university-level work.",
+      "In progress: IB DP 2. International Baccalaureate program emphasizing critical thinking, research skills, and global perspective. Comprehensive curriculum preparing students for university-level work.",
     achievements: [
       "Creativity, Activity, Service (CAS) hours",
     ],
@@ -131,7 +131,7 @@ export const educationData: Education[] = [
   {
     degree: "UHN STEM Pathways",
     institution: "University Health Network",
-    period: "Dec 2024 - Jun 2025",
+    period: "Dec 2024 to Jun 2026",
     description: "Toronto-based outreach program with 7 courses leading to certificate.",
     link: "#",
     image: "/uhn-logo.jpg",
@@ -155,7 +155,7 @@ export const educationData: Education[] = [
   {
     degree: "Leaders in Training (LiT)",
     institution: "Dixie Bloor Neighbourhood Centre",
-    period: "Apr 2024 - Present",
+    period: "Apr 2024 to May 2024",
     description: "Learned effective skills to help me be a camp counselor.",
     link: "#",
     image: "/dbnc.jpg",

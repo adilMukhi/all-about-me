@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Image from "next/image"
+import SafeImage from "@/components/safe-image"
 import { Trophy, ExternalLink } from "lucide-react"
 
 import Header from "@/components/header"
@@ -77,7 +77,7 @@ export default function HonorsIndexPage() {
                     }`}
                   >
                     <Link href={href} className="block h-52 overflow-hidden relative">
-                      <Image
+                      <SafeImage
                         src={Array.isArray(award.image) ? award.image[0] : award.image}
                         alt={award.title}
                         fill

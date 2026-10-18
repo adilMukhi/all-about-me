@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Image from "next/image"
+import SafeImage from "@/components/safe-image"
 import { BadgeCheck, ExternalLink } from "lucide-react"
 
 import Header from "@/components/header"
@@ -77,7 +77,7 @@ export default function CertificatesIndexPage() {
                     }`}
                   >
                     <Link href={href} className="block h-52 overflow-hidden relative">
-                      <Image
+                      <SafeImage
                         src={certificate.image || "/placeholder.svg"}
                         alt={certificate.name}
                         fill

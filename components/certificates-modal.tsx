@@ -5,7 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink } from "lucide-react"
-import Image from "next/image"
+import SafeImage from "@/components/safe-image"
 
 interface CertificatesModalProps {
   certificate: Certificate | null
@@ -28,14 +28,17 @@ export default function CertificatesModal({ certificate, isOpen, onClose }: Cert
 
         <div className="space-y-6">
           {/* Certificate Image */}
-          <div className="flex justify-center">
-            <Image
-              src={certificate.image || "/placeholder.svg"}
-              alt={certificate.name}
-              width={300}
-              height={180}
-              className="rounded-lg object-cover border"
-            />
+          <div className="flex flex-wrap justify-center gap-4">
+            {[certificate.image, ...(certificate.images || [])].filter(Boolean).map((img, index) => (
+              <SafeImage
+                key={img}
+                src={img}
+                alt={index === 0 ? certificate.name : `${certificate.name} - Image ${index + 1}`}
+                width={300}
+                height={180}
+                className="rounded-lg object-cover border"
+              />
+            ))}
           </div>
 
           {/* Description */}

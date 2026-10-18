@@ -573,9 +573,20 @@ export type ResearchProject = {
     url: string
   }>
   link?: string
+  status?: string // e.g. "Under review"; shown as a badge on the card
 }
 
 export const researchProjects: ResearchProject[] = [
+  {
+    title: "Youth Accessibility in Health Volunteering (Manuscript)",
+    description:
+      "Fourth author on a manuscript examining youth accessibility in health volunteering. Submitted to Children & Society in September 2026 and currently under review.",
+    image: "",
+    tags: ["Public Health", "Youth Engagement", "Health Equity"],
+    institution: "Young Canadians Roundtable on Health",
+    year: "2026",
+    status: "Under review",
+  },
   {
     title: "From Stress to Forgetfulness: Understanding How Stress Hormones Shape Your Memory",
     description:

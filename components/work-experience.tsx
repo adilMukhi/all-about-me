@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import Image from "next/image"
+import SafeImage from "@/components/safe-image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Maximize2 } from "lucide-react"
@@ -136,7 +136,7 @@ export default function WorkExperience() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="flex gap-4 items-start">
-                    <Image
+                    <SafeImage
                       src={exp.image || "/placeholder.svg"}
                       alt={exp.company}
                       width={80}
@@ -164,7 +164,7 @@ export default function WorkExperience() {
               ) : (
                 <CardContent className="p-4">
                   <div className="text-center">
-                    <Image
+                    <SafeImage
                       src={exp.image || "/placeholder.svg"}
                       alt={exp.company}
                       width={60}

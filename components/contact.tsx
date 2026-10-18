@@ -6,7 +6,7 @@ import CalEmbed from "@/components/cal-embed"
 import { CAL_BOOKING_URL, CONTACT_EMAIL, WORK_PHONE_DISPLAY, WORK_PHONE_TEL } from "@/lib/site"
 
 const socialLinks = [
-  { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com/in/adil-mukhi-6aba27246", color: "text-blue-500" },
+  { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/adil-mukhi", color: "text-blue-500" },
   { name: "GitHub", icon: Github, url: "https://github.com/adilMukhi", color: "text-gray-700" },
   { name: "My Org", icon: Building, url: "https://linktr.ee/dr.interested", color: "text-sky-400" },
   { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/adilm.0/", color: "text-pink-500" },

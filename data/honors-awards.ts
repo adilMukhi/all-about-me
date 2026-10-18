@@ -6,9 +6,88 @@ export type Award = {
   image: string | string[]
   skills: string[]
   link: string
+  // "nomination" entries render in a separate Nominations group after the awards
+  group?: "nomination"
 }
 
 export const honorsAwards: Award[] = [
+  {
+    title: "Ontario Medal for Young Volunteers",
+    issuer: "Province of Ontario",
+    year: "2026",
+    description:
+      "Recipient of the Ontario Medal for Young Volunteers, the highest honour a young person can receive from the Province of Ontario for volunteer service. To be presented by the Lieutenant Governor of Ontario on October 19, 2026 at Queen's Park.",
+    image: "/ontario-medal-young-volunteers-2026.jpg",
+    skills: ["Volunteerism", "Community Engagement", "Youth Leadership"],
+    link: "",
+  },
+  {
+    title: "Top 20 Under 18 in Canada",
+    issuer: "Children First Canada",
+    year: "2026",
+    description:
+      "Named one of the Top 20 youth under 18 in Canada by Children First Canada as a finalist for The Future is NOW! Awards 2026, recognizing leadership in making Canada the best place for kids to grow up.",
+    image: "/top-20-under-18-2026.jpg",
+    skills: ["Youth Leadership", "Child Advocacy"],
+    link: "",
+  },
+  {
+    title: "National Biology Scholar with Distinction",
+    issuer: "University of Toronto — National Biology Competition",
+    year: "2026",
+    description:
+      "Designated National Biology Scholar with Distinction for placing in the top 0.4% nationally in the 2026 National Biology Competition. Also tied for 5th place nationally on the Canadian Honour Roll out of 2,220 contestants.",
+    image: "/certificates/nbc-distinction.png",
+    skills: ["Biology", "Exam Excellence", "Scientific Knowledge"],
+    link: "https://bioexplorerchallenge.com/student",
+  },
+  {
+    title: "Canadian Choice Award, Non-Profit Organizations (Mississauga), Winner",
+    issuer: "Canadian Choice Awards",
+    year: "2026",
+    description:
+      "Dr. Interested, founded and led by Adil Mukhi, won the 2026 Canadian Choice Award in the Non-Profit Organizations category for Mississauga.",
+    image: "/canadian-choice-award-2026.png",
+    skills: ["Non-Profit", "Leadership", "Dr. Interested"],
+    link: "",
+  },
+  {
+    title: "Ontario Volunteer Service Awards",
+    issuer: "Province of Ontario",
+    year: "Aug 2025 and May 2026",
+    description:
+      "Recipient of three Ontario Volunteer Service Awards for two to four years of service. One was awarded for volunteer service with the Ismaili Council for Mississauga Jamatkhana and recognized at a ceremony on September 1, 2025. Two were awarded for service with Dr. Interested and Results Canada and recognized at a ceremony on May 19, 2026. Each was presented with a certificate and lapel pin.",
+    image: [
+      "/ovsa.png",
+      "/ovsa-2026-dr-interested.jpg",
+      "/ovsa-2026-results-canada.jpg",
+    ],
+    skills: ["Volunteerism", "Community Engagement"],
+    link: "https://www.instagram.com/p/DOkH6cQAKV5/",
+  },
+  {
+    title: "City of Mississauga Civic Awards",
+    issuer: "City of Mississauga",
+    year: "Jun 2025 and Jul 2026",
+    description:
+      "Two-time recipient of a City of Mississauga Civic Award. In June 2025, received the Civic Award of Recognition for Youth Community and Civic Engagement. On July 7, 2026, received a second Civic Award alongside six other Dr. Interested members, recognizing youth community and civic engagement.",
+    image: [
+      "/Mississauga.jpg",
+      "/mississauga-civic-award-2026.jpg",
+    ],
+    skills: ["Civic Leadership", "Community Engagement"],
+    link: "",
+  },
+  {
+    title: "Award of Distinction — Peel District School Board",
+    issuer: "Peel District School Board",
+    year: "May 2026",
+    description:
+      "Received an Award of Distinction from the Peel District School Board, after being nominated by my Vice Principal for Excellence in Innovation in Education.",
+    image: "/certificates/award of distintion (1).png",
+    skills: ["Education Leadership", "Community Contribution", "Recognition"],
+    link: "https://www.peelschools.org",
+  },
   {
     title: "Top 50 Youth across Canada",
     issuer: "Children First Canada",
@@ -30,26 +109,6 @@ export const honorsAwards: Award[] = [
     link: "https://www.instagram.com/p/DQElQUvk7Nh/",
   },
   {
-    title: "Ontario Volunteer Service Award (2–4 Years)",
-    issuer: "Province of Ontario",
-    year: "Aug 2025",
-    description:
-      "Nominated and selected for the Ontario Volunteer Service Award recognizing 2 to 4 years of continuous volunteer service with the Ismaili Council for Southwest Ontario – Mississauga Jamatkhana. To be formally recognized in a ceremony on September 1, 2025, and presented with a certificate and lapel pin for dedication to community service.",
-    image: "/ovsa.png",
-    skills: ["Volunteerism", "Community Engagement", "Leadership", "Commitment", "Service"],
-    link: "https://www.instagram.com/p/DOkH6cQAKV5/",
-  },
-  {
-    title: "Civic Award of Recognition",
-    issuer: "City of Mississauga",
-    year: "Nov  2025",
-    description:
-      "I received the Civic Award of Recognition in the category of Youth Community and Civic Engagement, acknowledging exceptional dedication to serving and uplifting the community.",
-    image: "/Mississauga.jpg",
-    skills: ["Community Engagement", "Civic Leadership", "Volunteerism", "Youth Leadership", "Service"],
-    link: "",
-  },
-  {
     title: "Silver Medal – Canadian Biology Olympiad",
     issuer: "Canadian Biology Olympiad Committee",
     year: "2026",
@@ -58,26 +117,6 @@ export const honorsAwards: Award[] = [
     image: "/certificates/cbo-silver.png",
     skills: ["Biology", "Competition Excellence", "Analytical Reasoning", "Experimental Design"],
     link: "https://www.canadianbiologyolympiad.ca/CBO2026_Results-levels.pdf",
-  },
-  {
-    title: "National Biology Scholar with Distinction",
-    issuer: "University of Toronto — National Biology Competition",
-    year: "2026",
-    description:
-      "Designated National Biology Scholar with Distinction for placing in the top 0.4% nationally in the 2026 National Biology Competition.",
-    image: "/certificates/nbc-distinction.png",
-    skills: ["Biology", "Exam Excellence", "Scientific Knowledge"],
-    link: "https://bioexplorerchallenge.com/student",
-  },
-  {
-    title: "Award of Distinction — Peel District School Board",
-    issuer: "Peel District School Board",
-    year: "May 4, 2026",
-    description:
-      "Selected to receive the Award of Distinction in recognition of contributions to public education in Peel and to the broader Peel community. Includes a certificate and a formal letter from the Director of Education.",
-    image: "/certificates/award of distintion (1).png",
-    skills: ["Education Leadership", "Community Contribution", "Recognition"],
-    link: "https://www.peelschools.org",
   },
   {
     title: "Distinction – Canadian Computing Competition (Junior Division)",
@@ -106,26 +145,6 @@ export const honorsAwards: Award[] = [
     link: "https://cemc.uwaterloo.ca/sites/default/files/documents/2024/2024BCCResults.pdf",
   },
   {
-    title: "Ontario Volunteer Service Award — Dr. Interested (2–4 Years)",
-    issuer: "Province of Ontario",
-    year: "May 19, 2026",
-    description:
-      "Presented with a lapel pin and certificate in recognition of commitment and dedication as a volunteer with Dr. Interested. Award recognizes two-to-four years of service for youth volunteers.",
-    image: "/certificates/ovsa-drint.png",
-    skills: ["Volunteerism", "Community Service", "Youth Leadership"],
-    link: "https://www.ontario.ca",
-  },
-  {
-    title: "Ontario Volunteer Service Award — Results Canada (2–4 Years)",
-    issuer: "Province of Ontario",
-    year: "May 19, 2026",
-    description:
-      "Presented with a lapel pin and certificate in recognition of commitment and dedication as a volunteer with Results Canada. Award recognizes two-to-four years of service for youth volunteers.",
-    image: "/certificates/ovsa-results.png",
-    skills: ["Volunteerism", "Community Service", "Youth Leadership"],
-    link: "https://www.ontario.ca",
-  },
-  {
     title: "Bronze Medal – Canadian Biology Olympiad",
     issuer: "Canadian Biology Olympiad Committee",
     year: "2025",
@@ -148,7 +167,7 @@ export const honorsAwards: Award[] = [
   {
     title: "SemiFinalist – (p + q = 1) Exam",
     issuer: "Mitosisphere",
-    year: "Feb 2025",
+    year: "Jan 2025",
     description:
       "Awarded for placing among the top 22 out of 180+ competitors worldwide in the highly competitive 1/25 (p + q = 1) exam. This achievement recognizes excellence in problem-solving and analytical skills in a rigorous academic competition.",
     image: "/pq1.jpg",
@@ -228,5 +247,38 @@ export const honorsAwards: Award[] = [
     image: "/valleys-grad.png",
     skills: ["Public Speaking", "Leadership", "Writing Skills", "Emotional Intelligence", "Audience Engagement"],
     link: "https://thevalleys.peelschools.org/",
+  },
+  {
+    title: "Queen Elizabeth II Ontario Medal for Good Citizenship, nominee",
+    issuer: "Province of Ontario",
+    year: "Nov 2025",
+    description:
+      "Nominated for the Queen Elizabeth II Ontario Medal for Good Citizenship.",
+    image: "/qeii-medal-nomination-2025.jpg",
+    skills: ["Citizenship", "Community Engagement"],
+    link: "",
+    group: "nomination",
+  },
+  {
+    title: "Diana Award nominee",
+    issuer: "The Diana Award",
+    year: "Oct 2025",
+    description:
+      "Nominated for the Diana Award, which recognizes young people making a lasting difference in their communities.",
+    image: "/diana-award-nomination-2025.jpg",
+    skills: ["Youth Leadership", "Service"],
+    link: "",
+    group: "nomination",
+  },
+  {
+    title: "Commonwealth Youth Awards for Excellence in Development Work, nominee",
+    issuer: "The Commonwealth",
+    year: "Sep 2025",
+    description:
+      "Nominated for the Commonwealth Youth Awards for Excellence in Development Work.",
+    image: "/commonwealth-youth-awards-nomination-2025.jpg",
+    skills: ["Development", "Youth Leadership"],
+    link: "",
+    group: "nomination",
   },
 ]

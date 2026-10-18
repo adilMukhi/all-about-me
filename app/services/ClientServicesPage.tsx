@@ -292,7 +292,7 @@ const ServicesStructuredData = () => {
         givenName: "Adil",
         familyName: "Mukhi",
         email: "adilm@drinterested.org",
-        telephone: "+1-289-796-2566",
+        telephone: "+1 289 796 2566",
         jobTitle: "Public Speaker, Youth Advocate, Consultant, and Advisor",
         description:
           "Youth public speaker, advocate, and consultant specializing in youth leadership, mental health, education, policy, and community impact.",
@@ -515,7 +515,7 @@ const ServicesStructuredData = () => {
           {
             "@type": "ContactPoint",
             contactType: "business phone",
-            telephone: "+1-289-796-2566",
+            telephone: "+1 289 796 2566",
             description: "Work number — hours vary; book a call for a guaranteed time.",
             availableLanguage: ["English", "French"],
           },
@@ -1141,36 +1141,42 @@ const ServicesAccordion = () => {
     {
       id: "youth",
       title: "Youth",
+      summary: "Youth engagement, mentorship, and leadership programs.",
       content:
         "Specialized consulting and speaking services focused on youth engagement, advocacy, and empowerment. I work with organizations to develop comprehensive youth programs, facilitate meaningful youth participation in decision-making, and create engaging presentations that resonate with young audiences.",
     },
     {
       id: "mental-health",
       title: "Mental Health",
+      summary: "Mental health program development and peer support.",
       content:
         "Mental health advocacy and program development with a focus on youth mental wellness. Drawing from extensive experience with research organizations and advocacy groups, I provide consulting on mental health initiatives, community outreach programs, and evidence-based support systems.",
     },
     {
       id: "sports",
       title: "Sports",
+      summary: "Sport, mental health, and policy, including the Play to Heal movement.",
       content:
         "Sports-related consulting and speaking services, including youth sports development, policy recommendations, and advocacy work. I contribute to discussions on the future of sport and help organizations create inclusive, healthy sporting environments for young people.",
     },
     {
       id: "policy",
       title: "Policy",
+      summary: "Policy review, consultations, and youth recommendations.",
       content:
         "Policy consultation and review services with a youth perspective. I provide feedback on policy development, participate in roundtables and consultations, and help organizations understand how policies impact young people. Experience includes work with government agencies and advocacy organizations.",
     },
     {
       id: "education-research",
       title: "Education & Research",
+      summary: "Curriculum input and research collaboration.",
       content:
         "Educational consulting services including curriculum development, research methodology training, and academic program evaluation. I help educational institutions enhance their programs through evidence-based approaches and collaborate on research projects focused on youth outcomes.",
     },
     {
       id: "custom-solutions",
       title: "Custom Solutions",
+      summary: "Tailored engagements for your event or organization.",
       content:
         "Tailored consulting and speaking services designed around your organization's specific needs. Whether it's program evaluation, research collaboration, specialized presentations on emerging topics, or unique advocacy initiatives, I work with you to create solutions that fit your goals and audience.",
     },
@@ -1187,7 +1193,10 @@ const ServicesAccordion = () => {
                 onClick={() => toggleSection(service.id)}
                 className="w-full flex justify-between items-center p-6 text-left"
               >
-                <h3 className="text-xl font-semibold text-primary">{service.title}</h3>
+                <div>
+                  <h3 className="text-xl font-semibold text-primary">{service.title}</h3>
+                  <p className="text-sm text-muted-foreground mt-1">{service.summary}</p>
+                </div>
                 {openSection === service.id ? (
                   <Minus className="h-6 w-6 text-primary" />
                 ) : (
@@ -1278,6 +1287,34 @@ const PastEngagements = () => (
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
+                <p className="font-medium">Opening Remarks, Emerging AI Technologies Workshop</p>
+                <p className="text-sm text-muted-foreground">June 27, 2026 · Aga Khan Education Board for Canada</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Youth Delegate and Speaker, AI for Good Summit, Geneva</p>
+                <p className="text-sm text-muted-foreground">June 2026 · 5Rights Foundation Youth Council</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Presenter, Toronto Climate Week</p>
+                <p className="text-sm text-muted-foreground">2026 · Toronto Climate Week</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
+                <p className="font-medium">Opening Remarks, Fireside Chat on AI</p>
+                <p className="text-sm text-muted-foreground">November 29, 2025 · Aga Khan Education Board for Canada</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+              <div>
                 <p className="font-medium">Guest Speaker for the NACY Emerging Leaders Group</p>
                 <p className="text-sm text-muted-foreground">July 2025 - NACY</p>
               </div>
@@ -1286,7 +1323,7 @@ const PastEngagements = () => (
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
                 <p className="font-medium">Tedx Speaker: Stress, Memory, and Why You Can't Find Your Keys</p>
-                <p className="text-sm text-muted-foreground">July 2025 - TEDxMcFarren</p>
+                <p className="text-sm text-muted-foreground">June 26, 2025 - TEDxMcFarren Boulevard Youth</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -1341,7 +1378,7 @@ const PastEngagements = () => (
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
-                <p className="font-medium">Commencement Speech at Culture and Psychology Conference</p>
+                <p className="font-medium">Keynote Speaker at Culture and Psychology Conference</p>
                 <p className="text-sm text-muted-foreground">October 2025 - Dr. Interested</p>
               </div>
             </div>
@@ -1474,7 +1511,7 @@ const PastEngagements = () => (
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
                 <p className="font-medium">Contributor, OPTIMAL (CIHR Healthy Youth Team Grant)</p>
-                <p className="text-sm text-muted-foreground">2025 - SickKids & YCRH</p>
+                <p className="text-sm text-muted-foreground">2025 to Present - SickKids & YCRH</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -1525,7 +1562,7 @@ const PastEngagements = () => (
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
                 <p className="font-medium">Youth Council Member</p>
-                <p className="text-sm text-muted-foreground">2024–2025 - Eco Brothers</p>
+                <p className="text-sm text-muted-foreground">2024 to Present - Eco Brothers</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
