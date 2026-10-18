@@ -55,7 +55,7 @@ export default function EducationModal({ education, isOpen, onClose }: Education
           {/* Achievements */}
           {education.achievements && education.achievements.length > 0 && (
             <div className="space-y-3">
-              <h3 className="text-lg font-semibold">Key Achievements</h3>
+              <h3 className="text-lg font-semibold">Academic Achievements</h3>
               <ul className="space-y-2">
                 {education.achievements.map((achievement, index) => (
                   <li key={index} className="flex items-start gap-2">

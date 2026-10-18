@@ -34,18 +34,18 @@ export const educationData: Education[] = [
     institution: "Glenforest Secondary School",
     period: "Sep 2023 - Jun 2027",
     description:
-      "In progress: Grade 12. Active in leadership roles including Vice President of the French Club, STEM Club, STEM Fellowship chapter, and HOSA chapter, President of the Newcomers Club, and member of the Super Council. Also a Peer Helper tutor.",
+      "In progress: Grade 12. 96.3% average across 24 completed courses and an ACT composite of 33 in one sitting.",
     link: "https://glenforest.peelschools.org/",
     image: "/gfss-logo.jpg",
     slug: "high-school-diploma",
     longDescription:
-      "In progress: Grade 12. Comprehensive high school education with focus on leadership development and extracurricular involvement. Active participation in various clubs and academic competitions.",
+      "In progress: Grade 12. I've maintained a 96.3% average across my 24 completed courses, including a 97% average across my three completed 4U courses and distinctions, the highest grade in my cohort, in 8 of my 16 Grade nine and ten courses. I also earned 99% in both 3U Biology and 4U Chemistry.",
     achievements: [
-      "President of Newcomers Club",
-      "Vice President of French Club",
-      "Vice President of HOSA Chapter",
-      "Peer Helper Tutor",
-      "Tennis Team Duos Player",
+      "96.3% average across 24 completed courses",
+      "97% average across 3 completed 4U courses",
+      "Distinctions (highest grade in my cohort) in 8 of 16 Grade 9 and 10 courses",
+      "99% in 3U Biology and 4U Chemistry",
+      "ACT 33 in one sitting: Math 34, Science 36, English 30, Reading 35, Writing 8",
     ],
   },
   {
@@ -60,15 +60,18 @@ export const educationData: Education[] = [
     longDescription:
       "In progress: IB DP 2. International Baccalaureate program emphasizing critical thinking, research skills, and global perspective. Comprehensive curriculum preparing students for university-level work.",
     achievements: [
+      "Completed IB scores: SL Math AA 6 and SL Chemistry 7 (pending until the diploma is awarded)",
       "Creativity, Activity, Service (CAS) hours",
     ],
     courses: [
       "HL English",
-      "SL French",
-      "HL Biology",
-      "SL Chemistry",
       "HL Psychology",
-      "SL Math",
+      "HL Biology",
+      "SL French",
+      "SL Math AA",
+      "SL Chemistry",
+      "Theory of Knowledge (TOK)",
+      "Extended Essay",
     ],
   },
   {

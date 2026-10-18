@@ -8,7 +8,6 @@ import { ArrowLeft, ExternalLink, Sparkles } from "lucide-react"
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { educationData } from "@/data/education"
 import { getEducationBySlug, getEducationPath } from "@/lib/seo-paths"
@@ -167,14 +166,15 @@ export default async function EducationDetailPage({ params }: { params: Promise<
 
                 {(education.achievements && education.achievements.length > 0) && (
                   <div className="rounded-2xl border bg-card p-6 shadow-sm">
-                    <h2 className="text-xl font-semibold mb-4">Achievements</h2>
-                    <div className="flex flex-wrap gap-2">
+                    <h2 className="text-xl font-semibold mb-4">Academic Achievements</h2>
+                    <ul className="space-y-3 text-sm text-muted-foreground">
                       {education.achievements.map((achievement) => (
-                        <Badge key={achievement} variant="secondary">
-                          {achievement}
-                        </Badge>
+                        <li key={achievement} className="flex gap-2">
+                          <span className="text-primary">•</span>
+                          <span>{achievement}</span>
+                        </li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
                 )}
 
