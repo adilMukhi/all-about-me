@@ -14,8 +14,19 @@ export default function ClubFeature() {
       </h2>
       <Card className="bg-gradient-to-br from-blue-50 to-teal-50 overflow-hidden glass-card">
         <div className="flex flex-col md:flex-row">
-          <div className="md:w-1/2 relative min-h-[250px] md:min-h-[300px]">
-            <Image src="/drinterested.png" alt="Dr. Interested Organization" fill className="object-cover" />
+          <div className="md:w-1/2 relative min-h-[320px] md:min-h-[420px] bg-slate-900">
+            <Image
+              src="/pictures/AdilMukhiDrInterested (1).jpg"
+              alt="Adil Mukhi, founder of Dr. Interested, holding a camera in a Dr. Interested hoodie"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+              style={{ objectPosition: "50% 40%" }}
+            />
+            <div className="absolute bottom-4 left-4 flex items-center gap-3 rounded-2xl bg-white/95 p-2 pr-4 shadow-lg">
+              <Image src="/drinterested.png" alt="Dr. Interested logo" width={48} height={48} className="rounded-xl object-cover" />
+              <span className="text-sm font-semibold text-slate-900">Founded by Adil Mukhi</span>
+            </div>
           </div>
           <div className="md:w-1/2 p-6 md:p-8">
             <CardHeader className="p-0 mb-4">
@@ -59,6 +70,22 @@ export default function ClubFeature() {
           </div>
         </div>
       </Card>
+
+      <figure className="mt-8 overflow-hidden rounded-2xl shadow-lg">
+        <div className="relative aspect-[16/7] w-full">
+          <Image
+            src="/pictures/MedExplore (1).png"
+            alt="Adil Mukhi hosting the Dr. Interested MedExplore 2026 conference"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            style={{ objectPosition: "50% 40%" }}
+          />
+        </div>
+        <figcaption className="bg-slate-900 px-5 py-3 text-sm text-white/85">
+          Hosting MedExplore 2026, a Dr. Interested conference for students exploring careers in medicine
+        </figcaption>
+      </figure>
 
       <div className="mt-8">
         <h3 className="text-2xl font-semibold mb-6 text-center" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>

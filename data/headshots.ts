@@ -35,6 +35,36 @@ export const headshots: Shot[] = [
 
 export const inAction: Shot[] = [
   {
+    src: "/pictures/adil-mukhi-portrait-closeup.jpg",
+    alt: "Close up portrait of Adil Mukhi",
+    caption: "Close up portrait",
+    orientation: "portrait",
+  },
+  {
+    src: "/pictures/adil-mukhi-canadian-flag-suit.jpg",
+    alt: "Adil Mukhi in a suit beside the Canadian flag",
+    caption: "Formal, beside the Canadian flag",
+    orientation: "portrait",
+  },
+  {
+    src: "/pictures/adil-mukhi-dr-interested-studio-light.jpg",
+    alt: "Adil Mukhi in a Dr. Interested hoodie lit by a studio light",
+    caption: "Dr. Interested studio portrait",
+    orientation: "landscape",
+  },
+  {
+    src: "/top-20-under-18-2026.jpg",
+    alt: "Adil Mukhi at the podium of The Future Is Now Awards",
+    caption: "The Future Is Now Awards, Top 20 Under 18 (2026)",
+    orientation: "portrait",
+  },
+  {
+    src: "/mississauga-civic-award-2026.jpg",
+    alt: "Adil Mukhi with Mississauga Mayor Carolyn Parrish",
+    caption: "City of Mississauga recognition (2026)",
+    orientation: "landscape",
+  },
+  {
     src: "/pictures/AdilMukhiDrInterested (1).jpg",
     alt: "Adil Mukhi representing Dr. Interested",
     caption: "Dr. Interested",

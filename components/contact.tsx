@@ -32,11 +32,12 @@ export default function Contact() {
           <div className="w-full md:w-1/2 flex flex-col items-center space-y-6">
             <div className="relative w-64 h-64 md:w-72 md:h-72">
               <Image
-                src="/pictures/adil-mukhi-formal-headshot.jpg"
-                alt="Adil Mukhi"
+                src="/pictures/adil-mukhi-portrait-closeup.jpg"
+                alt="Adil Mukhi smiling"
                 fill
                 sizes="(max-width: 768px) 256px, 288px"
-                className="rounded-full object-cover"
+                className="rounded-full object-cover ring-4 ring-white shadow-xl"
+                style={{ objectPosition: "50% 30%" }}
               />
             </div>
             <div className="grid grid-cols-2 gap-x-4 gap-y-4 w-full max-w-lg px-4 sm:px-6 sm:gap-x-8 sm:gap-y-6">
