@@ -765,7 +765,7 @@ export const codingProjects: CodingProject[] = [
     title: "Dr. Interested Website",
     description:
       "A website for the Dr. Interested club, featuring webinar schedules, research proposal competitions, and resources for aspiring medical professionals.",
-    image: "/portfolio/coding/drinterested.png",
+    image: "/portfolio/coding/drinterested-2026.png",
     tags: ["Next.js", "React", "Tailwind CSS"],
     demoLink: "https://www.drinterested.org/",
     codeLink: "https://github.com/drinterested/drinterested-final",
