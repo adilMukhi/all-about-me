@@ -12,7 +12,7 @@ export default function ClubFeature() {
       >
         Executive Director of Dr. Interested
       </h2>
-      <Card className="bg-gradient-to-br from-blue-50 to-teal-50 overflow-hidden glass-card">
+      <Card className="overflow-hidden glass-card">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 relative min-h-[320px] md:min-h-[420px] bg-slate-900">
             <Image
@@ -45,19 +45,19 @@ export default function ClubFeature() {
               </p>
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center gap-2">
-                  <Users className="h-5 w-5 text-blue-500" />
+                  <Users className="h-5 w-5 text-primary" />
                   <span>160,000+ people impacted</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Building className="h-5 w-5 text-blue-500" />
+                  <Building className="h-5 w-5 text-primary" />
                   <span>2,100+ members & 367 executives</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <BookOpen className="h-5 w-5 text-blue-500" />
+                  <BookOpen className="h-5 w-5 text-primary" />
                   <span>3.7+ million marketing reach</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Globe className="h-5 w-5 text-blue-500" />
+                  <Globe className="h-5 w-5 text-primary" />
                   <span>106 countries globally</span>
                 </div>
               </div>
@@ -92,9 +92,9 @@ export default function ClubFeature() {
           Community Impact
         </h3>
         <div className="grid md:grid-cols-2 gap-6">
-          <Card className="bg-white/80 backdrop-blur-sm border-blue-200">
+          <Card className="bg-card border-border">
             <CardContent className="p-6">
-              <Quote className="h-8 w-8 text-blue-500 mb-4" />
+              <Quote className="h-8 w-8 text-primary mb-4" />
               <p className="text-base leading-relaxed mb-4 italic">
                 "Being part of Dr. Interested—especially through the Resilient Minds event—opened my eyes to how mental
                 health and medicine connect. I used to think medicine was just textbooks and biology, but now I see the
@@ -105,9 +105,9 @@ export default function ClubFeature() {
             </CardContent>
           </Card>
 
-          <Card className="bg-white/80 backdrop-blur-sm border-blue-200">
+          <Card className="bg-card border-border">
             <CardContent className="p-6">
-              <Quote className="h-8 w-8 text-blue-500 mb-4" />
+              <Quote className="h-8 w-8 text-primary mb-4" />
               <p className="text-base leading-relaxed mb-4 italic">
                 "The Discord community has been such a supportive space. I've met people who genuinely understand my
                 journey and are always willing to share advice or encouragement."

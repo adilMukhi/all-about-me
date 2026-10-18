@@ -43,7 +43,7 @@ export default function About() {
               <div className="pt-4">
                 <Link
                   href="/background"
-                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors"
+                  className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors"
                 >
                   Explore my full background →
                 </Link>

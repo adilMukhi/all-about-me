@@ -177,7 +177,7 @@ export default function CinematicHero() {
       </div>
 
       {/* Overlays: readable gradient, grid, scan lines, pointer spotlight */}
-      <div className="absolute inset-0 -z-10 bg-slate-950/60 lg:bg-transparent lg:bg-gradient-to-r lg:from-slate-950 lg:via-slate-950/85 lg:to-slate-950/40" />
+      <div className="absolute inset-0 -z-10 bg-slate-950/60 lg:bg-transparent lg:bg-gradient-to-r lg:from-slate-950 lg:from-30% lg:via-slate-950/70 lg:via-50% lg:to-slate-950/35" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/50" />
       <div className="hero-grid pointer-events-none absolute inset-0 -z-10" />
       <div className="hero-scanlines pointer-events-none absolute inset-0 -z-10" />
@@ -190,7 +190,7 @@ export default function CinematicHero() {
       />
 
       <div className="container relative grid items-center gap-10 pb-24 pt-14 lg:grid-cols-[1.2fr_0.8fr] lg:py-20">
-        <div className="max-w-2xl">
+        <div className="relative z-10 max-w-2xl">
           <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-sky-300/30 bg-sky-400/10 px-3 py-1 font-mono text-xs uppercase tracking-[0.2em] text-sky-100">
             <span className="h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true" />
             Public speaker · Founder · Youth advocate
@@ -233,7 +233,7 @@ export default function CinematicHero() {
             </a>
           </div>
 
-          <p className="mt-6 text-base text-white/85 sm:text-lg">
+          <p className="mt-6 max-w-xl text-base text-white/85 sm:text-lg">
             I&apos;m currently available for{" "}
             <Link href="/services" className="font-semibold text-sky-200 underline underline-offset-4 hover:text-white">
               consulting engagements
@@ -277,7 +277,7 @@ export default function CinematicHero() {
               {paused ? "Paused" : "Rolling"}
             </span>
           </div>
-          <div className="absolute -left-16 bottom-8 w-[21rem] xl:-left-28">
+          <div className="absolute -left-8 bottom-8 w-[20rem] xl:-left-16">
             <Terminal reduced={reduced} />
           </div>
         </div>

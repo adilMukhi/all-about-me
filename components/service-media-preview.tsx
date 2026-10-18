@@ -22,7 +22,7 @@ const ServiceMediaPreview = () => {
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
-              style={{ objectPosition: "50% 35%" }}
+              style={{ objectPosition: "50% 18%" }}
             />
           </div>
           <div className="flex items-center gap-3 mb-6">

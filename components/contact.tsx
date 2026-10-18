@@ -6,11 +6,11 @@ import CalEmbed from "@/components/cal-embed"
 import { CAL_BOOKING_URL, CONTACT_EMAIL, WORK_PHONE_DISPLAY, WORK_PHONE_TEL } from "@/lib/site"
 
 const socialLinks = [
-  { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/adil-mukhi", color: "text-blue-500" },
-  { name: "GitHub", icon: Github, url: "https://github.com/adilMukhi", color: "text-gray-700" },
-  { name: "My Org", icon: Building, url: "https://linktr.ee/dr.interested", color: "text-sky-400" },
-  { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/adilm.0/", color: "text-pink-500" },
-  { name: "Linktree", icon: Link, url: "https://linktr.ee/adilm.0", color: "text-green-500" },
+  { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/adil-mukhi", color: "text-sky-400" },
+  { name: "GitHub", icon: Github, url: "https://github.com/adilMukhi", color: "text-foreground" },
+  { name: "My Org", icon: Building, url: "https://linktr.ee/dr.interested", color: "text-sky-300" },
+  { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/adilm.0/", color: "text-pink-400" },
+  { name: "Linktree", icon: Link, url: "https://linktr.ee/adilm.0", color: "text-green-400" },
 ]
 
 export default function Contact() {
@@ -22,7 +22,7 @@ export default function Contact() {
       >
         Contact Me
       </h2>
-      <Card className="bg-gradient-to-br from-blue-100 to-teal-100">
+      <Card className="glass-card">
         <CardHeader className="pb-4">
           <CardTitle style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }} className="text-2xl">
             Get in Touch
