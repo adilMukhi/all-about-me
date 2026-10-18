@@ -131,15 +131,22 @@ export default function ResearchPortfolioPage() {
             <div className="grid gap-6 md:grid-cols-2">
               {researchProjects.map((project, index) => (
                 <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg">
-                  <div className="relative h-48">
-                    <Image
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+                  {project.image && (
+                    <div className="relative h-48">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  )}
                   <CardHeader>
+                    {project.status && (
+                      <Badge variant="outline" className="w-fit border-amber-500 text-amber-700">
+                        {project.status}
+                      </Badge>
+                    )}
                     <CardTitle style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>{project.title}</CardTitle>
                     <CardDescription>
                       {project.institution} • {project.year}

@@ -15,18 +15,18 @@ const defaultTwitter = {
 }
 
 export const homeMetadata: Metadata = {
-  title: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker",
+  title: "Adil Mukhi: Youth Advocate, Public Speaker, Founder, and Research Leader",
   description:
-    "Adil Mukhi is a youth advocate, public speaker, advisor, consultant, and changemaker from the Greater Toronto Area. Founder and Executive Director of Dr. Interested, an organization impacting 160,000+ individuals across 106 countries with 1,700 members, 367 executives, 400+ mentor hours, and 20+ events. TEDx speaker, Ontario Volunteer Service Award recipient, and advocate for mental health and youth empowerment.",
+    "Adil Mukhi is a youth advocate, public speaker, advisor, consultant, and changemaker from the Greater Toronto Area. Founder and Executive Director of Dr. Interested, an organization impacting 160,000+ individuals across 106 countries with 2,100+ members, 367 executives, 400+ mentor hours, and 20+ events. TEDx speaker, Ontario Volunteer Service Award recipient, and advocate for mental health and youth empowerment.",
   alternates: {
     canonical: `${siteUrl}/`,
   },
   openGraph: {
     type: "website",
     siteName: "Adil Mukhi",
-    title: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker",
+    title: "Adil Mukhi: Youth Advocate, Public Speaker, Founder, and Research Leader",
     description:
-      "Youth advocate, public speaker, advisor, consultant, and changemaker from the Greater Toronto Area. Founder and Executive Director of Dr. Interested, an organization reaching 160,000+ individuals across 106 countries with 1,700 members, 367 executives, 400+ mentor hours, and 20+ events. TEDx speaker and advocate for mental health and youth empowerment.",
+      "Youth advocate, public speaker, advisor, consultant, and changemaker from the Greater Toronto Area. Founder and Executive Director of Dr. Interested, an organization reaching 160,000+ individuals across 106 countries with 2,100+ members, 367 executives, 400+ mentor hours, and 20+ events. TEDx speaker and advocate for mental health and youth empowerment.",
     url: `${siteUrl}/`,
     images: [
       { ...defaultOgImage, alt: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker" },
@@ -34,16 +34,16 @@ export const homeMetadata: Metadata = {
   },
   twitter: {
     ...defaultTwitter,
-    title: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker",
+    title: "Adil Mukhi: Youth Advocate, Public Speaker, Founder, and Research Leader",
     description:
-      "Youth advocate, public speaker, advisor, consultant, and changemaker. Founder and Executive Director of Dr. Interested, an organization reaching 160,000+ individuals across 106 countries with 1,700 members and 367 executives.",
+      "Youth advocate, public speaker, advisor, consultant, and changemaker. Founder and Executive Director of Dr. Interested, an organization reaching 160,000+ individuals across 106 countries with 2,100+ members and 367 executives.",
   },
 }
 
 export const backgroundMetadata: Metadata = {
   title: "Background",
   description:
-    "Explore Adil Mukhi's background as a youth advocate, public speaker, advisor, and consultant. Ontario Volunteer Service Award recipient, TEDx speaker, research volunteer at SickKids Hospital, and founder and Executive Director of Dr. Interested, an organization impacting 160,000+ individuals across 106 countries with 1,700 members, 367 executives, 400+ mentor hours, and 20+ events.",
+    "Explore Adil Mukhi's background as a youth advocate, public speaker, advisor, and consultant. Ontario Volunteer Service Award recipient, TEDx speaker, research volunteer at SickKids Hospital, and founder and Executive Director of Dr. Interested, an organization impacting 160,000+ individuals across 106 countries with 2,100+ members, 367 executives, 400+ mentor hours, and 20+ events.",
   alternates: {
     canonical: `${siteUrl}/background`,
   },
@@ -69,7 +69,7 @@ export const backgroundMetadata: Metadata = {
 export const portfolioMetadata: Metadata = {
   title: "Portfolio",
   description:
-    "Discover Adil Mukhi's diverse portfolio including Dr. Interested (reaching 60,000+ youth), research projects, published writings, coding projects, and creative works across advocacy, healthcare, and technology.",
+    "Discover Adil Mukhi's diverse portfolio including Dr. Interested (reaching 160,000+ youth), research projects, published writings, coding projects, and creative works across advocacy, healthcare, and technology.",
   alternates: {
     canonical: `${siteUrl}/portfolio`,
   },
@@ -341,7 +341,7 @@ export const codingPortfolioMetadata: Metadata = {
     siteName: "Adil Mukhi",
     title: "Coding Portfolio",
     description:
-      "Software development projects and technology solutions by youth advocate and developer Adil Mukhi, including platforms reaching 60,000+ users globally.",
+      "Software development projects and technology solutions by youth advocate and developer Adil Mukhi, including platforms reaching 160,000+ users globally.",
     url: `${siteUrl}/portfolio/coding`,
     images: [
       { ...defaultOgImage, alt: "Adil Mukhi's Coding Portfolio" },

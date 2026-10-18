@@ -6,6 +6,7 @@ export type Certificate = {
   skills: string[]
   link: string
   image: string
+  images?: string[] // Additional images shown in the popup
   slug?: string
 }
 
@@ -13,12 +14,13 @@ export const certificates: Certificate[] = [
   {
     name: "Psychological First Aid, Blended Standard First Aid & CPR/AED Level C, WHMIS + First Aid for Opioid Poisoning",
     issuer: "Canadian Red Cross",
-    date: "Revalidated Jun 2026 (official certificate pending)",
+    date: "Jun 2026",
     description:
-      "Comprehensive training in CPR, AED operation, and first aid techniques for adults, children, and infants, along with Psychological First Aid, WHMIS, and First Aid for Opioid Poisoning. Covers emergency response strategies, injury assessment, and life-saving interventions. CPR certification recently revalidated.",
+      "Comprehensive training in CPR, AED operation, and first aid techniques for adults, children, and infants, along with Psychological First Aid, WHMIS, and First Aid for Opioid Poisoning. Covers emergency response strategies, injury assessment, and life-saving interventions.",
     skills: ["Emergency Response", "CPR Techniques", "AED Operation", "Wound Management", "Patient Assessment"],
     link: "https://www.redcross.ca/training-and-certification",
-    image: "/redcross.jpg",
+    image: "/redcross-certificate-2026.jpg",
+    images: ["/redcross-psychological-first-aid-2026.jpg"],
     slug: "first-aid-cpr-aed",
   },
   {
@@ -141,7 +143,7 @@ export const certificates: Certificate[] = [
     name: "Google Data Analytics Professional Certificate (v2)",
     issuer: "Google via Coursera",
     date: "May 2025",
-    description: "A comprehensive, hands-on program designed to equip beginners with the skills and tools needed for entry-level data analyst roles. The curriculum includes data cleaning, analysis, visualization, and communication using spreadsheets, SQL, R, and Tableau. The certificate is recognized for approximately 187 learning hours and is endorsed at EQF levels 5 and 6, equivalent to 7 ECTS credits. :contentReference[oaicite:6]{index=6}",
+    description: "A comprehensive, hands-on program designed to equip beginners with the skills and tools needed for entry-level data analyst roles. The curriculum includes data cleaning, analysis, visualization, and communication using spreadsheets, SQL, R, and Tableau. The certificate is recognized for approximately 187 learning hours and is endorsed at EQF levels 5 and 6, equivalent to 7 ECTS credits.",
     skills: [
     "Data Cleaning",
     "Data Analysis",
@@ -406,17 +408,6 @@ export const certificates: Certificate[] = [
     slug: "genetics-and-beyond-completion",
   },
   {
-    name: "Certificate of Appreciation - Silver Medal",
-    issuer: "Biopage",
-    date: "July 18, 2025",
-    description:
-      "Awarded silver medal in the Biopage Storytelling Writing Contest, demonstrating excellence in scientific storytelling and communication skills.",
-    skills: ["Scientific Writing", "Storytelling", "Creative Writing", "Science Communication", "Content Creation"],
-    link: "https://biopage.com",
-    image: "/certificates/biopage-appreciation.png",
-    slug: "biopage-silver-medal",
-  },
-  {
     name: "Your Voice is Power - Runner Up",
     issuer: "TakingITGlobal, UBC, and Amazon Future Engineer",
     date: "September 23, 2025",
@@ -592,14 +583,15 @@ export const certificates: Certificate[] = [
     slug: "hnp-ontario-third-place",
   },
   {
-    name: "Certificate of Appreciation - Biopage Silver Medal",
+    name: "Biopage Storytelling Writing Contest, 2nd Place (2024) and 3rd Place (2025)",
     issuer: "Biopage",
-    date: "February 18, 2025",
+    date: "Aug 2024 and Jul 2025",
     description:
-      "Awarded silver medal in the Biopage Storytelling Writing Contest, demonstrating excellence in scientific storytelling and communication from Philadelphia, United States.",
-    skills: ["Scientific Writing", "Storytelling", "Writing Competition", "Science Communication", "Creative Writing"],
+      "Placed 2nd in 2024 with the story 'The Gift of Giving Back' and 3rd in 2025 with the story 'The Boy Who Collected Sounds' in the Biopage Storytelling Writing Contest.",
+    skills: ["Writing", "Storytelling"],
     link: "https://biopage.com",
     image: "/certificates/biopage-appreciation-silver.png",
+    images: ["/certificates/biopage-appreciation.png"],
     slug: "biopage-appreciation-silver",
   },
   {

@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Link from "next/link"
-import Image from "next/image"
+import SafeImage from "@/components/safe-image"
+import SchoolRolesBreakdown from "@/components/school-roles-breakdown"
 import Script from "next/script"
 import { ArrowLeft, ExternalLink, Sparkles } from "lucide-react"
 
@@ -157,26 +158,35 @@ export default async function ExperienceDetailPage({ params }: { params: Promise
                     </div>
                   </div>
                 )}
+
+                {experience.schoolRoles && experience.schoolRoles.length > 0 && (
+                  <div className="mt-10">
+                    <h2 className="text-2xl font-semibold mb-4">Roles</h2>
+                    <SchoolRolesBreakdown roles={experience.schoolRoles} />
+                  </div>
+                )}
               </div>
 
               <div className="space-y-6">
-                <div className="overflow-hidden rounded-2xl border bg-card shadow-lg">
-                  <div className="relative aspect-[4/3]">
-                    <Image
-                      src={experience.image || "/placeholder.svg"}
-                      alt={`${experience.title} at ${experience.company}`}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
+                <SafeImage
+                  src={experience.image || "/placeholder.svg"}
+                  alt={`${experience.title} at ${experience.company}`}
+                  fill
+                  className="object-cover"
+                  wrapperClassName="relative aspect-[4/3] overflow-hidden rounded-2xl border bg-card shadow-lg"
+                />
 
                 {experience.images && experience.images.length > 0 && (
                   <div className="grid gap-3 sm:grid-cols-2">
                     {experience.images.map((image, index) => (
-                      <div key={image} className="relative aspect-video overflow-hidden rounded-xl border">
-                        <Image src={image} alt={`${experience.company} image ${index + 1}`} fill className="object-cover" />
-                      </div>
+                      <SafeImage
+                        key={image}
+                        src={image}
+                        alt={`${experience.company} image ${index + 1}`}
+                        fill
+                        className="object-cover"
+                        wrapperClassName="relative aspect-video overflow-hidden rounded-xl border"
+                      />
                     ))}
                   </div>
                 )}

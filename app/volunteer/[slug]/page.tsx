@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
+import SchoolRolesBreakdown from "@/components/school-roles-breakdown"
 import Script from "next/script"
 import { ArrowLeft, ExternalLink, Sparkles } from "lucide-react"
 
@@ -132,6 +133,29 @@ export default async function VolunteerDetailPage({ params }: { params: Promise<
                 <p className="mt-2 text-lg text-muted-foreground">{volunteer.period}</p>
                 <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground">{volunteer.description}</p>
 
+                {volunteer.schoolRoles && volunteer.schoolRoles.length > 0 && (
+                  <div className="mt-10">
+                    <h2 className="text-2xl font-semibold mb-4">Roles</h2>
+                    <SchoolRolesBreakdown roles={volunteer.schoolRoles} />
+                  </div>
+                )}
+
+                {volunteer.sideRoles && volunteer.sideRoles.length > 0 && (
+                  <div className="mt-10">
+                    <h2 className="text-2xl font-semibold mb-4">Side Roles</h2>
+                    <ul className="space-y-2 text-muted-foreground">
+                      {volunteer.sideRoles.map((side) => (
+                        <li key={side.role} className="flex gap-2">
+                          <span className="text-primary">•</span>
+                          <span>
+                            {side.role} ({side.period})
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 {volunteer.progression && volunteer.progression.length > 0 && (
                   <div className="mt-10">
                     <h2 className="text-2xl font-semibold mb-4">Progression</h2>
@@ -161,6 +185,20 @@ export default async function VolunteerDetailPage({ params }: { params: Promise<
                     />
                   </div>
                 </div>
+
+                {volunteer.stats && volunteer.stats.length > 0 && (
+                  <div className="rounded-2xl border bg-card p-6 shadow-sm">
+                    <h2 className="text-xl font-semibold mb-4">Key Impact</h2>
+                    <ul className="space-y-3 text-sm text-muted-foreground">
+                      {volunteer.stats.map((stat) => (
+                        <li key={stat} className="flex gap-2">
+                          <span className="text-primary">•</span>
+                          <span>{stat}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 {volunteer.progression && volunteer.progression.length > 0 && (
                   <div className="rounded-2xl border bg-card p-6 shadow-sm">

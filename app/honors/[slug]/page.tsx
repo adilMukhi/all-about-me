@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Link from "next/link"
-import Image from "next/image"
+import SafeImage from "@/components/safe-image"
 import Script from "next/script"
 import { ArrowLeft, ExternalLink, Sparkles } from "lucide-react"
 
@@ -47,13 +47,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       url: `${siteUrl}${getHonorPath(award)}`,
       title,
       description,
-      images: [{ url: `${siteUrl}${image}`, width: 1200, height: 630, alt: title }],
+      images: [{ url: image ? `${siteUrl}${image}` : `${siteUrl}/og-image.png`, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [`${siteUrl}${image}`],
+      images: [image ? `${siteUrl}${image}` : `${siteUrl}/og-image.png`],
     },
   }
 }
@@ -133,11 +133,13 @@ export default async function HonorDetailPage({ params }: { params: Promise<{ sl
               </div>
 
               <div className="space-y-6">
-                <div className="overflow-hidden rounded-2xl border bg-card shadow-lg">
-                  <div className="relative aspect-[4/3]">
-                    <Image src={image} alt={award.title} fill className="object-cover" />
-                  </div>
-                </div>
+                <SafeImage
+                  src={image}
+                  alt={award.title}
+                  fill
+                  className="object-cover"
+                  wrapperClassName="relative aspect-[4/3] overflow-hidden rounded-2xl border bg-card shadow-lg"
+                />
 
                 {award.link && award.link.startsWith("http") && (
                   <div className="rounded-2xl border bg-card p-6 shadow-sm">

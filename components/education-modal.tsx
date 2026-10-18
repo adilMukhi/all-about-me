@@ -35,15 +35,18 @@ export default function EducationModal({ education, isOpen, onClose }: Education
           </div>
 
           {/* Image */}
-          {education.image && (
-            <div className="flex justify-center">
-              <Image
-                src={education.image}
-                alt={education.institution}
-                width={300}
-                height={180}
-                className="rounded-lg object-cover"
-              />
+          {(education.image || (education.images && education.images.length > 0)) && (
+            <div className="flex flex-wrap justify-center gap-4">
+              {[education.image, ...(education.images || [])].filter(Boolean).map((img, index) => (
+                <Image
+                  key={img}
+                  src={img}
+                  alt={index === 0 ? education.institution : `${education.degree} - Image ${index + 1}`}
+                  width={300}
+                  height={180}
+                  className="rounded-lg object-cover"
+                />
+              ))}
             </div>
           )}
 
@@ -55,7 +58,7 @@ export default function EducationModal({ education, isOpen, onClose }: Education
           {/* Achievements */}
           {education.achievements && education.achievements.length > 0 && (
             <div className="space-y-3">
-              <h3 className="text-lg font-semibold">Key Achievements</h3>
+              <h3 className="text-lg font-semibold">Academic Achievements</h3>
               <ul className="space-y-2">
                 {education.achievements.map((achievement, index) => (
                   <li key={index} className="flex items-start gap-2">

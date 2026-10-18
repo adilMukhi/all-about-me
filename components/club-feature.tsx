@@ -39,7 +39,7 @@ export default function ClubFeature() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Building className="h-5 w-5 text-blue-500" />
-                  <span>1,400+ members & 367 executives</span>
+                  <span>2,100+ members & 367 executives</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <BookOpen className="h-5 w-5 text-blue-500" />

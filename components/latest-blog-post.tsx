@@ -49,7 +49,7 @@ export function LatestBlogPost() {
               </p>
             </div>
             <p className="mb-6 line-clamp-2">
-              Join me as I share my latest experiences in medical research and healthcare innovation...
+              Honoured to be named one of the Top 50 youth in Canada at The Future Is Now Awards, an inspiring night celebrating youth leadership and national impact.
             </p>
             <div className="flex gap-4">
               <Button asChild>

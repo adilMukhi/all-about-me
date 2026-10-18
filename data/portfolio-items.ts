@@ -510,13 +510,13 @@ export const clubPublications: ClubPublication[] = [
     date: "June 11, 2025",
     description:
       "Later featured in the NACY Frontiers newsletter, this op-ed explores the urgent need for youth-centred AI policy in Canada, highlighting its impact on education, healthcare, and the future of work. The piece argues for meaningful youth inclusion in shaping AI governance.",
-    link: "https://drinterested.tech/blog/youth-ai-healthcare-policy",
+    link: "https://www.drinterested.org/publications/youth-ai-healthcare-policy",
     authors: "Adil Mukhi",
     buyLinks: {
       customLinks: [
         {
           name: "Read Article",
-          url: "https://drinterested.tech/blog/youth-ai-healthcare-policy",
+          url: "https://www.drinterested.org/publications/youth-ai-healthcare-policy",
         },
       ],
     },
@@ -573,9 +573,20 @@ export type ResearchProject = {
     url: string
   }>
   link?: string
+  status?: string // e.g. "Under review"; shown as a badge on the card
 }
 
 export const researchProjects: ResearchProject[] = [
+  {
+    title: "Youth Accessibility in Health Volunteering (Manuscript)",
+    description:
+      "Fourth author on a manuscript examining youth accessibility in health volunteering. Submitted to Children & Society in September 2026 and currently under review.",
+    image: "",
+    tags: ["Public Health", "Youth Engagement", "Health Equity"],
+    institution: "Young Canadians Roundtable on Health",
+    year: "2026",
+    status: "Under review",
+  },
   {
     title: "From Stress to Forgetfulness: Understanding How Stress Hormones Shape Your Memory",
     description:
@@ -754,9 +765,9 @@ export const codingProjects: CodingProject[] = [
     title: "Dr. Interested Website",
     description:
       "A website for the Dr. Interested club, featuring webinar schedules, research proposal competitions, and resources for aspiring medical professionals.",
-    image: "/portfolio/coding/drinterested.png",
+    image: "/portfolio/coding/drinterested-2026.png",
     tags: ["Next.js", "React", "Tailwind CSS"],
-    demoLink: "https://drinterested-int.vercel.app/",
+    demoLink: "https://www.drinterested.org/",
     codeLink: "https://github.com/drinterested/drinterested-final",
   },
   {
@@ -945,7 +956,7 @@ export const sportsAchievements: SportsAchievement[] = [
     title: "ROPSSAA Tennis Quarter-Finalist",
     description:
       "Achieved Quarter-Finalist placement in the ROPSSAA (Region of Peel Secondary Schools Athletic Association) Boys Doubles Junior Tennis South East Qualifier 2024. Demonstrated strong teamwork, strategic play, and resilience against competitive opponents, showcasing significant improvement from previous seasons. Trained extensively in the off-season to refine technical skills, endurance, and match tactics, contributing to a successful performance in the tournament",
-    image: "/portfolio/sports/tennis.jpg",
+    image: "/tennis.jpg",
     videoId: "dEKB5Jc9sPw", // Updated to new YouTube short ID
     tags: ["Tennis", "Competition", "Team Sports"],
     type: "sports",

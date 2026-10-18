@@ -29,8 +29,8 @@ export const videos: VideoItem[] = [
     slug: "tedx-stress-memory-and-why-you-cant-find-your-keys",
     title: "Stress, Memory, and Why You Can't Find Your Keys",
     description:
-      "Adil Mukhi's TEDx talk at TEDxMcfarren Boulevard Youth on the connection between stress hormones and memory — why everyday stress makes us forget simple things, and what his research on neuroplasticity and cortisol reveals about how chronic stress reshapes the brain.",
-    publisher: "TEDxMcfarren Boulevard Youth",
+      "Adil Mukhi's TEDx talk at TEDxMcFarren Boulevard Youth on the connection between stress hormones and memory — why everyday stress makes us forget simple things, and what his research on neuroplasticity and cortisol reveals about how chronic stress reshapes the brain.",
+    publisher: "TEDxMcFarren Boulevard Youth",
     date: "2025-06-01",
     dateApproximate: true,
     platform: "youtube",

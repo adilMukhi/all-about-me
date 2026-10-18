@@ -20,7 +20,7 @@ export const educationData: Education[] = [
     period: "Dec 2024 - Apr 2025",
     description:
       "Real-world experience in healthcare through hands-on activities, mentorship, and academic workshops. I took the U of T course Introduction to the Role of the Human Development Index and Social Determinants of Health on the Global Burden of Disease - Taught by Dr. Andrea K. Boggild, BSc, MSc, MD",
-    link: "https://www.linkedin.com/in/adil-mukhi-6aba27246/#:~:text=and%20%2B15%20skills-,University%20of%20Toronto,-University%20of%20Toronto",
+    link: "https://www.linkedin.com/in/adil-mukhi",
     image: "/uoft-logo.jpg",
     slug: "medlinx-program",
     longDescription:
@@ -34,18 +34,18 @@ export const educationData: Education[] = [
     institution: "Glenforest Secondary School",
     period: "Sep 2023 - Jun 2027",
     description:
-      "In progress: Grade 11. Active in leadership roles such as Vice President of the French Club and STEM Fellowship Chapter. Participates in DECA, HOSA, and Peer Helper Tutor.",
+      "In progress: Grade 12. 96.3% average across 24 completed courses and an ACT composite of 33 in one sitting.",
     link: "https://glenforest.peelschools.org/",
     image: "/gfss-logo.jpg",
     slug: "high-school-diploma",
     longDescription:
-      "In progress: Grade 11. Comprehensive high school education with focus on leadership development and extracurricular involvement. Active participation in various clubs and academic competitions.",
+      "In progress: Grade 12. I've maintained a 96.3% average across my 24 completed courses, including a 97% average across my three completed 4U courses and distinctions, the highest grade in my cohort, in 8 of my 16 Grade nine and ten courses. I also earned 99% in both 3U Biology and 4U Chemistry.",
     achievements: [
-      "President of Newcomers Club",
-      "Vice President of French Club",
-      "Vice President of HOSA Chapter",
-      "Peer Helper Tutor",
-      "Tennis Team Duos Player",
+      "96.3% average across 24 completed courses",
+      "97% average across 3 completed 4U courses",
+      "Distinctions (highest grade in my cohort) in 8 of 16 Grade 9 and 10 courses",
+      "99% in 3U Biology and 4U Chemistry",
+      "ACT 33 in one sitting: Math 34, Science 36, English 30, Reading 35, Writing 8",
     ],
   },
   {
@@ -53,22 +53,25 @@ export const educationData: Education[] = [
     institution: "International Baccalaureate",
     period: "Sep 2023 - May 2027",
     description:
-      "In progress: IB DP 1. Global education framework focusing on research, communication, and global understanding skills.",
+      "In progress: IB DP 2. Global education framework focusing on research, communication, and global understanding skills.",
     link: "https://www.ibo.org/benefits/",
     image: "",
     slug: "ib-diploma",
     longDescription:
-      "In progress: IB DP 1. International Baccalaureate program emphasizing critical thinking, research skills, and global perspective. Comprehensive curriculum preparing students for university-level work.",
+      "In progress: IB DP 2. International Baccalaureate program emphasizing critical thinking, research skills, and global perspective. Comprehensive curriculum preparing students for university-level work.",
     achievements: [
+      "Completed IB scores: SL Math AA 6 and SL Chemistry 7 (pending until the diploma is awarded)",
       "Creativity, Activity, Service (CAS) hours",
     ],
     courses: [
       "HL English",
-      "SL French",
-      "HL Biology",
-      "SL Chemistry",
       "HL Psychology",
-      "SL Math",
+      "HL Biology",
+      "SL French",
+      "SL Math AA",
+      "SL Chemistry",
+      "Theory of Knowledge (TOK)",
+      "Extended Essay",
     ],
   },
   {
@@ -131,14 +134,22 @@ export const educationData: Education[] = [
   {
     degree: "UHN STEM Pathways",
     institution: "University Health Network",
-    period: "Dec 2024 - Jun 2025",
-    description: "Toronto-based outreach program with 7 courses leading to certificate.",
+    period: "Dec 2024 to Jun 2026",
+    description: "Toronto-based outreach program with 7 courses leading to a certificate, earned twice (2024 to 2025 and 2025 to 2026).",
     link: "#",
     image: "/uhn-logo.jpg",
+    images: [
+      "/certificates/uhn-stem-pathways.png",
+      "/certificates/UHN StemPathways - Certificate of Participation 2026 - Adil Mukhi.png",
+    ],
     slug: "uhn-stem-pathways",
     longDescription:
-      "Comprehensive STEM education program providing exposure to healthcare research and medical technologies.",
-    achievements: ["7 courses completed", "Certificate earned", "Healthcare research exposure"],
+      "Comprehensive STEM education program providing exposure to healthcare research and medical technologies. Earned the UHN STEM Pathways Certificate of Participation twice, for the 2024 to 2025 and 2025 to 2026 program years.",
+    achievements: [
+      "Certificate of Participation earned twice: 2024 to 2025 and 2025 to 2026",
+      "7 courses completed",
+      "Healthcare research exposure",
+    ],
   },
   {
     degree: "Youth On The Rise",
@@ -155,7 +166,7 @@ export const educationData: Education[] = [
   {
     degree: "Leaders in Training (LiT)",
     institution: "Dixie Bloor Neighbourhood Centre",
-    period: "Apr 2024 - Present",
+    period: "Apr 2024 to May 2024",
     description: "Learned effective skills to help me be a camp counselor.",
     link: "#",
     image: "/dbnc.jpg",

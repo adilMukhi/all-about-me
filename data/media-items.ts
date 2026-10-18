@@ -157,7 +157,7 @@ export const mediaItems: MediaItem[] = [
     date: "July 20, 2025",
     link: "https://www.instagram.com/p/DMV7GUPTsE2/?img_index=1",
     quote:
-      "Meet Adil Mukhi, a high school student from Ontario, Canada and the founder of Dr. Interested, a virtual student-run initiative that helps youth discover their passions through interactive workshops, research programs, and career-focused events. They have garnered over 350,000+ views and impacted over 55,000 youth, aiming to increase access to mentorship and opportunity to more equitable access across Canada and beyond.",
+      "Meet Adil Mukhi, a high school student from Ontario, Canada and the founder of Dr. Interested, a virtual student-run initiative that helps youth discover their passions through interactive workshops, research programs, and career-focused events. They have garnered over 350,000+ [now 2.1M+] views and impacted over 55,000 [now 160,000+] youth, aiming to increase access to mentorship and opportunity to more equitable access across Canada and beyond.",
     type: "spotlight",
   },
   {

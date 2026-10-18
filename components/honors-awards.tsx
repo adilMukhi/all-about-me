@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import Image from "next/image"
+import SafeImage from "@/components/safe-image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Maximize2 } from "lucide-react"
@@ -11,6 +11,8 @@ import Link from "next/link"
 import { slugify } from "@/lib/seo-paths"
 
 const awards = honorsAwards
+
+const getPrimaryImage = (award: (typeof awards)[0]) => (Array.isArray(award.image) ? award.image[0] : award.image)
 
 export default function HonorsAwards() {
   const [selectedAward, setSelectedAward] = useState<(typeof awards)[0] | null>(null)
@@ -78,7 +80,52 @@ export default function HonorsAwards() {
     return () => window.removeEventListener("popstate", handlePopState)
   }, [])
 
-  const visibleAwards = awards
+  const visibleAwards = awards.filter((award) => award.group !== "nomination")
+  const nominations = awards.filter((award) => award.group === "nomination")
+
+  const renderCompactContent = (award: (typeof awards)[0]) => (
+    <CardContent className="p-4">
+      <div className="text-center">
+        <SafeImage
+          src={getPrimaryImage(award)}
+          alt={award.title}
+          width={60}
+          height={60}
+          className="rounded-lg object-cover mx-auto mb-2"
+        />
+        <h3 className="font-semibold text-sm mb-1" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
+          <Link href={`/background?award=${slugify(`${award.title}-${award.issuer}`)}#honors`} className="hover:text-primary transition-colors" onClick={(e) => e.stopPropagation()}>
+            {award.title}
+          </Link>
+        </h3>
+        <p className="text-xs text-muted-foreground mb-1">{award.issuer}</p>
+        <p className="text-xs text-muted-foreground">{award.year}</p>
+      </div>
+    </CardContent>
+  )
+
+  const renderCompactCard = (award: (typeof awards)[0], index: number) => (
+    <Card
+      key={index}
+      className="cursor-pointer transition-all duration-200 hover:shadow-lg relative group md:col-span-1"
+      onClick={() => openAward(award)}
+    >
+      <div className="absolute top-2 right-2 z-10">
+        <Button
+          size="sm"
+          variant="secondary"
+          className="h-6 w-6 p-0 bg-background/80 backdrop-blur-sm hover:bg-background/90"
+          onClick={(e) => {
+            e.stopPropagation()
+            openAward(award)
+          }}
+        >
+          <Maximize2 className="h-3 w-3" />
+        </Button>
+      </div>
+      {renderCompactContent(award)}
+    </Card>
+  )
 
   return (
     <>
@@ -125,8 +172,8 @@ export default function HonorsAwards() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="flex gap-4 items-start">
-                    <Image
-                      src={award.image || "/placeholder.svg"}
+                    <SafeImage
+                      src={getPrimaryImage(award)}
                       alt={award.title}
                       width={80}
                       height={80}
@@ -151,28 +198,25 @@ export default function HonorsAwards() {
                   </CardContent>
                 </>
               ) : (
-                <CardContent className="p-4">
-                  <div className="text-center">
-                    <Image
-                      src={award.image || "/placeholder.svg"}
-                      alt={award.title}
-                      width={60}
-                      height={60}
-                      className="rounded-lg object-cover mx-auto mb-2"
-                    />
-                    <h3 className="font-semibold text-sm mb-1" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
-                      <Link href={`/background?award=${slugify(`${award.title}-${award.issuer}`)}#honors`} className="hover:text-primary transition-colors" onClick={(e) => e.stopPropagation()}>
-                        {award.title}
-                      </Link>
-                    </h3>
-                    <p className="text-xs text-muted-foreground mb-1">{award.issuer}</p>
-                    <p className="text-xs text-muted-foreground">{award.year}</p>
-                  </div>
-                </CardContent>
+                renderCompactContent(award)
               )}
             </Card>
           ))}
         </div>
+
+        {nominations.length > 0 && (
+          <>
+            <h3
+              className="mt-12 mb-6 text-2xl font-bold tracking-tighter sm:text-3xl"
+              style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
+            >
+              Nominations
+            </h3>
+            <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-4">
+              {nominations.map((award, index) => renderCompactCard(award, index))}
+            </div>
+          </>
+        )}
       </section>
 
       <HonorsAwardsModal award={selectedAward} isOpen={isModalOpen} onClose={closeModal} />

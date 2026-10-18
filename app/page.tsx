@@ -38,7 +38,7 @@ export default function Home() {
         {JSON.stringify(homeStructuredData)}
       </Script>
       <Header />
-      <h1 className="sr-only">Adil Mukhi - Youth Advocate, Public Speaker, Founder, and Research Leader</h1>
+      <h1 className="sr-only">Adil Mukhi: Youth Advocate, Public Speaker, Founder, and Research Leader</h1>
       <AnimatedSection>
         <Hero />
       </AnimatedSection>

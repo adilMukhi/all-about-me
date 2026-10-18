@@ -1,11 +1,12 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Image from "next/image"
+import SafeImage from "@/components/safe-image"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink } from "lucide-react"
+import SchoolRolesBreakdown from "@/components/school-roles-breakdown"
 import type { WorkExperience } from "@/data/work-experience"
 
 interface WorkExperienceModalProps {
@@ -92,7 +93,7 @@ export default function WorkExperienceModal({ experience, isOpen, onClose }: Wor
             <div className={`grid gap-4 ${hasMultipleImages && allImages.length > 2 ? "grid-cols-2" : "grid-cols-1"}`}>
               {hasMultipleImages && allImages.length > 2 ? (
                 allImages.map((img, index) => (
-                  <Image
+                  <SafeImage
                     key={index}
                     src={img || "/placeholder.svg"}
                     alt={`${experience.company} - Image ${index + 1}`}
@@ -102,7 +103,7 @@ export default function WorkExperienceModal({ experience, isOpen, onClose }: Wor
                   />
                 ))
               ) : (
-                <Image
+                <SafeImage
                   src={allImages[currentImageIndex] || "/placeholder.svg"}
                   alt={experience.company}
                   width={300}
@@ -133,6 +134,13 @@ export default function WorkExperienceModal({ experience, isOpen, onClose }: Wor
               {experience.longDescription || experience.description}
             </p>
           </div>
+
+          {experience.schoolRoles && experience.schoolRoles.length > 0 && (
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Roles</h3>
+              <SchoolRolesBreakdown roles={experience.schoolRoles} />
+            </div>
+          )}
 
           {/* Stats/Accomplishments */}
           {experience.stats && experience.stats.length > 0 && (

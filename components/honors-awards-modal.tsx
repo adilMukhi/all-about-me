@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Image from "next/image"
+import SafeImage from "@/components/safe-image"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -32,7 +32,9 @@ export default function HonorsAwardsModal({ award, isOpen, onClose }: HonorsAwar
     return null
   }
 
-  const allImages = [award.image, ...(award.images || [])].filter(Boolean)
+  const allImages = [...(Array.isArray(award.image) ? award.image : [award.image]), ...(award.images || [])].filter(
+    Boolean,
+  )
   const hasMultipleImages = allImages.length > 1
 
   const handleClose = () => {
@@ -49,7 +51,12 @@ export default function HonorsAwardsModal({ award, isOpen, onClose }: HonorsAwar
     <Dialog open={isOpen} onOpenChange={handleOpenChange}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold pr-8" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
+          <DialogTitle
+            className="text-2xl font-bold pr-8"
+            style={{
+              fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif",
+            }}
+          >
             {award.title}
           </DialogTitle>
           <p className="text-lg text-muted-foreground">
@@ -59,43 +66,48 @@ export default function HonorsAwardsModal({ award, isOpen, onClose }: HonorsAwar
 
         <div className="space-y-6">
           {/* Image Section */}
-          <div className="relative">
-            <div className={`grid gap-4 ${hasMultipleImages && allImages.length > 2 ? "grid-cols-2" : "grid-cols-1"}`}>
-              {hasMultipleImages && allImages.length > 2 ? (
-                allImages.map((img, index) => (
-                  <Image
-                    key={index}
-                    src={img || "/placeholder.svg"}
-                    alt={`${award.title} - Image ${index + 1}`}
-                    width={200}
-                    height={120}
-                    className="rounded-lg object-cover w-full max-w-[200px]"
+          {allImages.length > 0 && (
+            <div className="relative">
+              <div
+                className={`grid gap-4 ${hasMultipleImages && allImages.length > 2 ? "grid-cols-2" : "grid-cols-1"}`}
+              >
+                {hasMultipleImages && allImages.length > 2 ? (
+                  allImages.map((img, index) => (
+                    <SafeImage
+                      key={index}
+                      src={img}
+                      alt={`${award.title} - Image ${index + 1}`}
+                      width={200}
+                      height={120}
+                      className="rounded-lg object-cover w-full max-w-[200px]"
+                    />
+                  ))
+                ) : (
+                  <SafeImage
+                    key={currentImageIndex}
+                    src={allImages[currentImageIndex]}
+                    alt={award.title}
+                    width={300}
+                    height={180}
+                    className="rounded-lg object-cover w-full max-w-[300px]"
                   />
-                ))
-              ) : (
-                <Image
-                  src={allImages[currentImageIndex] || "/placeholder.svg"}
-                  alt={award.title}
-                  width={300}
-                  height={180}
-                  className="rounded-lg object-cover w-full max-w-[300px]"
-                />
+                )}
+              </div>
+
+              {/* Image navigation for single image view with multiple images */}
+              {hasMultipleImages && allImages.length <= 2 && (
+                <div className="flex justify-center mt-4 space-x-2">
+                  {allImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`w-3 h-3 rounded-full ${currentImageIndex === index ? "bg-primary" : "bg-gray-300"}`}
+                    />
+                  ))}
+                </div>
               )}
             </div>
-
-            {/* Image navigation for single image view with multiple images */}
-            {hasMultipleImages && allImages.length <= 2 && (
-              <div className="flex justify-center mt-4 space-x-2">
-                {allImages.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentImageIndex(index)}
-                    className={`w-3 h-3 rounded-full ${currentImageIndex === index ? "bg-primary" : "bg-gray-300"}`}
-                  />
-                ))}
-              </div>
-            )}
-          </div>
+          )}
 
           {/* Description */}
           <div>
@@ -116,14 +128,16 @@ export default function HonorsAwardsModal({ award, isOpen, onClose }: HonorsAwar
           </div>
 
           {/* Learn More Button */}
-          <div className="flex justify-end pt-4">
-            <Button asChild>
-              <a href={award.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                Learn More
-                <ExternalLink className="h-4 w-4" />
-              </a>
-            </Button>
-          </div>
+          {award.link && (
+            <div className="flex justify-end pt-4">
+              <Button asChild>
+                <a href={award.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  Learn More
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              </Button>
+            </div>
+          )}
         </div>
       </DialogContent>
     </Dialog>

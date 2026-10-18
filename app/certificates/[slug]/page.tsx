@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Link from "next/link"
-import Image from "next/image"
+import SafeImage from "@/components/safe-image"
 import Script from "next/script"
 import { ArrowLeft, ExternalLink, Sparkles } from "lucide-react"
 
@@ -155,16 +155,16 @@ export default async function CertificateDetailPage({ params }: { params: Promis
               </div>
 
               <div className="space-y-6">
-                <div className="overflow-hidden rounded-2xl border bg-card shadow-lg">
-                  <div className="relative aspect-[4/3]">
-                    <Image
-                      src={certificate.image || "/placeholder.svg"}
-                      alt={certificate.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
+                {[certificate.image, ...(certificate.images || [])].filter(Boolean).map((img, index) => (
+                  <SafeImage
+                    key={img}
+                    src={img}
+                    alt={index === 0 ? certificate.name : `${certificate.name} - Image ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    wrapperClassName="relative aspect-[4/3] overflow-hidden rounded-2xl border bg-card shadow-lg"
+                  />
+                ))}
 
                 {certificate.link && certificate.link.startsWith("http") && (
                   <div className="rounded-2xl border bg-card p-6 shadow-sm">

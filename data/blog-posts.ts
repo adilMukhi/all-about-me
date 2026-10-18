@@ -11,7 +11,7 @@ export type BlogPost = {
   learnMoreUrl?: string // New field for external "Learn More" links
 }
 
-export const blogPosts: BlogPost[] = [
+const posts: BlogPost[] = [
     {
     title: "The Future Is Now Awards: Honoured to Be Named Top 50 Under 18 in Canada",
     subtitle: "Celebrating youth leadership, advocacy, and national impact at a landmark event",
@@ -247,3 +247,6 @@ export const blogPosts: BlogPost[] = [
     learnMoreUrl: "https://www.instagram.com/p/DB0a2wmo49U/?img_index=1",
   },
 ]
+
+// Newest first, so every listing and the homepage "latest" card stay in date order
+export const blogPosts: BlogPost[] = [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())

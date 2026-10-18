@@ -19,7 +19,7 @@ export default function DrInterestedClient() {
 
   const stats = [
     { label: "Executives", value: "360+", icon: Users },
-    { label: "Members", value: "1,700", icon: Trophy },
+    { label: "Members", value: "2,100+", icon: Trophy },
     { label: "Countries", value: "106", icon: Globe },
     { label: "Events", value: "20+", icon: Zap },
   ]
@@ -126,13 +126,13 @@ export default function DrInterestedClient() {
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
                     As Founder and Executive Director of Dr. Interested, I design programs and initiatives that empower
-                    youth through mentorship, advocacy, and impactful events. Our platform connects 1,700+ youth
+                    youth through mentorship, advocacy, and impactful events. Our platform connects 2,100+ youth
                     globally, fostering a community where students can explore their curiosity, engage in meaningful
                     research, and become leaders in their fields.
                   </p>
                   <p>
                     Dr. Interested operates with a dedicated team of 15 medical student advisors and a passionate
-                    community of 1,700+ members worldwide. We organize 20+ major events annually, creating spaces where
+                    community of 2,100+ members worldwide. We organize 20+ major events annually, creating spaces where
                     youth can collaborate, learn, and make a real impact on pressing global issues.
                   </p>
                   <p>
@@ -185,7 +185,7 @@ export default function DrInterestedClient() {
                   passions and build lasting professional relationships.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• 1700+ active members across 6 continents</li>
+                  <li>• 2,100+ active members across 6 continents</li>
                   <li>• 20+ major events annually</li>
                   <li>• 3,700,000+ reach through marketing</li>
                 </ul>
@@ -292,15 +292,15 @@ export default function DrInterestedClient() {
               name: "Adil Mukhi",
               url: "https://adilmukhi.vercel.app",
             },
-            foundingDate: "2024",
+            foundingDate: "2023-09",
             numberOfEmployees: "6",
             areaServed: "Global",
-            url: "https://drinterested.org/",
+            url: "https://www.drinterested.org/",
             sameAs: ["https://linktr.ee/dr.interested"],
             image: "https://i.postimg.cc/r06G4R5g/Adil-Mukhi-Hosting-The-Minds-Project-Panel.png",
             statistics: {
               executives: "360",
-              members: "1700",
+              members: "2100",
               countries: "106",
               events: "20",
               impacted: "160000",
