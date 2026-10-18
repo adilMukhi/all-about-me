@@ -5,8 +5,10 @@ import SafeImage from "@/components/safe-image"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import { ExternalLink } from "lucide-react"
 import type { Award } from "@/data/honors-awards"
+import { getHonorPath } from "@/lib/seo-paths"
 
 interface HonorsAwardsModalProps {
   award: Award | null
@@ -127,17 +129,20 @@ export default function HonorsAwardsModal({ award, isOpen, onClose }: HonorsAwar
             </div>
           </div>
 
-          {/* Learn More Button */}
-          {award.link && (
-            <div className="flex justify-end pt-4">
+          {/* Links: the award's own page, plus the source when there is one */}
+          <div className="flex flex-wrap justify-end gap-3 pt-4">
+            <Button asChild variant="outline">
+              <Link href={getHonorPath(award)}>View award page</Link>
+            </Button>
+            {award.link && (
               <Button asChild>
                 <a href={award.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   Learn More
                   <ExternalLink className="h-4 w-4" />
                 </a>
               </Button>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </DialogContent>
     </Dialog>
