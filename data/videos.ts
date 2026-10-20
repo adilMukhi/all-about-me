@@ -26,6 +26,20 @@ export interface VideoItem {
 
 export const videos: VideoItem[] = [
   {
+    slug: "omni-news-punjabi-ontario-honours-20-exceptional-young-people",
+    title: "Ontario Honours Achievements of 20 Exceptional Young People",
+    description:
+      "OMNI News Punjabi covers the 2024 and 2025 Ontario Medal for Young Volunteers ceremony at Queen's Park. Adil Mukhi explains how Dr. Interested connects equity-deserving youth with doctors, politicians, and career education, reaching 160,000 young people.",
+    publisher: "OMNI Television",
+    date: "2026-10-19",
+    platform: "youtube",
+    videoId: "n3epqtr3ywM",
+    watchUrl: "https://www.youtube.com/watch?v=n3epqtr3ywM",
+    category: "Interview",
+    notes:
+      "Adil Mukhi: \"We had missed a good chunk of our career education. And looking back at it, there isn't much career education as it is. A lot of people don't really know what they want to go into. There are so many equity deserving youth that have never had an opportunity to talk with someone in a field they want to go into, that have never met their elected official, that have never had a chance to talk with a doctor outside of regular visits. So we thought that this is something that we could address. We could reach out to doctors and politicians in our local communities, and we were able to get 160,000 youth access to educational programs. This has given them a chance to explore different careers.\"",
+  },
+  {
     slug: "tedx-stress-memory-and-why-you-cant-find-your-keys",
     title: "Stress, Memory, and Why You Can't Find Your Keys",
     description:
