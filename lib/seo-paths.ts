@@ -71,7 +71,8 @@ export function getMediaBySlug(slug: string) {
 }
 // Search results show about 155 characters of a description, so longer text is cut at a word break
 export function metaDescription(text: string, max = 155) {
-  const clean = text.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim()
+  // Drop markup, then any stray angle brackets, so no fragment of a tag can survive
+  const clean = text.replace(/<[^>]*>/g, " ").replace(/[<>]/g, "").replace(/\s+/g, " ").trim()
   if (clean.length <= max) return clean
   const cut = clean.slice(0, max - 1)
   return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:.\s-]+$/, "")}…`
