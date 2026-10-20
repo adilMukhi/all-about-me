@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!experience || experience.company === "Dr. Interested") {
     return {
       title: "Experience",
-      description: "Explore Adil Mukhi's indexed experience pages.",
+      description: "Explore Adil Mukhi's experience.",
     }
   }
 
@@ -132,7 +132,7 @@ export default async function ExperienceDetailPage({ params }: { params: Promise
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary mb-5">
                   <Sparkles className="h-4 w-4" />
-                  Indexed experience page
+                  Experience
                 </div>
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl" style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                   {experience.title}

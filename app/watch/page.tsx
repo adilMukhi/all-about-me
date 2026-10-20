@@ -162,7 +162,7 @@ export default function WatchIndexPage() {
                         <Badge variant="secondary">{video.category}</Badge>
                         <span>{video.publisher}</span>
                       </CardDescription>
-                      <CardTitle className="text-lg" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
+                      <CardTitle as="h2" className="text-lg" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                         <Link href={href} className="hover:text-primary">
                           {video.title}
                         </Link>

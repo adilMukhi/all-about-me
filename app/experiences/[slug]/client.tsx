@@ -130,16 +130,22 @@ export default function BlogPostClient({ post, slug }: BlogPostClientProps) {
                   </div>
 
                   {/* Pagination dots */}
-                  <div className="flex justify-center gap-1.5 mt-4">
+                  <div className="flex justify-center mt-3">
                     {post.images.map((_, index) => (
                       <button
                         key={index}
+                        type="button"
                         onClick={() => setCurrentIndex(index)}
-                        className={`w-2 h-2 rounded-full transition-all ${
-                          index === currentIndex ? "bg-primary w-4" : "bg-gray-300 hover:bg-gray-400"
-                        }`}
+                        className="group flex h-6 min-w-6 items-center justify-center px-0.5"
                         aria-label={`Go to image ${index + 1}`}
-                      />
+                        aria-current={index === currentIndex}
+                      >
+                        <span
+                          className={`block h-2 rounded-full transition-all ${
+                            index === currentIndex ? "w-4 bg-primary" : "w-2 bg-muted-foreground/40 group-hover:bg-muted-foreground/70"
+                          }`}
+                        />
+                      </button>
                     ))}
                   </div>
                 </div>

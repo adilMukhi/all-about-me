@@ -17,12 +17,14 @@ export default function SocialLinks() {
   return (
     <section
       id="social-links"
+      aria-labelledby="social-links-heading"
       className="py-6 bg-gradient-to-b from-background to-primary/5"
       style={{ fontFamily: "'Times New Roman', Times, serif" }}
     >
       <div className="container max-w-6xl">
         <div className="text-left mb-6">
           <h2
+            id="social-links-heading"
             className="mb-4 text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl normal-case"
             style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
           >

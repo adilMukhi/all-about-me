@@ -140,7 +140,7 @@ export const experiencesMetadata: Metadata = {
 export const experienceIndexMetadata: Metadata = {
   title: "Experience Library",
   description:
-    "Explore Adil Mukhi's indexed experience pages for leadership roles, youth advocacy work, research, public speaking, and community impact.",
+    "Adil Mukhi's leadership roles, research appointments, advisory work, and public impact projects, from Dr. Interested to SickKids.",
   alternates: {
     canonical: `${siteUrl}/experience`,
   },
@@ -149,7 +149,7 @@ export const experienceIndexMetadata: Metadata = {
     siteName: "Adil Mukhi",
     title: "Experience Library",
     description:
-      "Indexed landing pages for Adil Mukhi's roles and leadership experiences across youth advocacy, research, and public service.",
+      "Adil Mukhi's roles and leadership experience across youth advocacy, research, and public service.",
     url: `${siteUrl}/experience`,
     images: [{ ...defaultOgImage, alt: "Adil Mukhi Experience Library" }],
   },
@@ -157,7 +157,7 @@ export const experienceIndexMetadata: Metadata = {
     ...defaultTwitter,
     title: "Experience Library | Adil Mukhi",
     description:
-      "Indexed landing pages for Adil Mukhi's leadership roles, public speaking, research, and youth advocacy work.",
+      "Adil Mukhi's leadership roles, public speaking, research, and youth advocacy work.",
   },
 }
 
@@ -173,7 +173,7 @@ export const certificateIndexMetadata: Metadata = {
     siteName: "Adil Mukhi",
     title: "Certificates & Credentials",
     description:
-      "Indexed certificate pages highlighting Adil Mukhi's training, credentials, and continuing education.",
+      "Adil Mukhi's training, credentials, and continuing education.",
     url: `${siteUrl}/certificates`,
     images: [{ ...defaultOgImage, alt: "Adil Mukhi Certificates and Credentials" }],
   },
@@ -181,14 +181,14 @@ export const certificateIndexMetadata: Metadata = {
     ...defaultTwitter,
     title: "Certificates & Credentials | Adil Mukhi",
     description:
-      "Indexed certificate pages highlighting Adil Mukhi's healthcare, accessibility, and leadership credentials.",
+      "Adil Mukhi's healthcare, accessibility, and leadership credentials.",
   },
 }
 
 export const educationIndexMetadata: Metadata = {
   title: "Education & Training",
   description:
-    "Explore Adil Mukhi's education, professional training, and academic programs through dedicated indexable pages.",
+    "Adil Mukhi's academic achievements, IB studies, and programs in medicine, research, and leadership at universities and hospitals.",
   alternates: {
     canonical: `${siteUrl}/education`,
   },
@@ -197,7 +197,7 @@ export const educationIndexMetadata: Metadata = {
     siteName: "Adil Mukhi",
     title: "Education & Training",
     description:
-      "Indexed education pages covering Adil Mukhi's academic background, training, and professional development.",
+      "Adil Mukhi's academic background, training, and professional development.",
     url: `${siteUrl}/education`,
     images: [{ ...defaultOgImage, alt: "Adil Mukhi Education and Training" }],
   },
@@ -205,14 +205,14 @@ export const educationIndexMetadata: Metadata = {
     ...defaultTwitter,
     title: "Education & Training | Adil Mukhi",
     description:
-      "Indexed education pages covering Adil Mukhi's academic background, training, and professional development.",
+      "Adil Mukhi's academic background, training, and professional development.",
   },
 }
 
 export const volunteerIndexMetadata: Metadata = {
   title: "Volunteer Work",
   description:
-    "Explore Adil Mukhi's indexed volunteer work pages covering community service, youth leadership, research volunteering, and public engagement.",
+    "Adil Mukhi's volunteer work, covering community service, youth leadership, research volunteering, and public engagement.",
   alternates: {
     canonical: `${siteUrl}/volunteer`,
   },
@@ -221,7 +221,7 @@ export const volunteerIndexMetadata: Metadata = {
     siteName: "Adil Mukhi",
     title: "Volunteer Work",
     description:
-      "Indexed volunteer pages covering Adil Mukhi's community service, youth leadership, and research volunteering.",
+      "Adil Mukhi's community service, youth leadership, and research volunteering.",
     url: `${siteUrl}/volunteer`,
     images: [{ ...defaultOgImage, alt: "Adil Mukhi Volunteer Work" }],
   },
@@ -229,14 +229,14 @@ export const volunteerIndexMetadata: Metadata = {
     ...defaultTwitter,
     title: "Volunteer Work | Adil Mukhi",
     description:
-      "Indexed volunteer pages covering Adil Mukhi's community service, youth leadership, and research volunteering.",
+      "Adil Mukhi's community service, youth leadership, and research volunteering.",
   },
 }
 
 export const honorsIndexMetadata: Metadata = {
   title: "Honors & Awards",
   description:
-    "Explore Adil Mukhi's indexed honors and awards pages, including national recognition, academic distinctions, and community awards.",
+    "Adil Mukhi's honors and awards, including national recognition, academic distinctions, and community awards.",
   alternates: {
     canonical: `${siteUrl}/honors`,
   },
@@ -245,7 +245,7 @@ export const honorsIndexMetadata: Metadata = {
     siteName: "Adil Mukhi",
     title: "Honors & Awards",
     description:
-      "Indexed honors and awards pages for Adil Mukhi's academic distinctions, national awards, and community recognition.",
+      "Adil Mukhi's academic distinctions, national awards, and community recognition.",
     url: `${siteUrl}/honors`,
     images: [{ ...defaultOgImage, alt: "Adil Mukhi Honors and Awards" }],
   },
@@ -253,7 +253,7 @@ export const honorsIndexMetadata: Metadata = {
     ...defaultTwitter,
     title: "Honors & Awards | Adil Mukhi",
     description:
-      "Indexed honors and awards pages for Adil Mukhi's academic distinctions, national awards, and community recognition.",
+      "Adil Mukhi's academic distinctions, national awards, and community recognition.",
   },
 }
 
@@ -283,7 +283,7 @@ export const testimonialsIndexMetadata: Metadata = {
 export const mediaIndexMetadata: Metadata = {
   title: "Media Coverage",
   description:
-    "Explore indexed media coverage pages featuring interviews, articles, and spotlights on Adil Mukhi's work.",
+    "Media coverage featuring interviews, articles, and spotlights on Adil Mukhi's work.",
   alternates: {
     canonical: `${siteUrl}/media`,
   },
@@ -292,14 +292,14 @@ export const mediaIndexMetadata: Metadata = {
     siteName: "Adil Mukhi",
     title: "Media Coverage",
     description:
-      "Indexed media pages featuring interviews, articles, and public coverage of Adil Mukhi's work.",
+      "Interviews, articles, and public coverage of Adil Mukhi's work.",
     url: `${siteUrl}/media`,
     images: [{ ...defaultOgImage, alt: "Adil Mukhi Media Coverage" }],
   },
   twitter: {
     ...defaultTwitter,
     title: "Media Coverage | Adil Mukhi",
-    description: "Indexed media pages featuring interviews, articles, and public coverage of Adil Mukhi's work.",
+    description: "Interviews, articles, and public coverage of Adil Mukhi's work.",
   },
 }
 

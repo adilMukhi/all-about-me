@@ -7,54 +7,13 @@ import { ArrowLeft, Sparkles } from "lucide-react"
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
+import { testimonials } from "@/data/testimonials"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { slugify, metaDescription, seoTitle } from "@/lib/seo-paths"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
-const testimonials = [
-  {
-    name: "Peace Mukazi Ndekezi, Ph.D.",
-    role: "PhD in Conflict Studies | Women-Led Peacebuilding & Community-Based Approaches | Researcher | Public Engagement and Advocacy",
-    relationship: "Senior Colleague",
-    timeKnown: "September 17, 2025",
-    connection: "Results Canada volunteer collaboration",
-    testimonial:
-      "I have had the privilege of working with Adil through his volunteer engagement with Results Canada, and I have been continually impressed by his leadership, dedication, and passion for advocacy.",
-    image: "/Peace-Mukazi-Ndekei.jpg",
-  },
-  {
-    name: "Kai Flicker",
-    role: "Youth Program Coordinator at Children First Canada | University of Ottawa Student",
-    relationship: "Direct Manager",
-    timeKnown: "September 15, 2025",
-    connection: "SDG Accelerator Program Facilitator",
-    testimonial:
-      "I had the pleasure of working with Adil during the SDG Accelerator Program at Children First Canada, where he served as a Facilitator.",
-    image: "/KaiFlicker.jpg",
-  },
-  {
-    name: "Kate Tucker",
-    role: "Medical Student at NOSM U",
-    relationship: "Mentor",
-    timeKnown: "September 29, 2025",
-    connection: "STEM Fellowship mentorship program",
-    testimonial:
-      "I had the pleasure of mentoring Adil through the STEM Fellowship mentorship program. Since first meeting him, he has impressed me with his drive, leadership, and curiosity.",
-    image: "/KateTucker.jpg",
-  },
-  {
-    name: "Michael Furdyk",
-    role: "Co-founder & Director of Innovation, TakingITGlobal",
-    relationship: "Client",
-    timeKnown: "September 23, 2025",
-    connection: "Curriculum review for YVIP AI lessons and modules",
-    testimonial:
-      "We appreciate [Adil's] insights in your review of our new Artificial Intelligence lessons and curriculum modules, helping us tailor them to students across middle and high school.",
-    image: "/MichaelFurdyk.jpg",
-  },
-]
 
 export function generateStaticParams() {
   return testimonials.map((testimonial) => ({ slug: slugify(`${testimonial.name}-${testimonial.connection}`) }))
@@ -67,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!testimonial) {
     return {
       title: "Testimonials",
-      description: "Explore Adil Mukhi's indexed testimonial pages.",
+      description: "Explore Adil Mukhi's testimonial.",
     }
   }
 
@@ -181,7 +140,7 @@ export default async function TestimonialDetailPage({ params }: { params: Promis
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary mb-5">
                   <Sparkles className="h-4 w-4" />
-                  Indexed testimonial page
+                  Testimonial
                 </div>
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl" style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                   {testimonial.name}

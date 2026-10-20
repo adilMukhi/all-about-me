@@ -1,162 +1,40 @@
 "use client"
 
-import SafeImage from "@/components/safe-image"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { certificates } from "@/data/certificates"
-import { useState, useEffect } from "react"
-import { useRouter } from "next/navigation"
-import { Maximize2 } from "lucide-react"
-import CertificatesModal from "./certificates-modal"
-import Link from "next/link"
-import { slugify } from "@/lib/seo-paths"
+import CollectionGrid from "@/components/collection-grid"
+import CertificatesModal from "@/components/certificates-modal"
+import { certificates, type Certificate } from "@/data/certificates"
+import { getCertificatePath } from "@/lib/seo-paths"
 
-export default function Certificates() {
-  const [selectedCertificate, setSelectedCertificate] = useState<(typeof certificates)[0] | null>(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const router = useRouter()
+const slugOf = (certificate: Certificate) => getCertificatePath(certificate).split("/").pop() as string
 
-  useEffect(() => {
-    const handleUrlParams = () => {
-      const urlParams = new URLSearchParams(window.location.search)
-      const certificateSlug = urlParams.get("certificate")
-
-      if (certificateSlug) {
-        const certificate = certificates.find((cert) => cert.slug === certificateSlug)
-        if (certificate) {
-          setSelectedCertificate(certificate)
-          setIsModalOpen(true)
-        }
-      }
-    }
-
-    handleUrlParams()
-    window.addEventListener("popstate", handleUrlParams)
-    return () => window.removeEventListener("popstate", handleUrlParams)
-  }, [])
-
-  const openModal = (certificate: (typeof certificates)[0]) => {
-    setSelectedCertificate(certificate)
-    setIsModalOpen(true)
-    const slug =
-      certificate.slug ||
-      certificate.name
-        .toLowerCase()
-        .replace(/\s+/g, "-")
-        .replace(/[^a-z0-9-]/g, "")
-    const url = new URL(window.location.href)
-    url.searchParams.set("certificate", slug)
-    window.history.pushState(null, "", url.toString())
-  }
-
-  const closeModal = () => {
-    setIsModalOpen(false)
-    setSelectedCertificate(null)
-    const url = new URL(window.location.href)
-    url.searchParams.delete("certificate")
-    window.history.pushState(null, "", url.toString())
-  }
-
-  const mainCertificates = certificates.slice(0, 6)
-  const additionalCertificates = certificates.slice(6)
-
+// Certificates, used on the Background page and on /certificates
+export default function CertificatesSection({ showHeading = true }: { showHeading?: boolean }) {
   return (
-    <section id="certificates" className="container py-16" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-      <h2
-        className="mb-12 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
-        style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
-      >
-        Certificates
-      </h2>
-
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-8">
-        {mainCertificates.map((cert, index) => (
-          <Card key={index} className="card-hover-effect relative group cursor-pointer" onClick={() => openModal(cert)}>
-            <Button
-              size="sm"
-              variant="secondary"
-              className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity z-10 backdrop-blur-sm"
-              onClick={(e) => {
-                e.stopPropagation()
-                openModal(cert)
-              }}
-            >
-              <Maximize2 className="h-4 w-4" />
-              <span className="sr-only">Expand details</span>
-            </Button>
-
-            <CardHeader>
-              <CardTitle style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
-                <Link
-                  href={`/background?certificate=${cert.slug || slugify(cert.name)}#certificates`}
-                  className="hover:text-primary transition-colors"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  {cert.name}
-                </Link>
-              </CardTitle>
-              <CardDescription>
-                {cert.issuer} | {cert.date}
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="flex flex-col items-center gap-4">
-              <SafeImage
-                src={cert.image || "/placeholder.svg"}
-                alt={cert.name}
-                width={150}
-                height={150}
-                className="rounded-lg object-cover"
-              />
-              <p>{cert.description}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-
-      {additionalCertificates.length > 0 && (
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold">Additional Certificates & Awards</h3>
-          <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-4">
-            {additionalCertificates.map((cert, index) => (
-              <Card
-                key={index + 6}
-                className="cursor-pointer hover:shadow-lg transition-all duration-300 relative group overflow-hidden aspect-square"
-                onClick={() => openModal(cert)}
-              >
-                <div className="relative w-full h-full">
-                  <SafeImage src={cert.image || "/placeholder.svg"} alt={cert.name} fill className="object-cover" />
-                  <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-4 text-white text-center">
-                    <h4 className="font-semibold text-sm mb-2 line-clamp-2">
-                      <Link
-                        href={`/background?certificate=${cert.slug || slugify(cert.name)}#certificates`}
-                        className="hover:underline"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {cert.name}
-                      </Link>
-                    </h4>
-                    <p className="text-xs mb-3 line-clamp-3">{cert.description}</p>
-                    <Button
-                      size="sm"
-                      variant="secondary"
-                      className="backdrop-blur-sm"
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        openModal(cert)
-                      }}
-                    >
-                      <Maximize2 className="h-3 w-3 mr-1" />
-                      Expand
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
+    <CollectionGrid<Certificate>
+      heading="Certificates"
+      sectionId={showHeading ? "certificates-list" : undefined}
+      showHeading={showHeading}
+      groups={[
+        { items: certificates.slice(0, 6) },
+        { title: "Additional Certificates", items: certificates.slice(6) },
+      ]}
+      param="certificate"
+      getSlug={slugOf}
+      getHref={getCertificatePath}
+      toCard={(certificate) => ({
+        title: certificate.name,
+        subtitle: certificate.issuer,
+        date: certificate.date,
+        description: certificate.description,
+        image: certificate.image,
+        imageAlt: `${certificate.name} certificate`,
+        fit: "contain",
+        tags: certificate.skills,
+        sourceUrl: certificate.link?.startsWith("http") ? certificate.link : undefined,
+      })}
+      renderModal={({ item, isOpen, onClose, pageHref }) => (
+        <CertificatesModal certificate={item} isOpen={isOpen} onClose={onClose} pageHref={pageHref} />
       )}
-
-      <CertificatesModal certificate={selectedCertificate} isOpen={isModalOpen} onClose={closeModal} />
-    </section>
+    />
   )
 }
