@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import type { Certificate } from "@/data/certificates"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
@@ -11,9 +12,11 @@ interface CertificatesModalProps {
   certificate: Certificate | null
   isOpen: boolean
   onClose: () => void
+  // The item's own page, linked from the bottom of the pop up
+  pageHref?: string
 }
 
-export default function CertificatesModal({ certificate, isOpen, onClose }: CertificatesModalProps) {
+export default function CertificatesModal({ certificate, isOpen, onClose, pageHref }: CertificatesModalProps) {
   if (!certificate) return null
 
   return (
@@ -76,6 +79,13 @@ export default function CertificatesModal({ certificate, isOpen, onClose }: Cert
             </div>
           )}
         </div>
+        {pageHref && (
+          <div className="flex justify-end border-t pt-4">
+            <Button asChild variant="outline">
+              <Link href={pageHref}>View full page</Link>
+            </Button>
+          </div>
+        )}
       </DialogContent>
     </Dialog>
   )

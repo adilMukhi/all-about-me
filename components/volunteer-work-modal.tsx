@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useEffect } from "react"
 import Image from "next/image"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
@@ -13,9 +14,11 @@ interface VolunteerWorkModalProps {
   experience: VolunteerWork | null
   isOpen: boolean
   onClose: () => void
+  // The item's own page, linked from the bottom of the pop up
+  pageHref?: string
 }
 
-export default function VolunteerWorkModal({ experience, isOpen, onClose }: VolunteerWorkModalProps) {
+export default function VolunteerWorkModal({ experience, isOpen, onClose, pageHref }: VolunteerWorkModalProps) {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isOpen) {
@@ -145,6 +148,13 @@ export default function VolunteerWorkModal({ experience, isOpen, onClose }: Volu
             </Button>
           </div>
         </div>
+        {pageHref && (
+          <div className="flex justify-end border-t pt-4">
+            <Button asChild variant="outline">
+              <Link href={pageHref}>View full page</Link>
+            </Button>
+          </div>
+        )}
       </DialogContent>
     </Dialog>
   )

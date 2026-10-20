@@ -114,7 +114,7 @@ export default function ExperiencesPage() {
                       </div>
                     </div>
                     <CardHeader>
-                      <CardTitle style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }} className="transition-colors">
+                      <CardTitle as="h2" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }} className="transition-colors">
                         <Link href={`/experiences/${post.slug}`} className="hover:text-primary">
                           {post.title}
                         </Link>

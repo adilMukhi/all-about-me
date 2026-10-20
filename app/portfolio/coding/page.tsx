@@ -72,7 +72,7 @@ export default function CodingPortfolioPage() {
                     />
                   </div>
                   <CardHeader>
-                    <CardTitle style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>{project.title}</CardTitle>
+                    <CardTitle as="h2" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>{project.title}</CardTitle>
                     <CardDescription>{project.description}</CardDescription>
                   </CardHeader>
                   <CardContent>

@@ -8,15 +8,16 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ExternalLink } from "lucide-react"
 import type { Award } from "@/data/honors-awards"
-import { getHonorPath } from "@/lib/seo-paths"
 
 interface HonorsAwardsModalProps {
   award: Award | null
   isOpen: boolean
   onClose: () => void
+  // The item's own page, linked from the bottom of the pop up
+  pageHref?: string
 }
 
-export default function HonorsAwardsModal({ award, isOpen, onClose }: HonorsAwardsModalProps) {
+export default function HonorsAwardsModal({ award, isOpen, onClose, pageHref }: HonorsAwardsModalProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   useEffect(() => {
@@ -131,9 +132,11 @@ export default function HonorsAwardsModal({ award, isOpen, onClose }: HonorsAwar
 
           {/* Links: the award's own page, plus the source when there is one */}
           <div className="flex flex-wrap justify-end gap-3 pt-4">
-            <Button asChild variant="outline">
-              <Link href={getHonorPath(award)}>View award page</Link>
-            </Button>
+            {pageHref && (
+              <Button asChild variant="outline">
+                <Link href={pageHref}>View full page</Link>
+              </Button>
+            )}
             {award.link && (
               <Button asChild>
                 <a href={award.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">

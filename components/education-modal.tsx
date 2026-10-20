@@ -1,6 +1,8 @@
 "use client"
 
-import { Dialog, DialogContent } from "@/components/ui/dialog"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import type { Education } from "@/data/education"
@@ -9,9 +11,11 @@ interface EducationModalProps {
   education: Education | null
   isOpen: boolean
   onClose: () => void
+  // The item's own page, linked from the bottom of the pop up
+  pageHref?: string
 }
 
-export default function EducationModal({ education, isOpen, onClose }: EducationModalProps) {
+export default function EducationModal({ education, isOpen, onClose, pageHref }: EducationModalProps) {
   if (!education) return null
 
   const coursesHeading = education.slug === "ib-diploma" ? "Courses In Progress" : "Courses Completed"
@@ -26,12 +30,12 @@ export default function EducationModal({ education, isOpen, onClose }: Education
         <div className="space-y-6">
           {/* Header */}
           <div className="space-y-2">
-            <h2 className="text-2xl font-bold" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
+            <DialogTitle className="text-2xl font-bold" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
               {education.degree}
-            </h2>
-            <p className="text-lg text-muted-foreground">
+            </DialogTitle>
+            <DialogDescription className="text-lg text-muted-foreground">
               {education.institution} | {education.period}
-            </p>
+            </DialogDescription>
           </div>
 
           {/* Image */}
@@ -121,6 +125,13 @@ export default function EducationModal({ education, isOpen, onClose }: Education
             </div>
           )}
         </div>
+        {pageHref && (
+          <div className="flex justify-end border-t pt-4">
+            <Button asChild variant="outline">
+              <Link href={pageHref}>View full page</Link>
+            </Button>
+          </div>
+        )}
       </DialogContent>
     </Dialog>
   )

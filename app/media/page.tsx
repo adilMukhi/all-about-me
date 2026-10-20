@@ -100,29 +100,29 @@ const MediaGrid = () => {
   return (
     <section className="py-16 bg-gradient-to-b from-background to-primary/5">
       <div className="container max-w-6xl">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {mediaItems.map((item, index) => (
-            <div key={index} className="bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <li key={index} className="bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <div className="p-6 space-y-4">
                 <div className="flex items-center justify-between gap-2 mb-2">
                   <span className={`text-xs font-medium px-2 py-1 rounded-full bg-muted ${getTypeColor(item.type)}`}>
                     {getTypeLabel(item.type)}
                   </span>
                 </div>
-                <h3 className="text-lg font-semibold text-primary leading-tight">
-                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                <h2 className="text-lg font-semibold text-primary leading-tight">
+                  <Link href={getMediaPath(item)} className="hover:underline">
                     {item.title}
-                  </a>
-                </h3>
+                  </Link>
+                </h2>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Calendar className="h-4 w-4" />
+                  <Calendar className="h-4 w-4" aria-hidden="true" />
                   <span>
                     {item.publication}, {item.date}
                   </span>
                 </div>
                 <div className="bg-muted/50 rounded-md p-3 border-l-2 border-primary/20">
-                  <Quote className="h-4 w-4 text-primary mb-2" />
-                  <p className="text-sm text-muted-foreground leading-relaxed italic">"{item.quote}"</p>
+                  <Quote className="h-4 w-4 text-primary mb-2" aria-hidden="true" />
+                  <blockquote className="text-sm text-muted-foreground leading-relaxed italic">&ldquo;{item.quote}&rdquo;</blockquote>
                 </div>
                 <a
                   href={item.link}
@@ -130,13 +130,14 @@ const MediaGrid = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-medium"
                 >
-                  Read More
-                  <ExternalLink className="h-3 w-3" />
+                  Read on {item.publication}
+                  <span className="sr-only"> (opens in a new tab)</span>
+                  <ExternalLink className="h-3 w-3" aria-hidden="true" />
                 </a>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
         <div className="mt-10 flex justify-center">
           <a
             href="https://feeling-creations.com/articles/artist-adil-mukhi-on-innovation-and-environmental-art"

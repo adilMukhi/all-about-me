@@ -124,7 +124,7 @@ export default function ClientBackgroundPage() {
                   }, 100)
                 }}
               >
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="w-full" aria-label="Choose a background section">
                   <SelectValue placeholder="Select section" />
                 </SelectTrigger>
                 <SelectContent>
@@ -140,11 +140,14 @@ export default function ClientBackgroundPage() {
               </Select>
             </div>
 
-            <div className="hidden xl:flex justify-center mb-12">
+            <nav aria-label="Background sections" className="hidden xl:flex justify-center mb-12">
               <div className="flex justify-center gap-3">
                 {sections.map((section) => (
                   <button
                     key={section.id}
+                    type="button"
+                    aria-pressed={activeSection === section.id}
+                    aria-controls={section.id}
                     onClick={() => {
                       setActiveSection(section.id)
                       // Update URL hash
@@ -163,12 +166,12 @@ export default function ClientBackgroundPage() {
                       "overflow-hidden",
                     )}
                   >
-                    <section.icon className="h-4 w-4" />
+                    <section.icon className="h-4 w-4" aria-hidden="true" />
                     <span className="font-medium whitespace-nowrap">{section.title}</span>
                   </button>
                 ))}
               </div>
-            </div>
+            </nav>
 
             {/* Render all sections but only show the active one */}
             {sections.map((section) => (

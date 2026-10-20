@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return mediaIndexMetadata
   }
 
-  const title = `${item.title}`
+  const title = `${item.title} (${item.publication})`
   const description = metaDescription(item.quote)
 
   return {
@@ -137,7 +137,7 @@ export default async function MediaDetailPage({ params }: { params: Promise<{ sl
                 <div>
                   <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary mb-5">
                     <Sparkles className="h-4 w-4" />
-                    Indexed media page
+                    Media coverage
                   </div>
                   <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl" style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
                     {item.title}

@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useState, useEffect } from "react"
 import SafeImage from "@/components/safe-image"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
@@ -13,9 +14,11 @@ interface WorkExperienceModalProps {
   experience: WorkExperience | null
   isOpen: boolean
   onClose: () => void
+  // The item's own page, linked from the bottom of the pop up
+  pageHref?: string
 }
 
-export default function WorkExperienceModal({ experience, isOpen, onClose }: WorkExperienceModalProps) {
+export default function WorkExperienceModal({ experience, isOpen, onClose, pageHref }: WorkExperienceModalProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   useEffect(() => {
@@ -179,6 +182,13 @@ export default function WorkExperienceModal({ experience, isOpen, onClose }: Wor
             </Button>
           </div>
         </div>
+        {pageHref && (
+          <div className="flex justify-end border-t pt-4">
+            <Button asChild variant="outline">
+              <Link href={pageHref}>View full page</Link>
+            </Button>
+          </div>
+        )}
       </DialogContent>
     </Dialog>
   )

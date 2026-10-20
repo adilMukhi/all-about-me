@@ -58,7 +58,7 @@ export default function ProfilesPage() {
 
             <Card>
               <CardHeader>
-                <CardTitle style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>Official Links</CardTitle>
+                <CardTitle as="h2" style={{ fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>Official Links</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">

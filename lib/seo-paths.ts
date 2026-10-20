@@ -5,18 +5,12 @@ import { mediaItems, type MediaItem } from "@/data/media-items"
 import { workExperiences, type WorkExperience } from "@/data/work-experience"
 import { volunteerWork, type VolunteerWork } from "@/data/volunteer-work"
 
+import { slugify } from "@/lib/slugify"
+
+export { slugify }
+
 export const drInterestedExperiencePath = "/experience/drinterested"
 
-export function slugify(value: string) {
-  return value
-    .toLowerCase()
-    .trim()
-    .replace(/['".]/g, "")
-    .replace(/\s+/g, "-")
-    .replace(/[^a-z0-9-]/g, "")
-    .replace(/-+/g, "-")
-    .replace(/^-|-$/g, "")
-}
 
 export function getWorkExperiencePath(experience: WorkExperience) {
   if (experience.company === "Dr. Interested") {
