@@ -6,11 +6,11 @@ import CalEmbed from "@/components/cal-embed"
 import { CAL_BOOKING_URL, CONTACT_EMAIL, WORK_PHONE_DISPLAY, WORK_PHONE_TEL } from "@/lib/site"
 
 const socialLinks = [
-  { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/adil-mukhi", color: "text-sky-400" },
+  { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/adil-mukhi", color: "text-blue-700 dark:text-sky-400" },
   { name: "GitHub", icon: Github, url: "https://github.com/adilMukhi", color: "text-foreground" },
-  { name: "My Org", icon: Building, url: "https://linktr.ee/dr.interested", color: "text-sky-300" },
-  { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/adilm.0/", color: "text-pink-400" },
-  { name: "Linktree", icon: Link, url: "https://linktr.ee/adilm.0", color: "text-green-400" },
+  { name: "My Org", icon: Building, url: "https://linktr.ee/dr.interested", color: "text-sky-700 dark:text-sky-300" },
+  { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/adilm.0/", color: "text-pink-700 dark:text-pink-400" },
+  { name: "Linktree", icon: Link, url: "https://linktr.ee/adilm.0", color: "text-green-700 dark:text-green-400" },
 ]
 
 export default function Contact() {

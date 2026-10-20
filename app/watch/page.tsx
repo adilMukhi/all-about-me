@@ -134,7 +134,7 @@ export default function WatchIndexPage() {
                       index === 0 ? "md:col-span-2 xl:col-span-2" : ""
                     }`}
                   >
-                    <Link href={href} className="block">
+                    <Link href={href} className="block" aria-label={`Watch ${video.title}`}>
                       <div className="relative aspect-video overflow-hidden bg-muted">
                         {thumb ? (
                           // eslint-disable-next-line @next/next/no-img-element

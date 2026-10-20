@@ -62,7 +62,7 @@ export default function ResearchPortfolioPage() {
                         </svg>
                       </div>
                       <div className="font-semibold text-green-700">ORCID</div>
-                      <div className="text-sm text-green-600">Academic Profile</div>
+                      <div className="text-sm text-green-700">Academic Profile</div>
                     </div>
                   </a>
                 </Button>
@@ -104,7 +104,7 @@ export default function ResearchPortfolioPage() {
                         </svg>
                       </div>
                       <div className="font-semibold text-teal-700">ResearchGate</div>
-                      <div className="text-sm text-teal-600">Research Network</div>
+                      <div className="text-sm text-teal-700">Research Network</div>
                     </div>
                   </a>
                 </Button>
@@ -121,7 +121,7 @@ export default function ResearchPortfolioPage() {
                         </svg>
                       </div>
                       <div className="font-semibold text-red-700">Academia.edu</div>
-                      <div className="text-sm text-red-600">Academic Papers</div>
+                      <div className="text-sm text-red-700">Academic Papers</div>
                     </div>
                   </a>
                 </Button>

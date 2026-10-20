@@ -37,7 +37,7 @@ const homeStructuredData = {
 
 export default function Home() {
   return (
-    <main className="theme-night min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-background text-foreground">
       <Script id="home-structured-data" type="application/ld+json">
         {JSON.stringify(homeStructuredData)}
       </Script>

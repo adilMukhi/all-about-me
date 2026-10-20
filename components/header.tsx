@@ -6,6 +6,8 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import ThemeToggle from "@/components/theme-toggle"
+import LanguageSwitcher from "@/components/language-switcher"
 import { MainNav } from "@/components/main-nav"
 import { navConfig } from "@/config/nav"
 import { cn } from "@/lib/utils"
@@ -93,22 +95,24 @@ export default function Header() {
             <Link href="/" className="mr-6 flex items-center space-x-2 hover:opacity-80 transition-opacity">
               <Image src="/pixtin.jpg" alt="Profile picture" width={40} height={40} className="rounded-full" />
               <span
-                className="hidden font-bold sm:inline-block text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 text-hover-effect"
+                className="hidden whitespace-nowrap font-bold sm:inline-block text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 text-hover-effect"
                 style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}
               >
                 Adil Mukhi
               </span>
             </Link>
           </div>
-          <div className="hidden md:flex">
+          <div className="hidden lg:flex">
             <MainNav items={navConfig.mainNav} />
           </div>
-          <div className="flex-1 flex justify-end">
-            <Button asChild className="hidden md:inline-flex button-hover-effect">
+          <div className="flex-1 flex items-center justify-end gap-2">
+            <Button asChild className="hidden lg:inline-flex button-hover-effect">
               <Link href="/services#booking:~:text=Ready%20to%20Work%20Together%3F">Book Me</Link>
             </Button>
+            <ThemeToggle />
+            <LanguageSwitcher />
           </div>
-          <div className="md:hidden">
+          <div className="lg:hidden ml-1">
             <Button
               variant="ghost"
               size="icon"

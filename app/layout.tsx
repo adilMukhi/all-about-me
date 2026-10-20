@@ -6,6 +6,9 @@ import Script from "next/script"
 import { Inter, Fredoka } from "next/font/google"
 import "./globals.css"
 import StartAnimation from "@/components/start-animation-lazy"
+import { ThemeProvider } from "@/components/theme-provider"
+import SiteChat from "@/components/site-chat"
+import TranslateRuntime from "@/components/translate-runtime"
 import { Suspense } from "react"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
@@ -186,7 +189,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en-CA" className={`scroll-smooth ${inter.variable} ${fredoka.variable}`}>
+    <html lang="en-CA" className={`scroll-smooth ${inter.variable} ${fredoka.variable}`} suppressHydrationWarning>
       <head>
         <Script id="site-structured-data" type="application/ld+json">
           {JSON.stringify([
@@ -375,10 +378,14 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-        <Suspense fallback={null}>
-          <StartAnimation />
-          {children}
-        </Suspense>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
+          <Suspense fallback={null}>
+            <StartAnimation />
+            {children}
+          </Suspense>
+          <SiteChat />
+          <TranslateRuntime />
+        </ThemeProvider>
         <Analytics />
         <SpeedInsights />
       </body>
