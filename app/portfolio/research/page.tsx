@@ -14,9 +14,46 @@ import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 
 export const metadata: Metadata = researchPortfolioMetadata
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
+
+// Each research item as a scholarly work by (or crediting) Adil, with its DOI or source link when there is one
+const researchStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${siteUrl}/portfolio/research#webpage`,
+  url: `${siteUrl}/portfolio/research`,
+  name: "Research Portfolio of Adil Mukhi",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  about: { "@id": `${siteUrl}/#person` },
+  inLanguage: "en-CA",
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: researchProjects.map((project, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": project.institution.includes("United Nations") ? "Report" : "ScholarlyArticle",
+        name: project.title,
+        description: project.description,
+        datePublished: project.year.split("-").pop(),
+        publisher: { "@type": "Organization", name: project.institution },
+        contributor: { "@id": `${siteUrl}/#person` },
+        ...(project.image ? { image: `${siteUrl}${encodeURI(project.image)}` } : {}),
+        ...(project.doiLinks?.[0] ? { identifier: `doi:${project.doiLinks[0].doiNumber}`, url: project.doiLinks[0].url } : {}),
+        ...(!project.doiLinks?.[0] && project.otherLinks?.[0] ? { url: project.otherLinks[0].url } : {}),
+      },
+    })),
+  },
+}
+
 export default function ResearchPortfolioPage() {
   return (
     <>
+      <script
+          id="research-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: (JSON.stringify(researchStructuredData)).replace(/</g, "\\u003c") }}
+        />
       <Header />
       <main className="min-h-screen bg-background">
         <section className="py-16 bg-gradient-to-b from-green-50 to-background">

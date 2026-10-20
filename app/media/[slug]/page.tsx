@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
-import Script from "next/script"
 import { ArrowLeft, ExternalLink, Play, Sparkles } from "lucide-react"
 
 import Header from "@/components/header"
@@ -12,7 +11,7 @@ import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { mediaItems } from "@/data/media-items"
-import { getMediaBySlug, getMediaPath } from "@/lib/seo-paths"
+import { getMediaBySlug, getMediaPath, metaDescription, seoTitle } from "@/lib/seo-paths"
 import { mediaIndexMetadata } from "@/app/page-metadata"
 import { videos, getVideoPath } from "@/data/videos"
 
@@ -34,11 +33,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return mediaIndexMetadata
   }
 
-  const title = `${item.title} | Adil Mukhi`
-  const description = item.quote
+  const title = `${item.title}`
+  const description = metaDescription(item.quote)
 
   return {
-    title,
+    title: seoTitle(title),
     description,
     alternates: {
       canonical: `${siteUrl}${getMediaPath(item)}`,
@@ -107,9 +106,11 @@ export default async function MediaDetailPage({ params }: { params: Promise<{ sl
   return (
     <>
       <Header />
-      <Script id={`media-${slug}-structured-data`} type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </Script>
+      <script
+        id={`media-${slug}-structured-data`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: (JSON.stringify(structuredData)).replace(/</g, "\\u003c") }}
+      />
       <main className="min-h-screen bg-background page-transition">
         <AnimatedSection>
           <section className="py-16 bg-gradient-to-b from-primary/10 to-background">

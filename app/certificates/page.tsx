@@ -8,7 +8,6 @@ import PageLayout from "@/components/page-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import Script from "next/script"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import { certificateIndexMetadata } from "../page-metadata"
 import { certificates } from "@/data/certificates"
@@ -42,9 +41,11 @@ const certificatesStructuredData = {
 export default function CertificatesIndexPage() {
   return (
     <>
-      <Script id="certificates-structured-data" type="application/ld+json">
-        {JSON.stringify(certificatesStructuredData)}
-      </Script>
+      <script
+          id="certificates-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: (JSON.stringify(certificatesStructuredData)).replace(/</g, "\\u003c") }}
+        />
       <Header />
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">

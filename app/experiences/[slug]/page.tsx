@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { blogPosts } from "@/data/blog-posts"
 import BlogPostClient from "./client"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
-import Script from "next/script"
+import { metaDescription, seoTitle } from "@/lib/seo-paths"
 import { notFound } from "next/navigation"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
@@ -50,10 +50,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   const images = postImages(post)
-  const description = post.subtitle || post.excerpt
+  const description = metaDescription(post.excerpt || post.subtitle)
 
   return {
-    title: post.title,
+    title: seoTitle(post.title),
     description,
     keywords: [post.title, post.subtitle, "Adil Mukhi", "Experiences", "youth advocacy", "research", "leadership"].filter(
       Boolean,
@@ -162,9 +162,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <>
-      <Script id="article-structured-data" type="application/ld+json">
-        {JSON.stringify(articleStructuredData)}
-      </Script>
+      <script
+          id="article-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: (JSON.stringify(articleStructuredData)).replace(/</g, "\\u003c") }}
+        />
 
       <SEOBreadcrumbs
         items={[

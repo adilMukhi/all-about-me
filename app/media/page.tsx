@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Script from "next/script"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import AnimatedSection from "@/components/animated-section"
@@ -162,11 +161,12 @@ export const metadata: Metadata = mediaIndexMetadata
 export default function MediaPage() {
   return (
     <main className="min-h-screen bg-background page-transition">
-      <Script id="media-structured-data" type="application/ld+json">
-        {JSON.stringify(mediaStructuredData)}
-      </Script>
+      <script
+          id="media-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: (JSON.stringify(mediaStructuredData)).replace(/</g, "\\u003c") }}
+        />
       <Header />
-      <h1 className="sr-only">Media - Adil Mukhi</h1>
       <AnimatedSection>
         <MediaHero />
       </AnimatedSection>

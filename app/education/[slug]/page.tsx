@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
-import Script from "next/script"
 import { ArrowLeft, ExternalLink, Sparkles } from "lucide-react"
 
 import Header from "@/components/header"
@@ -10,7 +9,7 @@ import PageLayout from "@/components/page-layout"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import { Button } from "@/components/ui/button"
 import { educationData } from "@/data/education"
-import { getEducationBySlug, getEducationPath } from "@/lib/seo-paths"
+import { getEducationBySlug, getEducationPath, metaDescription, seoTitle } from "@/lib/seo-paths"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
@@ -29,11 +28,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
   }
 
-  const title = `${education.degree} | Adil Mukhi`
-  const description = education.longDescription || education.description
+  const title = `${education.degree}`
+  const description = metaDescription(education.longDescription || education.description)
 
   return {
-    title,
+    title: seoTitle(title),
     description,
     alternates: {
       canonical: `${siteUrl}${getEducationPath(education)}`,
@@ -102,9 +101,11 @@ export default async function EducationDetailPage({ params }: { params: Promise<
   return (
     <>
       <Header />
-      <Script id={`education-${education.slug}-structured-data`} type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </Script>
+      <script
+        id={`education-${education.slug}-structured-data`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: (JSON.stringify(structuredData)).replace(/</g, "\\u003c") }}
+      />
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
           <div className="container">

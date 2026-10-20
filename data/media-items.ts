@@ -9,6 +9,15 @@ export interface MediaItem {
 
 export const mediaItems: MediaItem[] = [
   {
+    title: "Ontario Medal for Young Volunteers",
+    publication: "Government of Ontario",
+    date: "August 26, 2026",
+    link: "https://news.ontario.ca/en/backgrounder/1007941/ontario-medal-for-young-volunteers",
+    quote:
+      "Adil Mukhi contributes to community well-being through large-scale youth leadership initiatives, health and mental-health education and inclusive volunteer advocacy. His work focuses on building accessible programs that empower young people to learn, serve and lead while strengthening community connection across Ontario.",
+    type: "spotlight",
+  },
+  {
     title: "How to help your teen with post-summer social media withdrawal",
     publication: "CBC",
     date: "September 3, 2025",

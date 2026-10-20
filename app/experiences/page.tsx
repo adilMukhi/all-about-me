@@ -8,7 +8,6 @@ import Image from "next/image"
 import { blogPosts } from "@/data/blog-posts"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import { Calendar, ArrowRight, ExternalLink } from "lucide-react"
-import Script from "next/script"
 
 export const metadata: Metadata = experiencesMetadata
 
@@ -63,9 +62,11 @@ export default function ExperiencesPage() {
   return (
     <>
       <Header />
-      <Script id="experiences-structured-data" type="application/ld+json">
-        {JSON.stringify(experiencesStructuredData)}
-      </Script>
+      <script
+          id="experiences-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: (JSON.stringify(experiencesStructuredData)).replace(/</g, "\\u003c") }}
+        />
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
           <div className="container">

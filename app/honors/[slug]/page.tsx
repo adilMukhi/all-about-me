@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import SafeImage from "@/components/safe-image"
-import Script from "next/script"
 import { ArrowLeft, ExternalLink, Sparkles } from "lucide-react"
 
 import Header from "@/components/header"
@@ -11,7 +10,7 @@ import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { honorsAwards } from "@/data/honors-awards"
-import { getHonorBySlug, getHonorPath } from "@/lib/seo-paths"
+import { getHonorBySlug, getHonorPath, metaDescription, seoTitle } from "@/lib/seo-paths"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
@@ -30,13 +29,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
   }
 
-  const title = `${award.title} | Adil Mukhi`
-  const description = award.description
+  const title = `${award.title}`
+  const description = metaDescription(award.description)
 
   const image = Array.isArray(award.image) ? award.image[0] : award.image
 
   return {
-    title,
+    title: seoTitle(title),
     description,
     alternates: {
       canonical: `${siteUrl}${getHonorPath(award)}`,
@@ -98,9 +97,11 @@ export default async function HonorDetailPage({ params }: { params: Promise<{ sl
   return (
     <>
       <Header />
-      <Script id={`honor-${award.title}-structured-data`} type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </Script>
+      <script
+        id={`honor-${award.title}-structured-data`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: (JSON.stringify(structuredData)).replace(/</g, "\\u003c") }}
+      />
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
           <div className="container">

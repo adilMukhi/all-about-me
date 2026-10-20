@@ -4,7 +4,6 @@ import { Trophy } from "lucide-react"
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
 import HonorsAwards from "@/components/honors-awards"
-import Script from "next/script"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import { honorsIndexMetadata } from "../page-metadata"
 import { honorsAwards } from "@/data/honors-awards"
@@ -38,9 +37,11 @@ const honorsStructuredData = {
 export default function HonorsIndexPage() {
   return (
     <>
-      <Script id="honors-structured-data" type="application/ld+json">
-        {JSON.stringify(honorsStructuredData)}
-      </Script>
+      <script
+          id="honors-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: (JSON.stringify(honorsStructuredData)).replace(/</g, "\\u003c") }}
+        />
       <Header />
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">

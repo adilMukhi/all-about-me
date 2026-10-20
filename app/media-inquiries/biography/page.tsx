@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import type { ReactNode } from "react"
 import Link from "next/link"
-import Script from "next/script"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import AnimatedSection from "@/components/animated-section"
@@ -15,7 +14,7 @@ const LAST_UPDATED = "September 5, 2026"
 export const metadata: Metadata = {
   title: "Biography of Adil Mukhi",
   description:
-    "Approved short, medium, and long biographies of Adil Mukhi — youth advocate, TEDx speaker, and founder of Dr. Interested — for use in articles, event programs, and introductions.",
+    "Short, medium, and long biographies of Adil Mukhi, TEDx speaker and Dr. Interested founder, ready for event programs and press.",
   alternates: { canonical: `${siteUrl}/media-inquiries/biography` },
   openGraph: {
     type: "website",
@@ -94,9 +93,11 @@ const BioBlock = ({
 export default function BiographyPage() {
   return (
     <main className="min-h-screen bg-background page-transition">
-      <Script id="biography-structured-data" type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </Script>
+      <script
+          id="biography-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: (JSON.stringify(structuredData)).replace(/</g, "\\u003c") }}
+        />
       <Header />
 
       <AnimatedSection>

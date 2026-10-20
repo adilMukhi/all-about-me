@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Script from "next/script"
 import { Play, Mic, ExternalLink } from "lucide-react"
 
 import Header from "@/components/header"
@@ -95,9 +94,11 @@ export default function WatchIndexPage() {
   return (
     <>
       <Header />
-      <Script id="watch-structured-data" type="application/ld+json">
-        {JSON.stringify(watchStructuredData)}
-      </Script>
+      <script
+          id="watch-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: (JSON.stringify(watchStructuredData)).replace(/</g, "\\u003c") }}
+        />
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
           <div className="container">

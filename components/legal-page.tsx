@@ -1,5 +1,4 @@
 import type { ReactNode } from "react"
-import Script from "next/script"
 
 import Header from "@/components/header"
 import Footer from "@/components/footer"
@@ -40,9 +39,11 @@ export function LegalPage({ title, slug, lastUpdated, intro, children }: LegalPa
   return (
     <>
       <Header />
-      <Script id={`legal-${slug}-structured-data`} type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </Script>
+      <script
+        id={`legal-${slug}-structured-data`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: (JSON.stringify(structuredData)).replace(/</g, "\\u003c") }}
+      />
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
           <div className="container max-w-3xl">

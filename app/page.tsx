@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Script from "next/script"
 import Header from "@/components/header"
 import CinematicHero from "@/components/home/cinematic-hero"
 import ImpactStats from "@/components/home/impact-stats"
@@ -38,9 +37,11 @@ const homeStructuredData = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <Script id="home-structured-data" type="application/ld+json">
-        {JSON.stringify(homeStructuredData)}
-      </Script>
+      <script
+          id="home-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: (JSON.stringify(homeStructuredData)).replace(/</g, "\\u003c") }}
+        />
       <Header />
       <CinematicHero />
       <ImpactStats />
