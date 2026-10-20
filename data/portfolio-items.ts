@@ -578,6 +578,21 @@ export type ResearchProject = {
 
 export const researchProjects: ResearchProject[] = [
   {
+    title: "Youth Mental Health & Well-Being in an Uncertain World: A Global Call to Action",
+    description:
+      "Acknowledged as a contributor, with Dr. Interested, in this United Nations Youth Office and UNU Global Health report. It recognizes youth-led mental health initiatives from around the world whose work provided the case insights behind the report's ecosystem of care model.",
+    image: "/un-youth-mental-health-report.jpg",
+    tags: ["Youth Mental Health", "Global Health", "Policy"],
+    institution: "United Nations Youth Office & UNU Global Health",
+    year: "2026",
+    otherLinks: [
+      {
+        text: "Read the report (PDF)",
+        url: "https://www.un.org/youthaffairs/sites/default/files/2026-09/Youth%20Mental%20Health%20%26%20Well%20Being%20in%20an%20Uncertain%20World_September%202026.pdf",
+      },
+    ],
+  },
+  {
     title: "Youth Accessibility in Health Volunteering (Manuscript)",
     description:
       "Fourth author on a manuscript examining youth accessibility in health volunteering. Submitted to Children & Society in September 2026 and currently under review.",
