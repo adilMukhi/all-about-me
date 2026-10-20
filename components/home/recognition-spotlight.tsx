@@ -3,7 +3,7 @@ import Link from "next/link"
 import { ArrowRight, Award } from "lucide-react"
 
 const highlights = [
-  { year: "2026", title: "Ontario Medal for Young Volunteers", by: "Province of Ontario" },
+  { year: "2025", title: "Ontario Medal for Young Volunteers", by: "Province of Ontario" },
   { year: "2026", title: "Top 20 Under 18 in Canada", by: "Children First Canada" },
   { year: "2026", title: "Canadian Choice Award (Dr. Interested)", by: "Non-Profit Organizations, Mississauga" },
   { year: "2025 & 2026", title: "Ontario Volunteer Service Award, three times", by: "Province of Ontario" },

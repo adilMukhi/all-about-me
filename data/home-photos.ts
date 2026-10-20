@@ -12,7 +12,7 @@ const eventPhotos: HomePhoto[] = [
   {
     src: "/ontario-medal-young-volunteers-2026.jpg",
     alt: "Adil Mukhi receiving the Ontario Medal for Young Volunteers at Queen's Park",
-    caption: "Receiving the Ontario Medal for Young Volunteers, 2026",
+    caption: "Receiving the Ontario Medal for Young Volunteers at Queen's Park",
     focus: "58% 60%",
   },
   {

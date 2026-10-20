@@ -37,7 +37,7 @@ export const chatQuestions: ChatQuestion[] = [
     id: "awards",
     question: "What awards has Adil received?",
     answer:
-      "Recent honours include the Ontario Medal for Young Volunteers (2026), Top 20 Under 18 in Canada (2026), three Ontario Volunteer Service Awards, and two City of Mississauga Civic Awards.",
+      "Recent honours include the Ontario Medal for Young Volunteers (2025), Top 20 Under 18 in Canada (2026), three Ontario Volunteer Service Awards, and two City of Mississauga Civic Awards.",
     links: [{ label: "See every award", href: "/honors" }],
   },
   {

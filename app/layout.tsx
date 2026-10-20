@@ -267,7 +267,7 @@ export default function RootLayout({
               image: [
                 ["/pictures/adil-mukhi-formal-headshot.jpg", "Formal headshot of Adil Mukhi"],
                 ["/pictures/adil-mukhi-queens-park-flags-portrait.jpg", "Adil Mukhi at Queen's Park, 2026"],
-                ["/ontario-medal-young-volunteers-2026.jpg", "Adil Mukhi receiving the Ontario Medal for Young Volunteers, 2026"],
+                ["/ontario-medal-young-volunteers-2026.jpg", "Adil Mukhi receiving the Ontario Medal for Young Volunteers at Queen's Park"],
                 ["/pictures/adil-mukhi-tedx-speaking-1.png", "Adil Mukhi speaking at TEDx"],
                 ["/pictures/adil-mukhi-portrait-closeup.jpg", "Portrait of Adil Mukhi"],
               ].map(([path, caption]) => ({
@@ -317,7 +317,7 @@ export default function RootLayout({
                 },
               ],
               award: [
-                "Ontario Medal for Young Volunteers (Province of Ontario, 2026)",
+                "Ontario Medal for Young Volunteers (Province of Ontario, 2025)",
                 "Top 20 Under 18 in Canada (Children First Canada, 2026)",
                 "Canadian Choice Award, Non-Profit Organizations, Mississauga (Dr. Interested, 2026)",
                 "Ontario Volunteer Service Award (x3, Province of Ontario, 2025 and 2026)",
