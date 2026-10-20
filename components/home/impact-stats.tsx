@@ -72,21 +72,21 @@ export default function ImpactStats() {
       id="highlights"
       ref={ref}
       aria-labelledby="impact-heading"
-      className="relative overflow-hidden border-y border-sky-900/40 bg-slate-950 py-14 text-white"
+      className="relative overflow-hidden border-y border-sky-200 bg-white py-14 text-slate-900 dark:border-sky-900/40 dark:bg-slate-950 dark:text-white"
     >
       <div className="hero-grid pointer-events-none absolute inset-0 opacity-60" />
       <div className="container relative">
-        <h2 id="impact-heading" className="mb-8 font-mono text-sm uppercase tracking-[0.3em] text-sky-300">
+        <h2 id="impact-heading" className="mb-8 font-mono text-sm uppercase tracking-[0.3em] text-sky-700 dark:text-sky-300">
           <span aria-hidden="true">{"// "}</span>Impact so far
         </h2>
         <dl className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-6">
           {stats.map((stat) => (
-            <div key={stat.label} className="border-l-2 border-sky-400/60 pl-4">
+            <div key={stat.label} className="border-l-2 border-sky-600/60 pl-4 dark:border-sky-400/60">
               <dt className="sr-only">{stat.label}</dt>
-              <dd className="font-fredoka text-4xl font-extrabold text-white sm:text-5xl">
+              <dd className="font-fredoka text-4xl font-extrabold text-slate-900 sm:text-5xl dark:text-white">
                 <Counter stat={stat} run={run} />
               </dd>
-              <dd className="mt-2 text-sm leading-snug text-white/75 sm:text-base">{stat.label}</dd>
+              <dd className="mt-2 text-sm leading-snug text-slate-600 sm:text-base dark:text-white/75">{stat.label}</dd>
             </div>
           ))}
         </dl>

@@ -578,6 +578,44 @@ export type ResearchProject = {
 
 export const researchProjects: ResearchProject[] = [
   {
+    title: "Study on the Impact of Mental Health Challenges on the Enjoyment of Human Rights by Young People",
+    description:
+      "Dr. Interested's written submission to the UN Office of the High Commissioner for Human Rights (OHCHR) under Human Rights Council Resolution 57/30, co-signed by Adil Mukhi as Executive Director. Combining an original youth survey, promoted with support from Kids Help Phone, and a literature review, it links anxiety and depressive symptoms to experiences of discrimination and recommends a human rights-based, preventive approach. It was one of the inputs to the OHCHR study A/HRC/63/51, presented at the 63rd session of the Human Rights Council.",
+    image: "/ohchr-youth-mental-health-submission.jpg",
+    tags: ["Youth Mental Health", "Human Rights", "Policy", "Survey Research"],
+    institution: "UN Office of the High Commissioner for Human Rights (OHCHR)",
+    year: "2026",
+    otherLinks: [
+      {
+        text: "Read the submission (PDF)",
+        url: "https://www.ohchr.org/sites/default/files/documents/cfi-subm/2026/378-impact-mental-health/subm-impact-mental-health-cso-148-dr-interested.pdf",
+      },
+      {
+        text: "OHCHR call for input",
+        url: "https://www.ohchr.org/en/calls-for-input/2026/call-inputs-impact-mental-health-challenges-enjoyment-human-rights-young",
+      },
+      {
+        text: "Dr. Interested policy work",
+        url: "https://www.drinterested.org/publications#policy-work",
+      },
+    ],
+  },
+  {
+    title: "Youth Mental Health & Well-Being in an Uncertain World: A Global Call to Action",
+    description:
+      "Acknowledged as a contributor, with Dr. Interested, in this United Nations Youth Office and UNU Global Health report. It recognizes youth-led mental health initiatives from around the world whose work provided the case insights behind the report's ecosystem of care model.",
+    image: "/un-youth-mental-health-report.jpg",
+    tags: ["Youth Mental Health", "Global Health", "Policy"],
+    institution: "United Nations Youth Office & UNU Global Health",
+    year: "2026",
+    otherLinks: [
+      {
+        text: "Read the report (PDF)",
+        url: "https://www.un.org/youthaffairs/sites/default/files/2026-09/Youth%20Mental%20Health%20%26%20Well%20Being%20in%20an%20Uncertain%20World_September%202026.pdf",
+      },
+    ],
+  },
+  {
     title: "Youth Accessibility in Health Volunteering (Manuscript)",
     description:
       "Fourth author on a manuscript examining youth accessibility in health volunteering. Submitted to Children & Society in September 2026 and currently under review.",

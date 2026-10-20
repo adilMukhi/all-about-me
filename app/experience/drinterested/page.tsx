@@ -4,9 +4,9 @@ import DrInterestedClient from "./client"
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
 export const metadata: Metadata = {
-  title: "Dr. Interested - Executive Director & Founder | Adil Mukhi",
+  title: "Dr. Interested: Executive Director & Founder",
   description:
-    "Discover Dr. Interested, founded by Adil Mukhi. A global youth mentorship platform reaching 160,000+ youth with research, advocacy, and educational opportunities across 6 continents.",
+    "Adil Mukhi founded and leads Dr. Interested, a youth-led global pre-med organization reaching 160,000+ people in 106 countries.",
   keywords: [
     "Dr. Interested",
     "Youth Mentorship",

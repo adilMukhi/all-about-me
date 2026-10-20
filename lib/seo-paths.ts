@@ -69,3 +69,16 @@ export function getMediaPath(item: MediaItem) {
 export function getMediaBySlug(slug: string) {
   return mediaItems.find((item) => slugify(`${item.title}-${item.publication}`) === slug)
 }
+// Search results show about 155 characters of a description, so longer text is cut at a word break
+export function metaDescription(text: string, max = 155) {
+  // Drop markup, then any stray angle brackets, so no fragment of a tag can survive
+  const clean = text.replace(/<[^>]*>/g, " ").replace(/[<>]/g, "").replace(/\s+/g, " ").trim()
+  if (clean.length <= max) return clean
+  const cut = clean.slice(0, max - 1)
+  return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:.\s-]+$/, "")}…`
+}
+
+// Search results show about 60 characters of a title; long titles skip the "| Adil Mukhi" suffix so the meaningful part fits
+export function seoTitle(title: string) {
+  return title.length > 47 ? { absolute: title } : title
+}

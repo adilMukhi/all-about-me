@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
-import Script from "next/script"
 import { ArrowLeft, Sparkles } from "lucide-react"
 
 import Header from "@/components/header"
@@ -10,7 +9,7 @@ import PageLayout from "@/components/page-layout"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { slugify } from "@/lib/seo-paths"
+import { slugify, metaDescription, seoTitle } from "@/lib/seo-paths"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
@@ -73,10 +72,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   const title = `${testimonial.name} recommends Adil Mukhi`
-  const description = testimonial.testimonial
+  const description = metaDescription(testimonial.testimonial)
 
   return {
-    title,
+    title: seoTitle(title),
     description,
     alternates: {
       canonical: `${siteUrl}/testimonials/${slug}`,
@@ -153,9 +152,11 @@ export default async function TestimonialDetailPage({ params }: { params: Promis
   return (
     <>
       <Header />
-      <Script id={`testimonial-${slug}-structured-data`} type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </Script>
+      <script
+        id={`testimonial-${slug}-structured-data`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: (JSON.stringify(structuredData)).replace(/</g, "\\u003c") }}
+      />
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
           <div className="container">

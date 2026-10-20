@@ -182,7 +182,7 @@
 }
 
 .prose strong {
-  color: #1e88e5;
+  color: hsl(var(--primary));
   font-weight: 700;
 }
 
@@ -426,9 +426,9 @@
   }
 }
 
-/* Home page night theme: the hero's navy palette applied to every section, header and footer on the home page.
+/* Dark theme: the home hero's navy palette, applied site wide when the visitor picks dark mode.
    Variables re-point the shared components; the overrides below cover colours hard-coded in shared components. */
-.theme-night {
+.dark {
   --background: 222.2 84% 4.9%;
   --foreground: 210 40% 96%;
   --card: 222.2 47.4% 9%;
@@ -449,45 +449,168 @@
   color-scheme: dark;
 }
 
-.theme-night .text-blue-700,
-.theme-night .hover\:text-blue-700:hover,
-.theme-night .hover\:text-blue-800:hover {
-  color: #7dd3fc;
-}
+/* Generated from the colour classes the site uses: each light colour gets a dark counterpart.
+   :where() keeps these at utility specificity, so an explicit dark: variant on an element always wins. */
+:where(.dark) .bg-blue-50 { background-color: rgb(59 130 246 / 0.1); }
+:where(.dark) .bg-gray-100 { background-color: hsl(var(--muted)); }
+:where(.dark) .bg-gray-200 { background-color: hsl(var(--accent)); }
+:where(.dark) .bg-gray-300 { background-color: hsl(217.2 32.6% 24%); }
+:where(.dark) .bg-green-100 { background-color: rgb(34 197 94 / 0.14); }
+:where(.dark) .bg-green-50 { background-color: rgb(34 197 94 / 0.1); }
+:where(.dark) .bg-orange-50 { background-color: rgb(249 115 22 / 0.1); }
+:where(.dark) .bg-pink-50 { background-color: rgb(236 72 153 / 0.1); }
+:where(.dark) .bg-purple-50 { background-color: rgb(168 85 247 / 0.1); }
+:where(.dark) .bg-red-50 { background-color: rgb(239 68 68 / 0.1); }
+:where(.dark) .bg-teal-50 { background-color: rgb(20 184 166 / 0.1); }
+:where(.dark) .bg-white { background-color: hsl(var(--card)); }
+:where(.dark) .bg-white\/10 { background-color: hsl(var(--card) / 0.1); }
+:where(.dark) .bg-white\/5 { background-color: hsl(var(--card) / 0.05); }
+:where(.dark) .bg-white\/50 { background-color: hsl(var(--card) / 0.5); }
+:where(.dark) .bg-white\/95 { background-color: hsl(var(--card) / 0.95); }
+:where(.dark) .border-blue-200 { border-color: rgb(59 130 246 / 0.35); }
+:where(.dark) .border-gray-100 { border-color: hsl(var(--border)); }
+:where(.dark) .border-gray-200 { border-color: hsl(var(--border)); }
+:where(.dark) .border-green-200 { border-color: rgb(34 197 94 / 0.35); }
+:where(.dark) .border-red-200 { border-color: rgb(239 68 68 / 0.35); }
+:where(.dark) .border-sky-300\/30 { border-color: rgb(14 165 233 / 0.35); }
+:where(.dark) .border-teal-200 { border-color: rgb(20 184 166 / 0.35); }
+:where(.dark) .from-amber-50 { --tw-gradient-from: rgb(245 158 11 / 0.1) var(--tw-gradient-from-position); --tw-gradient-to: transparent var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+:where(.dark) .from-blue-100 { --tw-gradient-from: rgb(59 130 246 / 0.14) var(--tw-gradient-from-position); --tw-gradient-to: transparent var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+:where(.dark) .from-blue-50 { --tw-gradient-from: rgb(59 130 246 / 0.1) var(--tw-gradient-from-position); --tw-gradient-to: transparent var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+:where(.dark) .from-green-100 { --tw-gradient-from: rgb(34 197 94 / 0.14) var(--tw-gradient-from-position); --tw-gradient-to: transparent var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+:where(.dark) .from-green-50 { --tw-gradient-from: rgb(34 197 94 / 0.1) var(--tw-gradient-from-position); --tw-gradient-to: transparent var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+:where(.dark) .from-orange-50 { --tw-gradient-from: rgb(249 115 22 / 0.1) var(--tw-gradient-from-position); --tw-gradient-to: transparent var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+:where(.dark) .from-purple-50 { --tw-gradient-from: rgb(168 85 247 / 0.1) var(--tw-gradient-from-position); --tw-gradient-to: transparent var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+:where(.dark) .from-white { --tw-gradient-from: hsl(var(--card) / 0.6) var(--tw-gradient-from-position); --tw-gradient-to: transparent var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+:where(.dark) .text-amber-700 { color: #fcd34d; }
+:where(.dark) .text-blue-500 { color: #60a5fa; }
+:where(.dark) .text-blue-500\/20 { color: #60a5fa; }
+:where(.dark) .text-blue-600 { color: #93c5fd; }
+:where(.dark) .text-blue-700 { color: #93c5fd; }
+:where(.dark) .text-gray-400 { color: hsl(var(--muted-foreground)); }
+:where(.dark) .text-gray-500 { color: hsl(var(--muted-foreground)); }
+:where(.dark) .text-gray-600 { color: hsl(var(--muted-foreground)); }
+:where(.dark) .text-gray-700 { color: hsl(var(--foreground)); }
+:where(.dark) .text-gray-800 { color: hsl(var(--foreground)); }
+:where(.dark) .text-gray-900 { color: hsl(var(--foreground)); }
+:where(.dark) .text-green-600 { color: #86efac; }
+:where(.dark) .text-green-700 { color: #86efac; }
+:where(.dark) .text-green-800 { color: #86efac; }
+:where(.dark) .text-orange-700 { color: #fdba74; }
+:where(.dark) .text-pink-500 { color: #f472b6; }
+:where(.dark) .text-purple-700 { color: #d8b4fe; }
+:where(.dark) .text-red-500 { color: #f87171; }
+:where(.dark) .text-red-600 { color: #fca5a5; }
+:where(.dark) .text-red-700 { color: #fca5a5; }
+:where(.dark) .text-sky-500 { color: #38bdf8; }
+:where(.dark) .text-teal-600 { color: #5eead4; }
+:where(.dark) .text-teal-700 { color: #5eead4; }
+:where(.dark) .to-blue-200 { --tw-gradient-to: rgb(59 130 246 / 0.2) var(--tw-gradient-to-position); }
+:where(.dark) .to-emerald-50 { --tw-gradient-to: rgb(16 185 129 / 0.1) var(--tw-gradient-to-position); }
+:where(.dark) .to-gray-50\/50 { --tw-gradient-to: hsl(var(--muted)) var(--tw-gradient-to-position); }
+:where(.dark) .to-green-200 { --tw-gradient-to: rgb(34 197 94 / 0.2) var(--tw-gradient-to-position); }
+:where(.dark) .to-indigo-50 { --tw-gradient-to: rgb(99 102 241 / 0.1) var(--tw-gradient-to-position); }
+:where(.dark) .to-white { --tw-gradient-to: hsl(var(--card) / 0.6) var(--tw-gradient-to-position); }
+:where(.dark) .via-sky-100 { --tw-gradient-to: transparent var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), rgb(14 165 233 / 0.14) var(--tw-gradient-via-position), var(--tw-gradient-to); }
+:where(.dark) .hover\:bg-blue-100:hover { background-color: rgb(59 130 246 / 0.14); }
+:where(.dark) .hover\:bg-blue-50:hover { background-color: rgb(59 130 246 / 0.1); }
+:where(.dark) .hover\:bg-gray-100:hover { background-color: hsl(var(--muted)); }
+:where(.dark) .hover\:bg-gray-200:hover { background-color: hsl(var(--accent)); }
+:where(.dark) .hover\:bg-green-100:hover { background-color: rgb(34 197 94 / 0.14); }
+:where(.dark) .hover\:bg-orange-100:hover { background-color: rgb(249 115 22 / 0.14); }
+:where(.dark) .hover\:bg-pink-100:hover { background-color: rgb(236 72 153 / 0.14); }
+:where(.dark) .hover\:bg-purple-100:hover { background-color: rgb(168 85 247 / 0.14); }
+:where(.dark) .hover\:bg-red-100:hover { background-color: rgb(239 68 68 / 0.14); }
+:where(.dark) .hover\:bg-sky-100:hover { background-color: rgb(14 165 233 / 0.14); }
+:where(.dark) .hover\:bg-teal-100:hover { background-color: rgb(20 184 166 / 0.14); }
+:where(.dark) .hover\:bg-white\/10:hover { background-color: hsl(var(--card) / 0.1); }
+:where(.dark) .hover\:bg-white\/20:hover { background-color: hsl(var(--card) / 0.2); }
+:where(.dark) .hover\:bg-white\/80:hover { background-color: hsl(var(--card) / 0.8); }
+:where(.dark) .hover\:border-blue-300:hover { border-color: rgb(59 130 246 / 0.35); }
+:where(.dark) .hover\:border-green-300:hover { border-color: rgb(34 197 94 / 0.35); }
+:where(.dark) .hover\:border-red-300:hover { border-color: rgb(239 68 68 / 0.35); }
+:where(.dark) .hover\:border-sky-300:hover { border-color: rgb(14 165 233 / 0.35); }
+:where(.dark) .hover\:border-teal-300:hover { border-color: rgb(20 184 166 / 0.35); }
+:where(.dark) .hover\:text-black:hover { color: hsl(var(--foreground)); }
+:where(.dark) .hover\:text-blue-600:hover { color: #93c5fd; }
+:where(.dark) .hover\:text-blue-700:hover { color: #93c5fd; }
+:where(.dark) .hover\:text-blue-800:hover { color: #93c5fd; }
 
-.theme-night .bg-blue-50,
-.theme-night .hover\:bg-blue-50:hover {
-  background-color: rgba(56, 189, 248, 0.14);
-}
-
-.theme-night .bg-white.rounded-lg {
-  background-color: hsl(var(--popover));
+:where(.dark) .bg-white.rounded-lg {
   border: 1px solid hsl(var(--border));
 }
 
-.theme-night .border-gray-100,
-.theme-night .border-gray-200 {
-  border-color: hsl(var(--border));
+.dark .skeleton {
+  background: linear-gradient(90deg, hsl(var(--muted)) 25%, hsl(var(--accent)) 50%, hsl(var(--muted)) 75%);
+  background-size: 200% 100%;
 }
 
-.theme-night .text-gray-600 {
-  color: hsl(var(--muted-foreground));
-}
-
-.theme-night .hover\:text-black:hover {
-  color: hsl(var(--foreground));
-}
-
-.theme-night .card-hover-effect:hover {
+.dark .card-hover-effect:hover {
   background-color: hsl(217.2 32.6% 14%);
   box-shadow: 0 20px 40px -12px rgba(56, 189, 248, 0.18);
 }
 
-.theme-night .glass-card {
+.dark .glass-card {
   background: rgba(15, 23, 42, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.theme-night .button-hover-effect::after {
+.dark .button-hover-effect::after {
   background: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0) 70%);
+}
+
+/* Site translation: keep the page's own language picker and hide Google's toolbar, tooltips and highlights */
+body > .skiptranslate,
+iframe.skiptranslate,
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-tooltip,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.VIpgJd-yAWNEb-L7lbkb {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.goog-text-highlight,
+.VIpgJd-yAWNEb-VIpgJd-fmcmS-sn54Q {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Site chat: a short wiggle to say hello */
+@keyframes chat-shake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(-14deg) scale(1.08);
+  }
+  30% {
+    transform: rotate(12deg) scale(1.08);
+  }
+  45% {
+    transform: rotate(-9deg);
+  }
+  60% {
+    transform: rotate(7deg);
+  }
+  75% {
+    transform: rotate(-4deg);
+  }
+}
+
+.animate-chat-shake {
+  animation: chat-shake 0.9s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-chat-shake {
+    animation: none;
+  }
 }

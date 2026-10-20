@@ -71,7 +71,8 @@ function Terminal({ reduced }: { reduced: boolean }) {
   return (
     <div
       aria-hidden="true"
-      className="w-full rounded-xl border border-white/15 bg-black/65 shadow-2xl shadow-sky-500/10 backdrop-blur-md"
+      translate="no"
+      className="notranslate w-full rounded-xl border border-white/15 bg-slate-950/90 shadow-2xl shadow-sky-500/10 backdrop-blur-md"
     >
       <div className="flex items-center gap-1.5 border-b border-white/10 px-4 py-2.5">
         <span className="h-3 w-3 rounded-full bg-red-400/80" />
@@ -157,7 +158,7 @@ export default function CinematicHero() {
       ref={sectionRef}
       onPointerMove={onPointerMove}
       aria-label="Introduction"
-      className="relative isolate flex min-h-[calc(100svh-4rem)] items-center overflow-hidden bg-slate-950 text-white"
+      className="relative isolate flex min-h-[calc(100svh-4rem)] items-center overflow-hidden bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-white"
       style={{ ["--spot-x" as string]: "30%", ["--spot-y" as string]: "40%" }}
     >
       {/* Background footage: vertical studio clip on phones, landscape b-roll on larger screens */}
@@ -177,8 +178,8 @@ export default function CinematicHero() {
       </div>
 
       {/* Overlays: readable gradient, grid, scan lines, pointer spotlight */}
-      <div className="absolute inset-0 -z-10 bg-slate-950/60 lg:bg-transparent lg:bg-gradient-to-r lg:from-slate-950 lg:from-30% lg:via-slate-950/70 lg:via-50% lg:to-slate-950/35" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/50" />
+      <div className="absolute inset-0 -z-10 bg-white/75 lg:bg-transparent lg:bg-gradient-to-r lg:from-white lg:from-30% lg:via-white/75 lg:via-50% lg:to-white/25 dark:bg-slate-950/60 dark:lg:bg-transparent dark:lg:from-slate-950 dark:lg:via-slate-950/70 dark:lg:to-slate-950/35" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-slate-50 via-transparent to-white/40 dark:from-slate-950 dark:to-slate-950/50" />
       <div className="hero-grid pointer-events-none absolute inset-0 -z-10" />
       <div className="hero-scanlines pointer-events-none absolute inset-0 -z-10" />
       <div
@@ -191,19 +192,19 @@ export default function CinematicHero() {
 
       <div className="container relative grid items-center gap-10 pb-24 pt-14 lg:grid-cols-[1.2fr_0.8fr] lg:py-20">
         <div className="relative z-10 max-w-2xl">
-          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-sky-300/30 bg-sky-400/10 px-3 py-1 font-mono text-xs uppercase tracking-[0.2em] text-sky-100">
+          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-sky-700/30 bg-white/70 px-3 py-1 font-mono text-xs uppercase tracking-[0.2em] text-sky-900 dark:border-sky-300/30 dark:bg-sky-400/10 dark:text-sky-100">
             <span className="h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true" />
             Public speaker · Founder · Youth advocate
           </p>
-          <p className="font-fredoka text-2xl font-bold tracking-wide text-sky-200 sm:text-3xl">Hi, I&apos;m</p>
+          <p className="font-fredoka text-2xl font-bold tracking-wide text-sky-700 sm:text-3xl dark:text-sky-200">Hi, I&apos;m</p>
           <h1 className="font-fredoka text-6xl font-extrabold leading-none tracking-tight sm:text-7xl xl:text-8xl">
-            <span className="bg-gradient-to-r from-white via-sky-100 to-sky-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-slate-900 via-sky-900 to-sky-700 bg-clip-text text-transparent dark:from-white dark:via-sky-100 dark:to-sky-300">
               Adil Mukhi
             </span>
             <span className="sr-only">: Youth Advocate, Public Speaker, Founder, and Research Leader</span>
           </h1>
           <p
-            className="mt-6 max-w-xl text-lg leading-relaxed text-white/90 sm:text-xl"
+            className="mt-6 max-w-xl text-lg leading-relaxed text-slate-800 sm:text-xl dark:text-white/90"
             style={{ fontFamily: "'Times New Roman', Times, serif" }}
           >
             I&apos;m a public speaker, youth advocate &amp; changemaker: from mentoring through Dr. Interested,
@@ -214,32 +215,32 @@ export default function CinematicHero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
               href="/services"
-              className="inline-flex h-14 items-center justify-center rounded-full bg-sky-400 px-7 text-lg font-semibold text-slate-950 shadow-lg shadow-sky-500/30 transition hover:bg-sky-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="inline-flex h-14 items-center justify-center rounded-full bg-sky-700 px-7 text-lg font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:bg-sky-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700 dark:bg-sky-400 dark:text-slate-950 dark:hover:bg-sky-300 dark:focus-visible:outline-white"
             >
               Book me to speak
             </Link>
             <a
               href="#tedx"
-              className="inline-flex h-14 items-center justify-center gap-2 rounded-full border border-white/50 bg-white/10 px-7 text-lg font-semibold text-white backdrop-blur transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="inline-flex h-14 items-center justify-center gap-2 rounded-full border border-slate-900/30 bg-white/70 px-7 text-lg font-semibold text-slate-900 backdrop-blur transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700 dark:border-white/50 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 dark:focus-visible:outline-white"
             >
               <PlayCircle className="h-5 w-5" aria-hidden="true" />
               Watch my TEDx talk
             </a>
             <a
               href="#contact"
-              className="inline-flex h-14 items-center justify-center rounded-full px-5 text-lg font-semibold text-white underline decoration-sky-300 decoration-2 underline-offset-8 transition hover:text-sky-200"
+              className="inline-flex h-14 items-center justify-center rounded-full px-5 text-lg font-semibold text-slate-900 underline decoration-sky-600 decoration-2 underline-offset-8 transition hover:text-sky-800 dark:text-white dark:decoration-sky-300 dark:hover:text-sky-200"
             >
               Contact me
             </a>
           </div>
 
-          <p className="mt-6 max-w-xl text-base text-white/85 sm:text-lg">
+          <p className="mt-6 max-w-xl text-base text-slate-700 sm:text-lg dark:text-white/85">
             I&apos;m currently available for{" "}
-            <Link href="/services" className="font-semibold text-sky-200 underline underline-offset-4 hover:text-white">
+            <Link href="/services" className="font-semibold text-sky-800 underline underline-offset-4 hover:text-sky-950 dark:text-sky-200 dark:hover:text-white">
               consulting engagements
             </Link>{" "}
             and{" "}
-            <Link href="/services" className="font-semibold text-sky-200 underline underline-offset-4 hover:text-white">
+            <Link href="/services" className="font-semibold text-sky-800 underline underline-offset-4 hover:text-sky-950 dark:text-sky-200 dark:hover:text-white">
               public speaking bookings
             </Link>
             .
@@ -252,7 +253,7 @@ export default function CinematicHero() {
                   href={social.url}
                   target={social.url.startsWith("http") ? "_blank" : undefined}
                   rel={social.url.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-white/5 text-white transition hover:-translate-y-0.5 hover:border-sky-300 hover:text-sky-200"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-900/20 bg-white/70 text-slate-800 transition hover:-translate-y-0.5 hover:border-sky-600 hover:text-sky-700 dark:border-white/30 dark:bg-white/5 dark:text-white dark:hover:border-sky-300 dark:hover:text-sky-200"
                   aria-label={social.label}
                   title={social.label}
                 >
@@ -265,7 +266,7 @@ export default function CinematicHero() {
 
         {/* Larger screens: the studio clip in a frame, with the terminal overlapping it */}
         <div className="relative hidden justify-end lg:flex">
-          <div className="relative aspect-[9/16] h-[min(68vh,600px)] overflow-hidden rounded-[2rem] border border-white/20 shadow-2xl shadow-sky-500/20">
+          <div className="relative aspect-[9/16] h-[min(68vh,600px)] overflow-hidden rounded-[2rem] border border-slate-900/10 shadow-2xl shadow-sky-500/20 dark:border-white/20">
             {isDesktop && !reduced ? (
               <LoopVideo video={heroVideos.portrait} paused={paused} className={media} />
             ) : (
@@ -288,7 +289,7 @@ export default function CinematicHero() {
         <button
           type="button"
           onClick={() => setUserPaused((p) => !p)}
-          className="absolute bottom-5 right-5 inline-flex h-11 items-center gap-2 rounded-full border border-white/40 bg-black/50 px-4 text-sm font-semibold text-white backdrop-blur transition hover:bg-black/70"
+          className="absolute bottom-5 left-5 inline-flex h-11 items-center gap-2 rounded-full border border-slate-900/20 bg-white/80 px-4 text-sm font-semibold text-slate-900 backdrop-blur transition hover:bg-white dark:border-white/40 dark:bg-black/50 dark:text-white dark:hover:bg-black/70"
         >
           {paused ? <Play className="h-4 w-4" aria-hidden="true" /> : <Pause className="h-4 w-4" aria-hidden="true" />}
           {paused ? "Play video" : "Pause video"}
@@ -297,7 +298,7 @@ export default function CinematicHero() {
 
       <a
         href="#highlights"
-        className="absolute bottom-5 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-1 text-xs uppercase tracking-[0.3em] text-white/70 transition hover:text-white md:flex"
+        className="absolute bottom-5 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-1 text-xs uppercase tracking-[0.3em] text-slate-600 transition hover:text-slate-900 md:flex dark:text-white/70 dark:hover:text-white"
       >
         Scroll
         <ArrowDown className="h-4 w-4 animate-bounce motion-reduce:animate-none" aria-hidden="true" />

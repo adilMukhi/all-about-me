@@ -8,7 +8,6 @@ import PageLayout from "@/components/page-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import Script from "next/script"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import { testimonialsIndexMetadata } from "../page-metadata"
 import { slugify } from "@/lib/seo-paths"
@@ -110,9 +109,11 @@ const testimonialsStructuredData = [
 export default function TestimonialsIndexPage() {
   return (
     <>
-      <Script id="testimonials-structured-data" type="application/ld+json">
-        {JSON.stringify(testimonialsStructuredData)}
-      </Script>
+      <script
+          id="testimonials-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: (JSON.stringify(testimonialsStructuredData)).replace(/</g, "\\u003c") }}
+        />
       <Header />
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">

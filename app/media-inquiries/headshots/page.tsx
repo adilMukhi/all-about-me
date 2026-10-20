@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Script from "next/script"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import AnimatedSection from "@/components/animated-section"
@@ -53,6 +52,19 @@ const structuredData = {
       { "@type": "ListItem", position: 3, name: "Headshots", item: `${siteUrl}/media-inquiries/headshots` },
     ],
   },
+  // Each photo with credit and licence details, which Google Images uses for its "Licensable" label
+  associatedMedia: [...headshots, ...inAction].map((shot) => ({
+    "@type": "ImageObject",
+    contentUrl: `${siteUrl}${encodeURI(shot.src)}`,
+    name: shot.alt,
+    caption: shot.caption,
+    creditText: "Adil Mukhi",
+    creator: { "@type": "Person", name: "Adil Mukhi" },
+    copyrightNotice: "© Adil Mukhi",
+    license: `${siteUrl}/terms`,
+    acquireLicensePage: `${siteUrl}/media-inquiries`,
+    about: { "@id": `${siteUrl}/#person` },
+  })),
 }
 
 const enc = (path: string) => path.replace(/ /g, "%20")
@@ -91,9 +103,11 @@ const Gallery = ({ shots }: { shots: Shot[] }) => (
 export default function HeadshotsPage() {
   return (
     <main className="min-h-screen bg-background page-transition">
-      <Script id="headshots-structured-data" type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </Script>
+      <script
+          id="headshots-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: (JSON.stringify(structuredData)).replace(/</g, "\\u003c") }}
+        />
       <Header />
 
       <AnimatedSection>

@@ -93,6 +93,7 @@ export default function HonorsAwards({ showHeading = true }: { showHeading?: boo
             sizes={featured ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"}
             wrapperClassName="relative h-52 overflow-hidden"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
+            style={{ objectPosition: award.focus || "50% 50%" }}
           />
         )}
         <CardHeader>

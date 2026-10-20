@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Link from "next/link"
-import Script from "next/script"
 import { ArrowLeft, ExternalLink, Play } from "lucide-react"
 
 import Header from "@/components/header"
@@ -9,6 +8,7 @@ import PageLayout from "@/components/page-layout"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { metaDescription, seoTitle } from "@/lib/seo-paths"
 import { videos, getVideoBySlug, getVideoPath, getVideoThumbnail, getVideoEmbedUrl } from "@/data/videos"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
@@ -34,12 +34,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   const canonicalUrl = `${siteUrl}${getVideoPath(video)}`
-  const title = `${video.title} | ${video.category} | Adil Mukhi`
+  const title = `${video.title} | ${video.category}`
   const image = getVideoThumbnail(video, siteUrl)
 
   return {
-    title: `${video.title} — ${video.category}`,
-    description: video.description,
+    title: seoTitle(`${video.title} — ${video.category}`),
+    description: metaDescription(video.description),
     keywords: [
       "Adil Mukhi",
       video.category,
@@ -125,9 +125,11 @@ export default async function WatchDetailPage({ params }: { params: Promise<{ sl
   return (
     <>
       <Header />
-      <Script id={`watch-${video.slug}-structured-data`} type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </Script>
+      <script
+        id={`watch-${video.slug}-structured-data`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: (JSON.stringify(structuredData)).replace(/</g, "\\u003c") }}
+      />
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
           <div className="container max-w-4xl">

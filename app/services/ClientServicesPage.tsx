@@ -8,7 +8,6 @@ import { useState, useEffect } from "react"
 import SocialLinks from "@/components/social-links"
 import Image from "next/image"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
-import Script from "next/script"
 import { CAL_BOOKING_URL, CONTACT_EMAIL, WORK_PHONE_DISPLAY, WORK_PHONE_TEL } from "@/lib/site"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
@@ -1117,9 +1116,11 @@ const ServicesStructuredData = () => {
   }
 
   return (
-    <Script id="services-schema" type="application/ld+json">
-      {JSON.stringify(structuredData)}
-    </Script>
+    <script
+          id="services-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: (JSON.stringify(structuredData)).replace(/</g, "\\u003c") }}
+        />
   )
 }
 
@@ -1631,6 +1632,7 @@ const WatchMeSpeak = () => (
               data-instgrm-version="14"
               style={{
                 background: "#FFF",
+                color: "#262626",
                 border: 0,
                 borderRadius: "3px",
                 boxShadow: "0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)",

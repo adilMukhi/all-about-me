@@ -32,10 +32,10 @@ export default function PhotoReel() {
   const rows = [reelPhotos.slice(0, half), reelPhotos.slice(half)]
 
   return (
-    <section aria-labelledby="reel-heading" className={`overflow-hidden bg-slate-950 py-14 text-white ${paused ? "marquee-paused" : ""}`}>
+    <section aria-labelledby="reel-heading" className={`overflow-hidden bg-slate-100 py-14 text-slate-900 dark:bg-slate-950 dark:text-white ${paused ? "marquee-paused" : ""}`}>
       <div className="container mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="font-mono text-sm uppercase tracking-[0.3em] text-sky-300">Camera roll</p>
+          <p className="font-mono text-sm uppercase tracking-[0.3em] text-sky-700 dark:text-sky-300">Camera roll</p>
           <h2
             id="reel-heading"
             className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl"
@@ -48,14 +48,14 @@ export default function PhotoReel() {
           <button
             type="button"
             onClick={() => setPaused((p) => !p)}
-            className="inline-flex h-11 items-center gap-2 rounded-full border border-white/30 px-4 text-sm font-semibold transition hover:bg-white/10 motion-reduce:hidden"
+            className="inline-flex h-11 items-center gap-2 rounded-full border border-slate-900/25 px-4 text-sm font-semibold transition hover:bg-slate-900/5 motion-reduce:hidden dark:border-white/30 dark:hover:bg-white/10"
           >
             {paused ? <Play className="h-4 w-4" aria-hidden="true" /> : <Pause className="h-4 w-4" aria-hidden="true" />}
             {paused ? "Play photos" : "Pause photos"}
           </button>
           <Link
             href="/media-inquiries/headshots"
-            className="inline-flex h-11 items-center rounded-full bg-white px-4 text-sm font-semibold text-slate-950 transition hover:bg-sky-100"
+            className="inline-flex h-11 items-center rounded-full bg-slate-900 px-4 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-950 dark:hover:bg-sky-100"
           >
             Press photos
           </Link>

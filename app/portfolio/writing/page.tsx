@@ -159,7 +159,7 @@ function BlogCard({ blog }: { blog: (typeof blogs)[0] }) {
           <div className="lg:col-span-3">
             <div>
               <h4 className="text-sm font-semibold mb-3">Articles:</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 max-h-80 overflow-y-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 max-h-80 overflow-y-auto" tabIndex={0} role="region" aria-label={`${blog.title} articles`}>
                 {blog.blogArticles?.map((article, index) => (
                   <div key={index} className="text-sm p-2 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
                     <div className="font-medium text-foreground">{article.title}</div>

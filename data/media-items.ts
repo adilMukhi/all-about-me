@@ -9,6 +9,24 @@ export interface MediaItem {
 
 export const mediaItems: MediaItem[] = [
   {
+    title: "Ontario Honours Achievements of 20 Exceptional Young People",
+    publication: "OMNI News Punjabi",
+    date: "October 19, 2026",
+    link: "https://www.youtube.com/watch?v=n3epqtr3ywM",
+    quote:
+      "There are so many equity deserving youth that have never had an opportunity to talk with someone in a field they want to go into, that have never met their elected official, that have never had a chance to talk with a doctor outside of regular visits. ... We could reach out to doctors and politicians in our local communities, and we were able to get 160,000 youth access to educational programs.",
+    type: "interview",
+  },
+  {
+    title: "Ontario Medal for Young Volunteers",
+    publication: "Government of Ontario",
+    date: "August 26, 2026",
+    link: "https://news.ontario.ca/en/backgrounder/1007941/ontario-medal-for-young-volunteers",
+    quote:
+      "Adil Mukhi contributes to community well-being through large-scale youth leadership initiatives, health and mental-health education and inclusive volunteer advocacy. His work focuses on building accessible programs that empower young people to learn, serve and lead while strengthening community connection across Ontario.",
+    type: "spotlight",
+  },
+  {
     title: "How to help your teen with post-summer social media withdrawal",
     publication: "CBC",
     date: "September 3, 2025",

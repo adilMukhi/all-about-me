@@ -3,7 +3,6 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import SafeImage from "@/components/safe-image"
 import SchoolRolesBreakdown from "@/components/school-roles-breakdown"
-import Script from "next/script"
 import { ArrowLeft, ExternalLink, Sparkles } from "lucide-react"
 
 import Header from "@/components/header"
@@ -12,7 +11,7 @@ import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { workExperiences } from "@/data/work-experience"
-import { getWorkExperienceBySlug, getWorkExperiencePath } from "@/lib/seo-paths"
+import { getWorkExperienceBySlug, getWorkExperiencePath, metaDescription, seoTitle } from "@/lib/seo-paths"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
@@ -33,11 +32,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
   }
 
-  const title = `${experience.title} at ${experience.company} | Adil Mukhi`
-  const description = experience.longDescription || experience.description
+  const title = `${experience.title} at ${experience.company}`
+  const description = metaDescription(experience.longDescription || experience.description)
 
   return {
-    title,
+    title: seoTitle(title),
     description,
     alternates: {
       canonical: `${siteUrl}${getWorkExperiencePath(experience)}`,
@@ -107,9 +106,11 @@ export default async function ExperienceDetailPage({ params }: { params: Promise
   return (
     <>
       <Header />
-      <Script id={`experience-${experience.slug}-structured-data`} type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </Script>
+      <script
+        id={`experience-${experience.slug}-structured-data`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: (JSON.stringify(structuredData)).replace(/</g, "\\u003c") }}
+      />
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
           <div className="container">

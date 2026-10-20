@@ -8,7 +8,6 @@ import PageLayout from "@/components/page-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import Script from "next/script"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import { educationIndexMetadata } from "../page-metadata"
 import { educationData } from "@/data/education"
@@ -42,9 +41,11 @@ const educationStructuredData = {
 export default function EducationIndexPage() {
   return (
     <>
-      <Script id="education-structured-data" type="application/ld+json">
-        {JSON.stringify(educationStructuredData)}
-      </Script>
+      <script
+          id="education-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: (JSON.stringify(educationStructuredData)).replace(/</g, "\\u003c") }}
+        />
       <Header />
       <main className="min-h-screen bg-background page-transition">
         <section className="py-16 bg-gradient-to-b from-primary/10 to-background">

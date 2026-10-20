@@ -6,6 +6,8 @@ export type Award = {
   image: string | string[]
   skills: string[]
   link: string
+  // CSS object-position for cropped thumbnails, so the people in a photo stay in frame
+  focus?: string
   // "nomination" entries render in a separate Nominations group after the awards
   group?: "nomination"
 }
@@ -16,10 +18,11 @@ export const honorsAwards: Award[] = [
     issuer: "Province of Ontario",
     year: "2026",
     description:
-      "Recipient of the Ontario Medal for Young Volunteers, the highest honour a young person can receive from the Province of Ontario for volunteer service. To be presented by the Lieutenant Governor of Ontario on October 19, 2026 at Queen's Park.",
+      "Named a 2025 recipient of the Ontario Medal for Young Volunteers, the Province of Ontario's highest honour for youth aged 15 to 24, recognizing large-scale youth leadership, health and mental health education, and inclusive volunteer advocacy. Presented by the Lieutenant Governor of Ontario at Queen's Park on October 19, 2026.",
     image: "/ontario-medal-young-volunteers-2026.jpg",
+    focus: "50% 72%",
     skills: ["Volunteerism", "Community Engagement", "Youth Leadership"],
-    link: "",
+    link: "https://news.ontario.ca/en/backgrounder/1007941/ontario-medal-for-young-volunteers",
   },
   {
     title: "Top 20 Under 18 in Canada",

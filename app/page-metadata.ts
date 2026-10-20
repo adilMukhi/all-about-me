@@ -15,9 +15,9 @@ const defaultTwitter = {
 }
 
 export const homeMetadata: Metadata = {
-  title: "Adil Mukhi: Youth Advocate, Public Speaker, Founder, and Research Leader",
+  title: { absolute: "Adil Mukhi | TEDx Speaker, Youth Advocate & Founder" },
   description:
-    "Adil Mukhi is a youth advocate, public speaker, advisor, consultant, and changemaker from the Greater Toronto Area. Founder and Executive Director of Dr. Interested, an organization impacting 160,000+ individuals across 106 countries with 2,100+ members, 367 executives, 400+ mentor hours, and 20+ events. TEDx speaker, Ontario Medal for Young Volunteers recipient, and advocate for mental health and youth empowerment.",
+    "TEDx speaker, youth advocate, and founder of Dr. Interested, reaching 160,000+ people in 106 countries. Ontario Medal for Young Volunteers recipient.",
   alternates: {
     canonical: `${siteUrl}/`,
   },
@@ -43,7 +43,7 @@ export const homeMetadata: Metadata = {
 export const backgroundMetadata: Metadata = {
   title: "Background",
   description:
-    "Explore Adil Mukhi's background as a youth advocate, public speaker, advisor, and consultant. Ontario Medal for Young Volunteers recipient, TEDx speaker, research volunteer at SickKids Hospital, and founder and Executive Director of Dr. Interested, an organization impacting 160,000+ individuals across 106 countries with 2,100+ members, 367 executives, 400+ mentor hours, and 20+ events.",
+    "Adil Mukhi's work experience, volunteering, education, certificates, awards, and testimonials, from SickKids research to founding Dr. Interested.",
   alternates: {
     canonical: `${siteUrl}/background`,
   },
@@ -69,7 +69,7 @@ export const backgroundMetadata: Metadata = {
 export const portfolioMetadata: Metadata = {
   title: "Portfolio",
   description:
-    "Discover Adil Mukhi's diverse portfolio including Dr. Interested (reaching 160,000+ youth), research projects, published writings, coding projects, and creative works across advocacy, healthcare, and technology.",
+    "Adil Mukhi's portfolios: published writing and op-eds, medical research, coding projects, and art and sports, all in one place.",
   alternates: {
     canonical: `${siteUrl}/portfolio`,
   },
@@ -93,7 +93,7 @@ export const portfolioMetadata: Metadata = {
 }
 
 export const experiencesMetadata: Metadata = {
-  title: "Experiences News & Updates | Adil Mukhi",
+  title: "Experiences News & Updates",
   description:
     "Read news-style updates and featured experiences from Adil Mukhi across youth advocacy, healthcare research, community leadership, and public speaking.",
   keywords: [
@@ -164,7 +164,7 @@ export const experienceIndexMetadata: Metadata = {
 export const certificateIndexMetadata: Metadata = {
   title: "Certificates & Credentials",
   description:
-    "Browse Adil Mukhi's indexed certificate pages, training credentials, and verified learning experiences across healthcare, leadership, accessibility, and youth advocacy.",
+    "Adil Mukhi's certificates and credentials in healthcare, research, first aid, leadership, and data, each with its own page.",
   alternates: {
     canonical: `${siteUrl}/certificates`,
   },
@@ -306,7 +306,7 @@ export const mediaIndexMetadata: Metadata = {
 export const writingPortfolioMetadata: Metadata = {
   title: "Writing Portfolio",
   description:
-    "Explore Adil Mukhi's published articles, research papers, and written works on youth advocacy, mental health, healthcare policy, and social change. Featured in national publications and policy consultations.",
+    "Adil Mukhi's writing: books, op-eds, letters to the editor, and blogs on youth health, education, and advocacy, published across Canada.",
   alternates: {
     canonical: `${siteUrl}/portfolio/writing`,
   },
@@ -332,7 +332,7 @@ export const writingPortfolioMetadata: Metadata = {
 export const codingPortfolioMetadata: Metadata = {
   title: "Coding Portfolio",
   description:
-    "View Adil Mukhi's software development projects including Dr. Interested platform, web applications, and technology solutions for youth advocacy and healthcare. Canadian Computing Competition distinction recipient.",
+    "Coding projects by Adil Mukhi, including the Dr. Interested website and tools that support youth education and healthcare outreach.",
   alternates: {
     canonical: `${siteUrl}/portfolio/coding`,
   },
@@ -358,7 +358,7 @@ export const codingPortfolioMetadata: Metadata = {
 export const researchPortfolioMetadata: Metadata = {
   title: "Research Portfolio",
   description:
-    "Discover Adil Mukhi's research projects in healthcare, neuroscience, and youth mental health. Research volunteer at SickKids Hospital, Canadian Biology Olympiad medalist, and contributor to national health initiatives.",
+    "Adil Mukhi's research, from neuroscience and oncology reviews to a UN youth mental health report contribution, with DOIs and links.",
   alternates: {
     canonical: `${siteUrl}/portfolio/research`,
   },
@@ -384,7 +384,7 @@ export const researchPortfolioMetadata: Metadata = {
 export const artSportsPortfolioMetadata: Metadata = {
   title: "Art & Sports Portfolio",
   description:
-    "Explore Adil Mukhi's creative works and athletic achievements. Published poet in national youth anthologies, creative projects, and sports accomplishments showcasing well-rounded talents beyond advocacy work.",
+    "Adil Mukhi's art and sports: photography, design, tennis, and the Play-to-Heal movement linking sport and youth mental health.",
   alternates: {
     canonical: `${siteUrl}/portfolio/art-sports`,
   },
@@ -409,7 +409,7 @@ export const artSportsPortfolioMetadata: Metadata = {
 export const servicesMetadata: Metadata = {
   title: "Services - Speaking & Consulting",
   description:
-    "Book Adil Mukhi for speaking engagements, advising, and consulting services. TEDx speaker offering keynote presentations, workshops, youth advocacy consulting, and leadership sessions across the Greater Toronto Area and worldwide.",
+    "Book TEDx speaker Adil Mukhi for keynotes, workshops, panels, MC work, and youth engagement consulting, in the GTA or online.",
   keywords: [
     "Mississauga public speaker hire",
     "Mississauga youth public speaker",
@@ -447,7 +447,7 @@ export const servicesMetadata: Metadata = {
 export const mediaMetadata: Metadata = {
   title: "Media Coverage",
   description:
-    "Media coverage and press articles featuring Adil Mukhi's work as a youth advocate, TEDx speaker, and changemaker. Featured in national publications for advocacy and research contributions.",
+    "News coverage, interviews, and features on Adil Mukhi, from CBC and the United Nations to inSauga and The Global Indian.",
   alternates: {
     canonical: `${siteUrl}/media`,
   },
@@ -472,7 +472,7 @@ export const mediaMetadata: Metadata = {
 export const profilesMetadata: Metadata = {
   title: "Follow & Profiles",
   description:
-    "Find all official Adil Mukhi profiles and social channels in one place, including LinkedIn, Instagram, Facebook, X, Bluesky, TikTok, YouTube, and official websites.",
+    "Find and follow Adil Mukhi on LinkedIn, Instagram, YouTube, and more, plus Dr. Interested's official profiles.",
   alternates: {
     canonical: `${siteUrl}/profiles`,
   },

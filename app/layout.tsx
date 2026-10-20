@@ -6,6 +6,9 @@ import Script from "next/script"
 import { Inter, Fredoka } from "next/font/google"
 import "./globals.css"
 import StartAnimation from "@/components/start-animation-lazy"
+import { ThemeProvider } from "@/components/theme-provider"
+import SiteChat from "@/components/site-chat"
+import TranslateRuntime from "@/components/translate-runtime"
 import { Suspense } from "react"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
@@ -186,10 +189,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en-CA" className={`scroll-smooth ${inter.variable} ${fredoka.variable}`}>
+    <html lang="en-CA" className={`scroll-smooth ${inter.variable} ${fredoka.variable}`} suppressHydrationWarning>
       <head>
-        <Script id="site-structured-data" type="application/ld+json">
-          {JSON.stringify([
+        <script
+          id="site-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: (JSON.stringify([
             {
               "@context": "https://schema.org",
               "@type": "WebSite",
@@ -259,11 +264,23 @@ export default function RootLayout({
               familyName: "Mukhi",
               url: siteUrl,
               mainEntityOfPage: siteUrl,
-              image: {
+              image: [
+                ["/pictures/adil-mukhi-formal-headshot.jpg", "Formal headshot of Adil Mukhi"],
+                ["/pictures/adil-mukhi-queens-park-flags-portrait.jpg", "Adil Mukhi at Queen's Park, 2026"],
+                ["/ontario-medal-young-volunteers-2026.jpg", "Adil Mukhi receiving the Ontario Medal for Young Volunteers, 2026"],
+                ["/pictures/adil-mukhi-tedx-speaking-1.png", "Adil Mukhi speaking at TEDx"],
+                ["/pictures/adil-mukhi-portrait-closeup.jpg", "Portrait of Adil Mukhi"],
+              ].map(([path, caption]) => ({
                 "@type": "ImageObject",
-                url: `${siteUrl}/pictures/adil-mukhi-formal-headshot.jpg`,
-                caption: "Adil Mukhi",
-              },
+                url: `${siteUrl}${encodeURI(path)}`,
+                contentUrl: `${siteUrl}${encodeURI(path)}`,
+                caption,
+                creditText: "Adil Mukhi",
+                creator: { "@type": "Person", name: "Adil Mukhi" },
+                copyrightNotice: "© Adil Mukhi",
+                license: `${siteUrl}/terms`,
+                acquireLicensePage: `${siteUrl}/media-inquiries`,
+              })),
               jobTitle: "Youth Advocate, Public Speaker, Advisor, Consultant & Founder",
               email: "adilm@drinterested.org",
               telephone: "+1 289 796 2566",
@@ -328,8 +345,8 @@ export default function RootLayout({
                 "@id": `${siteUrl}/#organization`,
               },
             },
-          ])}
-        </Script>
+          ])).replace(/</g, "\\u003c") }}
+        />
         <meta name="p:domain_verify" content="10e6074a03407f2fd24aed7425a2acd9" />
         <meta name="theme-color" content="#0369a1" />
         {/* Without JavaScript, fade-in sections never animate in, so show them */}
@@ -375,10 +392,14 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-        <Suspense fallback={null}>
-          <StartAnimation />
-          {children}
-        </Suspense>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
+          <Suspense fallback={null}>
+            <StartAnimation />
+            {children}
+          </Suspense>
+          <SiteChat />
+          <TranslateRuntime />
+        </ThemeProvider>
         <Analytics />
         <SpeedInsights />
       </body>

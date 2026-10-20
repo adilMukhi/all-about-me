@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { ChevronRight, Home } from "lucide-react"
-import Script from "next/script"
 
 interface BreadcrumbItem {
   label: string
@@ -38,9 +37,11 @@ export function SEOBreadcrumbs({ items }: SEOBreadcrumbsProps) {
 
   return (
     <>
-      <Script id="breadcrumb-structured-data" type="application/ld+json">
-        {JSON.stringify(breadcrumbStructuredData)}
-      </Script>
+      <script
+          id="breadcrumb-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: (JSON.stringify(breadcrumbStructuredData)).replace(/</g, "\\u003c") }}
+        />
 
       <nav aria-label="Breadcrumb" className="flex mb-4">
         <ol className="flex items-center space-x-1 text-sm text-gray-500">

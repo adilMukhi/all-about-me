@@ -111,9 +111,9 @@ export default function StartAnimation() {
 
   return (
     <div className="fixed inset-0 bg-background z-50">
-      <h1 className="absolute top-[15%] left-1/2 -translate-x-1/2 text-4xl font-fredoka text-blue-600 select-none">
+      <p aria-hidden="true" className="absolute top-[15%] left-1/2 -translate-x-1/2 text-4xl font-fredoka text-blue-600 select-none">
         Hi, I'm Adil Mukhi!
-      </h1>
+      </p>
 
       {/* Outer ring (perfectly centered) */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">

@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Script from "next/script"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import AnimatedSection from "@/components/animated-section"
@@ -17,7 +16,7 @@ const LAST_UPDATED = "September 5, 2026"
 export const metadata: Metadata = {
   title: "Media Inquiries",
   description:
-    "How journalists, producers, and editors can reach Adil Mukhi for interviews, commentary, and appearances — including contact details, what to include in a request, and press kit resources.",
+    "Media kit for Adil Mukhi: biography, press photos, interview topics, and contact details for journalists and event organizers.",
   alternates: { canonical: `${siteUrl}/media-inquiries` },
   openGraph: {
     type: "website",
@@ -71,9 +70,11 @@ const mailtoBody = encodeURIComponent(
 export default function MediaInquiriesPage() {
   return (
     <main className="min-h-screen bg-background page-transition">
-      <Script id="media-inquiries-structured-data" type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </Script>
+      <script
+          id="media-inquiries-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: (JSON.stringify(structuredData)).replace(/</g, "\\u003c") }}
+        />
       <Header />
 
       <AnimatedSection>

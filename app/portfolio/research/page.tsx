@@ -14,9 +14,46 @@ import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 
 export const metadata: Metadata = researchPortfolioMetadata
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
+
+// Each research item as a scholarly work by (or crediting) Adil, with its DOI or source link when there is one
+const researchStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${siteUrl}/portfolio/research#webpage`,
+  url: `${siteUrl}/portfolio/research`,
+  name: "Research Portfolio of Adil Mukhi",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  about: { "@id": `${siteUrl}/#person` },
+  inLanguage: "en-CA",
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: researchProjects.map((project, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": /United Nations|OHCHR/.test(project.institution) ? "Report" : "ScholarlyArticle",
+        name: project.title,
+        description: project.description,
+        datePublished: project.year.split("-").pop(),
+        publisher: { "@type": "Organization", name: project.institution },
+        contributor: { "@id": `${siteUrl}/#person` },
+        ...(project.image ? { image: `${siteUrl}${encodeURI(project.image)}` } : {}),
+        ...(project.doiLinks?.[0] ? { identifier: `doi:${project.doiLinks[0].doiNumber}`, url: project.doiLinks[0].url } : {}),
+        ...(!project.doiLinks?.[0] && project.otherLinks?.[0] ? { url: project.otherLinks[0].url } : {}),
+      },
+    })),
+  },
+}
+
 export default function ResearchPortfolioPage() {
   return (
     <>
+      <script
+          id="research-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: (JSON.stringify(researchStructuredData)).replace(/</g, "\\u003c") }}
+        />
       <Header />
       <main className="min-h-screen bg-background">
         <section className="py-16 bg-gradient-to-b from-green-50 to-background">
@@ -62,7 +99,7 @@ export default function ResearchPortfolioPage() {
                         </svg>
                       </div>
                       <div className="font-semibold text-green-700">ORCID</div>
-                      <div className="text-sm text-green-600">Academic Profile</div>
+                      <div className="text-sm text-green-700">Academic Profile</div>
                     </div>
                   </a>
                 </Button>
@@ -104,7 +141,7 @@ export default function ResearchPortfolioPage() {
                         </svg>
                       </div>
                       <div className="font-semibold text-teal-700">ResearchGate</div>
-                      <div className="text-sm text-teal-600">Research Network</div>
+                      <div className="text-sm text-teal-700">Research Network</div>
                     </div>
                   </a>
                 </Button>
@@ -121,7 +158,7 @@ export default function ResearchPortfolioPage() {
                         </svg>
                       </div>
                       <div className="font-semibold text-red-700">Academia.edu</div>
-                      <div className="text-sm text-red-600">Academic Papers</div>
+                      <div className="text-sm text-red-700">Academic Papers</div>
                     </div>
                   </a>
                 </Button>
