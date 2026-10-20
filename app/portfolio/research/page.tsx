@@ -32,7 +32,7 @@ const researchStructuredData = {
       "@type": "ListItem",
       position: index + 1,
       item: {
-        "@type": project.institution.includes("United Nations") ? "Report" : "ScholarlyArticle",
+        "@type": /United Nations|OHCHR/.test(project.institution) ? "Report" : "ScholarlyArticle",
         name: project.title,
         description: project.description,
         datePublished: project.year.split("-").pop(),
