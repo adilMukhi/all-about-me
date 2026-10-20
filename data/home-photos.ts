@@ -10,6 +10,24 @@ export type HomePhoto = {
 
 const eventPhotos: HomePhoto[] = [
   {
+    src: "/ontario-medal-young-volunteers-2026.jpg",
+    alt: "Adil Mukhi receiving the Ontario Medal for Young Volunteers at Queen's Park",
+    caption: "Receiving the Ontario Medal for Young Volunteers, 2026",
+    focus: "58% 60%",
+  },
+  {
+    src: "/pictures/adil-mukhi-queens-park-podium.jpg",
+    alt: "Adil Mukhi speaking at the podium at Queen's Park, wearing the Ontario Medal for Young Volunteers",
+    caption: "Speaking at Queen's Park",
+    focus: "30% 40%",
+  },
+  {
+    src: "/pictures/adil-mukhi-queens-park-tv-interview.jpg",
+    alt: "Adil Mukhi giving a television interview at Queen's Park",
+    caption: "TV interview at Queen's Park",
+    focus: "25% 40%",
+  },
+  {
     src: "/pictures/Adil Mukhi - Tedx 1 withbackground.png",
     alt: "Adil Mukhi speaking on stage at TEDxMcFarren Boulevard Youth",
     caption: "On stage at TEDxMcFarren Boulevard Youth",
@@ -70,6 +88,24 @@ const shootStills: HomePhoto[] = [
 ]
 
 const everydayPhotos: HomePhoto[] = [
+  {
+    src: "/pictures/adil-mukhi-queens-park-flags-portrait.jpg",
+    alt: "Adil Mukhi in a suit with arms crossed in front of the Canadian and Ontario flags",
+    caption: "Queen's Park, 2026",
+    focus: "50% 25%",
+  },
+  {
+    src: "/pictures/adil-mukhi-queens-park-piano.jpg",
+    alt: "Adil Mukhi playing a grand piano at Queen's Park",
+    caption: "At the piano",
+    focus: "30% 40%",
+  },
+  {
+    src: "/pictures/adil-mukhi-queens-park-reception.jpg",
+    alt: "Adil Mukhi talking with guests at the Ontario Medal reception at Queen's Park",
+    caption: "Ontario Medal reception",
+    focus: "75% 35%",
+  },
   {
     src: "/pictures/adil-mukhi-portrait-closeup.jpg",
     alt: "Close up portrait of Adil Mukhi",

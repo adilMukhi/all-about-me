@@ -16,7 +16,7 @@ export const honorsAwards: Award[] = [
     issuer: "Province of Ontario",
     year: "2026",
     description:
-      "Recipient of the Ontario Medal for Young Volunteers, the highest honour a young person can receive from the Province of Ontario for volunteer service. To be presented by the Lieutenant Governor of Ontario on October 19, 2026 at Queen's Park.",
+      "Recipient of the Ontario Medal for Young Volunteers, the highest honour a young person can receive from the Province of Ontario for volunteer service. Presented at Queen's Park in Toronto on October 19, 2026.",
     image: "/ontario-medal-young-volunteers-2026.jpg",
     skills: ["Volunteerism", "Community Engagement", "Youth Leadership"],
     link: "",

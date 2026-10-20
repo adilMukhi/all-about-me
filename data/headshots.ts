@@ -8,6 +8,12 @@ export type Shot = {
 
 export const headshots: Shot[] = [
   {
+    src: "/pictures/adil-mukhi-queens-park-flags-portrait.jpg",
+    alt: "Adil Mukhi in a suit in front of the Canadian and Ontario flags",
+    caption: "Formal portrait at Queen's Park (2026)",
+    orientation: "portrait",
+  },
+  {
     src: "/pictures/adil-mukhi-formal-headshot.jpg",
     alt: "Formal headshot of Adil Mukhi",
     caption: "Formal headshot — preferred for bylines and author photos",
@@ -34,6 +40,36 @@ export const headshots: Shot[] = [
 ]
 
 export const inAction: Shot[] = [
+  {
+    src: "/ontario-medal-young-volunteers-2026.jpg",
+    alt: "Adil Mukhi receiving the Ontario Medal for Young Volunteers at Queen's Park",
+    caption: "Ontario Medal for Young Volunteers ceremony, Queen's Park (2026)",
+    orientation: "landscape",
+  },
+  {
+    src: "/pictures/adil-mukhi-queens-park-podium.jpg",
+    alt: "Adil Mukhi speaking at the podium at Queen's Park",
+    caption: "Speaking at Queen's Park (2026)",
+    orientation: "landscape",
+  },
+  {
+    src: "/pictures/adil-mukhi-queens-park-tv-interview.jpg",
+    alt: "Adil Mukhi giving a television interview at Queen's Park",
+    caption: "Television interview, Queen's Park (2026)",
+    orientation: "landscape",
+  },
+  {
+    src: "/pictures/adil-mukhi-queens-park-reception.jpg",
+    alt: "Adil Mukhi talking with guests at Queen's Park",
+    caption: "Ontario Medal reception, Queen's Park (2026)",
+    orientation: "landscape",
+  },
+  {
+    src: "/pictures/adil-mukhi-queens-park-piano.jpg",
+    alt: "Adil Mukhi playing piano at Queen's Park",
+    caption: "At the piano, Queen's Park (2026)",
+    orientation: "landscape",
+  },
   {
     src: "/pictures/adil-mukhi-portrait-closeup.jpg",
     alt: "Close up portrait of Adil Mukhi",
