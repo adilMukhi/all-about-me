@@ -626,6 +626,25 @@ export const researchProjects: ResearchProject[] = [
     status: "Under review",
   },
   {
+    title: "Raising Canada Report: Top 10 Threats to Childhood in Canada",
+    description:
+      "Listed as a Youth Advisor and Contributor in Children First Canada's annual Raising Canada report, which tracks the top threats to children's health and well-being in Canada. I reviewed the 2024 edition, A Generation is Falling Behind, and returned as a youth advisor for the 2026 edition, helping write its youth infographic and joining the youth media roster for the launch.",
+    image: "/raising-canada-report-cover.jpg",
+    tags: ["Children's Rights", "Child Health", "Policy", "Youth Advocacy"],
+    institution: "Children First Canada",
+    year: "2024-2026",
+    otherLinks: [
+      {
+        text: "Read the 2024 report (PDF)",
+        url: "https://childrenfirstcanada.org/wp-content/uploads/2024/10/Raising-Canada-2024-Final.pdf",
+      },
+      {
+        text: "2026 report",
+        url: "https://childrenfirstcanada.org/the-kids-are-not-alright",
+      },
+    ],
+  },
+  {
     title: "From Stress to Forgetfulness: Understanding How Stress Hormones Shape Your Memory",
     description:
       "An in-depth 6741 word exploration of how stress hormones affect memory, from short-term impacts to long-term neurological changes.",
