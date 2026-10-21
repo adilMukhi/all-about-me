@@ -580,7 +580,7 @@ export const researchProjects: ResearchProject[] = [
   {
     title: "Study on the Impact of Mental Health Challenges on the Enjoyment of Human Rights by Young People",
     description:
-      "Dr. Interested's written submission to the UN Office of the High Commissioner for Human Rights (OHCHR) under Human Rights Council Resolution 57/30, co-signed by Adil Mukhi as Executive Director. Combining an original youth survey, promoted with support from Kids Help Phone, and a literature review, it links anxiety and depressive symptoms to experiences of discrimination and recommends a human rights-based, preventive approach. It was one of the inputs to the OHCHR study A/HRC/63/51, presented at the 63rd session of the Human Rights Council.",
+      "Dr. Interested's written submission to the UN Office of the High Commissioner for Human Rights (OHCHR) under Human Rights Council Resolution 57/30, co-signed by Adil Mukhi as Executive Director. Combining original youth survey research, supported by Kids Help Phone, with a literature review, it links anxiety and depressive symptoms to experiences of discrimination and recommends a human rights-based, preventive approach. It was one of the inputs to the OHCHR study A/HRC/63/51, presented at the 63rd session of the Human Rights Council.",
     image: "/ohchr-youth-mental-health-submission.jpg",
     tags: ["Youth Mental Health", "Human Rights", "Policy", "Survey Research"],
     institution: "UN Office of the High Commissioner for Human Rights (OHCHR)",
