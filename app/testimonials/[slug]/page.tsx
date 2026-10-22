@@ -80,30 +80,22 @@ export default async function TestimonialDetailPage({ params }: { params: Promis
       isPartOf: { "@id": `${siteUrl}/#website` },
       about: { "@id": `${siteUrl}/#person` },
       inLanguage: "en-CA",
-      mainEntity: { "@id": `${canonicalUrl}#review` },
+      mainEntity: { "@id": `${canonicalUrl}#quote` },
     },
+    // A recommendation of a person, so a Quotation rather than a Review: Google only supports review
+    // snippets for products, businesses and similar items, and these testimonials carry no rating
     {
       "@context": "https://schema.org",
-      "@type": "Review",
-      "@id": `${canonicalUrl}#review`,
+      "@type": "Quotation",
+      "@id": `${canonicalUrl}#quote`,
       url: canonicalUrl,
-      reviewBody: testimonial.testimonial,
-      ...(toIso(testimonial.timeKnown) ? { datePublished: toIso(testimonial.timeKnown) } : {}),
-      itemReviewed: {
-        "@type": "Person",
-        "@id": `${siteUrl}/#person`,
-        name: "Adil Mukhi",
-      },
-      author: {
+      text: testimonial.testimonial,
+      ...(toIso(testimonial.timeKnown) ? { dateCreated: toIso(testimonial.timeKnown) } : {}),
+      about: { "@id": `${siteUrl}/#person` },
+      creator: {
         "@type": "Person",
         name: testimonial.name,
         jobTitle: testimonial.role,
-      },
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: 5,
-        bestRating: 5,
-        worstRating: 1,
       },
     },
   ]
