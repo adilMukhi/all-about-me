@@ -39,26 +39,15 @@ const testimonialsStructuredData = [
       })),
     },
   },
-  {
+  // Recommendations are listed as quotations; Google does not support review snippets about a person
+  ...testimonials.map((t) => ({
     "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": `${siteUrl}/#person`,
-    name: "Adil Mukhi",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: 5,
-      bestRating: 5,
-      worstRating: 1,
-      reviewCount: testimonials.length,
-    },
-    review: testimonials.map((t) => ({
-      "@type": "Review",
-      reviewBody: t.testimonial,
-      ...(toIso(t.timeKnown) ? { datePublished: toIso(t.timeKnown) } : {}),
-      author: { "@type": "Person", name: t.name, jobTitle: t.role },
-      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5, worstRating: 1 },
-    })),
-  },
+    "@type": "Quotation",
+    text: t.testimonial,
+    ...(toIso(t.timeKnown) ? { dateCreated: toIso(t.timeKnown) } : {}),
+    about: { "@id": `${siteUrl}/#person` },
+    creator: { "@type": "Person", name: t.name, jobTitle: t.role },
+  })),
 ]
 
 export default function TestimonialsIndexPage() {
