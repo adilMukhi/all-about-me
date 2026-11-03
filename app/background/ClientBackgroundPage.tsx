@@ -20,7 +20,8 @@ type Section = {
   title: string
   icon: React.ComponentType<{ className?: string }>
   component: React.ComponentType
-  color: string
+  // Icon tint; the button itself uses theme colours so it reads well in light and dark
+  iconColor: string
 }
 
 const sections: Section[] = [
@@ -29,42 +30,42 @@ const sections: Section[] = [
     title: "Work Experience",
     icon: Briefcase,
     component: WorkExperience,
-    color: "bg-green-50 hover:bg-green-100",
+    iconColor: "text-green-600 dark:text-green-400",
   },
   {
     id: "education",
     title: "Education",
     icon: GraduationCap,
     component: Education,
-    color: "bg-purple-50 hover:bg-purple-100",
+    iconColor: "text-purple-600 dark:text-purple-400",
   },
   {
     id: "testimonials",
     title: "Testimonials",
     icon: MessageSquare,
     component: Testimonials,
-    color: "bg-blue-50 hover:bg-blue-100",
+    iconColor: "text-blue-600 dark:text-blue-400",
   },
   {
     id: "certificates",
     title: "Certificates",
     icon: BadgeCheck,
     component: Certificates,
-    color: "bg-red-50 hover:bg-red-100",
+    iconColor: "text-red-600 dark:text-red-400",
   },
   {
     id: "volunteer",
     title: "Volunteer Work",
     icon: Heart,
     component: VolunteerWork,
-    color: "bg-pink-50 hover:bg-pink-100",
+    iconColor: "text-pink-600 dark:text-pink-400",
   },
   {
     id: "honors",
     title: "Honors & Awards",
     icon: Trophy,
     component: HonorsAwards,
-    color: "bg-orange-50 hover:bg-orange-100",
+    iconColor: "text-orange-600 dark:text-orange-400",
   },
 ]
 
@@ -131,7 +132,7 @@ export default function ClientBackgroundPage() {
                   {sections.map((section) => (
                     <SelectItem key={section.id} value={section.id}>
                       <div className="flex items-center gap-2">
-                        <section.icon className="h-4 w-4" />
+                        <section.icon className={cn("h-4 w-4", section.iconColor)} aria-hidden="true" />
                         <span>{section.title}</span>
                       </div>
                     </SelectItem>
@@ -159,14 +160,16 @@ export default function ClientBackgroundPage() {
                       }
                     }}
                     className={cn(
-                      "flex items-center gap-2 px-4 py-3 rounded-lg transition-all relative text-sm",
-                      section.color,
-                      activeSection === section.id ? "ring-2 ring-blue-500 shadow-lg scale-105" : "hover:scale-105",
-                      // Add overflow-hidden to contain the pseudo-element
-                      "overflow-hidden",
+                      "flex items-center gap-2 px-4 py-3 rounded-lg border text-sm font-medium transition-all",
+                      activeSection === section.id
+                        ? "border-primary bg-primary text-primary-foreground shadow-lg"
+                        : "border-border bg-card text-card-foreground hover:-translate-y-0.5 hover:border-primary/60 hover:bg-accent hover:text-accent-foreground",
                     )}
                   >
-                    <section.icon className="h-4 w-4" aria-hidden="true" />
+                    <section.icon
+                      className={cn("h-4 w-4", activeSection === section.id ? "text-primary-foreground" : section.iconColor)}
+                      aria-hidden="true"
+                    />
                     <span className="font-medium whitespace-nowrap">{section.title}</span>
                   </button>
                 ))}

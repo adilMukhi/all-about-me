@@ -127,8 +127,8 @@ export default function CollectionGrid<T>({
           <Button
             type="button"
             size="sm"
-            variant="secondary"
-            className="absolute right-2 top-2 z-10 h-9 w-9 p-0 bg-background/85 backdrop-blur-sm hover:bg-background"
+            variant="outline"
+            className="absolute right-2 top-2 z-10 h-9 w-9 p-0 border-border bg-background/90 text-foreground shadow-sm backdrop-blur-sm hover:bg-accent hover:text-accent-foreground"
             onClick={(event) => {
               event.stopPropagation()
               open(item)
