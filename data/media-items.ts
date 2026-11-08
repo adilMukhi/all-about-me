@@ -9,6 +9,15 @@ export interface MediaItem {
 
 export const mediaItems: MediaItem[] = [
   {
+    title: "Adil Mukhi: Indo-Canadian teen making healthcare careers more accessible through Dr. Interested",
+    publication: "The Global Indian",
+    date: "November 8, 2026",
+    link: "https://www.globalindian.com/youth/adil-mukhi-dr-interested-helping-youth-explore-healthcare-careers/",
+    quote:
+      "When Adil Mukhi was in Grade 9 at Glenforest Secondary School in Mississauga, Ontario, he noticed that several of his classmates wanted to become doctors but were unsure how to get started. ... What began with a small group of students meeting online has since grown into an international community. \"Dr. Interested now has 2,100 members, 900 volunteers and 367 executive leaders across 106 countries,\" Adil shares with The Global Indian.",
+    type: "feature",
+  },
+  {
     title: "Ontario Honours Achievements of 20 Exceptional Young People",
     publication: "OMNI News Punjabi",
     date: "October 19, 2026",
