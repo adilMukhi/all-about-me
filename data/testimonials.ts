@@ -10,6 +10,8 @@ export type Testimonial = {
   connection: string
   testimonial: string
   image: string
+  // Square face crop for the small round photos, when `image` is a taller portrait
+  avatar?: string
 }
 
 export const testimonials: Testimonial[] = [
@@ -20,8 +22,9 @@ export const testimonials: Testimonial[] = [
     timeKnown: "November 8, 2026",
     connection: "RE.sport Youth Collective, University of Toronto",
     testimonial:
-      "Through this work, I have come to know Adil as an intellectually curious, compassionate, and empowering young leader who brings out the best in those around him. Adil is one of the most impressive young people I have worked with in my career.\n\nWhat distinguishes Adil is not simply his willingness to contribute, but the way he creates space for others to contribute alongside him. He leads with authenticity and vulnerability, sharing his perspectives in ways that invite others into the conversation rather than dominating it. Adil understands something that many leaders take years to appreciate: leadership is not about being the most knowledgeable person in the room, but about creating the conditions for everyone to contribute their knowledge.\n\nHe participated in all three rounds of a national Delphi study examining research guidelines for youth sport, contributed feedback on research materials and conference presentations, and provided input into recommendations submitted to Canada's Future of Sport Commission. He also goes a step further by connecting researchers with people in his own network who are working on similar topics, and he now helps review grant applications for the RE.sport project.\n\nAdil doesn't chase accolades; he genuinely wants to make the world a better place for everyone. I believe Adil represents the kind of future physician our communities need, someone who combines a commitment to scientific inquiry with compassion, humility, and an understanding that improving health requires working with people, not simply for them.",
+      "Through this work, I have come to know Adil as an intellectually curious, compassionate, and empowering young leader who brings out the best in those around him. Adil is one of the most impressive young people I have worked with in my career.\n\nWhat distinguishes Adil is not simply his willingness to contribute, but the way he creates space for others to contribute alongside him. ... Adil understands something that many leaders take years to appreciate, leadership is not about being the most knowledgeable person in the room, but about creating the conditions for everyone to contribute their knowledge.\n\nHe participated in all three rounds of a national Delphi study examining research guidelines for youth sport, ... and provided input into recommendations submitted to Canada's Future of Sport Commission.\n\nAdil doesn’t chase accolades he genuinely wants to make the world a better place for everyone. ... I believe Adil represents the kind of future physician our communities need, someone who combines a commitment to scientific inquiry with compassion, humility, and an understanding that improving health requires working with people, not simply for them.",
     image: "/SashaGollish.jpg",
+    avatar: "/SashaGollish-avatar.jpg",
   },
   {
     name: "Peace Mukazi Ndekezi, Ph.D.",
@@ -140,3 +143,4 @@ export const getTestimonialPath = (testimonial: Testimonial) => `/testimonials/$
 export const getTestimonialBySlug = (slug: string) => testimonials.find((testimonial) => getTestimonialSlug(testimonial) === slug)
 // The first part of a "Title | Title" role line, short enough for titles, snippets and alt text
 export const getTestimonialShortRole = (testimonial: Testimonial) => testimonial.role.split("|")[0].trim()
+export const getTestimonialAvatar = (testimonial: Testimonial) => testimonial.avatar ?? testimonial.image

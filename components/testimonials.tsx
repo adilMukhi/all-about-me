@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Quote } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-import { getTestimonialPath, getTestimonialSlug, testimonials } from "@/data/testimonials"
+import { getTestimonialAvatar, getTestimonialPath, getTestimonialSlug, testimonials } from "@/data/testimonials"
 
 const headingFont = { fontFamily: "'Bubblegum Sans', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }
 
@@ -34,7 +34,7 @@ export default function Testimonials({ showHeading = true }: { showHeading?: boo
                   <figure className="flex flex-col gap-6 lg:flex-row">
                     <figcaption className="flex-shrink-0 text-center lg:w-80 lg:text-left">
                       <Image
-                        src={testimonial.image || "/placeholder.svg"}
+                        src={getTestimonialAvatar(testimonial) || "/placeholder.svg"}
                         alt={`Photo of ${testimonial.name}`}
                         width={80}
                         height={80}

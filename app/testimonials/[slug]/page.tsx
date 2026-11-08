@@ -7,7 +7,7 @@ import { ArrowLeft, Sparkles } from "lucide-react"
 import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
-import { testimonials, getTestimonialBySlug, getTestimonialPath, getTestimonialShortRole, getTestimonialSlug, type Testimonial } from "@/data/testimonials"
+import { testimonials, getTestimonialAvatar, getTestimonialBySlug, getTestimonialPath, getTestimonialShortRole, getTestimonialSlug, type Testimonial } from "@/data/testimonials"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { metaDescription, seoTitle } from "@/lib/seo-paths"
@@ -191,7 +191,7 @@ export default async function TestimonialDetailPage({ params }: { params: Promis
                   href={getTestimonialPath(item)}
                   className="flex h-full items-center gap-4 rounded-xl border bg-card p-4 transition-colors hover:border-primary/60 hover:bg-accent"
                 >
-                  <Image src={item.image} alt="" width={48} height={48} className="h-12 w-12 shrink-0 rounded-full object-cover" />
+                  <Image src={getTestimonialAvatar(item)} alt="" width={48} height={48} className="h-12 w-12 shrink-0 rounded-full object-cover" />
                   <span className="min-w-0">
                     <span className="block font-semibold text-card-foreground">{item.name}</span>
                     <span className="block truncate text-sm text-muted-foreground">{getTestimonialShortRole(item)}</span>
