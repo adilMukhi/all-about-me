@@ -8,6 +8,7 @@ import { portfolioItems } from "@/data/portfolio-items"
 import { workExperiences } from "@/data/work-experience"
 import { getCertificatePath, getEducationPath, getHonorPath, getMediaPath, getWorkExperiencePath, getVolunteerPath } from "@/lib/seo-paths"
 import { volunteerWork } from "@/data/volunteer-work"
+import { testimonials, getTestimonialPath } from "@/data/testimonials"
 import { videos, getVideoPath, getVideoThumbnail } from "@/data/videos"
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -224,9 +225,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Portfolio items if they have individual pages
   const portfolioRoutes: MetadataRoute.Sitemap = portfolioItems
-    .filter((item) => "link" in item && item.link && item.link.startsWith("/"))
+    .filter(
+      (item): item is (typeof portfolioItems)[number] & { link: string } =>
+        "link" in item && typeof item.link === "string" && item.link.startsWith("/"),
+    )
     .map((item) => ({
-      url: `${baseUrl}${(item as any).link}`,
+      url: `${baseUrl}${item.link}`,
       lastModified: "date" in item && item.date ? new Date(item.date) : currentDate,
       changeFrequency: "monthly",
       priority: 0.6,
@@ -276,6 +280,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
+  const testimonialRoutes: MetadataRoute.Sitemap = testimonials.map((testimonial) => ({
+    url: `${baseUrl}${getTestimonialPath(testimonial)}`,
+    lastModified: currentDate,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }))
+
   return [
     ...mainPages,
     ...blogRoutes,
@@ -286,6 +297,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...volunteerRoutes,
     ...honorRoutes,
     ...mediaRoutes,
+    ...testimonialRoutes,
     ...videoRoutes,
   ]
 }

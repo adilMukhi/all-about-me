@@ -257,26 +257,27 @@ export const honorsIndexMetadata: Metadata = {
   },
 }
 
+const testimonialsDescription =
+  "Recommendations for Adil Mukhi from researchers, mentors, managers and clients at the University of Toronto, Children First Canada, Results Canada and more."
+
 export const testimonialsIndexMetadata: Metadata = {
-  title: "Testimonials",
-  description:
-    "Explore recommendations and testimonials from colleagues, mentors, and collaborators who have worked with Adil Mukhi.",
+  title: "Testimonials & Recommendations",
+  description: testimonialsDescription,
   alternates: {
     canonical: `${siteUrl}/testimonials`,
   },
   openGraph: {
     type: "website",
     siteName: "Adil Mukhi",
-    title: "Testimonials",
-    description:
-      "Public testimonial pages featuring recommendations from colleagues, mentors, and collaborators.",
+    title: "Testimonials & Recommendations for Adil Mukhi",
+    description: testimonialsDescription,
     url: `${siteUrl}/testimonials`,
-    images: [{ ...defaultOgImage, alt: "Adil Mukhi Testimonials" }],
+    images: [{ ...defaultOgImage, alt: "Testimonials and recommendations for Adil Mukhi" }],
   },
   twitter: {
     ...defaultTwitter,
-    title: "Testimonials | Adil Mukhi",
-    description: "Public testimonial pages featuring recommendations from colleagues, mentors, and collaborators.",
+    title: "Testimonials & Recommendations | Adil Mukhi",
+    description: testimonialsDescription,
   },
 }
 

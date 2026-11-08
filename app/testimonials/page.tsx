@@ -5,9 +5,8 @@ import Header from "@/components/header"
 import PageLayout from "@/components/page-layout"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import Testimonials from "@/components/testimonials"
-import { testimonials } from "@/data/testimonials"
+import { testimonials, getTestimonialPath, getTestimonialShortRole } from "@/data/testimonials"
 import { testimonialsIndexMetadata } from "../page-metadata"
-import { slugify } from "@/lib/seo-paths"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
@@ -25,7 +24,8 @@ const testimonialsStructuredData = [
     "@type": "CollectionPage",
     "@id": `${siteUrl}/testimonials#webpage`,
     url: `${siteUrl}/testimonials`,
-    name: "Testimonials for Adil Mukhi",
+    name: "Testimonials and recommendations for Adil Mukhi",
+    description: testimonialsIndexMetadata.description,
     isPartOf: { "@id": `${siteUrl}/#website` },
     about: { "@id": `${siteUrl}/#person` },
     inLanguage: "en-CA",
@@ -35,7 +35,8 @@ const testimonialsStructuredData = [
       itemListElement: testimonials.map((t, i) => ({
         "@type": "ListItem",
         position: i + 1,
-        url: `${siteUrl}/testimonials/${slugify(`${t.name}-${t.connection}`)}`,
+        url: `${siteUrl}${getTestimonialPath(t)}`,
+        name: `${t.name} recommends Adil Mukhi`,
       })),
     },
   },
@@ -43,10 +44,20 @@ const testimonialsStructuredData = [
   ...testimonials.map((t) => ({
     "@context": "https://schema.org",
     "@type": "Quotation",
+    "@id": `${siteUrl}${getTestimonialPath(t)}#quote`,
+    url: `${siteUrl}${getTestimonialPath(t)}`,
+    name: `Recommendation for Adil Mukhi from ${t.name}`,
     text: t.testimonial,
     ...(toIso(t.timeKnown) ? { dateCreated: toIso(t.timeKnown) } : {}),
     about: { "@id": `${siteUrl}/#person` },
-    creator: { "@type": "Person", name: t.name, jobTitle: t.role },
+    isPartOf: { "@id": `${siteUrl}/testimonials#webpage` },
+    creator: {
+      "@type": "Person",
+      name: t.name,
+      jobTitle: getTestimonialShortRole(t),
+      description: t.role,
+      image: `${siteUrl}${t.image}`,
+    },
   })),
 ]
 
@@ -65,11 +76,11 @@ export default function TestimonialsIndexPage() {
             <SEOBreadcrumbs items={[{ label: "Testimonials", href: "/testimonials", active: true }]} />
             <div className="max-w-4xl mx-auto text-center mb-12">
               <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary mb-6">
-                <MessageSquareQuote className="h-4 w-4" />
+                <MessageSquareQuote className="h-4 w-4" aria-hidden="true" />
                 In their words
               </div>
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl" style={{ fontFamily: "'Sour Gummy', var(--font-fredoka), Fredoka, 'Trebuchet MS', system-ui, sans-serif" }}>
-                Testimonials
+                Testimonials & Recommendations
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
                 Recommendations from colleagues, managers, mentors, and clients who have worked with me. Select a name to read that recommendation on its own page.
