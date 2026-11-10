@@ -12,6 +12,17 @@ export type Certificate = {
 
 export const certificates: Certificate[] = [
   {
+    name: "Project Design for Community Impact",
+    issuer: "Humber Polytechnic & TakingITGlobal",
+    date: "Nov 2026",
+    description:
+      "A 12-module online micro-credential from Humber Polytechnic, earned through TakingITGlobal's Sprout Ideas Fellowship. It covers designing for impact, resource management, partnership building and community engagement, and prepares Fellows to submit a community service project for a grant of up to $5,000 with mentorship from TakingITGlobal and program alumni. Issued as a verified MyCreds digital badge.",
+    skills: ["Project Planning", "Stakeholder Engagement", "Partnership Building", "Monitoring & Evaluation", "Risk Management", "Social Media Strategy"],
+    link: "https://learner.mycreds.ca/badges/public/assertion/PXnN3vfmRsSHMaYFZSTqkg",
+    image: "/humber-project-design-community-impact-badge.png",
+    slug: "project-design-for-community-impact",
+  },
+  {
     name: "Psychological First Aid, Blended Standard First Aid & CPR/AED Level C, WHMIS + First Aid for Opioid Poisoning",
     issuer: "Canadian Red Cross",
     date: "Jun 2026",
