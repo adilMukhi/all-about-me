@@ -89,6 +89,12 @@ const shootStills: HomePhoto[] = [
 
 const everydayPhotos: HomePhoto[] = [
   {
+    src: "/pictures/adil-mukhi-high-school-graduation.jpg",
+    alt: "Adil Mukhi smiling in a graduation cap and gown for his high school grad photos",
+    caption: "High school grad photos",
+    focus: "55% 30%",
+  },
+  {
     src: "/pictures/adil-mukhi-queens-park-flags-portrait.jpg",
     alt: "Adil Mukhi in a suit with arms crossed in front of the Canadian and Ontario flags",
     caption: "Queen's Park, 2026",

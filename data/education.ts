@@ -75,6 +75,25 @@ export const educationData: Education[] = [
     ],
   },
   {
+    degree: "Project Design for Community Impact (Micro-credential)",
+    institution: "Humber Polytechnic & TakingITGlobal",
+    period: "Nov 2026",
+    description:
+      "A 12-module online micro-credential earned through TakingITGlobal's Sprout Ideas Fellowship, covering designing for impact, resource management, partnership building and community engagement.",
+    link: "https://learner.mycreds.ca/badges/public/assertion/PXnN3vfmRsSHMaYFZSTqkg",
+    image: "/humber-project-design-community-impact-badge.png",
+    slug: "project-design-for-community-impact",
+    longDescription:
+      "In partnership with TakingITGlobal and Humber Polytechnic, Fellows accepted into the Sprout Ideas Fellowship complete 12 online modules that build practical skills in designing for impact, resource management, partnership building and community engagement. Fellows can then submit their proposal for a grant of up to $5,000 to bring their community service project to life, with mentorship from the TakingITGlobal team and program alumni. Issued by Humber College as a verified MyCreds digital badge.",
+    achievements: [
+      "Identify a solution to a community need that is informed by stakeholder perspectives",
+      "Prepare a project plan with team roles and skills, SMART objectives, an action plan and a budget",
+      "Communicate project goals in an elevator pitch and a social media strategy",
+      "Identify key potential stakeholders and partnership objectives",
+      "Develop a monitoring and evaluation plan, with risks and mitigation strategies for long-term sustainability",
+    ],
+  },
+  {
     degree: "Google Data Analytics Certification",
     institution: "CKSTEM Learning",
     period: "Jun 2025 - Oct 2025",
