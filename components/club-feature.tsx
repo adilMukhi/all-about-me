@@ -23,9 +23,9 @@ export default function ClubFeature() {
               className="object-cover"
               style={{ objectPosition: "50% 40%" }}
             />
-            <div className="absolute bottom-4 left-4 flex items-center gap-3 rounded-2xl bg-white/95 p-2 pr-4 shadow-lg">
+            <div className="absolute bottom-4 left-4 flex items-center gap-3 rounded-2xl border border-border bg-background/95 p-2 pr-4 shadow-lg backdrop-blur-sm">
               <Image src="/drinterested.png" alt="Dr. Interested logo" width={48} height={48} className="rounded-xl object-cover" />
-              <span className="text-sm font-semibold text-slate-900">Founded by Adil Mukhi</span>
+              <span className="text-sm font-semibold text-foreground">Founded by Adil Mukhi</span>
             </div>
           </div>
           <div className="md:w-1/2 p-6 md:p-8">

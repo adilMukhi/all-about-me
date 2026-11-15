@@ -48,6 +48,50 @@ export default function DrInterestedClient() {
     },
   ]
 
+  // Photos from Dr. Interested's 2026 Annual Impact Report, served from the site
+  const reportPhotos = [
+    {
+      src: "/pictures/drinterested-2026/culture-psychology-conference-group.jpg",
+      alt: "A large group of Dr. Interested participants posing in front of a screen at the Psychology & Culture Conference",
+      caption: "Psychology & Culture Conference",
+    },
+    {
+      src: "/pictures/drinterested-2026/medexplore-volunteers.jpg",
+      alt: "Dr. Interested volunteers greeting attendees at the MedExplore Conference",
+      caption: "Volunteers at the MedExplore Conference",
+    },
+    {
+      src: "/pictures/drinterested-2026/code-blue-planet-toronto-climate-week.jpg",
+      alt: "Participants standing together at a Dr. Interested event held with Toronto Climate Week",
+      caption: "Code Blue Planet, part of Toronto Climate Week",
+    },
+    {
+      src: "/pictures/drinterested-2026/volunteer-awards.jpg",
+      alt: "Dr. Interested members holding award certificates on stage in front of a Dr. Interested backdrop",
+      caption: "Dr. Interested members recognized for their volunteer work",
+    },
+    {
+      src: "/pictures/drinterested-2026/conference-networking.jpg",
+      alt: "Students mingling and talking across a large conference room at a Dr. Interested event",
+      caption: "Participants connecting at a Dr. Interested conference",
+    },
+    {
+      src: "/pictures/drinterested-2026/certificate-of-recognition.jpg",
+      alt: "Dr. Interested executives standing with a guest who holds a framed certificate",
+      caption: "Dr. Interested executives receiving a certificate of recognition",
+    },
+    {
+      src: "/pictures/drinterested-2026/team-group-photo.jpg",
+      alt: "A group of Dr. Interested participants posing together in a classroom",
+      caption: "Participants at a Dr. Interested event",
+    },
+    {
+      src: "/pictures/drinterested-2026/students-at-event.jpg",
+      alt: "Students seated around curved desks in a lecture room during a Dr. Interested event",
+      caption: "Students taking part in a Dr. Interested session",
+    },
+  ]
+
   const images = [
     {
       src: "https://i.postimg.cc/r06G4R5g/Adil-Mukhi-Hosting-The-Minds-Project-Panel.png",
@@ -242,6 +286,42 @@ export default function DrInterestedClient() {
                 </ul>
               </div>
             </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Photos from the 2026 Annual Impact Report */}
+      <AnimatedSection delay={115}>
+        <section aria-labelledby="photos-2026" className="py-16 bg-primary/5">
+          <div className="container max-w-6xl">
+            <h2 id="photos-2026" className="text-3xl font-bold text-primary mb-4 text-center">
+              2026 in Photos
+            </h2>
+            <p className="mx-auto mb-10 max-w-2xl text-center text-muted-foreground">
+              Moments from a year of conferences, competitions, and community, from the Dr. Interested 2026 Annual Impact Report.
+            </p>
+            <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {reportPhotos.map((photo, index) => {
+                // Two wide photos open and close the grid, with four smaller ones between them
+                const wide = index < 2 || index >= reportPhotos.length - 2
+                return (
+                <li key={photo.src} className={wide ? "sm:col-span-2 lg:col-span-2" : undefined}>
+                  <figure className="h-full overflow-hidden rounded-lg border bg-card shadow-sm">
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <Image
+                        src={photo.src}
+                        alt={photo.alt}
+                        fill
+                        sizes={wide ? "(max-width: 1024px) 100vw, 50vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"}
+                        className="object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                    </div>
+                    <figcaption className="p-3 text-sm text-card-foreground">{photo.caption}</figcaption>
+                  </figure>
+                </li>
+                )
+              })}
+            </ul>
           </div>
         </section>
       </AnimatedSection>
