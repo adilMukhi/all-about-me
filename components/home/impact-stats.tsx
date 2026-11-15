@@ -2,14 +2,14 @@
 
 import { useEffect, useRef, useState } from "react"
 
-type Stat = { value: number; decimals?: number; suffix: string; label: string }
+type Stat = { value: number; decimals?: number; prefix?: string; suffix: string; label: string }
 
 const stats: Stat[] = [
-  { value: 160000, suffix: "+", label: "people impacted through Dr. Interested" },
-  { value: 106, suffix: "", label: "countries reached" },
-  { value: 2100, suffix: "+", label: "members and 367 executives" },
-  { value: 3.7, decimals: 1, suffix: "M+", label: "people reached by our campaigns" },
-  { value: 20, suffix: "+", label: "major events organized" },
+  { value: 389, suffix: "K+", label: "youth impacted through Dr. Interested" },
+  { value: 11, suffix: "M+", label: "people reached" },
+  { value: 129, suffix: "", label: "countries and territories" },
+  { value: 2200, suffix: "+", label: "members and 414 executives" },
+  { value: 60, prefix: "$", suffix: "K+", label: "in funding raised" },
   { value: 3, suffix: "×", label: "Ontario Volunteer Service Award recipient" },
 ]
 
@@ -38,6 +38,7 @@ function Counter({ stat, run }: { stat: Stat; run: boolean }) {
 
   return (
     <span className="tabular-nums">
+      {stat.prefix}
       {format(stat.decimals ? shown : Math.round(shown), stat.decimals)}
       {stat.suffix}
     </span>
@@ -83,7 +84,7 @@ export default function ImpactStats() {
           {stats.map((stat) => (
             <div key={stat.label} className="border-l-2 border-sky-600/60 pl-4 dark:border-sky-400/60">
               <dt className="sr-only">{stat.label}</dt>
-              <dd className="font-fredoka text-4xl font-extrabold text-slate-900 sm:text-5xl dark:text-white">
+              <dd className="font-fredoka text-4xl font-extrabold text-slate-900 sm:text-5xl lg:text-4xl xl:text-5xl dark:text-white">
                 <Counter stat={stat} run={run} />
               </dd>
               <dd className="mt-2 text-sm leading-snug text-slate-600 sm:text-base dark:text-white/75">{stat.label}</dd>

@@ -6,7 +6,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.ap
 export const metadata: Metadata = {
   title: "Dr. Interested: Executive Director & Founder",
   description:
-    "Adil Mukhi founded and leads Dr. Interested, a youth-led global pre-med organization reaching 160,000+ people in 106 countries.",
+    "Adil Mukhi founded and leads Dr. Interested, a youth-led global organization that has impacted 389,000+ youth in 129 countries and territories.",
   keywords: [
     "Dr. Interested",
     "Youth Mentorship",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dr. Interested - Executive Director & Founder",
     description:
-      "Leading a global youth mentorship platform connecting 160,000+ students to research, advocacy, and educational opportunities.",
+      "Leading a global youth organization that has impacted 389,000+ youth across 129 countries with research, advocacy, and educational opportunities.",
     type: "website",
     url: `${siteUrl}/experience/drinterested`,
     siteName: "Adil Mukhi",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dr. Interested - Executive Director & Founder",
     description:
-      "Leading a global youth mentorship platform connecting 160,000+ students to research, advocacy, and educational opportunities.",
+      "Leading a global youth organization that has impacted 389,000+ youth across 129 countries with research, advocacy, and educational opportunities.",
     creator: "@adilm_0",
     site: "@adilm_0",
     images: [`${siteUrl}/og-image.png`],

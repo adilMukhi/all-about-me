@@ -217,7 +217,7 @@ export default function MediaInquiriesPage() {
               <ul className="mt-2 space-y-1 list-disc pl-5 marker:text-primary">
                 <li>Full name: Adil Mukhi</li>
                 <li>Based in the Greater Toronto Area (Mississauga), Ontario, Canada</li>
-                <li>Founder &amp; Executive Director, Dr. Interested — 160,000+ people reached across 106 countries</li>
+                <li>Founder &amp; Executive Director, Dr. Interested: 389,000+ youth impacted and 11 million+ reached across 129 countries and territories</li>
                 <li>TEDx speaker; Ontario Volunteer Service Award recipient</li>
                 <li>
                   Canonical site:{" "}
