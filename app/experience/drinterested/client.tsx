@@ -18,10 +18,78 @@ export default function DrInterestedClient() {
   }, [])
 
   const stats = [
-    { label: "Executives", value: "360+", icon: Users },
-    { label: "Members", value: "2,100+", icon: Trophy },
-    { label: "Countries", value: "106", icon: Globe },
-    { label: "Events", value: "20+", icon: Zap },
+    { label: "Youth impacted", value: "389,000+", icon: Zap },
+    { label: "Countries & territories", value: "129", icon: Globe },
+    { label: "Members", value: "2,200+", icon: Trophy },
+    { label: "Executives", value: "414", icon: Users },
+  ]
+
+  // Verbatim from Dr. Interested's 2026 Annual Impact Report: member survey responses and the Thank You letter
+  const reportQuotes = [
+    {
+      quote:
+        "Opportunities like MedExplore aren’t something I get to experience every day. I came looking for something meaningful to do beyond another day behind a screen. I left having spoken to my elected officials for the first time, discovered careers I never knew how to access, and connected with a speaker who has since become a mentor.",
+      source: "Racialized and low income student living in Canada, age 16 to 18",
+    },
+    {
+      quote:
+        "Career education should be accessible to everyone, not just students who can afford expensive programs or have parents who know how university admissions work. Dr. Interested helped bridge that gap for me.",
+      source: "First generation and low income student living in Canada, age 16 to 18",
+    },
+    {
+      quote:
+        "Discord gave me a place to ask questions without feeling embarrassed. I could take my time reading through information and reach out when I needed help.",
+      source: "Student with a disability living in Canada, age 14 to 16",
+    },
+    {
+      quote:
+        "Young people from different backgrounds should be part of healthcare policy discussions. We bring experiences and perspectives that might otherwise be overlooked.",
+      source: "Racialized newcomer living in Canada, age 16 to 18",
+    },
+  ]
+
+  // Photos from Dr. Interested's 2026 Annual Impact Report, served from the site
+  const reportPhotos = [
+    {
+      src: "/pictures/drinterested-2026/culture-psychology-conference-group.jpg",
+      alt: "A large group of Dr. Interested participants posing in front of a screen at the Psychology & Culture Conference",
+      caption: "Psychology & Culture Conference",
+    },
+    {
+      src: "/pictures/drinterested-2026/medexplore-volunteers.jpg",
+      alt: "Dr. Interested volunteers greeting attendees at the MedExplore Conference",
+      caption: "Volunteers at the MedExplore Conference",
+    },
+    {
+      src: "/pictures/drinterested-2026/code-blue-planet-toronto-climate-week.jpg",
+      alt: "Participants standing together at a Dr. Interested event held with Toronto Climate Week",
+      caption: "Code Blue Planet, part of Toronto Climate Week",
+    },
+    {
+      src: "/pictures/drinterested-2026/volunteer-awards.jpg",
+      alt: "Dr. Interested members holding award certificates on stage in front of a Dr. Interested backdrop",
+      caption: "Dr. Interested members recognized for their volunteer work",
+    },
+    {
+      src: "/pictures/drinterested-2026/conference-networking.jpg",
+      alt: "Students mingling and talking across a large conference room at a Dr. Interested event",
+      caption: "Participants connecting at a Dr. Interested conference",
+    },
+    {
+      src: "/pictures/drinterested-2026/certificate-of-recognition.jpg",
+      alt: "Dr. Interested executives standing with a guest who holds a framed certificate",
+      caption: "Dr. Interested executives receiving a certificate of recognition",
+    },
+    {
+      src: "/pictures/drinterested-2026/team-group-photo.jpg",
+      alt: "A group of Dr. Interested participants posing together in a classroom",
+      caption: "Participants at a Dr. Interested event",
+    },
+    {
+      src: "/pictures/drinterested-2026/students-at-event.jpg",
+      alt: "Students seated around curved desks in a lecture room during a Dr. Interested event",
+      caption: "Students taking part in a Dr. Interested session",
+    },
   ]
 
   const images = [
@@ -126,13 +194,13 @@ export default function DrInterestedClient() {
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
                     As Founder and Executive Director of Dr. Interested, I design programs and initiatives that empower
-                    youth through mentorship, advocacy, and impactful events. Our platform connects 2,100+ youth
-                    globally, fostering a community where students can explore their curiosity, engage in meaningful
+                    youth through mentorship, advocacy, and impactful events. We have impacted 389,000+ youth
+                    across 129 countries and territories, fostering a community where students can explore their curiosity, engage in meaningful
                     research, and become leaders in their fields.
                   </p>
                   <p>
                     Dr. Interested operates with a dedicated team of 15 medical student advisors and a passionate
-                    community of 2,100+ members worldwide. We organize 20+ major events annually, creating spaces where
+                    community of 2,200+ members worldwide. We have run 45+ events since 2025, creating spaces where
                     youth can collaborate, learn, and make a real impact on pressing global issues.
                   </p>
                   <p>
@@ -185,9 +253,9 @@ export default function DrInterestedClient() {
                   passions and build lasting professional relationships.
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• 2,100+ active members across 6 continents</li>
-                  <li>• 20+ major events annually</li>
-                  <li>• 3,700,000+ reach through marketing</li>
+                  <li>• 2,200+ members across 129 countries and territories</li>
+                  <li>• 45+ events since 2025</li>
+                  <li>• 11 million+ reached across our platforms</li>
                 </ul>
               </div>
 
@@ -218,6 +286,74 @@ export default function DrInterestedClient() {
                 </ul>
               </div>
             </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Photos from the 2026 Annual Impact Report */}
+      <AnimatedSection delay={115}>
+        <section aria-labelledby="photos-2026" className="py-16 bg-primary/5">
+          <div className="container max-w-6xl">
+            <h2 id="photos-2026" className="text-3xl font-bold text-primary mb-4 text-center">
+              2026 in Photos
+            </h2>
+            <p className="mx-auto mb-10 max-w-2xl text-center text-muted-foreground">
+              Moments from a year of conferences, competitions, and community, from the Dr. Interested 2026 Annual Impact Report.
+            </p>
+            <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {reportPhotos.map((photo, index) => {
+                // Two wide photos open and close the grid, with four smaller ones between them
+                const wide = index < 2 || index >= reportPhotos.length - 2
+                return (
+                <li key={photo.src} className={wide ? "sm:col-span-2 lg:col-span-2" : undefined}>
+                  <figure className="h-full overflow-hidden rounded-lg border bg-card shadow-sm">
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <Image
+                        src={photo.src}
+                        alt={photo.alt}
+                        fill
+                        sizes={wide ? "(max-width: 1024px) 100vw, 50vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"}
+                        className="object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                    </div>
+                    <figcaption className="p-3 text-sm text-card-foreground">{photo.caption}</figcaption>
+                  </figure>
+                </li>
+                )
+              })}
+            </ul>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Quotes from the 2026 Annual Impact Report */}
+      <AnimatedSection delay={125}>
+        <section aria-labelledby="report-quotes" className="py-16">
+          <div className="container max-w-6xl">
+            <h2 id="report-quotes" className="text-3xl font-bold text-primary mb-4 text-center">
+              In Their Words
+            </h2>
+            <p className="mx-auto mb-10 max-w-2xl text-center text-muted-foreground">
+              From members who answered our 2026 member survey, in the Dr. Interested 2026 Annual Impact Report.
+            </p>
+            <ul className="grid gap-6 md:grid-cols-2">
+              {reportQuotes.map((item) => (
+                <li key={item.source}>
+                  <figure className="h-full rounded-lg border bg-card p-6 text-card-foreground shadow-sm">
+                    <blockquote className="leading-relaxed">&ldquo;{item.quote}&rdquo;</blockquote>
+                    <figcaption className="mt-4 text-sm text-muted-foreground">{item.source}</figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+            <figure className="mx-auto mt-10 max-w-3xl text-center">
+              <blockquote className="text-xl font-semibold text-foreground">
+                &ldquo;Behind every number in this report is a person who decided to show up.&rdquo;
+              </blockquote>
+              <figcaption className="mt-3 text-sm text-muted-foreground">
+                Adil Mukhi, Executive Director &amp; Founder, Dr. Interested
+              </figcaption>
+            </figure>
           </div>
         </section>
       </AnimatedSection>
@@ -299,12 +435,13 @@ export default function DrInterestedClient() {
             sameAs: ["https://linktr.ee/dr.interested"],
             image: "https://i.postimg.cc/r06G4R5g/Adil-Mukhi-Hosting-The-Minds-Project-Panel.png",
             statistics: {
-              executives: "360",
-              members: "2100",
-              countries: "106",
-              events: "20",
-              impacted: "160000",
-              volunteers: "900",
+              executives: "414",
+              members: "2200",
+              countries: "129",
+              events: "45",
+              impacted: "389000",
+              volunteers: "1500",
+              funding: "60000 CAD",
             },
           }),
         }}

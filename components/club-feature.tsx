@@ -23,9 +23,9 @@ export default function ClubFeature() {
               className="object-cover"
               style={{ objectPosition: "50% 40%" }}
             />
-            <div className="absolute bottom-4 left-4 flex items-center gap-3 rounded-2xl bg-white/95 p-2 pr-4 shadow-lg">
+            <div className="absolute bottom-4 left-4 flex items-center gap-3 rounded-2xl border border-border bg-background/95 p-2 pr-4 shadow-lg backdrop-blur-sm">
               <Image src="/drinterested.png" alt="Dr. Interested logo" width={48} height={48} className="rounded-xl object-cover" />
-              <span className="text-sm font-semibold text-slate-900">Founded by Adil Mukhi</span>
+              <span className="text-sm font-semibold text-foreground">Founded by Adil Mukhi</span>
             </div>
           </div>
           <div className="md:w-1/2 p-6 md:p-8">
@@ -40,25 +40,25 @@ export default function ClubFeature() {
             <CardContent className="p-0">
               <p className="mb-4">
                 Dr. Interested is a youth-led global pre-med organization I founded to help students explore healthcare,
-                research, and advocacy. We empower youth to discover their unique "spark" in medicine through
-                interactive programs, mentorship, and leadership development — with 20+ major events run so far.
+                research, and advocacy. We empower youth to discover their unique &ldquo;spark&rdquo; in medicine through
+                interactive programs, mentorship, and leadership development — with 45+ events run so far.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center gap-2">
                   <Users className="h-5 w-5 text-primary" />
-                  <span>160,000+ people impacted</span>
+                  <span>389,000+ youth impacted</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Building className="h-5 w-5 text-primary" />
-                  <span>2,100+ members & 367 executives</span>
+                  <span>2,200+ members & 414 executives</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <BookOpen className="h-5 w-5 text-primary" />
-                  <span>3.7+ million marketing reach</span>
+                  <span>11 million+ reached</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Globe className="h-5 w-5 text-primary" />
-                  <span>106 countries globally</span>
+                  <span>129 countries &amp; territories</span>
                 </div>
               </div>
               <Button asChild size="lg" className="button-hover-effect">
@@ -96,10 +96,10 @@ export default function ClubFeature() {
             <CardContent className="p-6">
               <Quote className="h-8 w-8 text-primary mb-4" />
               <p className="text-base leading-relaxed mb-4 italic">
-                "Being part of Dr. Interested—especially through the Resilient Minds event—opened my eyes to how mental
+                &ldquo;Being part of Dr. Interested—especially through the Resilient Minds event—opened my eyes to how mental
                 health and medicine connect. I used to think medicine was just textbooks and biology, but now I see the
                 human side of it too. This community helped me explore my interest in healthcare in ways school never
-                did."
+                did.&rdquo;
               </p>
               <p className="text-sm text-muted-foreground">— Under 18, (Racialized Group(s), Indigenous), Canada</p>
             </CardContent>
@@ -109,8 +109,8 @@ export default function ClubFeature() {
             <CardContent className="p-6">
               <Quote className="h-8 w-8 text-primary mb-4" />
               <p className="text-base leading-relaxed mb-4 italic">
-                "The Discord community has been such a supportive space. I've met people who genuinely understand my
-                journey and are always willing to share advice or encouragement."
+                &ldquo;The Discord community has been such a supportive space. I&apos;ve met people who genuinely understand my
+                journey and are always willing to share advice or encouragement.&rdquo;
               </p>
               <p className="text-sm text-muted-foreground">— Under 18, Low Income, USA</p>
             </CardContent>

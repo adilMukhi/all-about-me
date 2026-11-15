@@ -17,7 +17,7 @@ const defaultTwitter = {
 export const homeMetadata: Metadata = {
   title: { absolute: "Adil Mukhi | TEDx Speaker, Youth Advocate & Founder" },
   description:
-    "TEDx speaker, youth advocate, and founder of Dr. Interested, reaching 160,000+ people in 106 countries. Ontario Medal for Young Volunteers recipient.",
+    "TEDx speaker, youth advocate, and founder of Dr. Interested, which has impacted 389,000+ youth in 129 countries. Ontario Medal for Young Volunteers recipient.",
   alternates: {
     canonical: `${siteUrl}/`,
   },
@@ -26,7 +26,7 @@ export const homeMetadata: Metadata = {
     siteName: "Adil Mukhi",
     title: "Adil Mukhi: Youth Advocate, Public Speaker, Founder, and Research Leader",
     description:
-      "Youth advocate, public speaker, advisor, consultant, and changemaker from the Greater Toronto Area. Founder and Executive Director of Dr. Interested, an organization reaching 160,000+ individuals across 106 countries with 2,100+ members, 367 executives, 400+ mentor hours, and 20+ events. TEDx speaker and advocate for mental health and youth empowerment.",
+      "Youth advocate, public speaker, advisor, consultant, and changemaker from the Greater Toronto Area. Founder and Executive Director of Dr. Interested, an organization that has impacted 389,000+ youth and reached 11 million+ across 129 countries and territories, with 2,200+ members, 414 executives, and $60,000+ in funding. TEDx speaker and advocate for mental health and youth empowerment.",
     url: `${siteUrl}/`,
     images: [
       { ...defaultOgImage, alt: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker" },
@@ -36,7 +36,7 @@ export const homeMetadata: Metadata = {
     ...defaultTwitter,
     title: "Adil Mukhi: Youth Advocate, Public Speaker, Founder, and Research Leader",
     description:
-      "Youth advocate, public speaker, advisor, consultant, and changemaker. Founder and Executive Director of Dr. Interested, an organization reaching 160,000+ individuals across 106 countries with 2,100+ members and 367 executives.",
+      "Youth advocate, public speaker, advisor, consultant, and changemaker. Founder and Executive Director of Dr. Interested, an organization that has impacted 389,000+ youth across 129 countries, with 2,200+ members and 414 executives.",
   },
 }
 
@@ -342,7 +342,7 @@ export const codingPortfolioMetadata: Metadata = {
     siteName: "Adil Mukhi",
     title: "Coding Portfolio",
     description:
-      "Software development projects and technology solutions by youth advocate and developer Adil Mukhi, including platforms reaching 160,000+ users globally.",
+      "Software development projects and technology solutions by youth advocate and developer Adil Mukhi, including platforms serving youth in 129 countries and territories.",
     url: `${siteUrl}/portfolio/coding`,
     images: [
       { ...defaultOgImage, alt: "Adil Mukhi's Coding Portfolio" },

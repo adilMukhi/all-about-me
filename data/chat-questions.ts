@@ -30,7 +30,7 @@ export const chatQuestions: ChatQuestion[] = [
     id: "dr-interested",
     question: "What is Dr. Interested?",
     answer:
-      "Dr. Interested is a youth-led global pre-med organization Adil founded to help students explore healthcare, research, and advocacy. It has reached more than 160,000 people in 106 countries and has over 2,100 members.",
+      "Dr. Interested is a youth-led global pre-med organization Adil founded to help students explore healthcare, research, and advocacy. Its 2026 Annual Impact Report counts more than 389,000 youth impacted and over 11 million reached across 129 countries and territories, with 2,200+ members, 414 executives, and more than $60,000 in funding.",
     links: [{ label: "Visit Dr. Interested", href: "https://www.drinterested.org/", external: true }],
   },
   {
