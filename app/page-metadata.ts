@@ -15,28 +15,28 @@ const defaultTwitter = {
 }
 
 export const homeMetadata: Metadata = {
-  title: { absolute: "Adil Mukhi | TEDx Speaker, Youth Advocate & Founder" },
+  title: { absolute: "Adil Mukhi | Public Speaker, Consultant & Youth Advocate" },
   description:
-    "TEDx speaker, youth advocate, and founder of Dr. Interested, which has impacted 389,000+ youth in 129 countries. Ontario Medal for Young Volunteers recipient.",
+    "Public speaker, consultant, and youth advocate. Founder of Dr. Interested, a youth-led global community that has impacted 389,000+ youth in 129 countries.",
   alternates: {
     canonical: `${siteUrl}/`,
   },
   openGraph: {
     type: "website",
     siteName: "Adil Mukhi",
-    title: "Adil Mukhi: Youth Advocate, Public Speaker, Founder, and Research Leader",
+    title: "Adil Mukhi | Public Speaker, Consultant & Youth Advocate",
     description:
-      "Youth advocate, public speaker, advisor, consultant, and changemaker from the Greater Toronto Area. Founder and Executive Director of Dr. Interested, an organization that has impacted 389,000+ youth and reached 11 million+ across 129 countries and territories, with 2,200+ members, 414 executives, and $60,000+ in funding. TEDx speaker and advocate for mental health and youth empowerment.",
+      "Adil Mukhi is a public speaker, consultant, and youth advocate. At 13 he started Dr. Interested, a youth-led global community of 2,200 members across 129 countries and territories that has impacted more than 389,000 young people.",
     url: `${siteUrl}/`,
     images: [
-      { ...defaultOgImage, alt: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker" },
+      { ...defaultOgImage, alt: "Adil Mukhi, public speaker, consultant and youth advocate" },
     ],
   },
   twitter: {
     ...defaultTwitter,
-    title: "Adil Mukhi: Youth Advocate, Public Speaker, Founder, and Research Leader",
+    title: "Adil Mukhi | Public Speaker, Consultant & Youth Advocate",
     description:
-      "Youth advocate, public speaker, advisor, consultant, and changemaker. Founder and Executive Director of Dr. Interested, an organization that has impacted 389,000+ youth across 129 countries, with 2,200+ members and 414 executives.",
+      "Public speaker, consultant, and youth advocate. Founder of Dr. Interested, a youth-led global community that has impacted 389,000+ youth in 129 countries.",
   },
 }
 

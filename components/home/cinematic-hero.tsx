@@ -201,13 +201,13 @@ export default function CinematicHero() {
             <span className="bg-gradient-to-r from-slate-900 via-sky-900 to-sky-700 bg-clip-text text-transparent dark:from-white dark:via-sky-100 dark:to-sky-300">
               Adil Mukhi
             </span>
-            <span className="sr-only">: Youth Advocate, Public Speaker, Founder, and Research Leader</span>
+            <span className="sr-only">: Public Speaker, Consultant &amp; Youth Advocate</span>
           </h1>
           <p
             className="mt-6 max-w-xl text-lg leading-relaxed text-slate-800 sm:text-xl dark:text-white/90"
             style={{ fontFamily: "'Times New Roman', Times, serif" }}
           >
-            I&apos;m a public speaker, youth advocate &amp; changemaker: from mentoring through Dr. Interested,
+            I&apos;m a public speaker, consultant &amp; youth advocate: from mentoring through Dr. Interested,
             contributing to applying for CIHR research grants, and speaking at TEDx. Explore my work and experiences
             below!
           </p>
