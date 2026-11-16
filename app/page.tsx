@@ -26,7 +26,7 @@ const homeStructuredData = {
   "@type": "ProfilePage",
   "@id": `${siteUrl}/#profilepage`,
   url: `${siteUrl}/`,
-  name: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker",
+  name: "Adil Mukhi | Public Speaker, Consultant & Youth Advocate",
   isPartOf: { "@id": `${siteUrl}/#website` },
   about: { "@id": `${siteUrl}/#person` },
   mainEntity: { "@id": `${siteUrl}/#person` },

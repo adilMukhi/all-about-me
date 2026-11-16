@@ -22,7 +22,7 @@ export default function About() {
           <CardContent className="space-y-4">
             <div className="space-y-4">
               <p className="leading-7">
-              I’m <strong>Adil Mukhi</strong>; public speaker, youth advocate & changemaker! As someone who’s navigated the challenges of the IB program while leading initiatives that have impacted hundreds of thousands of young people, I’ve learned how <em>curiosity, resilience, and purpose</em> can transform ideas into action. My journey began with a simple philosophy: <em>"With curiosity as my guide, I will never go wrong."</em> My work is guided by the belief that meaningful change begins when young people are given the opportunity and support to lead.
+              I’m <strong>Adil Mukhi</strong>; public speaker, consultant & youth advocate! As someone who’s navigated the challenges of the IB program while leading initiatives that have impacted hundreds of thousands of young people, I’ve learned how <em>curiosity, resilience, and purpose</em> can transform ideas into action. My journey began with a simple philosophy: <em>"With curiosity as my guide, I will never go wrong."</em> My work is guided by the belief that meaningful change begins when young people are given the opportunity and support to lead.
               </p>
 
               <p className="leading-7">

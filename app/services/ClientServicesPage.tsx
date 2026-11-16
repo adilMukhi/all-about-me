@@ -292,7 +292,7 @@ const ServicesStructuredData = () => {
         familyName: "Mukhi",
         email: "adilm@drinterested.org",
         telephone: "+1 289 796 2566",
-        jobTitle: "Public Speaker, Youth Advocate, Consultant, and Advisor",
+        jobTitle: "Public Speaker, Consultant & Youth Advocate",
         description:
           "Youth public speaker, advocate, and consultant specializing in youth leadership, mental health, education, policy, and community impact.",
         sameAs: [
@@ -1263,6 +1263,52 @@ const ServicesAccordion = () => {
   )
 }
 
+// The ten speaking and ten consulting engagements Adil highlights, in his order
+const speakingEngagements = [
+  { title: "TEDx Speaker: Stress, Memory, and Why You Can\u2019t Find Your Keys", detail: "June 26, 2025 · TEDxMcFarren Boulevard Youth (audience of about 800)" },
+  { title: "Youth Delegate and Speaker, AI for Good Summit, Geneva", detail: "June 2026 · 5Rights Foundation Youth Council" },
+  { title: "Student Panelist, AI Panel for Ontario\u2019s Public Education Leaders (PCODE)", detail: "October 30, 2026 · Peel District School Board (about 250 board leaders in the room)" },
+  { title: "Keynote Speaker, MockTank and CyberValkyrie Cybersecurity Summit", detail: "September 7, 2025" },
+  { title: "Keynote Speaker, Culture and Psychology Conference", detail: "October 2025 · Dr. Interested" },
+  { title: "Opening Remarks, Emerging AI Technologies Workshop", detail: "June 27, 2026 · Aga Khan Education Board for Canada" },
+  { title: "Opening Remarks, Fireside Chat on AI", detail: "November 29, 2025 · Aga Khan Education Board for Canada" },
+  { title: "Closing Remarks, Toronto Stands Up for Aid: Renewing Canada\u2019s Leadership", detail: "September 26, 2026 · Results Canada" },
+  { title: "Featured Interview, CBC Radio, on youth mental health and Bill C\u201134", detail: "June 2026" },
+  { title: "Speaker, Global Youth Summit", detail: "April 18, 2026 · The World Is Your Bowl of Noodles" },
+]
+
+const consultingEngagements = [
+  { title: "Co-Chair, 5Rights Youth Council", detail: "May 2026 to present · UN affiliated, elected one of two spokespersons" },
+  { title: "Co-Knowledge Mobilization Champion, OPTIMAL (CIHR Healthy Youth Team Grant)", detail: "May 2026 to present · SickKids" },
+  { title: "Advisory Panel Member, Ontario School Phone Ban Study", detail: "2026 to present · SickKids iKT Panel" },
+  { title: "Youth Advisor, Raising Canada Report 2024 and 2026, and Facilitator, Young Canadians\u2019 Parliament", detail: "Children First Canada" },
+  { title: "Youth Advisory Committee Member", detail: "April 2026 to present · Aga Khan Foundation Canada" },
+  { title: "Children\u2019s Privacy Code Consultation", detail: "July 2025 · Office of the Privacy Commissioner of Canada" },
+  { title: "Reviewer, AI Lessons and Curriculum Modules", detail: "September 2025 · TakingITGlobal" },
+  { title: "Youth Tech Consultation", detail: "August 2025 · UNICEF" },
+  { title: "Dr. Interested\u2019s mental health submission published by the UN OHCHR", detail: "2026" },
+  { title: "Advisor and Co-Author, RE.sport Delphi study publication, plus the Future of Sport Commission recommendations", detail: "University of Toronto KPE" },
+]
+
+const EngagementList = ({ items }: { items: { title: string; detail: string }[] }) => (
+  <ol className="space-y-4">
+    {items.map((item, index) => (
+      <li key={item.title} className="flex items-start gap-3">
+        <span
+          className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground"
+          aria-hidden="true"
+        >
+          {index + 1}
+        </span>
+        <div>
+          <p className="font-medium">{item.title}</p>
+          <p className="text-sm text-muted-foreground">{item.detail}</p>
+        </div>
+      </li>
+    ))}
+  </ol>
+)
+
 const PastEngagements = () => (
   <section className="py-16 bg-gradient-to-b from-background to-primary/5">
     <div className="container max-w-6xl ml-auto pr-8">
@@ -1294,155 +1340,7 @@ const PastEngagements = () => (
               <p className="text-muted-foreground">Cyber Valkyries / Keynote Coordinator</p>
             </div>
           </div>
-          <div className="space-y-4">
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Opening Remarks, Emerging AI Technologies Workshop</p>
-                <p className="text-sm text-muted-foreground">June 27, 2026 · Aga Khan Education Board for Canada</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Youth Delegate and Speaker, AI for Good Summit, Geneva</p>
-                <p className="text-sm text-muted-foreground">June 2026 · 5Rights Foundation Youth Council</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Presenter, Toronto Climate Week</p>
-                <p className="text-sm text-muted-foreground">2026 · Toronto Climate Week</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Opening Remarks, Fireside Chat on AI</p>
-                <p className="text-sm text-muted-foreground">November 29, 2025 · Aga Khan Education Board for Canada</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Guest Speaker for the NACY Emerging Leaders Group</p>
-                <p className="text-sm text-muted-foreground">July 2025 - NACY</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Tedx Speaker: Stress, Memory, and Why You Can't Find Your Keys</p>
-                <p className="text-sm text-muted-foreground">June 26, 2025 - TEDxMcFarren Boulevard Youth</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Keynote Speaker: MockTank and CyberValkyrie Cybersecurity Summit</p>
-                <p className="text-sm text-muted-foreground">September 7, 2025 · MockTank and CyberValkyries</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">1st Place – Story Slam Awards Ceremony and Readout</p>
-                <p className="text-sm text-muted-foreground">September 2025 - Mississauga Literary Festival.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Speaker in World Youth Skills Day Message</p>
-                <p className="text-sm text-muted-foreground">2025 - Results Canada</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Speaker at Results Canada November AKO: How to Publish LTEs</p>
-                <p className="text-sm text-muted-foreground">November 2025 - Results Canada</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Panel Speaker for the Results Action Kickoff</p>
-                <p className="text-sm text-muted-foreground">May 2025 - Results Canada</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Guest Speaker on the BEYOND THE HELIX Podcast</p>
-                <p className="text-sm text-muted-foreground">August 2025 - MediQuills & Revitalized Medicine</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">SDG Accelerator Program Facilitator</p>
-                <p className="text-sm text-muted-foreground">2025 - Children First Canada</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Keynote Speaker at Culture and Psychology Conference</p>
-                <p className="text-sm text-muted-foreground">October 2025 - Dr. Interested</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Grade 11 Speaker for IB Info Night</p>
-                <p className="text-sm text-muted-foreground">October 2025 - Glenforest Secondary School</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">MC, Resilient Minds</p>
-                <p className="text-sm text-muted-foreground">April 2025 - Dr. Interested & YSA</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">AMA with the ED of Dr. Interested</p>
-                <p className="text-sm text-muted-foreground">August 2025 - Dr. Interested</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">MC, WOW Program</p>
-                <p className="text-sm text-muted-foreground">September 2025 - DBNC</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">MC, Job/Volunteer Fair</p>
-                <p className="text-sm text-muted-foreground">March 2024 - Volunteer MBC</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Speaker, GFSS Staff Meeting</p>
-                <p className="text-sm text-muted-foreground">April 13, 2026 - Glenforest Secondary School</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Speaking at the Global Youth Summit</p>
-                <p className="text-sm text-muted-foreground">April 18, 2026 - The World is Your Bowl of Noodles</p>
-              </div>
-            </div>
-          </div>
+          <EngagementList items={speakingEngagements} />
         </div>
 
         {/* Consulting Section */}
@@ -1471,133 +1369,7 @@ const PastEngagements = () => (
             </div>
           </div>
 
-          <div className="space-y-4">
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Youth Contributor, 2026 Raising Canada Report (infographic, social media video, media roster)</p>
-                <p className="text-sm text-muted-foreground">2026 · Children First Canada</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Facilitator, Young Canadians' Parliament</p>
-                <p className="text-sm text-muted-foreground">2025 to 2026 · Children First Canada</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Children's Privacy Code Consultation</p>
-                <p className="text-sm text-muted-foreground">
-                  July 2025 - Office of the Privacy Commissioner of Canada
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Highlighted in Presentation at Clinton Global Initiative Annual Meeting</p>
-                <p className="text-sm text-muted-foreground">September 2025 - Project Green Challenge</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">UN Article on Children's Digital Rights</p>
-                <p className="text-sm text-muted-foreground">November 20, 2025 - United Nations OHCHR (5Rights Program)</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Supporter & Signatory: Upcoming Youth Mental Health Report</p>
-                <p className="text-sm text-muted-foreground">November 20, 2025 - UN Youth Office & UNU-IIGH</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Submitted Youth Mental Health Video</p>
-                <p className="text-sm text-muted-foreground">
-                  September 2025 - United Nations Youth Office, Youth Mental Health & Well-Being
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Youth Tech Consultation</p>
-                <p className="text-sm text-muted-foreground">August 2025 - UNICEF</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Contributor, OPTIMAL (CIHR Healthy Youth Team Grant)</p>
-                <p className="text-sm text-muted-foreground">2025 to Present - SickKids & YCRH</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Youth Advocate, Future of Sport Commission Recommendations</p>
-                <p className="text-sm text-muted-foreground">2025 - UofTKPE</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Op-Ed Highlight, Policy in the Age of AI</p>
-                <p className="text-sm text-muted-foreground">July 2025 - NACY</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Youth Collective Member</p>
-                <p className="text-sm text-muted-foreground">2025 - University of Toronto, Faculty of KPE</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Youth Reviewer, Raising Canada Report</p>
-                <p className="text-sm text-muted-foreground">2024 - Children First Canada</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Mental Health Focus Group</p>
-                <p className="text-sm text-muted-foreground">
-                  2024 - University of Western Ontario & School Mental Health Ontario
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Participant, Right to a Healthy Environment Roundtable</p>
-                <p className="text-sm text-muted-foreground">2024 - Break the Divide</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">Youth Council Member</p>
-                <p className="text-sm text-muted-foreground">2024 to Present - Eco Brothers</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-              <div>
-                <p className="font-medium">And my other work as a member of the YCRH, the NYAC of the MDSC, and CFC</p>
-                <p className="text-sm text-muted-foreground">Ongoing</p>
-              </div>
-            </div>
-          </div>
+          <EngagementList items={consultingEngagements} />
         </div>
       </div>
     </div>

@@ -81,11 +81,11 @@ const fredoka = Fredoka({
 
 export const metadata: Metadata = {
   title: {
-    default: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker",
+    default: "Adil Mukhi | Public Speaker, Consultant & Youth Advocate",
     template: "%s | Adil Mukhi",
   },
   description:
-    "Adil Mukhi is a youth advocate, public speaker, and changemaker. Founder of Dr. Interested, which has impacted 389,000+ youth across 129 countries and territories. TEDx speaker, Ontario Medal for Young Volunteers recipient, and advocate for mental health and youth empowerment.",
+    "Public speaker, consultant, and youth advocate. Founder of Dr. Interested, a youth-led global community that has impacted 389,000+ youth in 129 countries.",
   keywords: [
     "Adil Mukhi",
     "youth advocate",
@@ -137,9 +137,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_CA",
     url: siteUrl,
-    title: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker",
+    title: "Adil Mukhi | Public Speaker, Consultant & Youth Advocate",
     description:
-      "Adil Mukhi is a youth advocate, public speaker, and changemaker. Founder of Dr. Interested, which has impacted 389,000+ youth across 129 countries and territories. TEDx speaker and advocate for mental health and youth empowerment.",
+      "Adil Mukhi is a public speaker, consultant, and youth advocate. At 13 he started Dr. Interested, a youth-led global community of 2,200 members across 129 countries and territories that has impacted more than 389,000 young people.",
     siteName: "Adil Mukhi",
     authors: ["Adil Mukhi"],
     images: [
@@ -147,15 +147,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker",
+        alt: "Adil Mukhi, public speaker, consultant and youth advocate",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adil Mukhi - Youth Advocate, Public Speaker & Changemaker",
+    title: "Adil Mukhi | Public Speaker, Consultant & Youth Advocate",
     description:
-      "Youth advocate, public speaker, and changemaker. Founder of Dr. Interested, which has impacted 389,000+ youth across 129 countries and territories. TEDx speaker and mental health advocate.",
+      "Public speaker, consultant, and youth advocate. Founder of Dr. Interested, a youth-led global community that has impacted 389,000+ youth in 129 countries.",
     creator: "@adilm_0",
     site: "@adilm_0",
     images: ["/og-image.png"],
@@ -279,11 +279,11 @@ export default function RootLayout({
                 license: `${siteUrl}/terms`,
                 acquireLicensePage: `${siteUrl}/media-inquiries`,
               })),
-              jobTitle: "Youth Advocate, Public Speaker, Advisor, Consultant & Founder",
+              jobTitle: "Public Speaker, Consultant & Youth Advocate",
               email: "adilm@drinterested.org",
               telephone: "+1 289 796 2566",
               description:
-                "Adil Mukhi is a youth advocate, public speaker, advisor, consultant, founder of Dr. Interested, and community leader focused on mental health, education, social impact, and youth empowerment across the Greater Toronto Area and worldwide. Dr. Interested stats from its 2026 Annual Impact Report (2025 and 2026 combined): 389,000+ youth impacted, 11 million+ reached, 129 countries and territories, $60,000+ in funding, 2,200+ members, 414 executives, 1,500 volunteers, 45+ events, and 1,400+ mentor hours.",
+                "Adil Mukhi is a public speaker, consultant, and youth advocate whose motto is \"With curiosity as my guide, I will never go wrong.\" At 13 he started Dr. Interested, a youth-led global community of 2,200 members across 129 countries and territories, backed by 328 executives and 600 volunteers, that has impacted more than 389,000 young people across 2025 and 2026 by helping them explore wellness careers, take part in policymaking, and find a community where they belong. Dr. Interested is listed as a civil society organization with the United Nations ECOSOC, and its policy submissions have been published by the UN Office of the High Commissioner for Human Rights. Adil is a Co-Knowledge Mobilization Champion on the SickKids OPTIMAL study of youth social media use, a member of the SickKids iKT Panel on school phone bans, and an advisor and co-author on the University of Toronto KPE RE.sport Delphi study. He received the Ontario Medal for Young Volunteers, was named one of Canada's Top 20 Changemakers Under 18 by Children First Canada, was a Global Youth Awards 2025 finalist, gave a TEDx talk, appeared on CBC, and spoke at the AI for Good Summit in Geneva with the 5Rights Foundation Youth Council.",
               knowsAbout: personKeywords,
               knowsLanguage: ["en", "fr"],
               nationality: { "@type": "Country", name: "Canada" },
