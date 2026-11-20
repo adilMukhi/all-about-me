@@ -47,7 +47,7 @@ export default function LanguageSwitcher() {
           variant="outline"
           className="notranslate h-10 shrink-0 gap-1.5 px-3 font-semibold"
           translate="no"
-          aria-label={`Language: ${active.label}. Change language`}
+          aria-label={`${active.short}, language: ${active.label}. Change language`}
         >
           <Globe className="h-4 w-4" aria-hidden="true" />
           {active.short}

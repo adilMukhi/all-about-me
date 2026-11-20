@@ -163,7 +163,7 @@ export default async function ExperienceDetailPage({ params }: { params: Promise
                 {experience.schoolRoles && experience.schoolRoles.length > 0 && (
                   <div className="mt-10">
                     <h2 className="text-2xl font-semibold mb-4">Roles</h2>
-                    <SchoolRolesBreakdown roles={experience.schoolRoles} />
+                    <SchoolRolesBreakdown roles={experience.schoolRoles} headingAs="h3" />
                   </div>
                 )}
               </div>

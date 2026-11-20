@@ -137,7 +137,7 @@ export default async function VolunteerDetailPage({ params }: { params: Promise<
                 {volunteer.schoolRoles && volunteer.schoolRoles.length > 0 && (
                   <div className="mt-10">
                     <h2 className="text-2xl font-semibold mb-4">Roles</h2>
-                    <SchoolRolesBreakdown roles={volunteer.schoolRoles} />
+                    <SchoolRolesBreakdown roles={volunteer.schoolRoles} headingAs="h3" />
                   </div>
                 )}
 
