@@ -10,7 +10,8 @@ const gradeYears: Record<number, string> = {
   12: "2026 to 2027",
 }
 
-export default function SchoolRolesBreakdown({ roles }: { roles: SchoolRole[] }) {
+// Grade and club names are headings one level below the "Roles" heading they sit under: h3 on full pages, h4 in pop ups
+export default function SchoolRolesBreakdown({ roles, headingAs: Heading = "h4" }: { roles: SchoolRole[]; headingAs?: "h3" | "h4" }) {
   const grades = Array.from(new Set(roles.flatMap((r) => r.grades))).sort((a, b) => a - b)
   const clubs = Array.from(new Set(roles.map((r) => r.club)))
 
@@ -23,9 +24,9 @@ export default function SchoolRolesBreakdown({ roles }: { roles: SchoolRole[] })
       <TabsContent value="grade" className="space-y-4">
         {grades.map((grade) => (
           <div key={grade}>
-            <h4 className="font-semibold">
+            <Heading className="font-semibold">
               Grade {grade} ({gradeYears[grade]})
-            </h4>
+            </Heading>
             <ul className="space-y-1">
               {roles
                 .filter((r) => r.grades.includes(grade))
@@ -42,7 +43,7 @@ export default function SchoolRolesBreakdown({ roles }: { roles: SchoolRole[] })
       <TabsContent value="club" className="space-y-3">
         {clubs.map((club) => (
           <div key={club}>
-            <h4 className="font-semibold">{club}</h4>
+            <Heading className="font-semibold">{club}</Heading>
             <p className="text-sm text-muted-foreground">
               {roles
                 .filter((r) => r.club === club)

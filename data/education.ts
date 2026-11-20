@@ -82,10 +82,12 @@ export const educationData: Education[] = [
       "A 12-module online micro-credential earned through TakingITGlobal's Sprout Ideas Fellowship, covering designing for impact, resource management, partnership building and community engagement.",
     link: "https://learner.mycreds.ca/badges/public/assertion/PXnN3vfmRsSHMaYFZSTqkg",
     image: "/humber-project-design-community-impact-badge.png",
+    images: ["/certificates/sprout-ideas-fellowship-letter-of-recognition.png"],
     slug: "project-design-for-community-impact",
     longDescription:
-      "In partnership with TakingITGlobal and Humber Polytechnic, Fellows accepted into the Sprout Ideas Fellowship complete 12 online modules that build practical skills in designing for impact, resource management, partnership building and community engagement. Fellows can then submit their proposal for a grant of up to $5,000 to bring their community service project to life, with mentorship from the TakingITGlobal team and program alumni. Issued by Humber College as a verified MyCreds digital badge.",
+      "In partnership with TakingITGlobal and Humber Polytechnic, Fellows accepted into the Sprout Ideas Fellowship complete 12 online modules that build practical skills in designing for impact, resource management, partnership building and community engagement. Fellows can then submit their proposal for a grant of up to $5,000 to bring their community service project to life, with mentorship from the TakingITGlobal team and program alumni. Issued by Humber College as a verified MyCreds digital badge. On October 26, 2026, Humber Polytechnic's Senior Dean of Social & Community Services sent Adil a letter recognizing his successful completion of the 2026 Sprout Ideas Fellowship and its 30-hour micro-credential.",
     achievements: [
+      "Letter of recognition from Humber Polytechnic for completing the 2026 Sprout Ideas Fellowship (October 26, 2026)",
       "Identify a solution to a community need that is informed by stakeholder perspectives",
       "Prepare a project plan with team roles and skills, SMART objectives, an action plan and a budget",
       "Communicate project goals in an elevator pitch and a social media strategy",
