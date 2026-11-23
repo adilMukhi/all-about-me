@@ -8,6 +8,12 @@ export type Shot = {
 
 export const headshots: Shot[] = [
   {
+    src: "/pictures/adil-mukhi-ontario-medal-portrait.jpg",
+    alt: "Adil Mukhi in a three-piece suit wearing the Ontario Medal for Young Volunteers, standing in front of the Ontario and Canadian flags",
+    caption: "Official portrait with the Ontario Medal for Young Volunteers, Queen's Park (2026)",
+    orientation: "portrait",
+  },
+  {
     src: "/pictures/adil-mukhi-queens-park-flags-portrait.jpg",
     alt: "Adil Mukhi in a suit in front of the Canadian and Ontario flags",
     caption: "Formal portrait at Queen's Park (2026)",
@@ -40,6 +46,12 @@ export const headshots: Shot[] = [
 ]
 
 export const inAction: Shot[] = [
+  {
+    src: "/pictures/adil-mukhi-ontario-medal-ceremony-group.jpg",
+    alt: "Adil Mukhi wearing the Ontario Medal for Young Volunteers, standing between two guests at the medal ceremony at Queen's Park",
+    caption: "At the Ontario Medal for Young Volunteers ceremony, Queen's Park (2026)",
+    orientation: "landscape",
+  },
   {
     src: "/ontario-medal-young-volunteers-2026.jpg",
     alt: "Adil Mukhi receiving the Ontario Medal for Young Volunteers at Queen's Park",

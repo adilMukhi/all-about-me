@@ -10,6 +10,12 @@ export type HomePhoto = {
 
 const eventPhotos: HomePhoto[] = [
   {
+    src: "/pictures/adil-mukhi-ontario-medal-portrait.jpg",
+    alt: "Adil Mukhi wearing the Ontario Medal for Young Volunteers in front of the Ontario and Canadian flags",
+    caption: "Ontario Medal for Young Volunteers, 2025",
+    focus: "50% 30%",
+  },
+  {
     src: "/ontario-medal-young-volunteers-2026.jpg",
     alt: "Adil Mukhi receiving the Ontario Medal for Young Volunteers at Queen's Park",
     caption: "Receiving the Ontario Medal for Young Volunteers at Queen's Park",
@@ -88,6 +94,12 @@ const shootStills: HomePhoto[] = [
 ]
 
 const everydayPhotos: HomePhoto[] = [
+  {
+    src: "/pictures/adil-mukhi-ontario-medal-ceremony-group.jpg",
+    alt: "Adil Mukhi wearing the Ontario Medal for Young Volunteers at the ceremony at Queen's Park",
+    caption: "Medal ceremony at Queen's Park",
+    focus: "52% 35%",
+  },
   {
     src: "/pictures/adil-mukhi-high-school-graduation.jpg",
     alt: "Adil Mukhi smiling in a graduation cap and gown for his high school grad photos",
