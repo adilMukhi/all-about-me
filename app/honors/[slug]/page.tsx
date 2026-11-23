@@ -68,6 +68,8 @@ export default async function HonorDetailPage({ params }: { params: Promise<{ sl
   const canonicalPath = getHonorPath(award)
   const pageTitle = `${award.title} | ${award.issuer}`
   const image = Array.isArray(award.image) ? award.image[0] : award.image
+  // Any further photos of the award show in a small grid under the main one
+  const morePhotos = Array.isArray(award.image) ? award.image.slice(1) : []
   const canonicalUrl = `${siteUrl}${canonicalPath}`
   const structuredData = [
     {
@@ -141,6 +143,23 @@ export default async function HonorDetailPage({ params }: { params: Promise<{ sl
                   className="object-cover"
                   wrapperClassName="relative aspect-[4/3] overflow-hidden rounded-2xl border bg-card shadow-lg"
                 />
+
+                {morePhotos.length > 0 && (
+                  <ul className="grid grid-cols-2 gap-4" aria-label={`More photos of the ${award.title}`}>
+                    {morePhotos.map((photo, index) => (
+                      <li key={photo}>
+                        <SafeImage
+                          src={photo}
+                          alt={`${award.title}, photo ${index + 2}`}
+                          fill
+                          sizes="(max-width: 1024px) 50vw, 20vw"
+                          className="object-cover object-top"
+                          wrapperClassName="relative aspect-[4/3] overflow-hidden rounded-xl border bg-card shadow-sm"
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
                 {award.link && award.link.startsWith("http") && (
                   <div className="rounded-2xl border bg-card p-6 shadow-sm">
