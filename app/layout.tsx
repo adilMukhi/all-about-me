@@ -1,4 +1,5 @@
 import type React from "react"
+import { WIKIDATA_ADIL_MUKHI, WIKIDATA_DR_INTERESTED } from "@/lib/site"
 import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -251,7 +252,7 @@ export default function RootLayout({
                 "community engagement",
                 "public health advocacy",
               ],
-              sameAs: [...siteAliases, ...socialProfiles],
+              sameAs: [WIKIDATA_DR_INTERESTED, "https://www.drinterested.org/", "https://linktr.ee/dr.interested"],
             },
             {
               "@context": "https://schema.org",
@@ -331,6 +332,7 @@ export default function RootLayout({
                   "@type": "Organization",
                   name: "Dr. Interested",
                   url: `${siteUrl}/experience/drinterested`,
+                  sameAs: WIKIDATA_DR_INTERESTED,
                 },
                 {
                   "@type": "Organization",
@@ -338,7 +340,7 @@ export default function RootLayout({
                   url: "https://5rightsfoundation.com/",
                 },
               ],
-              sameAs: [...siteAliases, ...socialProfiles],
+              sameAs: [WIKIDATA_ADIL_MUKHI, ...siteAliases, ...socialProfiles],
               worksFor: {
                 "@id": `${siteUrl}/#organization`,
               },

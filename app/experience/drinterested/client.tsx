@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { WIKIDATA_DR_INTERESTED } from "@/lib/site"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -432,7 +433,7 @@ export default function DrInterestedClient() {
             numberOfEmployees: "6",
             areaServed: "Global",
             url: "https://www.drinterested.org/",
-            sameAs: ["https://linktr.ee/dr.interested"],
+            sameAs: [WIKIDATA_DR_INTERESTED, "https://linktr.ee/dr.interested"],
             image: "https://i.postimg.cc/r06G4R5g/Adil-Mukhi-Hosting-The-Minds-Project-Panel.png",
             statistics: {
               executives: "414",

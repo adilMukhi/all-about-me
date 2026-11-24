@@ -4,6 +4,7 @@ import BlogPostClient from "./client"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
 import { metaDescription, seoTitle } from "@/lib/seo-paths"
 import { notFound } from "next/navigation"
+import { WIKIDATA_ADIL_MUKHI } from "@/lib/site"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
@@ -135,7 +136,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       "@id": `${siteUrl}/#person`,
       name: "Adil Mukhi",
       url: siteUrl,
-      sameAs: socialProfiles,
+      sameAs: [WIKIDATA_ADIL_MUKHI, ...socialProfiles],
     },
     publisher: {
       "@type": "Organization",
