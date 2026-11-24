@@ -8,7 +8,7 @@ import { useState, useEffect } from "react"
 import SocialLinks from "@/components/social-links"
 import Image from "next/image"
 import { SEOBreadcrumbs } from "@/components/seo-breadcrumbs"
-import { CAL_BOOKING_URL, CONTACT_EMAIL, WORK_PHONE_DISPLAY, WORK_PHONE_TEL } from "@/lib/site"
+import { CAL_BOOKING_URL, CONTACT_EMAIL, WIKIDATA_ADIL_MUKHI, WIKIDATA_DR_INTERESTED, WORK_PHONE_DISPLAY, WORK_PHONE_TEL } from "@/lib/site"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://adilmukhi.vercel.app"
 
@@ -296,6 +296,7 @@ const ServicesStructuredData = () => {
         description:
           "Youth public speaker, advocate, and consultant specializing in youth leadership, mental health, education, policy, and community impact.",
         sameAs: [
+          WIKIDATA_ADIL_MUKHI,
           siteUrl,
           "https://adilm.drinterested.org/",
           "https://www.linkedin.com/in/adil-mukhi",
@@ -426,6 +427,7 @@ const ServicesStructuredData = () => {
         "@type": "Organization",
         "@id": `${siteUrl}/#organization`,
         name: "Dr. Interested",
+        sameAs: [WIKIDATA_DR_INTERESTED, "https://www.drinterested.org/"],
         description:
           "Youth-led initiative and organization focused on curiosity, learning, and future-focused education and health exploration.",
       },

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { WIKIDATA_ADIL_MUKHI } from "@/lib/site"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -33,7 +34,7 @@ export default function ProfilesPage() {
       "@id": `${siteUrl}/#person`,
       name: "Adil Mukhi",
       url: siteUrl,
-      sameAs: profileLinks.map((profile) => profile.href),
+      sameAs: [WIKIDATA_ADIL_MUKHI, ...profileLinks.map((profile) => profile.href)],
     },
   }
 
